@@ -1,0 +1,276 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>We have a Python code that will get the response headers for a website:
+
+<i style='color: blue'>from datetime import datetime 
+import requests
+
+url = 'http://survival8.blogspot.com/'
+
+x = requests.get(url)
+
+print(x.headers)
+
+curr_time = datetime.now()
+
+# We also write our main HTML output to a file.
+with open("s8_" + str(curr_time).replace(":", "_") + ".log", mode='w') as f:
+    f.write(x.text)</i>
+
+The output of this code looks like as shown below:
+
+<i style="color: green">(base) ~/Desktop$ python response_header_info.py 
+
+{'Content-Type': 'text/html; charset=UTF-8', 'Expires': 'Tue, 16 Feb 2021 10:13:29 GMT', 'Date': 'Tue, 16 Feb 2021 10:13:29 GMT', 'Cache-Control': 'private, max-age=0', 'Last-Modified': 'Tue, 16 Feb 2021 08:54:25 GMT', 'ETag': 'W/"047a2cb250a2ad10a53227bf4085727f97833f5235788c95f99a149e4d1afa68"', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Content-Length': '135818', 'Server': 'GSE'} </i>
+
+Next we discuss some important Response Headers:
+
+<b>1: Response header</b>
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header" target="_blank">developer.mozilla.org</a>
+
+A response header is an HTTP header that can be used in an HTTP response and that doesn't relate to the content of the message. Response headers, like Age, Location or Server are used to give a more detailed context of the response.
+
+Not all headers appearing in a response are categorized as response headers by the specification. For example, the Content-Length header is an Representation metadata header indicating the size of the body of the response message (and as an entity header in older versions of the specification). However, "conversationally" all headers are usually referred to as response headers in a response message.
+
+The following shows a few response headers after a GET request. Note that strictly speaking, the Content-Encoding and Content-Type headers are entity header:
+
+<i style="color: green;">200 OK
+Access-Control-Allow-Origin: *
+Connection: Keep-Alive
+Content-Encoding: gzip
+Content-Type: text/html; charset=utf-8
+Date: Mon, 18 Jul 2016 16:06:00 GMT
+Etag: "c561c68d0ba92bbeb8b0f612a9199f722e3a621a"
+Keep-Alive: timeout=5, max=997
+Last-Modified: Mon, 18 Jul 2016 02:36:04 GMT
+Server: Apache
+Set-Cookie: mykey=myvalue; expires=Mon, 17-Jul-2017 16:06:00 GMT; Max-Age=31449600; Path=/; secure
+Transfer-Encoding: chunked
+Vary: Cookie, Accept-Encoding
+X-Backend-Server: developer2.webapp.scl3.mozilla.com
+X-Cache-Info: not cacheable; meta data too large
+X-kuma-revision: 1085259
+x-frame-options: DENY</i>
+
+###
+
+2: <b>'Cache-Control': 'private'</b>
+
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control" target="_blank">developer.mozilla.org</a>
+
+Cacheability
+
+Directives that define whether a response/request can be cached, where it may be cached, and whether it must be validated with the origin server before caching.
+
+public
+    The response may be stored by any cache, even if the response is normally non-cacheable.
+
+private
+    The response may be stored only by a browser's cache, even if the response is normally non-cacheable. If you mean to not store the response in any cache, use no-store instead. This directive is not effective in preventing caches from storing your response.
+
+no-cache
+    The response may be stored by any cache, even if the response is normally non-cacheable. However, the stored response MUST always go through validation with the origin server first before using it, therefore, you cannot use no-cache in-conjunction with immutable. If you mean to not store the response in any cache, use no-store instead. This directive is not effective in preventing caches from storing your response.
+
+no-store
+    The response may not be stored in any cache. Note that this will not prevent a valid pre-existing cached response being returned. Clients can set max-age=0 to also clear existing cache responses, as this forces the cache to revalidate with the server (no other directives have an effect when used with no-store). 
+
+###
+
+'Transfer-Encoding': 'chunked'
+
+The Transfer-Encoding header specifies the form of encoding used to safely transfer the payload body to the user.
+
+chunked
+    Data is sent in a series of chunks. The Content-Length header is omitted in this case and at the beginning of each chunk you need to add the length of the current chunk in hexadecimal format, followed by '\r\n' and then the chunk itself, followed by another '\r\n'. The terminating chunk is a regular chunk, with the exception that its length is zero. It is followed by the trailer, which consists of a (possibly empty) sequence of entity header fields.
+
+### 
+
+'Content-Type': 'application/json; charset=utf-8'
+
+Content-type: application/json; charset=utf-8 designates the content to be in JSON format, encoded in the UTF-8 character encoding.
+
+### 
+
+'Server': 'Private Server', 
+
+The Server header describes the software used by the origin server that handled the request — that is, the server that generated the response.
+
+Examples: 
+  Server: Apache/2.4.1 (Unix)
+
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server" target="_blank">developer.mozilla.org</a>
+
+### 
+
+'jsonerror': 'true'
+
+Nothing found about it.
+
+###
+
+'X-Frame-Options': 'SAMEORIGIN'
+
+The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a &lt;frame>, &lt;iframe>, &lt;embed> or &lt;object>. Sites can use this to avoid click-jacking attacks, by ensuring that their content is not embedded into other sites.
+
+The added security is provided only if the user accessing the document is using a browser that supports X-Frame-Options.
+
+There are two possible directives for X-Frame-Options:
+
+X-Frame-Options: DENY
+X-Frame-Options: SAMEORIGIN
+
+
+SAMEORIGIN
+    The page can only be displayed in a frame on the same origin as the page itself. The spec leaves it up to browser vendors to decide whether this option applies to the top level, the parent, or the whole chain, although it is argued that the option is not very useful unless all ancestors are also in the same origin (see bug 725490). Also see Browser compatibility for support details.
+
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" target="_blank">developer.mozilla.org</a>
+
+###
+
+'Strict-Transport-Security': 'max-age=31536000', 
+
+The HTTP Strict-Transport-Security response header (often abbreviated as HSTS) lets a web site tell browsers that it should only be accessed using HTTPS, instead of using HTTP.
+
+max-age=&lt;expire-time>
+    The time, in seconds, that the browser should remember that a site is only to be accessed using HTTPS.
+
+###
+
+'X-UA-Compatible': 'IE=EmulateIE7'
+
+Ref: <a href="https://docs.microsoft.com/en-us/openspecs/ie_standards/ms-iedoco/380e2488-f5eb-4457-a07a-0cb1b6e4b4b5" target="_blank">docs.microsoft.com</a>
+
+Web developers can also specify a document mode by including instructions in a meta element or HTTP response header:
+
+    Webpages that include a meta element (see [HTML5:2014]) with an http-equivalent value of X-UA-Compatible.
+
+    Webpages that are served with an HTTP header named "X-UA-Compatible".
+
+
+IE=EmulateIE7 ::
+IE7 mode (if a valid &lt;!DOCTYPE> declaration is present)
+Quirks Mode (otherwise)
+
+###
+
+'X-Contet-Type-Options': 'nosniff'
+
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options" target="_blank">developer.mozilla.org</a>
+
+The X-Content-Type-Options response HTTP header is a marker used by the server to indicate that the MIME types advertised in the Content-Type headers should not be changed and be followed. This is a way to opt out of MIME type sniffing, or, in other words, to say that the MIME types are deliberately configured.
+
+This header was introduced by Microsoft in IE 8 as a way for webmasters to block content sniffing that was happening and could transform non-executable MIME types into executable MIME types. Since then, other browsers have introduced it, even if their MIME sniffing algorithms were less aggressive.
+
+Starting with Firefox 72, the opting out of MIME sniffing is also applied to top-level documents if a Content-type is provided. This can cause HTML web pages to be downloaded instead of being rendered when they are served with a MIME type other than text/html. Make sure to set both headers correctly.
+
+Site security testers usually expect this header to be set.
+
+X-Content-Type-Options: nosniff
+
+nosniff
+    Blocks a request if the request destination is of type:
+
+        "style" and the MIME type is not text/css, or
+        "script" and the MIME type is not a JavaScript MIME type
+
+    Enables Cross-Origin Read Blocking (CORB) protection for the MIME-types:
+
+        text/html
+        text/plain
+        text/json, application/json or any other type with a JSON extension: */*+json
+        text/xml, application/xml or any other type with an XML extension: */*+xml (excluding image/svg+xml)
+
+###
+
+
+'X-XSS-Protection': '1; mode=block'
+
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection" target="_blank">developer.mozilla.org</a>
+
+The HTTP X-XSS-Protection response header is a feature of Internet Explorer, Chrome and Safari that stops pages from loading when they detect reflected cross-site scripting (XSS) attacks. Although these protections are largely unnecessary in modern browsers when sites implement a strong Content-Security-Policy that disables the use of inline JavaScript ('unsafe-inline'), they can still provide protections for users of older web browsers that don't yet support CSP.
+
+X-XSS-Protection: 0
+X-XSS-Protection: 1
+X-XSS-Protection: 1; mode=block
+X-XSS-Protection: 1; report=&lt;reporting-uri>
+
+
+1; mode=block
+    Enables XSS filtering. Rather than sanitizing the page, the browser will prevent rendering of the page if an attack is detected.
+
+###
+
+Date
+
+The Date general HTTP header contains the date and time at which the message was originated.
+
+Ref: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date" target="_blank">developer.mozilla.org</a>
+
+fetch('https://httpbin.org/get', {
+    'headers': {
+        'Date': (new Date()).toUTCString()
+    }
+})
+
+Header type: General header
+
+<span class="" style="display: none">Tags: Technology, Web Scraping, Web Development</span>
+</pre>
+
+

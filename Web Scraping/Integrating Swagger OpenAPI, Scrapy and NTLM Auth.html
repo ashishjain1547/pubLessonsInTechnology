@@ -1,0 +1,925 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>Creating a Swagger OpenAPI for Scrapy Spider
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>dir /s/b
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\api
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\config
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\hw_app.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\logs
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\my_client.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\scrapy.cfg
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\swagger
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\test
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\__init__.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\api\api_endpoints.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\api\__init__.py
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\config\appconfig.properties
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\config\config.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\config\__init__.py
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\items.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\login_credentials.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\middlewares.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\pipelines.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\settings.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\__init__.py
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders\login_credentials.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders\teamwiki.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders\__init__.py
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\swagger\sw_conf.yaml
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\conftest.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\invalid_sw_conf.yaml
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\test_api.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\test_config.py
+C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\test_swagger.py
+
+### ### ### 1. Creating a Scrapy project.
+
+(base) C:\Users\ashish>scrapy startproject team_wiki
+New Scrapy project 'team_wiki', using template directory 'c:\users\ashish\appdata\local\continuum\anaconda3\lib\site-packages\scrapy\templates\project', created in:
+    C:\Users\ashish\team_wiki
+
+You can start your first spider with:
+    cd team_wiki
+    scrapy genspider example example.com
+
+(base) C:\Users\ashish>cd team_wiki
+
+(base) C:\Users\ashish\team_wiki>scrapy genspider team_wiki teamwiki/
+Cannot create a spider with the same name as your project
+
+(base) C:\Users\ashish\team_wiki>scrapy genspider teamwiki teamwiki/
+Created spider 'teamwiki' using template 'basic' in module:
+  team_wiki.spiders.teamwiki
+  
+### ### ### 2. We keep our Scrapy project code in the "services" folder.
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\scrapy.cfg 
+# Automatically created by: scrapy startproject
+#
+# For more information about the [deploy] section see:
+# https://scrapyd.readthedocs.io/en/latest/deploy.html
+
+[settings]
+default = team_wiki.settings
+
+[deploy]
+#url = http://localhost:6800/
+project = team_wiki
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\items.py 
+# -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+class TeamWikiItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    pass
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\middlewares.py 
+# -*- coding: utf-8 -*-
+
+# Define here the models for your spider middleware
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
+from scrapy import signals
+from scrapy.http import Response, HtmlResponse
+import requests
+from requests_ntlm import HttpNtlmAuth
+from w3lib.http import basic_auth_header
+
+from team_wiki.spiders import login_credentials as lc
+
+class TeamWikiSpiderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the spider middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_spider_input(self, response, spider):
+        # Called for each response that goes through the spider
+        # middleware and into the spider.
+
+        # Should return None or raise an exception.
+        return None
+
+    def process_spider_output(self, response, result, spider):
+        # Called with the results returned from the Spider, after
+        # it has processed the response.
+
+        # Must return an iterable of Request, dict or Item objects.
+        for i in result:
+            yield i
+
+    def process_spider_exception(self, response, exception, spider):
+        # Called when a spider or process_spider_input() method
+        # (from other spider middleware) raises an exception.
+
+        # Should return either None or an iterable of Request, dict
+        # or Item objects.
+        pass
+
+    def process_start_requests(self, start_requests, spider):
+        # Called with the start requests of the spider, and works
+        # similarly to the process_spider_output() method, except
+        # that it doesn't have a response associated.
+
+        # Must return only requests (not items).
+        for r in start_requests:
+            yield r
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)
+
+class CustomProxyMiddleware(object):
+    def process_request(self, request, spider):
+        request.meta['proxy'] = "https://10.68.248.34:80"
+        request.headers['Proxy-Authorization'] = basic_auth_header(lc.username, lc.password)
+
+class TeamWikiDownloaderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the downloader middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_request(self, request, spider):
+        # Called for each request that goes through the downloader middleware.
+
+        # Must either:
+        # - return None: continue processing this request
+        # - or return a Response object
+        # - or return a Request object
+        # - or raise IgnoreRequest: process_exception() methods of
+        #   installed downloader middleware will be called
+
+        url = request.url
+        usr = getattr(spider, 'http_usr')
+        pwd = getattr(spider, 'http_pass')
+        print('Spider User : %s' % usr)
+        print('Spider Password : %s' % pwd)
+        request.meta['proxy'] = "https://10.68.248.34:80"
+        request.headers['Proxy-Authorization'] = basic_auth_header(usr, pwd)
+        s = requests.session()
+        response = s.get(url, auth=HttpNtlmAuth(usr, pwd))
+        print('Spider Response : %s' % response)
+        return HtmlResponse(url,response.status_code, response.headers, response.content)        
+
+    def process_response(self, request, response, spider):
+        # Called with the response returned from the downloader.
+
+        # Must either;
+        # - return a Response object
+        # - return a Request object
+        # - or raise IgnoreRequest
+        return response
+
+    def process_exception(self, request, exception, spider):
+        # Called when a download handler or a process_request()
+        # (from other downloader middleware) raises an exception.
+
+        # Must either:
+        # - return None: continue processing this exception
+        # - return a Response object: stops process_exception() chain
+        # - return a Request object: stops process_exception() chain
+        pass
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\pipelines.py 
+# -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+class TeamWikiPipeline(object):
+    def process_item(self, item, spider):
+        return item
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\settings.py 
+# -*- coding: utf-8 -*-
+
+# Scrapy settings for team_wiki project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     https://docs.scrapy.org/en/latest/topics/settings.html
+#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'team_wiki'
+
+SPIDER_MODULES = ['team_wiki.spiders']
+NEWSPIDER_MODULE = 'team_wiki.spiders'
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'team_wiki (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'team_wiki.middlewares.TeamWikiDownloaderMiddleware': 200,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware':None,
+    'team_wiki.middlewares.CustomProxyMiddleware': 350,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 400,
+}
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\__init__.py 
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\spiders\login_credentials.py 
+domain = 'SURVIVAL8'
+username = 'system'
+password = 'manager'
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\spiders\teamwiki.py 
+# -*- coding: utf-8 -*-
+import scrapy
+
+import os
+import scrapy
+from scrapy.spiders import CrawlSpider, Rule
+
+import logging
+
+from scrapy.linkextractors import LinkExtractor as lex
+from scrapy.item import Item, Field
+from bs4 import BeautifulSoup
+
+from team_wiki.spiders import login_credentials as lc
+
+class TeamwikiSpider(scrapy.Spider):
+
+    allowed_domains = ['teamwiki/']
+
+    http_usr = os.path.join(lc.domain, lc.username)
+    http_pass = lc.password
+    
+    name = "teamwiki"
+
+    start_urls = ['http://teamwiki/']
+
+    rules = (
+        Rule(lex(allow=(), restrict_xpaths=('//a',)), callback="parse_content", follow= True),
+    )
+
+    def parse(self, response):
+        NEXT_PAGE_SELECTOR = 'a ::attr(href)'
+        next_page = response.css(NEXT_PAGE_SELECTOR)
+        for np in next_page:
+            yield response.follow(np, callback = self.parse_content)
+    
+    def parse_content(self, response):
+        pass
+
+C:\Users\ashish\team_wiki>type C:\Users\ashish\team_wiki\team_wiki\spiders\__init__.py 
+# This package will contain the spiders of your Scrapy project
+#
+# Please refer to the documentation for information on how to create and manage
+# your spiders.
+
+### ### ### 3. We do some modifications in the code in step (1) to make it work with the Swagger OpenAPI.
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\hw_app.py 
+import connexion
+from config.config import Config
+from flask_cors import CORS
+import logging
+
+logger = logging.getLogger(__name__)
+app = connexion.FlaskApp(__name__)
+print("ENV: ",app.app.config['ENV'].upper())
+app_conf = Config().getAppConf(app.app.config['ENV'].upper())
+
+CORS(app.app, methods=['POST', 'PUT', 'DELETE'], allow_headers=['Content-Type'])
+
+@app.route('/')
+def home():
+    return "Hello World, Generic!", 200
+
+if __name__ == '__main__':
+    app.add_api('swagger/sw_conf.yaml', arguments={'title': 'Hello World Service'})
+    app.run(host=app_conf["IP_ADDRESS"], port=app_conf["PORT"], debug=app_conf["DEBUG"])
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\my_client.py 
+import requests
+headers = {'content-type': 'application/json'}
+
+URL = "http://127.0.0.1:8083/v1.0/post_test"
+r = requests.post(url = URL, data = {}, json = { "msg": "Post Holla" }, headers = headers)
+print("Response text: " + r.text)
+
+URL = "http://127.0.0.1:8083/v1.0/get_test"
+r = requests.get(url = URL, data = {}, json = { "msg": "Get Holla" }, headers = headers)
+print("Response text: " + r.text)
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\scrapy.cfg 
+# Automatically created by: scrapy startproject
+#
+# For more information about the [deploy] section see:
+# https://scrapyd.readthedocs.io/en/latest/deploy.html
+
+[settings]
+default = services.settings
+
+[deploy]
+#url = http://localhost:6800/
+project = services
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\__init__.py 
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\api\api_endpoints.py 
+import connexion
+import logging
+from flask import Response
+import json
+
+# Scrapy
+from services.spiders.teamwiki import TeamwikiSpider
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
+
+class MyEndpoints(object):
+
+    def __init__(self):
+        self.logger=logging.getLogger("MyEndpoints")
+        self.logger.debug('From __init__()')
+        
+    def get_hello_world(self):
+        req_data = connexion.request.get_json()
+        data = req_data.get('msg')
+        return Response(json.dumps("msg: " + str(req_data)), status=201, mimetype='application/json')
+
+    def post_hello_world(self):
+        req_data = connexion.request.get_json()
+        
+        print("text: " + str(req_data))
+        process.crawl(TeamwikiSpider)
+        process.start()
+    
+        return Response(json.dumps("msg: " + str(req_data)), status=201, mimetype='application/json')
+        
+class_instance = MyEndpoints()
+process = CrawlerProcess(get_project_settings())
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\api\__init__.py 
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type 
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\config\appconfig.properties 
+[DEVELOPMENT]
+DEBUG=True
+IP_ADDRESS = 0.0.0.0
+PORT = 8081
+
+[TEST]
+DEBUG = True
+IP_ADDRESS = 0.0.0.0
+PORT = 8082
+
+[PRODUCTION]
+DEBUG = 
+IP_ADDRESS = 0.0.0.0
+PORT = 8083
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\config\config.py 
+import configparser
+import os
+import logging
+from logging.config import fileConfig
+
+class Config(object):
+
+    def __init__(self):
+        try:
+            self.app_config = configparser.RawConfigParser()
+            self.app_config.read([os.path.expanduser('config//appconfig.properties')])
+            self.logger = logging.getLogger('Config')
+            fileConfig('config//loggingconfig.ini')
+
+        except Exception as e:
+            print(str(e))
+     
+    def getAppConf(self,env):
+        self.logger.info("getAppConf")
+        return self.app_config[env]
+        
+    def getLogger(self,name):
+        logger = logging.getLogger(name)
+        return logger
+        
+        
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\config\__init__.py 
+print('init.py')
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\items.py 
+# -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+class TeamWikiItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    pass
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\login_credentials.py 
+domain = 'SURVIVAL8'
+username = 'system'
+password = 'manager'
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\middlewares.py 
+# -*- coding: utf-8 -*-
+
+# Define here the models for your spider middleware
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
+from scrapy import signals
+from scrapy.http import Response, HtmlResponse
+import requests
+from requests_ntlm import HttpNtlmAuth
+from w3lib.http import basic_auth_header
+
+from services.spiders import login_credentials as lc
+
+class TeamWikiSpiderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the spider middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_spider_input(self, response, spider):
+        # Called for each response that goes through the spider
+        # middleware and into the spider.
+
+        # Should return None or raise an exception.
+        return None
+
+    def process_spider_output(self, response, result, spider):
+        # Called with the results returned from the Spider, after
+        # it has processed the response.
+
+        # Must return an iterable of Request, dict or Item objects.
+        for i in result:
+            yield i
+
+    def process_spider_exception(self, response, exception, spider):
+        # Called when a spider or process_spider_input() method
+        # (from other spider middleware) raises an exception.
+
+        # Should return either None or an iterable of Request, dict
+        # or Item objects.
+        pass
+
+    def process_start_requests(self, start_requests, spider):
+        # Called with the start requests of the spider, and works
+        # similarly to the process_spider_output() method, except
+        # that it doesnâ€™t have a response associated.
+
+        # Must return only requests (not items).
+        for r in start_requests:
+            yield r
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)
+
+class CustomProxyMiddleware(object):
+    def process_request(self, request, spider):
+        request.meta['proxy'] = "https://10.68.248.34:80"
+        request.headers['Proxy-Authorization'] = basic_auth_header(lc.username, lc.password)
+
+
+class TeamWikiDownloaderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the downloader middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_request(self, request, spider):
+        # Called for each request that goes through the downloader middleware.
+
+        # Must either:
+        # - return None: continue processing this request
+        # - or return a Response object
+        # - or return a Request object
+        # - or raise IgnoreRequest: process_exception() methods of
+        #   installed downloader middleware will be called
+
+        url = request.url
+        usr = getattr(spider, 'http_usr')
+        pwd = getattr(spider, 'http_pass')
+        print('Spider User : %s' % usr)
+        print('Spider Password : %s' % pwd)
+        request.meta['proxy'] = "https://10.68.248.34:80"
+        request.headers['Proxy-Authorization'] = basic_auth_header(usr, pwd)
+        s = requests.session()
+        response = s.get(url, auth=HttpNtlmAuth(usr, pwd))
+        print('Spider Response : %s' % response)
+        return HtmlResponse(url,response.status_code, response.headers, response.content)        
+
+    def process_response(self, request, response, spider):
+        # Called with the response returned from the downloader.
+
+        # Must either;
+        # - return a Response object
+        # - return a Request object
+        # - or raise IgnoreRequest
+        return response
+
+    def process_exception(self, request, exception, spider):
+        # Called when a download handler or a process_request()
+        # (from other downloader middleware) raises an exception.
+
+        # Must either:
+        # - return None: continue processing this exception
+        # - return a Response object: stops process_exception() chain
+        # - return a Request object: stops process_exception() chain
+        pass
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\pipelines.py 
+# -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+class TeamWikiPipeline(object):
+    def process_item(self, item, spider):
+        return item
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\settings.py 
+# -*- coding: utf-8 -*-
+
+# Scrapy settings for team_wiki project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     https://docs.scrapy.org/en/latest/topics/settings.html
+#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'team_wiki'
+
+SPIDER_MODULES = ['services.spiders']
+NEWSPIDER_MODULE = 'services.spiders'
+
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'services.middlewares.TeamWikiDownloaderMiddleware': 200,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware':None,
+    'services.middlewares.CustomProxyMiddleware': 350,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 400,
+}
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\__init__.py 
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders\login_credentials.py 
+domain = 'SURVIVAL8'
+username = 'system'
+password = 'manager'
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders\teamwiki.py 
+# -*- coding: utf-8 -*-
+import scrapy
+
+import os
+import scrapy
+from scrapy.spiders import CrawlSpider, Rule
+
+import logging
+
+from scrapy.linkextractors import LinkExtractor as lex
+from scrapy.item import Item, Field
+from bs4 import BeautifulSoup
+
+from services.spiders import login_credentials as lc
+
+class TeamwikiSpider(scrapy.Spider):
+
+    allowed_domains = ['teamwiki/']
+
+    http_usr = os.path.join(lc.domain, lc.username)
+    http_pass = lc.password
+        
+    name = "teamwiki"    
+
+    start_urls = ['http://teamwiki/']
+
+    rules = (
+        Rule(lex(allow=(), restrict_xpaths=('//a',)), callback="parse_content", follow= True),
+    )
+
+    def parse(self, response):
+        pass
+    
+    def parse_content(self, response):
+        pass
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\services\spiders\__init__.py 
+# This package will contain the spiders of your Scrapy project
+#
+# Please refer to the documentation for information on how to create and manage
+# your spiders.
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\swagger\sw_conf.yaml 
+swagger: '2.0'
+
+info:
+  title: {{ title }}
+  description: Hello world microservice.
+  version: "0.1"
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /v1.0
+tags:
+  - name: "na"
+    description: "NA"
+schemes:
+  - "http"
+paths:
+  /get_test:
+    get:
+      operationId: api.api_endpoints.class_instance.get_hello_world
+      summary: Get Hello World
+      parameters:
+        - in: body
+          name: my_data
+          description: NA.
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/my_data'
+      responses:
+        200:
+          description: successful return
+          schema:
+            type: string
+  /post_test:
+    post:
+      operationId: api.api_endpoints.class_instance.post_hello_world
+      summary: Post Hello World
+      parameters:
+        - in: body
+          name: my_data
+          description: NA.
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/my_data'
+      responses:
+        200:
+          description: successful return
+          schema:
+            type: string
+
+definitions:
+  my_data:
+    type: object
+    properties:
+      msg:
+        type: string
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\conftest.py 
+import json
+import logging
+import pathlib
+import sys
+import pytest
+import connexion
+from connexion import FlaskApp
+logging.basicConfig(level=logging.DEBUG)
+
+TEST_FOLDER = pathlib.Path(__file__).parent
+
+@pytest.fixture(scope='module')
+def app():
+    cnx_app = FlaskApp(__name__, port=8080, debug=True)
+    cnx_app.add_api('../swagger/sw_conf.yaml', arguments={'title': 'NA'}, validate_responses=True)
+    return cnx_app
+    
+@pytest.fixture(scope='module')
+def client(app):
+    flask_app = app.app
+    with flask_app.test_client() as c:
+        yield c
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\invalid_sw_conf.yaml 
+paths:
+  /abcd:
+    post:
+      tags: [ABCD]
+      operationId: api.api_endpoints.class_instance.abcd
+      summary: NA
+      parameters:
+        - in: body
+          name: data
+          description: Model name & content.
+          schema:
+            type: object
+            items:
+              $ref: '#/definitions/data'
+      responses:
+        200:
+          description: successful return
+          schema:
+            type: string
+
+
+definitions:
+
+  data:
+    type: object
+    properties:
+      modelName:
+        type: string
+      content:
+        type: string
+        
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    flow: implicit
+    authorizationUrl: https://example.com/oauth2/dialog
+    scopes:
+      uid: Unique identifier of the user accessing the service.
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\test_api.py 
+import pathlib
+import tempfile
+import pytest
+from yaml import YAMLError
+from connexion import FlaskApi
+from connexion.exceptions import InvalidSpecification
+from connexion.spec import canonical_base_path
+import json
+
+def test_backend(client):
+    response = client.post('/v1.0/crawler', json=get_json_crawler())
+    #assert response.get_json()['parse_content'] != ""
+    #assert response.status_code == 201
+
+def test_home(client):
+    response = client.get('/')
+    assert response.status_code == 404
+    
+def get_json_crawler():
+    return {
+    "data" : 
+        {
+            "url":"http://teamwiki/bin/view/Main/WebHome"
+        }
+    
+}
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\test_config.py 
+import pytest
+from config.config import Config
+
+def test_dev_config():
+    app_conf = Config().getAppConf('DEVELOPMENT')
+    assert app_conf["IP_ADDRESS"] != ''
+    assert app_conf["PORT"] != ''
+    assert app_conf["DEBUG"] != ''
+    
+def test_prod_config():
+    app_conf = Config().getAppConf('PRODUCTION')
+    assert app_conf["IP_ADDRESS"] != ''
+    assert app_conf["PORT"] != ''
+    assert app_conf["DEBUG"] == ''
+
+C:\Users\ashish\Desktop\Swagger\swagger_crawl>type C:\Users\ashish\Desktop\Swagger\swagger_crawl\test\test_swagger.py 
+import pathlib
+import tempfile
+import pytest
+from yaml import YAMLError
+from connexion import FlaskApi
+from connexion.exceptions import InvalidSpecification
+from connexion.spec import canonical_base_path
+
+import sys, os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+
+TEST_FOLDER = pathlib.Path(__file__).parent
+
+
+def test_canonical_base_path():
+    assert canonical_base_path('') == ''
+    assert canonical_base_path('/') == ''
+    assert canonical_base_path('/v1.0') == '/v1.0'
+    assert canonical_base_path('/v1.0/') == '/v1.0'
+
+
+def test_data_format():
+    api = FlaskApi("swagger/sw_conf.yaml", base_path="/v1.0", arguments={'title': 'NA'})
+    assert api.specification['consumes'][0]  == 'application/json'
+    assert api.specification['produces'][0]  == 'application/json'
+
+def test_template():
+    api1 = FlaskApi("swagger/sw_conf.yaml",
+                    base_path="/v1.0", arguments={'title': 'NA'})
+    assert api1.specification['info']['title'] == 'NA'
+
+    api2 = FlaskApi("swagger/sw_conf.yaml",
+                    base_path="/v1.0", arguments={'title': 'other test'})
+    assert api2.specification['info']['title'] == 'other test'
+
+def test_use_of_safe_load_for_yaml_swagger_specs():
+    with pytest.raises(InvalidSpecification):
+		assert FlaskApi("test/invalid_sw_conf.yaml", base_path="/v1.0", arguments={'title': 'Invalid spec'})
+</pre>

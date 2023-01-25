@@ -1,0 +1,237 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Our Flask code resides in a "demo" directory that looks like this:
+(base) C:\Users\ashish\Desktop\demo>tree /f
+
+C:.
+│   server.py
+│
+└───static
+        form.html
+
+Flask Server Code (\demo\server.py): 
+
+<i>import json, requests
+from flask_cors import CORS, cross_origin
+from flask import Flask, request, Response, jsonify
+
+app = Flask(__name__, static_url_path='', static_folder='static')
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+@app.route('/', methods=['GET'])
+@cross_origin()
+def root():
+    print("root() called.")
+    return app.send_static_file('form.html')
+
+@app.route("/getresponse", methods=['POST'])
+@cross_origin()
+def getResponse():
+    print("Content-Type: " + request.headers['Content-Type'])
+    username = "There"
+    if request.headers['Content-Type'] == 'text/plain':
+        return "Request from client is: " + request.data
+
+    elif(request.headers['Content-Type'] == 'application/json' or request.headers['Content-Type'] == 'application/json; charset=utf-8'):
+        # For C#: request.headers['Content-Type'] == 'application/json; charset=utf-8'
+        # For Python: request.headers['Content-Type'] == 'application/json'
+        # For AngularJS due to the "Content-Type" headers == 'application/json'
+        print("request.json: " + str(request.json))
+        username = request.json['username']
+
+    elif request.headers['Content-Type'] == 'application/octet-stream':
+        f = open('./binary', 'wb')
+        f.write(request.data)
+        f.close()
+        print("Binary message written!")
+
+    # For JavaScript and jQuery:
+    elif (request.headers['Content-Type'] == 'application/x-www-form-urlencoded; charset=UTF-8' or \
+        request.headers['Content-Type'] == 'application/x-www-form-urlencoded'): # Our HTML client code from "form.html" is hitting here.
+        print(request.form['username'])
+        username = request.form['username']
+
+    else:
+        return "415 Unsupported Media Type"
+
+    #rtnVal = "Hello %s !!" % (username)
+    rtnVal = "Hello {}!!".format(username)
+    return rtnVal
+
+if __name__ == "__main__":
+    app.run(host = "0.0.0.0", port = 9000, debug = True)</i>
+	
+HTML Client Code (\demo\static\form.html):
+&lt;form action="/getresponse" method="POST"&gt;
+    &lt;input name="username" type="text" id="username" /&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;input type="submit" /&gt;
+&lt;form&gt;
+
+Way to start Flask server:
+(base) C:\Users\ashish\Desktop\demo>python server.py
+
+After starting the local server, view the HTML form in browser at: http://localhost:9000/
+
+Fill in the "username" in the form and submit to get the 'Hello ${username}' message in the browser window.
+
+Now we come to Scrapy:
+
+Scrapy Spider Code:
+
+<i>import scrapy
+
+def authentication_failed(response):
+    # TODO: Check the contents of the response and return True if it failed
+    # or False if it succeeded.
+    pass
+
+
+class CustomSpider(scrapy.Spider):
+    name = 'customspider'
+    
+    allowed_domains = ['localhost:9000/']
+    start_urls = ['http://localhost:9000/']
+
+    def parse(self, response):
+        return scrapy.FormRequest.from_response(
+            response,
+            formdata={'username': 'ashish'},
+            callback=self.after_login
+        )
+
+    def after_login(self, response):
+        if authentication_failed(response):
+            self.logger.error("Login failed")
+            return
+        
+        # continue scraping with authenticated session...
+        return {'text': response.text}</i>
+
+
+Run Command:
+(base) D:\exp_54\myscraper>scrapy crawl customspider
+
+Every "crawl" request from Scrapy first tries to get the "robots.txt" file from the server.
+
+Flask Logs:
+127.0.0.1 - - [01/Jan/2020 20:11:43] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+root() called.
+127.0.0.1 - - [01/Jan/2020 20:11:43] "[37mGET / HTTP/1.1[0m" 200 -
+
+127.0.0.1 - - [01/Jan/2020 20:13:23] "[33mGET /robots.txt HTTP/1.1[0m" 404 -
+root() called.
+127.0.0.1 - - [01/Jan/2020 20:13:23] "[37mGET / HTTP/1.1[0m" 200 -
+
+Not getting the expected output. The request is not getting past the HTML form to make a POST request and show the success message.
+
+Scrapy Logs:
+<i style="color:red">(base) D:\exp_54\myscraper>scrapy crawl customspider
+2020-01-01 20:13:23 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: myscraper)
+2020-01-01 20:13:23 [scrapy.utils.log] INFO: Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 18.0.0 (OpenSSL 1.1.1a  20 Nov 2018), cryptography 2.4.2, Platform Windows-10-10.0.16299-SP0
+2020-01-01 20:13:23 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'myscraper', 'NEWSPIDER_MODULE': 'myscraper.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['myscraper.spiders']}
+2020-01-01 20:13:23 [scrapy.extensions.telnet] INFO: Telnet Password: c90a356ca81c1ae6
+2020-01-01 20:13:23 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-01 20:13:23 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-01 20:13:23 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-01 20:13:23 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2020-01-01 20:13:23 [scrapy.core.engine] INFO: Spider opened
+2020-01-01 20:13:23 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-01 20:13:23 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-01-01 20:13:23 [scrapy.core.engine] DEBUG: Crawled (404) [[ GET http://localhost:9000/robots.txt ]] (referer: None)
+2020-01-01 20:13:23 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET http://localhost:9000/ ]] (referer: None)
+2020-01-01 20:13:24 [scrapy.spidermiddlewares.offsite] <b>DEBUG: Filtered offsite request to 'localhost': [[ POST http://localhost:9000/getresponse ]]</b>
+2020-01-01 20:13:24 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-01-01 20:13:24 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 426,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 902,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 0.166431,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(--14, 43, 24, 58867),
+ 'log_count/DEBUG': 3,
+ 'log_count/INFO': 10,
+ 'offsite/domains': 1,
+ 'offsite/filtered': 1,
+ 'request_depth_max': 1,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(--14, 43, 23, 892436)}
+2020-01-01 20:13:24 [scrapy.core.engine] INFO: Spider closed (finished)</i>
+
+
+Google Drive link to Flask code: https://drive.google.com/open?id=1s-mOCM0bJrX9X-TCjzBo9LmsnS-yOhRV
+
+Ref 1: https://stackoverflow.com/questions/20646822/how-to-serve-static-files-in-flask
+Ref 2: http://doc.scrapy.org/en/latest/topics/request-response.html#formrequest-objects
+</pre>

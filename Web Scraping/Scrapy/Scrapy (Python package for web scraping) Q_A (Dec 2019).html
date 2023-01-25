@@ -1,0 +1,146 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+Q1: What is "NTLM" in networking?
+Ans:
+
+In a Windows network, NT (New Technology) LAN Manager (NTLM) is a suite of Microsoft security protocols intended to provide authentication, integrity, and confidentiality to users. NTLM is the successor to the authentication protocol in Microsoft LAN Manager (LANMAN), an older Microsoft product.
+
+Ref: https://en.m.wikipedia.org/wiki/NT_LAN_Manager
+
+NT LAN Manager (NTLM) authentication is a challenge-response scheme that is a securer variation of Digest authentication. NTLM uses Windows credentials to transform the challenge data instead of the unencoded user name and password. NTLM authentication requires multiple exchanges between the client and server. The server and any intervening proxies must support persistent connections to successfully complete the authentication.
+
+Ref: https://docs.microsoft.com/en-us/dotnet/framework/wcf/feature-details/understanding-http-authentication
+
+Q2: Tell us about "requests_ntlm".
+Ans:
+This package allows for HTTP NTLM authentication using the requests library.
+
+Installation: pip install requests_ntlm
+
+Ref: https://pypi.org/project/requests_ntlm/
+
+Q3: How would you fix the "No module named 'scrapy.contrib'"?
+Answer:
+'scrapy.contrib' package has been deprecated.
+
+Ref: https://docs.scrapy.org/en/latest/news.html#deprecation-removals
+
+It has been replaced with "scrapy.extensions":
+
+Such as "scrapy.contrib.feedexport.FileFeedStorage" is changed to 'scrapy.extensions.feedexport.FileFeedStorage'.
+
+Ref: https://github.com/scrapy/scrapy/blob/master/docs/topics/feed-exports.rst
+
+Q4: Can we use local filesystem for dumping Scrapy response on Windows?
+Answer: No.
+
+Local filesystem
+The feeds are stored in the local filesystem.
+
+URI scheme: file
+Example URI: file:///tmp/export.csv
+Required external libraries: none
+Note that for the local filesystem storage (only) you can omit the scheme if you specify an absolute path like /tmp/export.csv. This only works on Unix systems though.
+Ref: http://doc.scrapy.org/en/latest/topics/feed-exports.html#topics-feed-storage-fs
+
+Q5: How would you dump Scrapy response into MongoDB?
+Ans:
+
+Ref: MONGO: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
+Q6: How would you dump Scrapy response into PostGRE?
+Ans:
+
+Ref: https://medium.com/codelog/store-scrapy-crawled-data-in-postgressql-2da9e62ae272
+
+Q7: Write simple Spider code that would retrieve all the links and their contents from a starting page (or starting URL).
+
+Ans:
+# Ref: https://blog.theodo.com/2018/02/scrape-websites-5-minutes-scrapy/
+
+<i style="color: darkgreen;">import scrapy
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
+from scrapy.item import Item, Field
+
+class XyzSpider(scrapy.Spider):
+    name = 'xyz'
+    allowed_domains = ['survival8.blogspot.com']
+    start_urls = ['https://survival8.blogspot.com/p/index-of-lessons-in-technology.html']
+
+    def parse(self, response):
+        NEXT_PAGE_SELECTOR = 'a ::attr(href)'
+        next_page = response.css(NEXT_PAGE_SELECTOR)
+        for np in next_page:
+            yield response.follow(np, callback = self.parse_article)
+    
+    def parse_article(self, response):
+        yield {'text': response.text}</i>
+
+Q8: What is a robots.txt file?
+Ans:
+A robots.txt file tells search engine crawlers which pages or files the crawler can or can't request from your site. This is used mainly to avoid overloading your site with requests; it is not a mechanism for keeping a web page out of Google. To keep a web page out of Google, you should use noindex directives, or password-protect your page.
+
+Ref: https://support.google.com/webmasters/answer/6062608?hl=en
+
+Q9: What is robots.txt used for?
+Ans:
+"robots.txt" is used primarily to manage crawler traffic to your site, and usually to keep a page off Google, depending on the file type:
+
+Page Type --- Traffic Management --- Hide from Google
+
+Web page --- Yes --- No [For web pages (HTML, PDF, or other non-media formats that Google can read), robots.txt can be used to manage crawling traffic if you think your server will be overwhelmed by requests from Google's crawler, or to avoid crawling unimportant or similar pages on your site.
+
+You should not use robots.txt as a means to hide your web pages from Google Search results. This is because, if other pages point to your page with descriptive text, your page could still be indexed without visiting the page. If you want to block your page from search results, use another method such as password protection or a noindex directive.
+
+If your web page is blocked with a robots.txt file, it can still appear in search results, but the search result will not have a description and look something like this. Image files, video files, PDFs, and other non-HTML files will be excluded. If you see this search result for your page and want to fix it, remove the robots.txt entry blocking the page. If you want to hide the page completely from search, use another method.]
+
+Media file --- Yes --- Yes
+
+Resource file --- Yes --- Yes
+
+Ref: https://support.google.com/webmasters/answer/6062608?hl=en 
+
+Q10: What is the use of this HTML tag 'meta name="ROBOTS" content="NOFOLLOW"'?
+Ans:
+The NOFOLLOW value tells search engines NOT to follow (discover) the pages that are LINKED TO on this page. Sometimes developers will add the NOINDEX,NOFOLLOW meta robots tag on development websites, so that search engines don't accidentally start sending traffic to a website that is still under construction.
+      
+Ref: SEO Basics: https://www.hermesthemes.com/meta-robots-noindex-nofollow/
+</pre>

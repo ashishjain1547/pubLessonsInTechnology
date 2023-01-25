@@ -1,0 +1,101 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+</br>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>We will create a Spider as shown in this link:
+https://survival8.blogspot.com/p/getting-started-with-scrapy.html
+
+The name of our Spider is "xyz".
+
+The code for it goes into the directory with heirarchy of this sort: D:\myscrapers\ourfirstscraper\spiders\xyz.py
+
+<i style="color: darkgreen">import scrapy
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
+from scrapy.item import Item, Field
+
+class XyzSpider(scrapy.Spider):
+    name = 'xyz'
+    allowed_domains = ['wikipedia.org']
+    start_urls = ['https://en.wikipedia.org/wiki/List_of_programming_languages']
+
+    def parse(self, response):
+        NEXT_PAGE_SELECTOR = 'a ::attr(href)'
+        next_page = response.css(NEXT_PAGE_SELECTOR)
+        for np in next_page:
+            yield response.follow(np, callback = self.parse_article)
+    
+    def parse_article(self, response):
+        body = u''.join(response.xpath('//body/descendant-or-self::*[not(self::script)]/text()').extract()).strip()
+        
+        yield {'text': body}</i>
+
+
+# FEED_URI goes in this file: D:\myscrapers\ourfirstscraper\settings.py
+
+On the running the spider with: "scrapy crawl xyz", we get logs that have following highlights:
+
+<i style="color: darkblue;"># 2020-01-14 19:04:01 [scrapy.extensions.feedexport] INFO: Stored json feed (766 items) in: D:/myscrapers/response_logs.json
+# Size of logs: 12.5 MB</i>
+
+ISSUES:
+
+We cannot do Named Entity Recognition (NER) with SpaCy on it due to the following RAM usage restriction:
+
+Logs:
+
+<i style="color: darkblue;">ValueError : Traceback (most recent call last)
+[timed exec] in [module]
+
+~\AppData\Local\Continuum\anaconda3\lib\site-packages\spacy\language.py in __call__(self, text, disable)
+    337         if len(text) > self.max_length:
+    338             raise ValueError(Errors.E088.format(length=len(text),
+--> 339                                                 max_length=self.max_length))
+    340         doc = self.make_doc(text)
+    341         for name, proc in self.pipeline:
+
+ValueError: [E088] Text of length 23966182 exceeds maximum of 1000000. The v2.x parser and NER models require roughly 1GB of temporary memory per 100,000 characters in the input. This means long texts may cause memory allocation errors. If you're not using the parser or NER, it's probably safe to increase the `nlp.max_length` limit. The limit is in number of characters, so you can check whether your inputs are too long by checking `len(text)`.</i>
+
+ATTEMPTS WITH A CORPUS OF EVEN SMALLER SIZE:
+
+Attempt with corpus of a file size of 496 KB.
+
+FILENAME: response_logs (languages starting with letter J).json
+
+The system's entire 16 GB RAM is used up in processing and system crashes.
+</pre>

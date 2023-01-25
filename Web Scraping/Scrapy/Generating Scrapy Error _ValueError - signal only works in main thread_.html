@@ -1,0 +1,573 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>(base) D:\workspace\Jupyter\exp_52_scrapy\ourfirstscraper>
+
+>>> for dirpath, subdirs, files in os.walk("."):
+...  for f in files:
+...   print(os.path.join(dirpath, f))
+...   os.system("type " + os.path.join(dirpath, f))
+...   print(" ----------------------------------------------- ")
+...
+
+.\client.py
+
+import requests
+headers = {'content-type': 'application/json'}
+
+URL = "http://127.0.0.1:5050/helloworld"
+r = requests.post(url = URL, json = {}, headers = headers)
+
+print("Response text: " + r.text)
+
+URL = "http://127.0.0.1:5050/helloworld"
+r = requests.post(url = URL, json = {}, headers = headers)
+
+print("Response text: " + r.text)
+
+ -----------------------------------------------
+ 
+.\crawler.py
+ 
+from scrapy.crawler import CrawlerProcess
+
+from ourfirstscraper.spiders.survival8 import Survival8Spider
+
+class MyCrawler():
+
+    def start_crawler(self):
+        print('inside start_crawler')
+        process = CrawlerProcess()
+        process.crawl(Survival8Spider, depth = 1, args={'callback': self.return_spider_output})
+        process.start()
+
+    def return_spider_output(self, response):
+        print("return_spider_output")
+
+ -----------------------------------------------
+ 
+.\scrapy.cfg
+ 
+# Automatically created by: scrapy startproject
+#
+# For more information about the [deploy] section see:
+# https://scrapyd.readthedocs.io/en/latest/deploy.html
+
+[settings]
+default = ourfirstscraper.settings
+
+[deploy]
+#url = http://localhost:6800/
+project = ourfirstscraper
+
+ -----------------------------------------------
+ 
+.\server.py
+ 
+import re
+
+# Flask Imports
+from flask_cors import CORS, cross_origin
+from flask import Flask, request
+import os
+
+from crawler import MyCrawler
+
+app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+# POST
+@app.route("/helloworld", methods = ['POST'])
+@cross_origin()
+def helloWorld():
+    print("Content-Type: " + request.headers['Content-Type'])
+
+    if request.headers['Content-Type'] == 'text/plain':
+        return "Request from client is: " + request.data
+
+    elif(request.headers['Content-Type'] in  ['application/json', 'application/json; charset=utf-8']):
+        # For C#: request.headers['Content-Type'] == 'application/json; charset=utf-8'
+        # For Python: request.headers['Content-Type'] == 'application/json'
+        # For AngularJS due to the "Content-Type" headers == 'application/json'
+        print("request.json: " + str(request.json))
+
+    mcrawl = MyCrawler()
+    mcrawl.start_crawler()
+
+
+    return "Exiting helloWorld()"
+
+# GET
+@app.route("/")
+@cross_origin() # allow all origins all methods.
+def hello():
+    return "Hello, cross-origin-world!"
+
+if __name__ == "__main__":
+    app.run(host = "0.0.0.0", port = 5050)0
+
+ -----------------------------------------------
+0
+.\__init__.py
+ -----------------------------------------------
+ 
+.\ourfirstscraper\items.py
+ 
+# -*- coding: utf-8 -*-
+
+# Define here the models for your scraped items
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+class OurfirstscraperItem(scrapy.Item):
+    # define the fields for your item here like:
+    # name = scrapy.Field()
+    pass
+
+ -----------------------------------------------
+ 
+.\ourfirstscraper\middlewares.py
+ 
+# -*- coding: utf-8 -*-
+
+# Define here the models for your spider middleware
+#
+# See documentation in:
+# https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
+from scrapy import signals
+
+
+class OurfirstscraperSpiderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the spider middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_spider_input(self, response, spider):
+        # Called for each response that goes through the spider
+        # middleware and into the spider.
+
+        # Should return None or raise an exception.
+        return None
+
+    def process_spider_output(self, response, result, spider):
+        # Called with the results returned from the Spider, after
+        # it has processed the response.
+
+        # Must return an iterable of Request, dict or Item objects.
+        for i in result:
+            yield i
+
+    def process_spider_exception(self, response, exception, spider):
+        # Called when a spider or process_spider_input() method
+        # (from other spider middleware) raises an exception.
+
+        # Should return either None or an iterable of Request, dict
+        # or Item objects.
+        pass
+
+    def process_start_requests(self, start_requests, spider):
+        # Called with the start requests of the spider, and works
+        # similarly to the process_spider_output() method, except
+        # that it doesnΓÇÖt have a response associated.
+
+        # Must return only requests (not items).
+        for r in start_requests:
+            yield r
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class OurfirstscraperDownloaderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the downloader middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_request(self, request, spider):
+        # Called for each request that goes through the downloader
+        # middleware.
+
+        # Must either:
+        # - return None: continue processing this request
+        # - or return a Response object
+        # - or return a Request object
+        # - or raise IgnoreRequest: process_exception() methods of
+        #   installed downloader middleware will be called
+        return None
+
+    def process_response(self, request, response, spider):
+        # Called with the response returned from the downloader.
+
+        # Must either;
+        # - return a Response object
+        # - return a Request object
+        # - or raise IgnoreRequest
+        return response
+
+    def process_exception(self, request, exception, spider):
+        # Called when a download handler or a process_request()
+        # (from other downloader middleware) raises an exception.
+
+        # Must either:
+        # - return None: continue processing this exception
+        # - return a Response object: stops process_exception() chain
+        # - return a Request object: stops process_exception() chain
+        pass
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)
+
+ -----------------------------------------------
+
+.\ourfirstscraper\pipelines.py
+
+# -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+class OurfirstscraperPipeline(object):
+    def process_item(self, item, spider):
+        return item
+
+ -----------------------------------------------
+
+.\ourfirstscraper\settings.py
+
+# -*- coding: utf-8 -*-
+
+# Scrapy settings for ourfirstscraper project
+#
+# For simplicity, this file contains only settings considered important or
+# commonly used. You can find more settings consulting the documentation:
+#
+#     https://docs.scrapy.org/en/latest/topics/settings.html
+#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'ourfirstscraper'
+
+SPIDER_MODULES = ['ourfirstscraper.spiders']
+NEWSPIDER_MODULE = 'ourfirstscraper.spiders'
+
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'ourfirstscraper (+http://www.yourdomain.com)'
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = True
+
+# Configure maximum concurrent requests performed by Scrapy (default: 16)
+#CONCURRENT_REQUESTS = 32
+
+# Configure a delay for requests for the same website (default: 0)
+# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
+# See also autothrottle settings and docs
+#DOWNLOAD_DELAY = 3
+# The download delay setting will honor only one of:
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+# Disable cookies (enabled by default)
+#COOKIES_ENABLED = False
+
+# Disable Telnet Console (enabled by default)
+#TELNETCONSOLE_ENABLED = False
+
+# Override the default request headers:
+#DEFAULT_REQUEST_HEADERS = {
+#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#   'Accept-Language': 'en',
+#}
+
+# Enable or disable spider middlewares
+# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'ourfirstscraper.middlewares.OurfirstscraperSpiderMiddleware': 543,
+#}
+
+# Enable or disable downloader middlewares
+# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'ourfirstscraper.middlewares.OurfirstscraperDownloaderMiddleware': 543,
+#}
+
+# Enable or disable extensions
+# See https://docs.scrapy.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# Configure item pipelines
+# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'ourfirstscraper.pipelines.OurfirstscraperPipeline': 300,
+#}
+
+# Enable and configure the AutoThrottle extension (disabled by default)
+# See https://docs.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# Enable and configure HTTP caching (disabled by default)
+# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+ -----------------------------------------------
+0
+.\ourfirstscraper\__init__.py
+ -----------------------------------------------
+ 
+.\ourfirstscraper\spiders\survival8.py
+ 
+# (base) D:\workspace\Jupyter\exp_52_scrapy>scrapy startproject ourfirstscraper
+# New Scrapy project 'ourfirstscraper', using template directory 'c:\users\ashish\appdata\local\continuum\anaconda3\lib\site-packages\scrapy\templates\project', created in:
+#     D:\workspace\Jupyter\exp_52_scrapy\ourfirstscraper
+
+# You can start your first spider with:
+#     cd ourfirstscraper
+#     scrapy genspider example example.com
+
+# (base) D:\workspace\Jupyter\exp_52_scrapy>cd ourfirstscraper
+
+# (base) D:\workspace\Jupyter\exp_52_scrapy\ourfirstscraper>scrapy genspider survival8 survival8.blogspot.com
+# Created spider 'survival8' using template 'basic' in module:
+#   ourfirstscraper.spiders.survival8
+
+# -*- coding: utf-8 -*-
+import scrapy
+from scrapy import Request
+
+from urllib.parse import urljoin, urlsplit, urlunsplit, urlparse
+
+class Survival8Spider(scrapy.Spider):
+    name = 'survival8'
+    allowed_domains = ['survival8.blogspot.com']
+    start_urls = ['http://survival8.blogspot.com/p/index-of-lessons-in-technology.html']
+
+    def __init__(self, *args, **kwargs):
+      super(Survival8Spider, self).__init__(*args, **kwargs)
+      if kwargs.get('depth'):
+        self.d = int(kwargs.get('depth'))
+
+      else:
+        self.d = 0 # Handle exception here.
+
+        #print("Exception handled for the case of 'no url to start with!'")
+        #raise Exception
+
+    def parse(self, response):
+        sites = response.xpath('//a')
+
+        split_url = urlsplit(response.url)
+
+        urls = []
+
+        for site in sites:
+            site = site.xpath('@href').extract()
+            temp = []
+            if len(site) > 0 and "mailto:" not in site[0]:
+                if "://" in site[0] :
+                    temp.append("" + site[0]) # "site[0]" is giving a list of all the characters in the URL string instead of a single string.
+                else:
+                    temp.append(split_url.scheme + "://" + split_url.netloc + site[0])
+                urls.append(temp)
+
+        for i in range(len(urls)):
+            for url in urls[i]:
+                request = Request(url, callback=self.extract_urls, cb_kwargs = dict(urls = urls))
+                print("FROM PARSE")
+                print(request)
+                return request
+
+    def extract_urls(self, response, urls):
+        sites = response.xpath('//a')
+        urls.append(sites)
+        print("FROM EXTRACT_URLS")
+        print(sites)
+        return sites
+
+class MyCrawler():
+
+    def start_crawler(self):
+        print('inside start_crawler')
+        process = CrawlerProcess()
+        process.crawl(Survival8Spider, depth = 1, args={'callback': self.return_spider_output})
+        process.start()
+
+    def return_spider_output(self, response):
+        print("return_spider_output")
+
+ -----------------------------------------------
+
+.\ourfirstscraper\spiders\__init__.py
+
+# This package will contain the spiders of your Scrapy project
+#
+# Please refer to the documentation for information on how to create and manage
+# your spiders.
+
+ -----------------------------------------------
+>>>
+
+LOGS:
+<i style="color: red">
+
+(swagger) D:\workspace\Jupyter\exp_52_scrapy\ourfirstscraper>python server.py
+ * Serving Flask app "server" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5050/ (Press CTRL+C to quit)
+Content-Type: application/json
+request.json: {}
+inside start_crawler
+[2020-03-04 22:50:24,329] ERROR in app: Exception on /helloworld [POST]
+Traceback (most recent call last):
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask_cors\extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "server.py", line 30, in helloWorld
+    hcrawl.start_crawler()
+  File "D:\workspace\Jupyter\exp_52_scrapy\ourfirstscraper\crawler.py", line 9, in start_crawler
+    process = CrawlerProcess()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\scrapy\crawler.py", line 268, in __init__
+    install_shutdown_handlers(self._signal_shutdown)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\scrapy\utils\ossignal.py", line 22, in install_shutdown_handlers
+    reactor._handleSignals()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\twisted\internet\posixbase.py", line 295, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\twisted\internet\base.py", line 1243, in _handleSignals
+    signal.signal(signal.SIGINT, self.sigInt)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+ValueError: signal only works in main thread
+127.0.0.1 - - [04/Feb/2019 22:50:24] "POST /helloworld HTTP/1.1" 500 -
+Content-Type: application/json
+request.json: {}
+inside start_crawler
+[2020-03-04 22:50:24,557] ERROR in app: Exception on /helloworld [POST]
+Traceback (most recent call last):
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask_cors\extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\flask_cors\decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "server.py", line 30, in helloWorld
+    hcrawl.start_crawler()
+  File "D:\workspace\Jupyter\exp_52_scrapy\ourfirstscraper\crawler.py", line 9, in start_crawler
+    process = CrawlerProcess()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\scrapy\crawler.py", line 268, in __init__
+    install_shutdown_handlers(self._signal_shutdown)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\scrapy\utils\ossignal.py", line 22, in install_shutdown_handlers
+    reactor._handleSignals()
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\twisted\internet\posixbase.py", line 295, in _handleSignals
+    _SignalReactorMixin._handleSignals(self)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\site-packages\twisted\internet\base.py", line 1243, in _handleSignals
+    signal.signal(signal.SIGINT, self.sigInt)
+  File "C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\swagger\lib\signal.py", line 47, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+ValueError: signal only works in main thread
+127.0.0.1 - - [04/Feb/2019 22:50:24] "POST /helloworld HTTP/1.1" 500 -
+</i>
+
+Google Drive Link to code:
+https://drive.google.com/open?id=1D5OP2e6hKuekliN2pbDpQZJopafW-OnP
+
+</pre>
+

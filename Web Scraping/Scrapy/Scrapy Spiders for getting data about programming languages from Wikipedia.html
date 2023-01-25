@@ -1,0 +1,100 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+</br>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>First, create a Scrapy project as shown in this post: <a href="https://survival8.blogspot.com/p/getting-started-with-scrapy.html">Getting Started with Scrapy</a>
+
+Then do the following changes in the "settings.py" file:
+
+File: D:\workspace\Jupyter\myscrapers\ourfirstscraper\settings.py
+
+<i style="color: darkgreen">FEED_FORMAT="json"
+FEED_URI="D:/workspace/Jupyter/myscrapers/response_logs.json"
+FEED_STORAGES={'d': 'scrapy.extensions.feedexport.FileFeedStorage'}</i>
+
+
+How to execute the spider 'xyz': 
+<i style="color: darkgreen">(base) D:\workspace\Jupyter\myscrapers\ourfirstscraper>scrapy crawl xyz</i>
+
+# Spider 1: To extract the names of all the programming languages listed on a Wikipedia page:
+
+<i style="color: darkgreen">import scrapy
+
+class XyzSpider(scrapy.Spider):
+    name = 'xyz'
+    allowed_domains = ['wikipedia.org']
+    start_urls = ['https://en.wikipedia.org/wiki/List_of_programming_languages']
+
+    def parse(self, response):
+        body = ';'.join(response.xpath('//a/text()').extract())
+        
+        yield { 'text': body }</i>
+
+Logs in JSON file:
+
+<i style="color: darkblue">[{"text": "...;1C:Enterprise programming language;A# .NET;A-0 System;A+;A++;ABAP;ABC;ABC ALGOL;ACC;Accent;..."}]</i>
+
+--- --- --- --- ---
+
+# Spider 2: To extract the contents of the Wikipedia pages for the programming languages "Python, C, C#, C++, ECMAScript, Java":
+
+<i style="color: darkgreen">import scrapy
+
+class XyzSpider(scrapy.Spider):
+    name = 'xyz'
+    allowed_domains = ['wikipedia.org']
+    start_urls = [
+        'https://en.wikipedia.org/wiki/Python_(programming_language)',
+        'https://en.wikipedia.org/wiki/C_(programming_language)',
+        'https://en.wikipedia.org/wiki/C_Sharp_(programming_language)',
+        'https://en.wikipedia.org/wiki/C%2B%2B', # For C++.
+        'https://en.wikipedia.org/wiki/ECMAScript',
+        'https://en.wikipedia.org/wiki/Java_(programming_language)',
+    ]
+
+    def parse(self, response):
+        body = u''.join(response.xpath('//body/descendant-or-self::*[not(self::script)]/text()').extract()).strip()
+        
+        yield { 'url': response.url, 'text': body }</i>
+
+--- --- --- --- ---
+
+The reason we are extracting for only these six pages is that we can not process a corpus having text of length that exceeds a maximum of 1000000 for NER using SpaCy.
+        
+
+</pre>

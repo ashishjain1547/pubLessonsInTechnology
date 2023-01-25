@@ -1,0 +1,67 @@
+#1
+Exception occurred for: <newspaper.article.Article object at 0x00000248F12896D8> and 2020-08-08T16:55:21Z
+Article `download()` failed with 503 Server Error: Service Unavailable for url: https://www.marketwatch.com/story/profit-up-87-at-buffetts-berkshire-but-coronavirus-slows-businesses-2020-08-08 on URL https://www.marketwatch.com/story/profit-up-87-at-buffetts-berkshire-but-coronavirus-slows-businesses-2020-08-08
+
+#2
+Exception occurred for: <newspaper.article.Article object at 0x00000248F1297B70> and 2020-08-11T22:59:42Z
+Article `download()` failed with 403 Client Error: Forbidden for url: https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues on URL https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues
+
+#3
+Exception occurred for: <newspaper.article.Article object at 0x00000248F12AC550> and 2020-08-11T16:17:55Z
+Article `download()` failed with HTTPSConnectionPool(host='www.freerepublic.com', port=443): Max retries exceeded with url: /focus/f-news/3873373/posts (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])"))) on URL https://www.freerepublic.com/focus/f-news/3873373/posts
+
+
+
+
+
+
+(base) C:\Users\Ashish Jain>python
+Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+
+
+
+>>> requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues')
+<Response [200]>
+
+
+
+>>> requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text
+'<!DOCTYPE html><html itemscope="" itemtype="https://schema.org/WebPage" lang="en"><head><meta charset="utf-8" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><meta content="width=device-width" name="viewport" /><title>The Greatest Disconnect Between Stocks And The Economy Continues | Seeking Alpha</title><meta content="Seeking Alpha" name="application-name" /><meta content="true" name="HandheldFriendly" /><meta content="com.seekingalpha.Web" name="appleid-signin-client-id" /><meta content="name email" name="appleid-
+...</html>
+
+
+
+>>> with open('html.txt', 'w') as f:
+...  f.write(requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text)
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+  File "E:\programfiles\Anaconda3\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\ufeff' in position 13665: character maps to <undefined>
+
+
+
+>>> with open('html.txt', 'wb') as f:
+...  f.write(requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text)
+...
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+TypeError: a bytes-like object is required, not 'str'
+
+
+
+>>>
+
+>>>
+>>> with open('html.txt', 'w', encoding="utf-8") as f:
+...  f.write(requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text)
+...
+636685
+>>>   
+
+
+
+NewsApiClient(api_key='de45983dd8c648b8bf0bbddec2ef3622')

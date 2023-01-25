@@ -1,0 +1,5 @@
+(base) ~/Desktop$ python response_header_info.py 
+
+{'Content-Type': 'text/html; charset=UTF-8', 'Expires': 'Tue, 16 Feb 2021 10:13:29 GMT', 'Date': 'Tue, 16 Feb 2021 10:13:29 GMT', 'Cache-Control': 'private, max-age=0', 'Last-Modified': 'Tue, 16 Feb 2021 08:54:25 GMT', 'ETag': 'W/"047a2cb250a2ad10a53227bf4085727f97833f5235788c95f99a149e4d1afa68"', 'Content-Encoding': 'gzip', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Content-Length': '135818', 'Server': 'GSE'}
+
+

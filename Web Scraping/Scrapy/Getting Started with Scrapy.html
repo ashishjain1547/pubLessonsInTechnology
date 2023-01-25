@@ -1,0 +1,138 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>
+<b>Set up your system </b>
+Scrapy supports both versions of Python 2 and 3. If you’re using Anaconda, you can install the package from the conda-forge channel, which has up-to-date packages for Linux, Windows and OS X.
+
+To install Scrapy using conda, run:
+
+<i>conda install -c conda-forge scrapy</i>
+Alternatively, if you’re on Linux or Mac OSX, you can directly install scrapy by:
+
+<i>pip install scrapy</i>
+
+<b>Scrapy Shell </b>
+Scrapy provides a shell of its own that you can use to experiment. To start the scrapy shell in your command line type:
+
+<i>scrapy shell</i>
+
+To run the crawler in the shell type:
+
+<i>fetch("https://www.wikipedia.org/")</i>
+
+When you crawl something with scrapy it returns a “response” object that contains the downloaded information. Let’s see what the crawler has downloaded:
+
+<i>view(response)</i>
+
+Let’s see how does the raw content looks like:
+
+<i>print(response.text)</i>
+
+Digging more:
+<i>response.css(".title::text").extract_first()</i>
+
+Here response.css(..) is a function that helps extract content based on css selector passed to it. The ‘.’ is used with the title because it’s a css . Also you need to use ::text to tell your scraper to extract only text content of the matching elements. This is done because scrapy directly returns the matching element along with the HTML code. 
+
+So far:
+
+<b>response</b> – An object that the scrapy crawler returns. This object contains all the information about the downloaded content.
+
+<b>response.css(...)</b> – Matches the element with the given CSS selectors.
+
+<b>extract_first(...)</b> – Extracts the “first” element that matches the given criteria.
+
+<b>extract(...)</b> – Extracts “all” the elements that match the given criteria.
+
+<b>Writing Custom Spiders </b>
+
+Let’s exit the scrapy shell first and create a new scrapy project:
+
+<i>(base) D:\workspace\Jupyter\exp_44_scrapy>scrapy startproject ourfirstscraper</i>
+LOGS:
+<i style="color: #0000ff">New Scrapy project 'ourfirstscraper', using template directory 'c:\users\ashish\appdata\local\continuum\anaconda3\lib\site-packages\scrapy\templates\project', created in:
+D:\workspace\Jupyter\exp_44_scrapy\ourfirstscraper
+
+You can start your first spider with:
+    cd ourfirstscraper
+    scrapy genspider example example.com
+</i>
+For now, the two most important files are:
+
+<b>settings.py</b> – This file contains the settings you set for your project, you’ll be dealing a lot with it.
+
+<b>spiders/</b> – This folder is where all your custom spiders will be stored. Every time you ask scrapy to run a spider, it will look for it in this folder.
+
+<b>Creating a spider</b>
+
+Let’s change directory into our first scraper and create a basic spider "wikipedia":
+
+<i>scrapy genspider wikipedia www.wikipedia.org</i>
+
+Few things to note here:
+
+<b>name</b> : Name of the spider, in this case it is “wikipedia”. Naming spiders properly becomes a huge relief when you have to maintain hundreds of spiders.
+
+<b>allowed_domains</b> : An optional list of strings containing domains that this spider is allowed to crawl. Requests for URLs not belonging to the domain names specified in this list won’t be followed.
+
+<b>parse(self, response)</b> : This function is called whenever the crawler successfully crawls a URL. Remember the response object from earlier? This is the same response object that is passed to the parse(..).
+
+<b>Code that goes in 'spiders/wikipedia.py': </b>
+<i>
+# -*- coding: utf-8 -*-
+import scrapy
+
+class WikipediaSpider(scrapy.Spider):
+    name = 'wikipedia'
+    allowed_domains = ['wikipedia.org']
+    start_urls = ['http://wikipedia.org/']
+
+    def parse(self, response):
+        rtnVal = {"text": response.text}
+        yield rtnVal
+</i>
+And to run the spider :
+
+<i>(base) D:\workspace\Jupyter\exp_44_scrapy\ourfirstscraper>scrapy crawl wikipedia </i>
+
+#Ref: https://docs.scrapy.org/en/latest/topics/spiders.html#topics-spiders
+#Ref: https://www.analyticsvidhya.com/blog/2017/07/web-scraping-in-python-using-scrapy/
+</pre>

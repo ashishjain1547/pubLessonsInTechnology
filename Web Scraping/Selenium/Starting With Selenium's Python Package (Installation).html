@@ -1,0 +1,171 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+        success: function (result) {
+          $("span.customTempCodeHolderForSocialMedia").html(result);
+          $("div.customSocialMediaBtnsWrapper").html(
+            $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+          );
+        }
+
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <style>
+    .customTempCodeHolderForSocialMedia {
+      display: none;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-Xre3MDXnyZw/X1-mKa3yNwI/AAAAAAAAFd4/eZpW2J4OIX4wOnf48GWeLFiQi5Kii3TigCLcBGAsYHQ/s0/Selenium.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="417" data-original-width="400" src="https://1.bp.blogspot.com/-Xre3MDXnyZw/X1-mKa3yNwI/AAAAAAAAFd4/eZpW2J4OIX4wOnf48GWeLFiQi5Kii3TigCLcBGAsYHQ/s0/Selenium.png"/></a></div>
+  
+We have a YAML file to setup our conda environment. The file 'selenium.yml' has contents:
+
+<i style="color: blue">name: selenium
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - selenium
+  - jupyterlab
+  - ipykernel </i>
+
+To setup the environment, we run the command:
+
+<i style="color: blue">(base) CMD> conda env create -f selenium.yml 
+
+(selenium) CMD> conda activate selenium </i>
+
+After that, if we want to see which all packages got installed, we run the command:
+
+<i style="color: blue">(selenium) CMD> conda env export </i>
+
+Next, we setup a kernel from this environment:
+
+<i style="color: blue">(selenium) CMD> python -m ipykernel install --user --name selenium </i>
+<i style="color: green">Installed kernelspec selenium in C:\Users\Ashish Jain\AppData\Roaming\jupyter\kernels\selenium </i>
+
+To view the list of kernels:
+
+<i style="color: blue">(selenium) CMD> jupyter kernelspec list </i>
+<i style="color: green">Available kernels:
+  selenium              C:\Users\Ashish Jain\AppData\Roaming\jupyter\kernels\selenium
+  python3               E:\programfiles\Anaconda3\envs\selenium\share\jupyter\kernels\python3 
+  ... </i>
+  
+A basic piece of code would start the browser. We have tried and tested it for Chrome and Firefox. To do this, we need the web driver file or we get the following exception:
+
+CODE:
+
+<i style="color: blue">from selenium import webdriver  
+import time  
+from selenium.webdriver.common.keys import Keys  
+
+driver = webdriver.Chrome()  </i>
+
+ERROR:
+
+<i style="color: red">----------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+E:\programfiles\Anaconda3\envs\selenium\lib\site-packages\selenium\webdriver\common\service.py in start(self)
+     71             cmd.extend(self.command_line_args())
+---> 72             self.process = subprocess.Popen(cmd, env=self.env,
+     73                                             close_fds=platform.system() != 'Windows',
+
+E:\programfiles\Anaconda3\envs\selenium\lib\subprocess.py in __init__(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, encoding, errors, text)
+    853 
+--> 854             self._execute_child(args, executable, preexec_fn, close_fds,
+    855                                 pass_fds, cwd, env,
+
+E:\programfiles\Anaconda3\envs\selenium\lib\subprocess.py in _execute_child(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, unused_restore_signals, unused_start_new_session)
+   1306             try:
+-> 1307                 hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+   1308                                          # no special security
+
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+During handling of the above exception, another exception occurred:
+
+WebDriverException                        Traceback (most recent call last)
+...
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home </i>
+
+We got the file from here: <a href="https://chromedriver.storage.googleapis.com/index.html?path=86.0.4240.22/" target="_blank">chromedriver.storage.googleapis.com For v86</a> 
+
+chromedriver_win32.zip ---> chromedriver.exe
+
+Error for WebDriver and Browser version mismatch:
+
+<i style="color: red">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 86
+Current browser version is 85.0.4183.102 with binary path C:\Program Files (x86)\Google\Chrome\Application\chrome.exe </i>
+
+Download from here for Chrome v85: <a href="https://chromedriver.storage.googleapis.com/index.html?path=85.0.4183.87/" target="_blank">chromedriver.storage.googleapis.com For v85</a> 
+
+One point to note about ChromeDriver as in September 2020:
+
+<b>ChromeDriver only supports characters in the BMP (Basic Multilingual Plane) is a known issue with Chromium team as ChromeDriver still doesn't support characters with a Unicode after FFFF. Hence it is impossible to send any character beyond FFFF via ChromeDriver. As a result any attempt to send SMP (Supplementary Multilingual Plane) characters (e.g. CJK, Emojis, Symbols, etc) raises the error. 
+
+While Firefox supports Emoji's sent via 'send_keys()' method. 
+
+As of Unicode 13.0, the SMP comprises the following 134 blocks: Archaic Greek and Other Left-to-right scripts: Linear B Syllabary (10000–1007F) Linear B Ideograms (10080–100FF). </b>
+
+~ ~ ~ ~ ~
+
+If you working with Firefox browser, you need the Gecko WebDriver available at the Windows 'PATH' variable.
+
+<i style="color: red">Without WebDriver file:
+	FileNotFoundError: [WinError 2] The system cannot find the file specified
+	WebDriverException: Message: 'geckodriver' executable needs to be in PATH. </i>
+
+Download Gecko driver from here: <a href="https://github.com/mozilla/geckodriver/releases" target="_blank">GitHub Repo of Mozilla </a>
+
+The statement to launch the web browser will be: 
+
+<i style="color: blue">driver = webdriver.Firefox()  </i>
+
+By default, browsers open in a partial size window. To maximize the window: 
+
+<i style="color: blue">driver.maximize_window() </i>
+
+Now, we open a link: driver.get("http://survival8.blogspot.com/")
+
+</pre>

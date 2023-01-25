@@ -1,0 +1,263 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>FIRST, GENERATING THE GENERIC BOILERPLATE SPIDER CODE:
+
+(base) D:\exp_54>scrapy startproject myscraper
+New Scrapy project 'myscraper', using template directory 'c:\users\ashish\appdata\local\continuum\anaconda3\lib\site-packages\scrapy\templates\project', created in:
+    D:\exp_54\myscraper
+
+You can start your first spider with:
+    cd myscraper
+    scrapy genspider example example.com
+
+(base) D:\exp_54>
+
+...
+
+(base) D:\exp_54>cd myscraper
+
+(base) D:\exp_54\myscraper>scrapy genspider jenkins wikipedia.org
+Created spider 'jenkins' using template 'basic' in module:
+  myscraper.spiders.jenkins
+ 
+...
+    
+LOGS FOR THE CASE OF SUCCESS:
+
+SPIDER CODE:
+
+# -*- coding: utf-8 -*-
+import scrapy
+
+class JenkinsSpider(scrapy.Spider):
+    name = 'jenkins'
+
+    allowed_domains = ['wikipedia.org']
+    start_urls = ['https://wikipedia.org']
+
+    def parse(self, response):
+        rtnVal = {"text": response.text}
+        yield rtnVal
+
+LOGS:
+
+(base) D:\exp_54\myscraper>scrapy crawl jenkins
+
+<i style="color:green">2020-01-01 12:57:02 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: myscraper)
+2020-01-01 12:57:02 [scrapy.utils.log] INFO: Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 18.0.0 (OpenSSL 1.1.1a  20 Nov 2018), cryptography 2.4.2, Platform Windows-10-10.0.16299-SP0
+2020-01-01 12:57:02 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'myscraper', 'NEWSPIDER_MODULE': 'myscraper.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['myscraper.spiders']}
+2020-01-01 12:57:05 [scrapy.extensions.telnet] INFO: Telnet Password: 02d4f5cdde3160c1
+2020-01-01 12:57:07 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-01 12:57:09 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-01 12:57:09 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-01 12:57:09 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2020-01-01 12:57:09 [scrapy.core.engine] INFO: Spider opened
+2020-01-01 12:57:10 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-01 12:57:10 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-01-01 12:57:12 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://www.wikipedia.org/robots.txt> from [[ GET https://wikipedia.org/robots.txt>
+2020-01-01 12:57:13 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://en.wikipedia.org/robots.txt> from [[ GET https://www.wikipedia.org/robots.txt>
+2020-01-01 12:57:14 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://en.wikipedia.org/robots.txt> (referer: None)
+2020-01-01 12:57:14 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://www.wikipedia.org/> from [[ GET https://wikipedia.org>
+2020-01-01 12:57:15 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://en.wikipedia.org/robots.txt> from [[ GET https://www.wikipedia.org/robots.txt>
+2020-01-01 12:57:15 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://en.wikipedia.org/robots.txt> (referer: None)
+2020-01-01 12:57:16 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://www.wikipedia.org/> (referer: None)
+2020-01-01 12:57:16 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.wikipedia.org/>
+<b>{'text': 'all the Wikipedia page HTML comes here... ... ...'}</b>
+2020-01-01 12:57:16 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-01-01 12:57:16 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 2194,
+ 'downloader/request_count': 7,
+ 'downloader/request_method_count/GET': 7,
+ 'downloader/response_bytes': 34251,
+ 'downloader/response_count': 7,
+ 'downloader/response_status_count/200': 3,
+ 'downloader/response_status_count/301': 4,
+ 'elapsed_time_seconds': 6.365701,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 3, 12, 7, 27, 16, 431765),
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 8,
+ 'log_count/INFO': 10,
+ 'response_received_count': 3,
+ 'robotstxt/request_count': 2,
+ 'robotstxt/response_count': 2,
+ 'robotstxt/response_status_count/200': 2,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 3, 12, 7, 27, 10, 66064)}
+2020-01-01 12:57:16 [scrapy.core.engine] INFO: Spider closed (finished)
+
+(base) D:\exp_54\myscraper></i>
+
+
+LOGS FOR THE CASE OF FAILURE:
+
+SPIDER CODE:
+
+#coding: utf-8
+import scrapy
+
+def authentication_failed(response):
+    # TODO: Check the contents of the response and return True if it failed
+    # or False if it succeeded.
+    pass
+
+
+class JenkinsSpider(scrapy.Spider):
+    name = 'jenkins'
+
+    allowed_domains = ['wikipedia.org']
+    start_urls = ['https://wikipedia.org']
+
+    def parse(self, response):
+        return scrapy.FormRequest.from_response(
+            response,
+            formdata={'username': 'un', 'password': 'pw'},
+            callback=self.after_login
+        )
+
+    def after_login(self, response):
+        if authentication_failed(response):
+            self.logger.error("Login failed")
+            return
+
+        # continue scraping with authenticated session...
+
+
+LOGS:
+
+<i style="color: red">(base) D:\exp_54\myscraper>scrapy crawl jenkins
+2020-01-01 12:41:34 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: myscraper)
+2020-01-01 12:41:34 [scrapy.utils.log] INFO: Versions: lxml 4.2.5.0, libxml2 2.9.8, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.9.0, Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)], pyOpenSSL 18.0.0 (OpenSSL 1.1.1a  20 Nov 2018), cryptography 2.4.2, Platform Windows-10-10.0.16299-SP0
+2020-01-01 12:41:35 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'myscraper', 'NEWSPIDER_MODULE': 'myscraper.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['myscraper.spiders']}
+2020-01-01 12:41:38 [scrapy.extensions.telnet] INFO: Telnet Password: 215145cb94d733c3
+2020-01-01 12:41:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-01-01 12:41:46 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-01-01 12:41:46 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-01-01 12:41:46 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2020-01-01 12:41:46 [scrapy.core.engine] INFO: Spider opened
+2020-01-01 12:41:46 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-01-01 12:41:46 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-01-01 12:41:49 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://www.wikipedia.org/robots.txt> from [[ GET https://wikipedia.org/robots.txt>
+2020-01-01 12:41:50 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://en.wikipedia.org/robots.txt> from [[ GET https://www.wikipedia.org/robots.txt>
+2020-01-01 12:41:52 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://en.wikipedia.org/robots.txt> (referer: None)
+2020-01-01 12:41:52 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://www.wikipedia.org/> from [[ GET https://wikipedia.org>
+2020-01-01 12:41:52 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to [[ GET https://en.wikipedia.org/robots.txt> from [[ GET https://www.wikipedia.org/robots.txt>
+2020-01-01 12:41:53 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://en.wikipedia.org/robots.txt> (referer: None)
+2020-01-01 12:41:53 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://www.wikipedia.org/> (referer: None)
+2020-01-01 12:41:55 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to [[ GET https://en.wikipedia.org/wiki/Special:Search?search=&go=Go> from [[ GET https://www.wikipedia.org/search-redirect.php?family=wikipedia&language=en&search=&language=en&go=Go&username=un&password=pw>
+2020-01-01 12:41:55 [scrapy.core.engine] DEBUG: Crawled (200) [[ GET https://en.wikipedia.org/robots.txt> (referer: None)
+2020-01-01 12:41:56 [scrapy.downloadermiddlewares.robotstxt] <b>DEBUG: Forbidden by robots.txt</b>: [[ GET https://en.wikipedia.org/wiki/Special:Search?search=&go=Go>
+2020-01-01 12:41:56 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-01-01 12:41:56 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/scrapy.exceptions.IgnoreRequest': 1,
+ 'downloader/request_bytes': 2994,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/GET': 9,
+ 'downloader/response_bytes': 40740,
+ 'downloader/response_count': 9,
+ 'downloader/response_status_count/200': 4,
+ 'downloader/response_status_count/301': 4,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 9.721023,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 3, 12, 7, 11, 56, 241535),
+ 'log_count/DEBUG': 10,
+ 'log_count/INFO': 10,
+ 'request_depth_max': 1,
+ 'response_received_count': 4,
+ 'robotstxt/forbidden': 1,
+ 'robotstxt/request_count': 3,
+ 'robotstxt/response_count': 3,
+ 'robotstxt/response_status_count/200': 3,
+ 'scheduler/dequeued': 4,
+ 'scheduler/dequeued/memory': 4,
+ 'scheduler/enqueued': 4,
+ 'scheduler/enqueued/memory': 4,
+ 'start_time': datetime.datetime(2020, 3, 12, 7, 11, 46, 520512)}
+2020-01-01 12:41:56 [scrapy.core.engine] INFO: Spider closed (finished)
+
+(base) D:\exp_54\myscraper></i>
+
+</pre>

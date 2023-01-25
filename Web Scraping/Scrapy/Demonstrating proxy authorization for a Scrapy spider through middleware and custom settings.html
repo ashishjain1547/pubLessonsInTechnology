@@ -1,0 +1,89 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>This post demonstrates how you can pass custom settings for a spider to use while overriding the "settings.py" file. This way we can configure our spider to use proxy for specific sites. The way to configure a proxy is by defining a middleware class.
+
+First, a proxy settings are defined in the "middlewares.py" file:
+
+For our project it is: "D:\exp_44\myscrapers\ourfirstscraper\middlewares.py"
+
+The Middleware class that we are going to write is:
+
+class CustomProxyMiddleware(object):
+    def process_request(self, request, spider):
+
+        request.meta['proxy'] = "https://system:manager@10.10.16.74:80"
+        
+        request.headers['Proxy-Authorization'] = basic_auth_header('system', 'manager')
+        return None
+        
+The spider code looks like this:
+
+# File: D:\exp_44\myscrapers\ourfirstscraper\spiders\xyz.py
+
+import scrapy
+import os
+
+class XyzSpider(scrapy.Spider):
+    name = 'xyz'
+
+    custom_settings = {"DOWNLOADER_MIDDLEWARES": {
+            'ourfirstscraper.middlewares.CustomProxyMiddleware': 350,
+            'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 400,
+    }}
+
+
+    def __init__(self, *args, **kwargs): 
+        super(XyzSpider, self).__init__(*args, **kwargs) 
+        if kwargs.get('start_urls'):
+            self.start_urls = kwargs.get('start_urls').split(',')
+
+        else:            
+            print("No URL to start with!")
+            raise Exception
+
+    def parse(self, response):
+        body = ';'.join(response.xpath('//a/text()').extract())
+        
+        yield { 'text': response.text }
+
+The way to execute this spider is:
+
+>>> cd D:/exp_44/myscrapers/ourfirstscraper
+>>> scrapy crawl xyz -a start_urls="abc.com,xyz.in"
+</pre>

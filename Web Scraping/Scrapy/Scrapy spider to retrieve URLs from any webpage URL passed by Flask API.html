@@ -1,0 +1,140 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>Hard coded paths to files or directories:
+
+1. 
+	File path: C:\Users\ashish\Desktop\myscrapers\ourfirstscraper\settings.py
+	Line:
+	FEED_URI="C:/Users/ashish/Desktop/myscrapers/response_logs.json"
+	
+2. 
+	File path: C:\Users\ashish\Desktop\myscrapers\server_3.py
+	Line:
+	os.chdir(r"C:/Users/ashish/Desktop/myscrapers/ourfirstscraper")
+	
+Code:
+
+Server code file "C:\Users\ashish\Desktop\myscrapers\server_3.py":
+
+import re
+
+# Flask Imports
+from flask_cors import CORS, cross_origin
+from flask import Flask, request
+import os
+ 
+app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+# POST
+@app.route("/helloworld", methods = ['POST'])
+@cross_origin()
+def helloWorld():
+    print("Content-Type: " + request.headers['Content-Type'])
+
+    if request.headers['Content-Type'] == 'text/plain':
+        return "Request from client is: " + request.data
+    
+    elif(request.headers['Content-Type'] in  ['application/json', 'application/json; charset=utf-8']):
+        # For C#: request.headers['Content-Type'] == 'application/json; charset=utf-8'
+        # For Python: request.headers['Content-Type'] == 'application/json'
+        # For AngularJS due to the "Content-Type" headers == 'application/json'
+        print("request.json: " + str(request.json))
+    
+    # Next line changes the current directory to the path from where CLI commands will be executed.
+    os.chdir(r"C:/Users/ashish/Desktop/myscrapers/ourfirstscraper")
+
+    os.system('scrapy crawl xyz -a start_urls="' + ','.join(request.json['start_urls']) + '"')
+    return "Exiting helloWorld()"
+
+# GET
+@app.route("/")
+@cross_origin() # allow all origins all methods.
+def hello():
+    return "Hello, cross-origin-world!"
+    
+if __name__ == "__main__":
+    app.run(host = "0.0.0.0", port = 5050)
+	
+Client code file "C:\Users\ashish\Desktop\myscrapers\client_3.py":
+
+import requests
+headers = {'content-type': 'application/json'}
+
+URL = "http://127.0.0.1:5050/helloworld"
+r = requests.post(url = URL, json = {
+    'start_urls': ['https://survival8.blogspot.com/p/index-of-lessons-in-technology.html']
+    }, headers = headers)
+
+print("Response text: " + r.text)
+
+URL = "http://127.0.0.1:5050"
+r = requests.get(url = URL, data = {}, headers = headers)
+print("Response text: " + r.text)
+
+Spider code file "xyz.py":
+
+# How to execute this spider: (base) C:/Users/ashish/Desktop/myscrapers/ourfirstscraper>scrapy crawl xyz -a start_urls="abc.com,xyz.in"
+
+import scrapy
+import os
+class XyzSpider(scrapy.Spider):
+    name = 'xyz'
+
+    def __init__(self, *args, **kwargs): 
+        super(XyzSpider, self).__init__(*args, **kwargs) 
+        if kwargs.get('start_urls'):
+            self.start_urls = kwargs.get('start_urls').split(',')
+
+        else:            
+            print("Exception handled for the case of 'no url to start with!'")
+            raise Exception
+
+    def parse(self, response):
+        body = ';'.join(response.xpath('//a/text()').extract())
+        
+        yield { 'text': body }
+
+
+Ref: https://stackoverflow.com/questions/43193833/scrapy-error-notsupported-unsupported-url-scheme-no-handler-available-for
+
+Google Drive Link to Code: https://drive.google.com/open?id=1_xykiEWw5_TZg-m7cgqF-tq--0xNhxB4
+
+</pre>

@@ -1,0 +1,255 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Q1: Tell us about 401 HTTP Error Code.
+Ans:
+The 401 Unauthorized Error is an HTTP response status code indicating that the request sent by the client could not be authenticated.
+
+A 401 Unauthorized Error indicates that the requested resource is restricted and requires authentication, but the client failed to provide any such authentication.
+
+Ref: https://airbrake.io/blog/http-errors/401-unauthorized-error
+
+Q2: Tell us about 403 HTTP Error Code.
+Ans:
+
+The 403 Forbidden error is an HTTP status code that means that accessing the page or resource you were trying to reach is absolutely forbidden for some reason.
+
+Different web servers report 403 Forbidden errors in different ways, the majority of which we've listed below. Occasionally a website owner will customize the site's HTTP 403 Forbidden error, but that's not too common.
+
+These are the most common incarnations of 403 Forbidden errors:
+
+# 403 Forbidden
+# HTTP 403
+# Forbidden: You don't have permission to access [directory] on this server
+# HTTP Error 403.14 - Forbidden (This is from Microsoft IIS)
+
+<b>Cause of 403 Forbidden Errors </b>
+403 errors are almost always caused by issues where you're trying to access something that you don't have access to. The 403 error is essentially saying "Go away and don't come back here."
+
+Microsoft IIS web servers provide more specific information about the cause of 403 Forbidden errors by suffixing a number after the 403, as in HTTP Error 403.14 - Forbidden, which means Directory listing denied. 
+
+Ref: https://www.lifewire.com/403-forbidden-error-explained-2617989
+
+~ * ~ * ~
+
+# HTTP 403 is a standard HTTP status code communicated to clients by an HTTP server to indicate that access to the requested (valid) URL by the client is Forbidden for some reason. The server understood the request, but will not fulfill it due to client related issues. IIS defines non standard "sub-status" error codes that provide a more specific reason for responding with the 403 status code.
+
+# Example message when a server handled 403 error code: "Access denied for statistics and data section in U.N website"
+
+<b>Substatus error codes for IIS </b>
+
+The following nonstandard codes are returned by Microsoft's Internet Information Services and are not officially recognized by IANA.
+
+403.1 - Execute access forbidden.
+403.2 - Read access forbidden.
+403.3 - Write access forbidden.
+403.4 - SSL required
+403.5 - SSL 128 required.
+403.6 - IP address rejected.
+403.7 - Client certificate required.
+403.8 - Site access denied.
+403.9 - Too many users.
+403.10 - Invalid configuration.
+403.11 - Password change.
+403.12 - Mapper denied access.
+403.13 - Client certificate revoked.
+403.14 - Directory listing denied.
+403.15 - Client Access Licenses exceeded.
+403.16 - Client certificate is untrusted or invalid.
+403.17 - Client certificate has expired or is not yet valid.
+403.18 - Cannot execute request from that application pool.
+403.19 - Cannot execute CGIs for the client in this application pool.
+403.20 - Passport logon failed.
+403.21 - Source access denied.
+403.22 - Infinite depth is denied.
+403.502 - Too many requests from the same client IP; Dynamic IP Restriction limit reached.
+403.503 - Rejected due to IP address restriction
+
+Ref: https://en.wikipedia.org/wiki/HTTP_403
+
+If a URL is secured by Azure AD authentication and you are not authorized to access it, then the 403 error appears in Scrapy logs as follows:
+
+2020-01-01 13:58:28 [scrapy.core.engine] DEBUG: Crawled (403) [[GET https://s8-my.sharepoint.com/robots.txt]] (referer: None)
+2020-01-01 13:58:29 [scrapy.core.engine] DEBUG: Crawled (403) [[GET https://s8-my.sharepoint.com/personal/james_ad_s8_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjames...&originalPath=ZT0]] (referer: None)
+2020-01-01 13:58:29 [scrapy.spidermiddlewares.httperror] INFO: Ignoring response [[ 403 https://s8-my.sharepoint.com/personal/james_ad_s8_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fjames...&originalPath=ZT0 ]]: HTTP status code is not handled or not allowed
+
+Q3: Tell us about Microsoft Azure AD.
+Ans:
+
+Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. It is included in most Windows Server operating systems as a set of processes and services. Initially, Active Directory was only in charge of centralized domain management. Starting with Windows Server 2008, however, Active Directory became an umbrella title for a broad range of directory-based identity-related services.
+
+A server running Active Directory Domain Service (AD DS) is called a domain controller. It authenticates and authorizes all users and computers in a Windows domain type network—assigning and enforcing security policies for all computers and installing or updating software. For example, when a user logs into a computer that is part of a Windows domain, Active Directory checks the submitted password and determines whether the user is a system administrator or normal user. Also, it allows management and storage of information, provides authentication and authorization mechanisms, and establishes a framework to deploy other related services: Certificate Services, Active Directory Federation Services, Lightweight Directory Services, and Rights Management Services.
+
+Active Directory uses Lightweight Directory Access Protocol (LDAP) versions 2 and 3, Microsoft's version of Kerberos, and DNS.
+
+Ref: https://en.wikipedia.org/wiki/Active_Directory
+
+More references to read about Azure AD authentication:
+
+<B>GITHUB:</B>
+
+https://github.com/Azure-Samples/ms-identity-python-webapp
+
+https://github.com/Azure-Samples/active-directory-python-webapp-graphapi
+
+https://github.com/AzureAD/azure-activedirectory-library-for-python
+
+https://github.com/AzureAD/microsoft-authentication-library-for-python
+
+<B>STACKOVERFLOW:</B>
+
+https://stackoverflow.com/questions/49687051/azure-ad-authentication-through-python-web-api
+
+https://stackoverflow.com/questions/20945822/how-to-access-a-sharepoint-site-via-the-rest-api-in-python
+
+<B>BLOGS:</B>
+
+https://medium.com/@pandey.pushpesh/azure-active-directory-app-service-authentication-authorization-8b4b33303750
+
+https://azure.microsoft.com/is-is/blog/azure-websites-authentication-authorization/
+
+<B>MICROSOFT DOCS:</B>
+
+https://docs.microsoft.com/en-us/azure/active-directory/azuread-dev/sample-v1-code
+
+https://docs.microsoft.com/en-us/azure/active-directory/azuread-dev/v1-protocols-oauth-code
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/access-tokens
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/id-tokens
+
+https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page
+
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/access-tokens
+
+https://docs.microsoft.com/en-us/azure/active-directory-b2c/tokens-overview
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+
+https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-scenarios
+
+https://docs.microsoft.com/en-us/azure/kusto/management/access-control/aad
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios
+
+
+Q4: Where do you see the spider name in the Scrapy logs?
+Ans:
+
+It appears in a log line following this format at the call to "crawl".
+
+1: 2020-01-01 20:04:21 [getmeurls] INFO: Spider opened: getmeurls
+2: 2020-01-01 20:08:10 [getmebody] INFO: Spider opened: getmebody
+
+Here "getmeurls" and "getmebody" are the values of "name" variables in their respective Spider classes.
+Ex:
+class GetMeUrlsSpider(scrapy.Spider):         
+    name = "getmeurls"
+	...
+
+A similar log line also suggesting the opening of a spider is seen in the Scrapy logs as follows:
+2020-01-01 20:06:32 [scrapy.core.engine] INFO: Spider opened
+
+~ ~ ~ 
+
+<i style="color: green;">2020-01-01 20:04:21 [getmeurls] INFO: Spider opened: getmeurls
+2020-01-01 20:08:10 [getmebody] INFO: Spider opened: getmebody</i>
+
+These log lines are generated from middleware classes defined in the file "middlewares.py".
+
+A middleware class may have the structure given below. The function of interest is "spider_opened":
+
+<i>class AzureSpiderMiddleware(object):
+    # Not all methods need to be defined. If a method is not defined,
+    # scrapy acts as if the spider middleware does not modify the
+    # passed objects.
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        # This method is used by Scrapy to create your spiders.
+        s = cls()
+        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
+        return s
+
+    def process_spider_input(self, response, spider):
+        # Called for each response that goes through the spider
+        # middleware and into the spider.
+
+        # Should return None or raise an exception.
+        return None
+
+    def process_spider_output(self, response, result, spider):
+        # Called with the results returned from the Spider, after
+        # it has processed the response.
+
+        # Must return an iterable of Request, dict or Item objects.
+        for i in result:
+            yield i
+
+    def process_spider_exception(self, response, exception, spider):
+        # Called when a spider or process_spider_input() method
+        # (from other spider middleware) raises an exception.
+
+        # Should return either None or an iterable of Request, dict
+        # or Item objects.
+        pass
+
+    def process_start_requests(self, start_requests, spider):
+        # Called with the start requests of the spider, and works
+        # similarly to the process_spider_output() method, except
+        # that it doesn’t have a response associated.
+
+        # Must return only requests (not items).
+        for r in start_requests:
+            yield r
+
+    def spider_opened(self, spider):
+        spider.logger.info('Spider opened: %s' % spider.name)</i>
+
+Q5: What are the various types of authentications one might have to do to crawl a URL?
+Ans:
+
+1)	NTLM 
+2)	Kerberos 
+3)	Proxy 
+4)	Direct connection
+
+</pre>

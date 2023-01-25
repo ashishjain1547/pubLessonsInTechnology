@@ -1,0 +1,274 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-3wDE_djLU0Y/X1Isu9-IPmI/AAAAAAAAFcI/DS-iE2UVf7ckPPcfraLKBhzixVlBPpq8wCLcBGAsYHQ/s0/bs.png" style="display: block; padding: 1em 0; text-align: center;"><img alt="" border="0" data-original-height="206" data-original-width="480" src="https://1.bp.blogspot.com/-3wDE_djLU0Y/X1Isu9-IPmI/AAAAAAAAFcI/DS-iE2UVf7ckPPcfraLKBhzixVlBPpq8wCLcBGAsYHQ/s0/bs.png"/></a></div>
+  
+<b>Setup </b>
+(base) C:\Users\Ashish Jain><i style="color: blue">conda env list </i>
+<i style="color: green"># conda environments:
+#
+base                  *  E:\programfiles\Anaconda3
+env_py_36                E:\programfiles\Anaconda3\envs\env_py_36
+temp                     E:\programfiles\Anaconda3\envs\temp
+tf                       E:\programfiles\Anaconda3\envs\tf </i>
+
+(base) C:\Users\Ashish Jain>conda create -n temp202009 python=3.8
+<i style="color: green">Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: E:\programfiles\Anaconda3\envs\temp202009
+
+  added / updated specs:
+    - python=3.8
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2020.7.22  |                0         164 KB
+    python-3.8.5               |       h5fd99cc_1        18.7 MB
+    sqlite-3.33.0              |       h2a8f88b_0         1.3 MB
+    wheel-0.35.1               |             py_0          36 KB
+    ------------------------------------------------------------
+                                            Total:        20.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-2020.7.22-0
+  certifi            pkgs/main/win-64::certifi-2020.6.20-py38_0
+  openssl            pkgs/main/win-64::openssl-1.1.1g-he774522_1
+  pip                pkgs/main/win-64::pip-20.2.2-py38_0
+  python             pkgs/main/win-64::python-3.8.5-h5fd99cc_1
+  setuptools         pkgs/main/win-64::setuptools-49.6.0-py38_0
+  sqlite             pkgs/main/win-64::sqlite-3.33.0-h2a8f88b_0
+  vc                 pkgs/main/win-64::vc-14.1-h0510ff6_4
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.16.27012-hf0eaf9b_3
+  wheel              pkgs/main/noarch::wheel-0.35.1-py_0
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py38_0
+  zlib               pkgs/main/win-64::zlib-1.2.11-h62dcd97_4
+
+Proceed ([y]/n)? y
+
+Downloading and Extracting Packages
+wheel-0.35.1         | 36 KB     | ##################################### | 100%
+sqlite-3.33.0        | 1.3 MB    | ##################################### | 100%
+ca-certificates-2020 | 164 KB    | ##################################### | 100%
+python-3.8.5         | 18.7 MB   | ##################################### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate temp202009
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate </i>
+
+(base) C:\Users\Ashish Jain><i style="color: blue">conda activate temp202009 </i>
+
+(temp202009) C:\Users\Ashish Jain><i style="color: blue">pip install ipykernel jupyter jupyterlab </i>
+<i style="color: green">Collecting ipykernel
+Collecting jupyter
+Collecting jupyterlab
+...
+Building wheels for collected packages: pandocfilters, pyrsistent
+  Building wheel for pandocfilters (setup.py) ... done
+  Created wheel for pandocfilters: filename=pandocfilters-1.4.2-py3-none-any.whl size=7861 sha256=eaf50b551ad8291621c8a87234dca80f07b0e9b1603ec8ad7179740f988b4dec
+  Stored in directory: c:\users\ashish jain\appdata\local\pip\cache\wheels\f6\08\65\e4636b703d0e870cd62692dafd6b47db27287fe80cea433722
+  Building wheel for pyrsistent (setup.py) ... done
+  Created wheel for pyrsistent: filename=pyrsistent-0.16.0-cp38-cp38-win_amd64.whl size=71143 sha256=1f0233569beedcff74c358bd0666684c2a0f2d74b56fbdea893711c2f1a761f8
+  Stored in directory: c:\users\ashish jain\appdata\local\pip\cache\wheels\17\be\0f\727fb20889ada6aaaaba861f5f0eb21663533915429ad43f28
+Successfully built pandocfilters pyrsistent
+Installing collected packages: tornado, ipython-genutils, traitlets, pyzmq, six, python-dateutil, pywin32, jupyter-core, jupyter-client, colorama, parso, jedi, pygments, backcall, wcwidth, prompt-toolkit, decorator, pickleshare, ipython, ipykernel, jupyter-console, qtpy, qtconsole, MarkupSafe, jinja2, attrs, pyrsistent, jsonschema, nbformat, mistune, pyparsing, packaging, webencodings, bleach, pandocfilters, entrypoints, testpath, defusedxml, nbconvert, pywinpty, terminado, prometheus-client, Send2Trash, pycparser, cffi, argon2-cffi, notebook, widgetsnbextension, ipywidgets, jupyter, json5, urllib3, chardet, idna, requests, jupyterlab-server, jupyterlab
+Successfully installed MarkupSafe-1.1.1 Send2Trash-1.5.0 argon2-cffi-20.1.0 attrs-20.1.0 backcall-0.2.0 bleach-3.1.5 cffi-1.14.2 chardet-3.0.4 colorama-0.4.3 decorator-4.4.2 defusedxml-0.6.0 entrypoints-0.3 idna-2.10 ipykernel-5.3.4 ipython-7.18.1 ipython-genutils-0.2.0 ipywidgets-7.5.1 jedi-0.17.2 jinja2-2.11.2 json5-0.9.5 jsonschema-3.2.0 jupyter-1.0.0 jupyter-client-6.1.7 jupyter-console-6.2.0 jupyter-core-4.6.3 jupyterlab-2.2.6 jupyterlab-server-1.2.0 mistune-0.8.4 nbconvert-5.6.1 nbformat-5.0.7 notebook-6.1.3 packaging-20.4 pandocfilters-1.4.2 parso-0.7.1 pickleshare-0.7.5 prometheus-client-0.8.0 prompt-toolkit-3.0.7 pycparser-2.20 pygments-2.6.1 pyparsing-2.4.7 pyrsistent-0.16.0 python-dateutil-2.8.1 pywin32-228 pywinpty-0.5.7 pyzmq-19.0.2 qtconsole-4.7.7 qtpy-1.9.0 requests-2.24.0 six-1.15.0 terminado-0.8.3 testpath-0.4.4 tornado-6.0.4 traitlets-5.0.3 urllib3-1.25.10 wcwidth-0.2.5 webencodings-0.5.1 widgetsnbextension-3.5.1 </i>
+
+(temp202009) C:\Users\Ashish Jain><i style="color: blue">python -m ipykernel install --user --name temp202009 </i>
+<i style="color: green">Installed kernelspec temp202009 in C:\Users\Ashish Jain\AppData\Roaming\jupyter\kernels\temp202009 </i>
+
+===   ===   ===   ===
+
+<i style="color: red">ERROR:
+ImportError: DLL load failed while importing win32api: The specified module could not be found.</i>
+
+(temp202009) E:\>conda install pywin32
+
+===   ===   ===   ===
+
+(temp202009) E:\><i style="color: blue">pip install htmllaundry </i>
+(temp202009) E:\><i style="color: blue">pip install html-sanitizer </i>
+<i style="color: green">Collecting html-sanitizer
+Collecting beautifulsoup4
+Collecting soupsieve>1.2
+  Downloading soupsieve-2.0.1-py3-none-any.whl (32 kB)
+Installing collected packages: soupsieve, beautifulsoup4, html-sanitizer
+Successfully installed beautifulsoup4-4.9.1 html-sanitizer-1.9.1 soupsieve-2.0.1 </i>
+
+<b>Issues faced with pulling an article using "newsapi" and "newspaper" packages. </b>
+
+#1
+<i style="color: red">Exception occurred for: [newspaper.article.Article object at 0x00000248F12896D8] and 2020-08-08T16:55:21Z
+Article `download()` failed with 503 Server Error: Service Unavailable for url: https://www.marketwatch.com/story/profit-up-87-at-buffetts-berkshire-but-coronavirus-slows-businesses-2020-08-08 on URL https://www.marketwatch.com/story/profit-up-87-at-buffetts-berkshire-but-coronavirus-slows-businesses-2020-08-08 </i>
+
+#2
+<i style="color: red">Exception occurred for: [newspaper.article.Article object at 0x00000248F1297B70] and 2020-08-11T22:59:42Z
+Article `download()` failed with 403 Client Error: Forbidden for url: https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues on URL https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues </i>
+
+#3
+<i style="color: red">Exception occurred for: [newspaper.article.Article object at 0x00000248F12AC550] and 2020-08-11T16:17:55Z
+Article `download()` failed with HTTPSConnectionPool(host='www.freerepublic.com', port=443): Max retries exceeded with url: /focus/f-news/3873373/posts (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])"))) on URL https://www.freerepublic.com/focus/f-news/3873373/posts </i>
+
+<b>Trying a fix using Python shell </b>
+
+(base) C:\Users\Ashish Jain>python
+Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues')
+<i style="color: green">[Response [200]] </i>
+
+>>> requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text
+<i style="color: green">'&lt;!DOCTYPE html&gt;&lt;html itemscope="" itemtype="https://schema.org/WebPage" lang="en"&gt;... </i>
+
+<i style="color: blue">>>> with open('html.txt', 'w') as f:
+...  f.write(requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text)
+... </i>
+<i style="color: red">Traceback (most recent call last):
+  File "[stdin]", line 2, in [module]
+  File "E:\programfiles\Anaconda3\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\ufeff' in position 13665: character maps to [undefined] </i>
+
+<i style="color: blue">>>> with open('html.txt', 'w', encoding="utf-8") as f:
+...  f.write(requests.get('https://seekingalpha.com/article/4367745-greatest-disconnect-stocks-and-economy-continues').text)
+...</i>
+<i style="color: green">636685 </i>
+
+<b>Now we have the HTML. Next we clean it to remove HTML tags. </b>
+
+<b>Using htmllaundry </b>
+
+<i style="color: blue">from htmllaundry import sanitize
+!pip show htmllaundry </i>
+
+<i style="color: green">Name: htmllaundry
+Version: 2.2
+Summary: Simple HTML cleanup utilities
+Home-page: UNKNOWN
+Author: Wichert Akkerman
+Author-email: wichert@wiggy.net
+License: BSD
+Location: e:\programfiles\anaconda3\envs\temp202009\lib\site-packages
+Requires: lxml, six
+Required-by: </i>
+
+<i style="color: blue">sanitize(r.text) </i>
+
+<i style="color: green">'&lt;p&gt;\n\n\n  \n  \n  Access to this page has been denied.\n  \n  \n  \n\n\n\n  \n    \n      To continue, please prove you are not a robot\n    \n  \n  \n    \n      \n      \n      &lt;/p&gt;&lt;p&gt;\n        To ensure this doesn’t happen in the future, please enable Javascript and cookies in your browser.&lt;br/&gt;\n        Is this happening to you frequently? Please &lt;a href="https://seekingalpha.userecho.com?source=captcha" rel="nofollow"&gt;report it on our feedback forum&lt;/a&gt;.\n      &lt;/p&gt;\n      &lt;p&gt;\n        If you have an ad-blocker enabled you may be blocked from proceeding. Please disable your ad-blocker and refresh.\n      &lt;/p&gt;\n      &lt;p&gt;Reference ID: &lt;/p&gt;\n    \n  \n  \n\n\n\n\n\n\n\n' </i>
+
+<i style="color: blue">from htmllaundry import strip_markup
+
+cleantext = strip_markup(sanitize(r.text)).strip()
+cleantext = re.sub(r"(\n)+", " ", cleantext)
+cleantext = re.sub(r"\s+", " ", cleantext)
+
+print(cleantext) </i>
+
+<i style="color: green">'Access to this page has been denied. To continue, please prove you are not a robot To ensure this doesn’t happen in the future, please enable Javascript and cookies in your browser. Is this happening to you frequently? Please report it on our feedback forum. If you have an ad-blocker enabled you may be blocked from proceeding. Please disable your ad-blocker and refresh. Reference ID:' </i>
+
+<b>Using html_sanitizer </b>
+
+<i style="color: blue">from html_sanitizer import Sanitizer
+!pip show html_sanitizer </i>
+
+<i style="color: green">Name: html-sanitizer
+Version: 1.9.1
+Summary: HTML sanitizer
+Home-page: https://github.com/matthiask/html-sanitizer/
+Author: Matthias Kestenholz
+Author-email: mk@feinheit.ch
+License: BSD License
+Location: e:\programfiles\anaconda3\envs\temp202009\lib\site-packages
+Requires: beautifulsoup4, lxml
+Required-by: </i>
+
+<i style="color: blue">sanitizer = Sanitizer() 
+cleantext = sanitizer.sanitize(r.text).strip()
+
+cleantext = re.sub(r"(\n)+", " ", cleantext)
+cleantext = re.sub(r"\s+", " ", cleantext)
+print(cleantext) </i>
+
+<i style="color: green">'Access to this page has been denied.         &lt;h1&gt;To continue, please prove you are not a robot&lt;/h1&gt;     &lt;p&gt; To ensure this doesn’t happen in the future, please enable Javascript and cookies in your browser.&lt;br&gt; Is this happening to you frequently? Please &lt;a href="https://seekingalpha.userecho.com?source=captcha"&gt;report it on our feedback forum&lt;/a&gt;. &lt;/p&gt; &lt;p&gt; If you have an ad-blocker enabled you may be blocked from proceeding. Please disable your ad-blocker and refresh. &lt;/p&gt; &lt;p&gt;Reference ID: &lt;/p&gt;' </i>
+
+<b>Using beautifulsoup4 </b>
+
+<i style="color: blue">import re
+from bs4 import BeautifulSoup
+cleantext = BeautifulSoup(r.text, "lxml").text
+
+cleantext = re.sub(r"(\n)+", " ", cleantext)
+cleantext = re.sub(r"\s+", " ", cleantext)
+cleantext.strip() </i>
+
+<i style="color: green">'Access to this page has been denied. To continue, please prove you are not a robot To ensure this doesn’t happen in the future, please enable Javascript and cookies in your browser. Is this happening to you frequently? Please report it on our feedback forum. If you have an ad-blocker enabled you may be blocked from proceeding. Please disable your ad-blocker and refresh. Reference ID:' </i>
+
+</pre>
