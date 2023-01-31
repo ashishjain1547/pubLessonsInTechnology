@@ -1,0 +1,217 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .ib {
+            color: blue
+        }
+
+        .ig {
+            color: green
+        }
+
+        .ir {
+            color: red
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<a class="customLink toggleBtn"
+    href="https://github.com/ashishjain1547/pubML/blob/main/e11_pyspark_v3.3.0/reading%20a%20csv%20in%20PySpark%20(v3.3.0).ipynb"
+    target="_blank">Download Code</a>
+
+<pre>
+<i class="ib">
+import seaborn as sns
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer
+from pyspark import SparkContext
+from pyspark.sql import SQLContext # Main entry point for SQL based DataFrame (other is Pandas based DataFrame) and SQL functionality.
+
+sc = SparkContext.getOrCreate()
+sqlCtx = SQLContext(sc)
+
+import pyspark
+print(pyspark.__version__)
+</i>    
+
+<i class="ig">3.3.0</i>
+
+Our input data looks like this:
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0UepoA1S8ep0WX-7YdZkl6T1A25Aa67fzFRPT1eClkcSyebyMi0fuFaYICiJW7f2lCQzvShERQtVRogLKNJTe7x_35PRDfwR4zJ5_jArhQoc8gMwVOasWI2a78ZnOIO-8rOw5IX7uVyAinOokqBzRmqSusZgnOBBFL2iFxOlWGfnjmRFo4ZTW12ghaQ/s480/Screenshot%20from%202022-10-08%2021-55-17.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="165" data-original-width="480" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0UepoA1S8ep0WX-7YdZkl6T1A25Aa67fzFRPT1eClkcSyebyMi0fuFaYICiJW7f2lCQzvShERQtVRogLKNJTe7x_35PRDfwR4zJ5_jArhQoc8gMwVOasWI2a78ZnOIO-8rOw5IX7uVyAinOokqBzRmqSusZgnOBBFL2iFxOlWGfnjmRFo4ZTW12ghaQ/s400/Screenshot%20from%202022-10-08%2021-55-17.png"/></a></div>
+
+<i class="ib">
+with open('./input/student.csv', mode = 'r', encoding = 'utf8') as f:
+    data = f.readlines()
+
+import pandas as pd
+df_student = pd.read_csv('./input/student.csv')
+
+data
+</i>
+
+<i class="ig">
+['sno,FirstName,LASTNAME\n',
+'one,Ram,\n',
+'two,,Sharma\n',
+'three,Shyam,NA\n',
+'four,Kabir,\n',
+'five,NA,Singh\n']
+</i>
+
+<i class="ib">df_student.head()</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7VeJrjZ3rvO22P3eJmZWsZbSV7KyfcfkdlnNDJviwZHQWnppr7gxoe3VzOorQ2-fZt5KHd0JOXh9MqbesvdDWO7UJEOWqHhP1kzh_JuU3wnvbBXYgy0Tsos3EF6VjgawsseGfaSi18osRIDNChZ8cJQU83Wxxrr6UEJbCbOYfbjtPLJsIi3S536utbw/s215/Screenshot%20from%202022-10-08%2022-03-41.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="158" data-original-width="215" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7VeJrjZ3rvO22P3eJmZWsZbSV7KyfcfkdlnNDJviwZHQWnppr7gxoe3VzOorQ2-fZt5KHd0JOXh9MqbesvdDWO7UJEOWqHhP1kzh_JuU3wnvbBXYgy0Tsos3EF6VjgawsseGfaSi18osRIDNChZ8cJQU83Wxxrr6UEJbCbOYfbjtPLJsIi3S536utbw/s400/Screenshot%20from%202022-10-08%2022-03-41.png"/></a></div>
+
+<h3>When you load a Pandas DataFrame by reading from a CSV, blank values and 'NA' values are converted to 'NaN' values by default as shown above.</h3>
+
+<h2>Way 1</h2>
+
+<h3>Also, PySpark's sqlCtx.createDataFrame() results in error on Pandas dataframe with null values.</h3>
+<i class="ib">
+df_student = pd.read_csv('./input/student.csv')
+sdf = sqlCtx.createDataFrame(df_student)    
+</i>
+
+<i class="ir">TypeError: field FirstName: Can not merge type &lt;class 'pyspark.sql.types.StringType'> and &lt;class 'pyspark.sql.types.DoubleType'></i>
+
+<i class="ib">
+def clean_data(df):
+    df.fillna('Not Applicable', inplace = True) # Handles blank and 'NA' values both. 
+    
+    df = df.apply(lambda x: x.str.strip())
+    df.columns = df.columns.str.lower()
+    return df
+
+df_student = clean_data(df_student)
+
+df_student.fillna('Not Applicable', inplace = True) # Handles blank and 'NA' values both. 
+
+sdf = sqlCtx.createDataFrame(df_student)
+type(sdf)
+</i>
+
+<i class="ig">pyspark.sql.dataframe.DataFrame</i>
+
+<i class="ir">sdf.show()</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1TX3jsLue2SzJDQ232MopftqZs90xQWGghgX9AI01Iyq2LR8dTV6krruXiPSABFRjM3JfzDXY9SszWNaFbXPVzzfUV4Sr8X8fvGeFA55zNLeJwNxR5vf4BW1efgqjI-hj5iaKV1xIIDVrH-YEaznmJmJ8eX8p-SK7LYsd9j6g6TwGd63zBE3CS5ToIA/s313/Screenshot%20from%202022-10-08%2022-12-48.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="161" data-original-width="313" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi1TX3jsLue2SzJDQ232MopftqZs90xQWGghgX9AI01Iyq2LR8dTV6krruXiPSABFRjM3JfzDXY9SszWNaFbXPVzzfUV4Sr8X8fvGeFA55zNLeJwNxR5vf4BW1efgqjI-hj5iaKV1xIIDVrH-YEaznmJmJ8eX8p-SK7LYsd9j6g6TwGd63zBE3CS5ToIA/s400/Screenshot%20from%202022-10-08%2022-12-48.png"/></a></div>
+
+<h2>Way 2</h2>
+
+New feature in 3.2.1 [ <a href="https://spark.apache.org/docs/3.2.1/api/python/reference/pyspark.pandas/api/pyspark.pandas.read_csv.html" target="_blank">Ref</a> ]
+
+df = pyspark.pandas.read_csv('./input/student.csv') 
+
+# Error if 'pandas' package is not there in your version of 'pyspark'.
+# AttributeError: module 'pyspark' has no attribute 'pandas'
+
+<i class="ib">
+from pyspark import pandas as ppd
+df_student_pyspark = ppd.read_csv('./input/student.csv')
+type(df_student_pyspark)
+</i>
+
+<i class="ig">pyspark.pandas.frame.DataFrame</i>
+
+<i class="ib">df_student_pyspark</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgELuPR2L9B9xoUL_KzGfqd-uzGVDCIPjhEYK8CvcFQStTyC6cElhyRoITPLB1qpRgPXSYHUwazQedhMhLMRPk9-1WsvbP5yQOuStKuKMnG7qadlmtv-fxmXB8Kwjunlkecwk1Rp5ZKg-_L0LFEPRagBeKUWTAp03gK8J7SOqFjFDHrtZi02QBS8RATxQ/s211/Screenshot%20from%202022-10-08%2022-15-33.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="161" data-original-width="211" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgELuPR2L9B9xoUL_KzGfqd-uzGVDCIPjhEYK8CvcFQStTyC6cElhyRoITPLB1qpRgPXSYHUwazQedhMhLMRPk9-1WsvbP5yQOuStKuKMnG7qadlmtv-fxmXB8Kwjunlkecwk1Rp5ZKg-_L0LFEPRagBeKUWTAp03gK8J7SOqFjFDHrtZi02QBS8RATxQ/s600/Screenshot%20from%202022-10-08%2022-15-33.png"/></a></div>
+
+<h2>Way 3</h2>
+[ <a href="https://spark.apache.org/docs/latest/sql-data-sources-csv.html" target="_blank">Ref</a> ]
+
+<i class="ib">
+from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+
+# A CSV dataset is pointed to by path.
+# The path can be either a single CSV file or a directory of CSV files
+# path = "examples/src/main/resources/people.csv"
+
+df = spark.read.option("header", True).csv('./input/student.csv')
+df.show()</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbjHGlPvWaL0AhSjjKNmEo7GcQEM2sw9izmDeuoAvTEYMS8UWGs24y7nBikuKNmx6KuVQOxXm6HhHjqppZhnqIn_fxV0W54Te0_V-kWS4cQ7SdgHm2lc3ishG01g0rU5p2RUimut0gN-jtGTa_NhQB9IKkhthUgCT_2ao1AiBz-S1tloKWLu3S6LNPqA/s211/Screenshot%20from%202022-10-08%2022-18-15.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="161" data-original-width="211" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhbjHGlPvWaL0AhSjjKNmEo7GcQEM2sw9izmDeuoAvTEYMS8UWGs24y7nBikuKNmx6KuVQOxXm6HhHjqppZhnqIn_fxV0W54Te0_V-kWS4cQ7SdgHm2lc3ishG01g0rU5p2RUimut0gN-jtGTa_NhQB9IKkhthUgCT_2ao1AiBz-S1tloKWLu3S6LNPqA/s400/Screenshot%20from%202022-10-08%2022-18-15.png"/></a></div>
+
+<i class="ib">type(df)</i>
+
+<i class="ig">pyspark.sql.dataframe.DataFrame</i>
+</pre>
+<span style="display: none">Tags: Technology,Spark</span>

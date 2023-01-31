@@ -1,0 +1,278 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        i.ir {
+            color: red;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        i.ib {
+            color: blue;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<a class="customLink toggleBtn" href="https://github.com/ashishjain1547/pubML/blob/main/e11_pyspark_v3.3.0/"
+    target="_blank">Download Code</a>
+
+<pre>
+<i class="ib">
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+
+df = pd.DataFrame({
+    'alphabets': [
+        'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau',
+        'upsilon', 'phi', 'chi', 'psi', 'omega', # Greek Alphabets
+        'ka', 'kh', 'ga', 'gh', 'ng', 'ch', 'chh', 'ja', 'jh', 'ny', 'ta', 'th', 'da', 'dh', 'na', 'ta', 'th', 'da', 'dh', 'na', 'pa', 'ph', 'ba', 'bh', 'ma', 
+        'ya', 'ra', 'la', 'va', 'sh', 'sh', 'sa', 'ha', 'ksh', 'tr', 'gy', 'shr' # Hindi Consonants
+    ]
+})
+
+df['first_letter'] = df['alphabets'].str[0] <b># Won't work for Pandas API on PySpark </b>
+
+ixs = np.random.permutation(df.shape[0])
+split_pct = 0.5
+
+train_ixs = ixs[:round(len(ixs) * split_pct)]
+test_ixs = ixs[round(len(ixs) * split_pct):]
+
+df_train = df.iloc[train_ixs]
+df_test = df.iloc[test_ixs]
+
+df_train.head()</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqDtARa4RmWeBhof4K2p4mjPexYCLPllaisswGgfLpvrif9A2-gj-3gmFZy8HeTUUJRGS6GOpS5L7-DyUa0Ug0bRHD5hbLjaoxrF3eAz2pIpMHJ5Fgf_H738YEFESBNdfaa1E2dqEKMtocUh97ISM_k-k261TLFSDf2MKN4rH_6DhHn2COIyEG9SkF9Q/s181/1.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="169" data-original-width="181" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqDtARa4RmWeBhof4K2p4mjPexYCLPllaisswGgfLpvrif9A2-gj-3gmFZy8HeTUUJRGS6GOpS5L7-DyUa0Ug0bRHD5hbLjaoxrF3eAz2pIpMHJ5Fgf_H738YEFESBNdfaa1E2dqEKMtocUh97ISM_k-k261TLFSDf2MKN4rH_6DhHn2COIyEG9SkF9Q/s400/1.png"/></a></div>
+
+<i class="ib">df_test.head()</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhAxY2fpH-OejusEZseYnhttX8-A4E2Wx5CgOA38MLgCdN6DrQzSbAtvnE1ZQAtmGkP_zA-XSNN_l1YQhWL46We1aTI7y99vwlVQFZx3mCDWpaNPsw7TG_127eHrSddzvlJI7Uj1TAQMvezIQ7iLrJzyB7H1_d9esFSJi-ZgKJpPYycncCs4HAt8fgkQ/s181/2.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="169" data-original-width="181" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhAxY2fpH-OejusEZseYnhttX8-A4E2Wx5CgOA38MLgCdN6DrQzSbAtvnE1ZQAtmGkP_zA-XSNN_l1YQhWL46We1aTI7y99vwlVQFZx3mCDWpaNPsw7TG_127eHrSddzvlJI7Uj1TAQMvezIQ7iLrJzyB7H1_d9esFSJi-ZgKJpPYycncCs4HAt8fgkQ/s400/2.png"/></a></div>
+
+<i class="ib">not_in_train_but_in_test = df_test[-(df_test.first_letter.isin(df_train.first_letter))]</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo4-xOK_PlYubQbNW3J1P6qwtKEVhR-CFRvm9Zwe4B_MnOUS33q_Avxmx3c2_p5Z0L8HlrVawy35-5qX8rmmTYs3qfUEuJ150E5VGqS8k4hY1eff-tb8vf5o7btxWuYz4IMlpuCQGeTsosUYJ0vn38z1d_m28rU5A_mlzSlcz54NuquGmWXhDxktJgcA/s409/3.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="409" data-original-width="204" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo4-xOK_PlYubQbNW3J1P6qwtKEVhR-CFRvm9Zwe4B_MnOUS33q_Avxmx3c2_p5Z0L8HlrVawy35-5qX8rmmTYs3qfUEuJ150E5VGqS8k4hY1eff-tb8vf5o7btxWuYz4IMlpuCQGeTsosUYJ0vn38z1d_m28rU5A_mlzSlcz54NuquGmWXhDxktJgcA/s600/3.png"/></a></div>
+
+<i class="ib">import pyspark
+print(pyspark.__version__)</i>
+
+<i class="ig">3.3.0</i>
+
+<i class="ib">
+from pyspark import pandas as ppd
+df_ppd = ppd.DataFrame({
+    'alphabets': [
+        'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigma', 'tau',
+        'upsilon', 'phi', 'chi', 'psi', 'omega', # Greek
+        'ka', 'kh', 'ga', 'gh', 'ng', 'ch', 'chh', 'ja', 'jh', 'ny', 'ta', 'th', 'da', 'dh', 'na', 'ta', 'th', 'da', 'dh', 'na', 'pa', 'ph', 'ba', 'bh', 'ma', 
+        'ya', 'ra', 'la', 'va', 'sh', 'sh', 'sa', 'ha', 'ksh', 'tr', 'gy', 'shr' # Hindi
+    ]
+})
+
+df_ppd['first_letter'] = df_ppd['alphabets'].apply(lambda x: x[0])
+
+df_ppd_train = df_ppd.iloc[train_ixs]
+df_ppd_test = df_ppd.iloc[test_ixs]
+</i>
+
+<h1>Errors: We cannot filter PySpark's Pandas API based DataFrame using the same code we used for Pure Pandas DataFrame</h1>
+
+<b>1.</b>
+
+<i class="ir">
+not_in_train_but_in_test = df_ppd_test[-(df_ppd_test.first_letter.isin(df_ppd_train.first_letter))]
+
+---------------------------------------------------------------------------
+PandasNotImplementedError                 Traceback (most recent call last)
+Cell In [62], line 1
+----> 1 not_in_train_but_in_test = df_ppd_test[-(df_ppd_test.first_letter.isin(df_ppd_train.first_letter))]
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/base.py:880, in IndexOpsMixin.isin(self, values)
+    873 if not is_list_like(values):
+    874     raise TypeError(
+    875         "only list-like objects are allowed to be passed"
+    876         " to isin(), you passed a [{values_type}]".format(values_type=type(values).__name__)
+    877     )
+    879 values = (
+--> 880     cast(np.ndarray, values).tolist() if isinstance(values, np.ndarray) else list(values)
+    881 )
+    883 other = [SF.lit(v) for v in values]
+    884 scol = self.spark.column.isin(other)
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/series.py:6485, in Series.__iter__(self)
+   6484 def __iter__(self) -> None:
+-> 6485     return MissingPandasLikeSeries.__iter__(self)
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/missing/__init__.py:23, in unsupported_function.<locals>.unsupported_function(*args, **kwargs)
+     22 def unsupported_function(*args, **kwargs):
+---> 23     raise PandasNotImplementedError(
+     24         class_name=class_name, method_name=method_name, reason=reason
+     25     )
+
+PandasNotImplementedError: The method `pd.Series.__iter__()` is not implemented. If you want to collect your data as an NumPy array, use 'to_numpy()' instead.
+</i>
+
+<b>2.</b>
+
+<i class="ir">df_ppd_test.first_letter.isin(df_ppd_train.first_letter)
+
+---------------------------------------------------------------------------
+PandasNotImplementedError                 Traceback (most recent call last)
+Cell In [63], line 1
+----> 1 df_ppd_test.first_letter.isin(df_ppd_train.first_letter)
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/base.py:880, in IndexOpsMixin.isin(self, values)
+    873 if not is_list_like(values):
+    874     raise TypeError(
+    875         "only list-like objects are allowed to be passed"
+    876         " to isin(), you passed a [{values_type}]".format(values_type=type(values).__name__)
+    877     )
+    879 values = (
+--> 880     cast(np.ndarray, values).tolist() if isinstance(values, np.ndarray) else list(values)
+    881 )
+    883 other = [SF.lit(v) for v in values]
+    884 scol = self.spark.column.isin(other)
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/series.py:6485, in Series.__iter__(self)
+    6484 def __iter__(self) -> None:
+-> 6485     return MissingPandasLikeSeries.__iter__(self)
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/missing/__init__.py:23, in unsupported_function.<locals>.unsupported_function(*args, **kwargs)
+        22 def unsupported_function(*args, **kwargs):
+---> 23     raise PandasNotImplementedError(
+        24         class_name=class_name, method_name=method_name, reason=reason
+        25     )
+
+PandasNotImplementedError: The method `pd.Series.__iter__()` is not implemented. If you want to collect your data as an NumPy array, use 'to_numpy()' instead.
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0fgfWZjc20w_VcUuhKT9vNurwPq8EYO_MTb0Thqkrt7PCnCArlsRF99YONAPlmqF2SjZrgysYj0ZoGhce84MSadC73zuvjJif1tkqvdtxzPytgYZlemuoH8A5zZD-YHkUL4Xn8348YghwFfV3YvX9sBFf20AW6Z4qQHOFU-RMSw79Ge984MdLpFJ8qQ/s528/4.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="528" data-original-width="480" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0fgfWZjc20w_VcUuhKT9vNurwPq8EYO_MTb0Thqkrt7PCnCArlsRF99YONAPlmqF2SjZrgysYj0ZoGhce84MSadC73zuvjJif1tkqvdtxzPytgYZlemuoH8A5zZD-YHkUL4Xn8348YghwFfV3YvX9sBFf20AW6Z4qQHOFU-RMSw79Ge984MdLpFJ8qQ/s600/4.png"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFbMx62QAMGFlCxUJ1-pn4J0O6N3xLHKd-Y-3Bb5l0I8PGuhEZGOa1KyIcoMRg3jf9wyPq-Ulrr1LzUGJ4POUo1gERxTjbTzwxkK76v78O5SYWxkfXet8Xiuw8PaFzYe5xuNb8AuPUh2U0jD2xcoETOnX2iJ4YRuq8RVyyAhn1EyQPNc3Luij0BNuioA/s630/5.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="630" data-original-width="398" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFbMx62QAMGFlCxUJ1-pn4J0O6N3xLHKd-Y-3Bb5l0I8PGuhEZGOa1KyIcoMRg3jf9wyPq-Ulrr1LzUGJ4POUo1gERxTjbTzwxkK76v78O5SYWxkfXet8Xiuw8PaFzYe5xuNb8AuPUh2U0jD2xcoETOnX2iJ4YRuq8RVyyAhn1EyQPNc3Luij0BNuioA/s600/5.png"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVdqeSy3ZdBieJKSh1M6PBWtf9GRMvJmfftvr_YjAMfpEXDh74vmgYDEJjYSAQfxg5Bk1KPAILvx3gsrd3GRbr8PHJPqLcsPMsd7VrzvGBeddZAGdq85lZamIUC5Ul1vtFJuJdTYt5UCW9TGGT_mk0CQthpF_tsLZIApkuCaEnrQrFdOdy7EzGMStUbA/s595/6.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="595" data-original-width="403" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVdqeSy3ZdBieJKSh1M6PBWtf9GRMvJmfftvr_YjAMfpEXDh74vmgYDEJjYSAQfxg5Bk1KPAILvx3gsrd3GRbr8PHJPqLcsPMsd7VrzvGBeddZAGdq85lZamIUC5Ul1vtFJuJdTYt5UCW9TGGT_mk0CQthpF_tsLZIApkuCaEnrQrFdOdy7EzGMStUbA/s600/6.png"/></a></div>
+
+<h1>Use of: DataFrame.to_numpy() → numpy.ndarray</h1>
+
+Returns: A NumPy ndarray representing the values in this DataFrame or Series.
+
+Note: This method should only be used if the resulting NumPy ndarray is expected to be small, as all the data is loaded into the driver’s memory.
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_vrhq0ce1NDuWa7Z9OnyGZ8dMhtjx2gfgGMk1DEbsC8L-Eko8jKe_NkaA-J0dWBa_5jbxuASZfwKipSkzs2YLivl17ov6F1u3XQjZMoawf8VhWBuWfic0f7btqZzaYfkLHipoWQhRVu21G-scfBoF_9sKWgln9qqSuubQ64jtTfUwUYSLlPxVu_6TkA/s572/7.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="179" data-original-width="572" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_vrhq0ce1NDuWa7Z9OnyGZ8dMhtjx2gfgGMk1DEbsC8L-Eko8jKe_NkaA-J0dWBa_5jbxuASZfwKipSkzs2YLivl17ov6F1u3XQjZMoawf8VhWBuWfic0f7btqZzaYfkLHipoWQhRVu21G-scfBoF_9sKWgln9qqSuubQ64jtTfUwUYSLlPxVu_6TkA/s600/7.png"/></a></div>
+
+<i class="ib">df_ppd_test.first_letter.isin(df_ppd_train.first_letter.to_numpy())</i>
+
+<i class="ig">
+0     False
+1     False
+2      True
+3      True
+4     False
+6     False
+7      True
+9     False
+10     True
+12     True
+13    False
+23     True
+24    False
+25    False
+28     True
+30     True
+31     True
+33     True
+34     True
+39     True
+41     True
+43     True
+44     True
+45     True
+46    False
+47    False
+49    False
+53     True
+56    False
+57    False
+58     True
+Name: first_letter, dtype: bool
+</i>
+
+<i class="ib">not_in_train_but_in_test = df_ppd_test[- ( df_ppd_test.first_letter.isin( df_ppd_train.first_letter.to_numpy() ) )]</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0k18xwYZoJhEX7FQkJc1ns3YkTQzzz1qnLFQyx-JnQ49RgtO04j78iV3d9HDO4A4EXAC6CWqsevc2RbcnbSpjFWqFq9vSxveBp-GDtQaRhBrA4BKMyJNGU96vMrzolHJL1KcJBVrDlxyzk7kXLTCBb4ay-KN-8lSbrpqUzZNk-x65_-DdoGk0ttd4Kw/s406/8.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="406" data-original-width="200" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0k18xwYZoJhEX7FQkJc1ns3YkTQzzz1qnLFQyx-JnQ49RgtO04j78iV3d9HDO4A4EXAC6CWqsevc2RbcnbSpjFWqFq9vSxveBp-GDtQaRhBrA4BKMyJNGU96vMrzolHJL1KcJBVrDlxyzk7kXLTCBb4ay-KN-8lSbrpqUzZNk-x65_-DdoGk0ttd4Kw/s600/8.png"/></a></div>
+</pre>
+<span style="display: none">Tags: Technology,Spark,</span>

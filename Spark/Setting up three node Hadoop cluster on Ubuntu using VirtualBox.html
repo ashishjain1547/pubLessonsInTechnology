@@ -1,0 +1,313 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<p>1. Setting hostname in three Guest OS(s):</p>
+<p><b>$ sudo gedit /etc/hostname</b></p>
+<p>    "to master, slave1, and slave2 on different machines"</p>
+<p></p>
+<p></p>
+<p>ON MASTER (Host OS IP: 192.168.1.12):</p>
+<p></p>
+<p><b>$ cat /etc/hosts</b></p>
+<p></p>
+<pre>192.168.1.12 master
+192.168.1.3  slave1
+192.168.1.4  slave2</pre>
+<p></p>
+<p>-----------------------------------------------------------</p>
+<p></p>
+<p>2. Setting up ".bashrc" on each system (master, slave1, slave2):</p>
+<p></p>
+<p>$ sudo gedit ~/.bashrc</p>
+<p></p>
+<p>Add the below lines at the end of the file.</p>
+<p></p>
+<p>export HADOOP_HOME=/usr/local/hadoop</p>
+<p>export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin</p>
+<p></p>
+<p>export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop</p>
+<p>export HADOOP_MAPRED_HOME=/usr/local/hadoop</p>
+<p>export HADOOP_COMMON_HOME=/usr/local/hadoop</p>
+<p>export HADOOP_HDFS_HOME=/usr/local/hadoop</p>
+<p>export YARN_HOME=/usr/local/hadoop</p>
+<p></p>
+<p>-----------------------------------------------------------</p>
+<p></p>
+<p>3. ON SLAVE2 (Host OS IP: 192.168.1.4):</p>
+<p></p>
+<p>$ cat /etc/hostname</p>
+<p></p>
+<p>slave2</p>
+<p></p>
+<p>---</p>
+<p></p>
+<p>$ cat /etc/hosts</p>
+<p></p>
+<p>192.168.1.12 master</p>
+<p>192.168.1.3  slave1</p>
+<p>192.168.1.4  slave2</p>
+<p></p>
+<p>4. FOLLOW THE STEPS MENTIONED FOR SLAVE2 ALSO FOR SLAVE1 (Host OS IP: 192.168.1.3)</p>
+<p></p>
+<p>-----------------------------------------------------------</p>
+<p></p>
+<p>5. Configuring Key Based Login</p>
+<p></p>
+<p>Setup SSH in every node such that they can communicate with one another without any prompt for password.</p>
+<p></p>
+<pre>1) sudo apt-get install openssh-server openssh-client         
+2) sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT         
+3) Use the network adapter 'NAT' in the Guest OS settings, and create a new port forwarding rule "SSH" for port 22.         
+4) sudo reboot         
+5) ssh-keygen -t rsa -f ~/.ssh/id_rsa -P ""         
+6) sudo service ssh stop         
+7) sudo service ssh start         
+8) ssh-copy-id -i ~/.ssh/id_rsa.pub ashish@master         
+9) ssh-copy-id -i ~/.ssh/id_rsa.pub ashish@slave1         
+10) ssh-copy-id -i ~/.ssh/id_rsa.pub ashish@slave2</pre>
+<p></p>
+<p>-----------------------------------------------------------</p>
+<p></p>
+<p>6. Follow all the nine steps from the article below to setup Hadoop on "master" machine.</p>
+<p></p>
+<p>https://survival8.blogspot.com/p/getting-started-with-hadoop-on.html</p>
+<p></p>
+<p>-----------------------------------------------------------</p>
+<p></p>
+<p>On "master":</p>
+<p></p>
+<p>7. ==> Set NameNode Location</p>
+<p></p>
+<pre>Update your $HADOOP_HOME/etc/hadoop/core-site.xml file to set the NameNode location to master on port 9000:
+$HADOOP_HOME: /usr/local/hadoop
+Code:
+<i>&lt;configuration&gt;
+	&lt;property&gt;
+		&lt;name&gt;fs.default.name&lt;/name&gt;
+		&lt;value&gt;hdfs://master:9000&lt;/value&gt;
+	&lt;/property&gt;
+&lt;/configuration&gt; </i></pre>
+<p></p>
+<p>8. ==> Set path for HDFS</p>
+<p>Edit $HADOOP_HOME/etc/hadoop/hdfs-site.xml file to resemble the following configuration:</p>
+<pre><i>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+        &lt;value&gt;/home/hadoop/data/nameNode&lt;/value&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+        &lt;value&gt;/home/hadoop/data/dataNode&lt;/value&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;dfs.replication&lt;/name&gt;
+        &lt;value&gt;1&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</i></pre>
+
+<p></p>
+<p>9. ==> Set YARN as Job Scheduler</p>
+<p></p>
+<p>Edit the mapred-site.xml file, setting YARN as the default framework for MapReduce operations:</p>
+<p></p>
+<p>$HADOOP_HOME/etc/hadoop/mapred-site.xml</p>
+<pre><i>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+        &lt;value&gt;yarn&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.app.mapreduce.am.env&lt;/name&gt;
+        &lt;value&gt;HADOOP_MAPRED_HOME=$HADOOP_HOME&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.map.env&lt;/name&gt;
+        &lt;value&gt;HADOOP_MAPRED_HOME=$HADOOP_HOME&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;mapreduce.reduce.env&lt;/name&gt;
+        &lt;value&gt;HADOOP_MAPRED_HOME=$HADOOP_HOME&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</i></pre>
+<p></p>
+<p>10. ==> Configure YARN</p>
+<p></p>
+<p>Edit yarn-site.xml, which contains the configuration options for YARN. In the value field for the yarn.resourcemanager.hostname, replace 192.168.1.12 with the public IP address of "master":</p>
+<p></p>
+<p>$HADOOP_HOME/etc/hadoop/yarn-site.xml</p>
+<p> </p>
+<pre><i>&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.acl.enable&lt;/name&gt;
+        &lt;value&gt;0&lt;/value&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+        &lt;value&gt;192.168.1.12&lt;/value&gt; <!-- This IP is of the 'master'.-->
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+        &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;</i></pre>
+<p></p>
+<p>11. ==> Configure Workers</p>
+<p></p>
+<p>The file workers is used by startup scripts to start required daemons on all nodes.</p>
+<p></p>
+<p>Edit this file: $HADOOP_HOME/etc/hadoop/workers to include both of the nodes:</p>
+<p></p>
+<p>slave1</p>
+<p>slave2</p>
+<p></p>
+<p>12. ==> Configure Memory Allocation (Two steps)</p>
+<p></p>
+<p>A) Edit $HADOOP_HOME/etc/hadoop/yarn-site.xml and add the following lines:</p>
+<p></p>
+<p>sudo gedit $HADOOP_HOME/etc/hadoop/yarn-site.xml</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;</p>
+<p>        &lt;value&gt;1536&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;</p>
+<p>        &lt;value&gt;1536&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;</p>
+<p>        &lt;value&gt;128&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;yarn.nodemanager.vmem-check-enabled&lt;/name&gt;</p>
+<p>        &lt;value&gt;false&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>B) Edit $HADOOP_HOME/etc/hadoop/mapred-site.xml and add the following lines:</p>
+<p></p>
+<p>sudo gedit $HADOOP_HOME/etc/hadoop/mapred-site.xml</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;yarn.app.mapreduce.am.resource.mb&lt;/name&gt;</p>
+<p>        &lt;value&gt;512&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;mapreduce.map.memory.mb&lt;/name&gt;</p>
+<p>        &lt;value&gt;256&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>&lt;property&gt;</p>
+<p>        &lt;name&gt;mapreduce.reduce.memory.mb&lt;/name&gt;</p>
+<p>        &lt;value&gt;256&lt;/value&gt;</p>
+<p>&lt;/property&gt;</p>
+<p></p>
+<p>13. ==> Duplicate Config Files on Each Node</p>
+<p></p>
+<pre>Copy the Hadoop configuration files to the worker nodes:
+
+<i>scp -r /usr/local/hadoop/etc/* ashish@slave1:/usr/local/hadoop/etc/
+scp -r /usr/local/hadoop/etc/* ashish@slave2:/usr/local/hadoop/etc/</i>
+
+When you are copying contents of "/etc", the following file should be modified to contain the correct JAVA_HOME for each of the destination nodes.
+
+/usr/local/hadoop/etc/hadoop/hadoop-env.sh</pre>
+<p></p>
+<p>14. ==> Format HDFS</p>
+<p></p>
+<p>HDFS needs to be formatted like any classical file system. On "master", run the following command:</p>
+<p></p>
+<p>hdfs namenode -format</p>
+<p></p>
+<p>Your Hadoop installation is now configured and ready to run.</p>
+<p></p>
+<p>15. ==> Start and Stop HDFS</p>
+<p></p>
+<p>Start the HDFS by running the following script from master:</p>
+<p></p>
+<p>/usr/local/hadoop/sbin/start-dfs.sh</p>
+<p>This will start NameNode and SecondaryNameNode on master, and DataNode on slave1 and slave2, according to the configuration in the workers config file.</p>
+<p></p>
+<p>Check that every process is running with the jps command on each node. On master, you should see the following (the PID number will be different):</p>
+<p></p>
+<pre>21922 Jps
+21603 NameNode
+21787 SecondaryNameNode</pre>
+<p></p>
+<p>And on slave1 and slave2 you should see the following:</p>
+<p></p>
+<pre>19728 DataNode
+19819 Jps</pre>
+<p></p>
+<p>To stop HDFS on master and worker nodes, run the following command from node-master:</p>
+<p></p>
+<p>stop-dfs.sh</p>
+<p></p>
+<p>16. ==> Monitor your HDFS Cluster</p>
+<p></p>
+<p>Point your browser to http://master:9870/dfshealth.html, where "master" IP is the IP address of your master, and you’ll get a user-friendly monitoring console.</p>
+<p></p>
+<p style="display: none;">For more details, check this: https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/</p>

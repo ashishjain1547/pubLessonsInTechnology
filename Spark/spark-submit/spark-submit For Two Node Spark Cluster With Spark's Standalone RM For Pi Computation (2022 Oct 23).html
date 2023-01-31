@@ -1,0 +1,322 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        i.ir {
+            color: red;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        i.ib {
+            color: blue;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<a class="customLink toggleBtn" href="https://survival8.blogspot.com/2022/10/creating-two-node-spark-cluster-with.html" target="_blank">Previously: Creating Two Node Spark Cluster With Two Worker Nodes and One Master Node Using Spark's Standalone Resource Manager on Ubuntu Machines</a>
+
+<pre><h1>Issue</h1>
+
+<i class="ib">(base) ashish@ashishlaptop:/usr/local/spark$ spark-submit --master spark://ashishlaptop:7077 examples/src/main/python/pi.py 100</i>
+
+<i class="ir">
+22/10/23 15:14:36 INFO SparkContext: Running Spark version 3.3.0
+22/10/23 15:14:36 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/23 15:14:36 INFO ResourceUtils: ==============================================================
+22/10/23 15:14:36 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/10/23 15:14:36 INFO ResourceUtils: ==============================================================
+22/10/23 15:14:36 INFO SparkContext: Submitted application: PythonPi
+22/10/23 15:14:36 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/10/23 15:14:36 INFO ResourceProfile: Limiting resource is cpu
+22/10/23 15:14:36 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/10/23 15:14:36 INFO SecurityManager: Changing view acls to: ashish
+22/10/23 15:14:36 INFO SecurityManager: Changing modify acls to: ashish
+22/10/23 15:14:36 INFO SecurityManager: Changing view acls groups to: 
+22/10/23 15:14:36 INFO SecurityManager: Changing modify acls groups to: 
+22/10/23 15:14:36 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+22/10/23 15:14:37 INFO Utils: Successfully started service 'sparkDriver' on port 41631.
+22/10/23 15:14:37 INFO SparkEnv: Registering MapOutputTracker
+22/10/23 15:14:37 INFO SparkEnv: Registering BlockManagerMaster
+22/10/23 15:14:37 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/10/23 15:14:37 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/10/23 15:14:37 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/10/23 15:14:37 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-9599974d-836e-482e-bcf1-5c6e15c29ce9
+22/10/23 15:14:37 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+22/10/23 15:14:37 INFO SparkEnv: Registering OutputCommitCoordinator
+22/10/23 15:14:37 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/10/23 15:14:38 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://ashishlaptop:7077...
+22/10/23 15:14:38 INFO TransportClientFactory: Successfully created connection to ashishlaptop/192.168.1.142:7077 after 45 ms (0 ms spent in bootstraps)
+22/10/23 15:14:38 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20221023151438-0000
+22/10/23 15:14:38 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44369.
+22/10/23 15:14:38 INFO NettyBlockTransferService: Server created on ashishlaptop:44369
+22/10/23 15:14:38 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/10/23 15:14:38 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ashishlaptop, 44369, None)
+22/10/23 15:14:38 INFO BlockManagerMasterEndpoint: Registering block manager ashishlaptop:44369 with 366.3 MiB RAM, BlockManagerId(driver, ashishlaptop, 44369, None)
+22/10/23 15:14:38 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ashishlaptop, 44369, None)
+22/10/23 15:14:38 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20221023151438-0000/0 on worker-20221023135355-192.168.1.142-43143 (192.168.1.142:43143) with 4 core(s)
+22/10/23 15:14:38 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ashishlaptop, 44369, None)
+22/10/23 15:14:38 INFO StandaloneSchedulerBackend: Granted executor ID app-20221023151438-0000/0 on hostPort 192.168.1.142:43143 with 4 core(s), 1024.0 MiB RAM
+22/10/23 15:14:38 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20221023151438-0000/1 on worker-20221023135358-192.168.1.106-44471 (192.168.1.106:44471) with 2 core(s)
+22/10/23 15:14:38 INFO StandaloneSchedulerBackend: Granted executor ID app-20221023151438-0000/1 on hostPort 192.168.1.106:44471 with 2 core(s), 1024.0 MiB RAM
+22/10/23 15:14:38 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20221023151438-0000/0 is now RUNNING
+22/10/23 15:14:38 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20221023151438-0000/1 is now RUNNING
+22/10/23 15:14:39 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+22/10/23 15:14:40 INFO SparkContext: Starting job: reduce at /usr/local/spark/examples/src/main/python/pi.py:42
+22/10/23 15:14:41 INFO DAGScheduler: Got job 0 (reduce at /usr/local/spark/examples/src/main/python/pi.py:42) with 100 output partitions
+22/10/23 15:14:41 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at /usr/local/spark/examples/src/main/python/pi.py:42)
+22/10/23 15:14:41 INFO DAGScheduler: Parents of final stage: List()
+22/10/23 15:14:41 INFO DAGScheduler: Missing parents: List()
+22/10/23 15:14:41 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /usr/local/spark/examples/src/main/python/pi.py:42), which has no missing parents
+22/10/23 15:14:41 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 11.3 KiB, free 366.3 MiB)
+22/10/23 15:14:41 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 8.5 KiB, free 366.3 MiB)
+22/10/23 15:14:41 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ashishlaptop:44369 (size: 8.5 KiB, free: 366.3 MiB)
+22/10/23 15:14:41 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1513
+22/10/23 15:14:41 INFO DAGScheduler: Submitting 100 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /usr/local/spark/examples/src/main/python/pi.py:42) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+22/10/23 15:14:41 INFO TaskSchedulerImpl: Adding task set 0.0 with 100 tasks resource profile 0
+22/10/23 15:14:43 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.142:37452) with ID 0,  ResourceProfileId 0
+22/10/23 15:14:43 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.142:34419 with 366.3 MiB RAM, BlockManagerId(0, 192.168.1.142, 34419, None)
+22/10/23 15:14:43 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.1.142, executor 0, partition 0, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:43 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (192.168.1.142, executor 0, partition 1, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:43 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (192.168.1.142, executor 0, partition 2, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:43 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (192.168.1.142, executor 0, partition 3, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:44 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.1.142:34419 (size: 8.5 KiB, free: 366.3 MiB)
+22/10/23 15:14:46 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (192.168.1.142, executor 0, partition 4, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:46 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (192.168.1.142, executor 0, partition 5, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:46 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (192.168.1.142, executor 0, partition 6, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:46 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (192.168.1.142, executor 0, partition 7, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:14:46 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.106:44292) with ID 1,  ResourceProfileId 0
+22/10/23 15:14:46 WARN TaskSetManager: Lost task 2.0 in stage 0.0 (TID 2) (192.168.1.142 executor 0): org.apache.spark.api.python.PythonException: Traceback (most recent call last):
+    File "/usr/local/spark/python/lib/pyspark.zip/pyspark/worker.py", line 540, in main
+    raise RuntimeError(
+<b>RuntimeError: Python in worker has different version 3.10 than that in driver 3.9, PySpark cannot run with different minor versions. Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.</b>
+
+...
+22/10/23 15:14:47 INFO SparkContext: Invoking stop() from shutdown hook
+22/10/23 15:14:47 INFO SparkUI: Stopped Spark web UI at http://ashishlaptop:4040
+22/10/23 15:14:47 INFO StandaloneSchedulerBackend: Shutting down all executors
+22/10/23 15:14:47 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+22/10/23 15:14:47 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/10/23 15:14:47 INFO MemoryStore: MemoryStore cleared
+22/10/23 15:14:47 INFO BlockManager: BlockManager stopped
+22/10/23 15:14:47 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/10/23 15:14:47 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/10/23 15:14:47 INFO SparkContext: Successfully stopped SparkContext
+22/10/23 15:14:47 INFO ShutdownHookManager: Shutdown hook called
+22/10/23 15:14:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-c60126be-f479-4617-8548-ad0ca7f00763/pyspark-40737be6-41de-4d50-859d-88e13123232b
+22/10/23 15:14:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-0915b97c-253d-4807-9eb6-e8f3d1a7019c
+22/10/23 15:14:47 INFO ShutdownHookManager: Deleting directory /tmp/spark-c60126be-f479-4617-8548-ad0ca7f00763
+(base) ashish@ashishlaptop:/usr/local/spark$ </i>
+    
+<h1>Debugging</h1>
+(base) ashish@ashishlaptop:/usr/local/spark$ echo $PYSPARK_PYTHON
+
+(base) ashish@ashishlaptop:/usr/local/spark$ echo $PYSPARK_DRIVER_PYTHON
+
+(base) ashish@ashishlaptop:/usr/local/spark$ 
+
+<b>Both are empty.</b>
+
+<h2>Setting the environment variables</h2>
+
+<i class="ib">(base) ashish@ashishlaptop:/usr/local/spark$ which python</i>
+
+<i class="ig">/home/ashish/anaconda3/bin/python</i>
+
+<i class="ib">(base) ashish@ashishlaptop:/usr/local/spark$ /home/ashish/anaconda3/bin/python</i>
+
+<i class="ig">Python 3.9.12 (main, Apr  5 2022, 06:56:58) 
+[GCC 7.5.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()</i>
+
+(base) ashish@ashishlaptop:/usr/local/spark$ sudo nano ~/.bashrc
+[sudo] password for ashish: 
+(base) ashish@ashishlaptop:/usr/local/spark$ 
+(base) ashish@ashishlaptop:/usr/local/spark$ tail ~/.bashrc
+<i class="ig">
+unset __conda_setup
+# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;
+
+export PATH="/home/ashish/.local/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export PATH="$PATH:/usr/local/spark/bin"
+export PYSPARK_PYTHON="/home/ashish/anaconda3/bin/python"
+export PYSPARK_DRIVER_PYTHON="/home/ashish/anaconda3/bin/python" </i>
+<i class="ib">
+(base) ashish@ashishlaptop:/usr/local/spark$ source ~/.bashrc
+(base) ashish@ashishlaptop:/usr/local/spark$ echo $PYSPARK_PYTHON</i>
+
+<i class="ig">/home/ashish/anaconda3/bin/python</i>
+
+<h1>Logs After Issue Resolution</h1>
+
+<i class="ib">(base) ashish@ashishlaptop:/usr/local/spark$ spark-submit --master spark://ashishlaptop:7077 examples/src/main/python/pi.py 100</i>
+
+<i class="ig">
+22/10/23 15:30:51 INFO SparkContext: Running Spark version 3.3.0
+22/10/23 15:30:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/23 15:30:52 INFO ResourceUtils: ==============================================================
+22/10/23 15:30:52 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/10/23 15:30:52 INFO ResourceUtils: ==============================================================
+22/10/23 15:30:52 INFO SparkContext: Submitted application: PythonPi
+22/10/23 15:30:52 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/10/23 15:30:52 INFO ResourceProfile: Limiting resource is cpu
+22/10/23 15:30:52 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/10/23 15:30:52 INFO SecurityManager: Changing view acls to: ashish
+22/10/23 15:30:52 INFO SecurityManager: Changing modify acls to: ashish
+22/10/23 15:30:52 INFO SecurityManager: Changing view acls groups to: 
+22/10/23 15:30:52 INFO SecurityManager: Changing modify acls groups to: 
+22/10/23 15:30:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+22/10/23 15:30:52 INFO Utils: Successfully started service 'sparkDriver' on port 41761.
+22/10/23 15:30:52 INFO SparkEnv: Registering MapOutputTracker
+22/10/23 15:30:52 INFO SparkEnv: Registering BlockManagerMaster
+22/10/23 15:30:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/10/23 15:30:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/10/23 15:30:52 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/10/23 15:30:52 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-ffa15e79-7af0-41f9-87eb-fce866f17ed8
+22/10/23 15:30:53 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+22/10/23 15:30:53 INFO SparkEnv: Registering OutputCommitCoordinator
+22/10/23 15:30:53 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/10/23 15:30:53 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://ashishlaptop:7077...
+22/10/23 15:30:53 INFO TransportClientFactory: Successfully created connection to ashishlaptop/192.168.1.142:7077 after 58 ms (0 ms spent in bootstraps)
+22/10/23 15:30:53 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20221023153053-0001
+22/10/23 15:30:53 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20221023153053-0001/0 on worker-20221023135355-192.168.1.142-43143 (192.168.1.142:43143) with 4 core(s)
+22/10/23 15:30:53 INFO StandaloneSchedulerBackend: Granted executor ID app-20221023153053-0001/0 on hostPort 192.168.1.142:43143 with 4 core(s), 1024.0 MiB RAM
+22/10/23 15:30:53 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32809.
+22/10/23 15:30:53 INFO NettyBlockTransferService: Server created on ashishlaptop:32809
+22/10/23 15:30:53 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/10/23 15:30:53 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20221023153053-0001/1 on worker-20221023135358-192.168.1.106-44471 (192.168.1.106:44471) with 2 core(s)
+22/10/23 15:30:53 INFO StandaloneSchedulerBackend: Granted executor ID app-20221023153053-0001/1 on hostPort 192.168.1.106:44471 with 2 core(s), 1024.0 MiB RAM
+22/10/23 15:30:53 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ashishlaptop, 32809, None)
+22/10/23 15:30:53 INFO BlockManagerMasterEndpoint: Registering block manager ashishlaptop:32809 with 366.3 MiB RAM, BlockManagerId(driver, ashishlaptop, 32809, None)
+22/10/23 15:30:53 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ashishlaptop, 32809, None)
+22/10/23 15:30:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ashishlaptop, 32809, None)
+22/10/23 15:30:54 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20221023153053-0001/0 is now RUNNING
+22/10/23 15:30:54 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20221023153053-0001/1 is now RUNNING
+22/10/23 15:30:54 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+22/10/23 15:30:55 INFO SparkContext: Starting job: reduce at /usr/local/spark/examples/src/main/python/pi.py:42
+22/10/23 15:30:56 INFO DAGScheduler: Got job 0 (reduce at /usr/local/spark/examples/src/main/python/pi.py:42) with 100 output partitions
+22/10/23 15:30:56 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at /usr/local/spark/examples/src/main/python/pi.py:42)
+22/10/23 15:30:56 INFO DAGScheduler: Parents of final stage: List()
+22/10/23 15:30:56 INFO DAGScheduler: Missing parents: List()
+22/10/23 15:30:56 INFO DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /usr/local/spark/examples/src/main/python/pi.py:42), which has no missing parents
+22/10/23 15:30:56 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 11.4 KiB, free 366.3 MiB)
+22/10/23 15:30:56 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 8.5 KiB, free 366.3 MiB)
+22/10/23 15:30:56 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on ashishlaptop:32809 (size: 8.5 KiB, free: 366.3 MiB)
+22/10/23 15:30:56 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1513
+22/10/23 15:30:56 INFO DAGScheduler: Submitting 100 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /usr/local/spark/examples/src/main/python/pi.py:42) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+22/10/23 15:30:56 INFO TaskSchedulerImpl: Adding task set 0.0 with 100 tasks resource profile 0
+22/10/23 15:30:58 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.142:54146) with ID 0,  ResourceProfileId 0
+22/10/23 15:30:59 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.142:46811 with 366.3 MiB RAM, BlockManagerId(0, 192.168.1.142, 46811, None)
+22/10/23 15:30:59 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.1.142, executor 0, partition 0, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:30:59 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (192.168.1.142, executor 0, partition 1, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:30:59 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (192.168.1.142, executor 0, partition 2, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:30:59 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (192.168.1.142, executor 0, partition 3, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+22/10/23 15:30:59 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.1.142:46811 (size: 8.5 KiB, free: 366.3 MiB)
+22/10/23 15:31:01 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.106:60352) with ID 1,  ResourceProfileId 0
+22/10/23 15:31:01 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.1.106:41617 with 366.3 MiB RAM, BlockManagerId(1, 192.168.1.106, 41617, None)
+22/10/23 15:31:01 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (192.168.1.106, executor 1, partition 4, PROCESS_LOCAL, 4437 bytes) taskResourceAssignments Map()
+...
+22/10/23 15:31:09 INFO TaskSetManager: Finished task 93.0 in stage 0.0 (TID 93) in 344 ms on 192.168.1.142 (executor 0) (94/100)
+22/10/23 15:31:09 INFO TaskSetManager: Finished task 94.0 in stage 0.0 (TID 94) in 312 ms on 192.168.1.142 (executor 0) (95/100)
+22/10/23 15:31:09 INFO TaskSetManager: Finished task 95.0 in stage 0.0 (TID 95) in 314 ms on 192.168.1.142 (executor 0) (96/100)
+22/10/23 15:31:09 INFO TaskSetManager: Finished task 96.0 in stage 0.0 (TID 96) in 263 ms on 192.168.1.106 (executor 1) (97/100)
+22/10/23 15:31:09 INFO TaskSetManager: Finished task 98.0 in stage 0.0 (TID 98) in 260 ms on 192.168.1.142 (executor 0) (98/100)
+22/10/23 15:31:09 INFO TaskSetManager: Finished task 99.0 in stage 0.0 (TID 99) in 256 ms on 192.168.1.142 (executor 0) (99/100)
+22/10/23 15:31:10 INFO TaskSetManager: Finished task 97.0 in stage 0.0 (TID 97) in 384 ms on 192.168.1.106 (executor 1) (100/100)
+22/10/23 15:31:10 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+22/10/23 15:31:10 INFO DAGScheduler: ResultStage 0 (reduce at /usr/local/spark/examples/src/main/python/pi.py:42) finished in 13.849 s
+22/10/23 15:31:10 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+22/10/23 15:31:10 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+22/10/23 15:31:10 INFO DAGScheduler: Job 0 finished: reduce at /usr/local/spark/examples/src/main/python/pi.py:42, took 14.106103 s
+Pi is roughly 3.142880
+22/10/23 15:31:10 INFO SparkUI: Stopped Spark web UI at http://ashishlaptop:4040
+22/10/23 15:31:10 INFO StandaloneSchedulerBackend: Shutting down all executors
+22/10/23 15:31:10 INFO CoarseGrainedSchedulerBackend$DriverEndpoint: Asking each executor to shut down
+22/10/23 15:31:10 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/10/23 15:31:10 INFO MemoryStore: MemoryStore cleared
+22/10/23 15:31:10 INFO BlockManager: BlockManager stopped
+22/10/23 15:31:10 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/10/23 15:31:10 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/10/23 15:31:10 INFO SparkContext: Successfully stopped SparkContext
+22/10/23 15:31:11 INFO ShutdownHookManager: Shutdown hook called
+22/10/23 15:31:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-6be4655c-e59a-403a-92e8-582583fa3f7d/pyspark-c4d7588d-a23a-4393-b29b-6689d20e7684
+22/10/23 15:31:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-f4436e38-d155-4763-bb57-461eb3793d13
+22/10/23 15:31:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-6be4655c-e59a-403a-92e8-582583fa3f7d
+(base) ashish@ashishlaptop:/usr/local/spark$ 
+</i>
+</pre>
+<span style="display: none">Tags: Technology,Spark,</span>

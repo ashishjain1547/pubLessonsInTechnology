@@ -1,0 +1,8 @@
+name: pyspark
+channels:
+  - conda-forge
+dependencies:
+  - python==3.9
+  - pandas
+  - pyspark
+  - pip

@@ -1,0 +1,152 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        i.ir {
+            color: red;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        i.ib {
+            color: blue;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><!--Way 1 - In Reading null and NA values -->
+<i class="ib">
+import seaborn as sns
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer
+from pyspark import SparkContext
+from pyspark.sql import SQLContext # Main entry point for DataFrame and SQL functionality.
+
+sc = SparkContext.getOrCreate()
+sqlCtx = SQLContext(sc)
+import pyspark
+print(pyspark.__version__)
+</i>
+
+<i class="ig">3.3.0</i>
+
+<i class="ib">
+with open('./input/student.csv', mode = 'r', encoding = 'utf8') as f:
+    data = f.readlines()
+
+data
+</i>
+
+<i class="ig">
+['sno,FirstName,LASTNAME\n',
+'one,Ram,\n',
+'two,,Sharma\n',
+'three,Shyam,NA\n',
+'four,Kabir,\n',
+'five,NA,Singh\n']
+</i>
+
+<i class="ib">df_student.head()</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIu1XdmhWxr-rSub6g_-Pnzb-n-IIkxF9lq0EEwkdHtFcQSsOFwzyxVhch9gyOLuYrQ7t2NoD5iNl3I3QbKvGcNA9hmmqZazfw5n85cg-QbS1l85uzHMRPS6Q2x9z_zws9I1L2tyPj8Gpt-5WqxrHn-NZTNNExStdDGKMvvIh03uJ0R2IeT8be2on5UQ/s264/1.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="195" data-original-width="264" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIu1XdmhWxr-rSub6g_-Pnzb-n-IIkxF9lq0EEwkdHtFcQSsOFwzyxVhch9gyOLuYrQ7t2NoD5iNl3I3QbKvGcNA9hmmqZazfw5n85cg-QbS1l85uzHMRPS6Q2x9z_zws9I1L2tyPj8Gpt-5WqxrHn-NZTNNExStdDGKMvvIh03uJ0R2IeT8be2on5UQ/s400/1.png"/></a></div>
+
+<h2>When you load a Pandas DataFrame by reading from a CSV, blank values and 'NA' values are converted to 'NaN' values by default as shown above.</h2>
+
+<i class="ib">print(type(df_student))</i>
+<i class="ig">&lt;class 'pandas.core.frame.DataFrame'></i>
+<i class="ib">df_student.fillna('Not Applicable', inplace = True) # Handles blank and 'NA' values both. 
+df_student
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-TR0A3c81hWZEMnuS8sgxEdEJ5B3zA4MiKNu0Ll9hHGvCez_Rx-KeeZl3Xkb5futjzJKDfjy8ymrHX4tUC4snd4KgjfaXT0B0jhicxHLh8qgrFFqL1o0d2BmXedKrvpRIK4m40AzpJMyBVLeYsroeQij94ozyrWwhDh9nz61LPNCOW_ypxPTcG2CyIw/s294/2.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="198" data-original-width="294" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-TR0A3c81hWZEMnuS8sgxEdEJ5B3zA4MiKNu0Ll9hHGvCez_Rx-KeeZl3Xkb5futjzJKDfjy8ymrHX4tUC4snd4KgjfaXT0B0jhicxHLh8qgrFFqL1o0d2BmXedKrvpRIK4m40AzpJMyBVLeYsroeQij94ozyrWwhDh9nz61LPNCOW_ypxPTcG2CyIw/s400/2.png"/></a></div>
+
+<i class="ib">
+from pyspark import pandas as ppd
+df_student_pyspark = ppd.read_csv('./input/student.csv')
+type(df_student_pyspark)
+</i>
+<i class="ig">pyspark.pandas.frame.DataFrame</i>
+
+<i class="ib">df_student_pyspark</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrTTzZ_GowglrE4dKnyqRRYXaItl1vEbtD6AVu6QW7lC7rseqlNW0veL-WDgHi3wvD8j1aezMWj3b7akT8ciB9P8Q9QfPFmwSA4Pt-6yD1QyD8aKuBDDS-J44_rIUt-Rfx-p1bM3aYSf5jYMgxuecQV0cW4G_B267XLXixK-YI4cabr7WBG7KOjeAvmw/s294/3.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="198" data-original-width="294" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrTTzZ_GowglrE4dKnyqRRYXaItl1vEbtD6AVu6QW7lC7rseqlNW0veL-WDgHi3wvD8j1aezMWj3b7akT8ciB9P8Q9QfPFmwSA4Pt-6yD1QyD8aKuBDDS-J44_rIUt-Rfx-p1bM3aYSf5jYMgxuecQV0cW4G_B267XLXixK-YI4cabr7WBG7KOjeAvmw/s400/3.png"/></a></div>
+
+<i class="ib">df_student_pyspark.fillna('Not Applicable', inplace = True) # Handles blank (None) values. 
+df_student_pyspark
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-uWVd0NRv9f115RUOoulV-tv3yyFYDhnv5Ie_Efopcsx-mYhP05II6AWQczVP5OR0bwexDmOahZd612HfEl1nzuGa4e5khTsiO-4ojKtUp3xuWinTjbShNepwtZwH8w6ATz3uKxk3MrtXJZWdiV1zNoGMIWjRFSVVV52QyH75dyGqcluvCwOTKt7SHQ/s294/4.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="198" data-original-width="294" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh-uWVd0NRv9f115RUOoulV-tv3yyFYDhnv5Ie_Efopcsx-mYhP05II6AWQczVP5OR0bwexDmOahZd612HfEl1nzuGa4e5khTsiO-4ojKtUp3xuWinTjbShNepwtZwH8w6ATz3uKxk3MrtXJZWdiV1zNoGMIWjRFSVVV52QyH75dyGqcluvCwOTKt7SHQ/s400/4.png"/></a></div>
+</pre>
+<span style="display: none">Tags: Technology,Spark</span>

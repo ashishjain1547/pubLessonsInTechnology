@@ -1,0 +1,555 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+
+    .up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
+    .ib {
+      color: blue
+    }
+
+    .ig {
+      color: green
+    }
+
+    .ir {
+      color: red
+    }
+  </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Configurations:
+  Hostname and IP mappings:
+    Check the "/etc/hosts" file by opening it in both NANO and VI.
+
+<i class="ib">192.168.1.12 MASTER master
+192.168.1.3  SLAVE1 slave1
+192.168.1.4  SLAVE2 slave2</i>
+  
+  Software configuration:
+    (base) [admin@SLAVE2 downloads]$ java -version
+      openjdk version "1.8.0_181"
+      OpenJDK Runtime Environment (build 1.8.0_181-b13)
+      OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+    
+    (base) [admin@MASTER ~]$ cd /opt/ml/downloads
+    (base) [admin@MASTER downloads]$ ls
+      <i style="color: green">Anaconda3-2020.02-Linux-x86_64.sh  
+  	    hadoop-3.2.1.tar.gz  
+  	    scala-2.13.2.rpm  
+  	    spark-3.0.0-preview2-bin-hadoop3.2.tgz </i>
+   
+    # Scala can be downloaded from <a href="https://www.scala-lang.org/download/">here</a>.
+    # Installation command: sudo rpm -i scala-2.13.2.rpm
+   
+    (base) [admin@MASTER downloads]$ echo JAVA_HOME
+      /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-7.b13.el7.x86_64/jre/
+  
+    PATH: /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+      JAVA_HOME ON 'master': /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-7.b13.el7.x86_64/jre/
+      JAVA_HOME on 'slave1': /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre
+
+~ ~ ~
+
+In the case of no internet connectivity, installation of 'openssh-server' and 'openssh-client' is not straightforward. These packages have nested dependencies that are hard resolve.
+
+ (base) [admin@SLAVE2 downloads]$ sudo rpm -i openssh-server-8.0p1-4.el8_1.x86_64.rpm
+  warning: openssh-server-8.0p1-4.el8_1.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8483c65d: NOKEY
+  error: Failed dependencies:
+    crypto-policies >= 20180306-1 is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    libc.so.6(GLIBC_2.25)(64bit) is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    libc.so.6(GLIBC_2.26)(64bit) is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    libcrypt.so.1(XCRYPT_2.0)(64bit) is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    libcrypto.so.1.1()(64bit) is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    libcrypto.so.1.1(OPENSSL_1_1_0)(64bit) is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    libcrypto.so.1.1(OPENSSL_1_1_1b)(64bit) is needed by openssh-server-8.0p1-4.el8_1.x86_64
+    openssh = 8.0p1-4.el8_1 is needed by openssh-server-8.0p1-4.el8_1.x86_64
+
+~ ~ ~
+
+Doing SSH setup:
+  1) sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+  2) sudo reboot
+  3) ssh-keygen -t rsa -f ~/.ssh/id_rsa -P ""
+  4) ssh-copy-id -i ~/.ssh/id_rsa.pub admin@SLAVE2
+  5) ssh-copy-id -i ~/.ssh/id_rsa.pub admin@MASTER
+  6) ssh-copy-id -i ~/.ssh/id_rsa.pub admin@SLAVE1
+
+COMMAND FAILURE ON RHEL:
+  [admin@MASTER ~]$ sudo service ssh stop
+    Redirecting to /bin/systemctl stop ssh.service
+    Failed to stop ssh.service: Unit ssh.service not loaded.
+    
+  [admin@MASTER ~]$ sudo service ssh start
+    Redirecting to /bin/systemctl start ssh.service
+    Failed to start ssh.service: Unit not found.
+
+Testing of SSH is through: ssh 'admin@SLAVE1'
+
+~ ~ ~
+
+To activate Conda 'base' environment at the start up of system, following code snippet goes at the end of "~/.bashrc" file.
+
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/home/admin/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/home/admin/anaconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/admin/anaconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/home/admin/anaconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # conda initialize
+
+~ ~ ~
+
+CHECKING THE OUTPUT OF 'start-dfs.sh' ON MASTER:
+ (base) [admin@MASTER sbin]$ ps aux | grep java
+   admin     7461 40.5  1.4 6010824 235120 ?      Sl   21:57   0:07 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre/bin/java -Dproc_secondarynamenode -Djava.net.preferIPv4Stack=true -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dyarn.log.dir=/usr/local/hadoop/logs -Dyarn.log.file=hadoop-admin-secondarynamenode-MASTER.log -Dyarn.home.dir=/usr/local/hadoop -Dyarn.root.logger=INFO,console -Djava.library.path=/usr/local/hadoop/lib/native -Dhadoop.log.dir=/usr/local/hadoop/logs -Dhadoop.log.file=hadoop-admin-secondarynamenode-MASTER.log -Dhadoop.home.dir=/usr/local/hadoop -Dhadoop.id.str=admin -Dhadoop.root.logger=INFO,RFA -Dhadoop.policy.file=hadoop-policy.xml o.a.h.hdfs.server.namenode.SecondaryNameNode
+   
+   ...
+
+OR
+  $ ps -aux | grep java | awk '{print $12}'
+    -Dproc_secondarynamenode
+    ...
+
+~ ~ ~
+
+CREATING THE 'DATANODE' AND 'NAMENODE' DIRECTORIES:
+
+  (base) [admin@MASTER logs]$ cd ~
+  (base) [admin@MASTER ~]$ pwd
+      /home/admin
+  (base) [admin@MASTER ~]$ cd ..
+  (base) [admin@MASTER home]$ sudo mkdir hadoop
+  (base) [admin@MASTER home]$ sudo chmod 777 hadoop
+  (base) [admin@MASTER home]$ cd hadoop
+  (base) [admin@MASTER hadoop]$ sudo mkdir data
+  (base) [admin@MASTER hadoop]$ sudo chmod 777 data
+  (base) [admin@MASTER hadoop]$ cd data
+  (base) [admin@MASTER data]$ sudo mkdir dataNode
+  (base) [admin@MASTER data]$ sudo chmod 777 dataNode
+  (base) [admin@MASTER data]$ sudo mkdir nameNode
+  (base) [admin@MASTER data]$ sudo chmod 777 nameNode
+  (base) [admin@MASTER data]$ pwd
+      /home/hadoop/data
+  (base) [admin@SLAVE1 data]$ sudo chown admin *
+  (base) [admin@MASTER data]$ ls -lrt
+      total 0
+      drwxrwxrwx. 2 admin root 6 Apr 27 22:24 dataNode
+      drwxrwxrwx. 2 admin root 6 Apr 27 22:37 nameNode
+
+# Error example with the NameNode execution if 'data/nameNode' folder is not accessible:
+
+File: /usr/local/hadoop/logs/hadoop-admin-namenode-MASTER.log:
+
+<i style="color: red">2019-10-17 21:45:39,714 WARN o.a.h.hdfs.server.namenode.FSNamesystem: Encountered exception loading fsimage
+o.a.h.hdfs.server.common.InconsistentFSStateException: Directory /home/hadoop/data/nameNode is in an inconsistent state: storage directory does not exist or is not accessible.
+	...
+  at o.a.h.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1692)
+	at o.a.h.hdfs.server.namenode.NameNode.main(NameNode.java:1759)</i>
+	
+# Error example with the DameNode execution if 'data/dataNode' folder is not accessible:
+
+File: /usr/local/hadoop/logs/hadoop-admin-datanode-SLAVE1.log
+
+<i style="color: red">2019-10-17 22:30:49,302 WARN o.a.h.hdfs.server.datanode.checker.StorageLocationChecker: Exception checking StorageLocation [DISK]file:/home/hadoop/data/dataNode
+java.io.FileNotFoundException: File file:/home/hadoop/data/dataNode does not exist
+        ...
+2019-10-17 22:30:49,307 ERROR o.a.h.hdfs.server.datanode.DataNode: Exception in secureMain
+o.a.h.util.DiskChecker$DiskErrorException: Too many failed volumes - current valid volumes: 0, volumes configured: 1, volumes failed: 1, volume failures tolerated: 0
+        ...
+        at o.a.h.hdfs.server.datanode.DataNode.main(DataNode.java:2924)
+2019-10-17 22:30:49,310 INFO o.a.h.util.ExitUtil: Exiting with status 1: o.a.h.util.DiskChecker$DiskErrorException: Too many failed volumes - current valid volumes: 0, volumes configured: 1, volumes failed: 1, volume failures tolerated: 0
+2019-10-17 22:30:49,335 INFO o.a.h.hdfs.server.datanode.DataNode: SHUTDOWN_MSG:
+/************************************************************
+SHUTDOWN_MSG: Shutting down DataNode at SLAVE1/192.168.1.3
+************************************************************/</i>
+
+~ ~ ~
+
+If 'data/dataNode' is not writable by other nodes on the cluster, following failure logs came on SLAVE1:
+File: /usr/local/hadoop/logs/hadoop-admin-datanode-MASTER.log
+
+<i style="color: red">2019-10-17 22:37:33,820 WARN o.a.h.hdfs.server.datanode.checker.StorageLocationChecker: Exception checking StorageLocation [DISK]file:/home/hadoop/data/dataNode
+EPERM: Operation not permitted
+        ...
+        at java.lang.Thread.run(Thread.java:748)
+2019-10-17 22:37:33,825 ERROR o.a.h.hdfs.server.datanode.DataNode: Exception in secureMain
+o.a.h.util.DiskChecker$DiskErrorException: Too many failed volumes - current valid volumes: 0, volumes configured: 1, volumes failed: 1, volume failures tolerated: 0
+        at o.a.h.hdfs.server.datanode.checker.StorageLocationChecker.check(StorageLocationChecker.java:231)
+        ...
+        at o.a.h.hdfs.server.datanode.DataNode.main(DataNode.java:2924)
+2019-10-17 22:37:33,829 INFO o.a.h.util.ExitUtil: Exiting with status 1: o.a.h.util.DiskChecker$DiskErrorException: Too many failed volumes - current valid volumes: 0, volumes configured: 1, volumes failed: 1, volume failures tolerated: 0
+2019-10-17 22:37:33,838 INFO o.a.h.hdfs.server.datanode.DataNode: SHUTDOWN_MSG:
+/************************************************************
+SHUTDOWN_MSG: Shutting down DataNode at SLAVE1/192.168.1.3
+************************************************************/ </i>
+
+~ ~ ~
+
+Success logs if "DataNode" program comes up successfully on slave machines:
+
+SLAVE1 SUCCESS MESSAGE FOR DATANODE:
+
+	<i style="color: green">2019-10-17 22:49:47,572 INFO o.a.h.hdfs.server.datanode.DataNode: STARTUP_MSG:
+	/************************************************************
+	STARTUP_MSG: Starting DataNode
+	STARTUP_MSG:   host = SLAVE1/192.168.1.3
+	STARTUP_MSG:   args = []
+	STARTUP_MSG:   version = 3.2.1
+	...
+	STARTUP_MSG:   build = https://gitbox.apache.org/repos/asf/hadoop.git -r b3cbbb467e22ea829b3808f4b7b01d07e0bf3842; compiled by 'rohithsharmaks' on 2019-09-10T15:56Z
+	STARTUP_MSG:   java = 1.8.0_171
+	...
+	2019-10-17 22:49:49,489 INFO o.a.h.hdfs.server.datanode.DataNode: Starting DataNode with maxLockedMemory = 0
+	2019-10-17 22:49:49,543 INFO o.a.h.hdfs.server.datanode.DataNode: Opened streaming server at /0.0.0.0:9866
+	2019-10-17 22:49:49,549 INFO o.a.h.hdfs.server.datanode.DataNode: Balancing bandwidth is 10485760 bytes/s
+	2019-10-17 22:49:49,549 INFO o.a.h.hdfs.server.datanode.DataNode: Number threads for balancing is 50 
+	...</i>
+
+ALSO:
+	(base) [admin@SLAVE1 logs]$ ps -aux | grep java | awk '{print $12}'
+		<i style="color: green">...
+		-Dproc_datanode
+		...</i>
+
+MASTER SUCCESS MESSAGE FOR DATANODE:
+	(base) [admin@MASTER sbin]$ ps -aux | grep java | awk '{print $12}'
+		<i style="color: green">-Dproc_datanode
+		-Dproc_secondarynamenode
+		...</i>
+
+~ ~ ~
+
+FAILURE LOGS FROM MASTER FOR ERROR IN NAMENODE:
+(base) [admin@MASTER logs]$ cat hadoop-admin-namenode-MASTER.log
+	<i style="color: red">2019-10-17 22:49:56,593 ERROR o.a.h.hdfs.server.namenode.NameNode: Failed to start namenode.
+	java.io.IOException: NameNode is not formatted.
+			at o.a.h.hdfs.server.namenode.FSImage.recoverTransitionRead(FSImage.java:252)
+			...
+			at o.a.h.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:1692)
+			at o.a.h.hdfs.server.namenode.NameNode.main(NameNode.java:1759)
+	2019-10-17 22:49:56,596 INFO o.a.h.util.ExitUtil: Exiting with status 1: java.io.IOException: NameNode is not formatted.
+	2019-10-17 22:49:56,600 INFO o.a.h.hdfs.server.namenode.NameNode: SHUTDOWN_MSG:
+	/************************************************************
+	SHUTDOWN_MSG: Shutting down NameNode at MASTER/192.168.1.12
+	************************************************************/ </i>
+
+FIX:
+	Previously: "hadoop namenode -format" 
+	On Hadooop 3.X: "hdfs namenode format"
+
+	Hadoop namenode directory contains the fsimage and configuration files that hold the basic information about Hadoop file system such as where is data available, which user created the files, etc.
+
+	If you format the NameNode, then the above information is deleted from NameNode directory which is specified in the "$HADOOP_HOME/etc/hadoop/hdfs-site.xml" as "dfs.namenode.name.dir"
+
+	After formatting you still have the data on the Hadoop, but not the NameNode metadata.
+
+SUCCESS AFTER THE FIX ON MASTER:
+	(base) [admin@MASTER sbin]$ ps -aux | grep java | awk '{print $12}'
+		-Dproc_namenode
+		-Dproc_datanode
+		-Dproc_secondarynamenode
+		...
+
+~ ~ ~
+
+MOVING ON TO SPARK:
+WE HAVE YARN SO WE WILL NOT MAKE USE OF '/usr/local/spark/conf/slaves' FILE.
+
+<i>(base) [admin@MASTER conf]$ cat slaves.template
+# A Spark Worker will be started on each of the machines listed below.
+... </i>
+		
+~ ~ ~
+
+FAILURE LOGS FROM 'spark-submit':
+<i style="color: red;">2019-10-17 23:23:03,832 INFO ipc.Client: Retrying connect to server: 192.168.1.12/192.168.1.12:8032. Already tried 0 time(s); maxRetries=45
+2019-10-17 23:23:23,836 INFO ipc.Client: Retrying connect to server: 192.168.1.12/192.168.1.12:8032. Already tried 1 time(s); maxRetries=45
+2019-10-17 23:23:43,858 INFO ipc.Client: Retrying connect to server: 192.168.1.12/192.168.1.12:8032. Already tried 2 time(s); maxRetries=45 </i>
+
+THE PROBLEM IS IN CONNECTING WITH THE RECOURCE MANAGER AS DESCRIBED IN PROPERTIES FILE YARN-SITE.XML ($HADOOP_HOME/etc/hadoop/yarn-site.xml):
+	LOOK FOR THIS: yarn.resourcemanager.address
+	FIX: SET IT TO MASTER IP
+		
+~ ~ ~
+
+SUCCESS LOGS FOR STARTING OF SERVICES AFTER INSTALLATION OF HADOOP AND SPARK:
+	(base) [admin@MASTER hadoop/sbin]$ start-all.sh
+		Starting namenodes on [master]
+		
+		Starting datanodes
+		master: This system is restricted to authorized users. 
+		slave1: This system is restricted to authorized users. 
+		
+		Starting secondary namenodes [MASTER]
+		MASTER: This system is restricted to authorized users. 
+		
+		Starting resourcemanager
+		
+		Starting nodemanagers
+		master: This system is restricted to authorized users. 
+		slave1: This system is restricted to authorized users. 
+		
+		(base) [admin@MASTER sbin]$
+
+	(base) [admin@MASTER sbin]$ ps aux | grep java | awk '{print $12}'
+		-Dproc_namenode
+		-Dproc_datanode
+		-Dproc_secondarynamenode
+		-Dproc_resourcemanager
+		-Dproc_nodemanager
+		...
+
+ON SLAVE1:
+	(base) [admin@SLAVE1 ~]$ ps aux | grep java | awk '{print $12}'
+		-Dproc_datanode
+		-Dproc_nodemanager
+		...
+
+~ ~ ~
+
+FAILURE LOGS FROM SPARK-SUBMIT ON MASTER:
+	2019-10-17 23:54:26,189 INFO cluster.YarnScheduler: Adding task set 0.0 with 100 tasks
+	2019-10-17 23:54:41,247 WARN cluster.YarnScheduler: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+	2019-10-17 23:54:56,245 WARN cluster.YarnScheduler: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+	2019-10-17 23:55:11,246 WARN cluster.YarnScheduler: Initial job has not accepted any resources; check your cluster UI to ensure that workers are registered and have sufficient resources
+
+Reason:	Spark master doesn't have any resources allocated to execute the job. Resources like worker node or slave node.
+Fix for setup: changes in the /usr/local/hadoop/etc/hadoop/yarn-site.xml
+Ref: <a href="https://stackoverflow.com/questions/38118572/initial-job-has-not-accepted-any-resources-check-your-cluster-ui-to-ensure-that" target="_blank">StackOverflow</a>
+
+~ ~ ~
+
+CONNECTIVITY (OR PORT) RELATED ISSUE INSTANCE 1:
+	ISSUE WITH DATANODE ON SLAVE1:
+		(base) [admin@SLAVE1 logs]$ pwd
+			/usr/local/hadoop/logs
+			
+		(base) [admin@SLAVE1 logs]$cat hadoop-admin-datanode-SLAVE1.log
+		
+		(base) [admin@SLAVE1 logs]$
+			2019-10-17 22:50:40,384 WARN o.a.h.hdfs.server.datanode.DataNode: Problem connecting to server: master/192.168.1.12:9000
+			2019-10-17 22:50:46,416 INFO o.a.h.ipc.Client: Retrying connect to server: master/192.168.1.12:9000. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+			
+CONNECTIVITY (OR PORT) RELATED ISSUE INSTANCE 2:
+	(base) [admin@MASTER logs]$ cat hadoop-admin-nodemanager-MASTER.log
+		2019-10-18 00:24:17,473 INFO o.a.h.ipc.Client: Retrying connect to server: MASTER/192.168.1.12:8031. Already tried 4 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+
+FIX: All connectivity between IPs of nodes on the cluster, and bring down the firewall on the nodes on the cluster.
+    sudo /sbin/iptables -A INPUT -p tcp -s 192.168.1.12 -j ACCEPT
+    sudo /sbin/iptables -A OUTPUT -p tcp -d 192.168.1.12 -j ACCEPT
+    sudo /sbin/iptables -A INPUT -p tcp -s 192.168.1.3 -j ACCEPT
+    sudo /sbin/iptables -A OUTPUT -p tcp -d 192.168.1.3 -j ACCEPT
+    
+    sudo systemctl stop iptables
+    sudo service firewalld stop
+
+Also, check port (here 80) connectivity as shown below:
+1. lsof -i :80
+2. netstat -an | grep 80 | grep LISTEN
+
+~ ~ ~
+
+ISSUE IN SPARK-SUBMIT LOGS ON MASTER:
+    Exception: Python in worker has different version 2.7 than that in driver 3.7, PySpark cannot run with different minor versions.Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
+
+FIX IS TO BE DONE ON ALL THE NODES ON THE CLUSTER:
+	(base) [admin@SLAVE1 bin]$ ls -lrt /home/admin/anaconda3/bin/python3.7
+	-rwx------. 1 admin wheel 12812592 May  6  2019 /home/admin/anaconda3/bin/python3.7
+
+	(base) [admin@MASTER spark]$ pwd
+	/usr/local/spark/conf
+	
+	(base) [admin@MASTER conf]$ ls
+	fairscheduler.xml.template  log4j.properties.template  metrics.properties.template  slaves  slaves.template  spark-defaults.conf.template  spark-env.sh.template
+	
+	(base) [admin@MASTER conf]$ cp spark-env.sh.template spark-env.sh
+
+	PUT THESE PROPERTIES IN THE FILE "/usr/local/spark/conf/spark-env.sh":
+		export PYSPARK_PYTHON=/home/admin/anaconda3/bin/python3.7
+		export PYSPARK_DRIVER_PYTHON=/home/admin/anaconda3/bin/python3.7
+
+~ ~ ~
+
+ERROR LOGS IF 'EXECUTOR-MEMORY' ARGUMENT OF SPARK-SUBMIT ASKS FOR MORE MEMORY THAN DEFINED IN YARN CONFIGURATION:
+
+FILE INSTANCE 1:
+  $HADOOP_HOME: /usr/local/hadoop
+  
+  (base) [admin@MASTER hadoop]$ vi $HADOOP_HOME/etc/hadoop/yarn-site.xml
+  
+  &lt;configuration&gt;
+    &lt;property&gt;
+      &lt;name&gt;yarn.acl.enable&lt;/name&gt;
+      &lt;value&gt;0&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+      &lt;value&gt;192.168.1.12&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+      &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+  
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;
+      &lt;value&gt;4000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;8000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;128&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.vmem-check-enabled&lt;/name&gt;
+      &lt;value&gt;false&lt;/value&gt;
+    &lt;/property&gt;
+  &lt;/configuration&gt;
+
+ERROR INSTANCE 1:
+
+	(base) [admin@MASTER sbin]$ ../bin/spark-submit --master yarn --executor-memory 12G ../examples/src/main/python/pi.py 100
+	
+	<i style="color: red">2019-10-18 13:59:07,891 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+	2019-10-18 13:59:09,502 INFO spark.SparkContext: Running Spark version 3.0.0-preview2
+	2019-10-18 13:59:09,590 INFO resource.ResourceUtils: ==============================================================
+	2019-10-18 13:59:09,593 INFO resource.ResourceUtils: Resources for spark.driver:
+
+	2019-10-18 13:59:09,594 INFO resource.ResourceUtils: ==============================================================
+	2019-10-18 13:59:09,596 INFO spark.SparkContext: Submitted application: PythonPi
+	2019-10-18 13:59:09,729 INFO spark.SecurityManager: Changing view acls to: admin
+	2019-10-18 13:59:09,729 IN
+
+	2019-10-18 13:59:13,927 INFO spark.SparkContext: Successfully stopped SparkContext
+	Traceback (most recent call last):
+	  File "/usr/local/spark/sbin/../examples/src/main/python/pi.py", line 33, in [module]
+		.appName("PythonPi")\
+	  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/sql/session.py", line 183, in getOrCreate
+	  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 370, in getOrCreate
+	  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 130, in __init__
+	  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 192, in _do_init
+	  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 309, in _initialize_context
+	  File "/usr/local/spark/python/lib/py4j-0.10.8.1-src.zip/py4j/java_gateway.py", line 1554, in __call__
+	  File "/usr/local/spark/python/lib/py4j-0.10.8.1-src.zip/py4j/protocol.py", line 328, in get_return_value
+	py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+	: java.lang.IllegalArgumentException: Required executor memory (12288 MB), offHeap memory (0) MB, overhead (1228 MB), and PySpark memory (0 MB) is above the max threshold (4000 MB) of this cluster! Please check the values of 'yarn.scheduler.maximum-allocation-mb' and/or 'yarn.nodemanager.resource.memory-mb'.
+			...
+			at java.lang.Thread.run(Thread.java:748)
+
+	2019-10-18 13:59:14,005 INFO util.ShutdownHookManager: Shutdown hook called
+	2019-10-18 13:59:14,007 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-fbead587-b1ae-4e8e-acd4-160e585a6f34
+	2019-10-18 13:59:14,012 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-3331bae2-e2d1-47f6-886c-317be6c98339 </i>
+
+FILE INSTANCE 2:
+
+  &lt;configuration&gt;
+    &lt;property&gt;
+      &lt;name&gt;yarn.acl.enable&lt;/name&gt;
+      &lt;value&gt;0&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+      &lt;value&gt;192.168.1.12&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+      &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;
+      &lt;value&gt;12000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;10000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;128&lt;/value&gt;
+    &lt;/property&gt;
+  &lt;/configuration&gt;
+  
+ERROR INSTANCE 2:
+  (base) [admin@MASTER sbin]$ ../bin/spark-submit --master yarn ../examples/src/main/python/pi.py 100
+    <i style="color: red">py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+    : java.lang.IllegalArgumentException: Required executor memory (12288 MB), offHeap memory (0) MB, overhead (1228 MB), and PySpark memory (0 MB) is above the max threshold (10000 MB) of this cluster! Please check the values of 'yarn.scheduler.maximum-allocation-mb' and/or 'yarn.nodemanager.resource.memory-mb'. </i>
+
+Related Articles:
+% <a href="http://survival8.blogspot.com/p/getting-started-with-hadoop-on.html" target="_blank">Getting started with Hadoop on Ubuntu in VirtualBox</a>
+% <a href="http://survival8.blogspot.com/p/setting-up-three-node-hadoop-cluster-on.html" target="_blank">Setting up three node Hadoop cluster on Ubuntu using VirtualBox</a>
+% <a href="http://survival8.blogspot.com/p/getting-started-with-spark-on-ubuntu-in.html" target="_blank">Getting started with Spark on Ubuntu in VirtualBox</a>
+% <a href="https://survival8.blogspot.com/2022/10/setting-up-three-node-spark-cluster-on.html" target="_blank">Setting up a three node Spark cluster on Ubuntu using VirtualBox (Apr 2020)</a>
+% <a href="http://survival8.blogspot.com/p/notes-on-setting-up-spark-with-yarn.html" target="_blank">Notes on setting up Spark with YARN three node cluster</a>
+</pre>
+<span style="display: none">Tags: Technology,Spark,Linux</span>

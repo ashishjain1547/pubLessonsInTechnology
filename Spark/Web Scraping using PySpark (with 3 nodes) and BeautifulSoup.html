@@ -1,0 +1,574 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>PYTHON CODE:
+
+<i>from time import time
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+from pyspark import SparkContext
+
+sc = SparkContext()
+
+start_time = time()
+
+url_list_path = '/my_hdfs/links.csv'
+
+urls_lines = sc.textFile(url_list_path)
+
+def processRecord(url):
+	if len(url) > 0:
+		print(url)
+		page = urlopen(url)
+		soup = BeautifulSoup(page, features="lxml")
+		rtnVal = soup.prettify()
+	else:
+		url = "NA"
+		rtnVal = "NA"
+	return [url, "rtnVal"]
+
+temp = urls_lines.map(processRecord)
+
+temp_rdd = temp.collect()
+
+for elem in temp_rdd:
+	print(elem)
+
+print("Time taken: " + str(time() - start_time))</i>
+
+--- --- --- --- ---
+		
+Checking the connectivity of machines on the cluster:
+
+(base) administrator@master:~/Desktop$ ping slave1
+  <i style="color: green;">PING slave1 (192.168.1.3) 56(84) bytes of data.
+  64 bytes from slave1 (192.168.1.3): icmp_seq=1 ttl=64 time=0.307 ms
+  64 bytes from slave1 (192.168.1.3): icmp_seq=2 ttl=64 time=0.208 ms
+  64 bytes from slave1 (192.168.1.3): icmp_seq=3 ttl=64 time=0.181 ms
+  ^C
+  --- slave1 ping statistics ---
+  8 packets transmitted, 8 received, 0% packet loss, time 7140ms
+  rtt min/avg/max/mdev = 0.181/0.216/0.307/0.035 ms, pipe 4 </i>
+
+(base) administrator@master:~/Desktop$ ping slave2
+  <i style="color: red;">PING slave2 (192.168.1.4) 56(84) bytes of data.
+  From master (192.168.1.12) icmp_seq=1 Destination Host Unreachable
+  From master (192.168.1.12) icmp_seq=2 Destination Host Unreachable
+  From master (192.168.1.12) icmp_seq=3 Destination Host Unreachable
+  --- slave2 ping statistics ---
+  498 packets transmitted, 106 received, +381 errors, 78.7149% packet loss, time 508825ms
+  rtt min/avg/max/mdev = 0.126/22.646/1701.778/176.475 ms, pipe 4 </i>
+
+# # #
+
+STARTING AND STOPPING THE HADOOP CLUSTER
+
+(base) administrator@master:~/Desktop$ cd $HADOOP_HOME
+(base) administrator@master:/usr/local/hadoop$ ls
+bin  data  etc  include  lib  libexec  LICENSE.txt  logs  NOTICE.txt  README.txt  sbin  share  tmp
+
+(base) administrator@master:/usr/local/hadoop$ cd sbin
+
+(base) administrator@master:/usr/local/hadoop/sbin$ ls
+<i style="color: green;">distribute-exclude.sh  httpfs.sh                start-all.cmd      start-dfs.sh         stop-all.cmd      stop-dfs.sh         workers.sh
+FederationStateStore   kms.sh                   start-all.sh       start-secure-dns.sh  stop-all.sh       stop-secure-dns.sh  yarn-daemon.sh
+hadoop-daemon.sh       mr-jobhistory-daemon.sh  start-balancer.sh  start-yarn.cmd       stop-balancer.sh  stop-yarn.cmd       yarn-daemons.sh
+hadoop-daemons.sh      refresh-namenodes.sh     start-dfs.cmd      start-yarn.sh        stop-dfs.cmd      stop-yarn.sh </i>
+(base) administrator@master:/usr/local/hadoop/sbin$ stop-all.sh
+WARNING: Stopping all Apache Hadoop daemons as administrator in 10 seconds.
+WARNING: Use CTRL-C to abort.
+Stopping namenodes on [master]
+Stopping datanodes
+Stopping secondary namenodes [master]
+Stopping nodemanagers
+Stopping resourcemanager
+(base) administrator@master:/usr/local/hadoop/sbin$ start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as administrator in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [master]
+Starting datanodes
+Starting secondary namenodes [master]
+Starting resourcemanager
+Starting nodemanagers
+(base) administrator@master:/usr/local/hadoop/sbin$ jps
+1521 SecondaryNameNode
+1284 NameNode
+2232 Jps
+1913 ResourceManager
+(base) administrator@master:/usr/local/hadoop/sbin$ 
+
+# # #
+
+OPEN A NEW TERMINAL FOR SLAVE1
+
+(base) administrator@master:/usr/local/hadoop/sbin$ ssh slave1
+Welcome to Ubuntu 19.10 (GNU/Linux 5.3.0-40-generic x86_64)
+
+Last login: Tue Oct 15 18:12:50 2019 from 192.168.1.12
+(base) administrator@slave1:~$ jps
+2752 Jps
+2561 NodeManager
+2395 DataNode
+
+# # #
+
+SLAVE2
+
+(base) administrator@master:/usr/local/hadoop/sbin$ ssh slave2
+Welcome to Ubuntu 19.10 (GNU/Linux 5.3.0-40-generic x86_64)
+
+Last login: Tue Oct 15 18:13:19 2019 from 192.168.1.12
+(base) administrator@slave2:~$ jps
+24675 DataNode
+24810 NodeManager
+25038 Jps
+(base) administrator@slave2:~$ 
+
+# # #
+
+STARTING SPARK
+
+(base) administrator@master:/usr/local/hadoop/sbin$ cd /usr/local/spark/sbin
+(base) administrator@master:/usr/local/spark/sbin$ start-all.sh
+WARNING: Attempting to start all Apache Hadoop daemons as administrator in 10 seconds.
+WARNING: This is not a recommended production deployment configuration.
+WARNING: Use CTRL-C to abort.
+Starting namenodes on [master]
+master: namenode is running as process 1284.  Stop it first.
+Starting datanodes
+slave2: datanode is running as process 24675.  Stop it first.
+slave1: datanode is running as process 2395.  Stop it first.
+Starting secondary namenodes [master]
+master: secondarynamenode is running as process 1521.  Stop it first.
+Starting resourcemanager
+resourcemanager is running as process 1913.  Stop it first.
+Starting nodemanagers
+slave2: nodemanager is running as process 24810.  Stop it first.
+slave1: nodemanager is running as process 2561.  Stop it first.
+
+# # #
+
+RUNNING THE PI CALCULATION PROGRAM
+
+(base) administrator@master:/usr/local/spark/sbin$ ../bin/spark-submit --master yarn ../examples/src/main/python/pi.py 100
+
+LOGS FOR ISSUE WHEN PYTHON IS NOT FOUND:
+
+<i style="color: red;">2020-03-18 13:05:12,467 WARN scheduler.TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0, slave2, executor 2): java.io.IOException: Cannot run program "python": error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	...
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	... 19 more</i>
+
+FIX:
+PYSPARK_PYTHON=/home/administrator/anaconda3/bin/python ../bin/spark-submit --master yarn ../examples/src/main/python/pi.py 100
+
+...
+
+LOGS:
+<i style="color: green;">(base) administrator@master:/usr/local/spark/sbin$ PYSPARK_PYTHON=/home/administrator/anaconda3/bin/python ../bin/spark-submit --master yarn ../examples/src/main/python/pi.py 100
+2020-03-18 13:11:01,025 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-03-18 13:11:01,590 INFO spark.SparkContext: Running Spark version 2.4.4
+2020-03-18 13:11:01,610 INFO spark.SparkContext: Submitted application: PythonPi
+2020-03-18 13:11:01,654 INFO spark.SecurityManager: Changing view acls to: administrator
+2020-03-18 13:11:01,655 INFO spark.SecurityManager: Changing modify acls to: administrator
+2020-03-18 13:11:01,655 INFO spark.SecurityManager: Changing view acls groups to: 
+2020-03-18 13:11:01,655 INFO spark.SecurityManager: Changing modify acls groups to: 
+2020-03-18 13:11:01,655 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(administrator); groups with view permissions: Set(); users  with modify permissions: Set(administrator); groups with modify permissions: Set()
+2020-03-18 13:11:01,886 INFO util.Utils: Successfully started service 'sparkDriver' on port 41485.
+2020-03-18 13:11:01,905 INFO spark.SparkEnv: Registering MapOutputTracker
+2020-03-18 13:11:01,921 INFO spark.SparkEnv: Registering BlockManagerMaster
+2020-03-18 13:11:01,924 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2020-03-18 13:11:01,924 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+2020-03-18 13:11:01,931 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-ede610d7-77c2-4c7f-8f33-86dbfd7aae35
+2020-03-18 13:11:01,945 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+2020-03-18 13:11:02,010 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+2020-03-18 13:11:02,079 INFO util.log: Logging initialized @2123ms
+2020-03-18 13:11:02,146 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+2020-03-18 13:11:02,171 INFO server.Server: Started @2216ms
+2020-03-18 13:11:02,197 INFO server.AbstractConnector: Started ServerConnector@742f7a8a{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 13:11:02,197 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+2020-03-18 13:11:02,231 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@79d2f0e3{/jobs,null,AVAILABLE,@Spark}
+...
+2020-03-18 13:11:02,274 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@60aa8307{/stages/stage/kill,null,AVAILABLE,@Spark}
+2020-03-18 13:11:02,277 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://master:4040
+2020-03-18 13:11:03,139 INFO client.RMProxy: Connecting to ResourceManager at master/192.168.1.12:8032
+2020-03-18 13:11:03,308 INFO yarn.Client: Requesting a new application from cluster with 2 NodeManagers
+2020-03-18 13:11:03,349 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+2020-03-18 13:11:03,350 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+...
+2020-03-18 13:11:30,243 INFO impl.YarnClientImpl: Submitted application application_1584516372808_0002
+2020-03-18 13:11:30,245 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1584516372808_0002 and attemptId None
+2020-03-18 13:11:31,251 INFO yarn.Client: Application report for application_1584516372808_0002 (state: ACCEPTED)
+2020-03-18 13:11:31,254 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1584517290226
+	 final status: UNDEFINED
+	 tracking URL: http://master:8088/proxy/application_1584516372808_0002/
+	 user: administrator
+2020-03-18 13:11:32,261 INFO yarn.Client: Application report for application_1584516372808_0002 (state: ACCEPTED)
+...
+2020-03-18 13:11:53,345 INFO yarn.Client: Application report for application_1584516372808_0002 (state: ACCEPTED)
+2020-03-18 13:11:54,112 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> master, PROXY_URI_BASES -> http://master:8088/proxy/application_1584516372808_0002), /proxy/application_1584516372808_0002
+2020-03-18 13:11:54,114 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+2020-03-18 13:11:54,219 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+2020-03-18 13:11:54,348 INFO yarn.Client: Application report for application_1584516372808_0002 (state: RUNNING)
+2020-03-18 13:11:54,348 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 192.168.1.3
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1584517290226
+	 final status: UNDEFINED
+	 tracking URL: http://master:8088/proxy/application_1584516372808_0002/
+	 user: administrator
+2020-03-18 13:11:54,350 INFO cluster.YarnClientSchedulerBackend: Application application_1584516372808_0002 has started running.
+2020-03-18 13:11:54,357 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33747.
+2020-03-18 13:11:54,358 INFO netty.NettyBlockTransferService: Server created on master:33747
+2020-03-18 13:11:54,359 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2020-03-18 13:11:54,381 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, master, 33747, None)
+2020-03-18 13:11:54,385 INFO storage.BlockManagerMasterEndpoint: Registering block manager master:33747 with 366.3 MB RAM, BlockManagerId(driver, master, 33747, None)
+2020-03-18 13:11:54,421 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, master, 33747, None)
+2020-03-18 13:11:54,422 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, master, 33747, None)
+2020-03-18 13:11:54,535 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+2020-03-18 13:11:54,536 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@593eb20{/metrics/json,null,AVAILABLE,@Spark}
+2020-03-18 13:11:54,561 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000(ms)
+2020-03-18 13:11:54,894 INFO internal.SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/usr/local/spark/sbin/spark-warehouse').
+2020-03-18 13:11:54,894 INFO internal.SharedState: Warehouse path is 'file:/usr/local/spark/sbin/spark-warehouse'.
+2020-03-18 13:11:54,901 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL.
+2020-03-18 13:11:54,902 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@62ba741b{/SQL,null,AVAILABLE,@Spark}
+2020-03-18 13:11:54,902 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/json.
+2020-03-18 13:11:54,902 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6ca66444{/SQL/json,null,AVAILABLE,@Spark}
+2020-03-18 13:11:54,903 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution.
+2020-03-18 13:11:54,903 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3c462761{/SQL/execution,null,AVAILABLE,@Spark}
+2020-03-18 13:11:54,903 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /SQL/execution/json.
+2020-03-18 13:11:54,904 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@505e4e78{/SQL/execution/json,null,AVAILABLE,@Spark}
+2020-03-18 13:11:54,904 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /static/sql.
+2020-03-18 13:11:54,905 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2c100bc2{/static/sql,null,AVAILABLE,@Spark}
+2020-03-18 13:11:55,487 INFO state.StateStoreCoordinatorRef: Registered StateStoreCoordinator endpoint
+2020-03-18 13:11:55,745 INFO spark.SparkContext: Starting job: reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44
+2020-03-18 13:11:55,761 INFO scheduler.DAGScheduler: Got job 0 (reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44) with 100 output partitions
+2020-03-18 13:11:55,762 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44)
+2020-03-18 13:11:55,763 INFO scheduler.DAGScheduler: Parents of final stage: List()
+2020-03-18 13:11:55,764 INFO scheduler.DAGScheduler: Missing parents: List()
+2020-03-18 13:11:55,776 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (PythonRDD[1] at reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44), which has no missing parents
+2020-03-18 13:11:55,910 INFO memory.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 6.2 KB, free 366.3 MB)
+2020-03-18 13:11:55,939 INFO memory.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 4.2 KB, free 366.3 MB)
+2020-03-18 13:11:55,944 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on master:33747 (size: 4.2 KB, free: 366.3 MB)
+2020-03-18 13:11:55,948 INFO spark.SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1161
+2020-03-18 13:11:55,976 INFO scheduler.DAGScheduler: Submitting 100 missing tasks from ResultStage 0 (PythonRDD[1] at reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+2020-03-18 13:11:55,977 INFO cluster.YarnScheduler: Adding task set 0.0 with 100 tasks
+2020-03-18 13:11:57,222 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.3:55594) with ID 1
+2020-03-18 13:11:57,246 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, slave1, executor 1, partition 0, PROCESS_LOCAL, 7863 bytes)
+2020-03-18 13:11:57,344 INFO storage.BlockManagerMasterEndpoint: Registering block manager slave1:45231 with 366.3 MB RAM, BlockManagerId(1, slave1, 45231, None)
+2020-03-18 13:11:57,560 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on slave1:45231 (size: 4.2 KB, free: 366.3 MB)
+2020-03-18 13:11:59,464 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.4:34664) with ID 2
+2020-03-18 13:11:59,466 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, slave2, executor 2, partition 1, PROCESS_LOCAL, 7863 bytes)
+2020-03-18 13:11:59,590 INFO storage.BlockManagerMasterEndpoint: Registering block manager slave2:37809 with 366.3 MB RAM, BlockManagerId(2, slave2, 37809, None)
+2020-03-18 13:11:59,813 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on slave2:37809 (size: 4.2 KB, free: 366.3 MB)
+2020-03-18 13:12:02,080 INFO scheduler.TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, slave2, executor 2, partition 2, PROCESS_LOCAL, 7863 bytes)
+2020-03-18 13:12:02,088 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 2622 ms on slave2 (executor 2) (1/100)
+...
+2020-03-18 13:12:07,817 INFO scheduler.TaskSetManager: Finished task 99.0 in stage 0.0 (TID 99) in 107 ms on slave1 (executor 1) (100/100)
+2020-03-18 13:12:07,818 INFO cluster.YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2020-03-18 13:12:07,819 INFO scheduler.DAGScheduler: ResultStage 0 (reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44) finished in 12.004 s
+2020-03-18 13:12:07,828 INFO scheduler.DAGScheduler: Job 0 finished: reduce at /usr/local/spark/sbin/../examples/src/main/python/pi.py:44, took 12.082149 s
+Pi is roughly 3.141856
+2020-03-18 13:12:07,845 INFO server.AbstractConnector: Stopped Spark@742f7a8a{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 13:12:07,847 INFO ui.SparkUI: Stopped Spark web UI at http://master:4040
+2020-03-18 13:12:07,851 INFO cluster.YarnClientSchedulerBackend: Interrupting monitor thread
+2020-03-18 13:12:07,874 INFO cluster.YarnClientSchedulerBackend: Shutting down all executors
+2020-03-18 13:12:07,875 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+2020-03-18 13:12:07,881 INFO cluster.SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+2020-03-18 13:12:07,882 INFO cluster.YarnClientSchedulerBackend: Stopped
+2020-03-18 13:12:07,892 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+2020-03-18 13:12:07,911 INFO memory.MemoryStore: MemoryStore cleared
+2020-03-18 13:12:07,912 INFO storage.BlockManager: BlockManager stopped
+2020-03-18 13:12:07,924 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+2020-03-18 13:12:07,926 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+2020-03-18 13:12:07,933 INFO spark.SparkContext: Successfully stopped SparkContext
+2020-03-18 13:12:08,883 INFO util.ShutdownHookManager: Shutdown hook called
+2020-03-18 13:12:08,884 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-b20bb994-38bd-48e1-becb-25d4de1796df
+2020-03-18 13:12:08,885 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-911ce211-570f-444e-9034-52163db026c1
+2020-03-18 13:12:08,891 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-911ce211-570f-444e-9034-52163db026c1/pyspark-ffb02600-4911-433a-9ac5-92b318f833ac
+(base) administrator@master:/usr/local/spark/sbin$ </i>
+
+# # #
+
+CHECKING THE CLUSTER REPORT IN THE BROWSER
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-b08MCNk1jSQ/XnHSCOe8lVI/AAAAAAAAEgg/tLBKMGbwW2gb_GG6mCBIRya37LjOTXUYQCLcBGAsYHQ/s1600/Screenshot%2Bfrom%2B2020-03-18%2B13-15-11.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="768" data-original-width="1366" height="359" src="https://1.bp.blogspot.com/-b08MCNk1jSQ/XnHSCOe8lVI/AAAAAAAAEgg/tLBKMGbwW2gb_GG6mCBIRya37LjOTXUYQCLcBGAsYHQ/s640/Screenshot%2Bfrom%2B2020-03-18%2B13-15-11.png" width="640" /></a></div>
+
+# # #
+
+COMMAND 1 FOR STANDALONE MODE:
+PYSPARK_PYTHON=/home/administrator/anaconda3/bin/python ./bin/spark-submit --master local /home/administrator/Desktop/spark_script_2.py 100
+
+COMMAND 2 FOR YARN CLUSTER MODE:
+PYSPARK_PYTHON=/home/administrator/anaconda3/bin/python ./bin/spark-submit --master yarn /home/administrator/Desktop/spark_script_2.py 100
+
+ISSUE IN RUNNING THESE COMMANDS WHEN THE FILE IS IN THE UBUNTU FILE SYSTEM:
+
+<i style="color: red;">2020-03-18 13:33:27,982 INFO spark.SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+Traceback (most recent call last):
+  File "/home/administrator/Desktop/spark_script_2.py", line 29, in [[ pre ]]
+    temp_rdd = temp.collect()
+  File "/usr/local/spark/python/lib/pyspark.zip/pyspark/rdd.py", line 816, in collect
+  File "/usr/local/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/usr/local/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.
+: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: hdfs://master:9000/home/administrator/Desktop/links.csv</i>
+
+FIX: PUT THE FILE IN HDFS
+
+(base) administrator@master:~/Desktop$ hdfs dfs -copyFromLocal /home/administrator/Desktop/links.csv /my_hdfs
+2020-03-18 13:37:35,721 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+
+(base) administrator@master:~/Desktop$ hdfs dfs -ls /my_hdfs
+Found 3 items
+-rw-r--r--   1 administrator supergroup     159358 2019-10-21 15:06 /my_hdfs/Dummy_1000.csv
+-rw-r--r--   1 administrator supergroup      48097 2019-10-17 16:26 /my_hdfs/Feed.csv
+-rw-r--r--   1 administrator supergroup       7307 2020-03-18 13:37 
+
+(base) administrator@master:~/Desktop$ hdfs dfs -rm /my_hdfs/links.csv
+Deleted /my_hdfs/links.csv
+
+(base) administrator@master:~/Desktop$ hdfs dfs -copyFromLocal /home/administrator/Desktop/links.csv /my_hdfs
+2020-03-18 13:37:35,721 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+
+LOGS FOR STANDALONE MODE:
+
+<i>(base) administrator@master:/usr/local/spark$ PYSPARK_PYTHON=/home/administrator/anaconda3/bin/python ./bin/spark-submit --master local /home/administrator/Desktop/spark_script_2.py 100
+2020-03-18 13:44:53,661 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-03-18 13:44:54,318 INFO spark.SparkContext: Running Spark version 2.4.4
+2020-03-18 13:44:54,343 INFO spark.SparkContext: Submitted application: spark_script_2.py
+...
+2020-03-18 13:44:54,642 INFO util.Utils: Successfully started service 'sparkDriver' on port 43343.
+...
+2020-03-18 13:44:54,884 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+...
+2020-03-18 13:44:54,931 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://master:4040
+...
+2020-03-18 13:44:55,078 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36171.
+2020-03-18 13:44:55,079 INFO netty.NettyBlockTransferService: Server created on master:36171
+...
+2020-03-18 13:44:55,968 INFO memory.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 238.2 KB, free 366.1 MB)
+2020-03-18 13:44:56,023 INFO memory.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.3 KB, free 366.0 MB)
+2020-03-18 13:44:56,026 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on master:36171 (size: 23.3 KB, free: 366.3 MB)
+...
+2020-03-18 13:44:56,546 INFO mapred.FileInputFormat: Total input paths to process : 1
+2020-03-18 13:44:56,632 INFO spark.SparkContext: Starting job: collect at /home/administrator/Desktop/spark_script_2.py:30
+2020-03-18 13:44:56,653 INFO scheduler.DAGScheduler: Got job 0 (collect at /home/administrator/Desktop/spark_script_2.py:30) with 1 output partitions
+2020-03-18 13:44:56,653 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (collect at /home/administrator/Desktop/spark_script_2.py:30)
+...
+2020-03-18 13:44:56,861 INFO rdd.HadoopRDD: Input split: hdfs://master:9000/my_hdfs/links.csv:0+7353
+<b>https://survival8.blogspot.com/p/imas-101-xml-and-java-based-framework.html
+https://survival8.blogspot.com/p/blog-page_87.html
+https://survival8.blogspot.com/p/hello-world-application-using-spring.html
+https://survival8.blogspot.com/p/debugging-spring-mvc-application-in.html
+...
+https://survival8.blogspot.com/p/windows-cmd-tip-findstr-grep-for-windows.html
+https://survival8.blogspot.com/p/windows-cmd-tips-jan-2020.html</b>
+2020-03-18 13:47:38,288 INFO python.PythonRunner: Times: total = 161397, boot = 328, init = 161, finish = 160908
+2020-03-18 13:47:38,316 INFO executor.Executor: Finished task 0.0 in stage 0.0 (TID 0). 10352 bytes result sent to driver
+2020-03-18 13:47:38,327 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 161562 ms on localhost (executor driver) (1/1)
+2020-03-18 13:47:38,330 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2020-03-18 13:47:38,333 INFO python.PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 41711
+2020-03-18 13:47:38,341 INFO scheduler.DAGScheduler: ResultStage 0 (collect at /home/administrator/Desktop/spark_script_2.py:30) finished in 161.631 s
+<b>2020-03-18 13:47:38,350 INFO scheduler.DAGScheduler: Job 0 finished: collect at /home/administrator/Desktop/spark_script_2.py:30, took 161.717769 s
+['https://survival8.blogspot.com/p/imas-101-xml-and-java-based-framework.html', 'rtnVal']
+['https://survival8.blogspot.com/p/blog-page_87.html', 'rtnVal']
+['https://survival8.blogspot.com/p/hello-world-application-using-spring.html', 'rtnVal']
+...
+['https://survival8.blogspot.com/p/windows-cmd-tip-handling-files-with.html', 'rtnVal']
+['https://survival8.blogspot.com/p/windows-cmd-tip-findstr-grep-for-windows.html', 'rtnVal']
+['https://survival8.blogspot.com/p/windows-cmd-tips-jan-2020.html', 'rtnVal']
+Time taken: 162.96060037612915</b>
+2020-03-18 13:47:38,417 INFO spark.SparkContext: Invoking stop() from shutdown hook
+2020-03-18 13:47:38,466 INFO server.AbstractConnector: Stopped Spark@18d0477{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 13:47:38,470 INFO spark.ContextCleaner: Cleaned accumulator 14
+2020-03-18 13:47:38,471 INFO ui.SparkUI: Stopped Spark web UI at http://master:4040
+2020-03-18 13:47:38,479 INFO spark.ContextCleaner: Cleaned accumulator 19
+2020-03-18 13:47:38,509 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+2020-03-18 13:47:38,520 INFO memory.MemoryStore: MemoryStore cleared
+2020-03-18 13:47:38,521 INFO storage.BlockManager: BlockManager stopped
+2020-03-18 13:47:38,523 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+2020-03-18 13:47:38,525 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+2020-03-18 13:47:38,533 INFO spark.SparkContext: Successfully stopped SparkContext
+2020-03-18 13:47:38,533 INFO util.ShutdownHookManager: Shutdown hook called
+2020-03-18 13:47:38,534 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-5c98e403-d484-44e1-927d-c78f3dda2e58/pyspark-7ab4a0d0-6e22-4ba8-9f4f-bce9d7e43d68
+2020-03-18 13:47:38,540 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-3df1288a-12f7-408f-a2b7-30530ebbbe4b
+2020-03-18 13:47:38,549 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-5c98e403-d484-44e1-927d-c78f3dda2e58</i>
+
+
+LOGS FOR YARN CLUSTER MODE:
+
+<i style="color: green">(base) administrator@master:/usr/local/spark$ PYSPARK_PYTHON=/home/administrator/anaconda3/bin/python ./bin/spark-submit --master yarn /home/administrator/Desktop/spark_script_2.py 100
+2020-03-18 13:48:37,919 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-03-18 13:48:38,627 INFO spark.SparkContext: Running Spark version 2.4.4
+2020-03-18 13:48:38,650 INFO spark.SparkContext: Submitted application: spark_script_2.py
+...
+2020-03-18 13:48:38,949 INFO util.Utils: Successfully started service 'sparkDriver' on port 39709.
+...
+2020-03-18 13:48:39,256 INFO server.AbstractConnector: Started ServerConnector@3da82867{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 13:48:39,257 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+...
+2020-03-18 13:48:39,329 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://master:4040
+2020-03-18 13:48:40,037 INFO client.RMProxy: Connecting to ResourceManager at master/192.168.1.12:8032
+2020-03-18 13:48:40,219 INFO yarn.Client: Requesting a new application from cluster with 2 NodeManagers
+...
+2020-03-18 13:48:44,651 INFO yarn.Client: Uploading resource file:/tmp/spark-8dd4f42f-7776-4fe9-8da5-58dcffd0df83/__spark_libs__7387525767004520734.zip -> hdfs://master:9000/user/administrator/.sparkStaging/application_1584516372808_0003/__spark_libs__7387525767004520734.zip
+2020-03-18 13:49:05,556 INFO yarn.Client: Uploading resource file:/usr/local/spark/python/lib/pyspark.zip -> hdfs://master:9000/user/administrator/.sparkStaging/application_1584516372808_0003/pyspark.zip
+2020-03-18 13:49:05,672 INFO yarn.Client: Uploading resource file:/usr/local/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://master:9000/user/administrator/.sparkStaging/application_1584516372808_0003/py4j-0.10.7-src.zip
+2020-03-18 13:49:05,839 INFO yarn.Client: Uploading resource file:/tmp/spark-8dd4f42f-7776-4fe9-8da5-58dcffd0df83/__spark_conf__4358898555039276238.zip -> hdfs://master:9000/user/administrator/.sparkStaging/application_1584516372808_0003/__spark_conf__.zip
+2020-03-18 13:49:05,952 INFO spark.SecurityManager: Changing view acls to: administrator
+2020-03-18 13:49:05,953 INFO spark.SecurityManager: Changing modify acls to: administrator
+2020-03-18 13:49:05,953 INFO spark.SecurityManager: Changing view acls groups to: 
+2020-03-18 13:49:05,953 INFO spark.SecurityManager: Changing modify acls groups to: 
+2020-03-18 13:49:05,953 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(administrator); groups with view permissions: Set(); users  with modify permissions: Set(administrator); groups with modify permissions: Set()
+2020-03-18 13:49:06,923 INFO yarn.Client: Submitting application application_1584516372808_0003 to ResourceManager
+2020-03-18 13:49:06,961 INFO impl.YarnClientImpl: Submitted application application_1584516372808_0003
+2020-03-18 13:49:06,963 INFO cluster.SchedulerExtensionServices: Starting Yarn extension services with app application_1584516372808_0003 and attemptId None
+2020-03-18 13:49:07,974 INFO yarn.Client: Application report for application_1584516372808_0003 (state: ACCEPTED)
+2020-03-18 13:49:07,979 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1584519546940
+	 final status: UNDEFINED
+	 tracking URL: http://master:8088/proxy/application_1584516372808_0003/
+	 user: administrator
+2020-03-18 13:49:08,983 INFO yarn.Client: Application report for application_1584516372808_0003 (state: ACCEPTED)
+...
+2020-03-18 13:49:21,028 INFO yarn.Client: Application report for application_1584516372808_0003 (state: ACCEPTED)
+2020-03-18 13:49:21,813 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> master, PROXY_URI_BASES -> http://master:8088/proxy/application_1584516372808_0003), /proxy/application_1584516372808_0003
+2020-03-18 13:49:21,815 INFO ui.JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+2020-03-18 13:49:21,952 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+2020-03-18 13:49:22,032 INFO yarn.Client: Application report for application_1584516372808_0003 (state: RUNNING)
+2020-03-18 13:49:22,033 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 192.168.1.4
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1584519546940
+	 final status: UNDEFINED
+	 tracking URL: http://master:8088/proxy/application_1584516372808_0003/
+	 user: administrator
+2020-03-18 13:49:22,036 INFO cluster.YarnClientSchedulerBackend: Application application_1584516372808_0003 has started running.
+2020-03-18 13:49:22,044 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 44709.
+...
+2020-03-18 13:49:22,856 INFO mapred.FileInputFormat: Total input paths to process : 1
+2020-03-18 13:49:22,917 INFO spark.SparkContext: Starting job: collect at /home/administrator/Desktop/spark_script_2.py:30
+2020-03-18 13:49:22,945 INFO scheduler.DAGScheduler: Got job 0 (collect at /home/administrator/Desktop/spark_script_2.py:30) with 2 output partitions
+2020-03-18 13:49:22,946 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (collect at /home/administrator/Desktop/spark_script_2.py:30)
+2020-03-18 13:49:22,946 INFO scheduler.DAGScheduler: Parents of final stage: List()
+2020-03-18 13:49:22,948 INFO scheduler.DAGScheduler: Missing parents: List()
+2020-03-18 13:49:22,954 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (PythonRDD[2] at collect at /home/administrator/Desktop/spark_script_2.py:30), which has no missing parents
+2020-03-18 13:49:22,993 INFO memory.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 6.4 KB, free 366.0 MB)
+2020-03-18 13:49:22,996 INFO memory.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 4.1 KB, free 366.0 MB)
+2020-03-18 13:49:22,998 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on master:44709 (size: 4.1 KB, free: 366.3 MB)
+2020-03-18 13:49:22,998 INFO spark.SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1161
+2020-03-18 13:49:23,027 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (PythonRDD[2] at collect at /home/administrator/Desktop/spark_script_2.py:30) (first 15 tasks are for partitions Vector(0, 1))
+2020-03-18 13:49:23,028 INFO cluster.YarnScheduler: Adding task set 0.0 with 2 tasks
+2020-03-18 13:49:24,805 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.4:50874) with ID 1
+2020-03-18 13:49:24,832 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, slave2, executor 1, partition 0, RACK_LOCAL, 7907 bytes)
+2020-03-18 13:49:24,992 INFO storage.BlockManagerMasterEndpoint: Registering block manager slave2:37211 with 366.3 MB RAM, BlockManagerId(1, slave2, 37211, None)
+2020-03-18 13:49:25,296 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on slave2:37211 (size: 4.1 KB, free: 366.3 MB)
+2020-03-18 13:49:25,481 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on slave2:37211 (size: 23.3 KB, free: 366.3 MB)
+2020-03-18 13:49:35,521 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.1.3:54206) with ID 2
+2020-03-18 13:49:35,530 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, slave1, executor 2, partition 1, NODE_LOCAL, 7907 bytes)
+2020-03-18 13:49:35,657 INFO storage.BlockManagerMasterEndpoint: Registering block manager slave1:45921 with 366.3 MB RAM, BlockManagerId(2, slave1, 45921, None)
+2020-03-18 13:49:35,912 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on slave1:45921 (size: 4.1 KB, free: 366.3 MB)
+2020-03-18 13:49:36,058 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on slave1:45921 (size: 23.3 KB, free: 366.3 MB)
+2020-03-18 13:50:14,953 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 50137 ms on slave2 (executor 1) (1/2)
+2020-03-18 13:50:14,959 INFO python.PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 39749
+2020-03-18 13:50:19,138 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 43614 ms on slave1 (executor 2) (2/2)
+2020-03-18 13:50:19,144 INFO scheduler.DAGScheduler: ResultStage 0 (collect at /home/administrator/Desktop/spark_script_2.py:30) finished in 56.151 s
+2020-03-18 13:50:19,148 INFO cluster.YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+<b>2020-03-18 13:50:19,155 INFO scheduler.DAGScheduler: Job 0 finished: collect at /home/administrator/Desktop/spark_script_2.py:30, took 56.237616 s
+['https://survival8.blogspot.com/p/imas-101-xml-and-java-based-framework.html', 'rtnVal']
+['https://survival8.blogspot.com/p/blog-page_87.html', 'rtnVal']
+['https://survival8.blogspot.com/p/hello-world-application-using-spring.html', 'rtnVal']
+...
+['https://survival8.blogspot.com/p/windows-cmd-tip-handling-files-with.html', 'rtnVal']
+['https://survival8.blogspot.com/p/windows-cmd-tip-findstr-grep-for-windows.html', 'rtnVal']
+['https://survival8.blogspot.com/p/windows-cmd-tips-jan-2020.html', 'rtnVal']
+Time taken: 56.83036684989929</b>
+2020-03-18 13:50:19,225 INFO spark.SparkContext: Invoking stop() from shutdown hook
+2020-03-18 13:50:19,236 INFO server.AbstractConnector: Stopped Spark@3da82867{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 13:50:19,239 INFO ui.SparkUI: Stopped Spark web UI at http://master:4040
+2020-03-18 13:50:19,243 INFO cluster.YarnClientSchedulerBackend: Interrupting monitor thread
+2020-03-18 13:50:19,274 INFO cluster.YarnClientSchedulerBackend: Shutting down all executors
+2020-03-18 13:50:19,275 INFO cluster.YarnSchedulerBackend$YarnDriverEndpoint: Asking each executor to shut down
+2020-03-18 13:50:19,282 INFO cluster.SchedulerExtensionServices: Stopping SchedulerExtensionServices
+(serviceOption=None,
+ services=List(),
+ started=false)
+2020-03-18 13:50:19,283 INFO cluster.YarnClientSchedulerBackend: Stopped
+2020-03-18 13:50:19,289 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+2020-03-18 13:50:19,301 INFO memory.MemoryStore: MemoryStore cleared
+2020-03-18 13:50:19,301 INFO storage.BlockManager: BlockManager stopped
+2020-03-18 13:50:19,303 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+2020-03-18 13:50:19,306 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+2020-03-18 13:50:19,311 INFO spark.SparkContext: Successfully stopped SparkContext
+2020-03-18 13:50:19,311 INFO util.ShutdownHookManager: Shutdown hook called
+2020-03-18 13:50:19,312 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-8dd4f42f-7776-4fe9-8da5-58dcffd0df83/pyspark-94e28c99-29d8-4860-8a99-009b7308e307
+2020-03-18 13:50:19,314 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-8dd4f42f-7776-4fe9-8da5-58dcffd0df83
+2020-03-18 13:50:19,316 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-39870413-d0d5-471e-a4f5-31c4f0ce5b2b
+(base) administrator@master:/usr/local/spark$ </i>
+
+--- --- --- --- ---
+
+</pre>

@@ -1,0 +1,152 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+</br>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre># DAY 1
+
+  1: Creating a directory in HDFS
+  
+    A:
+     (base) administrator@master:~/Desktop/workspace$ hdfs dfs -mkdir /home/my_hdfs
+       <i style="color: red;">mkdir: 'hdfs://master:9000/home': No such file or directory </i>
+    B:
+     (base) administrator@master:~/Desktop/workspace$ hdfs dfs -mkdir /my_hdfs
+     (base) administrator@master:/$ hdfs dfs -mkdir /my_hdfs/test_mkdir
+    C:
+     (base) administrator@master:/$ hdfs dfs -mkdir /my_hdfs/test_mkdir
+       <i style="color: red;">mkdir: '/my_hdfs/test_mkdir': <b>File exists</b></i>
+    D:
+     (base) administrator@master:/$ hdfs dfs -mkdir /my_hdfs/test_mkdir_2/test
+       <i style="color: red;">mkdir: 'hdfs://master:9000/my_hdfs/test_mkdir_2': <b>No such file or directory</b></i>
+  
+  2: Hadoop HDFS put Command Usage
+    put [localSrc] [dest]
+  
+  3: "copyFromLocal" <a href="https://data-flair.training/blogs/top-hadoop-hdfs-commands-tutorial/" target="_blank">Ref</a>
+  
+   Hadoop HDFS copyFromLocal Command Usage
+    copyFromLocal [localSrc] [dest]
+  
+   CODE:
+   A: Issue because of space in the directory name 'Exp 17'.
+    (base) administrator@master:/$ hdfs dfs -copyFromLocal '/home/admin/Desktop/Exp 17/Txn_data.csv' /my_hdfs
+    copyFromLocal: `/home/admin/Desktop/Exp 17/Txn_data.csv': No such file or directory
+   B:
+    (base) administrator@master:/$ hdfs dfs -copyFromLocal /home/admin/Desktop/exp_17/Txn_data.csv /my_hdfs
+    2019-10-16 19:57:13,725 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+   C:
+    (base) administrator@master:/$ hdfs dfs -ls /my_hdfs
+      <i sytle="color: green">Found 2 items
+      -rw-r--r--   1 administrator supergroup    4390877 2019-10-16 19:57 /my_hdfs/Txn_data.csv
+      drwxr-xr-x   - administrator supergroup          0 2019-10-16 19:52 /my_hdfs/test_mkdir </i>
+
+# DAY 2
+
+  1: Listing the existing files
+  
+    (base) [admin@MASTER ~]$ hdfs
+    Usage: hdfs [OPTIONS] SUBCOMMAND [SUBCOMMAND OPTIONS]
+    
+    $ hdfs dfs -ls
+    Here: 
+      % 'dfs' is a subcommand of type 'Client Commands' that runs a filesystem command on the file system.
+      Other examples of subcommands could be 'namenode' (run the DFS namenode) and 'datanode' (run a DFS datanode) as in "hdfs namenode -format".
+      
+      % '-ls' is a subcommand option to list all the files in HDFS.
+      
+    (base) [admin@MASTER ~]$ hdfs dfs -ls
+      <i style="color: green">Found 1 items
+      drwxr-xr-x   - admin supergroup          0 2020-04-28 14:16 .sparkStaging </i>
+  	
+    This location must be: hdfs://master:9000/user/admin/.sparkStaging
+    
+  2: Creating a new directory
+    
+    (base) [admin@MASTER ~]$ hdfs dfs -mkdir /my_hdfs
+    (base) [admin@MASTER ~]$ hdfs dfs -ls
+      Found 1 items
+      drwxr-xr-x   - admin supergroup          0 2020-04-28 14:16 .sparkStaging
+    (base) [admin@MASTER ~]$ hdfs dfs -ls -R
+      drwxr-xr-x   - admin supergroup          0 2020-04-28 14:16 .sparkStaging
+  
+  3: Moving files from RHEL filesystem to HDFS
+  
+    (base) [admin@MASTER ashish]$ hdfs dfs -copyFromLocal '/home/admin/ashish/big_data.csv' /my_hdfs
+      <i style="color: green;">2020-05-02 00:04:35,838 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+      ...
+      2020-05-02 00:04:39,785 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false </i>
+  
+    (base) [admin@MASTER ashish]$ hdfs dfs -copyFromLocal '/home/admin/ashish/Data_20200311.csv' /my_hdfs
+      2020-05-02 09:34:18,640 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+  
+  4: Listing the file
+    (base) [admin@MASTER ashish]$ hdfs dfs -ls /my_hdfs
+      Found 1 items
+      -rw-r--r--   1 admin supergroup  974609456 2020-05-02 00:04 /my_hdfs/big_data.csv
+  
+  5: Removing a file 
+    (base) [admin@MASTER ~]$ ls
+      requirements.txt  Videos  Documents  Pictures
+      
+    (base) [admin@MASTER ~]$ hdfs dfs -copyFromLocal requirements.txt /my_hdfs
+      2020-05-02 11:30:39,211 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+    (base) [admin@MASTER ~]$ hdfs dfs -ls /my_hdfs
+      <i style="color: green;">Found 3 items
+      -rw-r--r--   1 admin supergroup    5893944 2020-05-02 09:34 /my_hdfs/Data.csv
+      -rw-r--r--   1 admin supergroup  974609456 2020-05-02 00:04 /my_hdfs/big_data.csv
+      -rw-r--r--   1 admin supergroup       2017 2020-05-02 11:30 /my_hdfs/requirements.txt </i>
+	  
+    (base) [admin@MASTER ~]$ hdfs dfs -rm /my_hdfs/requirements.txt
+      Deleted /my_hdfs/requirements.txt
+	  
+    (base) [admin@MASTER ~]$ hdfs dfs -ls /my_hdfs
+      Found 2 items
+      -rw-r--r--   1 admin supergroup    5893944 2020-05-02 09:34 /my_hdfs/Data.csv
+      -rw-r--r--   1 admin supergroup  974609456 2020-05-02 00:04 /my_hdfs/big_data.csv  
+
+  6: Exploring the default directories.
+
+   (base) [admin@MASTER ~]$ hdfs dfs -ls /
+     Found 1 items
+     drwxr-xr-x   - admin supergroup          0 2020-05-05 23:01 /user
+   (base) [admin@MASTER ~]$ hdfs dfs -ls /user
+     Found 1 items
+     drwxr-xr-x   - admin supergroup          0 2020-05-05 23:01 /user/admin
+   (base) [admin@MASTER ~]$ hdfs dfs -ls /user/admin
+     Found 1 items
+     drwxr-xr-x   - admin supergroup          0 2020-05-06 12:12 /user/admin/.sparkStaging
+</pre>

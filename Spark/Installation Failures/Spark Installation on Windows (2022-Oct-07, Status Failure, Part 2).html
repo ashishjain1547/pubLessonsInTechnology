@@ -1,0 +1,861 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .ib {
+            color: blue
+        }
+
+        .ig {
+            color: green
+        }
+
+        .ir {
+            color: red
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h2>The Issue</h2>
+
+<i class="ir">
+(mh) C:\Users\ashish>python
+Python 3.10.6 | packaged by conda-forge | (main, Aug 22 2022, 20:30:19) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()
+22/10/07 17:30:26 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 17:30:26 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+>>>
+</i>
+
+<h2>FRESH INSTALLATION</h2>
+
+<H3>Checking Java</H3>
+
+(mh) C:\Users\ashish>java -version
+openjdk version "17.0.4" 2022-07-19 LTS
+OpenJDK Runtime Environment Zulu17.36+14-SA (build 17.0.4+8-LTS)
+OpenJDK 64-Bit Server VM Zulu17.36+14-SA (build 17.0.4+8-LTS, mixed mode, sharing)
+
+~ ~ ~
+
+<h3>Checking Previous Installation of PySpark Through Its CLI</h3>
+
+(mh) C:\Users\ashish>pyspark
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+The system cannot find the path specified.
+The system cannot find the path specified.
+(mh) C:\Users\ashish>
+
+~ ~ ~
+
+<h3>Checking JAVA_HOME</h3>
+
+(base) C:\Users\ashish>echo %JAVA_HOME%
+C:\Program Files\Zulu\zulu-17
+
+~ ~ ~
+
+Microsoft Windows [Version 10.0.19042.2006]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ashish>pyspark
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+The system cannot find the path specified.
+The system cannot find the path specified.
+
+~ ~ ~
+
+(base) C:\Users\ashish>where python
+C:\Users\ashish\Anaconda3\python.exe
+C:\Users\ashish\AppData\Local\Microsoft\WindowsApps\python.exe
+
+File: C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin\pyspark2.cmd
+
+<i class="ib">
+@echo off
+
+rem
+rem Licensed to the Apache Software Foundation (ASF) under one or more
+rem contributor license agreements.  See the NOTICE file distributed with
+rem this work for additional information regarding copyright ownership.
+rem The ASF licenses this file to You under the Apache License, Version 2.0
+rem (the "License"); you may not use this file except in compliance with
+rem the License.  You may obtain a copy of the License at
+rem
+rem    http://www.apache.org/licenses/LICENSE-2.0
+rem
+rem Unless required by applicable law or agreed to in writing, software
+rem distributed under the License is distributed on an "AS IS" BASIS,
+rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+rem See the License for the specific language governing permissions and
+rem limitations under the License.
+rem
+
+rem Figure out where the Spark framework is installed
+call "%~dp0find-spark-home.cmd"
+
+call "%SPARK_HOME%\bin\load-spark-env.cmd"
+set _SPARK_CMD_USAGE=Usage: bin\pyspark.cmd [options]
+
+rem Figure out which Python to use.
+if "x%PYSPARK_DRIVER_PYTHON%"=="x" (
+    set PYSPARK_DRIVER_PYTHON=python
+    if not [%PYSPARK_PYTHON%] == [] set PYSPARK_DRIVER_PYTHON=%PYSPARK_PYTHON%
+)
+
+set PYTHONPATH=%SPARK_HOME%\python;%PYTHONPATH%
+set PYTHONPATH=%SPARK_HOME%\python\lib\py4j-0.10.9.5-src.zip;%PYTHONPATH%
+
+set OLD_PYTHONSTARTUP=%PYTHONSTARTUP%
+set PYTHONSTARTUP=%SPARK_HOME%\python\pyspark\shell.py
+
+call "%SPARK_HOME%\bin\spark-submit2.cmd" pyspark-shell-main --name "PySparkShell" %*    
+</i>
+
+(base) C:\Users\ashish>echo %PATH%
+C:\Users\ashish\Anaconda3;C:\Users\ashish\Anaconda3\Library\mingw-w64\bin;C:\Users\ashish\Anaconda3\Library\usr\bin;C:\Users\ashish\Anaconda3\Library\bin;C:\Users\ashish\Anaconda3\Scripts;C:\Users\ashish\Anaconda3\bin;C:\Users\ashish\Anaconda3\condabin;C:\Program Files\Zulu\zulu-17-jre\bin;C:\Program Files\Zulu\zulu-17\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Users\ashish\Anaconda3;C:\Users\ashish\Anaconda3\Library\mingw-w64\bin;C:\Users\ashish\Anaconda3\Library\usr\bin;C:\Users\ashish\Anaconda3\Library\bin;C:\Users\ashish\Anaconda3\Scripts;C:\Users\ashish\AppData\Local\Microsoft\WindowsApps;C:\Users\ashish\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin;.
+
+
+
+(base) C:\Users\ashish>echo %PYTHONPATH%
+C:\Users\ashish\Anaconda3
+
+
+
+(mh) C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin>pyspark
+Python 3.10.6 | packaged by conda-forge | (main, Aug 22 2022, 20:30:19) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+22/10/07 18:42:18 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 18:42:19 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+        ____              __
+        / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+    /__ / .__/\_,_/_/ /_/\_\   version 3.3.0
+        /_/
+
+Using Python version 3.10.6 (main, Aug 22 2022 20:30:19)
+Spark context Web UI available at http://CHDSEZ344867L.ad.infosys.com:4040
+Spark context available as 'sc' (master = local[*], app id = local-1665148340837).
+SparkSession available as 'spark'.
+>>>
+
+
+
+
+
+
+
+
+
+(base) C:\Users\ashish>where pyspark
+C:\Users\ashish\Anaconda3\Scripts\pyspark
+C:\Users\ashish\Anaconda3\Scripts\pyspark.cmd
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin\pyspark
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin\pyspark.cmd
+
+(base) C:\Users\ashish>where pyspark
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin\pyspark
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin\pyspark.cmd
+
+DELETE THE FILES:
+# C:\Users\ashish\Anaconda3\Scripts\pyspark
+# C:\Users\ashish\Anaconda3\Scripts\pyspark.cmd
+
+THEN RUN AGAIN:
+
+(base) C:\Users\ashish>pyspark
+Python 3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+22/10/07 18:44:58 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 18:44:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+        ____              __
+        / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+    /__ / .__/\_,_/_/ /_/\_\   version 3.3.0
+        /_/
+
+Using Python version 3.9.12 (main, Apr  4 2022 05:22:27)
+Spark context Web UI available at http://CHDSEZ344867L.ad.infosys.com:4040
+Spark context available as 'sc' (master = local[*], app id = local-1665148501551).
+SparkSession available as 'spark'.
+>>>
+
+~ ~ ~
+
+Microsoft Windows [Version 10.0.19042.2006]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin>pyspark
+Python 3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+
+Warning:
+This Python interpreter is in a conda environment, but the environment has
+not been activated.  Libraries may fail to load.  To activate this environment
+please see https://conda.io/activation
+
+Type "help", "copyright", "credits" or "license" for more information.
+22/10/07 18:54:48 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 18:54:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+        ____              __
+        / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+    /__ / .__/\_,_/_/ /_/\_\   version 3.3.0
+        /_/
+
+Using Python version 3.9.12 (main, Apr  4 2022 05:22:27)
+Spark context Web UI available at http://CHDSEZ344867L.ad.infosys.com:4040
+Spark context available as 'sc' (master = local[*], app id = local-1665149091125).
+SparkSession available as 'spark'.
+>>> import pandas as pd
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()
+>>> sqlCtx = SQLContext(sc)
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\python\pyspark\sql\context.py:112: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+    warnings.warn(
+>>> sdf = sqlCtx.createDataFrame(df)
+>>> sdf.show()
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+22/10/07 18:56:26 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+org.apache.spark.SparkException: Python worker failed to connect back.
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:189)
+        at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:109)
+        at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+        at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:164)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:65)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+        at org.apache.spark.scheduler.Task.run(Task.scala:136)
+        at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+        at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketTimeoutException: Accept timed out
+        at java.base/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:708)
+        at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:686)
+        at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:652)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:628)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+        at java.base/java.net.ServerSocket.accept(ServerSocket.java:538)
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:176)
+        ... 29 more
+22/10/07 18:56:26 WARN TaskSetManager: Lost task 0.0 in stage 0.0 (TID 0) (CHDSEZ344867L.ad.infosys.com executor driver): org.apache.spark.SparkException: Python worker failed to connect back.
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:189)
+        at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:109)
+        at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+        at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:164)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:65)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+        at org.apache.spark.scheduler.Task.run(Task.scala:136)
+        at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+        at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketTimeoutException: Accept timed out
+        at java.base/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:708)
+        at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:686)
+        at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:652)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:628)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+        at java.base/java.net.ServerSocket.accept(ServerSocket.java:538)
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:176)
+        ... 29 more
+
+22/10/07 18:56:26 ERROR TaskSetManager: Task 0 in stage 0.0 failed 1 times; aborting job
+Traceback (most recent call last):                                  (0 + 0) / 1]
+    File "&lt;stdin>", line 1, in &lt;module>
+    File "C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\python\pyspark\sql\dataframe.py", line 606, in show
+    print(self._jdf.showString(n, 20, vertical))
+    File "C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\python\lib\py4j-0.10.9.5-src.zip\py4j\java_gateway.py", line 1321, in __call__
+    File "C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\python\pyspark\sql\utils.py", line 190, in deco
+    return f(*a, **kw)
+    File "C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\python\lib\py4j-0.10.9.5-src.zip\py4j\protocol.py", line 326, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o62.showString.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 0.0 failed 1 times, most recent failure: Lost task 0.0 in stage 0.0 (TID 0) (CHDSEZ344867L.ad.infosys.com executor driver): org.apache.spark.SparkException: Python worker failed to connect back.
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:189)
+        at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:109)
+        at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+        at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:164)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:65)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+        at org.apache.spark.scheduler.Task.run(Task.scala:136)
+        at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+        at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.SocketTimeoutException: Accept timed out
+        at java.base/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:708)
+        at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:686)
+        at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:652)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:628)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+        at java.base/java.net.ServerSocket.accept(ServerSocket.java:538)
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:176)
+        ... 29 more
+
+Driver stacktrace:
+        at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2672)
+        at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2608)
+        at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2607)
+        at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+        at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+        at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2607)
+        at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1182)
+        at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1182)
+        at scala.Option.foreach(Option.scala:407)
+        at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1182)
+        at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2860)
+        at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2802)
+        at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2791)
+        at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+        at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:952)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:2228)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:2249)
+        at org.apache.spark.SparkContext.runJob(SparkContext.scala:2268)
+        at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:506)
+        at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:459)
+        at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:48)
+        at org.apache.spark.sql.Dataset.collectFromPlan(Dataset.scala:3868)
+        at org.apache.spark.sql.Dataset.$anonfun$head$1(Dataset.scala:2863)
+        at org.apache.spark.sql.Dataset.$anonfun$withAction$2(Dataset.scala:3858)
+        at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:510)
+        at org.apache.spark.sql.Dataset.$anonfun$withAction$1(Dataset.scala:3856)
+        at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:109)
+        at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:169)
+        at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:95)
+        at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:779)
+        at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+        at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3856)
+        at org.apache.spark.sql.Dataset.head(Dataset.scala:2863)
+        at org.apache.spark.sql.Dataset.take(Dataset.scala:3084)
+        at org.apache.spark.sql.Dataset.getRows(Dataset.scala:288)
+        at org.apache.spark.sql.Dataset.showString(Dataset.scala:327)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:282)
+        at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+        at py4j.commands.CallCommand.execute(CallCommand.java:79)
+        at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+        at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+        at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.apache.spark.SparkException: Python worker failed to connect back.
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:189)
+        at org.apache.spark.api.python.PythonWorkerFactory.create(PythonWorkerFactory.scala:109)
+        at org.apache.spark.SparkEnv.createPythonWorker(SparkEnv.scala:124)
+        at org.apache.spark.api.python.BasePythonRunner.compute(PythonRunner.scala:164)
+        at org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:65)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+        at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:365)
+        at org.apache.spark.rdd.RDD.iterator(RDD.scala:329)
+        at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+        at org.apache.spark.scheduler.Task.run(Task.scala:136)
+        at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+        at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+        at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+        ... 1 more
+Caused by: java.net.SocketTimeoutException: Accept timed out
+        at java.base/sun.nio.ch.NioSocketImpl.timedAccept(NioSocketImpl.java:708)
+        at java.base/sun.nio.ch.NioSocketImpl.accept(NioSocketImpl.java:752)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:686)
+        at java.base/java.net.ServerSocket.platformImplAccept(ServerSocket.java:652)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:628)
+        at java.base/java.net.ServerSocket.implAccept(ServerSocket.java:585)
+        at java.base/java.net.ServerSocket.accept(ServerSocket.java:538)
+        at org.apache.spark.api.python.PythonWorkerFactory.createSimpleWorker(PythonWorkerFactory.scala:176)
+        ... 29 more
+
+>>>
+
+
+<h2>INSTALL SCALA</h2>
+
+https://www.scala-lang.org/download/
+
+~ ~ ~
+
+C:\Users\ashish\Desktop\spark-3.3.0-bin-hadoop3\bin>echo %PYTHONPATH%
+C:\Users\ashish\Anaconda3
+
+(mh) C:\Users\ashish>python
+Python 3.10.6 | packaged by conda-forge | (main, Aug 22 2022, 20:30:19) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+~ ~ ~
+
+<h2>Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.</h2>
+
+This error occurs because your python version is not compatible with pyspark version. So check your python version and update accordingly using the below given command. After that it will work. To know more about it, get your Pyspark certification today and become expert.07-Apr-2020
+
+<a href="https://www.edureka.co/community/66214/env-python-no-such-file-or-directory-in-pyspark#:~:text=This%20error%20occurs%20because%20your,using%20the%20below%20given%20command.&text=After%20that%20it%20will%20work,certification%20today%20and%20become%20expert." target="_blank">edureka</a>
+
+~ ~ ~
+
+(base) C:\Users\ashish\Desktop>conda env create -f menv.yml
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+Downloading and Extracting Packages
+debugpy-1.6.3        | 3.2 MB    | ### | 100%
+kiwisolver-1.4.4     | 61 KB     | ### | 100%
+jupyter_core-4.11.1  | 106 KB    | ### | 100%
+regex-2022.9.13      | 331 KB    | ### | 100%
+scikit-learn-1.1.2   | 7.5 MB    | ### | 100%
+cffi-1.15.1          | 223 KB    | ### | 100%
+typing_extensions-4. | 29 KB     | ### | 100%
+argon2-cffi-bindings | 35 KB     | ### | 100%
+scipy-1.9.1          | 28.3 MB   | ### | 100%
+markupsafe-2.1.1     | 25 KB     | ### | 100%
+click-8.1.3          | 146 KB    | ### | 100%
+pandas-1.5.0         | 11.7 MB   | ### | 100%
+unicodedata2-14.0.0  | 493 KB    | ### | 100%
+sip-6.6.2            | 519 KB    | ### | 100%
+python-3.8.0         | 18.8 MB   | ### | 100%
+gensim-4.2.0         | 22.4 MB   | ### | 100%
+statsmodels-0.13.2   | 10.3 MB   | ### | 100%
+tornado-6.2          | 655 KB    | ### | 100%
+importlib-metadata-4 | 33 KB     | ### | 100%
+pywin32-303          | 6.9 MB    | ### | 100%
+pyqt-5.15.7          | 4.7 MB    | ### | 100%
+jupyter-1.0.0        | 7 KB      | ### | 100%
+pyqt5-sip-12.11.0    | 82 KB     | ### | 100%
+matplotlib-3.6.0     | 7 KB      | ### | 100%
+matplotlib-base-3.6. | 7.5 MB    | ### | 100%
+psutil-5.9.2         | 367 KB    | ### | 100%
+pyrsistent-0.18.1    | 85 KB     | ### | 100%
+pywinpty-2.0.8       | 234 KB    | ### | 100%
+pillow-9.2.0         | 44.9 MB   | ### | 100%
+pyarrow-6.0.0        | 2.4 MB    | ### | 100%
+numpy-1.23.3         | 6.3 MB    | ### | 100%
+fonttools-4.37.4     | 1.7 MB    | ### | 100%
+contourpy-1.0.5      | 176 KB    | ### | 100%
+python_abi-3.8       | 4 KB      | ### | 100%
+sqlite-3.39.4        | 658 KB    | ### | 100%
+pyzmq-24.0.1         | 461 KB    | ### | 100%
+arrow-cpp-6.0.0      | 15.7 MB   | ### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Installing pip dependencies: \ Ran pip subprocess with arguments:
+['C:\\Users\\ashish\\Anaconda3\\envs\\mh\\python.exe', '-m', 'pip', 'install', '-U', '-r', 'C:\\Users\\ashish\\Desktop\\condaenv.tl6wm33z.requirements.txt']
+| Pip subprocess output:
+Collecting rpy2==3.4.5
+    Using cached rpy2-3.4.5.tar.gz (194 kB)
+    Preparing metadata (setup.py): started
+    Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: cffi>=1.10.0 in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.tl6wm33z.requirements.txt (line 1)) (1.15.1)
+Requirement already satisfied: jinja2 in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.tl6wm33z.requirements.txt (line 1)) (3.1.2)
+Requirement already satisfied: pytz in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.tl6wm33z.requirements.txt (line 1)) (2022.4)
+Collecting tzlocal
+    Using cached tzlocal-4.2-py3-none-any.whl (19 kB)
+Requirement already satisfied: pycparser in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from cffi>=1.10.0->rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.tl6wm33z.requirements.txt (line 1)) (2.21)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from jinja2->rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.tl6wm33z.requirements.txt (line 1)) (2.1.1)
+Collecting backports.zoneinfo
+    Downloading backports.zoneinfo-0.2.1-cp38-cp38-win_amd64.whl (38 kB)
+Collecting pytz-deprecation-shim
+    Using cached pytz_deprecation_shim-0.1.0.post0-py2.py3-none-any.whl (15 kB)
+Collecting tzdata
+    Using cached tzdata-2022.4-py2.py3-none-any.whl (336 kB)
+Building wheels for collected packages: rpy2
+    Building wheel for rpy2 (setup.py): started
+    Building wheel for rpy2 (setup.py): finished with status 'done'
+    Created wheel for rpy2: filename=rpy2-3.4.5-py3-none-any.whl size=198845 sha256=f7220847e02f729bd39188f16026ac01855f88cb2c10c3dd68cf5856fc560b6c
+    Stored in directory: c:\users\ashish\appdata\local\pip\cache\wheels\57\e2\f0\64c7640f82ba9a23777a25c05d2552fa2991eee7ec2cf9b216
+Successfully built rpy2
+Installing collected packages: tzdata, backports.zoneinfo, pytz-deprecation-shim, tzlocal, rpy2
+Successfully installed backports.zoneinfo-0.2.1 pytz-deprecation-shim-0.1.0.post0 rpy2-3.4.5 tzdata-2022.4 tzlocal-4.2
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate mh
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Retrieving notices: ...working... done
+
+(base) C:\Users\ashish\Desktop>
+
+~ ~ ~
+
+(mh) C:\Users\ashish\Desktop>python
+Python 3.8.0 | packaged by conda-forge | (default, Nov 22 2019, 19:04:36) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pyspark
+>>> pyspark.__version__
+'3.3.0'
+>>> exit()
+
+~ ~ ~
+
+(mh) C:\Users\ashish\Desktop>python
+Python 3.8.0 | packaged by conda-forge | (default, Nov 22 2019, 19:04:36) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()
+22/10/07 20:04:54 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 20:04:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+>>> sqlCtx = SQLContext(sc)
+C:\Users\ashish\Anaconda3\envs\mh\lib\site-packages\pyspark\sql\context.py:112: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+    warnings.warn(
+>>> sdf = sqlCtx.createDataFrame(df)
+C:\Users\ashish\Anaconda3\envs\mh\lib\site-packages\pyspark\sql\pandas\conversion.py:474: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+    for column, series in pdf.iteritems():
+C:\Users\ashish\Anaconda3\envs\mh\lib\site-packages\pyspark\sql\pandas\conversion.py:486: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+    for column, series in pdf.iteritems():
+>>> sdf.show()
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+22/10/07 20:05:37 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+org.apache.spark.SparkException: Python worker failed to connect back.
+
+... ... ... 
+
+
+<h2>Contents of File ENV.YML</h2>
+
+<i class="ib">
+name: mh
+channels:
+    - conda-forge
+dependencies:
+    - python==3.7
+    - pandas
+    - seaborn
+    - scikit-learn
+    - matplotlib
+    - ipykernel
+    - jupyter
+    - pyspark
+    - gensim
+    - nltk
+    - scipy
+    - pip
+    - pip:
+    - rpy2==3.4.5
+</i>
+
+(base) C:\Users\ashish\Desktop>conda env create -f menv.yml
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+Downloading and Extracting Packages
+libthrift-0.16.0     | 877 KB    | ### | 100%
+pandas-1.3.5         | 10.9 MB   | ### | 100%
+debugpy-1.6.3        | 3.2 MB    | ### | 100%
+python-3.7.0         | 21.0 MB   | ### | 100%
+argon2-cffi-bindings | 34 KB     | ### | 100%
+aws-c-event-stream-0 | 47 KB     | ### | 100%
+fonttools-4.37.4     | 1.7 MB    | ### | 100%
+ipython-7.33.0       | 1.2 MB    | ### | 100%
+gensim-4.2.0         | 22.4 MB   | ### | 100%
+jupyter-1.0.0        | 7 KB      | ### | 100%
+setuptools-59.8.0    | 1.0 MB    | ### | 100%
+aws-checksums-0.1.11 | 51 KB     | ### | 100%
+pillow-9.2.0         | 45.4 MB   | ### | 100%
+libprotobuf-3.21.7   | 2.4 MB    | ### | 100%
+regex-2022.9.13      | 343 KB    | ### | 100%
+psutil-5.9.2         | 363 KB    | ### | 100%
+pywinpty-2.0.8       | 235 KB    | ### | 100%
+statsmodels-0.13.2   | 10.5 MB   | ### | 100%
+glog-0.6.0           | 95 KB     | ### | 100%
+matplotlib-3.5.3     | 7 KB      | ### | 100%
+aws-c-cal-0.5.11     | 36 KB     | ### | 100%
+aws-c-common-0.6.2   | 159 KB    | ### | 100%
+pyarrow-9.0.0        | 2.8 MB    | ### | 100%
+pyrsistent-0.18.1    | 84 KB     | ### | 100%
+libgoogle-cloud-2.2. | 10 KB     | ### | 100%
+aws-sdk-cpp-1.8.186  | 5.5 MB    | ### | 100%
+aws-c-io-0.10.5      | 127 KB    | ### | 100%
+pyzmq-24.0.1         | 457 KB    | ### | 100%
+libabseil-20220623.0 | 1.6 MB    | ### | 100%
+jupyter_core-4.11.1  | 105 KB    | ### | 100%
+matplotlib-base-3.5. | 7.4 MB    | ### | 100%
+arrow-cpp-9.0.0      | 19.7 MB   | ### | 100%
+pywin32-303          | 7.0 MB    | ### | 100%
+typing-extensions-4. | 8 KB      | ### | 100%
+libcrc32c-1.1.2      | 25 KB     | ### | 100%
+cffi-1.15.1          | 222 KB    | ### | 100%
+grpc-cpp-1.47.1      | 28.0 MB   | ### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Installing pip dependencies: | Ran pip subprocess with arguments:
+['C:\\Users\\ashish\\Anaconda3\\envs\\mh\\python.exe', '-m', 'pip', 'install', '-U', '-r', 'C:\\Users\\ashish\\Desktop\\condaenv.yn5zpyut.requirements.txt']
+Pip subprocess output:
+Collecting rpy2==3.4.5
+    Using cached rpy2-3.4.5.tar.gz (194 kB)
+    Preparing metadata (setup.py): started
+    Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: cffi>=1.10.0 in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.yn5zpyut.requirements.txt (line 1)) (1.15.1)
+Requirement already satisfied: jinja2 in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.yn5zpyut.requirements.txt (line 1)) (3.1.2)
+Requirement already satisfied: pytz in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.yn5zpyut.requirements.txt (line 1)) (2022.4)
+Collecting tzlocal
+    Using cached tzlocal-4.2-py3-none-any.whl (19 kB)
+Requirement already satisfied: pycparser in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from cffi>=1.10.0->rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.yn5zpyut.requirements.txt (line 1)) (2.21)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\ashish\anaconda3\envs\mh\lib\site-packages (from jinja2->rpy2==3.4.5->-r C:\Users\ashish\Desktop\condaenv.yn5zpyut.requirements.txt (line 1)) (2.1.1)
+Collecting backports.zoneinfo
+    Downloading backports.zoneinfo-0.2.1-cp37-cp37m-win_amd64.whl (38 kB)
+Collecting pytz-deprecation-shim
+    Using cached pytz_deprecation_shim-0.1.0.post0-py2.py3-none-any.whl (15 kB)
+Collecting tzdata
+    Using cached tzdata-2022.4-py2.py3-none-any.whl (336 kB)
+Building wheels for collected packages: rpy2
+    Building wheel for rpy2 (setup.py): started
+    Building wheel for rpy2 (setup.py): finished with status 'done'
+    Created wheel for rpy2: filename=rpy2-3.4.5-py3-none-any.whl size=198859 sha256=eb9ac7fe7a3a2109be582d2cae21640c03e1164a55bceda048c24047df75e945
+    Stored in directory: c:\users\ashish\appdata\local\pip\cache\wheels\46\00\c5\a43320afe86e7540d16d7f07cf4d29547d98921e76ea9f2f7a
+Successfully built rpy2
+Installing collected packages: tzdata, backports.zoneinfo, pytz-deprecation-shim, tzlocal, rpy2
+Successfully installed backports.zoneinfo-0.2.1 pytz-deprecation-shim-0.1.0.post0 rpy2-3.4.5 tzdata-2022.4 tzlocal-4.2
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate mh
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Retrieving notices: ...working... done
+
+(base) C:\Users\ashish\Desktop>python
+Python 3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+(base) C:\Users\ashish\Desktop>conda activate mh
+
+(mh) C:\Users\ashish\Desktop>python
+Python 3.7.0 | packaged by conda-forge | (default, Nov 12 2018, 20:47:31) [MSC v.1900 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()
+22/10/07 21:02:01 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 21:02:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+>>> sqlCtx = SQLContext(sc)
+C:\Users\ashish\Anaconda3\envs\mh\lib\site-packages\pyspark\sql\context.py:114: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+    FutureWarning,
+>>> sdf = sqlCtx.createDataFrame(df)
+>>> sdf.show()
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+22/10/07 21:02:49 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+org.apache.spark.SparkException: Python worker failed to connect back.
+
+<h2>Checking the Environment variables through OS package</h2>
+
+>>> import os
+>>> os.environ['PATH']
+'C:\\Users\\ashish\\Anaconda3\\envs\\mh;C:\\Users\\ashish\\Anaconda3\\envs\\mh\\Library\\mingw-w64\\bin;C:\\Users\\ashish\\Anaconda3\\envs\\mh\\Library\\usr\\bin;C:\\Users\\ashish\\Anaconda3\\envs\\mh\\Library\\bin;C:\\Users\\ashish\\Anaconda3\\envs\\mh\\Scripts;C:\\Users\\ashish\\Anaconda3\\envs\\mh\\bin;C:\\Users\\ashish\\Anaconda3\\condabin;C:\\Program Files\\Zulu\\zulu-17-jre\\bin;C:\\Program Files\\Zulu\\zulu-17\\bin;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0;C:\\windows\\System32\\OpenSSH;C:\\Program Files\\Git\\cmd;C:\\Users\\ashish\\Anaconda3;C:\\Users\\ashish\\Anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\ashish\\Anaconda3\\Library\\usr\\bin;C:\\Users\\ashish\\Anaconda3\\Library\\bin;C:\\Users\\ashish\\Anaconda3\\Scripts;C:\\Users\\ashish\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ashish\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\ashish\\Desktop\\spark-3.3.0-bin-hadoop3\\bin;.'
+>>> os.environ['PYTHONPATH']
+'C:\\Users\\ashish\\Anaconda3'
+>>> os.system("where python")
+C:\Users\ashish\Anaconda3\envs\mh\python.exe
+C:\Users\ashish\Anaconda3\python.exe
+C:\Users\ashish\AppData\Local\Microsoft\WindowsApps\python.exe
+0
+
+(base) C:\Users\ashish>conda activate mh
+
+(mh) C:\Users\ashish>python
+Python 3.7.0 | packaged by conda-forge | (default, Nov 12 2018, 20:47:31) [MSC v.1900 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+<i class="ib">
+>>> import pandas as pd
+>>> import os
+
+>>> os.environ["PYTHONPATH"]    
+</i>
+
+<i class="ig">'C:\\Users\\ashish\\Anaconda3\\envs\\mh'</i>
+
+<i class="ib">
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()
+</i>
+
+<i class="ir">
+22/10/07 21:20:00 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/07 21:20:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+</i>
+
+<i class="ib">>>> sqlCtx = SQLContext(sc)</i>
+
+C:\Users\ashish\Anaconda3\envs\mh\lib\site-packages\pyspark\sql\context.py:114: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+    FutureWarning,
+>>> sdf = sqlCtx.createDataFrame(df)
+>>> sdf.show()
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+22/10/07 21:20:45 ERROR Executor: Exception in task 0.0 in stage 0.0 (TID 0)
+org.apache.spark.SparkException: Python worker failed to connect back.
+</pre>
+<span style="display: none">Tags: Technology,Spark,</span>

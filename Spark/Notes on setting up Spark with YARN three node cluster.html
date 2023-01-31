@@ -1,0 +1,314 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>ON SLAVE2 (Host OS IP: 192.168.1.4):
+
+$ cat /etc/hostname
+slave2
+
+$ cat /etc/hosts
+
+192.169.1.12 master
+192.168.1.3  slave1
+192.168.1.4  slave2
+
+REMOVE THE MAPPINGS "127.0.0.1  slave2" AND "127.0.1.1  slave2". THESE ARE MAPPINGS THAT MAP LOCALHOST IP TO THE MACHINE ITSELF IN THE FILE /etc/hosts ON ALL SYSTEMS:
+127.0.0.1  slave2
+127.0.1.1  slave2
+
+---
+
+MAKE THE DATANODE AND NAMENODE FOLDERS:
+
+admin@master:~$ cd /home
+admin@master:/home$ sudo mkdir hadoop
+admin@master:/home$ cd hadoop
+admin@master:/home/hadoop$ sudo mkdir data
+admin@master:/home/hadoop$ cd data
+admin@master:/home/hadoop/data$ sudo mkdir dataNode
+admin@master:/home/hadoop/data$ sudo mkdir nameNode
+
+...
+
+ENABLE THE CONNECTIONS TO SLAVES AND MASTERS IN THE FIREWALLS OF EACH SYSTEM:
+
+$ sudo /sbin/iptables -A INPUT -p tcp -s 192.168.1.12 -j ACCEPT
+$ sudo /sbin/iptables -A OUTPUT -p tcp -d  192.168.1.12 -j ACCEPT
+$ sudo /sbin/iptables -A INPUT -p tcp -s 192.168.1.3 -j ACCEPT
+$ sudo /sbin/iptables -A OUTPUT -p tcp -d  192.168.1.3 -j ACCEPT
+$ sudo /sbin/iptables -A INPUT -p tcp -s 192.168.1.4 -j ACCEPT
+$ sudo /sbin/iptables -A OUTPUT -p tcp -d  192.168.1.4 -j ACCEPT
+
+If you still face issues with port connectivity, use the following 'iptables' and 'firewalld' commands to stop services altogether:
+$ sudo systemctl stop iptables
+$ sudo service firewalld stop
+
+Note: Experimented on two node (master and slave) RHEL based cluster.
+---
+
+CONTENTS OF FILE "/usr/local/hadoop/etc/hadoop/core-site.xml":
+
+<i style="color: blue;">&lt;configuration&gt;
+    &lt;property&gt;
+        &lt;name&gt;fs.default.name&lt;/name&gt;
+        &lt;value&gt;hdfs://master:9000&lt;/value&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+        &lt;value&gt;/usr/local/hadoop/tmp&lt;/value&gt;
+    &lt;/property&gt;
+
+        &lt;property&gt;
+        &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+        &lt;value&gt;file:///usr/local/hadoop/data/datanode&lt;/value&gt;
+        &lt;description&gt;Comma separated list of paths on the local filesystem of a DataNode where it should store its blocks.&lt;/description&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+        &lt;value&gt;file:///usr/local/hadoop/data/namenode&lt;/value&gt;
+        &lt;description&gt;Path on the local filesystem where the NameNode stores the namespace and transaction logs persistently.&lt;/description&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;dfs.namenode.datanode.registration.ip-hostname-check&lt;/name&gt;
+        &lt;value&gt;false&lt;/value&gt;
+        &lt;description&gt;Path on the local filesystem where the NameNode stores the namespace and transaction logs persistently.&lt;/description&gt;
+    &lt;/property&gt;
+
+&lt;/configuration&gt;</i>
+
+---
+
+CONTENTS OF FILE "/usr/local/hadoop/etc/hadoop/hdfs-site.xml":
+
+&lt;configuration&gt;
+&lt;property&gt;
+    &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+    &lt;value&gt;/usr/local/hadoop/data/nameNode&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+    &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+    &lt;value&gt;/usr/local/hadoop/data/dataNode&lt;/value&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;
+&lt;/configuration&gt;
+
+---
+
+admin@master:/usr/local/hadoop/etc/hadoop$ cat slaves
+slave1
+slave2
+
+---
+
+admin@master:/usr/local/hadoop/etc/hadoop$ scp hdfs-site.xml slave1:/usr/local/hadoop/etc/hadoop
+hdfs-site.xml                                                                                               100% 1068   968.4KB/s   00:00    
+admin@master:/usr/local/hadoop/etc/hadoop$ scp hdfs-site.xml slave2:/usr/local/hadoop/etc/hadoop
+hdfs-site.xml           
+
+---
+
+CONTENTS OF "/usr/local/hadoop/etc/hadoop/yarn-site.xml":
+
+<i style="color: blue;">&lt;?xml version="1.0"?&gt;
+&lt;configuration&gt;
+&lt;!-- Site specific YARN configuration properties --&gt;
+
+    &lt;property&gt;
+        &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;
+        &lt;value&gt;128&lt;/value&gt;
+        &lt;description&gt;Minimum limit of memory to allocate to each container request at the Resource Manager. CAN BE CHANGED BASED ON SYSTEM CONFIGURATION &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;
+        &lt;value&gt;8192&lt;/value&gt;
+        &lt;description&gt;Maximum limit of memory to allocate to each container request at the Resource Manager. CAN BE CHANGED BASED ON SYSTEM CONFIGURATION &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.scheduler.minimum-allocation-vcores&lt;/name&gt;
+        &lt;value&gt;1&lt;/value&gt;
+        &lt;description&gt;The minimum allocation for every container request at the RM, in terms of virtual CPU cores. Requests lower than this won't take effect, and the specified value will get allocated the minimum. CAN BE CHANGED BASED ON SYSTEM CONFIGURATION &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.scheduler.maximum-allocation-vcores&lt;/name&gt;
+        &lt;value&gt;2&lt;/value&gt;
+        &lt;description&gt;The maximum allocation for every container request at the RM, in terms of virtual CPU cores. Requests higher than this won't take effect, and will get capped to this value. CAN BE CHANGED BASED ON SYSTEM CONFIGURATION  &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;
+        &lt;value&gt;8192&lt;/value&gt;
+        &lt;description&gt;Physical memory, in MB, to be made available to running containers. CAN BE CHANGED BASED ON SYSTEM CONFIGURATION &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+        &lt;name&gt;yarn.nodemanager.resource.cpu-vcores&lt;/name&gt;
+        &lt;value&gt;4&lt;/value&gt;
+        &lt;description&gt;&lt;/description&gt;
+    &lt;/property&gt;
+        &lt;property&gt;
+        &lt;name&gt;yarn.log.dir&lt;/name&gt;
+        &lt;value&gt;file:///usr/local/hadoop/logs &lt;/value&gt;
+        &lt;description&gt;Number of CPU cores that can be allocated for containers. CAN BE CHANGED BASED ON SYSTEM CONFIGURATION &lt;/description&gt;
+    &lt;/property&gt;
+    &lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.pmem-check-enabled&lt;/name&gt;
+    &lt;value&gt;false&lt;/value&gt;
+    &lt;/property&gt;
+
+    &lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.vmem-check-enabled&lt;/name&gt;
+    &lt;value&gt;false&lt;/value&gt;
+    &lt;/property&gt;
+
+        &lt;property&gt;
+        &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+        &lt;value&gt;master&lt;/value&gt;
+        &lt;description&gt;The hostname of the RM. SHOULD BE CHANGED TO NAME NODE HOST NAME  &lt;/description&gt;
+    &lt;/property&gt;
+&lt;/configuration&gt;
+</i>
+---
+
+admin@master:/usr/local/hadoop/etc/hadoop$ scp core-site.xml yarn-site.xml slave1:/usr/local/hadoop/etc/hadoop
+core-site.xml 100% 1783     1.3MB/s   00:00    
+yarn-site.xml 100% 3287     2.3MB/s   00:00    
+
+admin@master:/usr/local/hadoop/etc/hadoop$ scp core-site.xml yarn-site.xml slave2:/usr/local/hadoop/etc/hadoop
+core-site.xml                                                                                               100% 1783     1.3MB/s   00:00    
+yarn-site.xml                             
+
+---
+
+SEE THE ISSUES HERE: IP OF SLAVE1 IS WRONG AND PORT 8031 IS CLOSED:
+
+administrator@slave1:/usr/local/hadoop/logs$ tail -100 hadoop-administrator-nodemanager-slave1.log
+<i style="color: red;">Caused by: java.net.ConnectException: Call From slave1/127.0.0.1 to master:8031 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused </i>
+
+---
+
+admin@master:/usr/local/spark/conf$ mv spark-env.sh.template spark-env.sh
+admin@master:/usr/local/spark/conf$ mv slaves.template slaves
+
+Spark slaves and environment configuration:
+$ cd /usr/local/spark/conf
+$ sudo gedit slaves
+
+<i>slave1
+slave2</i>
+
+$ sudo gedit spark-env.sh
+Add these at the appropriate place:
+<i style="color: blue;">export PYSPARK_PYTHON=/home/admin/anaconda3/bin/python3.7
+export PYSPARK_DRIVER_PYTHON=/home/admin/anaconda3/bin/python3.7 </i>
+---
+
+admin@master:/usr/local/spark$ ./bin/spark-submit --class org.apache.spark.examples.SparkPi \
+&gt;     --master yarn \
+&gt;     --deploy-mode cluster \
+&gt;     --driver-memory 2g \
+&gt;     --executor-memory 1g \
+&gt;     --executor-cores 1 \
+&gt;     --num-executors 3 \
+&gt;     examples/jars/spark-examples_2.11-2.4.4.jar \
+&gt;     10
+
+---
+
+admin@master:/usr/local/spark$ ./bin/spark-submit --master yarn examples/src/main/python/pi.py 100
+
+...
+
+CHECKING THE PORT FOR WEB INTERFACE FOR "Web app cluster":
+
+admin@master:/usr/local/hadoop/logs$ tail -100 hadoop-administrator-resourcemanager-master.log | grep web
+
+<i style="color: green;">2019-09-27 12:28:52,581 INFO org.apache.hadoop.yarn.webapp.WebApps: Registered webapp guice modules
+2019-09-27 12:28:52,658 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.s.ServletContextHandler@6e01f9b0{/static,jar:file:/usr/local/hadoop/share/hadoop/yarn/hadoop-yarn-common-3.2.1.jar!/webapps/static,AVAILABLE}
+2019-09-27 12:28:53,623 INFO org.eclipse.jetty.server.handler.ContextHandler: Started o.e.j.w.WebAppContext@c808207{/,file:///tmp/jetty-master-8088-cluster-_-any-2271123194408626570.dir/webapp/,AVAILABLE}{/cluster}
+2019-09-27 12:28:53,631 INFO org.apache.hadoop.yarn.webapp.WebApps: Web app cluster started at 8088
+
+
+SO URL IS: http://master:8088/cluster/nodes </i>
+
+...
+
+CHECKING THAT YARN IS RUNNING IN THE "PROCESS STATUS (ps)" LOGS:
+
+admin@master:/usr/local/hadoop/logs$ ps -ef | grep hadoop
+
+<i style="color: green;">adminis+  7037     1  0 12:28 ?        00:00:16 /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dproc_namenode -Djava.net.preferIPv4Stack=true -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dyarn.log.dir=/usr/local/hadoop/logs -Dyarn.log.file=hadoop-administrator-namenode-master.log -Dyarn.home.dir=/usr/local/hadoop -Dyarn.root.logger=INFO,console -Djava.library.path=/usr/local/hadoop/lib/native -Dhadoop.log.dir=/usr/local/hadoop/logs -Dhadoop.log.file=hadoop-administrator-namenode-master.log -Dhadoop.home.dir=/usr/local/hadoop -Dhadoop.id.str=administrator -Dhadoop.root.logger=INFO,RFA -Dhadoop.policy.file=hadoop-policy.xml org.apache.hadoop.hdfs.server.namenode.NameNode
+
+adminis+  7255     1  0 12:28 ?        00:00:07 /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dproc_secondarynamenode -Djava.net.preferIPv4Stack=true -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dyarn.log.dir=/usr/local/hadoop/logs -Dyarn.log.file=hadoop-administrator-secondarynamenode-master.log -Dyarn.home.dir=/usr/local/hadoop -Dyarn.root.logger=INFO,console -Djava.library.path=/usr/local/hadoop/lib/native -Dhadoop.log.dir=/usr/local/hadoop/logs -Dhadoop.log.file=hadoop-administrator-secondarynamenode-master.log -Dhadoop.home.dir=/usr/local/hadoop -Dhadoop.id.str=administrator -Dhadoop.root.logger=INFO,RFA -Dhadoop.policy.file=hadoop-policy.xml org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+
+adminis+  7426  1261  1 12:28 pts/3    00:00:52 /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Dproc_resourcemanager -Djava.net.preferIPv4Stack=true -Dservice.libdir=/usr/local/hadoop/share/hadoop/yarn,/usr/local/hadoop/share/hadoop/yarn/lib,/usr/local/hadoop/share/hadoop/hdfs,/usr/local/hadoop/share/hadoop/hdfs/lib,/usr/local/hadoop/share/hadoop/common,/usr/local/hadoop/share/hadoop/common/lib -Dyarn.log.dir=/usr/local/hadoop/logs -Dyarn.log.file=hadoop-administrator-resourcemanager-master.log -Dyarn.home.dir=/usr/local/hadoop -Dyarn.root.logger=INFO,console -Djava.library.path=/usr/local/hadoop/lib/native -Dhadoop.log.dir=/usr/local/hadoop/logs -Dhadoop.log.file=hadoop-administrator-resourcemanager-master.log -Dhadoop.home.dir=/usr/local/hadoop -Dhadoop.id.str=administrator -Dhadoop.root.logger=INFO,RFA -Dhadoop.policy.file=hadoop-policy.xml -Dhadoop.security.logger=INFO,NullAppender org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
+
+adminis+  8697  8690  0 13:50 pts/4    00:00:00 grep --color=auto hadoop</i>
+
+THE FIRST LINE IS FOR PROGRAM "org.apache.hadoop.hdfs.server.namenode.NameNode".
+THE SECOND LINE IS FOR PROGRAM "org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode".
+THE THIRD LINE IS FOR PROGRAM "org.apache.hadoop.yarn.server.resourcemanager.ResourceManager".
+
+---
+</pre>

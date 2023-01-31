@@ -1,0 +1,227 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+Q1: What is a port?
+
+A: In computer networking, a port is a communication endpoint. Physical as well as wireless connections are terminated at ports of hardware devices. At the software level, within an operating system, a port is a logical construct that identifies a specific process or a type of network service. Ports are identified for each protocol and address combination by 16-bit unsigned numbers, commonly known as the port number. The most common protocols that use port numbers are the Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP).
+
+A port number is always associated with an IP address of a host and the protocol type of the communication. It completes the destination or origination network address of a message. Specific port numbers are commonly reserved to identify specific services, so that an arriving packet can be easily forwarded to a running application. For this purpose, the lowest numbered 1024 port numbers identify the historically most commonly used services, and are called the well-known port numbers. Higher-numbered ports are available for general use by applications and are known as ephemeral ports.
+
+A port number is a 16-bit unsigned integer, thus ranging from 0 to 65535.
+
+The Internet Assigned Numbers Authority (IANA) is responsible for the global coordination of the DNS Root, IP addressing, and other Internet protocol resources. This includes the registration of commonly used port numbers for well-known Internet services.
+
+The port numbers are divided into three ranges: the well-known ports, the registered ports, and the dynamic or private ports.
+
+The well-known ports (also known as system ports) are those from 0 through 1023.
+
+Use in URLs:
+Port numbers are sometimes seen in web or other uniform resource locators (URLs). By default, HTTP uses port 80 and HTTPS uses port 443, but a URL like http://www.example.com:8080/path/ specifies that the web browser connects instead to port 8080 of the HTTP server.
+
+---
+
+Q2: What is SSH?
+
+A: Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH.
+
+SSH provides a secure channel over an unsecured network in a client–server architecture, connecting an SSH client application with an SSH server. The protocol specification distinguishes between two major versions, referred to as SSH-1 and SSH-2. The standard TCP port for SSH is 22. SSH is generally used to access Unix-like operating systems, but it can also be used on Microsoft Windows. Windows 10 uses OpenSSH as its default SSH client.
+
+SSH was designed as a replacement for Telnet and for unsecured remote shell protocols such as the Berkeley rlogin, rsh, and rexec protocols. Those protocols send information, notably passwords, in plaintext, rendering them susceptible to interception and disclosure using packet analysis. The encryption used by SSH is intended to provide confidentiality and integrity of data over an unsecured network, such as the Internet, although files leaked by Edward Snowden indicate that the National Security Agency can sometimes decrypt SSH, allowing them to read the contents of SSH sessions.
+
+SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user, if necessary. There are several ways to use SSH; one is to use automatically generated public-private key pairs to simply encrypt a network connection, and then use password authentication to log on.
+
+Another is to use a manually generated public-private key pair to perform the authentication, allowing users or programs to log in without having to specify a password. In this scenario, anyone can produce a matching pair of different keys (public and private). The public key is placed on all computers that must allow access to the owner of the matching private key (the owner keeps the private key secret). While authentication is based on the private key, the key itself is never transferred through the network during authentication. SSH only verifies whether the same person offering the public key also owns the matching private key. In all versions of SSH it is important to verify unknown public keys, i.e. associate the public keys with identities, before accepting them as valid. Accepting an attacker's public key without validation will authorize an unauthorized attacker as a valid user.
+
+File transfer protocols:
+The Secure Shell protocols are used in several file transfer mechanisms.
+
+Secure copy (SCP), which evolved from RCP protocol over SSH
+rsync, intended to be more efficient than SCP. Generally runs over an SSH connection.
+SSH File Transfer Protocol (SFTP), a secure alternative to FTP (not to be confused with FTP over SSH or FTPS)
+Files transferred over shell protocol (a.k.a. FISH), released in 1998, which evolved from Unix shell commands over SSH
+Fast and Secure Protocol (FASP), aka Aspera, uses SSH for control and UDP ports for data transfer.
+
+What is PuTTY: a free SSH and telnet client for Windows
+
+---
+
+Q3: What is JPS?
+
+A: JPS (Java Virtual Machine Process Status Tool) is a command is used to check all the Hadoop daemons like NameNode, DataNode, ResourceManager, NodeManager etc. which are running on the machine.
+
+---
+
+Q4: What is port forwarding?
+
+A: In computer networking, port forwarding or port mapping is an application of network address translation (NAT) that redirects a communication request from one address and port number combination to another while the packets are traversing a network gateway, such as a router or firewall. This technique is most commonly used to make services on a host residing on a protected or masqueraded (internal) network available to hosts on the opposite side of the gateway (external network), by remapping the destination IP address and port number of the communication to an internal host.
+
+
+Typical applications include the following:
+
+- Running a public HTTP server within a private LAN
+- Permitting Secure Shell access to a host on the private LAN from the Internet
+- Permitting FTP access to a host on a private LAN from the Internet
+- Running a publicly available game server within a private LAN
+
+Administrators configure port forwarding in the gateway's operating system. In Linux kernels, this is achieved by packet filter rules in the iptables or netfilter kernel components. BSD and macOS operating systems prior to Yosemite (OS 10.10.X) implement it in the Ipfirewall (ipfw) module while macOS operating systems beginning with Yosemite implement it in the Packet Filter (pf) module.
+
+Types of port forwarding
+Port forwarding can be divided into the following specific types: local, remote, and dynamic port forwarding.[4]
+
+Local port forwarding
+Local port forwarding is the most common type of port forwarding. It is used to let a user connect from the local computer to another server, i.e. forward data securely from another client application running on the same computer as a Secure Shell (SSH) client. By using local port forwarding, firewalls that block certain web pages are able to be bypassed.[5]
+
+Connections from an SSH client are forwarded, via an SSH server, to the intended destination server. The SSH server is configured to redirect data from a specified port (which is local to the host that runs the SSH client) through a secure tunnel to some specified destination host and port. The local port is on the same computer as the SSH client, and this port is the "forwarded port". On the same computer, any client that wants to connect to the same destination host and port can be configured to connect to the forwarded port (rather than directly to the destination host and port). After this connection is established, the SSH client listens on the forwarded port and directs all data sent by applications to that port, through a secure tunnel to the SSH server. The server decrypts the data, and then redirects it to the destination host and port.[6]
+
+On the command line, “-L” specifies local port forwarding. The destination server, and two port numbers need to be included. Port numbers less than 1024 or greater than 49150 are reserved for the system. Some programs will only work with specific source ports, but for the most part any source port number can be used.
+
+Some uses of local port forwarding:
+
+Using local port forwarding to Receive Mail [7]
+Connect from a laptop to a website using an SSH tunnel.
+Remote port forwarding
+This form of port forwarding enables applications on the server side of a Secure Shell (SSH) connection to access services residing on the SSH's client side.[8] In addition to SSH, there are proprietary tunnelling schemes that utilize remote port forwarding for the same general purpose.[9] In other words, remote port forwarding lets users connect from the server side of a tunnel, SSH or another, to a remote network service located at the tunnel's client side.
+
+To use remote port forwarding, the address of the destination server (on the tunnel's client side) and two port numbers must be known. The port numbers chosen depend on which application is to be used.
+
+Remote port forwarding allows other computers to access applications hosted on remote servers. Two examples:
+
+An employee of a company hosts an FTP server at his own home and wants to give access to the FTP service to employees using computers in the workplace. In order to do this, an employee can set up remote port forwarding through SSH on the company's internal computers by including their FTP server’s address and using the correct port numbers for FTP (standard FTP port is TCP/21) [10]
+Opening remote desktop sessions is a common use of remote port forwarding. Through SSH, this can be accomplished by opening the virtual network computing port (5900) and including the destination computer’s address.[6]
+Dynamic port forwarding
+Dynamic port forwarding (DPF) is an on-demand method of traversing a firewall or NAT through the use of firewall pinholes. The goal is to enable clients to connect securely to a trusted server that acts as an intermediary for the purpose of sending/receiving data to one or many destination servers.
+
+DPF can be implemented by setting up a local application, such as SSH, as a SOCKS proxy server, which can be used to process data transmissions through the network or over the Internet. Programs, such as web browsers, must be configured individually to direct traffic through the proxy, which acts as a secure tunnel to another server. Once the proxy is no longer needed, the programs must be reconfigured to their original settings. Because of the manual requirements of DPF, it is not often used.[6]
+
+Once the connection is established, DPF can be used to provide additional security for a user connected to an untrusted network. Since data must pass through the secure tunnel to another server before being forwarded to its original destination, the user is protected from packet sniffing that may occur on the LAN.
+
+DPF is a powerful tool with many uses; for example, a user connected to the Internet through a coffee shop, hotel, or otherwise minimally secure network may wish to use DPF as a way of protecting data. DPF can also be used to bypass firewalls that restrict access to outside websites, such as in corporate networks.
+
+---
+
+Q5: What is Mesos?
+
+A: Mesos is a open source software originally developed at the University of California at Berkeley. It sits between the application layer and the operating system and makes it easier to deploy and manage applications in large-scale clustered environments more efficiently.
+
+Program against your datacenter like it’s a single pool of resources.
+Apache Mesos abstracts CPU, memory, storage, and other compute resources away from machines (physical or virtual), enabling fault-tolerant and elastic distributed systems to easily be built and run effectively.
+
+---
+
+Q6: What is RDD in Spark?
+
+A: Resilient Distributed Datasets (RDD) is a fundamental data structure of Spark. It is an immutable distributed collection of objects. Each dataset in RDD is divided into logical partitions, which may be computed on different nodes of the cluster. RDDs can contain any type of Python, Java, or Scala objects, including user-defined classes.
+
+Formally, an RDD is a read-only, partitioned collection of records. RDDs can be created through deterministic operations on either data on stable storage or other RDDs. RDD is a fault-tolerant collection of elements that can be operated on in parallel.
+
+There are two ways to create RDDs − parallelizing an existing collection in your driver program, or referencing a dataset in an external storage system, such as a shared file system, HDFS, HBase, or any data source offering a Hadoop Input Format.
+
+Spark makes use of the concept of RDD to achieve faster and efficient MapReduce operations. It is seen that MapReduce operations are not so efficient and KDDs come into picture to resolve this issue.
+
+---
+
+Q7: What is Spark?
+
+A: Apache Spark is a lightning-fast cluster computing technology, designed for fast computation. It is based on Hadoop MapReduce and it extends the MapReduce model to efficiently use it for more types of computations, which includes interactive queries and stream processing. The main feature of Spark is its in-memory cluster computing that increases the processing speed of an application.
+
+Spark is designed to cover a wide range of workloads such as batch applications, iterative algorithms, interactive queries and streaming. Apart from supporting all these workload in a respective system, it reduces the management burden of maintaining separate tools.
+
+---
+
+Q8: What is Kubernetes?
+
+A: Kubernetes is a container management technology developed in Google lab to manage containerized applications in different kind of environments such as physical, virtual, and cloud infrastructure. It is an open source system which helps in creating and managing containerization of application.
+
+Through Kubernetes, you manage the containerized infrastructure and application deployment.
+
+Anyone who wants to understand Kubernetes should have an understating of how the Docker works, how the Docker images are created, and how they work as a standalone unit. To reach to an advanced configuration in Kubernetes one should understand basic networking and how the protocol communication works.
+
+...
+
+Kubernetes in an open source container management tool hosted by Cloud Native Computing Foundation (CNCF). This is also known as the enhanced version of Borg which was developed at Google to manage both long running processes and batch jobs, which was earlier handled by separate systems.
+
+Kubernetes comes with a capability of automating deployment, scaling of application, and operations of application containers across clusters. It is capable of creating container centric infrastructure.
+
+Following are some of the important features of Kubernetes.
+
+1. Continues development, integration and deployment
+
+2. Containerized infrastructure
+
+3. Application-centric management
+
+4. Auto-scalable infrastructure
+
+5. Environment consistency across development testing and production
+
+6. Loosely coupled infrastructure, where each component can act as a separate unit
+
+7. Higher density of resource utilization
+
+8. Predictable infrastructure which is going to be created
+
+One of the key components of Kubernetes is, it can run application on clusters of physical and virtual machine infrastructure. It also has the capability to run applications on cloud. It helps in moving from host-centric infrastructure to container-centric infrastructure.
+
+---
+
+Q9: What is "Container"?
+
+A: Containers are similar to VMs, but they have relaxed isolation properties to share the Operating System (OS) among the applications. Therefore, containers are considered lightweight. Similar to a VM, a container has its own filesystem, CPU, memory, process space, and more. As they are decoupled from the underlying infrastructure, they are portable across clouds and OS distributions.
+
+Containers are becoming popular because they have many benefits. Some of the container benefits are listed below:
+
+- Agile application creation and deployment: increased ease and efficiency of container image creation compared to VM image use.
+- Continuous development, integration, and deployment: provides for reliable and frequent container image build and deployment with quick and easy rollbacks (due to image immutability).
+- Dev and Ops separation of concerns: create application container images at build/release time rather than deployment time, thereby decoupling applications from infrastructure.
+- Observability not only surfaces OS-level information and metrics, but also application health and other signals.
+- Environmental consistency across development, testing, and production: Runs the same on a laptop as it does in the cloud.
+- Cloud and OS distribution portability: Runs on Ubuntu, RHEL, CoreOS, on-prem, Google Kubernetes Engine, and anywhere else.
+- Application-centric management: Raises the level of abstraction from running an OS on virtual hardware to running an application on an OS using logical resources.
+- Loosely coupled, distributed, elastic, liberated micro-services: applications are broken into smaller, independent pieces and can be deployed and managed dynamically – not a monolithic stack running on one big single-purpose machine.
+- Resource isolation: predictable application performance.
+- Resource utilization: high efficiency and density.
+
+URL: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+
+---
+
+</pre>

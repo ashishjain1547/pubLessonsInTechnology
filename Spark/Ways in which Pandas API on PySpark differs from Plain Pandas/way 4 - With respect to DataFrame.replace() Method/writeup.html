@@ -1,0 +1,150 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        i.ir {
+            color: red;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        i.ib {
+            color: blue;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<a class="customLink toggleBtn" href="https://github.com/ashishjain1547/pubML/blob/main/e11_pyspark_v3.3.0/"
+    target="_blank">Download Code</a>
+<pre><h1>Working in Pandas</h1>
+<i class="ib">import pandas as pd
+df = pd.DataFrame({
+    'dummy_col': ["alpha", "beta", "gamma", "","-","0","N/A","-_-","NA", "delta", "epsilon", "zeta", "eta", "theta"]
+})
+df['cleaned'] = df.replace(to_replace =["","-","0","N/A","-_-","NA"], value = "Not Applicable")
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP8BxLHskbXc9zZ8V_22Nymje4DRV0Tx4WqD3JZ1quSibvKha8N2k8bCSFXHP4WWo4TGT0Q_yQ2uFUxc42cdyGffknzr1-LAOcUnP4YFJAnCgsdxmpf32P9lwESi-uku6GiuXRPARl-u-YYdJGtZF0tyjnttTkZQ0MCbVw1DOqf7TtP-Snqhxam8Q0zQ/s445/1.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="445" data-original-width="206" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjP8BxLHskbXc9zZ8V_22Nymje4DRV0Tx4WqD3JZ1quSibvKha8N2k8bCSFXHP4WWo4TGT0Q_yQ2uFUxc42cdyGffknzr1-LAOcUnP4YFJAnCgsdxmpf32P9lwESi-uku6GiuXRPARl-u-YYdJGtZF0tyjnttTkZQ0MCbVw1DOqf7TtP-Snqhxam8Q0zQ/s600/1.png"/></a></div>
+
+<h1>Not working in Pandas API on PySpark</h1>
+
+<i class="ib">from pyspark import pandas as ppd
+df_ppd = ppd.DataFrame({
+    'dummy_col': ["alpha", "beta", "gamma", "","-","0","N/A","-_-","NA", "delta", "epsilon", "zeta", "eta", "theta"]
+})
+</i>
+
+<h2>Error</h2>
+
+<i class="ir">
+df_ppd['cleaned'] = df_ppd.replace(to_replace =["","-","0","N/A","-_-","NA"], value = "Not Applicable")
+
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In [15], line 1
+----> 1 df_ppd['cleaned'] = df_ppd.replace(to_replace =["","-","0","N/A","-_-","NA"], value = "Not Applicable")
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/frame.py:12355, in DataFrame.__setitem__(self, key, value)
+    12352     psdf = self._assign({k: value[c] for k, c in zip(key, field_names)})
+    12353 else:
+    12354     # Same Series.
+> 12355     psdf = self._assign({key: value})
+    12357 self._update_internal_frame(psdf._internal)
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/frame.py:4921, in DataFrame._assign(self, kwargs)
+    4917 is_invalid_assignee = (
+    4918     not (isinstance(v, (IndexOpsMixin, Column)) or callable(v) or is_scalar(v))
+    4919 ) or isinstance(v, MultiIndex)
+    4920 if is_invalid_assignee:
+-> 4921     raise TypeError(
+    4922         "Column assignment doesn't support type " "{0}".format(type(v).__name__)
+    4923     )
+    4924 if callable(v):
+    4925     kwargs[k] = v(self)
+
+TypeError: Column assignment doesn't support type DataFrame
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj11Msmh-n3Lv7IcJWlNj6MSIIpgXGlWBIhjyilSGfIE62_l7503egLqotX9QVNgUqOPlE_a8oC1zCdxcC4yeFVAQyL7xtxkxBTjA9VgJOrkNyrdkQ_C9KeM8N39XJIeMZ4G8QuUjcvFFP1-z9hYhCC5AjMbGkCZbxILg6hJRJUFW9uaqfTi6aJXGZ65w/s826/2.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="465" data-original-width="826" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj11Msmh-n3Lv7IcJWlNj6MSIIpgXGlWBIhjyilSGfIE62_l7503egLqotX9QVNgUqOPlE_a8oC1zCdxcC4yeFVAQyL7xtxkxBTjA9VgJOrkNyrdkQ_C9KeM8N39XJIeMZ4G8QuUjcvFFP1-z9hYhCC5AjMbGkCZbxILg6hJRJUFW9uaqfTi6aJXGZ65w/s600/2.png"/></a></div>
+
+<i class="ib">df_ppd_cleaned = df_ppd.replace(to_replace = ["","-","0","N/A","-_-","NA"], value = "Not Applicable")</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijJGmQigJaknzEpsoEY_FPjBmAgCt8M8Fcrjg_y8O2ZZi9_-QneoDYZc1uW68L0cu-GAPD3AMDuuU_crQSO6_M3558DxoyacRQ-fFzc-ZGk4zj0_T3_imr_p7howAbO0zHB9sH9iiXDfAnpQ7OzMMBIobc8_y4YkOl9KIh9ujAstNEUrOlNyH3Nqrsrw/s438/3.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="438" data-original-width="131" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijJGmQigJaknzEpsoEY_FPjBmAgCt8M8Fcrjg_y8O2ZZi9_-QneoDYZc1uW68L0cu-GAPD3AMDuuU_crQSO6_M3558DxoyacRQ-fFzc-ZGk4zj0_T3_imr_p7howAbO0zHB9sH9iiXDfAnpQ7OzMMBIobc8_y4YkOl9KIh9ujAstNEUrOlNyH3Nqrsrw/s600/3.png"/></a></div>
+
+<i class="ib">df_ppd_cleaned.replace(to_replace = ['Not Applicable', 'alpha'], value = "Still NA", inplace = True)</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgO83UrvJrfm2oy_tXVkGiVf-vN5664NksTHof7_RG0IcpVcmw3RLvCQ4PnM8z6rozLACih26wJ2CqZd1-TDrKh2S73hpyFR4yWK6URQ2LBhjhCn3xeJnoE_n8r_VBL1B9khY5w6ym9Dk4BmvY7ZCCBf7zGKIxMC7a2JdWBX52OEoGLqtDJlMoF-MGIdw/s438/4.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="438" data-original-width="131" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgO83UrvJrfm2oy_tXVkGiVf-vN5664NksTHof7_RG0IcpVcmw3RLvCQ4PnM8z6rozLACih26wJ2CqZd1-TDrKh2S73hpyFR4yWK6URQ2LBhjhCn3xeJnoE_n8r_VBL1B9khY5w6ym9Dk4BmvY7ZCCBf7zGKIxMC7a2JdWBX52OEoGLqtDJlMoF-MGIdw/s600/4.png"/></a></div>
+</pre>
+<span style="display: none">Tags: Technology,Spark</span>

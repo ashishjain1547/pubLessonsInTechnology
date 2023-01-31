@@ -1,0 +1,163 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .ib {
+            color: blue
+        }
+
+        .ig {
+            color: green
+        }
+
+        .ir {
+            color: red
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h1>Contents of pyspark.yml</h1>
+
+<i class="ib">
+name: pyspark
+channels:
+    - conda-forge
+dependencies:
+    - python==3.9
+    - pandas
+    - pyspark
+    - pip    
+</i>
+
+<h1>Installation</h1>
+
+$ conda env create -f pyspark.yml
+$ conda activate pyspark 
+
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ java
+Command 'java' not found, but can be installed with:
+sudo apt install openjdk-11-jre-headless  # version 11.0.17+8-1ubuntu2, or
+sudo apt install default-jre              # version 2:1.11-72build2
+sudo apt install openjdk-18-jre-headless  # version 18.0.1+10-1
+sudo apt install openjdk-17-jre-headless  # version 17.0.5+8-2ubuntu1
+sudo apt install openjdk-19-jre-headless  # version 19.0.1+10-1
+sudo apt install openjdk-8-jre-headless   # version 8u352-ga-1~22.10
+
+$ sudo apt install openjdk-8-jre-headless
+
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ java -version
+openjdk version "1.8.0_352"
+OpenJDK Runtime Environment (build 1.8.0_352-8u352-ga-1~22.10-b08)
+OpenJDK 64-Bit Server VM (build 25.352-b08, mixed mode)
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ which java
+/usr/bin/java
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ readlink -f /usr/bin/java
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+<i class="ib">$ sudo nano ~/.bashrc</i>
+
+Add the following line at the end of the file.
+
+<i class="ib">export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"</i>
+
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-openjdk-amd64
+
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ conda install ipykernel jupyterlab -c conda-forge
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ python -m ipykernel install --user --name pyspark
+Installed kernelspec pyspark in /home/ashish/.local/share/jupyter/kernels/pyspark
+
+<h1>Basic Testing</h1>
+
+(pyspark) ashish@ashish-Lenovo-ideapad-130-15IKB:~/Desktop$ pip show pyspark
+
+<i class="ig">
+Name: pyspark
+Version: 3.3.1
+Summary: Apache Spark Python API
+Home-page: https://github.com/apache/spark/tree/master/python
+Author: Spark Developers
+Author-email: dev@spark.apache.org
+License: http://www.apache.org/licenses/LICENSE-2.0
+Location: /home/ashish/anaconda3/envs/pyspark/lib/python3.9/site-packages
+Requires: py4j
+Required-by: 
+</i>
+
+<i class="ib">
+import pandas as pd
+from pyspark import SparkContext
+from pyspark.sql import SQLContext
+df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+sc = SparkContext.getOrCreate()
+
+sqlCtx = SQLContext(sc)
+sdf = sqlCtx.createDataFrame(df)
+
+sdf.show()
+</i>
+
+<i class="ig">
++----+----+
+|col1|col2|
++----+----+
+|val1|val2|
++----+----+
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFN6BeZq1sqQfdacB5fUTqLGwgbYP296kX_u0dW6U2JKPBv2LdbMYKVn7BfIYztZBRbhZzlhmqrCQxeS0yQl6Y0Z-R1ZWVm7jSFErLX1BIRY-FfRuqGdYFNSDKRDs0LBn_iTa5x6LilVmGiLtBiWrEU98o7mg8C9BMjPxsJchZ_ePqq0RI_dc3cGobWA/s536/Testing.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="536" data-original-width="516" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFN6BeZq1sqQfdacB5fUTqLGwgbYP296kX_u0dW6U2JKPBv2LdbMYKVn7BfIYztZBRbhZzlhmqrCQxeS0yQl6Y0Z-R1ZWVm7jSFErLX1BIRY-FfRuqGdYFNSDKRDs0LBn_iTa5x6LilVmGiLtBiWrEU98o7mg8C9BMjPxsJchZ_ePqq0RI_dc3cGobWA/s600/Testing.png"/></a></div>
+</pre>
+<span style="display: none;">Tags: Spark,Technology,</span>

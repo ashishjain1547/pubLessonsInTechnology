@@ -1,0 +1,233 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<p>We are going to create a single node cluster of Spark in this post.</p>
+<p></p>
+<p>Step 1: Install VirtualBox 6.0 or higher (by launching the .EXE file as administrator)</p>
+<p></p>
+<p>Step 2: Download the .ISO file for the latest "Ubuntu Desktop" (version used for this post: Ubuntu 18.04.2 LTS) from here "https://ubuntu.com/download/desktop"</p>
+<p></p>
+<p>Step 3: Install Ubuntu as shown in this post "https://survival8.blogspot.com/p/demonstrating-shared-folder-feature-for.html"</p>
+<p></p>
+<p>Step 4. Installing Java</p>
+<p></p>
+<p>To get started, we'll update our package list:</p>
+<p></p>
+<p><code>sudo apt-get update</code></p>
+<p>Next, we'll install OpenJDK, the default Java Development Kit on Ubuntu 16.04.</p>
+<p></p>
+<p><code>sudo apt-get install default-jdk</code></p>
+<p></p>
+<p>Once the installation is complete, let's check the version.</p>
+<p></p>
+<p><code>java -version</code></p>
+<p></p>
+<p>Output</p>
+<p>openjdk version "1.8.0_91"</p>
+<p>OpenJDK Runtime Environment (build 1.8.0_91-8u91-b14-3ubuntu1~16.04.1-b14)</p>
+<p>OpenJDK 64-Bit Server VM (build 25.91-b14, mixed mode)</p>
+<p></p>
+<p>This output verifies that OpenJDK has been successfully installed.</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 5. Install Scala.</p>
+<p></p>
+<p>$ sudo apt-get install scala</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 6.a. Retrieve the Spark archive from here "https://spark.apache.org/downloads.html"</p>
+<p></p>
+<p>ashish:~/Desktop$ wget https://www.apache.org/dyn/closer.lua/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.7.tgz</p>
+<p></p>
+<p>Step 6.b. Extract the archive.</p>
+<p></p>
+<p>ashish:~/Desktop$ tar -xzf spark-2.4.3-bin-hadoop2.7.tgz</p>
+<p>OR</p>
+<p>$ tar xvf spark-2.4.3-bin-hadoop2.7.tgz</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 7. Move the extracted files into /usr/local, the appropriate place for locally installed software.</p>
+<p></p>
+<p>(base) ashish@ashish-VirtualBox:~/Desktop$ sudo mv spark-2.4.3-bin-hadoop2.7 /usr/local/spark</p>
+<p></p>
+<p>(base) ashish@ashish-VirtualBox:~/Desktop$ ls /usr/local</p>
+<p>bin  etc  games  hadoop  include  lib  man  sbin  share  spark  src</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 8. Next, we have to update the "JAVA_HOME" path in the "hadoop.env.sh" file.</p>
+<p>To find the default Java path, fire this command:</p>
+<p>    readlink -f /usr/bin/java | sed "s:bin/java::"</p>
+<p>Output</p>
+<p>/usr/lib/jvm/java-8-openjdk-amd64/jre/</p>
+<p></p>
+<p>(base) ashish@ashish-VirtualBox:~/Desktop$ sudo nano ~/.bashrc</p>
+<p>OR</p>
+<p>(base) ashish@ashish-VirtualBox:~/Desktop$ sudo gedit ~/.bashrc</p>
+<p>We appended this line "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" at the end of the file (or replace it if it is already present in the file).</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 9. Including Spark binaries in the environment.</p>
+<p></p>
+<p>(base) ashish@ashish-VirtualBox:~/Desktop$ sudo gedit ~/.bashrc</p>
+<p>$ export PATH=$PATH:/usr/local/spark/bin</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 9. Running the Spark's Scala shell.</p>
+<p>Step 9.1. Prepare the input files and folders.</p>
+<p></p>
+(base) ashish@ashish-VirtualBox:~/Desktop$ cat input.txt 
+one two two three three three
+
+<p>Step 9.2 </p>
+<p>$ spark-shell</p>
+<p>scala> val inputfile = sc.textFile("input.txt")</p>
+<p>ashish:~/Desktop$ ls /usr/local/hadoop/share/hadoop/mapreduce</p>
+<p></p>
+<p>Step 9.3 </p>
+<p>scala> val counts = inputfile.flatMap(line=>line.split(" ")).map(word=>(word, 1)).reduceByKey(_+_)</p>
+<p>Output:</p>
+<p>counts: org.apache.spark.rdd.RDD[(String, Int)] = ShuffledRDD[6] at reduceByKey at <console>:25</p>
+<p></p>
+<p>Step 9.4 </p>
+<p>scala> counts.saveAsTextFile("output")</p>
+<p></p>
+<p>Step 9.5 "sys.exit" or ":q" both should work. Simply "exit" was deprecated in version 2.10.x.</p>
+<p>scala> sys.exit</p>
+<p></p>
+<p>Step 9.6. Viewing the output.</p>
+<p></p>
+<p>(base) ashish@ashish-VirtualBox:~/Desktop$ cat output/*</p>
+<p></p>
+<p>(one,1)</p>
+<p>(two,2)</p>
+<p>(three,3)</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 10. Running the Spark's Python shell.</p>
+<p>Note: For Python shell, you will need Anaconda (a Python distribution) installed. Refer this page: https://survival8.blogspot.com/p/setting-up-anaconda-on-ubuntu-in.html</p>
+<p></p>
+<p>(base) ashish@ashish-VirtualBox:~$ pyspark</p>
+<p>Python 3.7.3 (default, Mar 27 2019, 22:11:17) </p>
+<p>[GCC 7.3.0] :: Anaconda, Inc. on linux</p>
+<p>Type "help", "copyright", "credits" or "license" for more information.</p>
+<p>19/07/30 10:36:55 WARN Utils: Your hostname, ashish-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)</p>
+<p>19/07/30 10:36:55 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address</p>
+<p>WARNING: An illegal reflective access operation has occurred</p>
+<p>WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/ashish/anaconda3/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.11-2.4.3.jar) to method java.nio.Bits.unaligned()</p>
+<p>WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform</p>
+<p>WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations</p>
+<p>WARNING: All illegal access operations will be denied in a future release</p>
+<p>19/07/30 10:36:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</p>
+<p>Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties</p>
+<p>Setting default log level to "WARN".</p>
+<p>To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).</p>
+<p>Welcome to Spark version 2.4.3</p>
+<p>Using Python version 3.7.3 (default, Mar 27 2019 22:11:17)</p>
+<p>SparkSession available as 'spark'.</p>
+<p></p>
+<p>>>> lines = sc.textFile("input.txt") # Create an RDD called lines</p>
+<p>>>> lines.count() # Count the number of items in this RDD</p>
+<p>127</p>
+<p>>>> lines.first() # First item in this RDD, i.e. first line of input.txt</p>
+<p>u'one two two three three three'</p>
+<p>>>> exit()</p>
+<p></p>
+<p><b>Notes:</b></p>
+<p></p>
+<p>(base) ashish@slave01:~/Desktop$ cd /usr/local/spark/conf</p>
+<p>(base) ashish@slave01:/usr/local/spark/conf$ ls</p>
+<p>docker.properties.template  log4j.properties.template    slaves.template               spark-env.sh</p>
+<p>fairscheduler.xml.template  metrics.properties.template  spark-defaults.conf.template  spark-env.sh.template</p>
+<p>(base) ashish@slave01:/usr/local/spark/conf$ sudo gedit spark-env.sh</p>
+<p></p>
+<p>TO RUN THE SPARK IN STANDALONE MODE, MAKE CHANGES IN "\usr\local\spark\conf\spark-env.sh":</p>
+<p>1. Remove property "#SPARK_MASTER_HOST".</p>
+<p>2. And set "SPARK_LOCAL_IP=127.0.0.1".</p>
+<p>3. Export JAVA_HOME to "/usr/lib/jvm/java-8-openjdk-amd64/" (provided that you have OpenJDK8 installed.)</p>
+<p></p>
+<p>============================================</p>
+<p></p>
+<p>If you get this exception:, </p>
+<p>pyspark.sql.utils.IllegalArgumentException: 'Unsupported class file major version 55'</p>
+<p>...then you need to downgrade the Java version. Spark is not compiled on OpenJDK 11 as of July 2019.</p>
+<p></p>
+<p>(base) ashish@slave01:~/Desktop$ java -version</p>
+<p>openjdk version "11.0.3" 2019-04-16</p>
+<p>OpenJDK Runtime Environment (build 11.0.3+7-Ubuntu-1ubuntu218.04.1)</p>
+<p>OpenJDK 64-Bit Server VM (build 11.0.3+7-Ubuntu-1ubuntu218.04.1, mixed mode, sharing)</p>
+<p></p>
+<p>============================================</p>
+<p></p>
+<p><b>(base) ashish@slave01:~/Desktop$ sudo apt install openjdk-8-jdk</b></p>
+<p>		Use 'sudo apt autoremove' to remove automatically installed packages and that are no longer required.</p>
+<p>		The following NEW packages will be installed:</p>
+<p>		  openjdk-8-jdk openjdk-8-jdk-headless openjdk-8-jre openjdk-8-jre-headless</p>
+<p>	</p>
+<p>============================================</p>
+<p></p>
+<p>(base) ashish@slave01:~/Desktop$ which java</p>
+<p>/usr/bin/java</p>
+<p></p>
+<p>(base) ashish@slave01:~/Desktop$ readlink -f /usr/bin/java</p>
+<p>/usr/lib/jvm/java-11-openjdk-amd64/</p>
+<p></p>
+<p>(base) ashish@slave01:~/Desktop$ sudo update-alternatives --config java</p>
+<p>There are 2 choices for the alternative java (providing /usr/bin/java).</p>
+<p></p>
+<p>  Selection    Path                                            Priority   Status</p>
+<p>------------------------------------------------------------</p>
+<p>* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      auto mode</p>
+<p>  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      manual mode</p>
+<p>  2            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode</p>
+<p></p>
+<p>Press [enter] to keep the current choice[*], or type selection number: 2   </p>
+<p>update-alternatives: using /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java to provide /usr/bin/java (java) in manual mode</p>
+<p></p>
+<p>============================================</p>
+<p></p>
+<p>Testing >>></p>
+<p>Restart the terminal before testing the Spark installation and make sure you have a file "input.txt" in "pwd".</p>
+<p></p>
+<p>$ pyspark</p>
+<p></p>
+<p>>>> lines=sc.textFile("input.txt")</p>
+<p>>>> lines.count()</p>
+<p>6    </p>
+<p></p>
+<p>============================================</p>

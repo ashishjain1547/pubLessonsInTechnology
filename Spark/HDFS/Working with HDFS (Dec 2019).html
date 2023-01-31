@@ -1,0 +1,90 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+### 1 Creating a directory in HDFS
+
+A:
+	(base) administrator@master:~/Desktop/workspace$ hdfs dfs -mkdir /home/my_hdfs
+	mkdir: `hdfs://master:9000/home': No such file or directory
+B:
+	(base) administrator@master:~/Desktop/workspace$ hdfs dfs -mkdir /my_hdfs
+	(base) administrator@master:/$ hdfs dfs -mkdir /my_hdfs/test_mkdir
+C:
+	(base) administrator@master:/$ hdfs dfs -mkdir /my_hdfs/test_mkdir
+	mkdir: `/my_hdfs/test_mkdir': File exists
+D:
+	(base) administrator@master:/$ hdfs dfs -mkdir /my_hdfs/test_mkdir_2/test
+	mkdir: `hdfs://master:9000/my_hdfs/test_mkdir_2': No such file or directory
+
+### 2
+	Hadoop HDFS put Command Usage
+
+	    put [localSrc] [dest]
+
+### 3
+	URL: https://data-flair.training/blogs/top-hadoop-hdfs-commands-tutorial/
+
+	"copyFromLocal"
+
+	Hadoop HDFS copyFromLocal Command Usage
+
+	    copyFromLocal [localSrc] [dest]
+
+
+	CODE:
+	A:
+		(base) administrator@master:/$ hdfs dfs -copyFromLocal '/home/admin/Desktop/Exp 17/DISB_Stmt_TranN.csv' /my_hdfs
+		copyFromLocal: `/home/admin/Desktop/Exp 17/DISB_Stmt_TranN.csv': No such file or directory
+	B:
+		(base) administrator@master:/$ hdfs dfs -copyFromLocal /home/admin/Desktop/exp_17/DISB_Stmt_TranN.csv /my_hdfs
+		2019-10-16 19:57:13,725 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+	C:
+		(base) administrator@master:/$ hdfs dfs -ls /my_hdfs
+		Found 2 items
+		-rw-r--r--   1 administrator supergroup    4390877 2019-10-16 19:57 /my_hdfs/DISB_Stmt_TranN.csv
+		drwxr-xr-x   - administrator supergroup          0 2019-10-16 19:52 /my_hdfs/test_mkdir
+
+### 4
+
+base) administrator@master:/$ hdfs dfs -ls /my_hdfs/test_mkdir
+(base) administrator@master:/$ hdfs dfs -ls /my_hdfs
+Found 1 items
+drwxr-xr-x   - administrator supergroup          0 2019-10-16 19:52 /my_hdfs/test_mkdir
+</pre>

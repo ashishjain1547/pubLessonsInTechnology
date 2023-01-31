@@ -1,0 +1,518 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h1>1: Checking Environment Variables For Java, Scala and Python</h1>
+<h2>Java</h2>
+
+(base) C:\Users\ashish>java -version
+openjdk version "1.8.0_322"
+OpenJDK Runtime Environment (Temurin)(build 1.8.0_322-b06)
+OpenJDK 64-Bit Server VM (Temurin)(build 25.322-b06, mixed mode)
+
+(base) C:\Users\ashish>where java
+C:\Program Files\Eclipse Adoptium\jdk-8.0.322.6-hotspot\bin\java.exe
+C:\Program Files\Zulu\zulu-17-jre\bin\java.exe
+C:\Program Files\Zulu\zulu-17\bin\java.exe
+
+(base) C:\Users\ashish>echo %JAVA_HOME%
+C:\Program Files\Eclipse Adoptium\jdk-8.0.322.6-hotspot
+
+<h2>Scala</h2>
+
+(base) C:\Users\ashish>scala -version
+Scala code runner version 3.2.0 -- Copyright 2002-2022, LAMP/EPFL
+
+<h2>Python</h2>
+
+(base) C:\Users\ashish>python --version
+Python 3.9.12
+
+(base) C:\Users\ashish>where python
+C:\Users\ashish\Anaconda3\python.exe
+C:\Users\ashish\AppData\Local\Microsoft\WindowsApps\python.exe
+
+(base) C:\Users\ashish>echo %PYSPARK_PYTHON%
+C:\Users\ashish\Anaconda3\python.exe
+
+(base) C:\Users\ashish>echo %PYSPARK_DRIVER_PYTHON%
+C:\Users\ashish\Anaconda3\python.exe
+
+(base) C:\Users\ashish>echo %PYTHONPATH%
+C:\Users\ashish\Anaconda3\envs\mh
+
+<h2>Spark Home and Hadoop Home</h2>
+
+(base) C:\Users\ashish>echo %SPARK_HOME%
+D:\progfiles\spark-3.3.1-bin-hadoop3
+
+(base) C:\Users\ashish>echo %HADOOP_HOME%
+D:\progfiles\spark-3.3.1-bin-hadoop3\hadoop
+
+<h1>2: Checking Properties Like Hostname, Spark Workers and PATH variable values</h1>
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3\conf>hostname
+CS3L
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3\conf>type workers
+CS3L
+
+PATH Value:
+C:\Users\ashish\AppData\Local\Coursier\data\bin;
+It is for Scala.
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3\conf>echo %PATH%
+<i class="ig">
+C:\Users\ashish\Anaconda3;
+C:\Users\ashish\Anaconda3\Library\mingw-w64\bin;
+C:\Users\ashish\Anaconda3\Library\usr\bin;
+C:\Users\ashish\Anaconda3\Library\bin;
+C:\Users\ashish\Anaconda3\Scripts;
+C:\Users\ashish\Anaconda3\bin;
+C:\Users\ashish\Anaconda3\condabin;
+C:\Program Files\Eclipse Adoptium\jdk-8.0.322.6-hotspot\bin;
+C:\Program Files\Zulu\zulu-17-jre\bin;
+C:\Program Files\Zulu\zulu-17\bin;
+C:\windows\system32;C:\windows;
+C:\windows\System32\Wbem;
+C:\windows\System32\WindowsPowerShell\v1.0;
+C:\windows\System32\OpenSSH;
+C:\Program Files\Git\cmd;
+C:\Users\ashish\Anaconda3;
+C:\Users\ashish\Anaconda3\Library\mingw-w64\bin;
+C:\Users\ashish\Anaconda3\Library\usr\bin;
+C:\Users\ashish\Anaconda3\Library\bin;
+C:\Users\ashish\Anaconda3\Scripts;
+C:\Users\ashish\AppData\Local\Microsoft\WindowsApps;
+C:\Users\ashish\AppData\Local\Programs\Microsoft VS Code\bin;
+D:\progfiles\spark-3.3.1-bin-hadoop3\bin;
+C:\Users\ashish\AppData\Local\Coursier\data\bin;
+.</i>
+
+<h1>3: Turn off Windows Defender Firewall (for SSH to work)</h1>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPMou12D1B7ScuX2g-ehLvE_ZjNclCcsqdI66dPbdqNjgXOhOxkEuVxCZgZbW80LhEItuTmNUc2NDVnEqKN-Qi35SmlfmQk6YLcNwG4zPl1mGqMAmdBCCUVRlRSg8I7uZ7z2KL3me6BPWH2R85PKP1XUs71Vw3aMBG1UMJk8TiTzsUyDpN5eANuGMcTQ/s819/%201%20-%20turn%20off%20windows%20firewall.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="570" data-original-width="819" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPMou12D1B7ScuX2g-ehLvE_ZjNclCcsqdI66dPbdqNjgXOhOxkEuVxCZgZbW80LhEItuTmNUc2NDVnEqKN-Qi35SmlfmQk6YLcNwG4zPl1mGqMAmdBCCUVRlRSg8I7uZ7z2KL3me6BPWH2R85PKP1XUs71Vw3aMBG1UMJk8TiTzsUyDpN5eANuGMcTQ/s600/%201%20-%20turn%20off%20windows%20firewall.png"/></a></div>
+
+<h1>4.1: Create inbound rule for allowing SSH connections on port 22</h1>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhymRItLe0L2j6qWnb1PDdLCskPLz28_0KanjHmjjw4Jhy7CtEzxYYa1W0y8SPxCkB0cVTwcU8qvAhg6-tPNhAKbV2hTMpUDo3osM7ZyZ2okUBdOhEcUVeYhFTD8uXltjDg23zFxHgAkNmxkl5aO1tw8EguRvgKZvnzZOzETtlTCq6VT_IhBu8Jp-xd0A/s1053/2%20-%20create%20inbound%20rule%20for%20allowing%20SSH%20connections%20on%20port%2022.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="724" data-original-width="1053" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhymRItLe0L2j6qWnb1PDdLCskPLz28_0KanjHmjjw4Jhy7CtEzxYYa1W0y8SPxCkB0cVTwcU8qvAhg6-tPNhAKbV2hTMpUDo3osM7ZyZ2okUBdOhEcUVeYhFTD8uXltjDg23zFxHgAkNmxkl5aO1tw8EguRvgKZvnzZOzETtlTCq6VT_IhBu8Jp-xd0A/s600/2%20-%20create%20inbound%20rule%20for%20allowing%20SSH%20connections%20on%20port%2022.png"/></a></div>
+
+<h1>4.2: Create outbound rule for allowing SSH connections on port 22</h1>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtjzB146Zn_EJrZQM120KmAxBC7vbVJKxNB0GJPrrwtjQDMBE-6ujBTxQqw2uc7ek_a5PhmoRihvkHxyjJf6C2rEMmfRsrm5Lm4Z-HuIF1R-o7F0szktsQi5gay-opha16BmgvEsz6c9LxKuPsOscF7GYGmenGAwSfxe7UymWTXrMfFJ2qmNcztfH96Q/s1051/2%20-%20create%20outbound%20rule%20for%20allowing%20SSH%20connections%20on%20port%2022.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="723" data-original-width="1051" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtjzB146Zn_EJrZQM120KmAxBC7vbVJKxNB0GJPrrwtjQDMBE-6ujBTxQqw2uc7ek_a5PhmoRihvkHxyjJf6C2rEMmfRsrm5Lm4Z-HuIF1R-o7F0szktsQi5gay-opha16BmgvEsz6c9LxKuPsOscF7GYGmenGAwSfxe7UymWTXrMfFJ2qmNcztfH96Q/s600/2%20-%20create%20outbound%20rule%20for%20allowing%20SSH%20connections%20on%20port%2022.png"/></a></div>
+
+<h1>5: Checking SSH Properties</h1>
+
+C:\Users\ashish\.ssh>type known_hosts
+192.168.1.151 ecdsa-sha2-nistp256 A***EhMzjgo=
+ashishlaptop ecdsa-sha2-nistp256 A***EhMzjgo=
+
+C:\Users\ashish\.ssh>ipconfig
+
+Windows IP Configuration
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : ad.itl.com
+
+Ethernet adapter Ethernet 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : ad.itl.com
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . :
+   IPv6 Address. . . . . . . . . . . : 2401:4900:47f5:1737:b1b2:6d59:f669:1b96
+   Temporary IPv6 Address. . . . . . : 2401:4900:47f5:1737:88e0:bacc:7490:e794
+   Link-local IPv6 Address . . . . . : fe80::b1b2:6d59:f669:1b96%13
+   IPv4 Address. . . . . . . . . . . : 192.168.1.101
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::44da:eaff:feb6:7061%13
+                                       192.168.1.1
+
+Ethernet adapter Bluetooth Network Connection:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+C:\Users\ashish\.ssh>
+C:\Users\ashish\.ssh>dir
+ Volume in drive C is OSDisk
+ Volume Serial Number is 88CC-6EA2
+
+ Directory of C:\Users\ashish\.ssh
+
+10/26/2022  03:45 PM    &lt;DIR>          .
+10/26/2022  03:45 PM    &lt;DIR>          ..
+10/26/2022  03:45 PM               574 authorized_keys
+10/26/2022  03:27 PM             2,635 id_rsa
+10/26/2022  03:27 PM               593 id_rsa.pub
+10/26/2022  03:46 PM               351 known_hosts
+               4 File(s)          4,153 bytes
+               2 Dir(s)  78,491,791,360 bytes free
+
+C:\Users\ashish\.ssh>type authorized_keys
+ssh-rsa A***= ashish@ashishlaptop
+
+C:\Users\ashish\.ssh>
+
+<h1>6: Error We Faced While Trying Spark start-all.sh in Git Bash</h1>
+<i class="ir">
+$ ./sbin/start-all.sh
+ps: unknown option -- o
+Try `ps --help' for more information.
+hostname: unknown option -- f
+starting org.apache.spark.deploy.master.Master, logging to D:\progfiles\spark-3.3.1-bin-hadoop3/logs/spark--org.apache.spark.deploy.master.Master-1-CS3L.out
+ps: unknown option -- o
+...
+Try `ps --help' for more information.
+failed to launch: nice -n 0 D:\progfiles\spark-3.3.1-bin-hadoop3/bin/spark-class org.apache.spark.deploy.master.Master --host --port 7077 --webui-port 8080
+  ps: unknown option -- o
+  Try `ps --help' for more information.
+  Spark Command: C:\Program Files\Eclipse Adoptium\jdk-8.0.322.6-hotspot\bin\java -cp D:\progfiles\spark-3.3.1-bin-hadoop3/conf\;D:\progfiles\spark-3.3.1-bin-hadoop3\jars\* -Xmx1g org.apache.spark.deploy.master.Master --host --port 7077 --webui-port 8080
+  ========================================
+  "C:\Program Files\Eclipse Adoptium\jdk-8.0.322.6-hotspot\bin\java" -cp "D:\progfiles\spark-3.3.1-bin-hadoop3/conf\;D:\progfiles\spark-3.3.1-bin-hadoop3\jars\*" -Xmx1g org.apache.spark.deploy.master.Master --host --port 7077 --webui-port 8080
+  D:\progfiles\spark-3.3.1-bin-hadoop3/bin/spark-class: line 96: CMD: bad array subscript
+full log in D:\progfiles\spark-3.3.1-bin-hadoop3/logs/spark--org.apache.spark.deploy.master.Master-1-CS3L.out
+ps: unknown option -- o
+Try `ps --help' for more information.
+hostname: unknown option -- f
+Try 'hostname --help' for more information.
+ps: unknown option -- o
+Try `ps --help' for more information.
+CS3L: ssh: connect to host cs3l port 22: Connection refused</i>
+
+<h1>7: Spark-submit failing in CMD without HADOOP_HOME set</h1>
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3\bin>spark-submit --master local examples/src/main/python/pi.py 100
+22/11/01 11:59:42 WARN Shell: Did not find winutils.exe: java.io.FileNotFoundException: java.io.FileNotFoundException: HADOOP_HOME and hadoop.home.dir are unset. -see https://wiki.apache.org/hadoop/WindowsProblems
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+22/11/01 11:59:42 INFO ShutdownHookManager: Shutdown hook called
+22/11/01 11:59:42 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-521c5e3c-beea-4f67-a1e6-71dd4c5c308c
+
+<h1>8: Instructions for Configuring HADOOP_HOME for Spark on Windows</h1>
+
+<h2>Installing winutils</h2>
+
+Let’s download the winutils.exe and configure our Spark installation to find winutils.exe.
+
+a) Create a hadoop\bin folder inside the SPARK_HOME folder.
+
+b) Download the winutils.exe for the version of hadoop against which your Spark installation was built for. In my case the Hadoop version was 3 mentioned in Spark package name. So I downloaded the winutils.exe for Hadoop 3.0.0 and copied it to the hadoop\bin folder in the SPARK_HOME folder.
+
+c) Create a system environment variable in Windows called SPARK_HOME that points to the SPARK_HOME folder path.
+For Windows: %SPARK_HOME%\hadoop 
+
+d) Create another system environment variable in Windows called HADOOP_HOME that points to the hadoop folder inside the SPARK_HOME folder.
+
+Since the hadoop folder is inside the SPARK_HOME folder, it is better to create HADOOP_HOME environment variable using a value of %SPARK_HOME%\hadoop. That way you don’t have to change HADOOP_HOME if SPARK_HOME is updated.
+
+<a href="https://github.com/steveloughran/winutils" target="_blank">Ref: Download winutils.exe From GitHub</a>
+
+<h1>9: Error if PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are not set</h1>
+
+A standard way of setting environmental variables, including PYSPARK_PYTHON, is to use conf/spark-env.sh file. Spark comes with a template file (conf/spark-env.sh.template) which explains the most common options.
+It is a normal Bash script so you can use it the same way as you would with .bashrc
+
+<h2>9.1</h2>
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>bin\spark-submit examples\src\main\python\wordcount.py README.md
+Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Manage App Execution Aliases.
+22/11/01 12:21:02 INFO ShutdownHookManager: Shutdown hook called
+22/11/01 12:21:02 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-18bce9f2-f7e8-4d04-843b-8c04a27675a7
+
+<h2>9.2</h2>
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>where python
+C:\Users\ashish\Anaconda3\python.exe
+C:\Users\ashish\AppData\Local\Microsoft\WindowsApps\python.exe
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>python
+Python 3.9.12 (main, Apr  4 2022, 05:22:27) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+<h2>9.3</h2>
+
+IN CMD:
+D:\progfiles\spark-3.3.1-bin-hadoop3>bin\spark-submit examples\src\main\python\wordcount.py README.md
+Exception in thread "main" java.io.IOException: Cannot run program "C:\Users\ashish\Anaconda3": CreateProcess error=5, Access is denied
+        at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+        at org.apache.spark.deploy.PythonRunner$.main(PythonRunner.scala:97)
+        at org.apache.spark.deploy.PythonRunner.main(PythonRunner.scala)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+        at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:958)
+        at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:180)
+        at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:203)
+        at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:90)
+        at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1046)
+        at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1055)
+        at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.IOException: CreateProcess error=5, Access is denied
+        at java.lang.ProcessImpl.create(Native Method)
+        at java.lang.ProcessImpl.&lt;init>(ProcessImpl.java:453)
+        at java.lang.ProcessImpl.start(ProcessImpl.java:139)
+        at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+        ... 14 more
+22/11/01 12:32:10 INFO ShutdownHookManager: Shutdown hook called
+22/11/01 12:32:10 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-46c29762-efc3-425a-98fd-466b1500aa5b
+
+<h2>9.4</h2>
+
+IN ANACONDA:
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>bin\spark-submit examples\src\main\python\wordcount.py README.md
+Exception in thread "main" java.io.IOException: Cannot run program "C:\Users\ashish\Anaconda3": CreateProcess error=5, Access is denied
+        at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+        at org.apache.spark.deploy.PythonRunner$.main(PythonRunner.scala:97)
+        at org.apache.spark.deploy.PythonRunner.main(PythonRunner.scala)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.spark.deploy.JavaMainApplication.start(SparkApplication.scala:52)
+        at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:958)
+        at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:180)
+        at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:203)
+        at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:90)
+        at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1046)
+        at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1055)
+        at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+Caused by: java.io.IOException: CreateProcess error=5, Access is denied
+        at java.lang.ProcessImpl.create(Native Method)
+        at java.lang.ProcessImpl.&lt;init>(ProcessImpl.java:453)
+        at java.lang.ProcessImpl.start(ProcessImpl.java:139)
+        at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+        ... 14 more
+22/11/01 12:34:25 INFO ShutdownHookManager: Shutdown hook called
+22/11/01 12:34:25 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-7480dad3-92f5-41cb-98ec-e02fee0eaff5
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>
+
+<h1>10: Successful Run of Word Count Program</h1>
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>bin\spark-submit examples\src\main\python\wordcount.py README.md
+22/11/01 12:37:22 INFO SparkContext: Running Spark version 3.3.1
+22/11/01 12:37:23 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/11/01 12:37:23 INFO ResourceUtils: ==============================================================
+22/11/01 12:37:23 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/11/01 12:37:23 INFO ResourceUtils: ==============================================================
+22/11/01 12:37:23 INFO SparkContext: Submitted application: PythonWordCount
+22/11/01 12:37:23 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/11/01 12:37:23 INFO ResourceProfile: Limiting resource is cpu
+22/11/01 12:37:23 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/11/01 12:37:23 INFO SecurityManager: Changing view acls to: ashish
+22/11/01 12:37:23 INFO SecurityManager: Changing modify acls to: ashish
+22/11/01 12:37:23 INFO SecurityManager: Changing view acls groups to:
+22/11/01 12:37:23 INFO SecurityManager: Changing modify acls groups to:
+22/11/01 12:37:23 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+22/11/01 12:37:24 INFO Utils: Successfully started service 'sparkDriver' on port 52785.
+22/11/01 12:37:24 INFO SparkEnv: Registering MapOutputTracker
+22/11/01 12:37:24 INFO SparkEnv: Registering BlockManagerMaster
+22/11/01 12:37:24 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/11/01 12:37:24 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/11/01 12:37:24 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/11/01 12:37:24 INFO DiskBlockManager: Created local directory at C:\Users\ashish\AppData\Local\Temp\blockmgr-09454369-56f1-4fae-a0d9-b5f19b6a8bd1
+22/11/01 12:37:24 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+22/11/01 12:37:24 INFO SparkEnv: Registering OutputCommitCoordinator
+22/11/01 12:37:24 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+22/11/01 12:37:25 INFO Executor: Starting executor ID driver on host CS3L.ad.itl.com
+22/11/01 12:37:25 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+22/11/01 12:37:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 52828.
+22/11/01 12:37:25 INFO NettyBlockTransferService: Server created on CS3L.ad.itl.com:52828
+22/11/01 12:37:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/11/01 12:37:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, CS3L.ad.itl.com, 52828, None)
+22/11/01 12:37:25 INFO BlockManagerMasterEndpoint: Registering block manager CS3L.ad.itl.com:52828 with 366.3 MiB RAM, BlockManagerId(driver, CS3L.ad.itl.com, 52828, None)
+22/11/01 12:37:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, CS3L.ad.itl.com, 52828, None)
+22/11/01 12:37:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, CS3L.ad.itl.com, 52828, None)
+22/11/01 12:37:26 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/11/01 12:37:26 INFO SharedState: Warehouse path is 'file:/D:/progfiles/spark-3.3.1-bin-hadoop3/spark-warehouse'.
+22/11/01 12:37:27 INFO InMemoryFileIndex: It took 51 ms to list leaf files for 1 paths.
+22/11/01 12:37:31 INFO FileSourceStrategy: Pushed Filters:
+22/11/01 12:37:31 INFO FileSourceStrategy: Post-Scan Filters:
+22/11/01 12:37:31 INFO FileSourceStrategy: Output Data Schema: struct&lt;value: string>
+22/11/01 12:37:31 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 349.6 KiB, free 366.0 MiB)
+22/11/01 12:37:31 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 365.9 MiB)
+22/11/01 12:37:31 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on CS3L.ad.itl.com:52828 (size: 33.9 KiB, free: 366.3 MiB)
+22/11/01 12:37:31 INFO SparkContext: Created broadcast 0 from javaToPython at NativeMethodAccessorImpl.java:0
+22/11/01 12:37:31 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+22/11/01 12:37:32 INFO SparkContext: Starting job: collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38
+22/11/01 12:37:32 INFO DAGScheduler: Registering RDD 6 (reduceByKey at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:35) as input to shuffle 0
+22/11/01 12:37:32 INFO DAGScheduler: Got job 0 (collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38) with 1 output partitions
+22/11/01 12:37:32 INFO DAGScheduler: Final stage: ResultStage 1 (collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38)
+22/11/01 12:37:32 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+22/11/01 12:37:32 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+22/11/01 12:37:32 INFO DAGScheduler: Submitting ShuffleMapStage 0 (PairwiseRDD[6] at reduceByKey at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:35), which has no missing parents
+22/11/01 12:37:32 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 19.4 KiB, free 365.9 MiB)
+22/11/01 12:37:32 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 10.2 KiB, free 365.9 MiB)
+22/11/01 12:37:32 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on CS3L.ad.itl.com:52828 (size: 10.2 KiB, free: 366.3 MiB)
+22/11/01 12:37:32 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1513
+22/11/01 12:37:32 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (PairwiseRDD[6] at reduceByKey at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:35) (first 15 tasks are for partitions Vector(0))
+22/11/01 12:37:32 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+22/11/01 12:37:32 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (CS3L.ad.itl.com, executor driver, partition 0, PROCESS_LOCAL, 4914 bytes) taskResourceAssignments Map()
+22/11/01 12:37:32 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/11/01 12:37:34 INFO FileScanRDD: Reading File path: file:///D:/progfiles/spark-3.3.1-bin-hadoop3/README.md, range: 0-4585, partition values: [empty row]
+22/11/01 12:37:34 INFO CodeGenerator: Code generated in 316.0539 ms
+22/11/01 12:37:34 INFO PythonRunner: Times: total = 1638, boot = 1131, init = 504, finish = 3
+22/11/01 12:37:34 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1928 bytes result sent to driver
+22/11/01 12:37:34 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 2463 ms on CS3L.ad.itl.com (executor driver) (1/1)
+22/11/01 12:37:34 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+22/11/01 12:37:34 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 52829
+22/11/01 12:37:34 INFO DAGScheduler: ShuffleMapStage 0 (reduceByKey at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:35) finished in 2.675 s
+22/11/01 12:37:34 INFO DAGScheduler: looking for newly runnable stages
+22/11/01 12:37:34 INFO DAGScheduler: running: Set()
+22/11/01 12:37:34 INFO DAGScheduler: waiting: Set(ResultStage 1)
+22/11/01 12:37:34 INFO DAGScheduler: failed: Set()
+22/11/01 12:37:34 INFO DAGScheduler: Submitting ResultStage 1 (PythonRDD[9] at collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38), which has no missing parents
+22/11/01 12:37:35 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 9.5 KiB, free 365.9 MiB)
+22/11/01 12:37:35 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 5.7 KiB, free 365.9 MiB)
+22/11/01 12:37:35 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on CS3L.ad.itl.com:52828 (size: 5.7 KiB, free: 366.3 MiB)
+22/11/01 12:37:35 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1513
+22/11/01 12:37:35 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (PythonRDD[9] at collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38) (first 15 tasks are for partitions Vector(0))
+22/11/01 12:37:35 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+22/11/01 12:37:35 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (CS3L.ad.itl.com, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+22/11/01 12:37:35 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+22/11/01 12:37:35 INFO ShuffleBlockFetcherIterator: Getting 1 (3.2 KiB) non-empty blocks including 1 (3.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/11/01 12:37:35 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 20 ms
+22/11/01 12:37:36 INFO PythonRunner: Times: total = 1154, boot = 1133, init = 20, finish = 1
+22/11/01 12:37:36 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 6944 bytes result sent to driver
+22/11/01 12:37:36 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 1323 ms on CS3L.ad.itl.com (executor driver) (1/1)
+22/11/01 12:37:36 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+22/11/01 12:37:36 INFO DAGScheduler: ResultStage 1 (collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38) finished in 1.351 s
+22/11/01 12:37:36 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+22/11/01 12:37:36 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+22/11/01 12:37:36 INFO DAGScheduler: Job 0 finished: collect at D:\progfiles\spark-3.3.1-bin-hadoop3\examples\src\main\python\wordcount.py:38, took 4.172433 s
+#: 1
+Apache: 1
+Spark: 15
+...
+project.: 1
+22/11/01 12:37:36 INFO SparkUI: Stopped Spark web UI at http://CS3L.ad.itl.com:4040
+22/11/01 12:37:36 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/11/01 12:37:36 INFO MemoryStore: MemoryStore cleared
+22/11/01 12:37:36 INFO BlockManager: BlockManager stopped
+22/11/01 12:37:36 INFO BlockManagerMaster: BlockManagerMaster stopped
+22/11/01 12:37:36 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/11/01 12:37:36 INFO SparkContext: Successfully stopped SparkContext
+22/11/01 12:37:37 INFO ShutdownHookManager: Shutdown hook called
+22/11/01 12:37:37 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-d74fb7a9-5e3a-417e-b815-7f3de7efb44b
+22/11/01 12:37:37 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-d74fb7a9-5e3a-417e-b815-7f3de7efb44b\pyspark-0c5fc2b0-e2ab-4e28-a021-2f57c08d8d8c
+22/11/01 12:37:37 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-20206684-dcc9-4326-976b-d9499bc5e483
+
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>
+
+<h1>11: Missing PyArrow Package Issue. And, Resolution</h1>
+
+<i class="ir">
+(base) D:\progfiles\spark-3.3.1-bin-hadoop3>bin\spark-submit C:\Users\ashish\Desktop\mh\Code\pandas_to_pyspark\pyinstaller\script.py
+Traceback (most recent call last):
+    File "D:\progfiles\spark-3.3.1-bin-hadoop3\python\lib\pyspark.zip\pyspark\sql\pandas\utils.py", line 53, in require_minimum_pyarrow_version
+ModuleNotFoundError: No module named 'pyarrow'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+    File "C:\Users\ashish\Desktop\mh\Code\pandas_to_pyspark\pyinstaller\script.py", line 1, in &lt;module>
+    from pyspark import pandas as pd
+    File "&lt;frozen zipimport>", line 259, in load_module
+    File "D:\progfiles\spark-3.3.1-bin-hadoop3\python\lib\pyspark.zip\pyspark\pandas\__init__.py", line 34, in &lt;module>
+    File "D:\progfiles\spark-3.3.1-bin-hadoop3\python\lib\pyspark.zip\pyspark\sql\pandas\utils.py", line 60, in require_minimum_pyarrow_version
+ImportError: PyArrow >= 1.0.0 must be installed; however, it was not found.
+22/11/01 12:41:57 INFO ShutdownHookManager: Shutdown hook called
+22/11/01 12:41:57 INFO ShutdownHookManager: Deleting directory C:\Users\ashish\AppData\Local\Temp\spark-3293d857-5ddc-4fcf-8dcc-8d7b39a8f8cc
+</i>
+
+<h2>Resolution</h2>
+    
+CMD> pip install pyarrow
+
+(base) C:\Users\ashish>pip show pyarrow
+Name: pyarrow
+Version: 10.0.0
+Summary: Python library for Apache Arrow
+Home-page: https://arrow.apache.org/
+Author:
+Author-email:
+License: Apache License, Version 2.0
+Location: c:\users\ashish\anaconda3\lib\site-packages
+Requires: numpy
+Required-by:
+</pre>
+<span style="display: none">Tags: Technology,Spark,</span>

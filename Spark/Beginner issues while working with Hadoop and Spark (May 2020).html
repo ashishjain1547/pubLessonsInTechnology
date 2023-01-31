@@ -1,0 +1,1196 @@
+<head>
+	<script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$.ajax({
+				url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+				success: function (result) {
+					$("div.customTemporaryCodeHolder").html(result);
+					$("nav.customDynamicNav").html(
+						$("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+					);
+				}
+			});
+		}); 
+	</script>
+	<!-- Google AdSense Using Machine Learning Code -->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-3071098372371409",
+			enable_page_level_ads: true
+		});
+	</script>
+	<style>
+		pre {
+			white-space: pre-wrap;
+			white-space: -moz-pre-wrap;
+			white-space: -pre-wrap;
+			white-space: -o-pre-wrap;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>CONFIGURATION FILES FOR HADOOP 3.X:
+  $HADOOP_HOME/etc/hadoop/core-site.xml
+  $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+  $HADOOP_HOME/etc/hadoop/mapred-site.xml
+  $HADOOP_HOME/etc/hadoop/yarn-site.xml
+  $HADOOP_HOME/etc/hadoop/workers
+
+  $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+  $SPARK_HOME/conf/spark-env.sh
+
+HADOOP 2.7.7 REQURES '$HADOOP_HOME/etc/hadoop/slaves' FILE.
+  (base) [admin@MASTER hadoop]$ cat slaves
+    slave2
+    slave1
+    master
+
+EVEN THOUGH WORKERS FILE WAS ALREADY THERE.
+  (base) [admin@MASTER hadoop]$ cat workers 
+    slave2
+    slave1
+    master
+
+###   ###   ###   ###   ###
+
+LOGS WHEN 'SLAVES' FILE IS NOT CONTAINING PROPER SLAVES INFORMATION IN HADOOP 2.7.7. HADOOP PROGRAMS ARE STARTING ON LOCALHOST.
+  (base) [admin@MASTER hadoop-2.7.7]$ cd sbin
+  (base) [admin@MASTER sbin]$ start-all.sh
+  /usr/local/hadoop/sbin/start-all.sh: line 46: hadoop_privilege_check: command not found
+  /usr/local/hadoop/sbin/start-all.sh: line 48: hadoop_error: command not found
+  /usr/local/hadoop/sbin/start-all.sh: line 49: hadoop_error: command not found
+  /usr/local/hadoop/sbin/start-all.sh: line 50: hadoop_error: command not found
+  Starting namenodes on [master]
+  master: IT IS AN OFFENSE TO CONTINUE WITHOUT PROPER AUTHORIZATION
+  master: This system is restricted to authorized users. Individuals attempting unauthorized access will be prosecuted. If unauthorized, terminate access now! Clicking on OK indicates your acceptance of the information in the background
+  master: namenode running as process 22852. Stop it first.
+  The authenticity of host 'localhost (127.0.0.1)' can't be established.
+  ECDSA key fingerprint is SHA256:UkKavf3dooej3jmmM0tMCTtqPb3lyUluzKCOSUhkTck.
+  ECDSA key fingerprint is MD5:6a:61:8e:ba:a5:a9:79:5a:fc:90:d0:94:cf:90:12:45.
+  Are you sure you want to continue connecting (yes/no)? no
+  localhost: Host key verification failed.
+
+  Starting secondary namenodes [0.0.0.0]
+  The authenticity of host '0.0.0.0 (0.0.0.0)' can't be established.
+  ECDSA key fingerprint is SHA256:UkKavf3dooej3jmmM0tMCTtqPb3lyUluzKCOSUhkTck.
+  ECDSA key fingerprint is MD5:6a:61:8e:ba:a5:a9:79:5a:fc:90:d0:94:cf:90:12:45.
+  Are you sure you want to continue connecting (yes/no)? no
+  0.0.0.0: Host key verification failed.
+  starting yarn daemons
+  starting resourcemanager, logging to /usr/local/hadoop-2.7.7/logs/yarn-admin-resourcemanager-MASTER.out
+  The authenticity of host 'localhost (127.0.0.1)' can't be established.
+  ECDSA key fingerprint is SHA256:UkKavf3dooej3jmmM0tMCTtqPb3lyUluzKCOSUhkTck.
+  ECDSA key fingerprint is MD5:6a:61:8e:ba:a5:a9:79:5a:fc:90:d0:94:cf:90:12:45.
+  Are you sure you want to continue connecting (yes/no)? no
+  localhost: Host key verification failed.
+
+
+###   ###   ###   ###   ###
+
+ISSUE 1:
+
+  <i style="color: red;">2020-04-01 22:30:55,257 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: registered UNIX signal handlers for [TERM, HUP, INT]
+  2020-04-01 22:30:56,505 WARN org.apache.hadoop.hdfs.server.datanode.DataNode: Invalid dfs.datanode.data.dir /home/hadoop/data_2_7_7/dataNode :
+  EPERM: Operation not permitted
+      ...
+      at org.apache.hadoop.hdfs.server.datanode.DataNode.main(DataNode.java:2554)
+  2020-04-01 22:30:56,510 FATAL org.apache.hadoop.hdfs.server.datanode.DataNode: Exception in secureMain
+  java.io.IOException: All directories in dfs.datanode.data.dir are invalid: "/home/hadoop/data_2_7_7/dataNode/"
+      ...
+      at org.apache.hadoop.hdfs.server.datanode.DataNode.main(DataNode.java:2554)
+  2020-04-01 22:30:56,512 INFO org.apache.hadoop.util.ExitUtil: Exiting with status 1
+  2020-04-01 22:30:56,516 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: SHUTDOWN_MSG:
+  /************************************************************
+  SHUTDOWN_MSG: Shutting down DataNode at MASTER/192.168.1.12
+  ************************************************************/ </i>
+
+FIX: 
+  
+  chown and chmod on "/home/hadoop/data_2_7_7/dataNode/" and "/home/hadoop/data_2_7_7/nameNode/"
+
+###   ###   ###   ###   ###
+
+ISSUE 2:
+
+  2020-04-01 22:47:08,797 FATAL org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Failed to start secondary namenode
+  org.apache.hadoop.hdfs.server.common.IncorrectVersionException: Unexpected version of storage directory /tmp/hadoop-admin/dfs/namesecondary. Reported: -65. Expecting = -63.
+      ...
+      at org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode.main(SecondaryNameNode.java:671)
+  2020-04-01 22:47:08,802 INFO org.apache.hadoop.util.ExitUtil: Exiting with status 1
+  2020-04-01 22:47:08,805 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: SHUTDOWN_MSG:
+  /************************************************************
+  SHUTDOWN_MSG: Shutting down SecondaryNameNode at MASTER/192.168.1.12
+  ************************************************************/
+
+FIX:
+  $ hdfs namenode -format
+
+AFTER THE FIX:
+  (base) [admin@MASTER sbin]$ start-all.sh
+    This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+    Starting namenodes on [master]
+    master: IT IS AN OFFENSE TO CONTINUE WITHOUT PROPER AUTHORIZATION
+    master: starting namenode, logging to /usr/local/hadoop/logs/hadoop-admin-namenode-MASTER.out
+    
+    localhost: IT IS AN OFFENSE TO CONTINUE WITHOUT PROPER AUTHORIZATION
+    localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-admin-datanode-MASTER.out
+    
+    Starting secondary namenodes [0.0.0.0]
+    0.0.0.0: IT IS AN OFFENSE TO CONTINUE WITHOUT PROPER AUTHORIZATION
+    0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-admin-secondarynamenode-MASTER.out
+    
+    starting yarn daemons
+    
+    starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-admin-resourcemanager-MASTER.out
+    localhost: IT IS AN OFFENSE TO CONTINUE WITHOUT PROPER AUTHORIZATION
+    
+    localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-admin-nodemanager-MASTER.out
+
+  (base) [admin@MASTER sbin]$ ps aux | grep java | awk '{print $12}'
+    -Dproc_namenode
+    -Dproc_datanode
+    -Dproc_secondarynamenode
+    -Dproc_resourcemanager
+    -Dproc_nodemanager
+
+
+###   ###   ###   ###   ###
+
+ISSUE 3: 
+
+  2020-04-01 23:22:25,930 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: registered UNIX signal handlers for [TERM, HUP, INT]
+  2020-04-01 23:22:26,457 WARN org.apache.hadoop.hdfs.server.datanode.DataNode: Invalid dfs.datanode.data.dir /home/hadoop/data_2_7_7/dataNode :
+  EPERM: Operation not permitted
+      ...
+      at org.apache.hadoop.hdfs.server.datanode.DataNode.main(DataNode.java:2554)
+  2020-04-01 23:22:26,459 FATAL org.apache.hadoop.hdfs.server.datanode.DataNode: Exception in secureMain
+  java.io.IOException: All directories in dfs.datanode.data.dir are invalid: "/home/hadoop/data_2_7_7/dataNode/"
+      ...
+      at org.apache.hadoop.hdfs.server.datanode.DataNode.main(DataNode.java:2554)
+  2020-04-01 23:22:26,461 INFO org.apache.hadoop.util.ExitUtil: Exiting with status 1
+  2020-04-01 23:22:26,473 INFO org.apache.hadoop.hdfs.server.datanode.DataNode: SHUTDOWN_MSG:
+  /************************************************************
+  SHUTDOWN_MSG: Shutting down DataNode at SLAVE2/10.85.62.107
+  ************************************************************/
+FIX:
+
+  (base) [admin@SLAVE2 logs]$ cd /home/hadoop/data_2_7_7/dataNode
+  (base) [admin@SLAVE2 dataNode]$ ls
+  (base) [admin@SLAVE2 dataNode]$ cd ..
+  (base) [admin@SLAVE2 data_2_7_7]$ ls
+  dataNode  nameNode
+  (base) [admin@SLAVE2 data_2_7_7]$ ls -l
+  total 0
+  drwxrwxrwx. 2 root root 6 May  5 21:48 dataNode
+  drwxrwxrwx. 2 root root 6 May  5 21:48 nameNode
+  (base) [admin@SLAVE2 data_2_7_7]$ cd ..
+  
+  (base) [admin@SLAVE2 hadoop]$ ls -l
+    total 0
+    drwxrwxrwx. 4 admin admin 38 May  4 21:02 data
+	drwxrwxrwx. 4 root  root  38 May  5 21:48 data_2_7_7
+	
+  (base) [admin@SLAVE2 hadoop]$ sudo chown -R admin:admin data_2_7_7/
+  
+  (base) [admin@SLAVE2 hadoop]$ ls -l
+    total 0
+    drwxrwxrwx. 4 admin admin 38 May  4 21:02 data
+    drwxrwxrwx. 4 admin admin 38 May  5 21:48 data_2_7_7
+
+###   ###   ###   ###   ###
+
+ISSUE 4: "ExitCodeException exitCode=13" / "Container exited with a non-zero exit code 13"
+
+  2020-04-01 01:25:25 INFO  Client:54 - Application report for application_1588708388637_0001 (state: FAILED)
+  2020-04-01 01:25:25 INFO  Client:54 -
+       client token: N/A
+       diagnostics: Application application_1588708388637_0001 failed 2 times due to AM Container for appattempt_1588708388637_0001_000002 exited with  exitCode: 13
+  For more detailed output, check application tracking page:http://MASTER:8088/cluster/app/application_1588708388637_0001Then, click on links to logs of each attempt.
+  Diagnostics: Exception from container-launch.
+  Container id: container_1588708388637_0001_02_000001
+  Exit code: 13
+  Stack trace: ExitCodeException exitCode=13:
+      ...
+      at java.lang.Thread.run(Thread.java:748)
+
+
+  Container exited with a non-zero exit code 13
+  Failing this attempt. Failing the application.
+       ApplicationMaster host: N/A
+       ApplicationMaster RPC port: -1
+       queue: default
+       start time: 1588708496649
+       final status: FAILED
+       tracking URL: http://MASTER:8088/cluster/app/application_1588708388637_0001
+       user: admin
+  2020-04-01 01:25:25 ERROR Client:70 - Application diagnostics message: Application application_1588708388637_0001 failed 2 times due to AM Container for appattempt_1588708388637_0001_000002 exited with  exitCode: 13
+  For more detailed output, check application tracking page:http://MASTER:8088/cluster/app/application_1588708388637_0001Then, click on links to logs of each attempt.
+  Diagnostics: Exception from container-launch.
+  Container id: container_1588708388637_0001_02_000001
+  Exit code: 13
+  Stack trace: ExitCodeException exitCode=13:
+      ...
+      at java.lang.Thread.run(Thread.java:748)
+
+
+  Container exited with a non-zero exit code 13
+  Failing this attempt. Failing the application.
+  Exception in thread "main" org.apache.spark.SparkException: Application application_1588708388637_0001 finished with failed status
+      ...
+      at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+  2020-04-01 01:25:25 INFO  ShutdownHookManager:54 - Shutdown hook called
+  2020-04-01 01:25:25 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-64b5662e-d854-4ca1-a7f5-d142ab0d26ac
+  2020-04-01 01:25:25 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-dd5b6b0c-9126-47ad-a969-9a2df7c03998
+  (base) [admin@MASTER spark]$
+
+FIX:
+  It seems that you have set the master in your code such as in this LOC, but you are also setting it again in 'spark-submit' arguments.
+    SparkConf.setMaster("local[*]")
+
+  You have to let the master unset in the code, and set it later when you issue spark-submit
+    $ $SPARK_HOME/bin/spark-submit --master yarn-client ... [<a href="https://stackoverflow.com/questions/36535411/spark-runs-on-yarn-cluster-exitcode-13" target="_blank">Ref</a>]
+
+###   ###   ###   ###   ###
+
+ISSUE 5: "Container killed on request. Exit code is 143."
+  
+LOGS:
+
+  (base) [admin@MASTER spark]$ ./bin/spark-submit --master yarn --deploy-mode cluster  /home/ashish/titicaca_sif.py
+  2020-04-01 00:44:36 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  2020-04-01 00:44:37 INFO  RMProxy:98 - Connecting to ResourceManager at /192.168.1.12:8032
+  2020-04-01 00:44:38 INFO  Client:54 - Requesting a new application from cluster with 3 NodeManagers
+  2020-04-01 00:44:38 INFO  Client:54 - Verifying our application has not requested more than the maximum memory capability of the cluster (10000 MB per container)
+  2020-04-01 00:44:38 INFO  Client:54 - Will allocate AM container, with 1408 MB memory including 384 MB overhead
+  2020-04-01 00:44:38 INFO  Client:54 - Setting up container launch context for our AM
+  2020-04-01 00:44:38 INFO  Client:54 - Setting up the launch environment for our AM container
+  2020-04-01 00:44:38 INFO  Client:54 - Preparing resources for our AM container
+  2020-04-01 00:44:38 WARN  Client:66 - Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+  2020-04-01 00:44:46 INFO  Client:54 - Uploading resource file:/tmp/spark-fa97671d-79d8-4658-b5f0-73dc86d73d49/__spark_libs__8099530422919497698.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588705717502_0001/__spark_libs__8099530422919497698.zip
+  2020-04-01 00:44:48 INFO  Client:54 - Uploading resource file:/home/ashish/titicaca_sif.py -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588705717502_0001/titicaca_sif.py
+  2020-04-01 00:44:48 INFO  Client:54 - Uploading resource file:/usr/local/spark/python/lib/pyspark.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588705717502_0001/pyspark.zip
+  2020-04-01 00:44:48 INFO  Client:54 - Uploading resource file:/usr/local/spark/python/lib/py4j-0.10.7-src.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588705717502_0001/py4j-0.10.7-src.zip
+  2020-04-01 00:44:48 INFO  Client:54 - Uploading resource file:/tmp/spark-fa97671d-79d8-4658-b5f0-73dc86d73d49/__spark_conf__8304897913804133199.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588705717502_0001/__spark_conf__.zip
+  2020-04-01 00:44:48 INFO  SecurityManager:54 - Changing view acls to: admin
+  2020-04-01 00:44:48 INFO  SecurityManager:54 - Changing modify acls to: admin
+  2020-04-01 00:44:48 INFO  SecurityManager:54 - Changing view acls groups to:
+  2020-04-01 00:44:48 INFO  SecurityManager:54 - Changing modify acls groups to:
+  2020-04-01 00:44:48 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(admin); groups with view permissions: Set(); users  with modify permissions: Set(admin); groups with modify permissions: Set()
+  2020-04-01 00:44:51 INFO  Client:54 - Submitting application application_1588705717502_0001 to ResourceManager
+  2020-04-01 00:44:51 INFO  YarnClientImpl:273 - Submitted application application_1588705717502_0001
+  2020-04-01 00:44:52 INFO  Client:54 - Application report for application_1588705717502_0001 (state: ACCEPTED)
+  2020-04-01 00:44:52 INFO  Client:54 -
+       client token: N/A
+       diagnostics: N/A
+       ApplicationMaster host: N/A
+       ApplicationMaster RPC port: -1
+       queue: default
+       start time: 1588706091535
+       final status: UNDEFINED
+       tracking URL: http://MASTER:8088/proxy/application_1588705717502_0001/
+       user: admin
+  2020-04-01 00:44:53 INFO  Client:54 - Application report for application_1588705717502_0001 (state: ACCEPTED)
+  ...
+  2020-04-01 00:45:53 INFO  Client:54 - Application report for application_1588705717502_0001 (state: FAILED)
+  2020-04-01 00:45:53 INFO  Client:54 -
+       client token: N/A
+       diagnostics: Application application_1588705717502_0001 failed 2 times due to AM Container for appattempt_1588705717502_0001_000002 exited with  exitCode: -104
+  For more detailed output, check application tracking page:http://MASTER:8088/cluster/app/application_1588705717502_0001Then, click on links to logs of each attempt.
+  Diagnostics: &lt;b&gt;&lt;i&gt;Container [pid=15935,containerID=container_1588705717502_0001_02_000001] is running beyond physical memory limits. Current usage: 1.4 GB of 1.4 GB physical memory used; 6.5 GB of 2.9 GB virtual memory used. Killing container. &lt;/i&gt;&lt;/b&gt;
+  Dump of the process-tree for container_1588705717502_0001_02_000001 :
+      |- PID PPID PGRPID SESSID CMD_NAME USER_MODE_TIME(MILLIS) SYSTEM_TIME(MILLIS) VMEM_USAGE(BYTES) RSSMEM_USAGE(PAGES) FULL_CMD_LINE
+      |- 16033 16029 16029 15935 (python3.7) 4 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16054 16029 16029 15935 (python3.7) 4 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16042 16029 16029 15935 (python3.7) 5 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16048 16029 16029 15935 (python3.7) 5 1 366661632 8441 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16034 16029 16029 15935 (python3.7) 4 2 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16045 16029 16029 15935 (python3.7) 4 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 15942 15935 15935 15935 (java) 6961 223 3063697408 261146 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre/bin/java -server -Xmx1024m -Djava.io.tmpdir=/tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/tmp -Dspark.yarn.app.container.log.dir=/usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001 org.apache.spark.deploy.yarn.ApplicationMaster --class org.apache.spark.deploy.PythonRunner --primary-py-file titicaca_sif.py --properties-file /tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/__spark_conf__/__spark_conf__.properties
+      |- 15975 15942 15935 15935 (python3.7) 1201 28 514191360 23698 /home/admin/anaconda3/bin/python3.7 titicaca_sif.py
+      |- 16029 15942 16029 15935 (python3.7) 83 12 366034944 11014 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16039 16029 16029 15935 (python3.7) 4 1 366485504 8430 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 15935 15933 15935 15935 (bash) 0 1 115896320 355 /bin/bash -c /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre/bin/java -server -Xmx1024m -Djava.io.tmpdir=/tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/tmp -Dspark.yarn.app.container.log.dir=/usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001 org.apache.spark.deploy.yarn.ApplicationMaster --class 'org.apache.spark.deploy.PythonRunner' --primary-py-file titicaca_sif.py --properties-file /tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/__spark_conf__/__spark_conf__.properties 1&gt; /usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001/stdout 2&gt; /usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001/stderr
+      |- 16051 16029 16029 15935 (python3.7) 4 1 366485504 8430 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+
+  Container killed on request. Exit code is 143
+  Container exited with a non-zero exit code 143
+  Failing this attempt. Failing the application.
+       ApplicationMaster host: N/A
+       ApplicationMaster RPC port: -1
+       queue: default
+       start time: 1588706091535
+       final status: FAILED
+       tracking URL: http://MASTER:8088/cluster/app/application_1588705717502_0001
+       user: admin
+  2020-04-01 00:45:53 INFO  Client:54 - Deleted staging directory hdfs://master:9000/user/admin/.sparkStaging/application_1588705717502_0001
+  2020-04-01 00:45:53 ERROR Client:70 - Application diagnostics message: Application application_1588705717502_0001 failed 2 times due to AM Container for appattempt_1588705717502_0001_000002 exited with  exitCode: -104
+  For more detailed output, check application tracking page:http://MASTER:8088/cluster/app/application_1588705717502_0001Then, click on links to logs of each attempt.
+  Diagnostics: Container [pid=15935,containerID=container_1588705717502_0001_02_000001] is running beyond physical memory limits. Current usage: 1.4 GB of 1.4 GB physical memory used; 6.5 GB of 2.9 GB virtual memory used. Killing container.
+  Dump of the process-tree for container_1588705717502_0001_02_000001 :
+      |- PID PPID PGRPID SESSID CMD_NAME USER_MODE_TIME(MILLIS) SYSTEM_TIME(MILLIS) VMEM_USAGE(BYTES) RSSMEM_USAGE(PAGES) FULL_CMD_LINE
+      |- 16033 16029 16029 15935 (python3.7) 4 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16054 16029 16029 15935 (python3.7) 4 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16042 16029 16029 15935 (python3.7) 5 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16048 16029 16029 15935 (python3.7) 5 1 366661632 8441 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16034 16029 16029 15935 (python3.7) 4 2 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16045 16029 16029 15935 (python3.7) 4 1 366751744 8462 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 15942 15935 15935 15935 (java) 6961 223 3063697408 261146 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre/bin/java -server -Xmx1024m -Djava.io.tmpdir=/tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/tmp -Dspark.yarn.app.container.log.dir=/usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001 org.apache.spark.deploy.yarn.ApplicationMaster --class org.apache.spark.deploy.PythonRunner --primary-py-file titicaca_sif.py --properties-file /tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/__spark_conf__/__spark_conf__.properties
+      |- 15975 15942 15935 15935 (python3.7) 1201 28 514191360 23698 /home/admin/anaconda3/bin/python3.7 titicaca_sif.py
+      |- 16029 15942 16029 15935 (python3.7) 83 12 366034944 11014 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 16039 16029 16029 15935 (python3.7) 4 1 366485504 8430 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+      |- 15935 15933 15935 15935 (bash) 0 1 115896320 355 /bin/bash -c /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre/bin/java -server -Xmx1024m -Djava.io.tmpdir=/tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/tmp -Dspark.yarn.app.container.log.dir=/usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001 org.apache.spark.deploy.yarn.ApplicationMaster --class 'org.apache.spark.deploy.PythonRunner' --primary-py-file titicaca_sif.py --properties-file /tmp/hadoop-admin/nm-local-dir/usercache/admin/appcache/application_1588705717502_0001/container_1588705717502_0001_02_000001/__spark_conf__/__spark_conf__.properties 1&gt; /usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001/stdout 2&gt; /usr/local/hadoop/logs/userlogs/application_1588705717502_0001/container_1588705717502_0001_02_000001/stderr
+      |- 16051 16029 16029 15935 (python3.7) 4 1 366485504 8430 /home/admin/anaconda3/bin/python3.7 -m pyspark.daemon
+
+  Container killed on request. Exit code is 143
+  Container exited with a non-zero exit code 143
+  Failing this attempt. Failing the application.
+  Exception in thread "main" org.apache.spark.SparkException: Application application_1588705717502_0001 finished with failed status
+      at org.apache.spark.deploy.yarn.Client.run(Client.scala:1149)
+      at org.apache.spark.deploy.yarn.YarnClusterApplication.start(Client.scala:1526)
+      at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:849)
+      at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:167)
+      at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:195)
+      at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:86)
+      at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:924)
+      at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:933)
+      at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+  2020-04-01 00:45:53 INFO  ShutdownHookManager:54 - Shutdown hook called
+  2020-04-01 00:45:53 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-350ae4f7-9cb1-4d5e-bfe8-1f69075b8546
+  2020-04-01 00:45:53 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-fa97671d-79d8-4658-b5f0-73dc86d73d49
+  (base) [admin@MASTER spark]$
+
+HINT (AND NOT EXACTLY FIX):
+  Exit code 143 is related to Memory/GC issues. Your default Mapper/reducer memory setting may not be sufficient to run the large data set. Thus, try setting up higher AM, MAP and REDUCER memory when a large yarn job is invoked.
+  
+  Please check this <a href="https://www.slideshare.net/SparkSummit/top-5-mistakes-when-writing-spark-applications-63071421" target="_blank">SlideShare link</a>. Excellent source to optimize your code.
+
+  FILE WITH APPLICATION MASTER RELATED PROPERTIES: $HADOOP_HOME/etc/hadoop/mapred-site.xml
+    &lt;configuration&gt;
+      &lt;property&gt;
+       &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+       &lt;value&gt;yarn&lt;/value&gt;
+      &lt;/property&gt;
+      
+       &lt;property&gt;
+        &lt;name&gt;yarn.app.mapreduce.am.env&lt;/name&gt;
+        &lt;value&gt;HADOOP_MAPRED_HOME=$HADOOP_HOME&lt;/value&gt;
+       &lt;/property&gt;
+      
+      &lt;property&gt;
+       &lt;name&gt;mapreduce.map.env&lt;/name&gt;
+       &lt;value&gt;HADOOP_MAPRED_HOME=$HADOOP_HOME&lt;/value&gt;
+      &lt;/property&gt;
+      
+      &lt;property&gt;
+       &lt;name&gt;yarn.app.mapreduce.am.resource.mb&lt;/name&gt;
+       &lt;value&gt;1024&lt;/value&gt;
+      &lt;/property&gt;
+      
+      &lt;property&gt;
+       &lt;name&gt;mapreduce.map.memory.mb&lt;/name&gt;
+       &lt;value&gt;512&lt;/value&gt;
+      &lt;/property&gt;
+      
+      &lt;property&gt;
+       &lt;name&gt;mapreduce.reduce.memory.mb&lt;/name&gt;
+       &lt;value&gt;512&lt;/value&gt;
+      &lt;/property&gt;
+    &lt;/configuration&gt;
+    
+###   ###   ###   ###   ###
+
+ISSUE 6: WHEN MORE MEMORY IS REQUESTED THAN THE THRESHOLDS SET IN THE FILE YARN-SITE.XML.
+  ERROR LOGS IF 'EXECUTOR-MEMORY' ARGUMENT OF SPARK-SUBMIT ASKS FOR MORE MEMORY THAN DEFINED IN YARN CONFIGURATION:
+
+  FILE INSTANCE 1:
+    $HADOOP_HOME: /usr/local/hadoop
+    
+    (base) [admin@MASTER hadoop]$ vi $HADOOP_HOME/etc/hadoop/yarn-site.xml
+    
+    &lt;configuration&gt;
+    &lt;property&gt;
+      &lt;name&gt;yarn.acl.enable&lt;/name&gt;
+      &lt;value&gt;0&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+      &lt;value&gt;192.168.1.12&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+      &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;
+      &lt;value&gt;4000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;8000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;128&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.vmem-check-enabled&lt;/name&gt;
+      &lt;value&gt;false&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;/configuration&gt;
+
+  ERROR INSTANCE 1:
+
+   (base) [admin@MASTER sbin]$ ../bin/spark-submit --master yarn --executor-memory 12G ../examples/src/main/python/pi.py 100
+   
+   2019-10-18 13:59:07,891 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+   2019-10-18 13:59:09,502 INFO spark.SparkContext: Running Spark version 3.0.0-preview2
+   2019-10-18 13:59:09,590 INFO resource.ResourceUtils: ==============================================================
+   2019-10-18 13:59:09,593 INFO resource.ResourceUtils: Resources for spark.driver:
+
+   2019-10-18 13:59:09,594 INFO resource.ResourceUtils: ==============================================================
+   2019-10-18 13:59:09,596 INFO spark.SparkContext: Submitted application: PythonPi
+   2019-10-18 13:59:09,729 INFO spark.SecurityManager: Changing view acls to: admin
+   2019-10-18 13:59:09,729 IN
+
+   2019-10-18 13:59:13,927 INFO spark.SparkContext: Successfully stopped SparkContext
+   Traceback (most recent call last):
+     File "/usr/local/spark/sbin/../examples/src/main/python/pi.py", line 33, in [module]
+    .appName("PythonPi")\
+     File "/usr/local/spark/python/lib/pyspark.zip/pyspark/sql/session.py", line 183, in getOrCreate
+     File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 370, in getOrCreate
+     File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 130, in __init__
+     File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 192, in _do_init
+     File "/usr/local/spark/python/lib/pyspark.zip/pyspark/context.py", line 309, in _initialize_context
+     File "/usr/local/spark/python/lib/py4j-0.10.8.1-src.zip/py4j/java_gateway.py", line 1554, in __call__
+     File "/usr/local/spark/python/lib/py4j-0.10.8.1-src.zip/py4j/protocol.py", line 328, in get_return_value
+   py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+   : java.lang.IllegalArgumentException: Required executor memory (12288 MB), offHeap memory (0) MB, overhead (1228 MB), and PySpark memory (0 MB) is above the max threshold (4000 MB) of this cluster! Please check the values of 'yarn.scheduler.maximum-allocation-mb' and/or 'yarn.nodemanager.resource.memory-mb'.
+     ...
+     at java.lang.Thread.run(Thread.java:748)
+
+   2019-10-18 13:59:14,005 INFO util.ShutdownHookManager: Shutdown hook called
+   2019-10-18 13:59:14,007 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-fbead587-b1ae-4e8e-acd4-160e585a6f34
+   2019-10-18 13:59:14,012 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-3331bae2-e2d1-47f6-886c-317be6c98339 
+
+  FILE INSTANCE 2:
+
+    &lt;configuration&gt;
+    &lt;property&gt;
+      &lt;name&gt;yarn.acl.enable&lt;/name&gt;
+      &lt;value&gt;0&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+      &lt;value&gt;192.168.1.12&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+      &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.nodemanager.resource.memory-mb&lt;/name&gt;
+      &lt;value&gt;12000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.maximum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;10000&lt;/value&gt;
+    &lt;/property&gt;
+    
+    &lt;property&gt;
+      &lt;name&gt;yarn.scheduler.minimum-allocation-mb&lt;/name&gt;
+      &lt;value&gt;128&lt;/value&gt;
+    &lt;/property&gt;
+    &lt;/configuration&gt;
+    
+  ERROR INSTANCE 2:
+    (base) [admin@MASTER sbin]$ ../bin/spark-submit --master yarn ../examples/src/main/python/pi.py 100
+    py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+    : java.lang.IllegalArgumentException: Required executor memory (12288 MB), offHeap memory (0) MB, overhead (1228 MB), and PySpark memory (0 MB) is above the max threshold (10000 MB) of this cluster! Please check the values of 'yarn.scheduler.maximum-allocation-mb' and/or 'yarn.nodemanager.resource.memory-mb'. 
+    
+###   ###   ###   ###   ###
+
+% TITICACA SPARK IFOREST RAN SUCCESSFULLY.
+% SPARK LOGS SHOW SUCCESS BUT I'M NOT ABLE TO SEE SLAVE1 AND SLAVE2 IP(S).
+% THIS IS BECAUSE CODE RAN ONLY ON MASTER NODE.
+
+  (base) [admin@MASTER spark]$ ./bin/spark-submit --master yarn /home/ashish/test_tsif.py
+  2020-04-01 23:09:17 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+  2020-04-01 23:09:19 INFO  SparkContext:54 - Running Spark version 2.4.0
+  2020-04-01 23:09:19 INFO  SparkContext:54 - Submitted application: IForestExample
+  ...
+  2020-04-01 23:09:20 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 36063.
+  ...
+  2020-04-01 23:09:21 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+  2020-04-01 23:09:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@4f1126fc{/jobs,null,AVAILABLE,@Spark}
+  ...
+  2020-04-01 23:09:21 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@54123b88{/stages/stage/kill,null,AVAILABLE,@Spark}
+  2020-04-01 23:09:21 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://MASTER:4040
+  2020-04-01 23:09:21 INFO  Executor:54 - Starting executor ID driver on host localhost
+  2020-04-01 23:09:21 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33922.
+  2020-04-01 23:09:21 INFO  NettyBlockTransferService:54 - Server created on MASTER:33922
+  2020-04-01 23:09:21 INFO  BlockManager:54 - Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+  2020-04-01 23:09:21 INFO  BlockManagerMaster:54 - Registering BlockManager BlockManagerId(driver, MASTER, 33922, None)
+  2020-04-01 23:09:21 INFO  BlockManagerMasterEndpoint:54 - Registering block manager MASTER:33922 with 366.3 MB RAM, BlockManagerId(driver, MASTER, 33922, None)
+  2020-04-01 23:09:21 INFO  BlockManagerMaster:54 - Registered BlockManager BlockManagerId(driver, MASTER, 33922, None)
+  2020-04-01 23:09:21 INFO  BlockManager:54 - Initialized BlockManager: BlockManagerId(driver, MASTER, 33922, None)
+  2020-04-01 23:09:22 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1fc1b958{/metrics/json,null,AVAILABLE,@Spark}
+  2020-04-01 23:09:22 INFO  SharedState:54 - Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/usr/local/spark/spark-warehouse').
+  2020-04-01 23:09:22 INFO  SharedState:54 - Warehouse path is 'file:/usr/local/spark/spark-warehouse'.
+  ...
+  ...2020-04-01 23:09:29 INFO  Executor:54 - Running task 1.0 in stage 0.0 (TID 1)
+  ...2020-04-01 23:09:30 INFO  PythonRunner:54 - Times: total = 1045, boot = 986, init = 59, finish = 0
+  ...2020-04-01 23:09:30 INFO  Executor:54 - Finished task 3.0 in stage 0.0 (TID 3). 2206 bytes result sent to driver
+  ...2020-04-01 23:09:30 INFO  TaskSetManager:54 - Finished task 3.0 in stage 0.0 (TID 3) in 1364 ms on localhost (executor driver) (1/8)
+  ...2020-04-01 23:09:30 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool
+  2020-04-01 23:09:30 INFO  PythonAccumulatorV2:54 - Connected to AccumulatorServer at host: 127.0.0.1 port: 36521
+  2020-04-01 23:09:30 INFO  DAGScheduler:54 - ShuffleMapStage 0 (count at IForest.scala:405) finished in 1.717 s
+  ...
+  2020-04-01 23:09:31 INFO  MemoryStore:54 - Block broadcast_2 stored as values in memory (estimated size 5.1 KB, free 366.3 MB)
+  2020-04-01 23:09:31 INFO  MemoryStore:54 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 848.0 B, free 366.3 MB)
+  2020-04-01 23:09:31 INFO  BlockManagerInfo:54 - Added broadcast_2_piece0 in memory on MASTER:33922 (size: 848.0 B, free: 366.3 MB)
+  2020-04-01 23:09:31 INFO  SparkContext:54 - Created broadcast 2 from broadcast at IForest.scala:464
+  2020-04-01 23:09:31 INFO  ContextCleaner:54 - Cleaned accumulator 29
+  ...2020-04-01 23:09:31 INFO  BlockManagerInfo:54 - Removed broadcast_0_piece0 on MASTER:33922 in memory (size: 7.0 KB, free: 366.3 MB)
+  2020-04-01 23:09:31 INFO  SparkContext:54 - Starting job: zipWithIndex at IForest.scala:473
+  ...2020-04-01 23:09:31 INFO  DAGScheduler:54 - Got job 1 (zipWithIndex at IForest.scala:473) with 7 output partitions
+  ...2020-04-01 23:09:31 INFO  DAGScheduler:54 - Submitting ResultStage 2 (MapPartitionsRDD[14] at map at IForest.scala:471), which has no missing parents
+  ...
+  2020-04-01 23:09:31 INFO  MemoryStore:54 - Block broadcast_3 stored as values in memory (estimated size 10.2 KB, free 366.3 MB)
+  2020-04-01 23:09:31 INFO  MemoryStore:54 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 5.8 KB, free 366.3 MB)
+  2020-04-01 23:09:31 INFO  BlockManagerInfo:54 - Added broadcast_3_piece0 in memory on MASTER:33922 (size: 5.8 KB, free: 366.3 MB)
+  2020-04-01 23:09:31 INFO  SparkContext:54 - Created broadcast 3 from broadcast at DAGScheduler.scala:1161
+  2020-04-01 23:09:31 INFO  DAGScheduler:54 - Submitting 7 missing tasks from ResultStage 2 (MapPartitionsRDD[14] at map at IForest.scala:471) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6))
+  2020-04-01 23:09:31 INFO  TaskSchedulerImpl:54 - Adding task set 2.0 with 7 tasks
+  2020-04-01 23:09:31 INFO  TaskSetManager:54 - Starting task 0.0 in stage 2.0 (TID 9, localhost, executor driver, partition 0, PROCESS_LOCAL, 7852 bytes)
+  ...2020-04-01 23:09:31 INFO  Executor:54 - Running task 1.0 in stage 2.0 (TID 10)
+  ...2020-04-01 23:09:31 INFO  CodeGenerator:54 - Code generated in 33.997524 ms
+  ...2020-04-01 23:09:31 INFO  PythonRunner:54 - Times: total = 58, boot = -708, init = 766, finish = 0
+  ...2020-04-01 23:09:31 INFO  TaskSetManager:54 - Finished task 1.0 in stage 2.0 (TID 10) in 124 ms on localhost (executor driver) (7/7)
+  2020-04-01 23:09:31 INFO  TaskSchedulerImpl:54 - Removed TaskSet 2.0, whose tasks have all completed, from pool
+  ...
+  2020-04-01 23:09:31 INFO  DAGScheduler:54 - Submitting 8 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[17] at flatMap at IForest.scala:475) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+  2020-04-01 23:09:31 INFO  TaskSchedulerImpl:54 - Adding task set 3.0 with 8 tasks
+  2020-04-01 23:09:31 INFO  TaskSetManager:54 - Starting task 0.0 in stage 3.0 (TID 16, localhost, executor driver, partition 0, PROCESS_LOCAL, 7951 bytes)
+  ...2020-04-01 23:09:31 INFO  Executor:54 - Running task 0.0 in stage 3.0 (TID 16)
+  ...2020-04-01 23:09:31 INFO  PythonRunner:54 - Times: total = 42, boot = -1013, init = 1055, finish = 0
+  ...2020-04-01 23:09:32 INFO  TaskSetManager:54 - Finished task 1.0 in stage 3.0 (TID 17) in 221 ms on localhost (executor driver) (8/8)
+  2020-04-01 23:09:32 INFO  TaskSchedulerImpl:54 - Removed TaskSet 3.0, whose tasks have all completed, from pool
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - ShuffleMapStage 3 (flatMap at IForest.scala:475) finished in 0.243 s
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - looking for newly runnable stages
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - running: Set()
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - waiting: Set(ResultStage 4)
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - failed: Set()
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - Submitting ResultStage 4 (MapPartitionsRDD[22] at map at IForest.scala:514), which has no missing parents
+  ...2020-04-01 23:09:32 INFO  Executor:54 - Running task 0.0 in stage 4.0 (TID 24)
+  ...2020-04-01 23:09:32 INFO  ShuffleBlockFetcherIterator:54 - Getting 4 non-empty blocks including 4 local blocks and 0 remote blocks
+  ...2020-04-01 23:09:32 INFO  ShuffleBlockFetcherIterator:54 - Getting 4 non-empty blocks including 4 local blocks and 0 remote blocks
+  2020-04-01 23:09:32 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 1 ms
+  ...2020-04-01 23:09:32 INFO  ShuffleBlockFetcherIterator:54 - Getting 4 non-empty blocks including 4 local blocks and 0 remote blocks
+  2020-04-01 23:09:32 INFO  ShuffleBlockFetcherIterator:54 - Started 0 remote fetches in 1 ms
+  2020-04-01 23:09:32 INFO  Executor:54 - Finished task 0.0 in stage 4.0 (TID 24). 2553 bytes result sent to driver
+  ...2020-04-01 23:09:32 INFO  TaskSchedulerImpl:54 - Removed TaskSet 4.0, whose tasks have all completed, from pool
+  ...
+  2020-04-01 23:09:32 INFO  PythonRunner:54 - Times: total = 50, boot = -398, init = 448, finish = 0
+  2020-04-01 23:09:32 INFO  Executor:54 - Finished task 2.0 in stage 5.0 (TID 34). 2163 bytes result sent to driver
+  ...
+  2020-04-01 23:09:32 INFO  TaskSchedulerImpl:54 - Removed TaskSet 5.0, whose tasks have all completed, from pool
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - ShuffleMapStage 5 (count at IForest.scala:87) finished in 0.133 s
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - looking for newly runnable stages
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - running: Set()
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - waiting: Set(ResultStage 6)
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - failed: Set()
+  2020-04-01 23:09:32 INFO  DAGScheduler:54 - Submitting ResultStage 6 (MapPartitionsRDD[28] at count at IForest.scala:87), which has no missing parents
+  2020-04-01 23:09:32 INFO  MemoryStore:54 - Block broadcast_7 stored as values in memory (estimated size 7.1 KB, free 366.2 MB)
+  2020-04-01 23:09:32 INFO  MemoryStore:54 - Block broadcast_7_piece0 stored as bytes in memory (estimated size 3.8 KB, free 366.2 MB)
+  ...
+  2020-04-01 23:09:32 INFO  MemoryStore:54 - Block broadcast_8 stored as values in memory (estimated size 119.9 KB, free 366.1 MB)
+  2020-04-01 23:09:32 INFO  MemoryStore:54 - Block broadcast_8_piece0 stored as bytes in memory (estimated size 5.6 KB, free 366.1 MB)
+  2020-04-01 23:09:32 INFO  BlockManagerInfo:54 - Added broadcast_8_piece0 in memory on MASTER:33922 (size: 5.6 KB, free: 366.3 MB)
+  2020-04-01 23:09:32 INFO  SparkContext:54 - Created broadcast 8 from broadcast at IForest.scala:90
+  2020-04-01 23:09:33 INFO  ContextCleaner:54 - Cleaned accumulator 164
+  ...2020-04-01 23:09:33 INFO  IForestModel$:102 - threshold is not set, calculating the anomaly threshold according to param contamination..
+  ...2020-04-01 23:09:33 INFO  ContextCleaner:54 - Cleaned accumulator 71
+  ...2020-04-01 23:09:33 INFO  BlockManagerInfo:54 - Removed broadcast_3_piece0 on MASTER:33922 in memory (size: 5.8 KB, free: 366.3 MB)
+  ...2020-04-01 23:09:33 INFO  ContextCleaner:54 - Cleaned accumulator 196
+  ...
+  2020-04-01 23:09:33 INFO  DAGScheduler:54 - Submitting ShuffleMapStage 7 (MapPartitionsRDD[34] at approxQuantile at IForest.scala:103), which has no missing parents
+  2020-04-01 23:09:33 INFO  MemoryStore:54 - Block broadcast_9 stored as values in memory (estimated size 31.2 KB, free 366.1 MB)
+  2020-04-01 23:09:33 INFO  MemoryStore:54 - Block broadcast_9_piece0 stored as bytes in memory (estimated size 14.8 KB, free 366.1 MB)
+  2020-04-01 23:09:33 INFO  BlockManagerInfo:54 - Added broadcast_9_piece0 in memory on MASTER:33922 (size: 14.8 KB, free: 366.3 MB)
+  2020-04-01 23:09:33 INFO  SparkContext:54 - Created broadcast 9 from broadcast at DAGScheduler.scala:1161
+  2020-04-01 23:09:33 INFO  DAGScheduler:54 - Submitting 8 missing tasks from ShuffleMapStage 7 (MapPartitionsRDD[34] at approxQuantile at IForest.scala:103) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+  2020-04-01 23:09:33 INFO  TaskSchedulerImpl:54 - Adding task set 7.0 with 8 tasks
+  2020-04-01 23:09:33 INFO  TaskSetManager:54 - Starting task 0.0 in stage 7.0 (TID 41, localhost, executor driver, partition 0, PROCESS_LOCAL, 7841 bytes)
+  ...2020-04-01 23:09:33 INFO  TaskSetManager:54 - Starting task 7.0 in stage 7.0 (TID 48, localhost, executor driver, partition 7, PROCESS_LOCAL, 7892 bytes)
+  2020-04-01 23:09:33 INFO  Executor:54 - Running task 5.0 in stage 7.0 (TID 46)
+  ...2020-04-01 23:09:33 INFO  Executor:54 - Running task 1.0 in stage 7.0 (TID 42)
+  ...2020-04-01 23:09:33 INFO  Executor:54 - Finished task 4.0 in stage 7.0 (TID 45). 1956 bytes result sent to driver
+  ...2020-04-01 23:09:33 INFO  TaskSetManager:54 - Finished task 1.0 in stage 7.0 (TID 42) in 122 ms on localhost (executor driver) (8/8)
+  ...2020-04-01 23:09:34 INFO  TaskSetManager:54 - Starting task 7.0 in stage 9.0 (TID 58, localhost, executor driver, partition 7, PROCESS_LOCAL, 7903 bytes)
+  2020-04-01 23:09:34 INFO  Executor:54 - Running task 0.0 in stage 9.0 (TID 51)
+  ...2020-04-01 23:09:34 INFO  PythonRunner:54 - Times: total = 41, boot = -549, init = 590, finish = 0
+  ...2020-04-01 23:09:34 INFO  TaskSchedulerImpl:54 - Removed TaskSet 9.0, whose tasks have all completed, from pool
+  ...2020-04-01 23:09:34 INFO  DAGScheduler:54 - Submitting 8 missing tasks from ShuffleMapStage 10 (MapPartitionsRDD[42] at count at IForest.scala:87) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+  2020-04-01 23:09:34 INFO  TaskSchedulerImpl:54 - Adding task set 10.0 with 8 tasks
+  2020-04-01 23:09:34 INFO  TaskSetManager:54 - Starting task 0.0 in stage 10.0 (TID 59, localhost, executor driver, partition 0, PROCESS_LOCAL, 7841 bytes)
+  ...2020-04-01 23:09:34 INFO  TaskSetManager:54 - Starting task 7.0 in stage 10.0 (TID 66, localhost, executor driver, partition 7, PROCESS_LOCAL, 7892 bytes)
+  2020-04-01 23:09:34 INFO  Executor:54 - Running task 0.0 in stage 10.0 (TID 59)
+  ...2020-04-01 23:09:34 INFO  PythonRunner:54 - Times: total = 42, boot = -138, init = 179, finish = 1
+  ...2020-04-01 23:09:34 INFO  Executor:54 - Finished task 2.0 in stage 10.0 (TID 61). 2163 bytes result sent to driver
+  ...2020-04-01 23:09:34 INFO  PythonRunner:54 - Times: total = 57, boot = -149, init = 206, finish = 0
+  ...2020-04-01 23:09:34 INFO  TaskSchedulerImpl:54 - Removed TaskSet 10.0, whose tasks have all completed, from pool
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - ShuffleMapStage 10 (count at IForest.scala:87) finished in 0.134 s
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - looking for newly runnable stages
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - running: Set()
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - waiting: Set(ResultStage 11)
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - failed: Set()
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - Submitting ResultStage 11 (MapPartitionsRDD[45] at count at IForest.scala:87), which has no missing parents
+  2020-04-01 23:09:34 INFO  MemoryStore:54 - Block broadcast_13 stored as values in memory (estimated size 7.1 KB, free 366.0 MB)
+  2020-04-01 23:09:34 INFO  MemoryStore:54 - Block broadcast_13_piece0 stored as bytes in memory (estimated size 3.8 KB, free 366.0 MB)
+  2020-04-01 23:09:34 INFO  BlockManagerInfo:54 - Added broadcast_13_piece0 in memory on MASTER:33922 (size: 3.8 KB, free: 366.2 MB)
+  2020-04-01 23:09:34 INFO  SparkContext:54 - Created broadcast 13 from broadcast at DAGScheduler.scala:1161
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 11 (MapPartitionsRDD[45] at count at IForest.scala:87) (first 15 tasks are for partitions Vector(0))
+  2020-04-01 23:09:34 INFO  TaskSchedulerImpl:54 - Adding task set 11.0 with 1 tasks
+  2020-04-01 23:09:34 INFO  TaskSetManager:54 - Starting task 0.0 in stage 11.0 (TID 67, localhost, executor driver, partition 0, ANY, 7767 bytes)
+  2020-04-01 23:09:34 INFO  Executor:54 - Running task 0.0 in stage 11.0 (TID 67)
+  ...
+  2020-04-01 23:09:34 INFO  DAGScheduler:54 - Submitting 8 missing tasks from ResultStage 12 (MapPartitionsRDD[48] at collect at /home/ashish/test_tsif.py:38) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7))
+  2020-04-01 23:09:34 INFO  TaskSchedulerImpl:54 - Adding task set 12.0 with 8 tasks
+  2020-04-01 23:09:34 INFO  TaskSetManager:54 - Starting task 0.0 in stage 12.0 (TID 68, localhost, executor driver, partition 0, PROCESS_LOCAL, 7852 bytes)
+  ...2020-04-01 23:09:34 INFO  Executor:54 - Running task 0.0 in stage 12.0 (TID 68)
+  ...2020-04-01 23:09:35 INFO  PythonRunner:54 - Times: total = 59, boot = -588, init = 647, finish = 0
+  ...2020-04-01 23:09:35 INFO  Executor:54 - Finished task 0.0 in stage 12.0 (TID 68). 1937 bytes result sent to driver
+  ...2020-04-01 23:09:35 INFO  TaskSetManager:54 - Finished task 0.0 in stage 12.0 (TID 68) in 79 ms on localhost (executor driver) (1/8)
+  ...2020-04-01 23:09:35 INFO  TaskSchedulerImpl:54 - Removed TaskSet 12.0, whose tasks have all completed, from pool
+  2020-04-01 23:09:35 INFO  DAGScheduler:54 - ResultStage 12 (collect at /home/ashish/test_tsif.py:38) finished in 0.110 s
+  2020-04-01 23:09:35 INFO  DAGScheduler:54 - Job 7 finished: collect at /home/ashish/test_tsif.py:38, took 0.116785 s
+
+  <b><i style="color: green;">Row(features=DenseVector([0.0, 0.0]), anomalyScore=0.6381340527684373, prediction=1.0)
+  Row(features=DenseVector([7.0, 9.0]), anomalyScore=0.36124375932035013, prediction=0.0)
+  Row(features=DenseVector([9.0, 8.0]), anomalyScore=0.45903661555057185, prediction=0.0)
+  Row(features=DenseVector([8.0, 9.0]), anomalyScore=0.3453755147579721, prediction=0.0)</i></b>
+
+  2020-04-01 23:09:35 INFO  ContextCleaner:54 - Cleaned accumulator 245
+  ...2020-04-01 23:09:35 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+  2020-04-01 23:09:35 INFO  BlockManagerInfo:54 - Removed broadcast_13_piece0 on MASTER:33922 in memory (size: 3.8 KB, free: 366.2 MB)
+  ...2020-04-01 23:09:35 INFO  AbstractConnector:318 - Stopped Spark@1db1bee1{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+  2020-04-01 23:09:35 INFO  ContextCleaner:54 - Cleaned accumulator 246
+  ...2020-04-01 23:09:35 INFO  SparkUI:54 - Stopped Spark web UI at http://MASTER:4040
+  ...2020-04-01 23:09:35 INFO  BlockManagerInfo:54 - Removed broadcast_9_piece0 on MASTER:33922 in memory (size: 14.8 KB, free: 366.2 MB)
+  2020-04-01 23:09:35 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+  2020-04-01 23:09:35 INFO  MemoryStore:54 - MemoryStore cleared
+  2020-04-01 23:09:35 INFO  BlockManager:54 - BlockManager stopped
+  2020-04-01 23:09:35 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+  2020-04-01 23:09:35 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+  2020-04-01 23:09:35 INFO  SparkContext:54 - Successfully stopped SparkContext
+  2020-04-01 23:09:35 INFO  ShutdownHookManager:54 - Shutdown hook called
+  2020-04-01 23:09:35 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-ddd7d3ea-d576-43a8-9c93-645fd481d6b6/pyspark-167bd595-6c86-4f99-b077-ae18f076a398
+  2020-04-01 23:09:35 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-ddd7d3ea-d576-43a8-9c93-645fd481d6b6
+  2020-04-01 23:09:35 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-06b7eeb5-ec91-49cb-9dbb-5c9c2d546c5b
+  (base) [admin@MASTER spark]$
+
+
+###   ###   ###   ###   ###
+
+ISSUE 7: SPARK JOB NOT USING THE WORKER NODES ON THE CLUSTER
+
+FIX:
+  EXAMPLE: $ $SPARK_HOME/bin/spark-submit --executor-memory 4G --executor-cores 4  --master yarn --deploy-mode cluster /home/script.py
+
+  ACTUAL: (base) [admin@MASTER spark]$ ./bin/spark-submit --master yarn --deploy-mode cluster /home/ashish/titicaca_sif.py
+  
+  You should also remove the "master configuration" from SparkSession creation line of code such as it is there in these lines:
+  
+  WRONG: 
+    # spark = SparkSession.builder.master("local[*]").appName("IForestExample").getOrCreate()
+    
+    # spark = SparkSession.builder.master("yarn").appName("IForestExample").getOrCreate()
+
+  CORRECT:
+    # spark = SparkSession.builder.appName("IForestExample").getOrCreate()
+  
+  <A HREF="https://stackoverflow.com/questions/49902987/spark-job-not-using-the-worker-nodes-on-the-cluster" TARGET="_blank">Ref</A>
+
+###   ###   ###   ###   ###
+
+Ques 1: Why does Spark fail with java.lang.OutOfMemoryError: GC overhead limit exceeded?
+Ans 1:
+  In the <a href="http://spark.apache.org/docs/latest/running-on-yarn.html" target="_blank">Spark documentation</a>, you can read how to configure the executors and the memory limit. For example:
+
+  --master yarn-cluster --num-executors 10 --executor-cores 3 --executor-memory 4g --driver-memory 5g  --conf spark.yarn.executor.memoryOverhead=409
+  The memoryOverhead should be the 10% of the executor memory.
+
+  Edit: Fixed 4096 to 409 <a href="https://stackoverflow.com/questions/27462061/why-does-spark-fail-with-java-lang-outofmemoryerror-gc-overhead-limit-exceeded" target="_blank">Refer this link</a>.
+
+  (base) [admin@MASTER spark]$ ./bin/spark-submit --master yarn --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC' --conf spark.yarn.executor.memoryOverhead=100 /home/ashish/titicaca_sif.py
+
+  DEPRECATED: --conf spark.yarn.executor.memoryOverhead=100 use "--conf spark.executor.memoryOverhead=100"
+
+
+Ques 2: "Heap space OutOfMemoryError: available vs. requested" / "Reading GC logs"
+  I have a Spark application which ran into OutOfMemory Error. The GC log is as follows. Is there a way I can tell how much memory was requested and how much memory was available at the time of request? 
+  
+Ans 2:
+  According to the GC log, this is when you ran out of memory:
+
+  3429.458: [Full GC (Allocation Failure) 
+         [PSYoungGen: 3495918K-&gt;3495908K(6990848K)] 
+         [ParOldGen: 20969872K-&gt;20969870K(20971520K)] 
+         24465790K-&gt;24465778K(27962368K), 
+         [Metaspace: 56727K-&gt;56723K(1101824K)], 0.4597426 secs] 
+        [Times: user=0.90 sys=0.01, real=0.46 secs] 
+  This 24465790K-&gt;24465778K(27962368K) line says that:
+
+  space used before GC 24465790K
+  space used after GC 24465778K
+  heap space after GC 27962368K
+  So it looks like 3496590K is free out of 27962368K.
+  
+  It looks like the old generation is full. I suspect the GC failure is due to the GC being unable to tenure objects from eden space because of that. Also note that neither the young or old generation collectors managed to free much memory, and neither did the Full GC.
+
+  The overall diagnosis is that your heap is full. For some reason the allocator could not put the new object into 'Eden' space. It might have been larger than the available free space in 'Eden', or it might have been bigger than the large object threshold. [<a href="https://stackoverflow.com/questions/55073749/heap-space-outofmemoryerror-available-vs-requested" target="_blank">Ref</a>]
+  
+TRY 1 ### 
+  CODE FILES ARE HERE:
+    (base) [admin@MASTER ~]$ cd /home/ashish/
+    (base) [admin@MASTER ~]$ nano titicaca_sif.py
+
+  CODE:
+    <i style="color: blue;">from pyspark import SparkConf
+    from pyspark.sql.session import SparkSession
+    from pyspark.ml.linalg import Vectors
+    from pyspark.ml.feature import VectorAssembler
+    
+    from pyspark_iforest.ml.iforest import *
+    import tempfile
+    
+    import pandas as pd
+    from joblib import load, dump
+    
+    bcle_dict_path = '/home/joblib/files_1/bcle_dict.joblib'
+    mgle_dict_path = '/home/joblib/files_1/mgle_dict.joblib'
+    pcle_dict_path = '/home/joblib/files_1/pcle_dict.joblib'
+
+    bcle_dict = load(bcle_dict_path)
+    mgle_dict = load(mgle_dict_path)
+    pcle_dict = load(pcle_dict_path)
+
+    df_1 = pd.read_csv("/home/ashish/data_files/big_data-2MB.csv", names=['BCD', 'BP', 'MGC', 'PC'])
+
+    df_1['bc_enc'] = df_1['BCD'].apply(lambda x: bcle_dict.get(x))
+    df_1['mg_enc'] = df_1['MGC'].apply(lambda x: mgle_dict.get(x))
+    df_1['pc_enc'] = df_1['PC'].apply(lambda x: pcle_dict.get(x))
+
+    df_2 = df_1[['bc_enc', 'BP', 'mg_enc', 'pc_enc']]
+
+    #spark = SparkSession.builder.master("local[*]").appName("IForestExample").getOrCreate()
+    #spark = SparkSession.builder.appName("IForestExample").getOrCreate()
+
+    #conf = (SparkConf().set("spark.memory.fraction", "0.6"));
+    #spark = SparkSession.builder.config(conf=conf).master("yarn").appName("IForestExample").getOrCreate()
+
+    spark = SparkSession.builder.master("yarn").appName("IForestExample").getOrCreate()
+
+    df_3 = spark.createDataFrame(df_2)
+    df_4 = VectorAssembler(inputCols = list(df_2.columns), outputCol="features").transform(df_3)
+
+    # NOTE: features need to be dense vectors for the model input
+    df = df_4
+
+    # Init an IForest Object
+    iforest = IForest(contamination=0.3, maxDepth=2)
+
+    # Fit on a given data frame
+    model = iforest.fit(df)
+
+    # Check if the model has summary or not, the newly trained model has the summary info
+    model.hasSummary
+
+    # Show model summary
+    summary = model.summary
+
+    # Show the number of anomalies
+    summary.numAnomalies
+
+    # Predict for a new data frame based on the fitted model
+    transformed = model.transform(df)
+
+    # Collect spark data frame into local df
+    rows = transformed.collect()
+
+    for i in rows:
+     print(i) </i>
+
+  HOW TO CHOOSE DEPLOY MODE FOR SPARK?
+    1% There are two deploy modes that can be used to launch Spark applications on YARN. In cluster mode, the Spark driver runs inside an application master process which is managed by YARN on the cluster, and the client can go away after initiating the application. In client mode, the driver runs in the client process, and the application master is only used for requesting resources from YARN. [Ref 1]
+    
+    2% When running Spark on YARN, each Spark executor runs as a YARN container. Where MapReduce schedules a container and fires up a JVM for each task, Spark hosts multiple tasks within the same container. This approach enables several orders of magnitude faster task startup time.
+
+    Spark supports two modes for running on YARN, “yarn-cluster” mode and “yarn-client” mode. Broadly, yarn-cluster mode makes sense for production jobs, while yarn-client mode makes sense for interactive and debugging uses where you want to see your application’s output immediately.
+    
+    The yarn-cluster mode is not well suited to using Spark interactively, but the yarn-client mode is. Spark applications that require user input, like spark-shell and PySpark, need the Spark driver to run inside the client process that initiates the Spark application. In yarn-client mode, the Application Master is merely present to request executor containers from YARN. [Ref 1]
+        
+    3% Let's try to look at the differences between client and cluster mode. [Ref 2]
+
+    Client:
+
+      # Driver runs on a dedicated server (Master node) inside a dedicated process. This means it has all available resources at it's disposal to execute work.
+      # Driver opens up a dedicated Netty HTTP server and distributes the JAR files specified to all Worker nodes (big advantage).
+      # Because the Master node has dedicated resources of it's own, you don't need to "spend" worker resources for the Driver program.
+      # If the driver process dies, you need an external monitoring system to reset it's execution.
+      
+    Cluster:
+
+      # Driver runs on one of the cluster's Worker nodes. The worker is chosen by the Master leader
+      # Driver runs as a dedicated, standalone process inside the Worker.
+      # Driver programs takes up at least 1 core and a dedicated amount of memory from one of the workers (this can be configured).
+      # Driver program can be monitored from the Master node using the --supervise flag and be reset in case it dies.
+      # When working in Cluster mode, all JARs related to the execution of your application need to be publicly available to all the workers. This means you can either manually place them in a shared place or in a folder for each of the workers.
+
+    % <a href="https://stackoverflow.com/questions/41124428/spark-yarn-cluster-vs-client-how-to-choose-which-one-to-use/41142747" target="_blank">Ref 1</a>
+    % <a href="https://stackoverflow.com/questions/37027732/apache-spark-differences-between-client-and-cluster-deploy-modes" target="_blank">Ref 2</a>
+    
+    <i style="color: blue;">$ ./bin/spark-submit --master yarn \
+    --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit' \
+    --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:-UseGCOverheadLimit' \  
+    --conf spark.executor.memoryOverhead=100 \
+    /home/ashish/titicaca_sif.py </i>
+
+  ISSUE THAT WILL COME WITHOUT THE PROPERTY "-XX:-UseGCOverheadLimit":
+    % Exception in thread ... java.lang.OutOfMemoryError: GC overhead limit exceeded
+    % Program ends relatively quickly in lesser than 10 minutes.
+    
+  ISSUE THAT WILL COME WITH THE PROPERTY "-XX:-UseGCOverheadLimit":
+    % Exception in thread "dispatcher-event-loop-7" java.lang.OutOfMemoryError: Java heap space
+    % Program takes relatively longer time to end in about an hour.
+    % Control-C does not work to stop it.
+    % You would have to kill the job using 'kill -9'.
+      (base) [admin@MASTER sbin]$ ps aux | grep java
+        admin     2388  711  8.6 6982340 1405208 pts/1 Sl+  11:05 523:27 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.171-8.b10.el7_5.x86_64/jre/bin/java -cp /usr/local/spark/conf/:/usr/local/spark/jars/*:/usr/local/hadoop/etc/hadoop/ -Xmx1g -XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit org.apache.spark.deploy.SparkSubmit --master yarn --conf spark.executor.memoryOverhead=100 --conf spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:-UseGCOverheadLimit --conf spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit /home/ashish/titicaca_sif.py
+        
+      (base) [admin@MASTER sbin]$ kill -9 2388
+
+
+  NOTE ABOUT "%java.lang.OutOfMemoryError: GC overhead limit exceeded"
+    The GC throws this exception when too much time is spent in garbage collection for too little return, eg. 98% of CPU time is spent on GC and less than 2% of heap is recovered.
+
+    This feature is designed to prevent applications from running for an extended period of time while making little or no progress because the heap is too small.
+
+    You can turn this off with the command line option -XX:-UseGCOverheadLimit
+
+  
+    $ ./bin/spark-submit --master yarn --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:-UseGCOverheadLimit' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -XX:-UseGCOverheadLimit' --conf spark.executor.memoryOverhead=100 /home/ashish/titicaca_sif.py
+
+    AFTER REMOVING GC OVERHEAD LIMIT, THE EXCEPTION CHANGED TO "java.lang.OutOfMemoryError: Java heap space":
+        java.lang.OutOfMemoryError: Java heap space
+        Exception in thread "dispatcher-event-loop-7" java.lang.OutOfMemoryError: Java heap space
+        Traceback (most recent call last):
+          File "/home/ashish/titicaca_sif.py", line 48, in &lt;module&gt;
+          model = iforest.fit(df)
+          File "/usr/local/spark/python/lib/pyspark.zip/pyspark/ml/base.py", line 132, in fit
+          File "/usr/local/spark/python/lib/pyspark.zip/pyspark/ml/wrapper.py", line 295, in _fit
+          File "/usr/local/spark/python/lib/pyspark.zip/pyspark/ml/wrapper.py", line 292, in _fit_java
+          File "/usr/local/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+          File "/usr/local/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 63, in deco
+          File "/usr/local/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+        py4j.protocol.Py4JJavaError2020-04-01 13:02:51 WARN  TransportChannelHandler:78 - Exception in connection from /10.85.62.107:53664
+      2020-04-01 13:02:57 WARN  TransportChannelHandler:78 - Exception in connection from /10.85.62.107:53658
+      2020-04-01 13:02:51 WARN  TransportChannelHandler:78 - Exception in connection from /10.85.62.107:53656
+        java.lang.OutOfMemoryError: Java heap space
+
+
+TRY 2 ###
+  LOC ACTIVATION:
+    spark = SparkSession.builder.appName("IForestExample").getOrCreate()
+  
+  SPARK-SUBMIT:
+    $ ./bin/spark-submit --master local \
+      --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' \
+      --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC' \  
+      --conf spark.executor.memoryOverhead=100 \
+      /home/ashish/titicaca_sif.py
+    OR 
+    
+    $ ./bin/spark-submit --master local --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC' --conf spark.executor.memoryOverhead=100 /home/ashish/titicaca_sif.py
+
+  SPARK LOGS FOR SUCCESSFUL TRY:  
+    (base) [admin@MASTER spark]$ ./bin/spark-submit --master local --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC' --conf spark.executor.memoryOverhead=100 /home/ashish/titicaca_sif.py
+      1.293: [GC (Allocation Failure) [PSYoungGen: 64512K-&gt;6191K(74752K)] 64512K-&gt;6199K(245760K), 0.0165878 secs] [Times: user=0.04 sys=0.01, real=0.01 secs]
+      2.244: [GC (Allocation Failure) [PSYoungGen: 70703K-&gt;6638K(139264K)] 70711K-&gt;6718K(310272K), 0.0116094 secs] [Times: user=0.05 sys=0.01, real=0.01 secs]
+      2020-04-01 12:23:52 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+      2020-04-01 12:23:55 INFO  SparkContext:54 - Running Spark version 2.4.0
+      2020-04-01 12:23:55 INFO  SparkContext:54 - Submitted application: IForestExample
+      ...
+      2020-04-01 12:23:55 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(admin); groups with view permissions: Set(); users  with modify permissions: Set(admin); groups with modify permissions: Set()
+      5.898: [GC (Metadata GC Threshold) [PSYoungGen: 102962K-&gt;8037K(139264K)] 103042K-&gt;8133K(310272K), 0.0149205 secs] [Times: user=0.05 sys=0.01, real=0.02 secs]
+      5.913: [Full GC (Metadata GC Threshold) [PSYoungGen: 8037K-&gt;0K(139264K)] [ParOldGen: 96K-&gt;7753K(102400K)] 8133K-&gt;7753K(241664K), [Metaspace: 20966K-&gt;20966K(1067008K)], 0.0463425 secs] [Times: user=0.15 sys=0.02, real=0.04 secs]
+      2020-04-01 12:23:55 INFO  Utils:54 - Successfully started service 'sparkDriver' on port 45485.
+      2020-04-01 12:23:55 INFO  SparkEnv:54 - Registering MapOutputTracker
+      2020-04-01 12:23:55 INFO  SparkEnv:54 - Registering BlockManagerMaster
+      2020-04-01 12:23:55 INFO  BlockManagerMasterEndpoint:54 - Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+      2020-04-01 12:23:55 INFO  BlockManagerMasterEndpoint:54 - BlockManagerMasterEndpoint up
+      2020-04-01 12:23:55 INFO  DiskBlockManager:54 - Created local directory at /tmp/blockmgr-92f296a4-955f-4e90-8870-6a3b24ec93e7
+      2020-04-01 12:23:55 INFO  MemoryStore:54 - MemoryStore started with capacity 366.3 MB
+      2020-04-01 12:23:55 INFO  SparkEnv:54 - Registering OutputCommitCoordinator
+      2020-04-01 12:23:56 INFO  log:192 - Logging initialized @6541ms
+      2020-04-01 12:23:56 INFO  Server:351 - jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+      2020-04-01 12:23:56 INFO  Server:419 - Started @6716ms
+      2020-04-01 12:23:56 INFO  AbstractConnector:278 - Started ServerConnector@29234d64{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+      2020-04-01 12:23:56 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+      2020-04-01 12:23:56 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@383515bd{/jobs,null,AVAILABLE,@Spark}
+      ...
+      2020-04-01 12:23:56 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://MASTER:4040
+      2020-04-01 12:23:56 INFO  Executor:54 - Starting executor ID driver on host localhost
+      2020-04-01 12:23:56 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45415.
+      2020-04-01 12:23:56 INFO  NettyBlockTransferService:54 - Server created on MASTER:45415
+      ...
+      2020-04-01 12:23:57 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@a6cfa11{/static/sql,null,AVAILABLE,@Spark}
+      8.271: [GC (Metadata GC Threshold) [PSYoungGen: 57512K-&gt;7114K(139264K)] 66061K-&gt;15671K(241664K), 0.0094166 secs] [Times: user=0.03 sys=0.00, real=0.01 secs]
+      8.280: [Full GC (Metadata GC Threshold) [PSYoungGen: 7114K-&gt;0K(139264K)] [ParOldGen: 8556K-&gt;10445K(159744K)] 15671K-&gt;10445K(299008K), [Metaspace: 34997K-&gt;34997K(1079296K)], 0.0570176 secs] [Times: user=0.18 sys=0.01, real=0.06 secs]
+      2020-04-01 12:23:58 INFO  StateStoreCoordinatorRef:54 - Registered StateStoreCoordinator endpoint
+      19.510: [GC (Allocation Failure) [PSYoungGen: 129024K-&gt;11253K(187904K)] 139469K-&gt;22548K(347648K), 0.0143870 secs] [Times: user=0.03 sys=0.01, real=0.02 secs]
+      21.764: [GC (Allocation Failure) [PSYoungGen: 187893K-&gt;12791K(217088K)] 199188K-&gt;28737K(376832K), 0.0211322 secs] [Times: user=0.04 sys=0.01, real=0.02 secs]
+      23.504: [GC (Metadata GC Threshold) [PSYoungGen: 140988K-&gt;16550K(256512K)] 156934K-&gt;32505K(416256K), 0.0196418 secs] [Times: user=0.06 sys=0.03, real=0.02 secs]
+      23.524: [Full GC (Metadata GC Threshold) [PSYoungGen: 16550K-&gt;0K(256512K)] [ParOldGen: 15954K-&gt;22861K(228352K)] 32505K-&gt;22861K(484864K), [Metaspace: 58418K-&gt;58418K(1099776K)], 0.1790902 secs] [Times: user=0.90 sys=0.01, real=0.18 secs]
+      2020-04-01 12:24:14 INFO  CodeGenerator:54 - Code generated in 438.298091 ms
+      2020-04-01 12:24:14 INFO  CodeGenerator:54 - Code generated in 26.999012 ms
+      2020-04-01 12:24:14 INFO  SparkContext:54 - Starting job: count at IForest.scala:405
+      2020-04-01 12:24:14 INFO  DAGScheduler:54 - Registering RDD 7 (count at IForest.scala:405)
+      2020-04-01 12:24:14 INFO  DAGScheduler:54 - Got job 0 (count at IForest.scala:405) with 1 output partitions
+      2020-04-01 12:24:14 INFO  DAGScheduler:54 - Final stage: ResultStage 1 (count at IForest.scala:405)
+      ...
+      2020-04-01 12:24:16 INFO  TaskSchedulerImpl:54 - Removed TaskSet 1.0, whose tasks have all completed, from pool
+      2020-04-01 12:24:16 INFO  DAGScheduler:54 - ResultStage 1 (count at IForest.scala:405) finished in 0.130 s
+      2020-04-01 12:24:16 INFO  DAGScheduler:54 - Job 0 finished: count at IForest.scala:405, took 2.236822 s
+      27.194: [GC (Allocation Failure) [PSYoungGen: 239616K-&gt;13553K(258560K)] 262477K-&gt;36423K(486912K), 0.0176914 secs] [Times: user=0.04 sys=0.01, real=0.01 secs]
+      2020-04-01 12:24:16 INFO  ContextCleaner:54 - Cleaned accumulator 27
+      ...
+      Row(bc_enc=7, BP=10, mg_enc=0, pc_enc=13, features=DenseVector([7.0, 10.0, 0.0, 13.0]), anomalyScore=0.49313587533991315, prediction=1.0)
+
+      ...
+
+      Row(bc_enc=6, BP=81, mg_enc=1, pc_enc=26, features=DenseVector([6.0, 81.0, 1.0, 26.0]), anomalyScore=0.5090716735357099, prediction=1.0)
+      Row(bc_enc=6, BP=54, mg_enc=1, pc_enc=26, features=DenseVector([6.0, 54.0, 1.0, 26.0]), anomalyScore=0.5090716735357099, prediction=1.0)
+      Row(bc_enc=23, BP=963, mg_enc=1, pc_enc=26, features=DenseVector([23.0, 963.0, 1.0, 26.0]), anomalyScore=0.5172452140585105, prediction=1.0)
+      Row(bc_enc=27, BP=10, mg_enc=2, pc_enc=8, features=DenseVector([27.0, 10.0, 2.0, 8.0]), anomalyScore=0.5502161727558241, prediction=1.0)
+      2020-04-01 13:05:48 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+      2020-04-01 13:05:48 INFO  AbstractConnector:318 - Stopped Spark@29234d64{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+      2020-04-01 13:05:48 INFO  SparkUI:54 - Stopped Spark web UI at http://MASTER:4040
+      2020-04-01 13:05:48 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+      2020-04-01 13:05:48 INFO  MemoryStore:54 - MemoryStore cleared
+      2020-04-01 13:05:48 INFO  BlockManager:54 - BlockManager stopped
+      2020-04-01 13:05:48 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+      2020-04-01 13:05:48 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+      2020-04-01 13:05:48 INFO  SparkContext:54 - Successfully stopped SparkContext
+      2020-04-01 13:05:48 INFO  ShutdownHookManager:54 - Shutdown hook called
+      2020-04-01 13:05:48 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-af9d6cf7-f1e4-47c5-891c-298746f4d7b3
+      2020-04-01 13:05:48 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-af9d6cf7-f1e4-47c5-891c-298746f4d7b3/pyspark-05fa2877-7dad-40ab-aefb-c16df125c454
+      2020-04-01 13:05:48 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-d49710c4-037d-4e87-bfcd-e545dd746408
+      Heap
+       PSYoungGen      total 273920K, used 244612K [0x00000000eab00000, 0x00000000ffc00000, 0x0000000100000000)
+        eden space 208896K, 97% used [0x00000000eab00000,0x00000000f7177fb8,0x00000000f7700000)
+        from space 65024K, 63% used [0x00000000fb880000,0x00000000fe0e9340,0x00000000ff800000)
+        to   space 67072K, 0% used [0x00000000f7700000,0x00000000f7700000,0x00000000fb880000)
+       ParOldGen       total 699392K, used 476266K [0x00000000c0000000, 0x00000000eab00000, 0x00000000eab00000)
+        object space 699392K, 68% used [0x00000000c0000000,0x00000000dd11aa98,0x00000000eab00000)
+       Metaspace       used 77568K, capacity 78560K, committed 78720K, reserved 1116160K
+        class space    used 11319K, capacity 11530K, committed 11648K, reserved 1048576K
+
+TRY 3 WITH SMALLER DATASET CONTAINING 25K RECORDS WITH TWO WORKERS ###
+  CODE CHANGE:
+    df_1 = pd.read_csv("/home/ashish/data_files/big_data-f25k.csv", names=['BCD', 'BP', 'MGC', 'PROD-IA-CODE'], header=None)
+
+  SPARK-SUBMIT:
+    $ ./bin/spark-submit --master yarn --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC' --conf spark.executor.memoryOverhead=100 /home/ashish/titicaca_sif.py
+
+  SUCCESSFUL ATTEMPT LOGS FOR DATASET WITH 25K RECORDS (400 KB):    
+    (base) [admin@MASTER spark]$ ./bin/spark-submit --master yarn --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC' --conf spark.executor.memoryOverhead=100 /home/ashish/titicaca_sif.py
+    1.342: [GC (Allocation Failure) [PSYoungGen: 64512K-&gt;6139K(74752K)] 64512K-&gt;6147K(245760K), 0.0126801 secs] [Times: user=0.03 sys=0.01, real=0.01 secs]
+    2.366: [GC (Allocation Failure) [PSYoungGen: 70651K-&gt;6321K(74752K)] 70659K-&gt;6409K(245760K), 0.0122979 secs] [Times: user=0.05 sys=0.01, real=0.01 secs]
+    2020-04-01 17:05:32 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+    2020-04-01 17:05:34 INFO  SparkContext:54 - Running Spark version 2.4.0
+    2020-04-01 17:05:35 INFO  SparkContext:54 - Submitted application: IForestExample
+    5.552: [GC (Allocation Failure) [PSYoungGen: 70833K-&gt;6622K(74752K)] 70921K-&gt;6718K(245760K), 0.0147351 secs] [Times: user=0.04 sys=0.00, real=0.01 secs]
+    ...
+    2020-04-01 17:05:36 INFO  Server:419 - Started @6836ms
+    6.872: [GC (Allocation Failure) [PSYoungGen: 64512K-&gt;5881K(74752K)] 69414K-&gt;10792K(165888K), 0.0113319 secs] [Times: user=0.04 sys=0.00, real=0.01 secs]
+    2020-04-01 17:05:36 INFO  AbstractConnector:278 - Started ServerConnector@519a67ef{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+    2020-04-01 17:05:36 INFO  Utils:54 - Successfully started service 'SparkUI' on port 4040.
+    ...
+    2020-04-01 17:05:36 INFO  SparkUI:54 - Bound SparkUI to 0.0.0.0, and started at http://MASTER:4040
+    7.704: [GC (Allocation Failure) [PSYoungGen: 70393K-&gt;6976K(113152K)] 75304K-&gt;11895K(204288K), 0.0137489 secs] [Times: user=0.05 sys=0.01, real=0.01 secs]
+    8.563: [GC (Metadata GC Threshold) [PSYoungGen: 112331K-&gt;7663K(113664K)] 117249K-&gt;12837K(204800K), 0.0153703 secs] [Times: user=0.06 sys=0.01, real=0.01 secs]
+    8.579: [Full GC (Metadata GC Threshold) [PSYoungGen: 7663K-&gt;0K(113664K)] [ParOldGen: 5174K-&gt;11204K(139264K)] 12837K-&gt;11204K(252928K), [Metaspace: 34959K-&gt;34959K(1079296K)], 0.0574233 secs] [Times: user=0.20 sys=0.02, real=0.06 secs]
+    ...
+    2020-04-01 17:05:46 INFO  Client:54 - Uploading resource file:/tmp/spark-67bb57ea-2a09-49e0-bd32-119cf016e6e6/__spark_libs__1886044063955375668.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588834297947_0001/__spark_libs__1886044063955375668.zip
+    24.144: [GC (Allocation Failure) [PSYoungGen: 105974K-&gt;8162K(162304K)] 117178K-&gt;22247K(301568K), 0.0102522 secs] [Times: user=0.03 sys=0.02, real=0.01 secs]
+    87.138: [GC (Allocation Failure) [PSYoungGen: 162274K-&gt;6331K(181248K)] 176359K-&gt;20424K(320512K), 0.0097693 secs] [Times: user=0.01 sys=0.01, real=0.01 secs]
+    2020-04-01 17:07:23 INFO  Client:54 - Uploading resource file:/usr/local/spark/python/lib/pyspark.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588834297947_0001/pyspark.zip
+    2020-04-01 17:07:24 INFO  Client:54 - Uploading resource file:/usr/local/spark/python/lib/py4j-0.10.7-src.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588834297947_0001/py4j-0.10.7-src.zip
+    2020-04-01 17:07:24 INFO  Client:54 - Uploading resource file:/tmp/spark-67bb57ea-2a09-49e0-bd32-119cf016e6e6/__spark_conf__7117776345077295397.zip -&gt; hdfs://master:9000/user/admin/.sparkStaging/application_1588834297947_0001/__spark_conf__.zip
+    2020-04-01 17:07:25 INFO  SecurityManager:54 - Changing view acls to: admin
+    2020-04-01 17:07:25 INFO  SecurityManager:54 - Changing modify acls to: admin
+    2020-04-01 17:07:25 INFO  SecurityManager:54 - Changing view acls groups to:
+    2020-04-01 17:07:25 INFO  SecurityManager:54 - Changing modify acls groups to:
+    2020-04-01 17:07:25 INFO  SecurityManager:54 - SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(admin); groups with view permissions: Set(); users  with modify permissions: Set(admin); groups with modify permissions: Set()
+    116.260: [GC (Allocation Failure) [PSYoungGen: 177339K-&gt;5796K(199680K)] 191432K-&gt;19897K(338944K), 0.0092010 secs] [Times: user=0.03 sys=0.01, real=0.01 secs]
+    2020-04-01 17:07:27 INFO  Client:54 - Submitting application application_1588834297947_0001 to ResourceManager
+    2020-04-01 17:07:28 INFO  YarnClientImpl:273 - Submitted application application_1588834297947_0001
+    2020-04-01 17:07:28 INFO  SchedulerExtensionServices:54 - Starting Yarn extension services with app application_1588834297947_0001 and attemptId None
+    2020-04-01 17:07:29 INFO  Client:54 - Application report for application_1588834297947_0001 (state: ACCEPTED)
+    2020-04-01 17:07:29 INFO  Client:54 -
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1588851448092
+         final status: UNDEFINED
+         tracking URL: http://MASTER:8088/proxy/application_1588834297947_0001/
+         user: admin
+    2020-04-01 17:07:30 INFO  Client:54 - Application report for application_1588834297947_0001 (state: ACCEPTED)
+    ...
+    2020-04-01 17:07:37 INFO  YarnClientSchedulerBackend:54 - Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -&gt; MASTER, PROXY_URI_BASES -&gt; http://MASTER:8088/proxy/application_1588834297947_0001), /proxy/application_1588834297947_0001
+    2020-04-01 17:07:37 INFO  JettyUtils:54 - Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /jobs, /jobs/json, /jobs/job, /jobs/job/json, /stages, /stages/json, /stages/stage, /stages/stage/json, /stages/pool, /stages/pool/json, /storage, /storage/json, /storage/rdd, /storage/rdd/json, /environment, /environment/json, /executors, /executors/json, /executors/threadDump, /executors/threadDump/json, /static, /, /api, /jobs/job/kill, /stages/stage/kill.
+    2020-04-01 17:07:37 INFO  YarnSchedulerBackend$YarnSchedulerEndpoint:54 - ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+    2020-04-01 17:07:37 INFO  Client:54 - Application report for application_1588834297947_0001 (state: RUNNING)
+    2020-04-01 17:07:37 INFO  Client:54 -
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 10.85.62.107
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1588851448092
+         final status: UNDEFINED
+         tracking URL: http://MASTER:8088/proxy/application_1588834297947_0001/
+         user: admin
+    2020-04-01 17:07:37 INFO  YarnClientSchedulerBackend:54 - Application application_1588834297947_0001 has started running.
+    2020-04-01 17:07:37 INFO  Utils:54 - Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45407.
+    2020-04-01 17:07:37 INFO  NettyBlockTransferService:54 - Server created on MASTER:45407
+    ...
+    2020-04-01 17:07:49 WARN  TaskSetManager:66 - Stage 0 contains a task of very large size (184 KB). The maximum recommended task size is 100 KB.
+    2020-04-01 17:07:49 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, VX5DPFVPZ06, executor 1, partition 0, PROCESS_LOCAL, 188820 bytes)
+    139.629: [GC (Allocation Failure) [PSYoungGen: 239521K-&gt;20986K(286208K)] 274698K-&gt;102387K(495104K), 0.0309888 secs] [Times: user=0.13 sys=0.04, real=0.03 secs]
+    ...
+    144.415: [GC (Allocation Failure) [PSYoungGen: 286202K-&gt;40946K(306176K)] 367603K-&gt;152395K(515072K), 0.0355162 secs] [Times: user=0.15 sys=0.08, real=0.03 secs]
+    2020-04-01 17:07:54 INFO  ContextCleaner:54 - Cleaned accumulator 61
+    ...
+    147.590: [GC (Allocation Failure) [PSYoungGen: 163300K-&gt;29208K(252928K)] 372156K-&gt;238995K(718336K), 0.0347830 secs] [Times: user=0.22 sys=0.01, real=0.04 secs]
+    148.121: [GC (Allocation Failure) [PSYoungGen: 185880K-&gt;26464K(237568K)] 395667K-&gt;241468K(702976K), 0.0185328 secs] [Times: user=0.11 sys=0.01, real=0.01 secs]
+    148.605: [GC (Allocation Failure) [PSYoungGen: 189280K-&gt;2848K(248320K)] 404284K-&gt;244900K(713728K), 0.0265620 secs] [Times: user=0.10 sys=0.05, real=0.03 secs]
+    149.049: [GC (Allocation Failure) [PSYoungGen: 165664K-&gt;2816K(261120K)] 407716K-&gt;247660K(726528K), 0.0117391 secs] [Times: user=0.05 sys=0.01, real=0.01 secs]
+    149.462: [GC (Allocation Failure) [PSYoungGen: 181504K-&gt;3104K(262656K)] 426348K-&gt;250732K(728064K), 0.0143250 secs] [Times: user=0.05 sys=0.01, real=0.01 secs]
+    149.864: [GC (Allocation Failure) [PSYoungGen: 181792K-&gt;3136K(261632K)] 429420K-&gt;253796K(727040K), 0.0080476 secs] [Times: user=0.03 sys=0.00, real=0.01 secs]
+    150.265: [GC (Allocation Failure) [PSYoungGen: 186432K-&gt;3168K(263168K)] 437092K-&gt;256884K(728576K), 0.0061496 secs] [Times: user=0.03 sys=0.00, real=0.00 secs]
+    150.665: [GC (Allocation Failure) [PSYoungGen: 186464K-&gt;3136K(264192K)] 440180K-&gt;259940K(729600K), 0.0076836 secs] [Times: user=0.03 sys=0.02, real=0.01 secs]
+    151.099: [GC (Allocation Failure) [PSYoungGen: 195136K-&gt;6304K(266240K)] 451940K-&gt;263108K(731648K), 0.0079443 secs] [Times: user=0.03 sys=0.00, real=0.01 secs]
+    151.519: [GC (Allocation Failure) [PSYoungGen: 198304K-&gt;9408K(268288K)] 455108K-&gt;266212K(733696K), 0.0099006 secs] [Times: user=0.03 sys=0.00, real=0.01 secs]
+    151.966: [GC (Allocation Failure) [PSYoungGen: 213696K-&gt;12896K(270848K)] 470500K-&gt;269700K(736256K), 0.0078615 secs] [Times: user=0.03 sys=0.00, real=0.01 secs]
+    ...
+    2020-04-01 17:08:06 INFO  ContextCleaner:54 - Cleaned accumulator 91
+    2020-04-01 17:08:06 INFO  BlockManagerInfo:54 - Removed broadcast_3_piece0 on MASTER:45407 in memory (size: 10.6 KB, free: 365.6 MB)
+    2020-04-01 17:08:06 INFO  BlockManagerInfo:54 - Removed broadcast_3_piece0 on VX5DPFVPZ06:42563 in memory (size: 10.6 KB, free: 366.3 MB)
+    2020-04-01 17:08:06 INFO  SparkContext:54 - Starting job: collect at IForest.scala:539
+    2020-04-01 17:08:06 INFO  DAGScheduler:54 - Registering RDD 18 (flatMap at IForest.scala:475)
+    2020-04-01 17:08:06 INFO  DAGScheduler:54 - Got job 2 (collect at IForest.scala:539) with 2 output partitions
+    ...
+    2020-04-01 17:08:57 INFO  DAGScheduler:54 - Job 6 finished: count at IForest.scala:87, took 0.747809 s
+    208.067: [GC (Allocation Failure) [PSYoungGen: 237700K-&gt;21050K(278528K)] 494512K-&gt;277870K(743936K), 0.0212334 secs] [Times: user=0.12 sys=0.00, real=0.02 secs]
+    2020-04-01 17:08:57 INFO  ContextCleaner:54 - Cleaned accumulator 234
+    ...
+    2020-04-01 17:08:57 INFO  BlockManagerInfo:54 - Removed broadcast_5_piece0 on MASTER:45407 in memory (size: 4.0 KB, free: 365.6 MB)
+    2020-04-01 17:08:57 INFO  BlockManagerInfo:54 - Removed broadcast_5_piece0 on VX5DPFVPZ06:42563 in memory (size: 4.0 KB, free: 365.6 MB)
+    ...
+    2020-04-01 17:09:00 INFO  TaskSetManager:54 - Finished task 1.0 in stage 11.0 (TID 19) in 756 ms on VX5DPFVPZ06 (executor 1) (2/2)
+    2020-04-01 17:09:00 INFO  YarnScheduler:54 - Removed TaskSet 11.0, whose tasks have all completed, from pool
+    2020-04-01 17:09:00 INFO  DAGScheduler:54 - ResultStage 11 (collect at /home/ashish/titicaca_sif.py:68) finished in 2.141 s
+    2020-04-01 17:09:00 INFO  DAGScheduler:54 - Job 7 finished: collect at /home/ashish/titicaca_sif.py:68, took 2.146142 s
+    <i style="color: green;">Row(bc_enc=7, BP=10, mg_enc=0, pc_enc=13, features=DenseVector([7.0, 10.0, 0.0, 13.0]), anomalyScore=0.48188775467190864, prediction=0.0)
+    ...
+    Row(bc_enc=12, BP=194, mg_enc=0, pc_enc=15, features=DenseVector([12.0, 194.0, 0.0, 15.0]), anomalyScore=0.47085503202503476, prediction=0.0)
+    Row(bc_enc=13, BP=34, mg_enc=0, pc_enc=15, features=DenseVector([13.0, 34.0, 0.0, 15.0]), anomalyScore=0.47085503202503476, prediction=0.0)</i>
+    2020-04-01 17:09:08 INFO  SparkContext:54 - Invoking stop() from shutdown hook
+    2020-04-01 17:09:08 INFO  AbstractConnector:318 - Stopped Spark@519a67ef{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+    2020-04-01 17:09:08 INFO  SparkUI:54 - Stopped Spark web UI at http://MASTER:4040
+    2020-04-01 17:09:08 INFO  YarnClientSchedulerBackend:54 - Interrupting monitor thread
+    2020-04-01 17:09:08 INFO  YarnClientSchedulerBackend:54 - Shutting down all executors
+    2020-04-01 17:09:08 INFO  YarnSchedulerBackend$YarnDriverEndpoint:54 - Asking each executor to shut down
+    2020-04-01 17:09:08 INFO  SchedulerExtensionServices:54 - Stopping SchedulerExtensionServices
+    (serviceOption=None,
+     services=List(),
+     started=false)
+    2020-04-01 17:09:08 INFO  YarnClientSchedulerBackend:54 - Stopped
+    2020-04-01 17:09:08 INFO  MapOutputTrackerMasterEndpoint:54 - MapOutputTrackerMasterEndpoint stopped!
+    2020-04-01 17:09:08 INFO  MemoryStore:54 - MemoryStore cleared
+    2020-04-01 17:09:08 INFO  BlockManager:54 - BlockManager stopped
+    2020-04-01 17:09:08 INFO  BlockManagerMaster:54 - BlockManagerMaster stopped
+    2020-04-01 17:09:08 INFO  OutputCommitCoordinator$OutputCommitCoordinatorEndpoint:54 - OutputCommitCoordinator stopped!
+    2020-04-01 17:09:08 INFO  SparkContext:54 - Successfully stopped SparkContext
+    2020-04-01 17:09:08 INFO  ShutdownHookManager:54 - Shutdown hook called
+    2020-04-01 17:09:08 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-b6d0b1f2-37de-4880-a4f0-8faca08945b7
+    2020-04-01 17:09:08 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-67bb57ea-2a09-49e0-bd32-119cf016e6e6/pyspark-a25cc048-588f-4a43-8cfb-869791de0881
+    2020-04-01 17:09:08 INFO  ShutdownHookManager:54 - Deleting directory /tmp/spark-67bb57ea-2a09-49e0-bd32-119cf016e6e6
+    Heap
+     PSYoungGen      total 278528K, used 192620K [0x00000000eab00000, 0x00000000ffd80000, 0x0000000100000000)
+      eden space 220160K, 77% used [0x00000000eab00000,0x00000000f528c810,0x00000000f8200000)
+      from space 58368K, 36% used [0x00000000f8200000,0x00000000f968e950,0x00000000fbb00000)
+      to   space 55808K, 0% used [0x00000000fc700000,0x00000000fc700000,0x00000000ffd80000)
+     ParOldGen       total 465408K, used 256820K [0x00000000c0000000, 0x00000000dc680000, 0x00000000eab00000)
+      object space 465408K, 55% used [0x00000000c0000000,0x00000000cfacd070,0x00000000dc680000)
+     Metaspace       used 87855K, capacity 88844K, committed 89176K, reserved 1126400K
+      class space    used 12375K, capacity 12595K, committed 12672K, reserved 1048576K
+    (base) [admin@MASTER spark]$
+    
+TRY 4 WITH 129K RECORDS IN DATASET AND TWO WORKERS IN CLUSTER:
+
+  SPARK-SUBMIT:
+    $ ./bin/spark-submit --master yarn --conf 'spark.driver.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps' --conf 'spark.executor.extraJavaOptions=-XX:+UseCompressedOops -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC'  /home/ashish/titicaca_sif.py
+
+
+  ERRORS: 
+    Java GC (Allocation Failure)
+    OutOfMemoryError
+    
+    2019-02-15T15:47:27.551+0000: [GC (Allocation Failure) [PSYoungGen: 312512K-&gt;57563K(390144K)] 498744K-&gt;243803K(1409024K), 0.0153696 secs] [Times: user=0.05 sys=0.00, real=0.02 secs] 
+    
+    MINE: 35.485: [GC (Allocation Failure) [PSYoungGen: 168960K-&gt;8689K(177664K)] 175909K-&gt;17968K(284160K), 0.0114801 secs] [Times: user=0.03 sys=0.02, real=0.01 secs]
+    
+  EXPLANATION:
+    % 'OutOfMemoryError': Usually, this error is thrown when there is insufficient space to allocate an object in the Java heap.
+    
+    % GC (Allocation Failure): Allocation Failure” means that there is an allocation request that is bigger than the available space in young generation.
+    
+    % OutOfMemory is an error you can not recover from - the JVM will die at this point.
+    
+    % GC (Allocation Failure): Allocation Failure is the reason why GC will kick in (and do a minor collection). At this point some things might happen, like: enough space is freed for the new allocation to fit into young generation. Or that did not happen and some objects will be promoted to the old generation. If they can't be promoted, a full GC might be triggered - and if that does not free enough space an OutOfMemory might be thrown. [&lt;A href="https://stackoverflow.com/questions/43862031/gc-allocation-failure-vs-outofmemoryerror-exception" target="_blank"&gt;Ref&lt;/A&gt;]
+
+  LOGS:
+    Traceback (most recent call last):
+      File "/home/ashish/titicaca_sif.py", line 47, in &lt;module&gt;
+      model = iforest.fit(df)
+      File "/usr/local/spark/python/lib/pyspark.zip/pyspark/ml/base.py", line 132, in fit
+      File "/usr/local/spark/python/lib/pyspark.zip/pyspark/ml/wrapper.py", line 295, in _fit
+      File "/usr/local/spark/python/lib/pyspark.zip/pyspark/ml/wrapper.py", line 292, in _fit_java
+      File "/usr/local/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+      File "/usr/local/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 63, in deco
+      File "/usr/local/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+    py4j.protocol.Py4JJavaError: An error occurred while calling o76.fit.
+    : java.lang.OutOfMemoryError: GC overhead limit exceeded
+        at java.lang.reflect.Array.newInstance(Array.java:75)
+</pre>

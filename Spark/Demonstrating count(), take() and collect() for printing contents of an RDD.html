@@ -1,0 +1,275 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Contents of the file "links.csv":
+
+<i style="color: blue">https://survival8.blogspot.com/2020/03/the-train-and-wheelbarrow-lesson-from.html
+https://survival8.blogspot.com/2020/03/yes-bank-to-be-dropped-from-nifty50.html
+https://survival8.blogspot.com/2020/03/coronavirus-disease-covid-19-advice-for.html</i>
+
+PySpark Python Code:
+
+<i style="color: blue">from time import time
+
+from bs4 import BeautifulSoup
+from urllib.request import urlopen
+
+from pyspark import SparkContext
+
+sc = SparkContext()
+
+start_time = time()
+
+url_list_path = '/home/ashish/Desktop/links.csv'
+
+urls_lines = sc.textFile(url_list_path)
+
+def processRecord(url):
+    if len(url) > 0:
+        page = urlopen(url)
+        soup = BeautifulSoup(page, features="lxml")
+        rtnVal = soup.prettify()
+    else:
+        url = "NA"
+        rtnVal = "NA"
+    return [url, rtnVal]
+
+temp = urls_lines.map(processRecord)
+
+
+print("Number of rows: {}".format(temp.count()))
+
+print("Print using .take(2)")
+for i in temp.take(2):
+    print(i[0])
+
+print("Print using .take(3)")
+for i in temp.take(3):
+    print(i[0])
+
+print("Print using .collect()")
+temp_rdd = temp.collect()
+for elem in temp_rdd:
+    print(elem[0])
+
+print("Time taken: " + str(time() - start_time)) </i>
+
+Logs:
+
+<i style="color: green">(base) ashish@ashish-vBox:~/Desktop/workspace/VisualStudioCode$ /usr/local/spark/bin/spark-submit --master local /home/ashish/Desktop/spark_script_2.py 100
+2020-03-18 22:35:10,382 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-03-18 22:35:11,265 INFO spark.SparkContext: Running Spark version 2.4.4
+2020-03-18 22:35:11,304 INFO spark.SparkContext: Submitted application: spark_script_2.py
+2020-03-18 22:35:11,408 INFO spark.SecurityManager: Changing view acls to: ashish
+2020-03-18 22:35:11,408 INFO spark.SecurityManager: Changing modify acls to: ashish
+2020-03-18 22:35:11,408 INFO spark.SecurityManager: Changing view acls groups to: 
+2020-03-18 22:35:11,409 INFO spark.SecurityManager: Changing modify acls groups to: 
+2020-03-18 22:35:11,409 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+2020-03-18 22:35:11,759 INFO util.Utils: Successfully started service 'sparkDriver' on port 33071.
+2020-03-18 22:35:11,795 INFO spark.SparkEnv: Registering MapOutputTracker
+2020-03-18 22:35:11,826 INFO spark.SparkEnv: Registering BlockManagerMaster
+2020-03-18 22:35:11,831 INFO storage.BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+2020-03-18 22:35:11,832 INFO storage.BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+2020-03-18 22:35:11,845 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-7cb79903-ab0e-4642-bd12-25ef54bbd44e
+2020-03-18 22:35:11,878 INFO memory.MemoryStore: MemoryStore started with capacity 366.3 MB
+2020-03-18 22:35:11,906 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+2020-03-18 22:35:12,026 INFO util.log: Logging initialized @2897ms
+2020-03-18 22:35:12,138 INFO server.Server: jetty-9.3.z-SNAPSHOT, build timestamp: unknown, git hash: unknown
+2020-03-18 22:35:12,166 INFO server.Server: Started @3038ms
+2020-03-18 22:35:12,210 INFO server.AbstractConnector: Started ServerConnector@55037806{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 22:35:12,211 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+2020-03-18 22:35:12,274 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@30a8bf88{/jobs,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,276 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5f35d61{/jobs/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,276 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@66e2fd32{/jobs/job,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,279 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6973d583{/jobs/job/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,286 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@76f48599{/stages,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,295 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@70eed18{/stages/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,296 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3c7c2d2e{/stages/stage,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,297 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6948fc4f{/stages/stage/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,299 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3480b915{/stages/pool,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,300 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@5e79fc2a{/stages/pool/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,302 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@32e9a708{/storage,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,303 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@1c6d8f9e{/storage/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,304 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2d94d517{/storage/rdd,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,305 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3c9df423{/storage/rdd/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,306 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@4333c55f{/environment,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,308 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3352a3d8{/environment/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,309 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@3865f4c8{/executors,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,310 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6b8a230b{/executors/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,313 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@364e1a18{/executors/threadDump,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,315 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@10a4336a{/executors/threadDump/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,329 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7705602{/static,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,339 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@9aa719b{/,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,341 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6596bf33{/api,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,342 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@2049b403{/jobs/job/kill,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,344 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@7f9879f6{/stages/stage/kill,null,AVAILABLE,@Spark}
+2020-03-18 22:35:12,348 INFO ui.SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ashish-vBox:4040
+2020-03-18 22:35:12,520 INFO executor.Executor: Starting executor ID driver on host localhost
+2020-03-18 22:35:12,617 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43917.
+2020-03-18 22:35:12,618 INFO netty.NettyBlockTransferService: Server created on ashish-vBox:43917
+2020-03-18 22:35:12,622 INFO storage.BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+2020-03-18 22:35:12,657 INFO storage.BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ashish-vBox, 43917, None)
+2020-03-18 22:35:12,666 INFO storage.BlockManagerMasterEndpoint: Registering block manager ashish-vBox:43917 with 366.3 MB RAM, BlockManagerId(driver, ashish-vBox, 43917, None)
+2020-03-18 22:35:12,670 INFO storage.BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ashish-vBox, 43917, None)
+2020-03-18 22:35:12,671 INFO storage.BlockManager: Initialized BlockManager: BlockManagerId(driver, ashish-vBox, 43917, None)
+2020-03-18 22:35:12,896 INFO handler.ContextHandler: Started o.s.j.s.ServletContextHandler@6f75dda4{/metrics/json,null,AVAILABLE,@Spark}
+2020-03-18 22:35:13,711 INFO memory.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 236.7 KB, free 366.1 MB)
+2020-03-18 22:35:13,792 INFO memory.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 22.9 KB, free 366.0 MB)
+2020-03-18 22:35:13,797 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on ashish-vBox:43917 (size: 22.9 KB, free: 366.3 MB)
+2020-03-18 22:35:13,806 INFO spark.SparkContext: Created broadcast 0 from textFile at NativeMethodAccessorImpl.java:0
+2020-03-18 22:35:14,005 INFO mapred.FileInputFormat: Total input paths to process : 1
+2020-03-18 22:35:14,117 INFO spark.SparkContext: Starting job: count at /home/ashish/Desktop/spark_script_2.py:29
+2020-03-18 22:35:14,153 INFO scheduler.DAGScheduler: Got job 0 (count at /home/ashish/Desktop/spark_script_2.py:29) with 1 output partitions
+2020-03-18 22:35:14,154 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (count at /home/ashish/Desktop/spark_script_2.py:29)
+2020-03-18 22:35:14,155 INFO scheduler.DAGScheduler: Parents of final stage: List()
+2020-03-18 22:35:14,157 INFO scheduler.DAGScheduler: Missing parents: List()
+2020-03-18 22:35:14,173 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (PythonRDD[2] at count at /home/ashish/Desktop/spark_script_2.py:29), which has no missing parents
+2020-03-18 22:35:14,217 INFO memory.MemoryStore: Block broadcast_1 stored as values in memory (estimated size 8.2 KB, free 366.0 MB)
+2020-03-18 22:35:14,230 INFO memory.MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.3 KB, free 366.0 MB)
+2020-03-18 22:35:14,233 INFO storage.BlockManagerInfo: Added broadcast_1_piece0 in memory on ashish-vBox:43917 (size: 5.3 KB, free: 366.3 MB)
+2020-03-18 22:35:14,235 INFO spark.SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1161
+2020-03-18 22:35:14,284 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (PythonRDD[2] at count at /home/ashish/Desktop/spark_script_2.py:29) (first 15 tasks are for partitions Vector(0))
+2020-03-18 22:35:14,285 INFO scheduler.TaskSchedulerImpl: Adding task set 0.0 with 1 tasks
+2020-03-18 22:35:14,395 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7895 bytes)
+2020-03-18 22:35:14,417 INFO executor.Executor: Running task 0.0 in stage 0.0 (TID 0)
+2020-03-18 22:35:14,552 INFO rdd.HadoopRDD: Input split: file:/home/ashish/Desktop/links.csv:0+246
+2020-03-18 22:35:30,897 INFO python.PythonRunner: Times: total = 16313, boot = 411, init = 155, finish = 15747
+2020-03-18 22:35:30,929 INFO executor.Executor: Finished task 0.0 in stage 0.0 (TID 0). 1504 bytes result sent to driver
+2020-03-18 22:35:30,975 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 16617 ms on localhost (executor driver) (1/1)
+2020-03-18 22:35:30,995 INFO python.PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 46285
+2020-03-18 22:35:30,997 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2020-03-18 22:35:31,008 INFO scheduler.DAGScheduler: ResultStage 0 (count at /home/ashish/Desktop/spark_script_2.py:29) finished in 16.794 s
+<b>2020-03-18 22:35:31,021 INFO scheduler.DAGScheduler: Job 0 finished: count at /home/ashish/Desktop/spark_script_2.py:29, took 16.903808 s
+Number of rows: 3
+Print using .take(2)</b>
+2020-03-18 22:35:31,097 INFO spark.SparkContext: Starting job: runJob at PythonRDD.scala:153
+2020-03-18 22:35:31,098 INFO scheduler.DAGScheduler: Got job 1 (runJob at PythonRDD.scala:153) with 1 output partitions
+2020-03-18 22:35:31,098 INFO scheduler.DAGScheduler: Final stage: ResultStage 1 (runJob at PythonRDD.scala:153)
+2020-03-18 22:35:31,098 INFO scheduler.DAGScheduler: Parents of final stage: List()
+2020-03-18 22:35:31,098 INFO scheduler.DAGScheduler: Missing parents: List()
+2020-03-18 22:35:31,099 INFO scheduler.DAGScheduler: Submitting ResultStage 1 (PythonRDD[3] at RDD at PythonRDD.scala:53), which has no missing parents
+2020-03-18 22:35:31,103 INFO memory.MemoryStore: Block broadcast_2 stored as values in memory (estimated size 6.9 KB, free 366.0 MB)
+2020-03-18 22:35:31,107 INFO memory.MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 4.5 KB, free 366.0 MB)
+2020-03-18 22:35:31,108 INFO storage.BlockManagerInfo: Added broadcast_2_piece0 in memory on ashish-vBox:43917 (size: 4.5 KB, free: 366.3 MB)
+2020-03-18 22:35:31,109 INFO spark.SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1161
+2020-03-18 22:35:31,111 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (PythonRDD[3] at RDD at PythonRDD.scala:53) (first 15 tasks are for partitions Vector(0))
+2020-03-18 22:35:31,111 INFO scheduler.TaskSchedulerImpl: Adding task set 1.0 with 1 tasks
+2020-03-18 22:35:31,113 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 7895 bytes)
+2020-03-18 22:35:31,114 INFO executor.Executor: Running task 0.0 in stage 1.0 (TID 1)
+2020-03-18 22:35:31,122 INFO rdd.HadoopRDD: Input split: file:/home/ashish/Desktop/links.csv:0+246
+2020-03-18 22:35:44,006 INFO python.PythonRunner: Times: total = 12880, boot = -213, init = 219, finish = 12874
+2020-03-18 22:35:44,011 INFO executor.Executor: Finished task 0.0 in stage 1.0 (TID 1). 196884 bytes result sent to driver
+2020-03-18 22:35:44,015 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 12902 ms on localhost (executor driver) (1/1)
+2020-03-18 22:35:44,016 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2020-03-18 22:35:44,018 INFO scheduler.DAGScheduler: ResultStage 1 (runJob at PythonRDD.scala:153) finished in 12.917 s
+2020-03-18 22:35:44,025 INFO scheduler.DAGScheduler: Job 1 finished: runJob at PythonRDD.scala:153, took 12.928439 s
+<b>https://survival8.blogspot.com/2020/03/the-train-and-wheelbarrow-lesson-from.html
+https://survival8.blogspot.com/2020/03/yes-bank-to-be-dropped-from-nifty50.html
+Print using .take(3)</b>
+2020-03-18 22:35:44,055 INFO spark.SparkContext: Starting job: runJob at PythonRDD.scala:153
+2020-03-18 22:35:44,061 INFO scheduler.DAGScheduler: Got job 2 (runJob at PythonRDD.scala:153) with 1 output partitions
+2020-03-18 22:35:44,061 INFO scheduler.DAGScheduler: Final stage: ResultStage 2 (runJob at PythonRDD.scala:153)
+2020-03-18 22:35:44,061 INFO scheduler.DAGScheduler: Parents of final stage: List()
+2020-03-18 22:35:44,061 INFO scheduler.DAGScheduler: Missing parents: List()
+2020-03-18 22:35:44,062 INFO scheduler.DAGScheduler: Submitting ResultStage 2 (PythonRDD[4] at RDD at PythonRDD.scala:53), which has no missing parents
+2020-03-18 22:35:44,071 INFO memory.MemoryStore: Block broadcast_3 stored as values in memory (estimated size 6.9 KB, free 366.0 MB)
+2020-03-18 22:35:44,077 INFO memory.MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.5 KB, free 366.0 MB)
+2020-03-18 22:35:44,078 INFO storage.BlockManagerInfo: Added broadcast_3_piece0 in memory on ashish-vBox:43917 (size: 4.5 KB, free: 366.3 MB)
+2020-03-18 22:35:44,079 INFO spark.SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1161
+2020-03-18 22:35:44,080 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (PythonRDD[4] at RDD at PythonRDD.scala:53) (first 15 tasks are for partitions Vector(0))
+2020-03-18 22:35:44,081 INFO scheduler.TaskSchedulerImpl: Adding task set 2.0 with 1 tasks
+2020-03-18 22:35:44,085 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2, localhost, executor driver, partition 0, PROCESS_LOCAL, 7895 bytes)
+2020-03-18 22:35:44,086 INFO executor.Executor: Running task 0.0 in stage 2.0 (TID 2)
+2020-03-18 22:35:44,093 INFO rdd.HadoopRDD: Input split: file:/home/ashish/Desktop/links.csv:0+246
+2020-03-18 22:35:57,105 INFO python.PythonRunner: Times: total = 13009, boot = 5, init = 158, finish = 12846
+2020-03-18 22:35:57,113 INFO executor.Executor: Finished task 0.0 in stage 2.0 (TID 2). 300249 bytes result sent to driver
+2020-03-18 22:35:57,120 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 13036 ms on localhost (executor driver) (1/1)
+2020-03-18 22:35:57,123 INFO scheduler.DAGScheduler: ResultStage 2 (runJob at PythonRDD.scala:153) finished in 13.058 s
+2020-03-18 22:35:57,124 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+2020-03-18 22:35:57,124 INFO scheduler.DAGScheduler: Job 2 finished: runJob at PythonRDD.scala:153, took 13.068261 s
+<b>https://survival8.blogspot.com/2020/03/the-train-and-wheelbarrow-lesson-from.html
+https://survival8.blogspot.com/2020/03/yes-bank-to-be-dropped-from-nifty50.html
+https://survival8.blogspot.com/2020/03/coronavirus-disease-covid-19-advice-for.html
+Print using .collect() </b>
+2020-03-18 22:35:57,159 INFO spark.SparkContext: Starting job: collect at /home/ashish/Desktop/spark_script_2.py:40
+2020-03-18 22:35:57,161 INFO scheduler.DAGScheduler: Got job 3 (collect at /home/ashish/Desktop/spark_script_2.py:40) with 1 output partitions
+2020-03-18 22:35:57,161 INFO scheduler.DAGScheduler: Final stage: ResultStage 3 (collect at /home/ashish/Desktop/spark_script_2.py:40)
+2020-03-18 22:35:57,161 INFO scheduler.DAGScheduler: Parents of final stage: List()
+2020-03-18 22:35:57,162 INFO scheduler.DAGScheduler: Missing parents: List()
+2020-03-18 22:35:57,164 INFO scheduler.DAGScheduler: Submitting ResultStage 3 (PythonRDD[5] at collect at /home/ashish/Desktop/spark_script_2.py:40), which has no missing parents
+2020-03-18 22:35:57,170 INFO memory.MemoryStore: Block broadcast_4 stored as values in memory (estimated size 6.3 KB, free 366.0 MB)
+2020-03-18 22:35:57,176 INFO memory.MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 4.0 KB, free 366.0 MB)
+2020-03-18 22:35:57,179 INFO storage.BlockManagerInfo: Added broadcast_4_piece0 in memory on ashish-vBox:43917 (size: 4.0 KB, free: 366.3 MB)
+2020-03-18 22:35:57,181 INFO spark.SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1161
+2020-03-18 22:35:57,183 INFO scheduler.DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (PythonRDD[5] at collect at /home/ashish/Desktop/spark_script_2.py:40) (first 15 tasks are for partitions Vector(0))
+2020-03-18 22:35:57,183 INFO scheduler.TaskSchedulerImpl: Adding task set 3.0 with 1 tasks
+2020-03-18 22:35:57,186 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3, localhost, executor driver, partition 0, PROCESS_LOCAL, 7895 bytes)
+2020-03-18 22:35:57,187 INFO executor.Executor: Running task 0.0 in stage 3.0 (TID 3)
+2020-03-18 22:35:57,193 INFO rdd.HadoopRDD: Input split: file:/home/ashish/Desktop/links.csv:0+246
+2020-03-18 22:36:07,927 INFO python.PythonRunner: Times: total = 10731, boot = 6, init = 150, finish = 10575
+2020-03-18 22:36:07,953 INFO executor.Executor: Finished task 0.0 in stage 3.0 (TID 3). 300249 bytes result sent to driver
+2020-03-18 22:36:07,962 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 10776 ms on localhost (executor driver) (1/1)
+2020-03-18 22:36:07,962 INFO scheduler.TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+2020-03-18 22:36:07,965 INFO scheduler.DAGScheduler: ResultStage 3 (collect at /home/ashish/Desktop/spark_script_2.py:40) finished in 10.798 s
+2020-03-18 22:36:07,972 INFO scheduler.DAGScheduler: Job 3 finished: collect at /home/ashish/Desktop/spark_script_2.py:40, took 10.811752 s
+<b>https://survival8.blogspot.com/2020/03/the-train-and-wheelbarrow-lesson-from.html
+https://survival8.blogspot.com/2020/03/yes-bank-to-be-dropped-from-nifty50.html
+https://survival8.blogspot.com/2020/03/coronavirus-disease-covid-19-advice-for.html 
+Time taken: 54.933162450790405 </b>
+2020-03-18 22:36:08,120 INFO spark.SparkContext: Invoking stop() from shutdown hook
+2020-03-18 22:36:08,132 INFO server.AbstractConnector: Stopped Spark@55037806{HTTP/1.1,[http/1.1]}{0.0.0.0:4040}
+2020-03-18 22:36:08,136 INFO ui.SparkUI: Stopped Spark web UI at http://ashish-vBox:4040
+2020-03-18 22:36:08,183 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+2020-03-18 22:36:08,205 INFO memory.MemoryStore: MemoryStore cleared
+2020-03-18 22:36:08,207 INFO storage.BlockManager: BlockManager stopped
+2020-03-18 22:36:08,211 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+2020-03-18 22:36:08,217 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+2020-03-18 22:36:08,225 INFO spark.SparkContext: Successfully stopped SparkContext
+2020-03-18 22:36:08,244 INFO util.ShutdownHookManager: Shutdown hook called
+2020-03-18 22:36:08,248 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-2d969d74-1dc3-47d5-aad7-7981b149533a
+2020-03-18 22:36:08,257 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-2d969d74-1dc3-47d5-aad7-7981b149533a/pyspark-07ffed25-c027-4b5f-8ccd-63c50519c3a2
+2020-03-18 22:36:08,260 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-ce48f4bc-81c5-48b9-9067-16a9d63c3c0b
+(base) ashish@ashish-vBox:~/Desktop/workspace/VisualStudioCode$ </i>
+
+Google Drive Link to code:
+https://drive.google.com/open?id=1MXgDzDCVjpqgyLLiVIzcwUHdawhwd_ma
+
+# Useful links
+# https://stackoverflow.com/questions/24677180/how-do-i-select-a-range-of-elements-in-spark-rdd
+</pre>

@@ -1,0 +1,166 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        i.ir {
+            color: red;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        i.ib {
+            color: blue;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<a class="customLink toggleBtn" href="https://github.com/ashishjain1547/pubML/blob/main/e11_pyspark_v3.3.0/Way%202%20-%20Difference%20in%20how%20access%20to%20str%20representation%20is%20provided.ipynb"
+    target="_blank">Download Code</a>
+
+<pre>
+<i class="ib">
+import seaborn as sns
+from pyspark.ml import Pipeline
+from pyspark.ml.feature import StringIndexer
+from pyspark import SparkContext
+from pyspark.sql import SQLContext # Main entry point for DataFrame and SQL functionality.
+
+sc = SparkContext.getOrCreate()
+sqlCtx = SQLContext(sc)
+
+import pyspark
+print(pyspark.__version__)
+</i>
+<i class="ig">3.3.0</i>
+
+<i class="ib">
+import pandas as pd
+df_student = pd.read_csv('./input/student.csv')
+df_student</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRg7pkTOSGOrknztX1fzqGd3nVCYrK17eeyDIZt6vmmEgQBUxfIs71iYJiUq6l9sBXxnpHf4HL42F_M-_3qlPchMJrtYq83intE5rSufdVdUy-DCkKLN2PBCA9zWM17iA8V2EZ66mI9kh929rcp2ttZRK0xgkg3372TCPY5yrL3xEYHg4vTdWzaWOBQA/s262/1.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="198" data-original-width="262" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRg7pkTOSGOrknztX1fzqGd3nVCYrK17eeyDIZt6vmmEgQBUxfIs71iYJiUq6l9sBXxnpHf4HL42F_M-_3qlPchMJrtYq83intE5rSufdVdUy-DCkKLN2PBCA9zWM17iA8V2EZ66mI9kh929rcp2ttZRK0xgkg3372TCPY5yrL3xEYHg4vTdWzaWOBQA/s400/1.png"/></a></div>
+
+<h1>Aim: To retrieve the first letter from a column of string type</h1>
+<h2>In Pandas</h2>
+<i class="ib">
+df_student['first_letter'] = df_student['FirstName'].str[0] 
+df_student
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRjMzglg5vXypQxiTGBi6JAVkwYIRIBy-r2Mp5TWNBR8C1GBrEptS5_u2fBRXUkWa0krabwI51yG7FdJDdlBLsc8cBXntgXU8hg7w5smn5vf3gg7WakhgyHC5IBU_6eNPdriAGHKRr75oNmFsQx3yDw4q5rYQbx5KpYahlcHcpXNuasqvQjaEQZ5N4Ag/s343/2.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="191" data-original-width="343" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRjMzglg5vXypQxiTGBi6JAVkwYIRIBy-r2Mp5TWNBR8C1GBrEptS5_u2fBRXUkWa0krabwI51yG7FdJDdlBLsc8cBXntgXU8hg7w5smn5vf3gg7WakhgyHC5IBU_6eNPdriAGHKRr75oNmFsQx3yDw4q5rYQbx5KpYahlcHcpXNuasqvQjaEQZ5N4Ag/s400/2.png"/></a></div>
+
+<h2>In Pandas API on Spark</h2>
+<i class="ib">from pyspark import pandas as ppd
+df_student_ppd = ppd.read_csv('./input/student.csv')
+df_student_ppd
+</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbQg2EmroojBM-b_hX-IWLxtJzyoN5W1BV7vCucOFDxEz75JU-30408-rmMinNpfRsCVLdUVl6-3tnDU6QfgRA2ftgY0Au4Nh5r4FX7YZM5SR4Qr4ugvaRFbdQE-T6mChIl_cCpIhOklSWUd5H0u0zUzj4LRJUC4IpRKYVff2_wZpVZXrF6E7JZQExVA/s273/3.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="192" data-original-width="273" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjbQg2EmroojBM-b_hX-IWLxtJzyoN5W1BV7vCucOFDxEz75JU-30408-rmMinNpfRsCVLdUVl6-3tnDU6QfgRA2ftgY0Au4Nh5r4FX7YZM5SR4Qr4ugvaRFbdQE-T6mChIl_cCpIhOklSWUd5H0u0zUzj4LRJUC4IpRKYVff2_wZpVZXrF6E7JZQExVA/s400/3.png"/></a></div>
+
+<h3>Errors in Pandas API on Spark when we try with the way of Plain Pandas </h3>
+
+<h4>1.</h4>
+<i class="ir">df_student_ppd['first_letter'] = df_student_ppd['FirstName'].str[0] 
+
+# In Pandas API on Spark
+TypeError: 'StringMethods' object is not subscriptable</i>
+
+<h4>2.</h4>
+<i class="ir">df_student_ppd['first_letter'] = df_student_ppd['FirstName'].str
+TypeError: Column assignment doesn't support type StringMethods # pyspark.pandas.strings.StringMethods as shown below.</i>
+
+<h4>3.</h4>
+<i class="ir">df_student_ppd['FirstName'].str
+&lt;pyspark.pandas.strings.StringMethods at 0x7f7474157520>
+</i>
+
+<h3>How we resolved it:</h3>
+
+<i class="ib">df_student_ppd['FirstName'] = df_student_ppd['FirstName'].astype(str)</i>
+
+<i class="ir"># If we do not do the above transformation, None values will result in an error.
+<b>TypeError: 'NoneType' object is not subscriptable</b></i>
+
+<i class="ib">df_student_ppd['first_letter'] = df_student_ppd['FirstName'].apply(lambda x: x[0])</i>
+
+<i class="ir">Warning:/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/sql/pandas/conversion.py:486: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+for column, series in pdf.iteritems():
+</i>
+
+<i class="ib">df_student_ppd</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEXRJVK94vcEEe_9RrhqMn37C3wLWr_zrYsaZO-_oFqzo19jrmSzlyGumDGUdTVi6WscXH9-ic9m9U4Wp52FCKtlS6E1iPmgWDGDN6_zoVaJ94sKmhtA2UCJ29aJW0u65dAP6IYHzw9gzrw0zvDvx0Cb5jRuAR9E4kMkHhknE7qQnotdgYTiUt93lrbw/s350/4.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="189" data-original-width="350" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEXRJVK94vcEEe_9RrhqMn37C3wLWr_zrYsaZO-_oFqzo19jrmSzlyGumDGUdTVi6WscXH9-ic9m9U4Wp52FCKtlS6E1iPmgWDGDN6_zoVaJ94sKmhtA2UCJ29aJW0u65dAP6IYHzw9gzrw0zvDvx0Cb5jRuAR9E4kMkHhknE7qQnotdgYTiUt93lrbw/s600/4.png"/></a></div>
+</pre>
+<span style="display: none">Tags: Technology,Spark</span>

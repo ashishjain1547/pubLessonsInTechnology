@@ -1,0 +1,142 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        i.ir {
+            color: red;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        i.ib {
+            color: blue;
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<a class="customLink toggleBtn" href="https://github.com/ashishjain1547/pubML/blob/main/e11_pyspark_v3.3.0/" target="_blank">Download Code</a>
+
+<pre><h1>Cell Value Replacement Through Assignment in Pandas</h1>
+<i class="ib">import pandas as pd
+
+df = pd.DataFrame({
+    'col1': ["alpha", "beta", "gamma"],
+    'col2': ['beta', 'gamma', 'alpha'],
+    'col3': ['gamma', 'alpha', 'beta']
+})
+
+df[df == 'alpha'] = 'delta'
+df </i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj02ginBBLDpnkNL9RNt427WZOG8wIKZxh0he4JU03iI_s59eRXfWcUM3DIn5gnH7N4TBU0FPkatg3uyvzLnP8gfCw0r9UL31L_3PIKnJpbl9eZazb0QYzEvt2BqEDDHro1u8QwwTgB_MAeA9kWPGmrYMkUSNOJKBQ0aGkvoSC_vyiX4hKqLNNcQpsX7w/s179/Screenshot%20from%202022-11-01%2019-54-36.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="114" data-original-width="179" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj02ginBBLDpnkNL9RNt427WZOG8wIKZxh0he4JU03iI_s59eRXfWcUM3DIn5gnH7N4TBU0FPkatg3uyvzLnP8gfCw0r9UL31L_3PIKnJpbl9eZazb0QYzEvt2BqEDDHro1u8QwwTgB_MAeA9kWPGmrYMkUSNOJKBQ0aGkvoSC_vyiX4hKqLNNcQpsX7w/s400/Screenshot%20from%202022-11-01%2019-54-36.png"/></a></div>
+
+<h1>Error in PySpark For The Same Code: Unhashable type: 'DataFrame'</h1>
+<i class="ib">
+from pyspark import pandas as ppd
+df_ppd = ppd.DataFrame({
+    'col1': ["alpha", "beta", "gamma"],
+    'col2': ['beta', 'gamma', 'alpha'],
+    'col3': ['gamma', 'alpha', 'beta']
+})
+
+df_ppd[df_ppd == 'alpha'] = 'delta' </i>
+
+<i class="ir">
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In [13], line 1
+----> 1 df_ppd[df_ppd == 'alpha'] = 'delta'
+
+File ~/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/pandas/frame.py:12355, in DataFrame.__setitem__(self, key, value)
+  12352     psdf = self._assign({k: value[c] for k, c in zip(key, field_names)})
+  12353 else:
+  12354     # Same Series.
+> 12355     psdf = self._assign({key: value})
+  12357 self._update_internal_frame(psdf._internal)
+
+TypeError: unhashable type: 'DataFrame'</i>
+
+<h2>Alternate Way</h2>
+
+<i class="ib">df_ppd = df_ppd.replace(to_replace = ['alpha'], value = "delta")</i>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip3I4-pSTjSQ4NE0-vbtcjLWhOm3nDaSY1p3Sj9ekhXSxX2LisBM9zVHrOJpys22LMgh_BzJhQtE9nwLjTJX8bi86BCP-IOhxiFIsF-eljPTrd6zOZXqVtu8ysQb-4l3x_u6J5lDOWD-EcuRYaqEeeulEhpN_GBcc7UdDse2lNYvjtiMycieZ45zC3iw/s179/Screenshot%20from%202022-11-01%2019-58-55.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="114" data-original-width="179" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip3I4-pSTjSQ4NE0-vbtcjLWhOm3nDaSY1p3Sj9ekhXSxX2LisBM9zVHrOJpys22LMgh_BzJhQtE9nwLjTJX8bi86BCP-IOhxiFIsF-eljPTrd6zOZXqVtu8ysQb-4l3x_u6J5lDOWD-EcuRYaqEeeulEhpN_GBcc7UdDse2lNYvjtiMycieZ45zC3iw/s400/Screenshot%20from%202022-11-01%2019-58-55.png"/></a></div>
+
+<i class="ib">df_ppd = df_ppd.replace(to_replace = ['beta', 'gamma'], value = "epsilon")</i>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-jKBct89Hbl0/Y2EtWsWtiHI/AAAAAAAAKco/VSfTOGi-p9QFIBxjRkaW5M2MNiKYUWDzgCNcBGAsYHQ/s179/Screenshot%2Bfrom%2B2022-11-01%2B19-59-36.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="400" data-original-height="114" data-original-width="179" src="https://1.bp.blogspot.com/-jKBct89Hbl0/Y2EtWsWtiHI/AAAAAAAAKco/VSfTOGi-p9QFIBxjRkaW5M2MNiKYUWDzgCNcBGAsYHQ/s400/Screenshot%2Bfrom%2B2022-11-01%2B19-59-36.png"/></a></div>
+
+<b>Also Check: <a href="https://survival8.blogspot.com/2022/10/way-4-with-respect-to-dataframereplace.html" target="_blank">Way 4: With respect to DataFrame.replace() Method (Ways in which Pandas API on PySpark differs from Plain Pandas)</a></b>
+</pre>
+<span style="display: none">Tags: Spark,Technology,</span>

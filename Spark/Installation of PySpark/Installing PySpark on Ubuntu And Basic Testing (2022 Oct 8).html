@@ -1,0 +1,231 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      .dot {
+          height: 12px;
+          width: 12px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+      }
+
+      .arrow {
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+      }
+
+      .right {
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+      }
+
+      .left {
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+      }
+
+      .up {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+      }
+
+      .down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+      }
+
+      .ib {
+          color: blue
+      }
+
+      .ig {
+          color: green
+      }
+
+      .ir {
+          color: red
+      }
+  </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h2>Contents of env.yml File</h2>
+
+<i class="ib">
+name: mh
+channels:
+  - conda-forge
+dependencies:
+  - python==3.9
+  - pandas
+  - pyspark
+  - pip
+</i>
+
+<h2>Keeping the number of packages in dependencies to a bare minimum.</h2>
+Takes over two hours to process the otherwise tried original 13 dependencies.
+
+<i class="ib">
+(base) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ conda env create -f env.yml
+(base) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ conda activate mh
+</i>
+
+<h2>Testing</h2>
+<h3>Error Prior to Java Installation</h3>
+
+<i class="ir">
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ python
+Python 3.9.0 | packaged by conda-forge | (default, Nov 26 2020, 07:57:39) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pandas as pd
+>>> import pyspark
+>>> pyspark.__version__
+'3.3.0'
+>>> import os
+>>> os.environ['PYTHONPATH']
+Traceback (most recent call last):
+  File "&lt;stdin>", line 1, in &lt;module>
+  File "/home/ashish/anaconda3/envs/mh/lib/python3.9/os.py", line 679, in __getitem__
+    raise KeyError(key) from None
+KeyError: 'PYTHONPATH'
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()
+Traceback (most recent call last):
+  File "&lt;stdin>", line 1, in &lt;module>
+NameError: name 'SparkContext' is not defined
+>>> from pyspark import SparkContext
+>>> sc = SparkContext.getOrCreate()
+JAVA_HOME is not set
+Traceback (most recent call last):
+  File "&lt;stdin>", line 1, in &lt;module>
+  File "/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/context.py", line 483, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/context.py", line 195, in __init__
+    SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+  File "/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/context.py", line 417, in _ensure_initialized
+    SparkContext._gateway = gateway or launch_gateway(conf)
+  File "/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/java_gateway.py", line 106, in launch_gateway
+    raise RuntimeError("Java gateway process exited before sending its port number")
+RuntimeError: Java gateway process exited before sending its port number
+>>> 
+</i>
+
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ java
+
+<i class="ir">
+Command 'java' not found, but can be installed with:
+sudo apt install default-jre              # version 2:1.11-72build2, or
+sudo apt install openjdk-11-jre-headless  # version 11.0.16+8-0ubuntu1~22.04
+sudo apt install openjdk-17-jre-headless  # version 17.0.3+7-0ubuntu0.22.04.1
+sudo apt install openjdk-18-jre-headless  # version 18~36ea-1
+sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1  
+</i>
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ sudo apt install openjdk-8-jre-headless
+... 
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ java -version
+
+<i class="ig">
+openjdk version "1.8.0_342"
+OpenJDK Runtime Environment (build 1.8.0_342-8u342-b07-0ubuntu1~22.04-b07)
+OpenJDK 64-Bit Server VM (build 25.342-b07, mixed mode)
+</i>
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ echo $JAVA_HOME
+<i class="ir">EMPTY</i>
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$
+
+(base) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ which java
+/usr/bin/java
+
+(base) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ readlink -f /usr/bin/java
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+<h2>Update the JAVA_HOME</h2>
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ sudo nano ~/.bashrc
+
+Add the following line at the end of the file:
+
+<i class="ib">export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"</i>
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ 
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ source ~/.bashrc
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ echo $JAVA_HOME
+
+<i class="ig">/usr/lib/jvm/java-8-openjdk-amd64</i>
+
+(mh) ashish@ashish-Lenovo-ideapad-130-15IKB:~$ python
+Python 3.9.0 | packaged by conda-forge | (default, Nov 26 2020, 07:57:39) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+
+<i class="ib">
+>>> import pandas as pd
+>>> from pyspark import SparkContext
+>>> from pyspark.sql import SQLContext
+>>> df = pd.DataFrame({ "col1": ["val1"], "col2": ["val2"] })
+>>> sc = SparkContext.getOrCreate()</i>
+
+<i class="ir">
+22/10/08 13:29:50 WARN Utils: Your hostname, ashish-Lenovo-ideapad-130-15IKB resolves to a loopback address: 127.0.1.1; using 192.168.1.129 instead (on interface wlp2s0)
+22/10/08 13:29:50 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/08 13:29:52 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable  
+</i>
+
+<i class="ib">>>> sqlCtx = SQLContext(sc)</i>
+
+<i class="ir">
+/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/sql/context.py:112: FutureWarning: Deprecated in 3.0.0. Use SparkSession.builder.getOrCreate() instead.
+warnings.warn()
+</i>
+
+>>> sdf = sqlCtx.createDataFrame(df)
+
+<i class="ir">
+/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/sql/pandas/conversion.py:474: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+  for column, series in pdf.iteritems():
+/home/ashish/anaconda3/envs/mh/lib/python3.9/site-packages/pyspark/sql/pandas/conversion.py:486: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+  for column, series in pdf.iteritems():</i>
+
+>>> sdf.show()
+
+<i class="ig">
++----+----+                                                                     
+|col1|col2|
++----+----+
+|val1|val2|
++----+----+</i>
+
+<i class="ib">
+>>> 
+>>> exit()</i>
+
+</pre> 
+<span style="display: none">Tags: Technology,Spark,</span>

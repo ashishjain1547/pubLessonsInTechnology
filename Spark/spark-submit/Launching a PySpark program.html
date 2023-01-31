@@ -1,0 +1,73 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.ajax({
+          url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+          success: function (result) {
+            $("div.customTemporaryCodeHolder").html(result);
+            $("nav.customDynamicNav").html(
+              $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+            );
+          }
+        });
+      }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3071098372371409",
+        enable_page_level_ads: true
+      });
+    </script>
+    <style>
+      pre {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <nav class="customDynamicNav"> </nav>
+  <div class="customTemporaryCodeHolder"> </div>
+  <br />
+  <!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+     
+ <pre>The spark-submit script in Spark’s bin directory is used to launch applications on a cluster. It can use all of Spark’s supported cluster managers through a uniform interface so you don’t have to configure your application especially for each one.
+
+(base) ashish@ashish-vBox:/usr/local/spark$ ./bin/spark-submit --master yarn examples/src/main/python/pi.py 100
+
+Here, the number '100' is signifying the number of partitions.
+
+--master: The master URL for the cluster (e.g. spark://23.195.26.187:7077)
+
+If it is set to "yarn": Connect to a YARN cluster in client or cluster mode depending on the value of --deploy-mode. The cluster location will be found based on the HADOOP_CONF_DIR or YARN_CONF_DIR variable.
+
+If it is set to "local": Run Spark locally with one worker thread (i.e. no parallelism at all).
+
+Ref: https://spark.apache.org/docs/latest/submitting-applications.html
+
+Logs that you get based on the "partitions" argument:
+
+<i style="color: green">2020-02-28 22:14:36,949 INFO executor.Executor: Running task 0.0 in stage 0.0 (TID 0)
+2020-02-28 22:14:37,772 INFO executor.Executor: Running task 1.0 in stage 0.0 (TID 1)
+2020-02-28 22:14:37,958 INFO executor.Executor: Running task 2.0 in stage 0.0 (TID 3)
+...
+2020-02-28 22:14:51,031 INFO executor.Executor: Running task 99.0 in stage 0.0 (TID 99) </i>
+
+IF YOU TRY TO EXECUTE PYSPARK CODE WITH "MASTER" ARGUMENT SET TO "yarn" BUT YARN NOT INSTALLED, YOU WILL GET FOLLOWING ERRORS:
+
+(base) ashish@ashish-vBox:/usr/local/spark$ ./bin/spark-submit --master yarn examples/src/main/python/pi.py 100
+
+<i style="color: darkred">2020-02-28 22:45:16,988 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+2020-02-28 22:45:18,272 INFO ipc.Client: Retrying connect to server: 0.0.0.0/0.0.0.0:8032. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS)
+2020-02-28 22:45:19,281 INFO ipc.Client: Retrying connect to server: 0.0.0.0/0.0.0.0:8032. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1000 MILLISECONDS) 
+...</i>
+
+The port "8032" for YARN is read from the property "yarn.resourcemanager.address". [Need citation]
+
+</pre>

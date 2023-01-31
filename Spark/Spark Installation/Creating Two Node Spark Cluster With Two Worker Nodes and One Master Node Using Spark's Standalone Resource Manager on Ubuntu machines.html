@@ -1,0 +1,494 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .ib {
+            color: blue
+        }
+
+        .ig {
+            color: green
+        }
+
+        .ir {
+            color: red
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>
+<h1>1.1 Setting up Java</h1>
+(base) ashish@ashishdesktop:~$ java
+Command 'java' not found, but can be installed with:
+sudo apt install default-jre              # version 2:1.11-72build2, or
+sudo apt install openjdk-11-jre-headless  # version 11.0.16+8-0ubuntu1~22.04
+sudo apt install openjdk-17-jre-headless  # version 17.0.3+7-0ubuntu0.22.04.1
+sudo apt install openjdk-18-jre-headless  # version 18~36ea-1
+sudo apt install openjdk-8-jre-headless   # version 8u312-b07-0ubuntu1
+
+(base) ashish@ashishdesktop:~$ sudo apt install openjdk-8-jre-headless
+
+<h2>1.2 Setting environment variable JAVA_HOME</h2>
+
+(base) ashish@ashishdesktop:~$ readlink -f /usr/bin/java
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+(base) ashish@ashishdesktop:~$ sudo nano ~/.bashrc
+(base) ashish@ashishdesktop:~$ tail ~/.bashrc
+<i class="ig">
+        . "/home/ashish/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ashish/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 </i>
+
+(base) ashish@ashishdesktop:~$ 
+
+(base) ashish@ashishdesktop:~$ source ~/.bashrc
+(base) ashish@ashishdesktop:~$ echo $JAVA_HOME
+/usr/lib/jvm/java-8-openjdk-amd64
+
+<h1>2. Setting up Scala</h1>
+
+(base) ashish@ashishdesktop:~$ sudo apt-get install scala
+
+<h1>3. Checking The Previous Standalone PySpark Installation on Laptop</h1>
+
+(base) ashish@ashishlaptop:~$ pyspark
+pyspark: command not found
+
+(base) ashish@ashishlaptop:~$ conda activate mh
+(mh) ashish@ashishlaptop:~$ pyspark
+Python 3.9.0 | packaged by conda-forge | (default, Nov 26 2020, 07:57:39) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/22 22:45:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 3.3.0
+      /_/
+
+Using Python version 3.9.0 (default, Nov 26 2020 07:57:39)
+Spark context Web UI available at http://ashishlaptop:4040
+Spark context available as 'sc' (master = local[*], app id = local-1666458948998).
+SparkSession available as 'spark'.
+>>> 
+
+
+<h1>4. Download Spark Archive</h1>
+
+One we are using: <a href="https://dlcdn.apache.org/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz" target="_blank">dlcdn.apache.org: spark-3.3.0-bin-hadoop3.tgz</a>
+
+Link to broader download site: <a href="https://spark.apache.org/downloads.html" target="_blank">spark.apache.org</a>
+
+In terminal:
+
+$ wget https://dlcdn.apache.org/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3.tgz
+
+<h1>5. Setting up Spark From The Archive</h1>
+
+<h2>5.1. Extracting the software from archive</h2>
+
+(base) ashish@ashishlaptop:~/Desktop$ tar xvf spark-3.3.0-bin-hadoop3.tgz
+
+<h2>5.2. Moving the software to the local installation directory</h2>
+
+(base) ashish@ashishlaptop:~/Desktop$ sudo mv spark-3.3.0-bin-hadoop3 /usr/local/spark
+[sudo] password for ashish: 
+
+(base) ashish@ashishlaptop:~/Desktop$ cd /usr/local
+
+(base) ashish@ashishlaptop:/usr/local$ ls -l
+total 36
+drwxr-xr-x  2 root   root   4096 Aug  9 17:18 bin
+drwxr-xr-x  2 root   root   4096 Aug  9 17:18 etc
+drwxr-xr-x  2 root   root   4096 Aug  9 17:18 games
+drwxr-xr-x  2 root   root   4096 Aug  9 17:18 include
+drwxr-xr-x  4 root   root   4096 Oct  8 11:10 lib
+lrwxrwxrwx  1 root   root      9 Aug 26 09:40 man -> share/man
+drwxr-xr-x  2 root   root   4096 Aug  9 17:18 sbin
+drwxr-xr-x  7 root   root   4096 Aug  9 17:21 share
+drwxr-xr-x 13 ashish ashish 4096 Jun 10 02:07 spark
+drwxr-xr-x  2 root   root   4096 Aug  9 17:18 src
+
+(base) ashish@ashishlaptop:/usr/local$ cd spark
+
+(base) ashish@ashishlaptop:/usr/local/spark$ ls
+bin  conf  data  examples  jars  kubernetes  LICENSE  licenses  NOTICE  python  R  README.md  RELEASE  sbin  yarn
+
+(base) ashish@ashishlaptop:/usr/local/spark$ 
+
+<h2>5.3. Including Spark binaries in the environment.</h2>
+
+$ sudo gedit ~/.bashrc
+
+(base) ashish@ashishlaptop:/usr/local/spark$ tail ~/.bashrc
+        export PATH="/home/ashish/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;
+
+export PATH="/home/ashish/.local/bin:$PATH"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export PATH="$PATH:/usr/local/spark/bin"
+
+(base) ashish@ashishlaptop:/usr/local/spark$ source ~/.bashrc
+
+<h1>6. Checking installation on laptop (and then on desktop after proper setup on it)</h1>
+
+<h2>6.1. spark-shell (Scala based shell) on Laptop</h2>
+
+(base) ashish@ashishlaptop:/usr/local/spark$ spark-shell
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/22 23:44:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark context Web UI available at http://ashishlaptop:4040
+Spark context available as 'sc' (master = local[*], app id = local-1666462455694).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.3.0
+      /_/
+         
+Using Scala version 2.12.15 (OpenJDK 64-Bit Server VM, Java 1.8.0_342)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> sys.exit
+
+<h2>6.2. pyspark (Python based shell) on Laptop</h2>
+
+(base) ashish@ashishlaptop:/usr/local/spark$ pyspark
+Python 3.9.12 (main, Apr  5 2022, 06:56:58) 
+[GCC 7.5.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/22 23:46:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 3.3.0
+      /_/
+
+Using Python version 3.9.12 (main, Apr  5 2022 06:56:58)
+Spark context Web UI available at http://ashishlaptop:4040
+Spark context available as 'sc' (master = local[*], app id = local-1666462561785).
+SparkSession available as 'spark'.
+>>> exit()
+
+<h2>6.3. spark-shell (Scala based shell) on Desktop</h2>
+
+(base) ashish@ashishdesktop:~$ spark-shell
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/22 23:54:36 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark context Web UI available at http://ashishdesktop:4040
+Spark context available as 'sc' (master = local[*], app id = local-1666463078583).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.3.0
+      /_/
+         
+Using Scala version 2.12.15 (OpenJDK 64-Bit Server VM, Java 1.8.0_342)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> sys.exit
+
+<h2>6.4. pyspark (Python based shell) on Desktop</h2>
+
+(base) ashish@ashishdesktop:~$ pyspark
+Python 3.9.7 (default, Sep 16 2021, 13:09:58) 
+[GCC 7.5.0] :: Anaconda, Inc. on linux
+Type "help", "copyright", "credits" or "license" for more information.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+22/10/22 23:55:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 3.3.0
+      /_/
+
+Using Python version 3.9.7 (default, Sep 16 2021 13:09:58)
+Spark context Web UI available at http://ashishdesktop:4040
+Spark context available as 'sc' (master = local[*], app id = local-1666463110370).
+SparkSession available as 'spark'.
+>>> exit()
+(base) ashish@ashishdesktop:~$ 
+
+<h1>7. Configure Worker Nodes in Spark's Configuration</h1>
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ ls -l
+total 36
+-rw-r--r-- 1 ashish ashish 1105 Jun 10 02:07 fairscheduler.xml.template
+-rw-r--r-- 1 ashish ashish 3350 Jun 10 02:07 log4j2.properties.template
+-rw-r--r-- 1 ashish ashish 9141 Jun 10 02:07 metrics.properties.template
+-rw-r--r-- 1 ashish ashish 1292 Jun 10 02:07 spark-defaults.conf.template
+-rwxr-xr-x 1 ashish ashish 4506 Jun 10 02:07 spark-env.sh.template
+-rw-r--r-- 1 ashish ashish  865 Jun 10 02:07 workers.template
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ 
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ cat workers.template 
+<i class="ib">
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# A Spark Worker will be started on each of the machines listed below.
+localhost </i>
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ 
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ cp workers.template workers
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ ls -l
+total 40
+-rw-r--r-- 1 ashish ashish 1105 Jun 10 02:07 fairscheduler.xml.template
+-rw-r--r-- 1 ashish ashish 3350 Jun 10 02:07 log4j2.properties.template
+-rw-r--r-- 1 ashish ashish 9141 Jun 10 02:07 metrics.properties.template
+-rw-r--r-- 1 ashish ashish 1292 Jun 10 02:07 spark-defaults.conf.template
+-rwxr-xr-x 1 ashish ashish 4506 Jun 10 02:07 spark-env.sh.template
+-rw-r--r-- 1 ashish ashish  865 Jun 10 02:07 workers
+-rw-r--r-- 1 ashish ashish  865 Oct 23 12:58 workers.template
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ nano workers
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ cat workers
+ashishdesktop
+ashishlaptop
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ 
+
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ cp spark-env.sh.template spark-env.sh
+
+<h1>8. Starting Driver/Master and Worker Nodes Using Script 'start-all.sh'</h1>
+
+(base) ashish@ashishlaptop:/usr/local/spark/sbin$ source start-all.sh
+starting org.apache.spark.deploy.master.Master, logging to /usr/local/spark/logs/spark-ashish-org.apache.spark.deploy.master.Master-1-ashishlaptop.out
+ashishlaptop: starting org.apache.spark.deploy.worker.Worker, logging to /usr/local/spark/logs/spark-ashish-org.apache.spark.deploy.worker.Worker-1-ashishlaptop.out
+ashishdesktop: starting org.apache.spark.deploy.worker.Worker, logging to /usr/local/spark/logs/spark-ashish-org.apache.spark.deploy.worker.Worker-1-ashishdesktop.out
+
+(base) ashish@ashishlaptop:/usr/local/spark/logs$ ls -l
+total 12
+-rw-rw-r-- 1 ashish ashish 2005 Oct 23 13:54 spark-ashish-org.apache.spark.deploy.master.Master-1-ashishlaptop.out
+-rw-rw-r-- 1 ashish ashish 2340 Oct 23 13:47 spark-ashish-org.apache.spark.deploy.master.Master-1-ashishlaptop.out.1
+-rw-rw-r-- 1 ashish ashish 2485 Oct 23 13:53 spark-ashish-org.apache.spark.deploy.worker.Worker-1-ashishlaptop.out
+(base) ashish@ashishlaptop:/usr/local/spark/logs$ 
+
+<h2>Master logs</h2>
+
+(base) ashish@ashishlaptop:/usr/local/spark/logs$ cat spark-ashish-org.apache.spark.deploy.master.Master-1-ashishlaptop.out
+Spark Command: /usr/lib/jvm/java-8-openjdk-amd64/bin/java -cp /usr/local/spark/conf/:/usr/local/spark/jars/* -Xmx1g org.apache.spark.deploy.master.Master --host ashishlaptop --port 7077 --webui-port 8080
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+22/10/23 13:53:51 INFO Master: Started daemon with process name: 9224@ashishlaptop
+22/10/23 13:53:51 INFO SignalUtils: Registering signal handler for TERM
+22/10/23 13:53:51 INFO SignalUtils: Registering signal handler for HUP
+22/10/23 13:53:51 INFO SignalUtils: Registering signal handler for INT
+22/10/23 13:53:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/23 13:53:51 INFO SecurityManager: Changing view acls to: ashish
+22/10/23 13:53:51 INFO SecurityManager: Changing modify acls to: ashish
+22/10/23 13:53:51 INFO SecurityManager: Changing view acls groups to: 
+22/10/23 13:53:51 INFO SecurityManager: Changing modify acls groups to: 
+22/10/23 13:53:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+22/10/23 13:53:52 INFO Utils: Successfully started service 'sparkMaster' on port 7077.
+22/10/23 13:53:52 INFO Master: Starting Spark master at spark://ashishlaptop:7077
+22/10/23 13:53:52 INFO Master: Running Spark version 3.3.0
+22/10/23 13:53:52 INFO Utils: Successfully started service 'MasterUI' on port 8080.
+22/10/23 13:53:52 INFO MasterWebUI: Bound MasterWebUI to 0.0.0.0, and started at http://ashishlaptop:8080
+22/10/23 13:53:53 INFO Master: I have been elected leader! New state: ALIVE
+22/10/23 13:53:56 INFO Master: Registering worker 192.168.1.142:43143 with 4 cores, 10.6 GiB RAM
+22/10/23 13:54:00 INFO Master: Registering worker 192.168.1.106:44471 with 2 cores, 1024.0 MiB RAM
+(base) ashish@ashishlaptop:/usr/local/spark/logs$ 
+
+<h2>Worker Logs From 'ashishlaptop'</h2>
+
+(base) ashish@ashishlaptop:/usr/local/spark/logs$ cat spark-ashish-org.apache.spark.deploy.worker.Worker-1-ashishlaptop.out 
+Spark Command: /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -cp /usr/local/spark/conf/:/usr/local/spark/jars/* -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://ashishlaptop:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+22/10/23 13:53:54 INFO Worker: Started daemon with process name: 9322@ashishlaptop
+22/10/23 13:53:54 INFO SignalUtils: Registering signal handler for TERM
+22/10/23 13:53:54 INFO SignalUtils: Registering signal handler for HUP
+22/10/23 13:53:54 INFO SignalUtils: Registering signal handler for INT
+22/10/23 13:53:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/23 13:53:55 INFO SecurityManager: Changing view acls to: ashish
+22/10/23 13:53:55 INFO SecurityManager: Changing modify acls to: ashish
+22/10/23 13:53:55 INFO SecurityManager: Changing view acls groups to: 
+22/10/23 13:53:55 INFO SecurityManager: Changing modify acls groups to: 
+22/10/23 13:53:55 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+22/10/23 13:53:55 INFO Utils: Successfully started service 'sparkWorker' on port 43143.
+22/10/23 13:53:55 INFO Worker: Worker decommissioning not enabled.
+22/10/23 13:53:56 INFO Worker: Starting Spark worker 192.168.1.142:43143 with 4 cores, 10.6 GiB RAM
+22/10/23 13:53:56 INFO Worker: Running Spark version 3.3.0
+22/10/23 13:53:56 INFO Worker: Spark home: /usr/local/spark
+22/10/23 13:53:56 INFO ResourceUtils: ==============================================================
+22/10/23 13:53:56 INFO ResourceUtils: No custom resources configured for spark.worker.
+22/10/23 13:53:56 INFO ResourceUtils: ==============================================================
+22/10/23 13:53:56 INFO Utils: Successfully started service 'WorkerUI' on port 8081.
+22/10/23 13:53:56 INFO WorkerWebUI: Bound WorkerWebUI to 0.0.0.0, and started at http://ashishlaptop:8081
+22/10/23 13:53:56 INFO Worker: Connecting to master ashishlaptop:7077...
+22/10/23 13:53:56 INFO TransportClientFactory: Successfully created connection to ashishlaptop/192.168.1.142:7077 after 46 ms (0 ms spent in bootstraps)
+22/10/23 13:53:56 INFO Worker: Successfully registered with master spark://ashishlaptop:7077
+(base) ashish@ashishlaptop:/usr/local/spark/logs$ 
+
+<h2>Worker Logs From 'ashishdesktop'</h2>
+
+(base) ashish@ashishdesktop:/usr/local/spark/logs$ cat spark-ashish-org.apache.spark.deploy.worker.Worker-1-ashishdesktop.out 
+Spark Command: /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -cp /usr/local/spark/conf/:/usr/local/spark/jars/* -Xmx1g org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://ashishlaptop:7077
+========================================
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+22/10/23 13:53:56 INFO Worker: Started daemon with process name: 19475@ashishdesktop
+22/10/23 13:53:56 INFO SignalUtils: Registering signal handler for TERM
+22/10/23 13:53:56 INFO SignalUtils: Registering signal handler for HUP
+22/10/23 13:53:56 INFO SignalUtils: Registering signal handler for INT
+22/10/23 13:53:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/10/23 13:53:57 INFO SecurityManager: Changing view acls to: ashish
+22/10/23 13:53:57 INFO SecurityManager: Changing modify acls to: ashish
+22/10/23 13:53:57 INFO SecurityManager: Changing view acls groups to: 
+22/10/23 13:53:57 INFO SecurityManager: Changing modify acls groups to: 
+22/10/23 13:53:57 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ashish); groups with view permissions: Set(); users  with modify permissions: Set(ashish); groups with modify permissions: Set()
+22/10/23 13:53:58 INFO Utils: Successfully started service 'sparkWorker' on port 44471.
+22/10/23 13:53:58 INFO Worker: Worker decommissioning not enabled.
+22/10/23 13:53:59 INFO Worker: Starting Spark worker 192.168.1.106:44471 with 2 cores, 1024.0 MiB RAM
+22/10/23 13:53:59 INFO Worker: Running Spark version 3.3.0
+22/10/23 13:53:59 INFO Worker: Spark home: /usr/local/spark
+22/10/23 13:53:59 INFO ResourceUtils: ==============================================================
+22/10/23 13:53:59 INFO ResourceUtils: No custom resources configured for spark.worker.
+22/10/23 13:53:59 INFO ResourceUtils: ==============================================================
+22/10/23 13:53:59 INFO Utils: Successfully started service 'WorkerUI' on port 8081.
+22/10/23 13:54:00 INFO WorkerWebUI: Bound WorkerWebUI to 0.0.0.0, and started at http://ashishdesktop:8081
+22/10/23 13:54:00 INFO Worker: Connecting to master ashishlaptop:7077...
+22/10/23 13:54:00 INFO TransportClientFactory: Successfully created connection to ashishlaptop/192.168.1.142:7077 after 157 ms (0 ms spent in bootstraps)
+22/10/23 13:54:00 INFO Worker: Successfully registered with master spark://ashishlaptop:7077
+
+<h1>9. Issue Resolution</h1>
+
+<h2>Prompt for password when launching worker nodes using script 'start-all.sh'</h2>
+
+<i class="ir">
+(base) ashish@ashishlaptop:/usr/local/spark/sbin$ source start-all.sh
+starting org.apache.spark.deploy.master.Master, logging to /usr/local/spark/logs/spark-ashish-org.apache.spark.deploy.master.Master-1-ashishlaptop.out
+ashishlaptop: Warning: Permanently added 'ashishlaptop' (ED25519) to the list of known hosts.
+<b>ashish@ashishlaptop's password: </b>ashishdesktop: starting org.apache.spark.deploy.worker.Worker, logging to /usr/local/spark/logs/spark-ashish-org.apache.spark.deploy.worker.Worker-1-ashishdesktop.out
+
+<b>ashishlaptop: Connection closed by 192.168.1.142 port 22</b>
+(base) ashish@ashishlaptop:/usr/local/spark/sbin$</i>
+
+<h2>Debugging</h2>
+
+<h3>DOING SSH FROM 'ASHISHLAPTOP' TO 'ASHISHLAPTOP' (NOT A TYPE) STILL RESULTS IN PASSWORD PROMPT.</h3>
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ ssh ashishlaptop
+ashish@ashishlaptop's password: 
+
+<h3>DO THIS TO RESOLVE THE ISSUE</h3>
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ ssh-copy-id -i ~/.ssh/id_rsa.pub ashish@ashishlaptop
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/ashish/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+ashish@ashishlaptop's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'ashish@ashishlaptop'"
+and check to make sure that only the key(s) you wanted were added.
+
+(base) ashish@ashishlaptop:/usr/local/spark/conf$ ssh ashish@ashishlaptop
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-52-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+9 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Last login: Sat Oct 22 22:00:44 2022 from 192.168.1.106
+(base) ashish@ashishlaptop:~$ 
+
+<h3>For more details on SSH setup: <a href="https://survival8.blogspot.com/2022/10/ssh-setup-on-2-ubuntu-machines-error.html" target="_blank">[ Link ]</a></h3>
+</pre>
+<span style="display: none">Tags: Technology,Spark,</span>

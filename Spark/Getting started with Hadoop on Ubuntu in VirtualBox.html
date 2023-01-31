@@ -1,0 +1,128 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<p>We are going to create a single node cluster of Hadoop in this post.</p>
+<p></p>
+<p>Step 1: Install VirtualBox 6.0 or higher (by launching the .EXE file as administrator)</p>
+<p></p>
+<p>Step 2: Download the .ISO file for the latest "Ubuntu Desktop" (version used for this post: Ubuntu 18.04.2 LTS) from here "https://ubuntu.com/download/desktop"</p>
+<p></p>
+<p>Step 3: Install Ubuntu as shown in this post "https://survival8.blogspot.com/p/demonstrating-shared-folder-feature-for.html"</p>
+<p></p>
+<p>Step 4. Installing Java</p>
+<p></p>
+<p>To get started, we'll update our package list:</p>
+<p></p>
+<p><code>sudo apt-get update</code></p>
+<p>Next, we'll install OpenJDK, the default Java Development Kit on Ubuntu 16.04.</p>
+<p></p>
+<p><code>sudo apt-get install default-jdk</code></p>
+<p></p>
+<p>Once the installation is complete, let's check the version.</p>
+<p></p>
+<p><code>java -version</code></p>
+<p></p>
+<p>Output</p>
+<p>openjdk version "1.8.0_91"</p>
+<p>OpenJDK Runtime Environment (build 1.8.0_91-8u91-b14-3ubuntu1~16.04.1-b14)</p>
+<p>OpenJDK 64-Bit Server VM (build 25.91-b14, mixed mode)</p>
+<p></p>
+<p>This output verifies that OpenJDK has been successfully installed.</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 5. Retrieve the Hadoop archive from here "http://hadoop.apache.org/releases.html"</p>
+<p></p>
+<p>ashish:~/Desktop$ wget http://mirrors.estointernet.in/apache/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz</p>
+<p></p>
+<p>--2019-06-27 14:55:52--  http://mirrors.estointernet.in/apache/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.tar.gz</p>
+<p>Resolving mirrors.estointernet.in (mirrors.estointernet.in)... 103.123.234.254, 2403:8940:2::f</p>
+<p>Connecting to mirrors.estointernet.in (mirrors.estointernet.in)|103.123.234.254|:80... connected.</p>
+<p>HTTP request sent, awaiting response... 200 OK</p>
+<p>Length: 332433589 (317M) [application/octet-stream]</p>
+<p>Saving to: ‘hadoop-3.1.2.tar.gz’</p>
+<p></p>
+<p>2019-06-27 15:11:32 (345 KB/s) - ‘hadoop-3.1.2.tar.gz’ saved [332433589/332433589]</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 6. Extract the archive.</p>
+<p></p>
+<p>ashish:~/Desktop$ tar -xzf hadoop-3.1.2.tar.gz </p>
+<p>ashish:~/Desktop$ ls</p>
+<p>Anaconda3-2019.03-Linux-x86_64.sh  hadoop-3.1.2  hadoop-3.1.2.tar.gz</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 7. Move the extracted files into /usr/local, the appropriate place for locally installed software.</p>
+<p></p>
+<p>ashish:~/Desktop$ sudo mv hadoop-3.1.2 /usr/local/hadoop</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 8. Next, we have to update the "JAVA_HOME" path in the "hadoop.env.sh" file.</p>
+<p>To find the default Java path, fire this command:</p>
+<p>    readlink -f /usr/bin/java | sed "s:bin/java::"</p>
+<p>Output</p>
+<p>/usr/lib/jvm/java-8-openjdk-amd64/jre/</p>
+<p></p>
+<p></p>
+<p>ashish:/usr/local/hadoop$ sudo nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh</p>
+<p>We appended this line "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" at the end of the file (or replace it if it is already present in the file).</p>
+<p>ashish:/usr/local/hadoop$ cat /usr/local/hadoop/etc/hadoop/hadoop-env.sh</p>
+<p></p>
+<p>=============================================</p>
+<p></p>
+<p>Step 9. Running the Hadoop.</p>
+<p>Step 9.1. Prepare the input files and folders.</p>
+<p></p>
+<p>ashish:~$ cd Desktop/</p>
+<p>ashish:~/Desktop$ mkdir input</p>
+<p>ashish:~/Desktop$ cp /usr/local/hadoop/etc/hadoop/*.xml input</p>
+<p></p>
+<p>Step 9.2. Run Hadoop.</p>
+<p></p>
+<p>ashish:~/Desktop$ ls /usr/local/hadoop/share/hadoop/mapreduce</p>
+<p>	hadoop-mapreduce-client-app-3.1.2.jar</p>
+<p>	...</p>
+<p>	hadoop-mapreduce-examples-3.1.2.jar</p>
+<p>	...</p>
+<p></p>
+<p>Here, we are shooting up "grep" program to find the words "xml" or "configuration" in the input files.</p>
+<p></p>
+<p>ashish:~/Desktop$ /usr/local/hadoop/bin/hadoop jar /usr/local/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.1.2.jar grep input grep_example 'xml|configuration'</p>
+<p></p>
+<p>Step 9.3. Viewing the output.</p>
+<p></p>
+<p>ashish:~/Desktop$ cat grep_example/*</p>
+<p>25	configuration</p>
+<p>12	xml</p>
