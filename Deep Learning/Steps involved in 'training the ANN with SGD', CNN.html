@@ -1,0 +1,112 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>A: Steps involved in training the ANN (Artificial Neural Network) with Stochastic Gradient Descent
+
+STEP 1: Randomly initialise the weights to small numbers close to 0 (but not 0). 
+
+STEP 2: Input the first observation of your dataset in the input layer, each feature in one input node. 
+
+STEP 3: Forward-Propagation: from left to right, the neurons are activated in a way that the impact of each neuron's activation is limited by the weights. Propagate the activations until getting the predicted result y. 
+ 
+STEP 4: Compare the predicted result to the actual result. Measure the generated error. 
+
+STEP 5: Back-Propagation: from right to left, the error is back-propagated. Update the weights according to how much they are responsible for the error. The learning rate decides by how much we update the weights. 
+
+STEP 6: 
+  Repeat Steps 1 to 5 and update the weights after each observation (Reinforcement Learning). 
+  Or: 
+  Repeat Steps 1 to 5 but update the weights only after a batch of observations (Batch Learning). 
+  
+STEP 7: When the whole training set passed through the ANN, that makes an epoch. Redo more epochs. 
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-_vAUg5jRuE8/XwSdjpgFWgI/AAAAAAAAFIk/MlVvjKy5YRozctk7zG6Zrfa1ZkVwK3N2QCK4BGAsYHg/s1920/Training%2BANN.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="1016" data-original-width="1920" height="338" src="https://1.bp.blogspot.com/-_vAUg5jRuE8/XwSdjpgFWgI/AAAAAAAAFIk/MlVvjKy5YRozctk7zG6Zrfa1ZkVwK3N2QCK4BGAsYHg/w640-h338/Training%2BANN.png" width="640" /></a></div>
+
+B: Steps in Convolutional Neural Networks
+
+STEP 1(a): Convolution
+
+We pass the input image through a 'Filter' (or 'Feature Detector') to get a Feature Map.
+In this step, we reduce the size of the input image. 
+We make the image smaller to make it easier to process it.
+
+We have multiple 'Filter Detector'(s) and this results in multiple 'Feature Maps'.
+
+STEP 1(b): ReLU Layer
+
+We use ReLU to introduce non-linearity in our network. 
+Images have a lot of non-linear features.
+
+STEP 2: Max Pooling 
+In this step, we introduce 'spatial invariance'.
+Here, we are also removing information, and this makes it hard for algorithm to overfit.
+
+In 'Max Pooling', we take the maximum value when using the 'filter'. Similarly, there exist algorithms such as 'mean pooling', 'min pooling'.
+
+Pooling step is also called 'Downsampling' in ML literature.
+
+STEP 3: Flattening 
+
+Take the number left to right, row by row in a matrix and put them in a column.
+
+STEP 4: Full Connection 
+
+Now, we add a fully connected neural network to our model.
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-cPfTusXmHVo/XwSn1GZlaqI/AAAAAAAAFJA/Lro1LB60Rv4CzHb9n5gI578wGmlurzV6wCK4BGAsYHg/s857/steps%2Bin%2Bcnn.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="493" data-original-width="857" height="368" src="https://1.bp.blogspot.com/-cPfTusXmHVo/XwSn1GZlaqI/AAAAAAAAFJA/Lro1LB60Rv4CzHb9n5gI578wGmlurzV6wCK4BGAsYHg/w640-h368/steps%2Bin%2Bcnn.png" width="640" /></a></div>
+
+</pre>

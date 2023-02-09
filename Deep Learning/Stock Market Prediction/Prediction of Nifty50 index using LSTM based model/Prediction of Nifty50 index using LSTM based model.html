@@ -1,0 +1,266 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Here we will use LSTM layers to develop time series forecasting model for the prediction of Nifty50 index's closing value.
+
+Our environment:
+
+<i style="color: green">(py383) ashish@ashish-VirtualBox:~/Desktop$ conda list keras
+# packages in environment at /home/ashish/anaconda3/envs/py383:
+#
+# Name                    Version                   Build  Channel
+keras                     2.4.3                    pypi_0    pypi
+keras-preprocessing       1.1.2                    pypi_0    pypi
+(py383) ashish@ashish-VirtualBox:~/Desktop$ conda list tensorflow
+# packages in environment at /home/ashish/anaconda3/envs/py383:
+#
+# Name                    Version                   Build  Channel
+tensorflow                2.2.0                    pypi_0    pypi
+tensorflow-estimator      2.2.0                    pypi_0    pypi
+(py383) ashish@ashish-VirtualBox:~/Desktop$ conda list matplotlib
+# packages in environment at /home/ashish/anaconda3/envs/py383:
+#
+# Name                    Version                   Build  Channel
+matplotlib                3.2.2                         0  
+matplotlib-base           3.2.2            py38hef1b27d_0  
+(py383) ashish@ashish-VirtualBox:~/Desktop$ conda list scikit-learn
+# packages in environment at /home/ashish/anaconda3/envs/py383:
+#
+# Name                    Version                   Build  Channel
+scikit-learn              0.23.1           py38h423224d_0  
+(py383) ashish@ashish-VirtualBox:~/Desktop$ conda list seaborn
+# packages in environment at /home/ashish/anaconda3/envs/py383:
+#
+# Name                    Version                   Build  Channel
+seaborn                   0.10.1                     py_0  </i>
+
+Python Code:
+
+<i style="color: blue">from __future__ import print_function
+import os
+import sys
+import pandas as pd
+import numpy as np
+%matplotlib inline
+from matplotlib import pyplot as plt
+import seaborn as sns
+import datetime
+from dateutil.parser import parse
+from sklearn.metrics import mean_absolute_error </i>
+
+# Read the dataset 
+<i style="color: blue">l = []
+for i in os.listdir('files_2'):
+    l.append(pd.read_csv(os.path.join('files_2', i)))
+
+df = pd.concat(l, axis = 0) </i>
+
+We have data that looks like:
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-IVlrZzmDW_s/X1NFBdUwKuI/AAAAAAAAFdE/KkjNgfdpEGkHyXJo92Zv8QAc_DJw38LBgCLcBGAsYHQ/s676/Nifty50%2B-%2B1.PNG" style="display: block; padding: 1em 0px; text-align: center;"><img alt="" border="0" data-original-height="396" data-original-width="676" src="https://1.bp.blogspot.com/-IVlrZzmDW_s/X1NFBdUwKuI/AAAAAAAAFdE/KkjNgfdpEGkHyXJo92Zv8QAc_DJw38LBgCLcBGAsYHQ/s600/Nifty50%2B-%2B1.PNG" width="600" /></a></div>
+
+<i style="color: blue">def convert_str_to_date(in_date):
+    return parse(in_date)
+	
+df['Date'] = df['Date'].apply(convert_str_to_date)
+
+df.sort_values(by = ['Date'], axis = 0, ascending = True, inplace = True, na_position = 'last') 
+
+df.reset_index(drop=True, inplace=True) </i>
+
+Gradient descent algorithms perform better (for example converge faster) if the variables are wihtin range [-1, 1]. Many sources relax the boundary to even [-3, 3]. The 'close' variable is mixmax scaled to bound the tranformed variable within [0,1].
+
+<i style="color: blue">from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler(feature_range=(0, 1))
+df['scaled_close'] = scaler.fit_transform(np.array(df['Close']).reshape(-1, 1)) </i>
+
+Before training the model, the dataset is split in two parts - train set and validation set. The neural network is trained on the train set. This means computation of the loss function, back propagation and weights updated by a gradient descent algorithm is done on the train set. The validation set is used to evaluate the model and to determine the number of epochs in model training. Increasing the number of epochs will further decrease the loss function on the train set but might not neccesarily have the same effect for the validation set due to overfitting on the train set. Hence, the number of epochs is controlled by keeping a tap on the loss function computed for the validation set. We use Keras with Tensorflow backend to define and train the model. All the steps involved in model training and validation is done by calling appropriate functions of the Keras API.
+
+# Let's start by splitting the dataset into train and validation.
+
+<i style="color: blue">split_date = datetime.datetime(year=2020, month=8, day=1, hour=0)
+df_train = df.loc[df['Date'] < split_date]
+df_val = df.loc[df['Date'] >= split_date]
+
+# Reset the indices of the validation set
+df_val.reset_index(drop=True, inplace=True) </i>
+
+Now we need to generate regressors (X) and target variable (y) for train and validation. 2-D array of regressor and 1-D array of target is created from the original 1-D array of columm 'Close' in the DataFrames. For the time series forecasting model, Past seven days of observations are used to predict for the next day. This is equivalent to a AR(7) model. We define a function which takes the original time series and the number of timesteps in regressors as input to generate the arrays of X and y.
+
+The makeXy function is used to generate arrays of regressors and targets-X_train, X_val, y_train and y_val. X_train, and X_val, as generated by the makeXy function, are 2D arrays of shape (number of samples, number of timesteps). However, the input to RNN layers must be of shape (number of samples, number of timesteps, number of features per timestep). In this case, we are dealing with only 'Close', hence number of features per timestep is one. Number of timesteps is seven and number of samples is the same as the number of samples in X_train and X_val, which are reshaped to 3D arrays:
+
+<i style="color: blue">def makeXy(ts, nb_timesteps):
+    """
+    Input: 
+           ts: original time series
+           nb_timesteps: number of time steps in the regressors
+    Output: 
+           X: 2-D array of regressors
+           y: 1-D array of target 
+    """
+    X = []
+    y = []
+    for i in range(nb_timesteps, ts.shape[0]):
+        X.append(list(ts.loc[i-nb_timesteps:i-1]))
+        y.append(ts.loc[i])
+    X, y = np.array(X), np.array(y)
+    return X, y
+	
+X_train, y_train = makeXy(df_train['scaled_close'], 7)
+
+X_val, y_val = makeXy(df_val['scaled_close'], 7)
+
+#X_train and X_val are reshaped to 3D arrays
+X_train, X_val = X_train.reshape((X_train.shape[0], X_train.shape[1], 1)), X_val.reshape((X_val.shape[0], X_val.shape[1], 1)) </i>
+
+Now we define the MLP using the Keras Functional API. In this approach a layer can be declared as the input of the following layer at the time of defining the next layer. 
+
+<i style="color: blue">from keras.layers import Dense, Input, Dropout
+from keras.layers.recurrent import LSTM
+from keras.optimizers import SGD
+from keras.models import Model
+from keras.models import load_model
+from keras.callbacks import ModelCheckpoint
+
+#Define input layer which has shape (None, 7) and of type float32. None indicates the number of instances
+input_layer = Input(shape=(7,1), dtype='float32') </i>
+
+The LSTM layers are defined for seven timesteps. In this example, two LSTM layers are stacked. The first LSTM returns the output from each all seven timesteps. This output is a sequence and is fed to the second LSTM which returns output only from the last step. The first LSTM has sixty four hidden neurons in each timestep. Hence the sequence returned by the first LSTM has sixty four features.
+
+<i style="color: blue">lstm_layer1 = LSTM(64, input_shape=(7,1), return_sequences=True)(input_layer)
+lstm_layer2 = LSTM(32, input_shape=(7,64), return_sequences=False)(lstm_layer1)
+
+dropout_layer = Dropout(0.2)(lstm_layer2)
+
+#Finally the output layer gives prediction.
+output_layer = Dense(1, activation='linear')(dropout_layer) </i>
+
+The input, dense and output layers will now be packed inside a Model, which is wrapper class for training and making predictions. In case of presence of outliers, mean absolute error (MAE) is used as absolute deviations suffer less fluctuations compared to squared deviations.
+
+The network's weights are optimized by the Adam algorithm. Adam stands for adaptive moment estimation and has been a popular choice for training deep neural networks. Unlike, stochastic gradient descent, adam uses different learning rates for each weight and separately updates the same as the training progresses. The learning rate of a weight is updated based on exponentially weighted moving averages of the weight's gradients and the squared gradients.
+
+<i style="color: blue">ts_model = Model(inputs=input_layer, outputs=output_layer)
+ts_model.compile(loss='mean_absolute_error', optimizer='adam')#SGD(lr=0.001, decay=1e-5))
+ts_model.summary() </i>
+
+<i style="color: green">Model: "model_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 7, 1)]            0         
+_________________________________________________________________
+lstm (LSTM)                  (None, 7, 64)             16896     
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 32)                12416     
+_________________________________________________________________
+dropout (Dropout)            (None, 32)                0         
+_________________________________________________________________
+dense (Dense)                (None, 1)                 33        
+=================================================================
+Total params: 29,345
+Trainable params: 29,345
+Non-trainable params: 0
+_________________________________________________________________ </i>
+
+The model is trained by calling the fit function on the model object and passing the X_train and y_train. The training is done for a predefined number of epochs. Additionally, batch_size defines the number of samples of train set to be used for a instance of back propagation.The validation dataset is also passed to evaluate the model after every epoch completes. A ModelCheckpoint object tracks the loss function on the validation set and saves the model for the epoch, at which the loss function has been minimum. 
+
+<i style="color: blue">save_weights_at = os.path.join('files_1', 'models', 'p5', 'p5_nifty50_LSTM_weights.{epoch:02d}-{val_loss:.4f}.hdf5')
+
+save_best = ModelCheckpoint(save_weights_at, monitor='val_loss', verbose=0, save_best_only=True, save_weights_only=False, mode='min', period=1)
+
+ts_model.fit(x=X_train, y=y_train, batch_size=16, epochs=30, verbose=1, callbacks=[save_best], validation_data=(X_val, y_val), shuffle=True) </i>
+			 
+<i style="color: green">WARNING:tensorflow:`period` argument is deprecated. Please use `save_freq` to specify the frequency in number of batches seen.
+Epoch 1/30
+381/381 [==============================] - 13s 33ms/step - loss: 0.0181 - val_loss: 0.0258
+...
+381/381 [==============================] - 10s 25ms/step - loss: 0.0175 - val_loss: 0.0384
+[tensorflow.python.keras.callbacks.History at 0x7fed1c0a05b0] </i>
+
+Prediction are made from the best saved model. The model's predictions, which are on the standardized 'Rate', are inverse transformed to get predictions of original 'Rate'.
+
+<i style="color: blue">best_model = load_model(os.path.join('files_1', 'models', 'p5', 'p5_nifty50_LSTM_weights.12-0.0057.hdf5'))
+preds = best_model.predict(X_val)
+pred = scaler.inverse_transform(preds)
+pred = np.squeeze(pred)
+
+mae = mean_absolute_error(df_val['Close'].loc[7:], pred)
+print('MAE for the validation set:', round(mae, 4)) </i>
+
+<i style="color: green">MAE for the validation set: 65.7769 </i>
+
+#Let's plot the actual and predicted values.
+<i style="color: blue">plt.figure(figsize=(5.5, 5.5))
+plt.plot(range(len(df_val['Close'].loc[7:])), df_val['Close'].loc[7:], linestyle='-', marker='*', color='r')
+
+plt.plot(range(len(df_val['Close'].loc[7:])), pred[:df_val.shape[0]], linestyle='-', marker='.', color='b')
+
+plt.legend(['Actual','Predicted'], loc=2)
+plt.title('Actual vs Predicted')
+plt.ylabel('Close')
+plt.xlabel('Index') </i>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-5SavQIIBDWU/X1NGKlt96XI/AAAAAAAAFdM/gGfUUOTYyk8Mdfpl1ZHVKXjKwiSpH-aRQCLcBGAsYHQ/s480/Nifty50%2B-%2B2.PNG" style="display: block; padding: 1em 0; text-align: center;"><img alt="" border="0" width="600" data-original-height="450" data-original-width="480" src="https://1.bp.blogspot.com/-5SavQIIBDWU/X1NGKlt96XI/AAAAAAAAFdM/gGfUUOTYyk8Mdfpl1ZHVKXjKwiSpH-aRQCLcBGAsYHQ/s600/Nifty50%2B-%2B2.PNG"/></a></div>
+
+<i style="color: blue">from sklearn.metrics import r2_score
+r2 = r2_score(df_val['Close'].loc[7:], pred)
+print('R-squared for the validation set:', round(r2,4)) </i>
+
+<i style="color: green">R-squared for the validation set: 0.3702 </i>
+
+</pre>

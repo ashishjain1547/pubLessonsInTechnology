@@ -1,0 +1,105 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+</br>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Elephas is an extension of Keras, which allows you to run distributed deep learning models at scale with Spark. Elephas currently supports a number of applications, including:
+
+% Data-parallel training of deep learning models
+% Distributed hyper-parameter optimization
+% Distributed training of ensemble models
+
+Schematically, elephas works as follows.
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-iq5Cb_dzeuc/XqpwCbNNfkI/AAAAAAAAEpc/xLd4PE_xsZoz98G_ECyP5cazR7qmOSQhQCLcBGAsYHQ/s1600/elephas.gif" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="440" data-original-width="700" height="401" src="https://1.bp.blogspot.com/-iq5Cb_dzeuc/XqpwCbNNfkI/AAAAAAAAEpc/xLd4PE_xsZoz98G_ECyP5cazR7qmOSQhQCLcBGAsYHQ/s640/elephas.gif" width="640" /></a></div>
+We have listed packages that are required outside of Anaconda distribution.
+The following code goes in a Shell (.sh) script for Ubuntu or .bat script Windows:
+<i style="color: blue">pip install Keras_Applications-1.0.8.tar.gz
+pip install keras-team-keras-preprocessing-1.1.0-0-gff90696.tar.gz
+pip install Keras-2.3.1.tar.gz
+pip install hyperopt-0.2.4-py2.py3-none-any.whl
+pip install hyperas-0.4.1-py3-none-any.whl
+pip install tensorflow_estimator-2.1.0-py2.py3-none-any.whl 
+pip install grpcio-1.28.1-cp37-cp37m-manylinux2010_x86_64.whl
+pip install protobuf-3.11.3-cp37-cp37m-manylinux1_x86_64.whl
+pip install gast-0.3.3.tar.gz
+pip install opt_einsum-3.2.1.tar.gz
+pip install astor-0.8.1.tar.gz
+pip install absl-py-0.9.0.tar.gz
+pip install cachetools-4.1.0.tar.gz
+pip install pyasn1-0.4.8.tar.gz
+pip install pyasn1-modules-0.2.8.tar.gz
+pip install rsa-4.0.tar.gz
+pip install google-auth-1.14.1.tar.gz
+pip install oauthlib-3.1.0.tar.gz
+pip install requests-oauthlib-1.3.0.tar.gz
+pip install google-auth-oauthlib-0.4.1.tar.gz
+pip install Markdown-3.2.1.tar.gz
+pip install tensorboard-2.1.1-py3-none-any.whl
+pip install google-pasta-0.2.0.tar.gz
+pip install gast-0.2.2.tar.gz
+pip install termcolor-1.1.0.tar.gz
+pip install tensorflow-2.1.0-cp37-cp37m-manylinux2010_x86_64.whl
+pip install pypandoc-1.5.tar.gz
+pip install py4j-0.10.7.zip
+pip install pyspark-2.4.5.tar.gz
+pip install elephas-0.4.3-py3-none-any.whl </i>
+
+Generated .whl files are stored in directory (here 'ashish' is my username): /home/ashish/.cache/pip/wheels
+
+Few packages were not accepted for latest release labels:
+<i style="color: red"># tensorflow-estimator [2.2.0, >=2.1.0rc0] (from tensorflow==2.1.0). Latest available is: 2.2.0
+# pip install gast-0.3.3.tar.gz
+# pip install py4j-0.10.9.tar.gz</i>
+
+Most of these packages are required by TensorFlow, except:
+1. hyperopt-0.2.4-py2.py3-none-any.whl
+2. hyperas-0.4.1-py3-none-any.whl
+3. pypandoc-1.5.tar.gz
+4. py4j-0.10.7.zip
+5. pyspark-2.4.5.tar.gz
+
+All the packages are present in this <a href="https://drive.google.com/open?id=1wArADDQDvi_5WxV8sBtsq2-p-5SeanM_" target="_blank">Google Drive link</a>, except TensorFlow and PySpark due to their sizes.
+PySpark size: 207 MB
+TensorFlow size: 402 MB
+
+Running the shell script second time, uninstalls and reinstalls the packages again.
+Here is a Python script to avoid doing this and install only if packages are not installed already:
+
+<i style="color: blue;">import sys
+import subprocess
+import pkg_resources
+
+required = { 'pyspark', 'scipy', 'tensorflow' }
+installed = { pkg.key for pkg in pkg_resources.working_set }
+missing = required - installed
+
+if missing:
+    python = sys.executable
+    subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL) </i>
+
+References:
+1. <a href="http://maxpumperla.com/elephas/" target="_blank">Elephas Documentation</a>
+2. <a href="https://github.com/maxpumperla/elephas" target="_blank">GitHub Repository</a>
+</pre>
+<span style="display: none">Tags: Technology,Deep Learning,Machine Learning,Big Data,</span>
