@@ -53,5 +53,28 @@ Below is an illustrative image showing how multiple activation functions are use
 <div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-9RX26LpAYT8/XwLI1Q1VQvI/AAAAAAAAFHQ/oA0OeDhS4R0yP2yDREGw1G-Z1iO6sp4NACK4BGAsYHg/s615/How%2Bthey%2Bfit%2Btogether.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="318" data-original-width="615" height="331" src="https://1.bp.blogspot.com/-9RX26LpAYT8/XwLI1Q1VQvI/AAAAAAAAFHQ/oA0OeDhS4R0yP2yDREGw1G-Z1iO6sp4NACK4BGAsYHg/w640-h331/How%2Bthey%2Bfit%2Btogether.png" width="640" /></a></div>
 
 A research paper proposes that Rectifier function gives a better performing neural network than one using 'Sigmoid' or 'Hyperbolic Tangent'.
+<a href="https://drive.google.com/file/d/1OEOxeOMh7fG0eirbtt3ZcKr-Ijk4CzLT/view?usp=sharing" target="_blank">Deep Sparse Rectifier Neural Networks, Xavier Glorot, 2011</a>
 
-<a href="https://drive.google.com/file/d/1OEOxeOMh7fG0eirbtt3ZcKr-Ijk4CzLT/view?usp=sharing" target="_blank">Deep Sparse Rectifier Neural Networks, Xavier Glorot, 2011</a></pre>
+Sixth: Softmax Function
+
+It converts a vector of K real numbers into a probability distribution of K possible outcomes.
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgP7xnz9oKcl1hY3gbYqeiqtDbkLdRiRaXgOCVMsj0VaZyTPLaNgKK9FuKkViIafdRiS5JuSAZZO5rquXFrB0dxPchZPsTpzXrAsO2Q9rxa6GmedXyE_gehYFlQsi-rw_f6LBL-80s5uoGyHi6ugP0vP6DAtklziXSOjVp4BsUr5ICEuNgOM9MATAwMKw/s390/softmax%20equation.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="147" data-original-width="390" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgP7xnz9oKcl1hY3gbYqeiqtDbkLdRiRaXgOCVMsj0VaZyTPLaNgKK9FuKkViIafdRiS5JuSAZZO5rquXFrB0dxPchZPsTpzXrAsO2Q9rxa6GmedXyE_gehYFlQsi-rw_f6LBL-80s5uoGyHi6ugP0vP6DAtklziXSOjVp4BsUr5ICEuNgOM9MATAwMKw/s600/softmax%20equation.png"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCKvCrVVME53iL7X1Gq_H-AlI72cifv83Q1V6QHP9b2RkkXJrH2LeahxPmWWtmnyZSI5iVt7cBi7lcaEXUiZRPKV2SsqNHTvlBr_ZpEXXuSnHhvYWMOLq7q0lZKFOCfudnfmUQsS3iEPK4lSz_9TFrIcwQQt2hfOnoPaIouJVv4YFg0YZwiYzt22QUlA/s953/softmax.jpeg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="490" data-original-width="953" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCKvCrVVME53iL7X1Gq_H-AlI72cifv83Q1V6QHP9b2RkkXJrH2LeahxPmWWtmnyZSI5iVt7cBi7lcaEXUiZRPKV2SsqNHTvlBr_ZpEXXuSnHhvYWMOLq7q0lZKFOCfudnfmUQsS3iEPK4lSz_9TFrIcwQQt2hfOnoPaIouJVv4YFg0YZwiYzt22QUlA/s600/softmax.jpeg"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx8VumI1YterlkVJcRbY7ZNWWI8iJ3E3YkQ9OlHxrzBEOolCWYyAGn5DYJNFySquHPLSZwIqSC7NDoRvweC4bhwfOEMiG-l6graw9-BBkov0wkqVo4k1wtcA6wafMgPSB90vpcEC6khriy0DKhPNdqqWluWpHFW4n1bzyrEEbHdWOg4F6sX7t-bU3t4g/s1340/Softmax-Function.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="680" data-original-width="1340" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgx8VumI1YterlkVJcRbY7ZNWWI8iJ3E3YkQ9OlHxrzBEOolCWYyAGn5DYJNFySquHPLSZwIqSC7NDoRvweC4bhwfOEMiG-l6graw9-BBkov0wkqVo4k1wtcA6wafMgPSB90vpcEC6khriy0DKhPNdqqWluWpHFW4n1bzyrEEbHdWOg4F6sX7t-bU3t4g/s600/Softmax-Function.png"/></a></div>
+
+Statisticians usually call softmax a "multiple logistic" function. It reduces to the simple logistic function when there are only two categories.
+The first category is q_1. And suppose you choose to set q_2 to 0. Then 
+
+           exp(q_1)         exp(q_1)              1
+   p_1 = ------------ = ----------------- = -------------
+          c             exp(q_1) + exp(0)   1 + exp(-q_1)
+         sum exp(q_j)
+         j=1
+
+and p_2, of course, is 1 - p_1. 
+
+Ref: <a href="http://www.faqs.org/faqs/ai-faq/neural-nets/part2/section-12.html" target="_blank">ai-faq/neural-nets</a> 
+</pre>
