@@ -77,6 +77,19 @@
 <span class="customLink toggleBtn">Toggle All Sections</span>
 
 <br>
+<h3 class="customAlgorithmsAnalysisAndDesignHeader">
+    <span class="arrow up"></span> Algorithms: Analysis And Design
+</h3>
+
+<div id="customAlgorithmsAnalysisAndDesign">
+    <ol>
+        <li>
+            <a href="https://survival8.blogspot.com/2023/09/recursion-introduction.html" target="_blank">
+                Recursion (An Introduction)
+            </a>
+        </li>
+    </ol>
+</div>
 
 <h3 class="customAnacondaHeader"><span class="arrow up"></span> Anaconda</h3>
 <div id="customAnaconda">
@@ -806,6 +819,26 @@
         </li>
     </ol>
 </div> <!-- Databricks Ends -->
+
+<h3 class="customDataScienceInterviewPreparationHeader">
+    <span class="arrow up"></span> Data Science Interview Preparation
+</h3>
+<div id="customDataScienceInterviewPreparation">
+    <ol>
+        <li>
+            <a href="https://survival8.blogspot.com/2023/09/interview-for-nlp-and-ml-profile-2-sep.html"
+                target="_blank">
+                Interview for NLP and ML Profile (2 Sep 2023)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2023/09/data-science-interview-questions-on.html" target="_blank">
+                Data Science Interview Questions on The Empirical Rule For Normal Distribution
+            </a>
+        </li>
+    </ol>
+</div> <!-- data science interview preparation ends -->
 
 <h3 class="customDeepLearningHeader"><span class="arrow up"></span> Deep Learning</h3>
 <div id="customDeepLearning">
@@ -4178,6 +4211,13 @@
 </div>
 
 <script>
+    
+
+    $('h3.customAlgorithmsAnalysisAndDesignHeader').click(function () {
+        $("div#customAlgorithmsAnalysisAndDesign").fadeToggle();
+        $("h3.customAlgorithmsAnalysisAndDesignHeader > .arrow").toggleClass('up').toggleClass('down');
+    });
+
 
     $('h3.customAnacondaHeader').click(function () {
         $("div#customAnaconda").fadeToggle();
@@ -4204,7 +4244,7 @@
         $("h3.customCyberSecurityHeader > .arrow").toggleClass('up').toggleClass('down');
     });
 
-    
+
     $('h3.customDatabasesHeader').click(function () {
         $("div#customDatabases").fadeToggle();
         $("h3.customDatabasesHeader > .arrow").toggleClass('up').toggleClass('down');
@@ -4213,6 +4253,11 @@
     $('h3.customDatabricksHeader').click(function () {
         $("div#customDatabricks").fadeToggle();
         $("h3.customDatabricksHeader > .arrow").toggleClass('up').toggleClass('down');
+    });
+
+    $('h3.customDataScienceInterviewPreparationHeader').click(function () {
+        $("div#customDataScienceInterviewPreparation").fadeToggle();
+        $("h3.customDataScienceInterviewPreparationHeader > .arrow").toggleClass('up').toggleClass('down');
     });
 
     $('h3.customDeepLearningHeader').click(function () {

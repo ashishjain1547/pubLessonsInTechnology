@@ -1,0 +1,196 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+
+<body>
+  <h1 style="page-break-before:always; ">Problem 1</h1>
+  <p>First question related to NLP.</p>
+  <p></p>
+  <p>What is ‘Dependency Parsing’?</p>
+  <h1 style="page-break-before:always; "></h1>
+  <p>Dependency Parsing is the process to analyze the grammatical structure in a sentence and find out related words as
+    well as the type of the relationship between them.</p>
+  <p></p>
+  <p>Each relationship:</p>
+  <p></p>
+  <p>- Has one head and a dependent that modifies the head.</p>
+  <p>- Is labeled according to the nature of the dependency between the head and the dependent. </p>
+
+  <p>Ref: <a href="https://towardsdatascience.com/natural-language-processing-dependency-parsing-cf094bbbe3f7"
+      target="_blank"></a>towardsdatascience</p>
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinRQ7gIZGXmSbRzckF9qMxwZyvhazri8B5nBZBxWCUIkZQOAFe-I0Q3BivP-F9g4_uRKkpyfWWtqn--y2Ro2e9j6HIh-yextoG9aiAtHq84ESYo4TrFJMD-yzrnz0cW4-uTbpKppzhEalfwj1zJRQIZN0cE2dDxy6Ij-rckT_mVh3lsdeDQGfJM3NeMGLQ/s328/1.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="177" data-original-width="328"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEinRQ7gIZGXmSbRzckF9qMxwZyvhazri8B5nBZBxWCUIkZQOAFe-I0Q3BivP-F9g4_uRKkpyfWWtqn--y2Ro2e9j6HIh-yextoG9aiAtHq84ESYo4TrFJMD-yzrnz0cW4-uTbpKppzhEalfwj1zJRQIZN0cE2dDxy6Ij-rckT_mVh3lsdeDQGfJM3NeMGLQ/s600/1.png" /></a>
+  </div>
+  <p>In the above diagram, there exists a relationship between car and black because black modifies the meaning of car.
+    Here, car acts as the head and black is a dependent of the head. The nature of the relationship here is amod which
+    stands for “Adjectival Modifier”. It is an adjective or an adjective phrase that modifies a noun.</p>
+  <h1 style="page-break-before:always; "></h1>
+  <p>sentence = 'Deemed universities charge huge fees'</p>
+  <p></p>
+  <p>Using SpaCy</p>
+
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRm07Gu0v1AzlPE3tr-zAPUMvcJSjZXwbtDe165x0B6ROBBrl61vsfHoVwt93qrheFkbFy08GUt2nISz5oQGxFHvrZJpb6wHzinolefNC3hIxcT2OVqASXBy5HZnKTzdXSyxVVezk6yQmHUZZJzE6rg6Jc3PNROazBaK2mhtOoC6IsxjVICGVsyu3oNIIb/s720/2.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="299" data-original-width="720"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRm07Gu0v1AzlPE3tr-zAPUMvcJSjZXwbtDe165x0B6ROBBrl61vsfHoVwt93qrheFkbFy08GUt2nISz5oQGxFHvrZJpb6wHzinolefNC3hIxcT2OVqASXBy5HZnKTzdXSyxVVezk6yQmHUZZJzE6rg6Jc3PNROazBaK2mhtOoC6IsxjVICGVsyu3oNIIb/s600/2.png" /></a>
+  </div>
+
+
+  <h1 style="page-break-before:always; ">Using NLTK and NetworkX</h1>
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiB6RvSvn_8TL1Y5P-4v8uDF2oKfRXOgYTxpIIyKGVHDpIXeLxiGP_JrV86e0nD6G4v0oub3EppNMFvHfqDGGvMd-50lHcmBA0Fp0bJ0KVnEUp2C57WlxNsvU8tpiatZql5NfrzCf4nnTVsBHS6hgzduehyMh-vjWjwnkfcR1pXZLHWlyOKXa0lvpgg033m/s446/3.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="302" data-original-width="446"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiB6RvSvn_8TL1Y5P-4v8uDF2oKfRXOgYTxpIIyKGVHDpIXeLxiGP_JrV86e0nD6G4v0oub3EppNMFvHfqDGGvMd-50lHcmBA0Fp0bJ0KVnEUp2C57WlxNsvU8tpiatZql5NfrzCf4nnTVsBHS6hgzduehyMh-vjWjwnkfcR1pXZLHWlyOKXa0lvpgg033m/s600/3.png" /></a>
+  </div>
+  <h1 style="page-break-before:always; ">Visualization using DOT Definition</h1>
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4xRkB7KLOtk6-cY4QhP1uKILCfEDhAEjgBWBhSPkfMDq2cP_o41ZPPWTPd2ZbDm1pdnLnvwwtvQXKcsxl1o5OGFVpleZ581tjUbWQvO194ZnHdueShbeu3Jsb-9MXt5urj5q3ChcxAgJeBIURkevy21daMtC1mjWHwFTqUEpHeBKdfUC0HOkpKNrTlyp-/s411/4.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="411" data-original-width="266"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4xRkB7KLOtk6-cY4QhP1uKILCfEDhAEjgBWBhSPkfMDq2cP_o41ZPPWTPd2ZbDm1pdnLnvwwtvQXKcsxl1o5OGFVpleZ581tjUbWQvO194ZnHdueShbeu3Jsb-9MXt5urj5q3ChcxAgJeBIURkevy21daMtC1mjWHwFTqUEpHeBKdfUC0HOkpKNrTlyp-/s600/4.png" /></a>
+  </div>
+  <h1 style="page-break-before:always; ">Problem 2</h1>
+  <p>2.1) What is NER?</p>
+  <p></p>
+  <p>2.2) How do you build a custom NER?</p>
+  <h1 style="page-break-before:always; ">Answer 2.1</h1>
+  <p>NER refers to Named Entity Recognition.</p>
+  <p></p>
+  <p>Named-entity recognition (NER) is a subtask of information extraction that seeks to locate and classify named
+    entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations,
+    medical codes, time expressions, quantities, monetary values, percentages, etc.</p>
+  <p></p>
+  <p></p>
+  <p>Ref: <a href="https://towardsdatascience.com/custom-named-entity-recognition-with-bert-cf1fd4510804"
+      target="_blank">
+      custom-named-entity-recognition-with-bert</a></p>
+  <p></p>
+  <p>
+    <a href="https://towardsdatascience.com/train-ner-with-custom-training-data-using-spacy-525ce748fab7"
+      target="_blank">
+      train-ner-with-custom-training-data-using-spacy</a>
+  </p>
+  <p></p>
+  <h1 style="page-break-before:always; ">Answer 2.2</h1>
+  <p>Most articles you would find on through Google search about how a custom NER can be built would point to a solution
+    showcasing a supervised version of this problem.</p>
+  <p></p>
+  <p>Two very common approaches to building Custom NER using supervised learning are:</p>
+  <p></p>
+  <p>1. Using BERT</p>
+  <p></p>
+  <p>2. Using SpaCy</p>
+  <p></p>
+  <p>SpaCy uses labeled data in the form of Annotations.</p>
+
+  <p>Ref: <a
+      href="https://colab.research.google.com/github/NielsRogge/Transformers-Tutorials/blob/master/BERT/Custom_Named_Entity_Recognition_with_BERT_only_first_wordpiece.ipynb"
+      target="_blank">
+      Custom_Named_Entity_Recognition_with_BERT
+    </a>
+  </p>
+
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhn6-KTgxvzOuDwaS4zjZ1swn97ivDXcfTPQO8nbaAf1-8cj0YM7sXIbbG9VxyLNHcVJb2q2HKzHlok0sUgbgKNrKA_Kv434TJzI_tSnSN3M56AYzu25mMEGajGUYnhdlRiLtktMoBCeQ50A0zIDA80jb4Ml9ODjsZ-ffkndbNJY_82hMJ5cmqtjaXByOC5/s1533/5.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="874" data-original-width="1533"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhn6-KTgxvzOuDwaS4zjZ1swn97ivDXcfTPQO8nbaAf1-8cj0YM7sXIbbG9VxyLNHcVJb2q2HKzHlok0sUgbgKNrKA_Kv434TJzI_tSnSN3M56AYzu25mMEGajGUYnhdlRiLtktMoBCeQ50A0zIDA80jb4Ml9ODjsZ-ffkndbNJY_82hMJ5cmqtjaXByOC5/s600/5.png" /></a>
+  </div>
+
+  <p>Ref: <a href="https://towardsdatascience.com/custom-named-entity-recognition-using-spacy-7140ebbb3718"
+      target="_blank">
+      custom-named-entity-recognition-using-spacy
+    </a></p>
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGGwF54gjtICS7tDYUuhmfPM_1o4gxLv702L-pvjlRr0EwU7NBQ0RObvBdjFZuvy0muDiur1tRv8omAvglb8ZHzMh3ExjKfpgmCYFEFgVDTsnmb5vKorePZ4EXst-1mX7az5CoRqy-RrQh12Y49-UZpPJowAwPmFSLDyEMz9ml2c3Kgiql358IrhqkKCEC/s608/6.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="381" data-original-width="608"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGGwF54gjtICS7tDYUuhmfPM_1o4gxLv702L-pvjlRr0EwU7NBQ0RObvBdjFZuvy0muDiur1tRv8omAvglb8ZHzMh3ExjKfpgmCYFEFgVDTsnmb5vKorePZ4EXst-1mX7az5CoRqy-RrQh12Y49-UZpPJowAwPmFSLDyEMz9ml2c3Kgiql358IrhqkKCEC/s600/6.png" /></a>
+  </div>
+
+  <h1 style="page-break-before:always; ">Problem 3</h1>
+  <p>How do you decide if you need Machine Learning for solving a problem?</p>
+  <h1 style="page-break-before:always; ">Solution 3</h1>
+  <p>This is a subjective question.</p>
+  <p>You can start by explaining the definition of Machine Learning as given by Tom Mitchell:</p>
+  <p>“A computer program is said to learn from experience E with respect to some class of tasks T and performance
+    measure P, if its performance at tasks in T, as measured by P, improves with experience E.”</p>
+  <p></p>
+  <p>Then you can start by asking questions like if it is a problem that falls into one these problems that Machine
+    Learning can solve such as:</p>
+  <p>1. Classification</p>
+  <p>2. Regression</p>
+  <p>3. Clustering</p>
+  <p>4. Outlier Detection</p>
+  <p></p>
+  <p>Or is it some problem related to Data Mining like Frequent Pattern mining, or Market Basket analysis.</p>
+  <h1 style="page-break-before:always; ">Problem 4</h1>
+  <p>How do you select an approach / a model for a Machine Learning problem?</p>
+  <h1 style="page-break-before:always; ">Solution 4</h1>
+  <p>Questions to ask the client so that you can figure out which model will work best:</p>
+  <p></p>
+  <p>1. Explainable AI</p>
+  <p>Do you need to explain every prediction to the client or customer?</p>
+  <p>If yes, you need Explainable AI as in Decision Tree, Logistic Regression, etc.</p>
+  <p>If no, you can go with Black Box AI models like Artificial Neural Networks, Deep Learning, etc.</p>
+  <p></p>
+  <p>2. Prediction Time</p>
+  <p>Does the model need to give out predictions instantly?</p>
+  <p>You need to know the prediction time of your model and compare it with other choices you have. For example:
+    prediction time of Isolation Forest is lesser than prediction time of ANN for the problem of Outlier Detection.</p>
+  <p></p>
+  <p>3. Complexity</p>
+  <p>Is there a need for simple model or a complex model would work?</p>
+  
+  <p>4. Maintainability</p>
+  <p>The project stakeholders may have specific requirements, such as maintainability and limited model complexity. As
+    such, a model that has lower skill but is simpler and easier to understand may be preferred.</p>
+  <p></p>
+  <p>5. Available resources</p>
+  <p>If number of available resources (in terms of ‘computing power’ and ‘training data’) is not limited, you can think
+    of deploying a Deep Learning based solution like the LLMs, for example.</p>
+  
+  <p>On a side note:</p>
+  <p>Methods to assist in choosing the set of candidate models</p>
+  <p></p>
+  <p># Data transformation (statistics)</p>
+  <p></p>
+  <p># Exploratory data analysis</p>
+  <p></p>
+  <p># Model specification </p>
+  <p>As in In statistics, model specification is part of the process of building a statistical model: specification
+    consists of selecting an appropriate functional form for the model and choosing which variables to include.</p>
+  <p></p>
+  <p># Scientific method (as in Hypothesis Testing)</p>
+  <p></p>
+  <p>Ref: <a href="https://en.wikipedia.org/wiki/Model_selection" target="_blank">wikipedia</a></p>
+  <h1>Problem 5</h1>
+  <p>What experience do you have of the ‘Cloud’?</p>
+</body>
+
+<span style="display: none;">Tags: Natural Language Processing,Machine Learning,</span>
