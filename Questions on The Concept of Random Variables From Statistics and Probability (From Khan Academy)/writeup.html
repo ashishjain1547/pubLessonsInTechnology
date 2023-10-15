@@ -1,0 +1,407 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<pre>
+<h2>1: Random variables</h2>
+
+<h3>1.1: Constructing probability distributions</h3>
+
+Question 1:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip42dNeINoQ9Sc_iTWNTlu20Dy7q366QC7T2D6OWDhXetTgUtMUNFHvlpDW41G8GwxG_2oEVf8sSxpb88iB8tVOvKys_K1OP42QieV20dEhc3xGvLM9lI0Iv9GNnXfTWxWBUeIMc9CzPaJ59pVutPPOZ0rELZDm5HETbJGYusrv7Rqk6rBgMmpvYIKTzYP/s654/1.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="654" data-original-width="632"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip42dNeINoQ9Sc_iTWNTlu20Dy7q366QC7T2D6OWDhXetTgUtMUNFHvlpDW41G8GwxG_2oEVf8sSxpb88iB8tVOvKys_K1OP42QieV20dEhc3xGvLM9lI0Iv9GNnXfTWxWBUeIMc9CzPaJ59pVutPPOZ0rELZDm5HETbJGYusrv7Rqk6rBgMmpvYIKTzYP/s600/1.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlpC6FrUpMlu9lIBqe-q1v9INsvdvuNGpv5TfypaYfgTtKPfzhUP6nKxUebbqeqPIj5jb06iSdns7roO4-gCjg5XJSArRShWs1WsOY5ssViHgwvRga-d0Vra0F_l3cJPf7UEiCbYBxBcPdpdOWYMsYE-kTTkYgGTDvE4WCLnC1lbaGhiukpjK6KarNtPtH/s668/1%20sol.jpeg"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="488" data-original-width="668"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlpC6FrUpMlu9lIBqe-q1v9INsvdvuNGpv5TfypaYfgTtKPfzhUP6nKxUebbqeqPIj5jb06iSdns7roO4-gCjg5XJSArRShWs1WsOY5ssViHgwvRga-d0Vra0F_l3cJPf7UEiCbYBxBcPdpdOWYMsYE-kTTkYgGTDvE4WCLnC1lbaGhiukpjK6KarNtPtH/s600/1%20sol.jpeg" /></a>
+</div>
+
+Question 2:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOfrxZTDepDdvyEVgnnbCCeoYh8D4mZdYMbsjsqksExWe1I-MRsRk-RDMXpfjhY_FDoGbwgwgWIiUKi96nHnsgkt_tsmPAs8R-E0S-i8l7z-7I-iCL6UwTvWAiRJKPVw7MxrS3EqtdWlYJLzPNQyK7h6VMdqjZgBcBqTCFSVeqfvDr4Nmzd69edlOPWfjk/s743/question.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="743" data-original-width="494"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOfrxZTDepDdvyEVgnnbCCeoYh8D4mZdYMbsjsqksExWe1I-MRsRk-RDMXpfjhY_FDoGbwgwgWIiUKi96nHnsgkt_tsmPAs8R-E0S-i8l7z-7I-iCL6UwTvWAiRJKPVw7MxrS3EqtdWlYJLzPNQyK7h6VMdqjZgBcBqTCFSVeqfvDr4Nmzd69edlOPWfjk/s600/question.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijTJMv9H3_UqEkTH_n9ZO-YQcJml-RPPavuyZW52wtVNIrgbwGlosGihulmP36y1aDLUhhV7VK0nS9irc2KUpEc8mtg2IpBpd0UG1o0fh8VjLIbwSso9RqrOWt9ab7THkUIDpvnnBQNuPwOUNPlmiaKAs_f0_xlnNiRcEYYzG9J0-902Cp16vagCTBEfka/s724/answer.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+            data-original-height="724" data-original-width="486"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijTJMv9H3_UqEkTH_n9ZO-YQcJml-RPPavuyZW52wtVNIrgbwGlosGihulmP36y1aDLUhhV7VK0nS9irc2KUpEc8mtg2IpBpd0UG1o0fh8VjLIbwSso9RqrOWt9ab7THkUIDpvnnBQNuPwOUNPlmiaKAs_f0_xlnNiRcEYYzG9J0-902Cp16vagCTBEfka/s600/answer.png" /></a>
+</div>
+
+<h3>1.2: Probability models</h3>
+
+Question 3:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9BwNzO5JYBqRvHhZ_Fl4W1C0IOddkhTUdnJX0PkYK-pePleKaigJdxHEkki9jppl6HLPsNtFgauauIsnPeoQp0_R6dH1Hm0gsCLT2wIPAjgUEvAfVOu7t2NhMV5miw_yleecSeKs84H78Td3L0WzDzrG-JGXk1vSxsfMvMFK0_yEOkKIXpTedc2JjYyVu/s507/3%20ques.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="278" data-original-width="507"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9BwNzO5JYBqRvHhZ_Fl4W1C0IOddkhTUdnJX0PkYK-pePleKaigJdxHEkki9jppl6HLPsNtFgauauIsnPeoQp0_R6dH1Hm0gsCLT2wIPAjgUEvAfVOu7t2NhMV5miw_yleecSeKs84H78Td3L0WzDzrG-JGXk1vSxsfMvMFK0_yEOkKIXpTedc2JjYyVu/s600/3%20ques.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDwd8wf4ANmFo_XdSi-qSqbWL20Rbphd4JT-Q1I13e0ukfyR4FtgfA3bk_JtPwk6wBQJPrWsl8DAepQHwfPUOqQujMnL209Oqgmg_BP3nCnAdhW8aTWib5oVbtQRwXT4YjCD6UboYBCYfsLG179rM9ZKHwQhxBX3wgv9C1ZOXutAh9aPSC4BNNkY-Kxq53/s641/3%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="406" data-original-width="641"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDwd8wf4ANmFo_XdSi-qSqbWL20Rbphd4JT-Q1I13e0ukfyR4FtgfA3bk_JtPwk6wBQJPrWsl8DAepQHwfPUOqQujMnL209Oqgmg_BP3nCnAdhW8aTWib5oVbtQRwXT4YjCD6UboYBCYfsLG179rM9ZKHwQhxBX3wgv9C1ZOXutAh9aPSC4BNNkY-Kxq53/s600/3%20sol.jpeg" /></a>
+</div>
+
+<h2>2: Probability with discrete random variables</h2>
+
+Question 4:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirx2KNcdwIW4EcI5IGoMmVEhlUkopWw0XxkVzIF5t5Sj_DHhyrYqYLtagdFZF-6oLG8viB-EW0NAVOLedAfHQFWEPux1miOzQRwRVk0krGgns04kURNOlHdWOtOYqBzJwGvfN7-7hWu9KfIm5Yx8N4E0wAh7N6ctkjLgKpgXy4cf5H5eOv1nzkv_oxGngj/s497/4%20ques.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="384" data-original-width="497"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirx2KNcdwIW4EcI5IGoMmVEhlUkopWw0XxkVzIF5t5Sj_DHhyrYqYLtagdFZF-6oLG8viB-EW0NAVOLedAfHQFWEPux1miOzQRwRVk0krGgns04kURNOlHdWOtOYqBzJwGvfN7-7hWu9KfIm5Yx8N4E0wAh7N6ctkjLgKpgXy4cf5H5eOv1nzkv_oxGngj/s600/4%20ques.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJpjk2pHQNS1wpA2xLr9GWbBT_rgOmKRQV8C4b6S-rr2wggXx83KHCWGZUnBXIv_r-Yu2UfR8dP4s_swa4cTr5vnsE25dj-Hpm_keEsRPbTbhus4L2PZ28sI83lE-2SEfPEOlsLg2G7bYUG3NcFGw9tDvnwa4PwQTfwvPNthnGJusPjzGxDKpc4wvNR4-l/s687/4%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="406" data-original-width="687"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJpjk2pHQNS1wpA2xLr9GWbBT_rgOmKRQV8C4b6S-rr2wggXx83KHCWGZUnBXIv_r-Yu2UfR8dP4s_swa4cTr5vnsE25dj-Hpm_keEsRPbTbhus4L2PZ28sI83lE-2SEfPEOlsLg2G7bYUG3NcFGw9tDvnwa4PwQTfwvPNthnGJusPjzGxDKpc4wvNR4-l/s600/4%20sol.jpeg" /></a>
+</div>
+
+<h2>3: Combining random variables</h2>
+
+Question 5:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_mflepC08_SeM2Z3LolVYB96m8E_M9RICGVfuZ6Eavh3pzo2qcbBJqweKxxJ03PXUMVV4haaAgLbpoA2yHW96ly01Uo9d-x8pbU_7GDVHkw9TAKwMJ98mRdo52zgmGa_tpOVZQ-HNQ_OSsgpuhdO9OmsLWGXQWSwSPutUO0VntuVhfSJ9Iew509rGXM9d/s720/1%20ques.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="720" data-original-width="602"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_mflepC08_SeM2Z3LolVYB96m8E_M9RICGVfuZ6Eavh3pzo2qcbBJqweKxxJ03PXUMVV4haaAgLbpoA2yHW96ly01Uo9d-x8pbU_7GDVHkw9TAKwMJ98mRdo52zgmGa_tpOVZQ-HNQ_OSsgpuhdO9OmsLWGXQWSwSPutUO0VntuVhfSJ9Iew509rGXM9d/s600/1%20ques.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXbRHRfZ71uXWMlFcr_rs2PjUos6KUoGSuusIV-x3qVjvpEjuhgx7q3FeuSCJSc_FcCHQy8O9fSnLwq8BCQBC8zctRUAVQ30E70BJ4ReWevoFYTkOyddNFfWgDDjKVlKcWK_btODLgM1muZY3O65rzLgyEyckfpineuzZQdx6PSRhz5qPBaYLBQUo4SrZp/s575/1%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="575" data-original-width="502"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXbRHRfZ71uXWMlFcr_rs2PjUos6KUoGSuusIV-x3qVjvpEjuhgx7q3FeuSCJSc_FcCHQy8O9fSnLwq8BCQBC8zctRUAVQ30E70BJ4ReWevoFYTkOyddNFfWgDDjKVlKcWK_btODLgM1muZY3O65rzLgyEyckfpineuzZQdx6PSRhz5qPBaYLBQUo4SrZp/s600/1%20sol.jpeg" /></a>
+</div>
+
+Question 6:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzhys12fdCLd4EfU0p7DSPza0G9QiB6bnA-APPDwwYnPUJFO7D_Ca-8wff5qWXOdaYyxRpcsfnmHjGUw-e5ZP0bUY7_dWw9Pamg6dAuVLV99PGXPlbfybgPu1NujNGBAI6NueWhRzIimb-DlKZzrwltwPqglVCpSuj83dx7TO44ULuKVaixLfxlpPEaq2R/s628/2%20ques.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="360" data-original-width="628"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzhys12fdCLd4EfU0p7DSPza0G9QiB6bnA-APPDwwYnPUJFO7D_Ca-8wff5qWXOdaYyxRpcsfnmHjGUw-e5ZP0bUY7_dWw9Pamg6dAuVLV99PGXPlbfybgPu1NujNGBAI6NueWhRzIimb-DlKZzrwltwPqglVCpSuj83dx7TO44ULuKVaixLfxlpPEaq2R/s600/2%20ques.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0bg6Cm8_c4reyFyEA0YZf_zHbxxTy1RiU7TH6u9bBgdXM2fEjNxwN7eccvxmrUJ6bFORWMTv9xXCPoZZzDYtlCuHfvD_bPmjixaFtCn2Z3ThyphenhyphenlE0d42OmSXyDMpBlwleX2VZO3tqGZ-3V71iNZfps8vAK0OSevh_O2U8sJBJhfsSqaDJhH9S3olvrdxfb/s691/2%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="244" data-original-width="691"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0bg6Cm8_c4reyFyEA0YZf_zHbxxTy1RiU7TH6u9bBgdXM2fEjNxwN7eccvxmrUJ6bFORWMTv9xXCPoZZzDYtlCuHfvD_bPmjixaFtCn2Z3ThyphenhyphenlE0d42OmSXyDMpBlwleX2VZO3tqGZ-3V71iNZfps8vAK0OSevh_O2U8sJBJhfsSqaDJhH9S3olvrdxfb/s600/2%20sol.jpeg" /></a>
+</div>
+
+<h2>4: Identifying binomial variables</h2>
+
+<h3>Four Conditions of Binomial Variable</h3>
+
+1. There are fixed number of trials.
+
+2. Each trial results in a success of failure.
+
+3. A trial is independent of other trials.
+
+4. Probability of success remains constant over time.
+
+<b>Question 7:</b>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXRzyNGSi-amO0iPqpCZCpvgyg8_QCMws7MZbPPw1ZLlbVfh2Hw4bj2FTGrpAdPwHb65J1gEMZvSTZEhNEV48zGVoSmPDEstnoMdrG2CFWOQjT4r7_JTqCV1_P-XXzdXuIeZ5_NqvBp9reJjgu2mMaSdlOripdrOEmBYpThEGXlPpkoVi49_dewJqHF1D2/s624/3.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="389" data-original-width="624"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXRzyNGSi-amO0iPqpCZCpvgyg8_QCMws7MZbPPw1ZLlbVfh2Hw4bj2FTGrpAdPwHb65J1gEMZvSTZEhNEV48zGVoSmPDEstnoMdrG2CFWOQjT4r7_JTqCV1_P-XXzdXuIeZ5_NqvBp9reJjgu2mMaSdlOripdrOEmBYpThEGXlPpkoVi49_dewJqHF1D2/s600/3.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrrGjAozo7aLv3PmUNigLevJHJ4s6XxehXVoRqe-VDp8PUXc2DNLX2elf5bQoY7Y8oK3w3Rlaap16GzchBsp6Ci9B_nPtxtO1VjaZZ6SGfqFqNaEXBcdKODdEReeuJe1u1sjSbyAQIFIbtuYo_lROqoL9g_Zq4O-USeORcot04_ZBUVs1ES3lMNxtS5AwA/s587/3%20sol.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="514" data-original-width="587"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrrGjAozo7aLv3PmUNigLevJHJ4s6XxehXVoRqe-VDp8PUXc2DNLX2elf5bQoY7Y8oK3w3Rlaap16GzchBsp6Ci9B_nPtxtO1VjaZZ6SGfqFqNaEXBcdKODdEReeuJe1u1sjSbyAQIFIbtuYo_lROqoL9g_Zq4O-USeORcot04_ZBUVs1ES3lMNxtS5AwA/s600/3%20sol.png" /></a>
+</div>
+
+Question 8:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMlhPQCjBndm3GcAw1MjXqy3uqqkENGZ0nnl-A2uRiPdXjbYQ_OotL2Z4S-lZgFoFNPeyGESYHGWj_VMh5DUiWDFM2XjT3AAI4fzhIdfi-ccZ5-GTEF_6fzYVhfs0Gjd-B6rkD0uoWnwMgMARr8xg0b_F_FzIrppeZ31E3YGOO8Ah-9yNv9WMH_2Yb9lgU/s624/4.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="452" data-original-width="624"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMlhPQCjBndm3GcAw1MjXqy3uqqkENGZ0nnl-A2uRiPdXjbYQ_OotL2Z4S-lZgFoFNPeyGESYHGWj_VMh5DUiWDFM2XjT3AAI4fzhIdfi-ccZ5-GTEF_6fzYVhfs0Gjd-B6rkD0uoWnwMgMARr8xg0b_F_FzIrppeZ31E3YGOO8Ah-9yNv9WMH_2Yb9lgU/s600/4.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMiGrGZi3fChbACZhGySveikd4n8vVUnTk9kWZ9KptfIapmVhytmGCFLwHO19tn891x1W8sKo1lgAYaePaCKQOYyGyj-Nq0c-5J4l52h330iwaKiHZA3oSht6y8jjSDMF380xIzS7RnKqRg8x6ZZTAHQ5dmooevF5AT1Tq8L38D_kK01rbWxHxH4J1Uizy/s593/4%20sol.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="572" data-original-width="593"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhMiGrGZi3fChbACZhGySveikd4n8vVUnTk9kWZ9KptfIapmVhytmGCFLwHO19tn891x1W8sKo1lgAYaePaCKQOYyGyj-Nq0c-5J4l52h330iwaKiHZA3oSht6y8jjSDMF380xIzS7RnKqRg8x6ZZTAHQ5dmooevF5AT1Tq8L38D_kK01rbWxHxH4J1Uizy/s600/4%20sol.png" /></a>
+</div>
+
+Question 9:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwrBftjSzWLbVvOR8V-Fh8wmBISqtdb3CtAud7BiY_nKai5wPRS5aq32wzFtfFW87Pa0VC1xllkw1WTJ8bkJ6q0c6jYr9tg0fm_BUjV2wulBRZID92TSlgH8X-I9nKAWQstihJHvom_3bDHcrucmbna7jeERI2Ghyp_TTm-GxIsScK6CNaVtX7aYd0_ucu/s603/5.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="338" data-original-width="603"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwrBftjSzWLbVvOR8V-Fh8wmBISqtdb3CtAud7BiY_nKai5wPRS5aq32wzFtfFW87Pa0VC1xllkw1WTJ8bkJ6q0c6jYr9tg0fm_BUjV2wulBRZID92TSlgH8X-I9nKAWQstihJHvom_3bDHcrucmbna7jeERI2Ghyp_TTm-GxIsScK6CNaVtX7aYd0_ucu/s600/5.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKDvaLVabjzF1Zn1JXk70BnqmwKSX4QsC7TkOot1yv8OSjH4qBX_BjX4BVfjQiW1FSWklCUK7MM2IdIFa2YX147NpP20bbWxj4odvgzAF6vu0MEdtHq92vjWTLu4XYYdh1yxoj09raaXNu-efbj0m_gziP4CxYlA4rWKXiLbIvS9gafVtH1YUSqjmdhgbg/s589/5%20sol.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="543" data-original-width="589"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKDvaLVabjzF1Zn1JXk70BnqmwKSX4QsC7TkOot1yv8OSjH4qBX_BjX4BVfjQiW1FSWklCUK7MM2IdIFa2YX147NpP20bbWxj4odvgzAF6vu0MEdtHq92vjWTLu4XYYdh1yxoj09raaXNu-efbj0m_gziP4CxYlA4rWKXiLbIvS9gafVtH1YUSqjmdhgbg/s600/5%20sol.png" /></a>
+</div>
+
+<h2>5: Binomial probability formula</h2>
+
+Question 10:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhit6zMaQVotBnkrmwl2T8FzRXciqTUcJQxHqwJthdK42A1FH2hZ-R18KQOYmCPdk1lgmLqlHLB8WcCh-dniwd1RjiTpZ0IABa9aiLxHyjBgM4SbeluZCoS4j5TOhcUWbKyxiEcTtH6SvaZNMtEPU92QS6_MOwvfd2GpUZeWxJUPGydABVK8wz1Hqteq2pe/s609/1%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="598" data-original-width="609"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhit6zMaQVotBnkrmwl2T8FzRXciqTUcJQxHqwJthdK42A1FH2hZ-R18KQOYmCPdk1lgmLqlHLB8WcCh-dniwd1RjiTpZ0IABa9aiLxHyjBgM4SbeluZCoS4j5TOhcUWbKyxiEcTtH6SvaZNMtEPU92QS6_MOwvfd2GpUZeWxJUPGydABVK8wz1Hqteq2pe/s600/1%20q.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEHLxF9uNdMDQ03ouB1PFdrWBZLuKTDv_Ywgxad7D48HXBhPiioYvft6D4G3rbVMCyMI9U4V845cWWnpLPjAFr-b1NmaSyn6APqnWaIRwYDomdPE8YoJbFYSPR0PjjkRJivGVw4HnZpERJgQYbLYKO56J51CpaiI0dC6cNYGiXK5U9bEZL4ZeWtdvww7VD/s716/1%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="645" data-original-width="716"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEHLxF9uNdMDQ03ouB1PFdrWBZLuKTDv_Ywgxad7D48HXBhPiioYvft6D4G3rbVMCyMI9U4V845cWWnpLPjAFr-b1NmaSyn6APqnWaIRwYDomdPE8YoJbFYSPR0PjjkRJivGVw4HnZpERJgQYbLYKO56J51CpaiI0dC6cNYGiXK5U9bEZL4ZeWtdvww7VD/s600/1%20sol.jpeg" /></a>
+</div>
+
+Question 11:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidxKg1TbKVW1pZvSryTg08QUx5EXdjWw4AxLFW_qmdrn3KYeKhd3-lPCGCJeuFse77XXjToTybNaRAPQq1GsY1N_T00BLPruBQgkmdIs2dJZDzE8Rr_7miYndKxe-Rij_GLArVW4s1jman-1prvRln6Pcl5NMkOfyN42vrkzkfI0nXIepwYNpLZTNEqW7Z/s490/2%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="455" data-original-width="490"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidxKg1TbKVW1pZvSryTg08QUx5EXdjWw4AxLFW_qmdrn3KYeKhd3-lPCGCJeuFse77XXjToTybNaRAPQq1GsY1N_T00BLPruBQgkmdIs2dJZDzE8Rr_7miYndKxe-Rij_GLArVW4s1jman-1prvRln6Pcl5NMkOfyN42vrkzkfI0nXIepwYNpLZTNEqW7Z/s600/2%20q.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGi3qdHHs53xCQ62DlyV8mrAXsueBPZdlMjZrddc1KLqdqKD28lszt8bzUfzsl1puLayHeSG-T2BqBf5mwDPM3xmqRv_DHBeCXh5xlBxM_dXug2z10nsdhPYJPhQ3xlqZZ0lFf8QyWhbEgVUgyoVWkTKunDbC-eOXxu6Phpf4u0ooUhDGQK5AbQjtjnAuk/s615/2%20ans.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+            data-original-height="615" data-original-width="461"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGi3qdHHs53xCQ62DlyV8mrAXsueBPZdlMjZrddc1KLqdqKD28lszt8bzUfzsl1puLayHeSG-T2BqBf5mwDPM3xmqRv_DHBeCXh5xlBxM_dXug2z10nsdhPYJPhQ3xlqZZ0lFf8QyWhbEgVUgyoVWkTKunDbC-eOXxu6Phpf4u0ooUhDGQK5AbQjtjnAuk/s600/2%20ans.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFQP-xTiUoQutBeYccQR3cUpXfKn5K3Mzffri6FPHYOOYf8Jic19K8PsrKcn0hHi0zA1IRJqMP33B0TurtahN06yxfKFb2m6aOd-JdQC8TrfCrxfA-6zIt6fs4zUYE0sBSJlReca8eWF8FEB73rOj7hnOrhGZJOga-unLgua5njE84WoTtTt5Wp8-whct-/s689/2%20sol.jpeg"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="604" data-original-width="689"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFQP-xTiUoQutBeYccQR3cUpXfKn5K3Mzffri6FPHYOOYf8Jic19K8PsrKcn0hHi0zA1IRJqMP33B0TurtahN06yxfKFb2m6aOd-JdQC8TrfCrxfA-6zIt6fs4zUYE0sBSJlReca8eWF8FEB73rOj7hnOrhGZJOga-unLgua5njE84WoTtTt5Wp8-whct-/s600/2%20sol.jpeg" /></a>
+</div>
+
+Question 12:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7YCQh9phrvpGw_ucqEh8Mhp8C8GcH0gSHLsfKR4cGJERrXujkpmO3S-YSq_Qkma84picKx2eSdRd7oCcaIsdM5PIqs7-zYKkk4kkJPCWQlZgw1cuXtYFMDeQ__ZA-CHopRjFp7fKmw0UggPxn3Qp0KJkfq8D1TizujCKMsxmEjKUNYFmVo8RLZoYySPJv/s494/3%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="411" data-original-width="494"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7YCQh9phrvpGw_ucqEh8Mhp8C8GcH0gSHLsfKR4cGJERrXujkpmO3S-YSq_Qkma84picKx2eSdRd7oCcaIsdM5PIqs7-zYKkk4kkJPCWQlZgw1cuXtYFMDeQ__ZA-CHopRjFp7fKmw0UggPxn3Qp0KJkfq8D1TizujCKMsxmEjKUNYFmVo8RLZoYySPJv/s600/3%20q.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPbTs28BuyXB8riXkxSwQ7CiFan6BtkuMANc_W-Zq2Jz0McGqLOYTXsLaKJqfLGHiBqFSN6LQYkJTA7AviiOatbOpw7yRvzR5B-BJmWwiYtqICCoy45zhvpSOFVW2eAyKFR-AO0B1onwLGGjeB6P3cQTbmPwWUWIM172p7nA-VpKJfWD349dMiS1vHDkCC/s625/3%20ans.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+            data-original-height="625" data-original-width="471"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPbTs28BuyXB8riXkxSwQ7CiFan6BtkuMANc_W-Zq2Jz0McGqLOYTXsLaKJqfLGHiBqFSN6LQYkJTA7AviiOatbOpw7yRvzR5B-BJmWwiYtqICCoy45zhvpSOFVW2eAyKFR-AO0B1onwLGGjeB6P3cQTbmPwWUWIM172p7nA-VpKJfWD349dMiS1vHDkCC/s600/3%20ans.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgG0Wf3ImXSjgrvNPUtBfwvSEvk0e_ZqX7CZXcULZYN3E4Tv0dqfFtBs0fmOrUzRxs49D6xqQ4rcNZIsTPvxZezjEjUYXyKxHZRI3ExWdhz4jZUHjWtI1zqqGzI72M4Iv1B3us9E0Bpx42SzAaJcnK3mevIAWNwHnN-0Dc83RlJGFHSczjRzLfjUteZXYTF/s726/3%20sol.jpeg"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+            data-original-height="726" data-original-width="712"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgG0Wf3ImXSjgrvNPUtBfwvSEvk0e_ZqX7CZXcULZYN3E4Tv0dqfFtBs0fmOrUzRxs49D6xqQ4rcNZIsTPvxZezjEjUYXyKxHZRI3ExWdhz4jZUHjWtI1zqqGzI72M4Iv1B3us9E0Bpx42SzAaJcnK3mevIAWNwHnN-0Dc83RlJGFHSczjRzLfjUteZXYTF/s600/3%20sol.jpeg" /></a>
+</div>
+
+<h2>6: Calculating binomial probability</h2>
+
+Question 13:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3SuAM0aLteQtKC6BlCftAeFRVs2hqP8LQCOXk-Bd5nuenDyi-WbCFwSBvJ17ViATv9x1bnTqxDX225KygK1mFDUkuuDvIhRv101JfjkQ6ugq-h2F7QYCAkzZcclH0J2iVMGCr8NozxunIbRUWVqkWjeS34my7PEFOCf9otstCF1SZL1JxgNmvAaibWw3f/s599/1.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="244" data-original-width="599"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3SuAM0aLteQtKC6BlCftAeFRVs2hqP8LQCOXk-Bd5nuenDyi-WbCFwSBvJ17ViATv9x1bnTqxDX225KygK1mFDUkuuDvIhRv101JfjkQ6ugq-h2F7QYCAkzZcclH0J2iVMGCr8NozxunIbRUWVqkWjeS34my7PEFOCf9otstCF1SZL1JxgNmvAaibWw3f/s600/1.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqjX6SoxjiJkM1_hyphenhyphenRx_VttHhg2ElWzGBmbaRrGcUFLxQBB_kV0ymQ9hjLhL_VWD5ozxKW0wmZEi3YRAsqH6X2rKAhL3I7ZMCq3rTMM3DYS7PuzmOJ6ZVnhW50Bj9-JC2VIyKDevGMKznhGkM_mf6IThe07ruU1XmxrL3PlRAgGAIgsRi3BFlgQnTrkwJm/s790/1%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="790" data-original-width="648"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjqjX6SoxjiJkM1_hyphenhyphenRx_VttHhg2ElWzGBmbaRrGcUFLxQBB_kV0ymQ9hjLhL_VWD5ozxKW0wmZEi3YRAsqH6X2rKAhL3I7ZMCq3rTMM3DYS7PuzmOJ6ZVnhW50Bj9-JC2VIyKDevGMKznhGkM_mf6IThe07ruU1XmxrL3PlRAgGAIgsRi3BFlgQnTrkwJm/s600/1%20sol.jpeg" /></a>
+</div>
+
+Question 14:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7ZxjxO5WzzRrGax-k0ynfScX0DRfiFPoWapM6PtLJylP5yTKQbB3e7zDTG1BXD8HBVe90roquQTtEZv-zkDevZOeqGR1O8rpXgPG_Sj7KdOx1Whfly_QY_OVYgRLTi6bE4kghW9sgkGPhsSeGfUMUSuSdcGsWGE-xv6ymKs6Fr0hmQroNERda_3iyh_qS/s599/2.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="244" data-original-width="599"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7ZxjxO5WzzRrGax-k0ynfScX0DRfiFPoWapM6PtLJylP5yTKQbB3e7zDTG1BXD8HBVe90roquQTtEZv-zkDevZOeqGR1O8rpXgPG_Sj7KdOx1Whfly_QY_OVYgRLTi6bE4kghW9sgkGPhsSeGfUMUSuSdcGsWGE-xv6ymKs6Fr0hmQroNERda_3iyh_qS/s600/2.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYYIBvdgS0o3DjT-nLe0tJ5UnPulXnkNShrbu4vVf9Y-nlg7yCzXI8tBJLG8ML0nfUuLDlQP4SusjglzFMD8TLpMLRJdLaGGpKv9SAthgt_TKCeYlDUEQmMM-MWqBU87TGgjPVFwiYc5q38e66dmsxvU-L8mT3lX2A7JjanKnwovlfBFtzsb0KDcRAAYEU/s817/2%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="817" data-original-width="699"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYYIBvdgS0o3DjT-nLe0tJ5UnPulXnkNShrbu4vVf9Y-nlg7yCzXI8tBJLG8ML0nfUuLDlQP4SusjglzFMD8TLpMLRJdLaGGpKv9SAthgt_TKCeYlDUEQmMM-MWqBU87TGgjPVFwiYc5q38e66dmsxvU-L8mT3lX2A7JjanKnwovlfBFtzsb0KDcRAAYEU/s600/2%20sol.jpeg" /></a>
+</div>
+
+<h2>7: Binomial vs. geometric random variables</h2>
+
+Question 15:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSZbjgT8l6ISUOkjE4UHPDRzmP03secu5ANyO-c_q1rZctnoahKhOJSPEvDcuMzkkbqq-LAJOJwwanb8cE18NuwDAEQ2XDNy9cx643m5QJJBpnqkGzhAbesQcmdseg64xHYrDBNqxmpU30zZHnb-W1G8oY_rT6a_XItu_DNINeTCVyqv1jv9EuPtqiEZel/s597/1.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="514" data-original-width="597"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSZbjgT8l6ISUOkjE4UHPDRzmP03secu5ANyO-c_q1rZctnoahKhOJSPEvDcuMzkkbqq-LAJOJwwanb8cE18NuwDAEQ2XDNy9cx643m5QJJBpnqkGzhAbesQcmdseg64xHYrDBNqxmpU30zZHnb-W1G8oY_rT6a_XItu_DNINeTCVyqv1jv9EuPtqiEZel/s600/1.png" /></a>
+</div>
+
+Question 16:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtlEWhyphenhyphenA9OmlWDPAbkT8dKinCl8kVygvAmEWYSLH0cdY7atSM9I-ojidlENFCGGY8cuAjyl1mEwvpbb_1T9aa1KtCYlx31-sMIdR4RPwBO7eqJtHb936Vt9HucmE7nVVrDSEGR_MbfUBCQQxKF1ZkdnbNjnwLE7U_V-vu2b6ItUCKZ0-foBDD2qI-SQyBU/s595/2.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="463" data-original-width="595"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtlEWhyphenhyphenA9OmlWDPAbkT8dKinCl8kVygvAmEWYSLH0cdY7atSM9I-ojidlENFCGGY8cuAjyl1mEwvpbb_1T9aa1KtCYlx31-sMIdR4RPwBO7eqJtHb936Vt9HucmE7nVVrDSEGR_MbfUBCQQxKF1ZkdnbNjnwLE7U_V-vu2b6ItUCKZ0-foBDD2qI-SQyBU/s600/2.png" /></a>
+</div>
+
+Question 17:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJNpc00vqQbWKoXLLY5WuFZcXgzkKGM6PME690bpm4H5nzCpWnKjn2aKi4qDC59NtX7ruPrm5XRZDrGgHQCbZ94xcbF4_Hezg3KCjjqwmrXnYgFH3mzH459bpfY-4NYgBVzBZIEMB298OK8Qx3Cgn643FoG9Weq_atUK4DNbLbDiY0ENmTx8oSXVNocfIL/s605/3.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="513" data-original-width="605"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJNpc00vqQbWKoXLLY5WuFZcXgzkKGM6PME690bpm4H5nzCpWnKjn2aKi4qDC59NtX7ruPrm5XRZDrGgHQCbZ94xcbF4_Hezg3KCjjqwmrXnYgFH3mzH459bpfY-4NYgBVzBZIEMB298OK8Qx3Cgn643FoG9Weq_atUK4DNbLbDiY0ENmTx8oSXVNocfIL/s600/3.png" /></a>
+</div>
+
+Question 18:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDYuET1ulUycxvNLj5b-ePrm5c4CGoQeO2oWh8boFoHWdj-l5R9qyFPbWB6siTApvE03HP-KGzlKP8M_WYWVS5xZd83O8Lh8sTkKAvewsZCXNwkQPUbvxkvvBbhACCpkkZdcV_UbmYQyUDGVo0QB1EGddBLnzE7NvEoS0oN3-dpiCezTD0HaZwtG7xU0u5/s606/4.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="480" data-original-width="606"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDYuET1ulUycxvNLj5b-ePrm5c4CGoQeO2oWh8boFoHWdj-l5R9qyFPbWB6siTApvE03HP-KGzlKP8M_WYWVS5xZd83O8Lh8sTkKAvewsZCXNwkQPUbvxkvvBbhACCpkkZdcV_UbmYQyUDGVo0QB1EGddBLnzE7NvEoS0oN3-dpiCezTD0HaZwtG7xU0u5/s600/4.png" /></a>
+</div>
+
+<h2>8: Geometric probability</h2>
+
+Question 19:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnLapCvb7zJgCZBBSL5tCgQSvwLZfl4Jzu95nL6Jtkt17JRhp13dnVEMgozSEgcMdxSxBCSpZrNEAMsSjWaoeOTpKDKYszc-ltRK01rPJrwN8aD86q5KsuFmv87sgQSVx97-YujFyuA87y4WaYIkVHEI0abcx9EafzjSO117pbLWG0LAE622zocEQWg7cM/s606/1.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="285" data-original-width="606"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnLapCvb7zJgCZBBSL5tCgQSvwLZfl4Jzu95nL6Jtkt17JRhp13dnVEMgozSEgcMdxSxBCSpZrNEAMsSjWaoeOTpKDKYszc-ltRK01rPJrwN8aD86q5KsuFmv87sgQSVx97-YujFyuA87y4WaYIkVHEI0abcx9EafzjSO117pbLWG0LAE622zocEQWg7cM/s600/1.png" /></a>
+</div>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNxTK6_qIriUHtv0DWtVOO22ndCPmhB5DhXQh8vAL4mlQCvfRsHCVX4MQc2JLeSfTd5VtYG91vKJ3N4eKm1doD8-wStLPb1NMWEIugfVRXVuUOeaEppLEuzG9w4cx96thpLn4Tr7I2MJgLwgY5IXcnkC2CTpwakiW7TBgvYZyeK-_Mh_ZLiuITWVIvRty3/s991/sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="991" data-original-width="873"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNxTK6_qIriUHtv0DWtVOO22ndCPmhB5DhXQh8vAL4mlQCvfRsHCVX4MQc2JLeSfTd5VtYG91vKJ3N4eKm1doD8-wStLPb1NMWEIugfVRXVuUOeaEppLEuzG9w4cx96thpLn4Tr7I2MJgLwgY5IXcnkC2CTpwakiW7TBgvYZyeK-_Mh_ZLiuITWVIvRty3/s600/sol.jpeg" /></a>
+</div>
+
+<h2>9: Cumulative geometric probability</h2>
+
+Question 20:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjddjsi5OBMZvX5dWLPjSDgJfrclLx13zRrVjDGZ3PnUFYccCQmiw6-bv_8gkifPsJQJvbbabIqMOsLmdeJbR5aXvYcgiBlriVE33gh847B4BjYbzlyiXFxajq3JT4TiWHBY677Zo9MXxm_qs2vItPBbOzSHAaUA2zR7wRCFsMO7a1LQ6I5BtBLZcQD-ivz/s610/1%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="238" data-original-width="610"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjddjsi5OBMZvX5dWLPjSDgJfrclLx13zRrVjDGZ3PnUFYccCQmiw6-bv_8gkifPsJQJvbbabIqMOsLmdeJbR5aXvYcgiBlriVE33gh847B4BjYbzlyiXFxajq3JT4TiWHBY677Zo9MXxm_qs2vItPBbOzSHAaUA2zR7wRCFsMO7a1LQ6I5BtBLZcQD-ivz/s600/1%20q.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYVwC7NmRc6wEq2S0yn2gV3pfIvCHwDxD1YF1QH14DD4TEwhyphenhyphendzFUTLgvK58kVNtmGbrF5OiYYmFQW86QpeAzJjLqzJknFXBDQzXp-pvBOKS3wY5BZ8AsrDyyrhNj67YQ_ey0xvGoOygEZWjdzMSj01MJ7K8K2Xl8OSDXWTRxPs-d-TeNDzCuUK7RX_JLR/s660/1%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="507" data-original-width="660"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYVwC7NmRc6wEq2S0yn2gV3pfIvCHwDxD1YF1QH14DD4TEwhyphenhyphendzFUTLgvK58kVNtmGbrF5OiYYmFQW86QpeAzJjLqzJknFXBDQzXp-pvBOKS3wY5BZ8AsrDyyrhNj67YQ_ey0xvGoOygEZWjdzMSj01MJ7K8K2Xl8OSDXWTRxPs-d-TeNDzCuUK7RX_JLR/s600/1%20sol.jpeg" /></a>
+</div>
+
+Question 21:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhE9dn90Fdu1KfG4gF59AZTwkV45f0FEf0-mddeE-DpbqvcdeNtczT_DVjhgbTVuoV-hRhDdA4D9E-QrEbhF7EAQ9de5DDJVz-47rZOLumS3HsZEwoG8M8YEc8mF5kS-8Kik-XdqKS4vATYVXJabv_K1H5Z8YvIsDSwcI-gi5QaULBdvdxv9zG20GRBTkI3/s618/2%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="216" data-original-width="618"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhE9dn90Fdu1KfG4gF59AZTwkV45f0FEf0-mddeE-DpbqvcdeNtczT_DVjhgbTVuoV-hRhDdA4D9E-QrEbhF7EAQ9de5DDJVz-47rZOLumS3HsZEwoG8M8YEc8mF5kS-8Kik-XdqKS4vATYVXJabv_K1H5Z8YvIsDSwcI-gi5QaULBdvdxv9zG20GRBTkI3/s600/2%20q.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgi8SxCfbunnEEXIcXQbc-QQBzrxfaIFT-b5U8nuryBol0HbLePYbRYGz-SRaOG3UmIfoYyAhwTW0T4GxlP_YtrMBrf1UH9Z_bwk-iApap2CqV7V922x14ASoMXjRW5gsgcEifKf3eF43Agm4pumrQlA5MrwY6NGm6BjHvkC7z6MuISA1g8uTCggbOVZEzF/s861/2%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="861" data-original-width="703"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgi8SxCfbunnEEXIcXQbc-QQBzrxfaIFT-b5U8nuryBol0HbLePYbRYGz-SRaOG3UmIfoYyAhwTW0T4GxlP_YtrMBrf1UH9Z_bwk-iApap2CqV7V922x14ASoMXjRW5gsgcEifKf3eF43Agm4pumrQlA5MrwY6NGm6BjHvkC7z6MuISA1g8uTCggbOVZEzF/s600/2%20sol.jpeg" /></a>
+</div>
+
+Question 22:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBo7eIRdo_ksmspgfWqpeRXcR7lsdQ38VnxYbBolEUWGv0VcjUklkKpkIIiivskBeG8Or_c_8xrS_cZo8ZtIOHeYW7YkLrf2b4H_ZiC-eJwRwe4DUeTPYbjphJ_H3KPA2Ix7qkQpaPNdKRHul9Wwenja_YhzX9zNaihtcUP1gY5ZFloHafLNb_ZEYIUHVa/s609/3%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="235" data-original-width="609"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBo7eIRdo_ksmspgfWqpeRXcR7lsdQ38VnxYbBolEUWGv0VcjUklkKpkIIiivskBeG8Or_c_8xrS_cZo8ZtIOHeYW7YkLrf2b4H_ZiC-eJwRwe4DUeTPYbjphJ_H3KPA2Ix7qkQpaPNdKRHul9Wwenja_YhzX9zNaihtcUP1gY5ZFloHafLNb_ZEYIUHVa/s600/3%20q.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5iigvR6GqKbMKhi1q_HDZsXjw5on9IvT9Af2SgnixFTMsHhOD3x3x7w1JEvgF3AcBVA5EcA5G42Qaw0TYyOecfbtBSl9uHCQJtOSPDHflgK861YBAu_TnCnx7YOTzN0dqq0y47Ip8ASTEGv3WE3cd2zBnQFX6T4QINuUnCwGtu27P4orc7gS_6nV0LUHm/s848/3%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="848" data-original-width="629"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5iigvR6GqKbMKhi1q_HDZsXjw5on9IvT9Af2SgnixFTMsHhOD3x3x7w1JEvgF3AcBVA5EcA5G42Qaw0TYyOecfbtBSl9uHCQJtOSPDHflgK861YBAu_TnCnx7YOTzN0dqq0y47Ip8ASTEGv3WE3cd2zBnQFX6T4QINuUnCwGtu27P4orc7gS_6nV0LUHm/s600/3%20sol.jpeg" /></a>
+</div>
+
+Question 23:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilCw4wTvYtmlXAZWt8Q7XhOaM3EsQpzZfYwZ24WQTSb6UyWo2PQ3_T-B77kJpCSDtKlmRfwbwwwpQwx9tE_p0UJGIpDbsVgzVloy8CJmytElwMrJkeL14RUNoJCjsZkIE8cUNgdmw-RpkYAgyos4ll4yj1aJ7fuUR1UyCNKlnPr956Elv7AAPTl1nlYJjv/s609/4%20q.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="235" data-original-width="609"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEilCw4wTvYtmlXAZWt8Q7XhOaM3EsQpzZfYwZ24WQTSb6UyWo2PQ3_T-B77kJpCSDtKlmRfwbwwwpQwx9tE_p0UJGIpDbsVgzVloy8CJmytElwMrJkeL14RUNoJCjsZkIE8cUNgdmw-RpkYAgyos4ll4yj1aJ7fuUR1UyCNKlnPr956Elv7AAPTl1nlYJjv/s600/4%20q.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimLf1OyM6kYaNcXVk2JedqKHZislCUG6MKP4FgO0ndombzXAnZQzih1mXuLujbLILXQ2Kq2XpFpnXkolTBq8lDNgDxD017t3uZC9WZJlQfLj50ZKpFKm184VLR2JUNRSneDGp69BKQo65D65YjnRcyFFqLt39v5oPGf4YbV7HdOpaVpAGYmfii5F9mKgvi/s666/4%20sol.jpeg"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="661" data-original-width="666"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimLf1OyM6kYaNcXVk2JedqKHZislCUG6MKP4FgO0ndombzXAnZQzih1mXuLujbLILXQ2Kq2XpFpnXkolTBq8lDNgDxD017t3uZC9WZJlQfLj50ZKpFKm184VLR2JUNRSneDGp69BKQo65D65YjnRcyFFqLt39v5oPGf4YbV7HdOpaVpAGYmfii5F9mKgvi/s600/4%20sol.jpeg" /></a>
+</div>
+
+</pre>
+
+<span style="display: none;">Tags: Technology,Mathematical Foundations for Data Science,</span>
