@@ -1,0 +1,177 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      i.ig {
+        color: green;
+      }
+
+      i.ib {
+        color: blue;
+      }
+
+      i.ir {
+        color: red;
+      }
+  </style>
+</head>
+
+<pre>
+<h1>On Ubuntu</h1>
+
+(base) ashish@ashish:~$ inxi
+<i class="ir">
+Command 'inxi' not found, but can be installed with:
+sudo apt install inxi  
+</i>
+
+(base) ashish@ashish:~$ inxi
+<i class="ig">
+CPU: dual core Intel Core i5-4300U (-MT MCP-) speed/min/max: 798/800/2900 MHz
+Kernel: 6.2.0-37-generic x86_64 Up: 2h 16m Mem: 3127.7/7624.3 MiB (41.0%)
+Storage: 223.57 GiB (45.9% used) Procs: 241 Shell: Bash inxi: 3.3.13  
+</i>
+
+(base) ashish@ashish:~$ inxi -Fxz
+<i class="ig">
+System:
+  Kernel: 6.2.0-37-generic x86_64 bits: 64 compiler: N/A Desktop: GNOME 42.9
+    Distro: Ubuntu 22.04.3 LTS (Jammy Jellyfish)
+Machine:
+  Type: Laptop System: LENOVO product: 20ARS2C00D v: ThinkPad T440s
+    serial: &lt;superuser required>
+  Mobo: LENOVO model: 20ARS2C00D v: 0B98401 WIN
+    serial: &lt;superuser required> UEFI-[Legacy]: LENOVO v: GJET79WW (2.29 )
+    date: 09/03/2014
+Battery:
+  ID-1: BAT0 charge: 18.0 Wh (98.4%) condition: 18.3/23.2 Wh (79.0%)
+    volts: 12.1 min: 11.1 model: SONY 45N1111 status: Not charging
+  ID-2: BAT1 charge: 1.4 Wh (63.6%) condition: 2.2/23.5 Wh (9.3%)
+    volts: 12.4 min: 11.4 model: LGC 45N1127 status: Charging
+CPU:
+  Info: dual core model: Intel Core i5-4300U bits: 64 type: MT MCP
+    arch: Haswell rev: 1 cache: L1: 128 KiB L2: 512 KiB L3: 3 MiB
+  Speed (MHz): avg: 1074 high: 1896 min/max: 800/2900 cores: 1: 800 2: 1896
+    3: 800 4: 800 bogomips: 19953
+  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
+Graphics:
+  Device-1: Intel Haswell-ULT Integrated Graphics vendor: Lenovo driver: i915
+    v: kernel bus-ID: 00:02.0
+  Device-2: Lite-On Integrated Camera type: USB driver: uvcvideo
+    bus-ID: 2-8:2
+  Display: x11 server: X.Org v: 1.21.1.4 driver: X: loaded: modesetting
+    unloaded: fbdev,vesa gpu: i915 resolution: 1600x900~60Hz
+  OpenGL: renderer: Mesa Intel HD Graphics 4400 (HSW GT2)
+    v: 4.6 Mesa 23.0.4-0ubuntu1~22.04.1 direct render: Yes
+Audio:
+  Device-1: Intel Haswell-ULT HD Audio vendor: Lenovo driver: snd_hda_intel
+    v: kernel bus-ID: 00:03.0
+  Device-2: Intel 8 Series HD Audio vendor: Lenovo driver: snd_hda_intel
+    v: kernel bus-ID: 00:1b.0
+  Sound Server-1: ALSA v: k6.2.0-37-generic running: yes
+  Sound Server-2: PulseAudio v: 15.99.1 running: yes
+  Sound Server-3: PipeWire v: 0.3.48 running: yes
+Network:
+  Device-1: Intel Ethernet I218-LM vendor: Lenovo ThinkPad X240
+    driver: e1000e v: kernel port: 3080 bus-ID: 00:19.0
+  IF: enp0s25 state: down mac: &lt;filter>
+  Device-2: Intel Wireless 7260 driver: iwlwifi v: kernel bus-ID: 03:00.0
+  IF: wlp3s0 state: up mac: &lt;filter>
+Drives:
+  Local Storage: total: 223.57 GiB used: 102.66 GiB (45.9%)
+  ID-1: /dev/sda vendor: Western Digital model: WDS240G2G0A-00JH30
+    size: 223.57 GiB
+Partition:
+  ID-1: / size: 218.51 GiB used: 102.65 GiB (47.0%) fs: ext4 dev: /dev/sda3
+  ID-2: /boot/efi size: 512 MiB used: 6.1 MiB (1.2%) fs: vfat
+    dev: /dev/sda2
+Swap:
+  ID-1: swap-1 type: file size: 2 GiB used: 0 KiB (0.0%) file: /swapfile
+Sensors:
+  System Temperatures: cpu: 45.0 C mobo: N/A
+  Fan Speeds (RPM): fan-1: 0
+Info:
+  Processes: 240 Uptime: 2h 17m Memory: 7.45 GiB used: 3.09 GiB (41.5%)
+  Init: systemd runlevel: 5 Compilers: gcc: 11.4.0 Packages: 2138 Shell: Bash
+  v: 5.1.16 inxi: 3.3.13
+</i>
+
+$ <i class="ib">free -h</i>
+<i class="ig">
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       2.3Gi       1.5Gi       473Mi       3.6Gi       4.4Gi
+Swap:          2.0Gi          0B       2.0Gi</i>
+(base) ashish@ashish:~$ 
+
+--- --- --- --- ---
+
+<h1>On Termux on Android Tablet PC by Samsung</h1>
+
+$ inxi
+<i class="ig">
+Use of uninitialized value $sc_freq_max[0] in join or string at /data/data/com.termux/files/usr/bin/inxi line 10313.
+CPU: 2x 6-core AArch64 (-MT MCP AMP-) speed/min/max: 961/614:1229/2002 MHz
+Kernel: 4.14.199-27204164-abX205XXU3CWI3 aarch64 Up: 17m
+Mem: 1.65/2.45 GiB (67.4%) Storage: 15.52 GiB/Total N/A Procs: 2 Shell: Bash
+inxi: 3.3.31</i>
+
+$ inxi -Fxz
+<i class="ig">
+System:
+  Kernel: 4.14.199-27204164-abX205XXU3CWI3 arch: aarch64 bits: 64
+    compiler: N/A Console: pty pts/0 Distro: Android
+Machine:
+  Type: ARM System: UNISOC T618
+Use of uninitialized value in string eq at /data/data/com.termux/files/usr/bin/inxi line 10234.
+inxi line 10313.
+CPU:
+  Info: 2x 6-core model: AArch64 bits: 64 type: MT MCP AMP arch: aarch64
+    rev: 0
+  Speed (MHz): avg: 961 high: 2002 min/max: 614:1229/2002 boost: disabled
+    cores: 1: 614 2: 614 3: 614 4: 614 5: 614 6: 614 7: 2002 8: 2002
+    bogomips: 416
+  Features: Use -f option to see features
+Graphics:
+  Message: No ARM data found for this feature.
+  Display: server: No display server data found. Headless machine?
+    tty: 80x40
+  API: N/A Message: No API data available in console. Headless machine?
+Audio:
+  Message: No ARM data found for this feature.
+Network:
+  Message: No ARM data found for this feature.
+Drives:
+  Local Storage: total: 0 KiB used: 15.52 GiB
+Partition:
+  ID-1: / size: 3.68 GiB used: 3.66 GiB (99.5%) fs: ext4 dev: /dev/dm-4
+  ID-2: /cache size: 303.1 MiB used: 26 MiB (8.6%) fs: ext4
+    dev: /dev/mmcblk0p52
+Swap:
+  Alert: No swap data was found.
+Sensors:
+  Src: lm-sensors Missing: Required tool sensors not installed. Check
+    --recommends
+Info:
+  Processes: 2 Uptime: 18m Memory: total: N/A available: 2.45 GiB
+  used: 1.65 GiB (67.3%) Init: N/A Compilers: N/A Packages: 61 Shell: Bash
+  v: 5.0.18 inxi: 3.3.31
+$ </i>
+</pre>
+<span style="display: none;">Tags: Technology,Linux,</span>
