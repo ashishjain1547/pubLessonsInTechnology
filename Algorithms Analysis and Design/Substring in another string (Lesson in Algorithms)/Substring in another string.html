@@ -1,0 +1,79 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+  
+<body>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+
+<h1><font color="#DD4100">Substring in another string</font></h1>
+<h1 style="page-break-before:always; "><font color="#000000">Problem</font></h1>
+<p><font color="#000000">Detect if a shorter string is part of a longer string.</font></p>
+<p><font color="#000000">Shorter string is the substring.</font></p>
+<p><font color="#000000">Longer string is the superstring.</font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Example</font></h1>
+<p><font color="#000000">Shorter string is ‘eng’.</font></p>
+<p><font color="#000000">Longer string is ‘opengenus’.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">‘eng’ is a substring in ‘opengenus’.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">‘123’ is not a substring in ‘opengenus’.</font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Code in Python</font></h1>
+<pre>
+<font color="#000000"># s1 is the superstring</font>
+<font color="#000000"># s2 is the substring</font>
+<font color="#000000"></font>
+<font color="#000000">def solution(s1, s2):</font>
+<font color="#000000">    for i in range(len(s1)-len(s2)+1):</font>
+<font color="#000000">        if s1[i:i+len(s2)] == s2:</font>
+<font color="#000000">            return 'Match Found'</font>  
+</pre>
+
+<h1 style="page-break-before:always; "><font color="#000000">Testing</font></h1>
+<p><font color="#000000">s1 = 'opengenus'</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"># Test case: no match found</font></p>
+<p><font color="#000000">s2 = '123'</font></p>
+<p><font color="#000000">print(s2, solution(s1, s2))</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"># Test case: single character</font></p>
+<p><font color="#000000">s2 = 'p'</font></p>
+<p><font color="#000000">print(s2, solution(s1, s2))</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"># Test case: match substring at the beginning (at index 0)</font></p>
+<p><font color="#000000">s2 = 'ope'</font></p>
+<p><font color="#000000">print(s2, solution(s1, s2))</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"># Test case: match substring somewhere in the middle</font></p>
+<p><font color="#000000">s2 = 'eng'</font></p>
+<p><font color="#000000">print(s2, solution(s1, s2))</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"># Test case: match substring at the end</font></p>
+<p><font color="#000000">s2 = 'nus'</font></p>
+<p><font color="#000000">print(s2, solution(s1, s2))</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"># Test case: match both the strings completely</font></p>
+<p><font color="#000000">s2 = 'opengenus'</font></p>
+<p><font color="#000000">print(s2, solution(s1, s2))</font></p>
+
+<h1>Output</h1>
+
+<pre>
+123 None
+p Match Found
+ope Match Found
+eng Match Found
+nus Match Found
+opengenus Match Found
+</pre>
+</body>
