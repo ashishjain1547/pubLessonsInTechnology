@@ -1,0 +1,96 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<body>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+
+<body>
+<h1 style="page-break-before:always; "><font color="#000000">Frog Jump: Count minimal number of jumps from position X to Y. </font></h1>
+<p><font color="#000000">A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Count the minimal number of jumps that the small frog must perform to reach its target.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Write a function:</font></p>
+<p><font color="#000000">    def solution(X, Y, D)</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">that, given three integers X, Y and D, returns the minimal number of jumps from position X to a position equal to or greater than Y.</font></p>
+<p><font color="#000000">Write an efficient algorithm for the following assumptions:</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">        X, Y and D are integers within the range [1..1,000,000,000];</font></p>
+<p><font color="#000000">        X ≤ Y.</font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Example</font></h1>
+<p><font color="#000000">For example, given:</font></p>
+<p><font color="#000000">  X = 10</font></p>
+<p><font color="#000000">  Y = 85</font></p>
+<p><font color="#000000">  D = 30</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">the function should return 3, because the frog will be positioned as follows:</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">        after the first jump, at position 10 + 30 = 40</font></p>
+<p><font color="#000000">        after the second jump, at position 10 + 30 + 30 = 70</font></p>
+<p><font color="#000000">        after the third jump, at position 10 + 30 + 30 + 30 = 100</font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Code</font></h1>
+
+<pre>
+<font color="#000000">import math</font>
+<font color="#000000"></font>
+<font color="#000000">def solution(X, Y, D):</font>
+<font color="#000000">    # Implement your solution here</font>
+<font color="#000000">    return math.ceil((Y-X)/D)</font>  
+</pre>
+<h1 style="page-break-before:always; "><font color="#000000">Test Cases</font></h1>
+<p><b><font color="#000000">Correctness tests</b></font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">simple1</font></p>
+<p><font color="#000000">simple test</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">simple2</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">extreme_position</font></p>
+<p><font color="#000000">no jump needed</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">small_extreme_jump</font></p>
+<p><font color="#000000">one big jump</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"></font></p>
+<p><b><font color="#000000">Performance tests</b></font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">many_jump1</font></p>
+<p><font color="#000000">many jumps, D = 2</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">many_jump2</font></p>
+<p><font color="#000000">many jumps, D = 99</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">many_jump3</font></p>
+<p><font color="#000000">many jumps, D = 1283</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">big_extreme_jump</font></p>
+<p><font color="#000000">maximal number of jumps</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">small_jumps</font></p>
+<p><font color="#000000">many small jumps</font></p>
+<p><font color="#000000"></font></p>
+</body>
+</html>
