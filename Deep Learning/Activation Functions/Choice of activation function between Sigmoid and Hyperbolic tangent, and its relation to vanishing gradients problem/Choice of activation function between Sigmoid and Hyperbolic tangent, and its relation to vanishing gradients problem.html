@@ -1,0 +1,114 @@
+<head>
+<script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<!-- Google AdSense Using Machine Learning Code -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3071098372371409",
+        enable_page_level_ads: true
+    });
+</script>
+
+<style>
+
+    pre {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+</style>
+</head>
+    
+<pre><h3>In terms of their use as activation functions, when is sigmoid used and when is hyperbolic tangent used?</h3>
+
+Sigmoid and hyperbolic tangent (tanh) are both activation functions commonly used in neural networks, but they have different characteristics that make them suitable for different situations.
+
+<b>Sigmoid Function (Logistic Function):</b>
+        Range: It squashes input values to the range (0, 1).
+        Output: The output is always positive, and it is particularly useful in binary classification problems where the goal is to output probabilities that sum to 1.
+        Issues: Sigmoid tends to suffer from the "vanishing gradient" problem, which can make training deep networks challenging.
+
+    Use Cases:
+        Output layer of binary classification models.
+        Situations where you need a binary decision, such as in logistic regression.
+
+<b>Hyperbolic Tangent Function (tanh):</b>
+        Range: It squashes input values to the range (-1, 1).
+        Output: Like the sigmoid, it is suitable for models that require outputs in the form of probabilities. However, its output range includes negative values, making it zero-centered. This helps mitigate the vanishing gradient problem to some extent.
+        Advantages: Zero-centered nature helps in the optimization process during training, compared to the sigmoid.
+
+    Use Cases:
+        Hidden layers of neural networks, especially in cases where zero-centered activation functions are preferred.
+        Situations where the output needs to be in a range that spans both positive and negative values.
+
+In practice, the choice between sigmoid and tanh depends on the specific requirements of your neural network and the nature of the problem you're trying to solve. In modern deep learning architectures, rectified linear units (ReLU) and its variants are also popular choices for hidden layers due to their training efficiency and ability to mitigate the vanishing gradient problem.
+
+<h3>Why and how do sigmoid activation function results in vanishing gradient problem?</h3>
+
+The vanishing gradient problem is a challenge that can occur during the training of deep neural networks, particularly when using activation functions with certain characteristics, such as the sigmoid function. The problem arises in the context of gradient-based optimization algorithms, like backpropagation, which are commonly used to update the weights of neural networks during training.
+
+Here's why the sigmoid activation function can lead to the vanishing gradient problem:
+
+    Output Range: The sigmoid function squashes input values to the range (0, 1). This means that for large positive or negative inputs, the sigmoid saturates, and the output becomes very close to 0 or 1. Once the output is near these extremes, the gradient of the sigmoid becomes extremely small.
+
+    Derivative Characteristics: The derivative of the sigmoid function is maximum at its center (around 0.25) and approaches zero as you move away from the center. This means that the gradients for large positive or negative inputs are close to zero. In the context of backpropagation, the gradient is used to update the weights of the network, and if the gradients are very small, the updates to the weights become negligible.
+
+    Multiplicative Nature of Gradients: In a deep neural network, during backpropagation, gradients are propagated backward through the layers. Since the gradients are multiplied at each layer, if the gradients are very small, they can quickly diminish as they are propagated backward through the network. This can result in the gradients becoming effectively zero for the weights in the early layers of the network, preventing effective learning in those layers.
+
+In summary, the vanishing gradient problem occurs because the sigmoid function, when used in deep networks, can produce very small gradients for weights in the early layers, hindering the training process. This can lead to slower convergence and, in extreme cases, the early layers may not learn meaningful representations.
+
+To mitigate the vanishing gradient problem, other activation functions like hyperbolic tangent (tanh) or rectified linear units (ReLU) are often used, as they exhibit better training characteristics in deep networks.
+
+<h2>On a side note...</h2>
+
+<h3>Derivative of Sigmoid function</h3>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzo3SIOD7scu9a60Ed6i4ljCGVa80RdFQtSBo_nMzh8gE3et4aNvIn2LlfxH4gPgivsLTJ1-G4vRgurx0r7H7EVxGkMjnOTcln3Le1Ea_z-ygWK-Z-EmmKcASlpNfYxK5aJVD1VPaxFL8bVWOAJgPXOTkT3lF-b4ZJCvLGzY79jFXVmOCgkKKtEjRALIn5/s670/question%20on%20derivative%20of%20sigmoid%20function.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="319" data-original-width="670"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzo3SIOD7scu9a60Ed6i4ljCGVa80RdFQtSBo_nMzh8gE3et4aNvIn2LlfxH4gPgivsLTJ1-G4vRgurx0r7H7EVxGkMjnOTcln3Le1Ea_z-ygWK-Z-EmmKcASlpNfYxK5aJVD1VPaxFL8bVWOAJgPXOTkT3lF-b4ZJCvLGzY79jFXVmOCgkKKtEjRALIn5/s600/question%20on%20derivative%20of%20sigmoid%20function.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj71QQHxlnrDbgGEsC4owrGtiuFF35sq6I0NPoPpPTKN_fteS72sfYlzFvvr7FRZJmrI3HcH64TQ-NplaxAflI9blTqdDIPfFKarMTOJOgk2gI_0N4S1tnf9rir7OuUjXhUJUt-BBgfDSBAT6EWMH9kyQ-jO7P_C1Ftpcj9JJ1YJerx5zX123GxBQFFP-WP/s494/solution%20on%20derivative%20of%20sigmoid%20function.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="493" data-original-width="494"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj71QQHxlnrDbgGEsC4owrGtiuFF35sq6I0NPoPpPTKN_fteS72sfYlzFvvr7FRZJmrI3HcH64TQ-NplaxAflI9blTqdDIPfFKarMTOJOgk2gI_0N4S1tnf9rir7OuUjXhUJUt-BBgfDSBAT6EWMH9kyQ-jO7P_C1Ftpcj9JJ1YJerx5zX123GxBQFFP-WP/s600/solution%20on%20derivative%20of%20sigmoid%20function.png" /></a>
+</div>
+
+<h3>Derivative of tanh(z)</h3>
+
+An alternative to the logistic sigmoid is the hyperbolic tangent, or tanh function (Figure 1, green curves):
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgI1PYRrJRQczAfBv5Jq-q1OcRinG9A1z3zVjkp7aIKBFoA38FlJaZWzSMv0ptBsdGy9T8yjZHsXPHxbrb-R2j95SaEd3YpIrrZR-GebYlnJkKE9MPtRsZFaSjKb1iopE3yAv5wwt9V_3x-d1AAbjIqBDRCCc1W3QbtOevK1J5cQWwnJeWh0s_RszBCzYIm/s214/what%20is%20tanh.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="103" data-original-width="214"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgI1PYRrJRQczAfBv5Jq-q1OcRinG9A1z3zVjkp7aIKBFoA38FlJaZWzSMv0ptBsdGy9T8yjZHsXPHxbrb-R2j95SaEd3YpIrrZR-GebYlnJkKE9MPtRsZFaSjKb1iopE3yAv5wwt9V_3x-d1AAbjIqBDRCCc1W3QbtOevK1J5cQWwnJeWh0s_RszBCzYIm/s600/what%20is%20tanh.png" /></a>
+</div>
+
+Like the logistic sigmoid, the tanh function is also sigmoidal (“s”-shaped), but instead outputs values that range (-1,1). Thus strongly negative inputs to the tanh will map to negative outputs. Additionally, only zero-valued inputs are mapped to near-zero outputs. These properties make the network less likely to get “stuck” during training. Calculating the gradient for the tanh function also uses the quotient rule:
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjn8n2hK98a-unA1L8u4HYngGaVp5JXX7K6ABOFfkhV-uYolLCgjQDjuQ9ysCC1mXCDgXeKhN6DCwmsxcFEPjxN1ZWLxPcjXEV_HYl2Y3TmAbqurd8ryCN5-dMbIkcS8moZAC5x3h7bNzjrXmiIGbOriHl1JKaMs2DMjUZ8oSQgxSG67M1Kj55bQ-exEoUb/s417/derivative%20of%20tanh.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="261" data-original-width="417"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjn8n2hK98a-unA1L8u4HYngGaVp5JXX7K6ABOFfkhV-uYolLCgjQDjuQ9ysCC1mXCDgXeKhN6DCwmsxcFEPjxN1ZWLxPcjXEV_HYl2Y3TmAbqurd8ryCN5-dMbIkcS8moZAC5x3h7bNzjrXmiIGbOriHl1JKaMs2DMjUZ8oSQgxSG67M1Kj55bQ-exEoUb/s600/derivative%20of%20tanh.png" /></a>
+</div>
+
+Similar to the derivative for the logistic sigmoid, the derivative of gtanh(z) is a function of feed-forward activation evaluated at z, namely (1-gtanh(z)2). Thus the same caching trick can be used for layers that implement tanh activation functions.
+
+<h2>Common Activation Functions and Plots of Their Derivatives</h2>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggR7m8UoMp6N9Y0Lql6Ff3V2Tdox6_VKuBEyGjFT29-DBCsoKLOu5YBvjI5YgOnAWWTTdRj1VYMD4g00YW1JYg1VgTzkow9mq4wAGs5WIRt5d5Sws9kq6p2ZzUpdZCEu00OBk5iXU-0M_xjOMR4o-bjhwnsguZj3xBahvoeRrLrp9G2grGC-nWSW20Q_HI/s3600/common_activation_functions.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="1500" data-original-width="3600"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEggR7m8UoMp6N9Y0Lql6Ff3V2Tdox6_VKuBEyGjFT29-DBCsoKLOu5YBvjI5YgOnAWWTTdRj1VYMD4g00YW1JYg1VgTzkow9mq4wAGs5WIRt5d5Sws9kq6p2ZzUpdZCEu00OBk5iXU-0M_xjOMR4o-bjhwnsguZj3xBahvoeRrLrp9G2grGC-nWSW20Q_HI/s600/common_activation_functions.png" /></a>
+</div>
+
+</pre>
