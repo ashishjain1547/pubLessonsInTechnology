@@ -1,0 +1,177 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="1000" data-original-width="1500"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg" /></a>
+  </div>
+
+  <h3>MaxCounters</h3>
+  <b>Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all
+    counters to current maximum.
+  </b>
+  <h1 style="page-break-before:always; ">Problem</h1>
+  <p>You are given N counters, initially set to 0, and you have two possible operations on them:</p>
+  <p> increase(X) − counter X is increased by 1,</p>
+  <p> max counter − all counters are set to the maximum value of any counter.</p>
+  <p>A non-empty array A of M integers is given. This array represents consecutive operations:</p>
+  <p> if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),</p>
+  <p> if A[K] = N + 1 then operation K is max counter.</p>
+  <p>For example, given integer N = 5 and array A such that:</p>
+  <p> A[0] = 3, A[1] = 4, A[2] = 4, A[3] = 6, A[4] = 1, A[5] = 4, A[6] = 4</p>
+  <p>the values of the counters after each consecutive operation will be:</p>
+  <p> (0, 0, 1, 0, 0)</p>
+  <p> (0, 0, 1, 1, 0)</p>
+  <p> (0, 0, 1, 2, 0)</p>
+  <p> (2, 2, 2, 2, 2)</p>
+  <p> (3, 2, 2, 2, 2)</p>
+  <p> (3, 2, 2, 3, 2)</p>
+  <p> (3, 2, 2, 4, 2)</p>
+  <p>The goal is to calculate the value of every counter after all operations.</p>
+  <p>Write a function:</p>
+  <p> def solution(N, A)</p>
+  <p>that, given an integer N and a non-empty array A consisting of M integers, returns a sequence of integers
+    representing the values of the counters.</p>
+  <p>Result array should be returned as an array of integers.</p>
+  <p>For example, given:</p>
+  <p> A[0] = 3, A[1] = 4, A[2] = 4, A[3] = 6, A[4] = 1, A[5] = 4, A[6] = 4</p>
+  <p>the function should return [3, 2, 2, 4, 2], as explained above.</p>
+  <p>Write an efficient algorithm for the following assumptions:</p>
+  <p> N and M are integers within the range [1..100,000];</p>
+  <p> each element of array A is an integer within the range [1..N + 1].</p>
+  <h1 style="page-break-before:always; ">Example</h1>
+  <p>For example, given integer N = 5 and array A such that:</p>
+  <p> A[0] = 3, A[1] = 4, A[2] = 4, A[3] = 6, A[4] = 1, A[5] = 4, A[6] = 4</p>
+  <p>the values of the counters after each consecutive operation will be:</p>
+  <p> (0, 0, 1, 0, 0)</p>
+  <p> (0, 0, 1, 1, 0)</p>
+  <p> (0, 0, 1, 2, 0)</p>
+  <p> (2, 2, 2, 2, 2)</p>
+  <p> (3, 2, 2, 2, 2)</p>
+  <p> (3, 2, 2, 3, 2)</p>
+  <p> (3, 2, 2, 4, 2)</p>
+  <p>The goal is to calculate the value of every counter after all operations.</p>
+  <p>If given:</p>
+  <p> A[0] = 3, A[1] = 4, A[2] = 4, A[3] = 6, A[4] = 1, A[5] = 4, A[6] = 4</p>
+  <p>the function should return [3, 2, 2, 4, 2] as explained.</p>
+  <h1 style="page-break-before:always; ">Hint: Let’s analyze the Brute-Force Solution</h1>
+  <p>In Brute-Force solution, we follow the instructions as given.</p>
+  <p>We increase the counters on encountering the increase operation.</p>
+  <p>And on encountering the maxCounter() operation, we loop over the counters and set them equal to max counter.</p>
+  <p>This would solve the problem but would result in a quadratic time complexity.</p>
+  <h1 style="page-break-before:always; ">Hint: Worst Case Scenario For Brute Force Solution.
+    Time Complexity of: N*M</h1>
+
+  <div class="separator" style="clear: both;"><a
+      href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjS97hOybgJSAnY5PD95ODbx0BYyVsjgF5KBT20a51k83UBNiSE5bmLV_NLo6nCv0Dc0BCL22Nh5QNbOvstH3O4Smdw2-OF-E_6qcCk4q4z5_H6f8M2T8a86ktptbOss7Uka7106n6z6lluipSjwr9-m7k3RoOtLMpWXMs0dIpR6Io1iHOYJcFZRqgpwiF2/s792/worst%20case.png"
+      style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="431" data-original-width="792"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjS97hOybgJSAnY5PD95ODbx0BYyVsjgF5KBT20a51k83UBNiSE5bmLV_NLo6nCv0Dc0BCL22Nh5QNbOvstH3O4Smdw2-OF-E_6qcCk4q4z5_H6f8M2T8a86ktptbOss7Uka7106n6z6lluipSjwr9-m7k3RoOtLMpWXMs0dIpR6Io1iHOYJcFZRqgpwiF2/s600/worst%20case.png" /></a>
+  </div>
+
+  <h1 style="page-break-before:always; ">Hint: Linear Time Complexity</h1>
+  <p>The bottleneck for the code is the maxCounter() operation.
+    So, in this solution we find a smart way of implementing the maxCounter() operation.</p>
+  <p>We would draw an analogy between our counters and racers on a race track.</p>
+  <p>We would maintain two variables:</p>
+  <p>1. startLine: that tracks the where the racers are starting.</p>
+  <p>Basically, on encountering the maxCounter() operation, we would update this field.</p>
+  <p>2. currentMax: That tracks the maximum value among the counters.</p>
+  <p>This variable will be used to update the other variable startLine on encountering a maxCounter() operation.</p>
+  <h1 style="page-break-before:always; ">Hint: Linear Time Solution</h1>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibFG3akHFgGALVusykh3jj5MLmqv58cEOG2Tpqm1_oM0MHgQpDiznxxOzUxyTcgYFxhkEqsv_Zkp-LHOHi3baiCb2Pa6urd-aiD44js6zJs1MhqoxLW62Q6FP72pzsI7x3urD6k_NiJIpUvFAtuYHrqKCzHU5GFwn5myOFa1WWSf-Fzt8PysJSWFHE-f8L/s792/variable%20-%201.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="431" data-original-width="792"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEibFG3akHFgGALVusykh3jj5MLmqv58cEOG2Tpqm1_oM0MHgQpDiznxxOzUxyTcgYFxhkEqsv_Zkp-LHOHi3baiCb2Pa6urd-aiD44js6zJs1MhqoxLW62Q6FP72pzsI7x3urD6k_NiJIpUvFAtuYHrqKCzHU5GFwn5myOFa1WWSf-Fzt8PysJSWFHE-f8L/s600/variable%20-%201.png" /></a>
+</div>
+
+  <h1 style="page-break-before:always; ">Hint: What happens when we encounter a maxCounter() op? We update our startLine.</h1>
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWXWJwyESlr86iCu2lS_7Ds3ORlsjcInm_XBGfGd9kH0dKFSKIGCIAAlR7z7y8XrPUTlSyHcygWoF2t_g3WmNTpRnUuVheSx9pibgIDw8HEZRG6teh18LHOoLuG8AKadTZRIA1bITOfX4Vv9RFvAfaDcknqWNFZq2hTtFYk02fQ_VwdscAvTVMiry1ZkVX/s792/variable%20-%202.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="431" data-original-width="792"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWXWJwyESlr86iCu2lS_7Ds3ORlsjcInm_XBGfGd9kH0dKFSKIGCIAAlR7z7y8XrPUTlSyHcygWoF2t_g3WmNTpRnUuVheSx9pibgIDw8HEZRG6teh18LHOoLuG8AKadTZRIA1bITOfX4Vv9RFvAfaDcknqWNFZq2hTtFYk02fQ_VwdscAvTVMiry1ZkVX/s600/variable%20-%202.png" /></a>
+</div>
+
+  <h1 style="page-break-before:always; ">Code</h1>
+
+  <pre>
+def increase(X, counters, startLine, currentMax):
+  if counters[X] &lt; startLine:
+      counters[X] = startLine 
+  counters[X] += 1
+  if counters[X] &gt; currentMax:
+      currentMax = counters[X]
+  return counters, currentMax
+def maxCounter(startLine, currentMax):
+  startLine = currentMax
+  return startLine 
+def solution(N, A):
+  startLine = 0
+  currentMax = 0
+  counters = [0 for i in range(N)]
+  
+  for i in A:
+      if i &lt; N+1:
+          counters, currentMax = increase(i-1, counters, startLine, currentMax)
+      else:
+          startLine = maxCounter(startLine, currentMax)
+          
+  for i in range(len(counters)):
+      if counters[i] &lt; startLine:
+          counters[i] = startLine 
+  return counters
+</pre>
+
+  <p>Detected time complexity: O(N + M)</p>
+
+  <h1 style="page-break-before:always; ">Test Cases</h1>
+  <p><b>Correctness tests</b></p>
+  <p><b></b></p>
+  <p>extreme_small: all max_counter operations</p>
+  <p></p>
+  <p>single: only one counter</p>
+  <p></p>
+  <p>small_random1: small random test, 6 max_counter operations</p>
+  <p></p>
+  <p>small_random2: small random test, 10 max_counter operations</p>
+  <p></p>
+  <p><b>Performance tests</b></p>
+  <p>medium_random1: medium random test, 50 max_counter operations</p>
+  <p></p>
+  <p>medium_random2: medium random test, 500 max_counter operations</p>
+  <p></p>
+  <p>large_random1: large random test, 2120 max_counter operations</p>
+  <p></p>
+  <p>large_random2: large random test, 10000 max_counter operations</p>
+  <p></p>
+  <p>extreme_large: all max_counter operations</p>
+  <p></p>
+</body>
+
+<span style="display: none;">Tags: Algorithms,Technology,Python,</span>
