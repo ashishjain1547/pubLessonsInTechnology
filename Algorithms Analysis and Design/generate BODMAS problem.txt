@@ -1,0 +1,17 @@
+We have to generate BODMAS problem. As shown below:
+
+Ex 1: X + Y * Z
+Ex 2: X - Y * Z + A
+Ex 3: X / Y / Z
+Ex 4: X * Y / Z
+Ex 5: Z - Y + X
+
+A problem can have from 1 to 5 operators.
+
+Except this time there would not be alphabets but some numbers between 0-99.
+
+Also there are some additional rules like:
+
+Rule 1: Subtraction should never result in a negative integer. That means as we try to solve the problem using 'Brackets of BODMAS', no intermediate subtraction would result in negative integer.
+
+Rule 2: Division should always be a complete division resulting in an integer quotient and zero remainder. That means as we try to solve the problem using 'Brackets of BODMAS', no intermediate or final division would result in a fraction.
