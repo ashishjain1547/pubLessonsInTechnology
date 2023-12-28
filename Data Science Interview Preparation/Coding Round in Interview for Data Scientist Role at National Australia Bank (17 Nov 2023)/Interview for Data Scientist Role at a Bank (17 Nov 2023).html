@@ -1,0 +1,94 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<pre>
+<h2>Task 1</h2>
+
+Write a function:
+
+    def solution(A)
+
+that, given an array A of N integers, returns the smallest positive integer (greater than 0) that does not occur in A.
+
+For example, given A = [1, 3, 6, 4, 1, 2], the function should return 5.
+
+Given A = [1, 2, 3], the function should return 4.
+
+Given A = [−1, −3], the function should return 1.
+
+Write an efficient algorithm for the following assumptions:
+
+        N is an integer within the range [1..100,000];
+        each element of array A is an integer within the range [−1,000,000..1,000,000].
+
+<h3>A brute-force solution to this problem that will fail the performance tests will look like this:</h3>
+
+<i class="ib">
+def solution(A):
+    # a_sort = sorted(A)
+    rtn = -1
+    for i in range(1, 100001):
+        if i in A: # This is the most time consuming instruction of this code that runs repeatedly for all of i(s)
+            continue
+        else:
+            rtn = i
+            break
+    return rtn 
+</i>
+
+<h2>Task 2</h2>
+
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjz0HDwKMjvjYLunqFrk3xjWfuZWpW_-UKzJpCrhtEgV8xr7Ctni9mSQbfcNjJMLM6KVR0Adaq-qJoFtJ4RER_gDoHY4ajtz31WAz4P-4N3RdoN2mKa4uxoRlVRB0Z4UVw2GY1DkiHd2Z-EAHmlY0nUXztPeTm4Thyo4mNXD4ueUi4EPX9_8MRK9LMt4V8h/s577/Task%202.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="543" data-original-width="577"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjz0HDwKMjvjYLunqFrk3xjWfuZWpW_-UKzJpCrhtEgV8xr7Ctni9mSQbfcNjJMLM6KVR0Adaq-qJoFtJ4RER_gDoHY4ajtz31WAz4P-4N3RdoN2mKa4uxoRlVRB0Z4UVw2GY1DkiHd2Z-EAHmlY0nUXztPeTm4Thyo4mNXD4ueUi4EPX9_8MRK9LMt4V8h/s600/Task%202.png" /></a>
+</div>
+
+<h2>Task 3</h2>
+
+Fig 3.1
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwImhpS8iu-up7niyUZOoti8lVGUKQFVDqEui4zggiztIHtjH_mCWJTgGps084h2BuRS4pn7mqeQ2zpmbHS1js7Vj5xEaCHB349tvs2QZnPuaBRyyhPmTPbikDawd5LdEirkkQWsRvzSWLHqTbVt9tCBEcQkVia5WLmyy1X3cwfM5Zw2PHsN-mRP-ukLRb/s647/Task%203.A.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="647" data-original-width="584"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwImhpS8iu-up7niyUZOoti8lVGUKQFVDqEui4zggiztIHtjH_mCWJTgGps084h2BuRS4pn7mqeQ2zpmbHS1js7Vj5xEaCHB349tvs2QZnPuaBRyyhPmTPbikDawd5LdEirkkQWsRvzSWLHqTbVt9tCBEcQkVia5WLmyy1X3cwfM5Zw2PHsN-mRP-ukLRb/s600/Task%203.A.png" /></a>
+</div>
+
+Fig 3.2
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5bwlowSNLpnSc37zRzO0WjW8k5uz0JESkNo3mgnBUbmaulaSw5rFQNpOzCjECdnty00m10sk7HTFIyiuQEDYRiF__gfC9lWTSXQn2eXfALqqXXPjol-Cz0Dv__58VvIjnUd0rpeGPnYULGOqIenn3gCRRi_4ziinab9OP0FPlWVXvlMijD7VSfVyt-Stb/s611/Task%203.B.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600"
+        data-original-height="611" data-original-width="572"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5bwlowSNLpnSc37zRzO0WjW8k5uz0JESkNo3mgnBUbmaulaSw5rFQNpOzCjECdnty00m10sk7HTFIyiuQEDYRiF__gfC9lWTSXQn2eXfALqqXXPjol-Cz0Dv__58VvIjnUd0rpeGPnYULGOqIenn3gCRRi_4ziinab9OP0FPlWVXvlMijD7VSfVyt-Stb/s600/Task%203.B.png" /></a>
+</div>
+
+Fig 3.3
+<div class="separator" style="clear: both;"><a
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHbkf5x5M4PyFgsyx3rc-CP4zoTpNxPLZkEksdf9H_6s-aVwMUooFYgBntcmp4NwL7WUtPcpGWoRnX-htNDXc9BRqB9YERfLvxx1RL-4BaqAxLs0Ks2JT2PbV3bV9EEnXWbz9zR0VVPoOxy8Mz8zYeXEfuZDd6ixnVi3_RTQ9yCCh_DvOCQikDune26mI0/s568/Task%203.C.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="318" data-original-width="568"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHbkf5x5M4PyFgsyx3rc-CP4zoTpNxPLZkEksdf9H_6s-aVwMUooFYgBntcmp4NwL7WUtPcpGWoRnX-htNDXc9BRqB9YERfLvxx1RL-4BaqAxLs0Ks2JT2PbV3bV9EEnXWbz9zR0VVPoOxy8Mz8zYeXEfuZDd6ixnVi3_RTQ9yCCh_DvOCQikDune26mI0/s600/Task%203.C.png" /></a>
+</div>
+</pre>
+
