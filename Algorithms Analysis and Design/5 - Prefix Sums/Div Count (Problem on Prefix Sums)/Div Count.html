@@ -1,0 +1,90 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<body>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+
+<h1><font color="#DD4100">Div Count Problem
+<br>
+Compute number of integers divisible by k in range [a..b]. </font></h1>
+<h1 style="page-break-before:always; "><font color="#000000">Problem</font></h1>
+<p><font color="#000000">Write a function:</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">    def solution(A, B, K)</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K, i.e.:</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">    { i : A ≤ i ≤ B, i mod K = 0 }</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">For example, for A = 6, B = 11 and K = 2, your function should return 3, because there are three numbers divisible by 2 within the range [6..11], namely 6, 8 and 10.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Write an efficient algorithm for the following assumptions:</font></p>
+<p><font color="#000000">        # A and B are integers within the range [0..2,000,000,000];</font></p>
+<p><font color="#000000">        # K is an integer within the range [1..2,000,000,000];</font></p>
+<p><font color="#000000">        # A ≤ B</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Code</font></h1>
+
+<pre>
+from math import ceil, floor 
+
+def solution(A, B, K):
+    
+    start = ceil(A/K)
+    end = floor(B/K)
+    return end - start + 1
+</pre>
+
+<h1 style="page-break-before:always; "><font color="#000000">Complexity</font></h1>
+<p><font color="#000000">Detected time complexity:</font></p>
+<p><font color="#000000">O(1) </font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Tests</font></h1>
+<p><b><font color="#000000">Correctness tests</b></font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">simple</font></p>
+<p><font color="#000000">A = 11, B = 345, K = 17</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">minimal</font></p>
+<p><font color="#000000">A = B in {0,1}, K = 11</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">extreme_ifempty</font></p>
+<p><font color="#000000">A = 10, B = 10, K in {5,7,20}</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">extreme_endpoints</font></p>
+<p><font color="#000000">verify handling of range endpoints, multiple runs</font></p>
+<p><b><font color="#000000">Performance tests</b></font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">big_values</font></p>
+<p><font color="#000000">A = 100, B=123M+, K=2</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">big_values2</font></p>
+<p><font color="#000000">A = 101, B = 123M+, K = 10K</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">big_values3</font></p>
+<p><font color="#000000">A = 0, B = MAXINT, K in {1,MAXINT}</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">big_values4</font></p>
+<p><font color="#000000">A, B, K in {1,MAXINT}</font></p>
+</body>
+</html>

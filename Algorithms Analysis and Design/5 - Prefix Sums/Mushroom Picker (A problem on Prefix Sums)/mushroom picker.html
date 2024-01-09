@@ -1,0 +1,119 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<body>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+
+<h1 style="page-break-before:always; "><font color="#000000">Problem</font></h1>
+<p><font color="#000000">You are given a non-empty, zero-indexed array A of n (1 &lt;= n &lt;= 100000) integers a0, a1,..., an−1 (0 &lt;= ai &lt;= 1000). This array represents number of mushrooms growing on the consecutive spots along a road. You are also given integers k and m (0 &lt;= k, m &lt; n).</font></p>
+<p><font color="#000000">A mushroom picker is at spot number k on the road and should perform m moves. In one move she moves to an adjacent spot. She collects all the mushrooms growing on spots</font></p>
+<p><font color="#000000">she visits. The goal is to calculate the maximum number of mushrooms that the mushroom</font></p>
+<p><font color="#000000">picker can collect in m moves.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">For example, consider array A such that:</font></p>
+<p><font color="#000000">A[0]=2, A[1]=3, A[2]=7, A[3]=5, A[4]=1, A[5]=3, A[6]=9</font></p>
+<p><font color="#000000">The mushroom picker starts at spot k = 4 and should perform m = 6 moves. She might</font></p>
+<p><font color="#000000">move to spots 3, 2, 3, 4, 5, 6 and thereby collect 1 + 5 + 7 + 3 + 9 = 25 mushrooms. This is the</font></p>
+<p><font color="#000000">maximal number of mushrooms she can collect.</font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Code</font></h1>
+
+<pre>
+# Counting preﬁx sums
+  def prefix_sums(A):
+      n = len(A)
+      P = [0] * (n + 1)
+      for k in xrange(1, n + 1):
+          P[k] = P[k - 1] + A[k - 1]
+      return P
+  
+  # Total of one slice
+  def count_total(P, x, y):
+      return P[y + 1] - P[x]
+  # Mushroom picker — O(n + m)
+  def mushrooms(A, k, m):
+      n = len(A)
+      result = 0
+      pref = prefix_sums(A)
+  
+  # When we first take p steps on the left and return from their back in right direction.
+      for p in xrange(min(m, k) + 1):
+          left_pos = k - p
+          right_pos = min(n - 1, max(k, k + m - 2*p))
+          result = max(result, count_total(pref, left_pos, right_pos)) 
+  
+  # When we first take p steps on the right and return from their back in left direction.
+      for p in xrange(min(m + 1, n - k)):
+          right_pos = k + p
+          left_pos = max(0, min(k, k - (m - 2*p)))
+          result=max(result, count_total(pref, left_pos, right_pos)) 
+      return result
+</pre>
+
+<h1 style="page-break-before:always; "><font color="#000000">Explanation (Part 1)</font></h1>
+<pre>
+# When we first take p steps on the left and return from their back in right direction.
+    for p in xrange(min(m, k) + 1):
+        left_pos = k - p
+        right_pos = min(n - 1, max(k, k + m - 2*p))
+        result = max(result, count_total(pref, left_pos, right_pos)) 
+</pre>
+
+<p><font color="#000000">Expression “for p in xrange(<b>min(m, k)</b> + 1)” has min(m, k) because we can only go m steps to the left or k steps to the left whichever number is minimum.</font></p>
+<p><font color="#000000">After going k steps, we cannot go past 0th position.</font></p>
+<p><font color="#000000">Or after taking m steps, we cannot take another step.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Expression “right_pos = min(n - 1, max(k, <b>k + m – 2*p</b>))” has ‘k+m-2*p’ because after taking p steps to the left, we are returning p steps back to position k, hence 2p.</font></p>
+<p><font color="#000000">And then number of steps left is: m – 2p</font></p>
+<p><font color="#000000">Then right position is identified by: m-2p steps after k ie, k+m-2p</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Expression “right_pos = min(n - 1, <b>max(k, k + m – 2*p)</b>)” has max(k, k + m – 2*p) because what if we take all the m steps to left and value of p becomes m. </font></p>
+<p><font color="#000000">Then there are no steps left to take to the right and right position is simply identified by k.</font></p>
+<p><font color="#000000">Similarly, for any value of p &gt; m/2 (as in 0.6m or 0.75m), we would get same right position as k.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Explanation (Part 2)</font></h1>
+<pre>
+# When we first take p steps on the right and return from their back in left direction.
+    for p in xrange(min(m + 1, n - k)):
+        right_pos = k + p
+        left_pos = max(0, min(k, k - (m - 2*p)))
+        result = max(result, count_total(pref, left_pos, right_pos))
+</pre>
+<p><font color="#000000">Here in the expression “for p in xrange(min(<b>m + 1, n – k</b>))”, we have m+1 and not just m because xrange goes till m when passed the argument m+1. Similarly, we have n-k and not (n-1)-k because xrange goes till (n-1)-k when passed the argument n-k.</font></p>
+<p><font color="#000000">And we take minimum of m or (n-1)-k because that’s is the possible number of steps we can take on the right.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Here in the expression “left_pos = max(0, <b>min(k, k - (m – 2*p))</b>)”, we have k-(m-2p) because we take p steps on the right, then take those p steps back to k (on the left now). </font></p>
+<p><font color="#000000">Number of steps yet to take: m-2p</font></p>
+<p><font color="#000000">Left position would be identified by: k-(m-2p)</font></p>
+<p><font color="#000000">If p takes value m, which means we have taken m steps on the right, then we have no steps remaining to take to the left and left position is identified by k itself. (This logic is valid for any value of p &gt; m/2)</font></p>
+
+<h2>Side Note</h2>
+
+The way we calculating prefix sums and sums of subsections is without using the Python built-ins.
+But if we were to use Python built-ins, the code would look somewhat like this:
+
+<pre>
+def get_mushrooms_sum(A, start, end):
+  return sum(A[start : end + 1])
+</pre>
+</body>
