@@ -1,0 +1,186 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<body>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+
+<h3><font color="#DD4100">Min Avg Two Slice: Find the minimal average of any slice containing at least two elements. (Complexity: Medium)</font></h3>
+<h1 style="page-break-before:always; "><font color="#000000">Problem</font></h1>
+<p><font color="#000000">A non-empty array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P &lt; Q &lt; N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q - P + 1).</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">The goal is to find the starting position of a slice whose average is minimal.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Write a function:</font></p>
+<p><font color="#000000">    def solution(A)</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">that, given a non-empty array A consisting of N integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">Write an efficient algorithm for the following assumptions:</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">        N is an integer within the range [2..100,000];</font></p>
+<p><font color="#000000">        each element of array A is an integer within the range [-10,000..10,000].</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Example</font></h1>
+<p><font color="#000000">For example, array A such that:</font></p>
+<p><font color="#000000">    A[0] = 4</font></p>
+<p><font color="#000000">    A[1] = 2</font></p>
+<p><font color="#000000">    A[2] = 2</font></p>
+<p><font color="#000000">    A[3] = 5</font></p>
+<p><font color="#000000">    A[4] = 1</font></p>
+<p><font color="#000000">    A[5] = 5</font></p>
+<p><font color="#000000">    A[6] = 8</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">contains the following example slices:</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">        slice (1, 2), whose average is (2 + 2) / 2 = 2;</font></p>
+<p><font color="#000000">        slice (3, 4), whose average is (5 + 1) / 2 = 3;</font></p>
+<p><font color="#000000">        slice (1, 4), whose average is (2 + 2 + 5 + 1) / 4 = 2.5.</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">So, the function should return the index of 1 in this case.</font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Hint (1)</font></h1>
+<p><font color="#000000">To solve this problem efficiently, you can use the fact that the minimum average slice must be of length 2 or 3. Any larger slice can be split into smaller slices, and if the larger slice has a lower average, one of its smaller slices will also have a lower average.</font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Code (1)</font></h1>
+
+<pre>
+def solution(A):
+    N = len(A)
+
+    min_avg = (A[0] + A[1]) / 2.0
+    min_start = 0
+
+    for i in range(2, N):
+        # Calculate the average of a slice of length 2
+        avg_2 = (A[i - 1] + A[i]) / 2.0
+        if avg_2 &lt; min_avg:
+            min_avg = avg_2
+            min_start = i - 1
+
+        # Calculate the average of a slice of length 3
+        avg_3 = (A[i - 2] + A[i - 1] + A[i]) / 3.0
+        if avg_3 &lt; min_avg:
+            min_avg = avg_3
+            min_start = i - 2
+
+    return min_start
+
+A = [4, 2, 2, 5, 1, 5, 8] # Example run
+result = solution(A)
+print(result)
+</pre>
+
+<p><font color="#000000">This algorithm has a time complexity of O(N) because it iterates through the array only once. The key observation is that the minimal average slice of length 2 or 3 will cover the minimal average slice of any larger length.</font></p>
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Can we redo this code to use the concept of prefix sums?</font></h1>
+<p><font color="#000000">Certainly! You can use the concept of prefix sums to optimize the calculation of slice sums. The idea is to precompute the prefix sums of the array, and then use them to calculate slice sums in constant time. Here's the modified code:</font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Code (2)</font></h1>
+
+<pre>
+def solution(A):
+    N = len(A)
+
+    # Calculate prefix sums
+    prefix_sums = [0] * (N + 1)
+    for i in range(1, N + 1):
+        prefix_sums[i] = prefix_sums[i - 1] + A[i - 1]
+
+    # Initialize the starting position to 0 and the minimum average to the average of the first two elements
+    min_avg = (A[0] + A[1]) / 2.0
+    min_start = 0
+
+    for i in range(2, N):
+        # Calculate the average of a slice of length 2 using prefix sums
+        avg_2 = (prefix_sums[i] - prefix_sums[i - 2]) / 2.0
+        if avg_2 &lt; min_avg:
+            min_avg = avg_2
+            min_start = i - 1
+
+        # Calculate the average of a slice of length 3 using prefix sums
+        avg_3 = (prefix_sums[i] - prefix_sums[i - 3]) / 3.0
+        if avg_3 &lt; min_avg:
+            min_avg = avg_3
+            min_start = i - 2
+
+    return min_start</pre>
+
+<h1 style="page-break-before:always; "><font color="#000000">Line of reasoning</font></h1>
+<p><i><b><font color="#000000">Can you explain this reasoning:</b></i></font></p>
+<p><i><b><font color="#000000"></b></i></font></p>
+<p><i><b><font color="#000000">To solve this problem efficiently, you can use the fact that the minimum average slice must be of length 2 or 3. Any larger slice can be split into smaller slices, and if the larger slice has a lower average, one of its smaller slices will also have a lower average.</b></i></font></p>
+<p><i><b><font color="#000000"></b></i></font></p>
+
+<pre>The reasoning behind this observation is based on the idea that if you have a slice of length greater than 3 with a lower average, you can always find a sub-slice within it that has an even lower average. Let's break it down:
+
+Slice of length 2:
+    There are only two elements, so the average is simply the sum of those two elements divided by 2.
+
+Slice of length 3:
+    If you have a slice of length 3, there are only two sub-slices within it: one of length 2 and another of length 1.
+    If the average of the slice of length 3 is lower than the average of the slice of length 2, then the average of the slice of length 1 will be even lower.
+
+Slice of length greater than 3:
+    For a slice of length greater than 3, you can always find a sub-slice of length 2 or 3 within it.
+    If the average of the larger slice is lower, then the average of one of its sub-slices (either of length 2 or 3) will be even lower.
+    Therefore, it is sufficient to consider only slices of length 2 and 3 when searching for the minimum average slice.
+
+This observation simplifies the problem, as you don't need to consider all possible slice lengths. By focusing on slices of length 2 and 3, you can reduce the computational complexity of the algorithm. </pre>
+
+<p><font color="#000000"></font></p>
+<h1 style="page-break-before:always; "></h1>
+<p><font color="#000000">Detected time complexity:O(N)</font></p>
+<h1 style="page-break-before:always; "><font color="#000000">Tests</font></h1>
+<p><b><font color="#000000">Correctness tests</b></font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">double_quadruple</font></p>
+<p><font color="#000000">two or four elements</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">simple1</font></p>
+<p><font color="#000000">simple test, the best slice has length 3</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">simple2</font></p>
+<p><font color="#000000">simple test, the best slice has length 3</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">small_random</font></p>
+<p><font color="#000000">random, length = 100</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">medium_range</font></p>
+<p><font color="#000000">increasing, decreasing (legth = ~100) and small functional</font></p>
+<p><b><font color="#000000">Performance Tests</b></font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">medium_random</font></p>
+<p><font color="#000000">random, N = ~700</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">large_ones</font></p>
+<p><font color="#000000">numbers from -1 to 1, N = ~100,000</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">large_random</font></p>
+<p><font color="#000000">random, N = ~100,000</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">extreme_values</font></p>
+<p><font color="#000000">all maximal values, N = ~100,000</font></p>
+<p><font color="#000000"></font></p>
+<p><font color="#000000">large_sequence</font></p>
+<p><font color="#000000">many sequences, N = ~100,000</font></p>
+<p><font color="#000000"></font></p>
+</body>
