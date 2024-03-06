@@ -1,0 +1,135 @@
+
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<body>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+
+<h2>Triangle</h2>
+<h2>Determine whether a triangle can be built from a given set of edges.</h2>
+<h2>Complexity: Easy</h2>
+<h1 style="page-break-before:always; ">Problem</h1>
+<p>An array A consisting of N integers is given. A triplet (P, Q, R) is triangular if 0 ≤ P &lt; Q &lt; R &lt; N and:</p>
+<p>        A[P] + A[Q] &gt; A[R],</p>
+<p>        A[Q] + A[R] &gt; A[P],</p>
+<p>        A[R] + A[P] &gt; A[Q].</p>
+<p>Write a function:</p>
+<p>    def solution(A)</p>
+<p>that, given an array A consisting of N integers, returns 1 if there exists a triangular triplet for this array and returns 0 otherwise.</p>
+<p>Write an efficient algorithm for the following assumptions:</p>
+<p>        N is an integer within the range [0..100,000];</p>
+<p>        each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].</p>
+<h1 style="page-break-before:always; ">Example</h1>
+<p>For example, consider array A such that:</p>
+<p>  A[0] = 10    A[1] = 2    A[2] = 5</p>
+<p>  A[3] = 1     A[4] = 8    A[5] = 20</p>
+<p>Triplet (0, 2, 4) is triangular.</p>
+<p>For example, given array A such that:</p>
+<p>  A[0] = 10    A[1] = 2    A[2] = 5</p>
+<p>  A[3] = 1     A[4] = 8    A[5] = 20</p>
+<p>the function should return 1, as explained above. </p>
+<p>Given array A such that:</p>
+<p>  A[0] = 10    A[1] = 50    A[2] = 5, A[3] = 1</p>
+<p>the function should return 0.</p>
+<h1 style="page-break-before:always; ">Code</h1>
+
+<pre>
+def solution(A):
+    N = len(A)
+    # If the array has less than 3 elements, no triangular triplet is possible
+    if N &lt; 3:
+        return 0
+    # Sort the array in ascending order
+    A.sort()
+    # Iterate through the sorted array
+    for i in range(N - 2):
+        # Check if the triplet conditions are satisfied
+        if A[i] + A[i + 1] &gt; A[i + 2]:
+            return 1
+    # No triangular triplet found
+    return 0
+</pre>
+
+<h1 style="page-break-before:always; "></h1>
+<p>Detected time complexity:</p>
+<p>O(N*log(N))</p>
+<h1 style="page-break-before:always; ">Tests</h1>
+<p><b>Performance tests</b></p>
+<p>Large1: chaotic sequence with values from [0..100K], length=10K</p>
+<p>Large2: 1 followed by an ascending sequence of ~50K elements from [0..100K], length=~50K</p>
+<p>large_random: chaotic sequence of values from [0..1M], length=100K</p>
+<p>large_negative: chaotic sequence of negative values from [-1M..-1], length=100K</p>
+<p>large_negative2: chaotic sequence of negative values from [-10..-1], length=100K</p>
+<p>large_negative3: sequence of -1 value, length=100K </p>
+<p><b>Correctness tests</b></p>
+<p>extreme_empty: empty sequence</p>
+<p>extreme_single: 1-element sequence</p>
+<p>extreme_two_elems: 2-element sequence</p>
+<p>extreme_negative1: three equal negative numbers</p>
+<p>extreme_arith_overflow1: overflow test, 3 MAXINTs</p>
+<p>extreme_arith_overflow2: overflow test, 10 and 2 MININTs</p>
+<p>extreme_arith_overflow3: overflow test, 0 and 2 MAXINTs</p>
+<p>Medium1: chaotic sequence of values from [0..100K], length=30</p>
+<p>Medium2: chaotic sequence of values from [0..1K], length=50</p>
+<p>Medium3: chaotic sequence of values from [0..1K], length=100</p>
+<h1 style="page-break-before:always; ">Why this solution works?</h1>
+<p><i><b># Check if the triplet conditions are satisfied. Given that A is sorted.</b></i></p>
+<pre>
+<i><b>if A[i] + A[i + 1] &gt; A[i + 2]:</b></i>
+<i><b>    return 1</b></i>
+</pre>
+<p><i><b></b></i></p>
+<p>If you look at this condition, given that A is sorted:</p>
+<p>The other two conditions, viz:</p>
+<p>A[i+2] + A[i] &gt; A[i+1]</p>
+<p>And A[i+2] + A[i+1] &gt; A[i]</p>
+<p>Would be satisfied automatically since A[i+2] &gt; A[i+1] and then for second one: A[i+1] (or A[i+2]) &gt; A[i]</p>
+<p>Now, what if A[x] and A[y] are supposed to be far apart. Even then:</p>
+<p>If let’s say we have this condition met A[3] + A[10] &gt; A[11], then this condition would be met by all the numbers larger than 3.</p>
+<h1 style="page-break-before:always; ">Thinking Traps</h1>
+<p>Read what is being asked in the question: Existence of three numbers that can form sides of a triangle.</p>
+<p>The code solution presented is straightforward as described in the example.</p>
+<p>But if you just twist your thinking a little bit:</p>
+<p>Trap 1:</p>
+<p>Instead of looking for three numbers that are close, you start looking at the extremes where numbers are on the extremes, you end up with border cases of the solution.</p>
+<p>As in: Two large numbers (roughly equal) and one small : Case of triangle </p>
+<p>This number that is small could take values large enough to be just smaller than the other two large numbers.</p>
+<p>And two very small numbers and one large number: Not a case of triangle</p>
+<p>Trap 2:</p>
+<p>Instead of starting with the condition P+Q &gt; R, P+R &gt; Q and R+Q &gt; P, you start looking at modifications of these conditions as in P &gt; abs(Q-R). </p>
+<h1 style="page-break-before:always; ">What if a triplet exists but numbers are far apart?</h1>
+<p>If a triangular triplet exists, sorting the array in ascending order will bring the three elements closer together. This is because sorting the array ensures that the values are in non-decreasing order, and if a triplet exists, the smallest and middle values of the triplet will be adjacent after sorting.</p>
+<p>Let's consider an example:</p>
+<p>Original array: [10, 2, 5, 1, 8, 20]</p>
+<p>After sorting: [1, 2, 5, 8, 10, 20]</p>
+<p>If there exists a triangular triplet, say (P, Q, R), where P &lt; Q &lt; R, after sorting, the values A[P], A[Q], and A[R] will be adjacent in the sorted array. The conditions A[P] + A[Q] &gt; A[R] and A[Q] + A[R] &gt; A[P] are more likely to be satisfied when the values are closer together.</p>
+<p>For example, in the sorted array [1, 2, 5, 8, 10, 20], you can see that the triplet (1, 2, 5) satisfies the triangular conditions.</p>
+<p>Therefore, sorting the array not only helps identify if a triangular triplet exists but also brings the relevant values closer together, making it easier to check the triangular conditions. If a triplet exists but the values are far apart in the original array, sorting will still reveal the existence of a triplet.</p>
+<h1 style="page-break-before:always; ">How are you arriving at this:
+The conditions A[P] + A[Q] &gt; A[R] and A[Q] + A[R] &gt; A[P] are more likely to be satisfied when the values are closer together.</h1>
+<p>Let me clarify:</p>
+<p>The conditions A[P] + A[Q] &gt; A[R] and A[Q] + A[R] &gt; A[P] are requirements for any valid triangle, and they are not affected by the proximity of values in a sorted array. These conditions are fundamental to the triangle inequality theorem.</p>
+<p>What I meant to convey is that when the array is sorted, it makes it easier to check these conditions during iteration. Specifically, in a sorted array, consecutive elements are adjacent, so when checking the conditions A[i] + A[i+1] &gt; A[i+2], you are comparing adjacent values. This simplifies the process of checking the triangular conditions as you move through the sorted array.</p>
+<p>So, to clarify, the validity of the triangular conditions is not influenced by the proximity of values in the sorted array; rather, sorting simplifies the process of checking these conditions during iteration. I appreciate your understanding, and I hope this clarifies the point.</p>
+</body>
+<span style="display: none;">Tags: Technology,Algorithms,Python</span>
