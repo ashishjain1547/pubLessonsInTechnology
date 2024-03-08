@@ -1,0 +1,110 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<pre><h2>Problem</h2>
+
+<b>Brackets: Determine whether a given string of parentheses (multiple types) is properly nested.</b>
+
+A string S consisting of N characters is considered to be properly nested if any of the following conditions is true:
+
+S is empty;
+S has the form "(U)" or "[U]" or "{U}" where U is a properly nested string;
+S has the form "VW" where V and W are properly nested strings.
+For example, the string "{[()()]}" is properly nested but "([)()]" is not.
+
+Write a function:
+
+class Solution { public int solution(String S); }
+
+that, given a string S consisting of N characters, returns 1 if S is properly nested and 0 otherwise.
+
+For example, given S = "{[()()]}", the function should return 1 and given S = "([)()]", the function should return 0, as explained above.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [0..200,000];
+string S is made only of the following characters: '(', '{', '[', ']', '}' and/or ')'.
+
+<h2>Solution</h2>
+
+Task Score: 87%
+Correctness: 100%
+Performance: 80%
+
+<i>
+class Node():
+    def __init__(self, x):
+        self.x = x
+        self.next = None
+
+class Stack():
+    # head is default NULL
+    def __init__(self):
+        self.head = None
+
+    # Checks if stack is empty
+    def isempty(self):
+        if self.head == None:
+            return True
+        else:
+            return False
+    
+    def push(self, x):
+        if self.head == None:
+            self.head = Node(x)
+        else:
+            newnode = Node(x)
+            newnode.next = self.head 
+            self.head = newnode
+
+    def pop(self):
+        if self.head == None:
+            return None 
+        else:
+            popped_node = self.head 
+            self.head = self.head.next 
+            popped_node.next = None 
+            return popped_node.x
+
+    # Returns the head node data
+    def peek(self):
+        if self.isempty():
+            return None
+        else:
+            return self.head.x
+
+def solution(S):
+    s = Stack()
+
+    for i in range(len(S)):
+        if S[i] in ['(', '{', '[']:
+            s.push(S[i])
+        elif (S[i] == ')' and s.peek() == '(') or (S[i] == '}' and s.peek() == '{') or (S[i] == ']' and s.peek() == '['):
+            s.pop()
+
+    if s.isempty():
+        return 1
+    else:
+        return 0
+</i>
+</pre>
