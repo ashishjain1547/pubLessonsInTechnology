@@ -1,0 +1,42 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<pre>
+RDD, which stands for Resilient Distributed Dataset, is a fundamental data structure in Apache Spark, a distributed computing framework for big data processing. RDDs are immutable, partitioned collections of objects that can be processed in parallel across a cluster of machines. The term "resilient" in RDD refers to the fault-tolerance feature, meaning that RDDs can recover lost data due to node failures.
+
+Here are some key characteristics and properties of RDDs in PySpark:
+
+# Immutable: Once created, RDDs cannot be modified. However, you can transform them into new RDDs by applying various operations.
+
+# Distributed: RDDs are distributed across multiple nodes in a cluster, allowing for parallel processing.
+
+# Partitioned: RDDs are divided into partitions, which are the basic units of parallelism. Each partition can be processed independently on different nodes.
+
+# Lazy Evaluation: Transformations on RDDs are lazily evaluated, meaning that the execution is deferred until an action is triggered. This helps optimize the execution plan and avoid unnecessary computations.
+
+# Fault-Tolerant: RDDs track the lineage information to recover lost data in case of node failures. This is achieved through the ability to recompute lost partitions based on the transformations applied to the original data.
+
+In PySpark, you can create RDDs from existing data in memory or by loading data from external sources such as HDFS, HBase, or other storage systems. Once created, you can perform various transformations (e.g., map, filter, reduce) and actions (e.g., count, collect, save) on RDDs.
+
+However, it's worth noting that while RDDs were the primary abstraction in earlier versions of Spark, newer versions have introduced higher-level abstractions like DataFrames and Datasets, which provide a more structured and optimized API for data manipulation and analysis. These abstractions are built on top of RDDs and offer better performance and ease of use in many scenarios. 
+</pre>

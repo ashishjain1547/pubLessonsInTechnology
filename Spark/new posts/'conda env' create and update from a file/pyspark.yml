@@ -1,0 +1,10 @@
+name: pyspark
+channels:
+    - conda-forge
+dependencies:
+    - python==3.10
+    - pandas
+    - pyspark
+    - pip
+    - ipykernel
+    - jupyter

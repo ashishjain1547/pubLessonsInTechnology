@@ -213,5 +213,12 @@ df.show()</i>
 <i class="ib">type(df)</i>
 
 <i class="ig">pyspark.sql.dataframe.DataFrame</i>
+
+<h2>Way 4: Using the plain old RDD</h2>
+
+Shane works in data analytics project and needs to process Users event data (UserLogs.csv file). Which of the below code snippet can be used to split the fields with a comma as a delimiter and fetch only the first two fields from it? 
+
+logsRDD = sc.textFile("/HDFSPATH/UserLogs.csv"); 
+FieldsRDD = logsRDD.map(lambda r : r.split(",")).map(lambda r: (r[0],r[1])) 
 </pre>
 <span style="display: none">Tags: Technology,Spark</span>

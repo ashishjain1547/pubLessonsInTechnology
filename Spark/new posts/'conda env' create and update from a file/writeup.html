@@ -1,0 +1,50 @@
+<pre>
+name: pyspark
+channels:
+    - conda-forge
+dependencies:
+    - python==3.10
+    - pandas
+    - pyspark
+    - pip
+
+
+$ conda env create -f pyspark.yml
+
+name: pyspark
+channels:
+    - conda-forge
+dependencies:
+    - python==3.10
+    - pandas
+    - pyspark
+    - pip
+    - ipykernel
+    - jupyter
+
+$ conda env update --file pyspark.yml
+
+
+
+(pyspark) ashish@ashish:~/Desktop$ python -m ipykernel install --user --name pyspark
+Installed kernelspec pyspark in /home/ashish/.local/share/jupyter/kernels/pyspark
+(pyspark) ashish@ashish:~/Desktop$ 
+
+
+
+
+
+
+
+(pyspark) ashish@ashish:~/Desktop$ pyspark
+Python 3.10.0 | packaged by conda-forge | (default, Nov 20 2021, 02:24:10) [GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+24/03/10 15:03:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/03/10 15:03:43 WARN Utils: Service 'sparkDriver' could not bind on a random free port. You may check whether configuring an appropriate binding address.
+
+
+
+
+</pre>
