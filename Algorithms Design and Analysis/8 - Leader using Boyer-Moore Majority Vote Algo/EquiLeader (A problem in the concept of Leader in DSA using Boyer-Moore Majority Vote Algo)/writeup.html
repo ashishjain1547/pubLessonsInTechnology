@@ -1,0 +1,139 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+  
+<pre>
+<h3>EquiLeader: Find the index S such that the leaders of the sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N - 1] are the same.</h3>
+
+A non-empty array A consisting of N integers is given.
+
+The leader of this array is the value that occurs in more than half of the elements of A.
+
+An equi leader is an index S such that 0 ≤ S &lt; N - 1 and two sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N - 1] have leaders of the same value.
+
+For example, given array A such that:
+    A[0] = 4
+    A[1] = 3
+    A[2] = 4
+    A[3] = 4
+    A[4] = 4
+    A[5] = 2
+
+we can find two equi leaders:
+
+    0, because sequences: (4) and (3, 4, 4, 4, 2) have the same leader, whose value is 4.
+    2, because sequences: (4, 3, 4) and (4, 4, 2) have the same leader, whose value is 4.
+
+The goal is to count the number of equi leaders.
+
+Write a function:
+
+    def solution(A)
+
+that, given a non-empty array A consisting of N integers, returns the number of equi leaders.
+
+For example, given:
+    A[0] = 4
+    A[1] = 3
+    A[2] = 4
+    A[3] = 4
+    A[4] = 4
+    A[5] = 2
+
+the function should return 2, as explained above.
+
+Write an efficient algorithm for the following assumptions:
+
+        N is an integer within the range [1..100,000];
+        each element of array A is an integer within the range [-1,000,000,000..1,000,000,000].
+
+<h2>Taking help from ChatGPT</h2>
+
+<b>Our prompt looks like this:</b>
+
+<i>You are a programming guide. Here is my problem... 
+
+...Please guide how to solve this problem step by step.</i>
+
+<p>To solve this problem efficiently, we can use a two-step approach:</p><ol><li>Find the dominator (leader) of the array.</li><li>Count the number of equi leaders.</li></ol><p>Here's a step-by-step guide on how to approach this problem:</p><h3>Step 1: Find the Dominator</h3><ol><li><p>Initialize two variables, <code>candidate</code> and <code>count</code>, where <code>candidate</code> will store the current candidate for the dominator and <code>count</code> will store the count of occurrences of the current candidate.</p></li><li><p>Iterate through the array <code>A</code>:</p><ul><li>If <code>count</code> is 0, set the current element as the <code>candidate</code> and set <code>count</code> to 1.</li><li>If the current element is equal to the <code>candidate</code>, increment <code>count</code> by 1.</li><li>If the current element is not equal to the <code>candidate</code>, decrement <code>count</code> by 1.</li></ul></li><li><p>After iterating through the array, <code>candidate</code> will hold a potential dominator candidate. We need to verify if it's indeed the dominator by counting its occurrences in the array.</p></li><li><p>Count occurrences of <code>candidate</code>.</p><ul><li>If the count of occurrences of <code>candidate</code> is not more than half the length of the array, there is no dominator.</li></ul></li></ol><h3>Step 2: Count the Equi Leaders</h3><ol><li>Initialize <code>leader_count</code> to count the total occurrences of the dominator.</li><li>Initialize <code>equi_leader_count</code> to count the number of equi leaders.</li><li>Iterate through the array again:<ul><li>If the current element equals the dominator, increment <code>leader_count</code>.</li><li>Calculate the remaining count of the dominator from the end of the array.</li><li>If the count of the dominator up to the current index is more than half of the elements seen so far, and the count of the dominator from the current index to the end is more than half of the remaining elements, increment <code>equi_leader_count</code>.</li></ul></li></ol>
+
+<i>
+def solution(A):
+    candidate = None
+    count = 0
+    
+    # Find candidate for dominator
+    for num in A:
+        if count == 0:
+            candidate = num
+            count = 1
+        elif num == candidate:
+            count += 1
+        else:
+            count -= 1
+    
+    # Count occurrences of candidate
+    count_candidate = A.count(candidate)
+    
+    # If candidate is not a dominator, return 0
+    if count_candidate &lt;= len(A) // 2:
+        return 0
+    
+    leader_count = 0
+    equi_leader_count = 0
+    
+    for i, num in enumerate(A):
+        if num == candidate:
+            leader_count += 1
+        
+        # Check if the leader appears more than half of the elements up to the current index
+        if leader_count > (i + 1) // 2:
+            # Check if the leader appears more than half of the remaining elements
+            remaining_count = count_candidate - leader_count
+            if remaining_count > (len(A) - i - 1) // 2:
+                equi_leader_count += 1
+    
+    return equi_leader_count
+
+# Example usage
+A = [4, 3, 4, 4, 4, 2]
+print(solution(A))  # Output should be 2
+</i>
+
+<h3><i>What is the core idea behind this algo?</i></h3>
+
+<p>The core idea behind this algorithm is to first find the dominator (leader) of the array efficiently, and then utilize the properties of the dominator to count the number of equi leaders.</p><ol><li><p><strong>Finding the Dominator</strong>:</p><ul><li>The algorithm efficiently finds the dominator using the Boyer-Moore Majority Vote algorithm. This algorithm allows us to find a majority element (dominator) in linear time complexity with constant space complexity.</li><li>By iterating through the array, the algorithm identifies a potential dominator candidate and verifies whether it's indeed the dominator by counting its occurrences in the array. If the count of occurrences is more than half of the length of the array, it confirms the presence of a dominator.</li></ul></li><li><p><strong>Counting the Equi Leaders</strong>:</p><ul><li>Once the dominator is found, the algorithm iterates through the array again to count both the total occurrences of the dominator and the number of equi leaders.</li><li>It keeps track of the leader count as it iterates through the array. For each index, it checks if the count of the dominator up to that index is more than half of the elements seen so far. If it is, it also checks if the count of the dominator from the current index to the end is more than half of the remaining elements. If both conditions are met, it increments the equi leader count.</li><li>This approach leverages the fact that an equi leader can only occur if the dominator occurs in both subsequences with counts greater than half of the respective lengths. Therefore, by efficiently tracking these counts, the algorithm can accurately count the equi leaders.</li></ul></li></ol><p>By following this two-step approach, the algorithm effectively solves the problem of finding the number of equi leaders in an array, utilizing the properties of the dominator to optimize the solution.</p>
+
+<h3><i>Is it correct the equi-leaders and dominator have the same face value?</i></h3>
+
+Yes, you are correct. In the context of this problem, the equi-leaders and the dominator have the same face value.
+
+In the problem statement, an equi-leader is defined as an index S such that two sequences separated at index S have leaders of the same value. The leader of a sequence is defined as the value that occurs in more than half of the elements of that sequence.
+
+Since the equi-leader is a subset of the original array, and it's defined based on having the same leader value on both sides of the split, it follows that the dominator of the equi-leader subsequence is the same as the dominator of the original array.
+
+Therefore, in the context of this problem, the equi-leaders and the dominator indeed have the same face value.
+</pre>
+
+<span style="display: none;">Tags: Algorithms,Technology,</span>
