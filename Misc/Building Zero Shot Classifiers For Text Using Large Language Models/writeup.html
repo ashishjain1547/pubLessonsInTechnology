@@ -1,0 +1,77 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        div.customWrapper img {
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<div class="customWrapper">
+<p>The software tools we need for the activity covered in this post are:</p><ol style="text-align: left;"><li>Google Colab</li><li>GitHub<br /></li><li>And last: ChatGPT</li></ol><p><b>Why I needed these three items?</b></p><p>I needed Google Colab to write code. Google Colab allowed to me not care about creating a local environment and setting it up with the required packages such as 'transformers' from Hugging Face.</p><p>I needed GitHub to put my code in a place that I can make available to myself anywhere and also to you (my readers).</p><p>I needed ChatGPT to get boilerplate code for our particular task. I learnt about the prompts I needed for this activity from the book by Sinan Ozdemir titled:&nbsp;</p><p><i>Quick Start Guide to Large Language Models. Strategies and Best Practices for using ChatGPT and Other LLMs - Addison-Wesley Professional (2023)</i></p>
+
+<a href="https://github.com/ashishjain1547/books_on_large_language_models/blob/main/1_Sinan%20Ozdemir%20-%20Quick%20Start%20Guide%20to%20Large%20Language%20Models%20(2023)/Sinan%20Ozdemir%20-%20Quick%20Start%20Guide%20to%20Large%20Language%20Models.pdf" target="_blank">Download Book</a>
+
+<p><b>What you would need would (I think) is:</b></p><p>Google Colab that is connected for code to my public repository hosted on GitHub. <i><br /></i></p><p>&nbsp;<br /><b>How to connect Google Colab with GitHub?</b></p><p>1. Once you would open the Google Colab, you get a screen as shown below.</p><p>Note that: I am logged in to my Google Account for this task.</p><p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhefI43DWeAn4U7YldHRR7xpTVilVbjLsbeO_26UKlUav0JoEDrHrdEgM8NR4KmgFWTOIxqdD67w54pD6sTY88g2BDJ5nq9TxE4pSe6EkuT_SxoKLu3dUnZaE50ISyBQC_lkbA4jeG4pGsHzJEEy1cTFXSQEkkE2KcZTcVBaDWzrDFCj6wOeRhxi4XMxjY8/s1538/1_welcome%20to%20colab.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="542" data-original-width="1538" height="226" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhefI43DWeAn4U7YldHRR7xpTVilVbjLsbeO_26UKlUav0JoEDrHrdEgM8NR4KmgFWTOIxqdD67w54pD6sTY88g2BDJ5nq9TxE4pSe6EkuT_SxoKLu3dUnZaE50ISyBQC_lkbA4jeG4pGsHzJEEy1cTFXSQEkkE2KcZTcVBaDWzrDFCj6wOeRhxi4XMxjY8/w640-h226/1_welcome%20to%20colab.png" width="640" /></a></p><p><br /></p><p>2. Next: you would click on "File" at the top left.</p><p>You would click on "Open Notebook".</p><p>And you would select "GitHub" as shown below:</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHMmLStL_Vxhz9FLbCkOHOkf6Rt0GazJkAzllcoH7jR0Ah64-CJZnvkNq5S_qxNI0w4eZm_vbzm0o4TGDyovnt-c9JiKRSAW5aXLINjc9xfvhy9x_YQ7kUjUcZr82MkTUN5xCtlMhiTlChhaucSszE0tTaHrusiQbgLN-drrMe_WrUmFY9OmZ8RJaBIRpM/s1538/2_open%20notebook%20from%20github.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="895" data-original-width="1538" height="372" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHMmLStL_Vxhz9FLbCkOHOkf6Rt0GazJkAzllcoH7jR0Ah64-CJZnvkNq5S_qxNI0w4eZm_vbzm0o4TGDyovnt-c9JiKRSAW5aXLINjc9xfvhy9x_YQ7kUjUcZr82MkTUN5xCtlMhiTlChhaucSszE0tTaHrusiQbgLN-drrMe_WrUmFY9OmZ8RJaBIRpM/w640-h372/2_open%20notebook%20from%20github.png" width="640" /></a></div><br /><p>3. You would fill in the username. It is: ashishjain1547</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFhdk64Ug1BVj3bVvq-TRlIpLs5iv9U82dvJL1qVqwBZQDTu1dh2mNCIRWwCbtmMM3Ou8_OBxkIdNK85K2LZwdygC6RhhoQcODPPayiLDuC60KyZ7VqTK1pL_ddQU7uLzSQ-TmXFqGBnXt4dNAibD6KLQ5a8XI0nk21uyZJeJxDlSeUCEstkfeggPPm_I1/s879/3_fill%20in%20the%20username.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="357" data-original-width="879" height="260" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFhdk64Ug1BVj3bVvq-TRlIpLs5iv9U82dvJL1qVqwBZQDTu1dh2mNCIRWwCbtmMM3Ou8_OBxkIdNK85K2LZwdygC6RhhoQcODPPayiLDuC60KyZ7VqTK1pL_ddQU7uLzSQ-TmXFqGBnXt4dNAibD6KLQ5a8XI0nk21uyZJeJxDlSeUCEstkfeggPPm_I1/w640-h260/3_fill%20in%20the%20username.png" width="640" /></a></div><p>Once you fill in the username, the "Repository" dropdown would auto populate with public repositories available for that user.</p><p>The repository you would select is: "<strong class="mr-2 flex-self-stretch d-none d-md-block" itemprop="name"><a class="color-fg-default" data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" href="https://github.com/ashishjain1547/generative_ai_workspace_2024_04_05">generative_ai_workspace_2024_04_05</a></strong>"<br /></p><p>4. Once repo is selected, it's notebooks start appearing below:</p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_7wBzG2-7wLqyanXa5OrCah-ui3VP8T3Y4XBuSLqw48Cl_JwSbK0Me2K8CyjokFX7u4FSPBzd1rIaEjVBk8MvXXOopCxJrLeMDQ8OQovR8ctbGlfv5OfSyacETzGeWIBrBL-MM8RnLNPYQqbH7qF9sYE_tP28bk1fHucbyrBoVCgLMAzjiuRm6mxPlYVC/s879/4_once%20repo%20is%20selected,%20it's%20notebooks%20appear%20below.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="407" data-original-width="879" height="296" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_7wBzG2-7wLqyanXa5OrCah-ui3VP8T3Y4XBuSLqw48Cl_JwSbK0Me2K8CyjokFX7u4FSPBzd1rIaEjVBk8MvXXOopCxJrLeMDQ8OQovR8ctbGlfv5OfSyacETzGeWIBrBL-MM8RnLNPYQqbH7qF9sYE_tP28bk1fHucbyrBoVCgLMAzjiuRm6mxPlYVC/w640-h296/4_once%20repo%20is%20selected,%20it's%20notebooks%20appear%20below.png" width="640" /></a></div><p></p><p><span style="font-size: large;">Code for zero shot Spam vs. Not Spam classifier using Facebook's BART</span></p><p><br /></p>
+
+<pre>
+from transformers import pipeline
+def classify_text (email):
+    """
+    Use Facebook's BART model to classify an email into "spam" or "not spam"
+    Args:
+    email (str): The email to classify
+    Returns:
+    str: The classification of the email
+    """
+
+    classifier = pipeline('zero-shot-classification', model='facebook/bart-large-mnli')
+    labels = ['spam', 'not spam']
+    hypothesis_template = 'This email is {}.'
+    results = classifier(email, labels, hypothesis_template=hypothesis_template)
+    return results['labels'][0]
+</pre>
+<p></p><p>&nbsp;</p><p><b>Usage:</b></p><p><b></b></p><div class="separator" style="clear: both; text-align: center;"><b><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiR0oSMDEZizM6aZiDD5Lgm-m76zT13zNtHqs77mQbh2HHzZF2TPvJXMuNdXJeEoZwikKEM6HTTYTcFZGrCd61KdeIGb1Hq0AkHKNK94HzAS214Mw55NkpJBHUlddsp0NvFgrXRj6Kd6wMMmf45PQqQFy2tQFl0F4o0GH72PsxdxpMyPnEDD0zFEekYwwp8/s742/5_usage%20of%20zero%20shot%20classifier%20for%20spam%20vs%20not%20spam.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="252" data-original-width="742" height="218" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiR0oSMDEZizM6aZiDD5Lgm-m76zT13zNtHqs77mQbh2HHzZF2TPvJXMuNdXJeEoZwikKEM6HTTYTcFZGrCd61KdeIGb1Hq0AkHKNK94HzAS214Mw55NkpJBHUlddsp0NvFgrXRj6Kd6wMMmf45PQqQFy2tQFl0F4o0GH72PsxdxpMyPnEDD0zFEekYwwp8/w640-h218/5_usage%20of%20zero%20shot%20classifier%20for%20spam%20vs%20not%20spam.png" width="640" /></a></b></div><b><br />&nbsp;</b> <br /><p></p><p><span style="font-size: large;">How we used ChatGPT?</span></p><div class="flex-col gap-1 md:gap-3"><div class="flex flex-grow flex-col max-w-full"><div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto" data-message-author-role="user" data-message-id="aaa29085-07ae-4d3c-ac4e-fbfa99ced278"><div class=""><i>Provide code to do zero shot sentiment analysis using Google BERT.</i></div><div class=""><i>&nbsp;</i></div><div class="">Answer:</div><div class=""><br /></div><div class="">To perform zero-shot sentiment analysis using Google's BERT model, you 
+can utilize the Hugging Face Transformers library along with the 
+pre-trained BERT model. Here's how you can do it in Python:</div><div class="">&nbsp;</div><div class="">from transformers import pipeline<br /><br /># Load the zero-shot classification pipeline with BERT<br />classifier = pipeline("zero-shot-classification", model="bert-base-uncased")<br /><br /># Define a list of texts for sentiment analysis<br />texts = [<br />&nbsp;&nbsp;&nbsp; "I love this product, it's amazing!",<br />&nbsp;&nbsp;&nbsp; "This movie was terrible, I hated it.",<br />&nbsp;&nbsp;&nbsp; "The weather today is fantastic.",<br />&nbsp;&nbsp;&nbsp; "I feel neutral about this situation."<br />]<br /><br /># Define the possible labels/categories for sentiment<br />candidate_labels = ["positive", "negative", "neutral"]<br /><br /># Perform zero-shot sentiment analysis<br />results = classifier(texts, candidate_labels)<br /><br /># Print the results<br />for i, text in enumerate(texts):<br />&nbsp;&nbsp;&nbsp; print(f"Text: {text}")<br />&nbsp;&nbsp;&nbsp; print("Sentiment probabilities:")<br />&nbsp;&nbsp;&nbsp; for label, score in zip(results[i]['labels'], results[i]['scores']):<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print(f"{label}: {score:.4f}")<br />&nbsp;&nbsp;&nbsp; print()<br />&nbsp;</div><div class="">&nbsp;</div><div class=""><b>Output</b> <br /></div></div></div><div class="mt-1 flex justify-start gap-3 empty:hidden"><div class="text-gray-400 flex self-end lg:self-center items-center justify-center lg:justify-start mt-0 -ml-1 h-7 gap-[2px] visible"><br /></div></div></div><p></p><pre>Text: I love this product, it's amazing!
+Sentiment probabilities:
+positive: 0.4718
+negative: 0.2679
+neutral: 0.2603
+
+Text: This movie was terrible, I hated it.
+Sentiment probabilities:
+negative: 0.3644
+positive: 0.3179
+neutral: 0.3177
+
+Text: The weather today is fantastic.
+Sentiment probabilities:
+positive: 0.4026
+negative: 0.3039
+neutral: 0.2935
+
+Text: I feel neutral about this situation.
+Sentiment probabilities:
+neutral: 0.3587
+negative: 0.3248
+positive: 0.3166</pre><p></p><p><br /></p><p><span style="font-size: large;">Additional Note</span></p><p>Question:<br /></p><p><i>How does the BERT know that the problem is of sentiment analysis and not spam-vs-not_spam?</i></p><p>Answer:<i>&nbsp;</i> <br /></p><div class="flex flex-grow flex-col max-w-full"><div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto" data-message-author-role="assistant" data-message-id="bda85ffc-f864-4e7f-8bc0-fbd29e3edcef"><div class="markdown prose w-full break-words dark:prose-invert light"><p>In the code provided, the BERT model doesn't inherently "know" that the problem is specifically about sentiment analysis. Instead, it is designed for zero-shot classification, which means it can classify texts into predefined categories without being explicitly trained on those categories.</p><p>The key lies in the input data and the labels provided. In the example, we've defined a list of texts that contain statements or reviews, and we've also provided a list of candidate labels (<code>positive</code>, <code>negative</code>, <code>neutral</code>) that represent sentiment categories. When you pass these texts and labels to the BERT model through the zero-shot classification pipeline, it infers the sentiment of each text based on its understanding of the language and the provided labels.</p><p>If you were to perform a different classification task, such as spam vs. not spam, you would simply replace the list of candidate labels with the appropriate labels for that task (e.g., <code>spam</code>, <code>not_spam</code>). The model doesn't need to be explicitly told the nature of the classification problem because it learns to make predictions based on the provided labels during training.</p><p>&nbsp;</p></div></div></div><p></p><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><p></p>
+</div>
