@@ -1,0 +1,98 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+  
+<pre>
+""" 
+Can you create an array like the two shown below using Python code:
+
+[[-2. -1.]
+ [-1. -1.]
+ [ 0. -1.]
+ [ 1. -1.]
+ [ 2. -1.]
+ [-2.  0.]
+ [-1.  0.]
+ [ 0.  0.]
+ [ 1.  0.]
+ [ 2.  0.]
+ [-2.  1.]
+ [-1.  1.]
+ [ 0.  1.]
+ [ 1.  1.]
+ [ 2.  1.]]
+
+OR 
+
+May be this array:
+
+[[-2. -1.]
+ [ 0. -1.]
+ [ 2. -1.]
+ [-2.  0.]
+ [ 0.  0.]
+ [ 2.  0.]
+ [-2.  1.]
+ [ 0.  1.]
+ [ 2.  1.]]
+
+"""
+
+
+import numpy as np
+
+# Define one-dimensional arrays
+x = np.linspace(-2, 2, 5)  # 5 values between -2 and 2
+y = np.linspace(-1, 1, 3)  # 3 values between -1 and 1
+
+# Create mesh grids
+X, Y = np.meshgrid(x, y) 
+
+# Print the shapes of the grids
+print("X:", X.shape)
+print("Y:", Y.shape)
+
+# X will have the shape (5, 3) and Y will also have the shape (5, 3)
+# Each element in X will be a value from the x array. X values change along the columns.
+# Each element in Y will be a value from the y array. Y values change along the rows.
+
+print(X)
+print(Y)
+
+Xgrid = np.vstack((X.flatten(), Y.flatten())).T
+print(Xgrid)
+
+
+# In order to get the second output, we need to change the input:
+
+# Define one-dimensional arrays
+x = np.linspace(-2, 2, 3)  # 3 values between -2 and 2
+y = np.linspace(-1, 1, 3)  # 3 values between -1 and 1
+
+# Rest of the code would remain the same.
+
+<h2>Side Note</h2>
+
+You may be wondering where this might be used. The answer is that it can be used in creating dummy data that is 2 Dimensional (excluding the target values) in Machine Learning projects.
+
+</pre>
+<span style="display: none;">Tags: Technology,Python,NumPy,Interview Preparation,</span>

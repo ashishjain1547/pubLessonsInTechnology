@@ -1,0 +1,76 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<style>
+    div.code-block-decoration.footer {
+        display: none;
+    }
+</style>
+<div _ngcontent-ng-c1116824338="" class="markdown markdown-main-panel" style="--animation-duration: 600ms; --fade-animation-function: linear;" dir="ltr"><p data-sourcepos="1:1-1:201">The <code>np.meshgrid()</code> function in NumPy is used to generate a two-dimensional grid of coordinates from one-dimensional arrays representing coordinates along each axis. Here's a more detailed explanation:</p><p data-sourcepos="3:1-3:12"><strong>Purpose:</strong></p><ul data-sourcepos="5:1-7:0">
+<li data-sourcepos="5:1-5:131">It takes two (or more in higher dimensions) one-dimensional arrays and creates two (or more) new two-dimensional arrays (meshes).</li>
+<li data-sourcepos="6:1-7:0">Each element in the output meshes corresponds to a combination of elements from the original input arrays.</li>
+</ul><p data-sourcepos="8:1-8:17"><strong>How it Works:</strong></p><ol data-sourcepos="10:1-22:0">
+<li data-sourcepos="10:1-13:0">
+<p data-sourcepos="10:4-10:20"><strong>Input Arrays:</strong></p>
+<ul data-sourcepos="11:4-13:0">
+<li data-sourcepos="11:4-11:120">It requires two one-dimensional arrays (<code>x</code> and <code>y</code>) representing the coordinates along two axes (usually X and Y).</li>
+<li data-sourcepos="12:4-13:0">These arrays define the range of values for each dimension in the grid.</li>
+</ul>
+</li>
+<li data-sourcepos="14:1-18:0">
+<p data-sourcepos="14:4-14:21"><strong>Output Meshes:</strong></p>
+<ul data-sourcepos="15:4-18:0">
+<li data-sourcepos="15:4-15:83">It returns two new two-dimensional arrays (<code>XX</code> and <code>YY</code>) with the same shape.</li>
+<li data-sourcepos="16:4-16:91"><strong>Each element</strong> in <code>XX</code> represents the X-coordinate for a specific point in the grid.</li>
+<li data-sourcepos="17:4-18:0"><strong>Each element</strong> in <code>YY</code> represents the Y-coordinate for the corresponding point in the grid.</li>
+</ul>
+</li>
+<li data-sourcepos="19:1-22:0">
+<p data-sourcepos="19:4-19:24"><strong>Repeating Values:</strong></p>
+<ul data-sourcepos="20:4-22:0">
+<li data-sourcepos="20:4-20:133">To create all possible combinations, <code>np.meshgrid()</code> repeats the values from one array along rows or columns of the other array.</li>
+<li data-sourcepos="21:4-22:0">Imagine placing a copy of the X-axis values across every row of the Y-axis values to get all X, Y combinations.</li>
+</ul>
+</li>
+</ol><p data-sourcepos="23:1-23:12"><strong>Example:</strong></p><code-block _nghost-ng-c2692884114="" ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><div _ngcontent-ng-c2692884114="" class="code-block ng-star-inserted"><div _ngcontent-ng-c2692884114="" class="code-block-decoration header gmat-subtitle-1 ng-star-inserted"><span _ngcontent-ng-c2692884114="">Python</span></div><!----><div _ngcontent-ng-c2692884114="" class="code-block-internal-container"><pre _ngcontent-ng-c2692884114=""><code _ngcontent-ng-c2692884114="" role="text" data-test-id="code-content" class="code-container" data-sourcepos="25:1-42:52"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># Define one-dimensional arrays</span>
+x = np.linspace(-<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">7</span>)  <span class="hljs-comment"># 7 values between -2 and 2</span>
+y = np.linspace(-<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>)  <span class="hljs-comment"># 5 values between -1 and 1</span>
+
+<span class="hljs-comment"># Create mesh grids</span>
+X, Y = np.meshgrid(x, y)
+
+<span class="hljs-comment"># Print the shapes of the grids</span>
+print(<span class="hljs-string">"X:"</span>, X.shape)
+print(<span class="hljs-string">"Y:"</span>, Y.shape)
+
+<span class="hljs-comment"># X will have the shape (5, 7) and Y will also have the shape (5, 7)</span>
+<span class="hljs-comment"># Each element in X will be a value from the x array</span>
+<span class="hljs-comment"># Each element in Y will be a value from the y array</span>
+</code></pre><!----><!----><!----></div><div _ngcontent-ng-c2692884114="" hide-from-message-actions="" class="code-block-decoration footer gmat-overline hide-from-message-actions ng-star-inserted"><div _ngcontent-ng-c2692884114=""><span _ngcontent-ng-c2692884114=""> Use code <a _ngcontent-ng-c2692884114="" href="/faq#coding" target="_blank" rel="noopener noreferrer" aria-label="with caution (opens in a new window)" class="disclaimer-suffix">with caution.</a></span></div><div _ngcontent-ng-c2692884114="" class="buttons"><!----><!----><!----><!----><!----><!----><button _ngcontent-ng-c2692884114="" aria-label="Copy code" mat-icon-button="" mattooltip="Copy code" class="mat-mdc-tooltip-trigger copy-button mdc-icon-button mat-mdc-icon-button gmat-mdc-button-with-prefix mat-unthemed mat-mdc-button-base gmat-mdc-button" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" jslog="179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_9455be2eb6d2e12e&quot;,&quot;c_ccc73bb6f9d3d34b&quot;,null,&quot;rc_c37639a274eec37c&quot;,null,null,&quot;en&quot;,null,null,null,null,1,0]];mutable:true"><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c2692884114="" role="img" class="mat-icon notranslate google-symbols mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font">content_copy</mat-icon><span class="mat-mdc-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----></div></div><!----></div><!----></code-block><p data-sourcepos="44:1-44:17"><strong>Applications:</strong></p><ul data-sourcepos="46:1-48:115">
+<li data-sourcepos="46:1-46:94"><code>np.meshgrid()</code> is commonly used to evaluate functions over grids in two or more dimensions.</li>
+<li data-sourcepos="47:1-47:115">It's a helpful tool for creating data for visualization tasks, especially when working with surfaces or 3D plots.</li>
+<li data-sourcepos="48:1-48:115">It can be used in various scientific computing applications where evaluating a function over a grid is necessary.</li>
+</ul></div>
+<span style="display: none;">Tags: Technology,Python,Interview Preparation,NumPy,</span>
