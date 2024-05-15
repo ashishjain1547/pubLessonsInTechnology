@@ -1,0 +1,229 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json", 
+              success: function (result) {
+                  let grouplink = JSON.parse(result)['Beta Tech Club'];
+                  $("#customWhatsAppGroupLinkWrapper").html(
+                      `
+                      <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                          <span>Join us on:</span>
+                          <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                          </a>
+                      </h2>
+                      `    
+                  );
+              }
+          });
+      });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      .customLink {
+          background-color: #4CAF50;
+          border: none;
+          color: white !important;
+          padding: 8px 13px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+
+      .customLink:hover {
+          text-decoration: none;
+      }
+
+      div.code-block-decoration.footer {
+          display: none;
+      }
+
+      button.export-sheets-button-wrapper {
+          display: none;
+      }
+  </style>
+
+  <style>
+      .custom_link_h2 a {
+          color: black;
+          text-decoration: none;
+          text-align: center;
+      }
+
+      .custom_link_h2 a:hover {
+          color: black;
+      }
+
+      .custom_link_h2 a:active {
+          color: black;
+      }
+
+      .custom_link_h2 span {
+          translate: 0px -5px;
+          display: inline-block;
+      }
+
+      .custom_link_h2 img {
+          width: 100px;
+          padding: 0px;
+          border: none;
+          box-shadow: none;
+      }
+  </style>
+
+</head>
+
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Tech Articles: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology </a>
+
+<pre>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpmZCIdZksHqUQGkyey45F_wFIq7x1uvUMFxO5HXnh3A92xtmCJe5c1CaMxK-Ul_ImhzGpRCZi5O4CAabaof5NyPgWSaZBs427podgZ8BZ9mJ-R7P_2AnVb8yKfyWCqwGX-eqNA6mxiUZMicLh8MKPdPVZ-VP504TG8feEiASkDEgt8MDdVMOAFZ5MLNCw/s332/pgvector.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="159" data-original-width="332" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpmZCIdZksHqUQGkyey45F_wFIq7x1uvUMFxO5HXnh3A92xtmCJe5c1CaMxK-Ul_ImhzGpRCZi5O4CAabaof5NyPgWSaZBs427podgZ8BZ9mJ-R7P_2AnVb8yKfyWCqwGX-eqNA6mxiUZMicLh8MKPdPVZ-VP504TG8feEiASkDEgt8MDdVMOAFZ5MLNCw/s600/pgvector.jpg"/></a></div>
+  
+Note: The operating system we are using is :
+
+(base) ashish@ashish:~$ uname -a
+Linux ashish 6.5.0-28-generic #29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+
+Ubuntu includes PostgreSQL by default. To install PostgreSQL on Ubuntu, use the apt (or other apt-driving) command:
+
+apt install postgresql
+
+<a href="https://www.postgresql.org/download/linux/ubuntu/" target="_blank">Ref: postgresql.org</a>
+
+<h2>Installing and Checking the PostGRE SQL Setup First</h2>
+
+$ sudo apt install postgresql
+
+$ sudo -u postgres psql
+could not change directory to "/home/ashish": Permission denied
+psql (14.11 (Ubuntu 14.11-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# SELECT CURRENT_DATE ;
+ current_date 
+--------------
+ 2024-05-15
+(1 row)
+
+postgres=# select version();
+                                                                version                                                                 
+----------------------------------------------------------------------------------------------------------------------------------------
+ PostgreSQL 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+(1 row)
+
+postgres=# exit
+
+<h2>GETTING ACCESS TO POSTGRE SQL EXTENSIONS VIA APT REPO</h2>
+
+<a href="https://www.postgresql.org/download/linux/ubuntu/" target="_blank">Ref (1): postgresql.org</a>
+
+<a href="https://wiki.postgresql.org/wiki/Apt" target="_blank">Ref (2): wiki.postgresql.org</a>
+
+PostgreSQL Apt Repository:
+
+$ sudo apt install -y postgresql-common
+$ sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+
+<h2>INSTALLING PGVECTOR USING 'apt'</h2>
+
+<a href="https://github.com/pgvector/pgvector?tab=readme-ov-file#apt">Ref: github.com</a>
+
+Debian and Ubuntu packages are available from the PostgreSQL APT Repository. Follow the setup instructions and run:
+
+sudo apt install postgresql-16-pgvector
+
+Note: Replace 16 with your Postgres server version
+
+<i>For us, the Postgre SQL version was 14 so command becomes:
+$ sudo apt install postgresql-14-pgvector</i>
+
+
+<h2>DO NOT MAKE THIS MISTAKE OF GETTING IN WITHOUT ROOT ACCESS:</h2>
+
+<h3>Here is the mistake:</h3>
+
+<a href="https://stackoverflow.com/questions/15201953/accessing-postgres-without-being-root-users" target="_blank">Ref (1): stackoverflow</a>
+
+<a href="https://community.retool.com/t/error-when-creating-vector-db-v3-14-1/27201/8" target="_blank">Ref (2): community.retool.com</a>
+
+(base) ashish@ashish:~/Desktop/ws/gh/others/pgvector$ sudo -u postgres psql
+could not change directory to "/home/ashish/Desktop/ws/gh/others/pgvector": Permission denied
+psql (14.11 (Ubuntu 14.11-0ubuntu0.22.04.1), server 14.12 (Ubuntu 14.12-1.pgdg22.04+1))
+Type "help" for help.
+
+postgres=# CREATE EXTENSION pgvector;
+ERROR:  could not open extension control file "/usr/share/postgresql/14/extension/pgvector.control": No such file or directory
+postgres=# exit
+
+
+<h3>Here is the fix:</h3>
+
+
+(base) ashish@ashish:~$ sudo -i -u postgres
+[sudo] password for ashish: 
+postgres@ashish:~$ psql
+psql (14.11 (Ubuntu 14.11-0ubuntu0.22.04.1), server 14.12 (Ubuntu 14.12-1.pgdg22.04+1))
+Type "help" for help.
+
+postgres=# create extension vector;
+CREATE EXTENSION
+postgres=# 
+
+<h2>TESTING THE PGVECTOR SETUP</h2>
+
+postgres=#  \dx
+                             List of installed extensions
+  Name   | Version |   Schema   |                     Description                      
+---------+---------+------------+------------------------------------------------------
+ plpgsql | 1.0     | pg_catalog | PL/pgSQL procedural language
+ vector  | 0.7.0   | public     | vector data type and ivfflat and hnsw access methods
+(2 rows)
+
+<a href="https://dev.to/farez/installing-postgresql-pgvector-on-debian-fcf" target="_blank">Ref: dev.to</a>
+
+<h2>RUNNING A COUPLE OF TESTS</h2>
+
+<a href="https://github.com/pgvector/pgvector" target="_blank">Ref: github.com/pgvector</a>
+
+postgres=# CREATE TABLE items (id bigserial PRIMARY KEY, embedding vector(3));
+CREATE TABLE
+postgres=# INSERT INTO items (embedding) VALUES ('[1,2,3]'), ('[4,5,6]');
+INSERT 0 2
+postgres=# SELECT * FROM items ORDER BY embedding &lt;-> '[3,1,2]' LIMIT 5;
+ id | embedding 
+----+-----------
+  1 | [1,2,3]
+  2 | [4,5,6]
+(2 rows)
+
+</pre>
+
+<span style="display: none;">Tags: Technology,Large Language Models,</span>
