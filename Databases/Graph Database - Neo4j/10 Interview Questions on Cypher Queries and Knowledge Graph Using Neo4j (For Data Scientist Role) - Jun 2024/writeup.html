@@ -1,0 +1,249 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+  
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json", 
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `    
+                    );
+                }
+            });
+        });
+    </script>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+  
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+  
+        .customLink:hover {
+            text-decoration: none;
+        }
+  
+        div.code-block-decoration.footer {
+            display: none;
+        }
+  
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+  
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+  
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+  
+        .custom_link_h2 a:active {
+            color: black;
+        }
+  
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+  
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+      .customul {
+        list-style: none;
+      }
+  
+      [aria-hidden='true'] {
+        display: none;
+      }
+    </style>
+  
+</head>
+
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Interview Preparation Articles: <a class="customLink" href="http://survival8.blogspot.com/2024/04/index-for-job-interviews-preparation.html" target="_blank">Index For Interviews Preparation</a>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQYmh_My2ThRaXEONMhSu0ZGGpf7HTrpXi9IrKPgjTWHDNRqcPcuMp3Ka1hg-HnnjIUSbUi2Q20hUvpiLq0Bh002cSW3ZQhv0Ef2o46dJjs73eymxCnrjoL-KqQkHcTI3pDmAzDlQ8_dTzcDxMVwE5rDpVcA9e8T_weJxV5JIpBp-0W7FuVXj2y9RbyvDP/s834/logo.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="313" data-original-width="834" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQYmh_My2ThRaXEONMhSu0ZGGpf7HTrpXi9IrKPgjTWHDNRqcPcuMp3Ka1hg-HnnjIUSbUi2Q20hUvpiLq0Bh002cSW3ZQhv0Ef2o46dJjs73eymxCnrjoL-KqQkHcTI3pDmAzDlQ8_dTzcDxMVwE5rDpVcA9e8T_weJxV5JIpBp-0W7FuVXj2y9RbyvDP/s600/logo.png"/></a></div>
+
+<pre>
+Question 1: Write a CREATE query having the following nodes and the relationship from ROOT to other nodes is 'HAS_CHILD'.
+
+ROOT 
+|--BROKER
+|--PROVIDER
+|--MEMBER
+
+Answer:
+
+CREATE (root:ROOT),
+       (broker:BROKER),
+       (provider:PROVIDER),
+       (member:MEMBER),
+       (root)-[:HAS_CHILD]->(broker),
+       (root)-[:HAS_CHILD]->(provider),
+       (root)-[:HAS_CHILD]->(member)
+
+~~~
+
+Question 2: Write a DELETE query to delete all nodes and relationships in a graph. 
+
+Answer:
+MATCH (n) DETACH DELETE n
+
+<a href="https://neo4j.com/docs/cypher-manual/current/clauses/delete/" target="_blank">Ref</a>
+
+~~~
+
+Question 3: Write a query to get a count for all nodes of a given label:
+
+Answer:
+
+MATCH (n:Person)
+RETURN count(n) as count
+
+<a href="https://neo4j.com/developer/kb/fast-counts-using-the-count-store/" target="_blank">Ref</a>
+
+~~~
+
+Question 4: There are three EPIC nodes in my graph. 
+Each node has a numerical property CUSTOM_ID.
+Now, I want to retrieve the node with the largest CUSTOM_ID.
+
+Answer:
+
+MATCH (n:EPIC)
+RETURN n
+ORDER BY n.CUSTOM_ID DESC
+LIMIT 1
+
+~~~ 
+
+Question 5: Write query to get a node by property value in Neo4j.
+
+Answer:
+
+
+MATCH (n) 
+WHERE n.name = 'Mark' 
+RETURN n
+
+<a href="https://stackoverflow.com/questions/29382025/get-node-by-property-value-neo4j" target="_blank">Ref</a>
+
+~~~
+
+Question 6: Delete a node with a given property.
+
+Answer:
+MATCH (n:Person {name: 'Tom Hanks'})
+DELETE n
+
+<a href="https://neo4j.com/docs/cypher-manual/current/clauses/delete/" target="_blank">Ref</a>
+
+~~~
+
+Question 7:  Delete ONLY nodes having label of ENTITY:
+
+Answer:
+
+MATCH (n:ENTITY)
+DELETE n
+
+~~~
+
+Question 8: Return number of EPIC nodes in the knowledge graph.
+
+Answer:
+
+MATCH (epic:EPIC)
+RETURN count(epic) as count
+
+~~~
+
+Question 9: Write a query to get the EPIC node with largest numerical property of CUSTOM_ID. 
+
+Answer:
+
+MATCH (epic:EPIC)
+RETURN epic
+ORDER BY epic.CUSTOM_ID DESC
+LIMIT 1
+
+~~~
+
+Question 10:
+What are some of the use cases where Between Centrality Algorithm is used?
+
+Answer:
+The Betweenness Centrality Algorithm is a powerful tool used to understand the roles of nodes in a graph and their impact on the network. Here are some use cases where it finds application:
+
+Supply Chain Risk Analysis: In supply chain processes, Betweenness Centrality helps identify critical nodes that act as bridges between different parts of the network. For example, when transporting a product internationally, it can pinpoint bottleneck nodes during cargo ship stops in intermediate ports1.
+
+Power Grid Contingency Analysis: The algorithm is used to analyze power grid networks, identifying critical nodes that affect the flow of electricity. Due to its computational intensity, this application often requires supercomputers2.
+
+Community Detection and Network Routing: Betweenness Centrality assists in Girvan–Newman community detection and network routing tasks. It helps find influential nodes that connect different communities or guide information flow2.
+
+Artificial Intelligence and Skill Characterization: Skill characterization in AI relies on identifying influential nodes. Betweenness Centrality helps determine which nodes play a crucial role in spreading information or resources2.
+
+Epidemiology and Rumor Spreading: In epidemiology, it identifies nodes that influence the spread of diseases. Similarly, it helps analyze rumor propagation in social networks1.
+
+Transportation Networks: The algorithm is applied to transportation networks, such as road or rail systems, to find critical nodes affecting traffic flow or resource distribution1.
+
+Remember, Betweenness Centrality is about detecting nodes that serve as bridges, allowing information or resources to flow efficiently across a graph. 
+
+1: graphable.ai
+2: computationalsocialnetworks.springeropen.com
+3: nature.com
+
+---
+</pre>
+
+<span style="display: none;">Tags: Database,Technology</span>

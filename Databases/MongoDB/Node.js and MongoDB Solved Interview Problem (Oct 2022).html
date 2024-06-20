@@ -1,0 +1,256 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      .dot {
+          height: 12px;
+          width: 12px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+      }
+
+      .arrow {
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+      }
+
+      .right {
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+      }
+
+      .left {
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+      }
+
+      .up {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+      }
+
+      .down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+      }
+
+      .ib {
+          color: blue
+      }
+
+      .ig {
+          color: green
+      }
+
+      .ir {
+          color: red
+      }
+  </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Question:
+
+<i>I'm making 2 queries (or a single query) to the database. 
+What I want to achieve:
+
+If one of them is null, I want to add the value 'nil'. Example:
+
+field1: nil,
+field2: 'value'
+
+If both are null, then I want it to respond with the 'not found' message.
+
+What's a good approach for this?</i>
+
+Answer:
+
+<h1>First, we setup the local database.</h1>
+
+
+<h2>Running a local instance</h2>
+
+(base) ashish@ashishlaptop:~/Desktop$ mongosh
+Current Mongosh Log ID:	63498870b0f4b94029f7b626
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+Using MongoDB:		6.0.2
+Using Mongosh:		1.6.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2022-10-14T21:33:50.958+05:30: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2022-10-14T21:33:52.643+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2022-10-14T21:33:52.644+05:30: vm.max_map_count is too low
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+   
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+   
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> 
+test> db
+test
+test> show dbs
+<i class="ig">
+admin   40.00 KiB
+config  12.00 KiB
+local   72.00 KiB  
+</i>
+test> 
+
+test> 
+
+test> db.createCollection("ccn1")
+{ ok: 1 }
+
+<i class="ib">test> db.ccn1.insertOne({"name":"Ashish Jain","address":"Delhi"})</i>
+
+<i class="ig">{
+  acknowledged: true,
+  insertedId: ObjectId("634989627d163a41b75e1e13")
+}</i>
+test> 
+
+<b>Next Command</b>
+
+<i>db.ccn1.insertMany([  
+  {"name":"","address":"India"},
+  {"name":"","address":""},
+  {"name":"Ash","address":""}
+])
+</i>
+
+test> db.ccn1.insertMany([  
+... {"name":"","address":"India"},
+... {"name":"","address":""},
+... {"name":"Ash","address":""}
+... ])
+
+<i class="ig">{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("634989cc7d163a41b75e1e14"),
+    '1': ObjectId("634989cc7d163a41b75e1e15"),
+    '2': ObjectId("634989cc7d163a41b75e1e16")
+  }
+}</i>
+test> 
+
+<h1>Our Database Looks Like This</h1>
+
+<i class="ig">[
+  {
+    _id: new ObjectId("634989627d163a41b75e1e13"),
+    name: 'Ashish Jain',
+    address: 'Delhi'
+  },
+  {
+    _id: new ObjectId("634989cc7d163a41b75e1e14"),
+    name: '',
+    address: 'India'
+  },
+  {
+    _id: new ObjectId("634989cc7d163a41b75e1e15"),
+    name: '',
+    address: ''
+  },
+  {
+    _id: new ObjectId("634989cc7d163a41b75e1e16"),
+    name: 'Ash',
+    address: ''
+  }
+]</i>
+ 
+<h1>This is our Node.js code in file "script.js"</h1>
+
+<i class="ib">
+var MongoClient = require('mongodb').MongoClient;
+
+var url = "mongodb://localhost:27017/";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  var dbo = db.db("test");
+  var all_docs = dbo.collection("ccn1").find({}).toArray(function(err, result) {
+    if (err) throw err;
+    
+    
+    for (i in result){
+        if(result[i]['name'] && result[i]['address']) {
+            console.log("name: " + result[i]['name'])
+            console.log("address: " + result[i]['address'])
+        }
+
+        else if (result[i]['name'] && !result[i]['address']){
+            console.log("name: " + result[i]['name'])
+            console.log("address: nil")
+        }
+
+        else if (!result[i]['name'] && result[i]['address']){
+            console.log("name: nil")
+            console.log("address: " + result[i]['address'])
+        }
+
+        else {
+            console.log("Not Found")
+        }
+
+        console.log()
+        
+    }
+
+    db.close();
+  });
+});  </i>
+
+<h1>This is our output</h1>
+
+<i class="ig">
+(base) ashish@ashishlaptop:~/Desktop/software/node$ node script.js 
+name: Ashish Jain
+address: Delhi
+
+name: nil
+address: India
+
+Not Found
+
+name: Ash
+address: nil  </i>
+
+</pre>
+<span style="display: none">Tags: Technology,Database,JavaScript,</span>

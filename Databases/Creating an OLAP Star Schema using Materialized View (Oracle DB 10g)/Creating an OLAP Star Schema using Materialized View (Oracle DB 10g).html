@@ -1,0 +1,259 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>Database used for this demo is: Oracle 10g
+
+Before we begin, we need to understand a few things:
+
+1. Materialized View Log
+
+In an Oracle database, a materialized view log is a table associated with the master table of a materialized view. When master table data undergoes DML changes (such as INSERT, UPDATE, or DELETE), the Oracle database stores rows describing those changes in the materialized view log. A materialized view log is similar to an AUDIT table and is the mechanism used to capture changes made to its related master table. Rows are automatically added to the Materialized View Log table when the master table changes. The Oracle database uses the materialized view log to refresh materialized views based on the master table. This process is called fast refresh and improves performance in the source database.
+
+Ref: <a href="https://docs.oracle.com/cd/E41507_01/epm91pbr3/eng/epm/pscw/concept_UnderstandingMaterializedViewLogs.html">Materialized View Log (Oracle Docs)</a>
+
+
+Table 1: "SS_TIME"
+
+<i style="color: blue;">CREATE TABLE "SS_TIME" ("ROW_IDENTIFIER" VARCHAR2(500), "TIME_LEVEL" VARCHAR2(500), "END_DATE" DATE, "TIME_SPAN_IN_DAYS" NUMBER); </i>
+
+We are going to populate this table using a PL/SQL script.
+
+<i style="color: blue;">DECLARE
+  start_year number;
+  end_year number;
+  no_of_days_in_year number;
+  date_temp date;
+BEGIN
+  start_year := 1996;
+  end_year := 1997;
+  no_of_days_in_year := 365;
+  
+  /* Inserting rows with level 'year' */
+  /*
+  FOR i IN start_year .. end_year LOOP
+    no_of_days_in_year := MOD(i, 4);
+    IF  no_of_days_in_year = 0 THEN
+      no_of_days_in_year := 366;
+    ELSE
+      no_of_days_in_year := 365;
+    END IF;
+    insert into ss_time values(i, 'YEAR', add_months(to_date(start_year || '-JAN-01', 'YYYY-MON-DD'), 12) - 1, no_of_days_in_year);
+  END LOOP;
+  */
+  
+  /* Inserting rows with level 'MONTH' */ 
+  FOR i IN start_year .. end_year LOOP
+    FOR j in 0..11 LOOP
+      date_temp := add_months(to_date(i || '-JAN-01', 'YYYY-MON-DD'), j) - 1;
+      INSERT INTO ss_time VALUES(to_char(date_temp, 'MON') || i, 'MONTH', date_temp, extract(day from last_day(date_temp)));
+    END LOOP;
+  END LOOP;
+END; </i>
+
+Once we run the above script, we get a data as shown below:
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-9prGl2vOEW8/XuYlzt1x2yI/AAAAAAAAE44/aLx-bJJK9lYCgXGJY7MKySQmA2BzfUG6QCK4BGAsYHg/s648/ss_time.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="648" data-original-width="587" src="https://1.bp.blogspot.com/-9prGl2vOEW8/XuYlzt1x2yI/AAAAAAAAE44/aLx-bJJK9lYCgXGJY7MKySQmA2BzfUG6QCK4BGAsYHg/d/ss_time.png" /></a></div>
+
+Next, we have following tables:
+
+<i style="color: blue">-- CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+create table ss_customers (customerid number primary key, customername varchar2(1000), contactname varchar2(1000), address varchar2(1000), city varchar2(1000), postalcode varchar2(1000), country varchar2(1000));
+
+-- OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+create table ss_orders (orderid number primary key, customerid number, employeeid number, orderdate date, shipperid number);
+
+-- ProductID	ProductName	SupplierID	CategoryID	Unit	Price
+create table ss_products (productid number primary key, productname varchar2(1000), supplierid number, categoryid number, unit varchar2(1000), price number);
+
+-- CategoryID	CategoryName	Description	
+create table ss_categories (categoryid number primary key, categoryname varchar2(1000), description varchar2(1000));
+
+-- OrderDetailID	OrderID	ProductID	Quantity
+create table ss_orderdetails (orderdetailid number, orderid number, productid number, quantity number); </i>
+
+Next, we run insert statements for 'SS_CUSTOMERS' using an SQL file.
+
+The file is "Insert Statements for ss_customers.sql", and has contents:
+
+<i style="color: blue;">SET DEFINE OFF;
+insert into ss_customers values(1, 'Alfreds Futterkiste', 'Maria Anders', 'Obere Str. 57', 'Berlin', '12209', 'Germany');
+insert into ss_customers values (2,'Ana Trujillo Emparedados y helados','Ana Trujillo','Avda. de la Constitucion 2222','Mexico D.F.','05021','Mexico');
+insert into ss_customers values (3,'Antonio Moreno Taqueria','Antonio Moreno','Mataderos 2312','Mexico D.F.','05023','Mexico');
+...
+commmit; </i>
+
+This file is ran from Command Prompt as shown below:
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-3ui9QcZHlbI/XuYsoYdj-ZI/AAAAAAAAE5U/Q8E_uuGkonw4dMgYBseV9bW_5APzjM6EgCK4BGAsYHg/s768/Running%2Ban%2BSQL%2Bscript.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="493" data-original-width="768" height="410" src="https://1.bp.blogspot.com/-3ui9QcZHlbI/XuYsoYdj-ZI/AAAAAAAAE5U/Q8E_uuGkonw4dMgYBseV9bW_5APzjM6EgCK4BGAsYHg/w640-h410/Running%2Ban%2BSQL%2Bscript.png" width="640" /></a></div>
+
+You can view the contents of the table in 'SQL Developer' or 'Oracle 10g Apex Application':
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-PZbZrT2Qmoo/XuYtGG7e8DI/AAAAAAAAE5o/vesmAf8yR4kH66qXIaNK1CGcdg_ZuoJPACK4BGAsYHg/s1150/ss_customers.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="514" data-original-width="1150" height="286" src="https://1.bp.blogspot.com/-PZbZrT2Qmoo/XuYtGG7e8DI/AAAAAAAAE5o/vesmAf8yR4kH66qXIaNK1CGcdg_ZuoJPACK4BGAsYHg/w640-h286/ss_customers.PNG" width="640" /></a></div>
+
+Similarly for "ss_orders":
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-l5N5TmL8wzw/XuYunLG2p7I/AAAAAAAAE6I/wweKEUKUpbUE6VGbpx1PKrkPI3ipCe7TACK4BGAsYHg/s592/ss_orders.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="303" data-original-width="592" src="https://1.bp.blogspot.com/-l5N5TmL8wzw/XuYunLG2p7I/AAAAAAAAE6I/wweKEUKUpbUE6VGbpx1PKrkPI3ipCe7TACK4BGAsYHg/d/ss_orders.png" /></a></div>
+
+Similarly for 'ss_products':
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-JzwWmGHRwH0/XuYwAevII7I/AAAAAAAAE6k/oaJSIl_HeMoUPqG2Sdi8Bw1WBwq_V5aoACK4BGAsYHg/s812/ss_products.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="302" data-original-width="812" height="238" src="https://1.bp.blogspot.com/-JzwWmGHRwH0/XuYwAevII7I/AAAAAAAAE6k/oaJSIl_HeMoUPqG2Sdi8Bw1WBwq_V5aoACK4BGAsYHg/w640-h238/ss_products.png" width="640" /></a></div>
+
+Similarly for "ss_categories":
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-IrZxHeYtHJY/XuYweoGf_II/AAAAAAAAE64/EaJT5QtYcYM5C_uA13XCtnyq70HyupE0ACK4BGAsYHg/s670/ss_categories.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="243" data-original-width="670" height="232" src="https://1.bp.blogspot.com/-IrZxHeYtHJY/XuYweoGf_II/AAAAAAAAE64/EaJT5QtYcYM5C_uA13XCtnyq70HyupE0ACK4BGAsYHg/w640-h232/ss_categories.PNG" width="640" /></a></div>
+
+Similarly for "ss_orderdetails":
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-IyUD_q2x0sE/XuYxKmplntI/AAAAAAAAE7M/antZS5T434Yrq94aPZxQcwarVHRHVFVLwCK4BGAsYHg/s473/ss_orderdetails.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="239" data-original-width="473" height="324" src="https://1.bp.blogspot.com/-IyUD_q2x0sE/XuYxKmplntI/AAAAAAAAE7M/antZS5T434Yrq94aPZxQcwarVHRHVFVLwCK4BGAsYHg/w640-h324/ss_orderdetails.PNG" width="640" /></a></div>
+
+Testing:
+<i style="color: blue">  select * from ss_orders;  --GIVES THE NUMBER OF SALES
+  select * from ss_customers; --GIVES THE COUNTRY WHERE SALES WERE MADE
+  select * from ss_products;
+  select * from ss_categories;
+  select * from ss_time;
+  select * from ss_orderdetails;
+  select decode(sum(customerid),null,0,sum(customerid)) as cust_count from ss_customers where city='Delhi'; </i>
+  
+Our OLAP Star Schema will have:
+THREE DIMENSIONS: TIME, PRODUCT CATEGORIES (SINGLE VALUED DIMENSION), COUNTRY (SINGLE VALUED DIMENSION)
+AND ONE MEASURE: NUMBER OF ORDERS 
+
+Query:
+
+<i style="color: blue;">select tim.row_identifier as time_interval, cust.country, cat.categoryname, count(ord.orderid)
+  from ss_time tim, ss_customers cust, ss_categories cat, ss_orders ord, ss_orderdetails odd, ss_products prd
+  where ord.customerid = cust.customerid
+    and odd.productid = prd.productid
+    and prd.categoryid = cat.categoryid
+    and tim.end_date >= ord.orderdate
+    and (tim.end_date - tim.time_span_in_days + 1) &lt;= ord.orderdate
+  group by tim.row_identifier, cust.country, cat.categoryname; </i>
+  
+OUTPUT:
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-nz4SMo5nr-Q/XuYyYEVsPGI/AAAAAAAAE7s/dLmHdSOIbg8EKhYv7XBU6sSQQ_6Uc8ChwCK4BGAsYHg/s604/output.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="529" data-original-width="604" src="https://1.bp.blogspot.com/-nz4SMo5nr-Q/XuYyYEVsPGI/AAAAAAAAE7s/dLmHdSOIbg8EKhYv7XBU6sSQQ_6Uc8ChwCK4BGAsYHg/d/output.PNG" /></a></div>  
+
+Another Test Query:
+<i style="color: blue">select tim.row_identifier as time_interval, ord.orderid
+  from ss_time tim, ss_orders ord
+  where tim.end_date >= ord.orderdate
+    and (tim.end_date - tim.time_span_in_days + 1) &lt;= ord.orderdate; </i>
+	
+Next, we create "Materialized View Log(s)":
+
+<i style="color: blue">CREATE MATERIALIZED VIEW LOG ON SS_PRODUCTS
+  WITH PRIMARY KEY, ROWID (categoryid)
+  INCLUDING NEW VALUES;
+
+CREATE MATERIALIZED VIEW LOG ON SS_ORDERDETAILS
+  WITH ROWID (productid)
+  INCLUDING NEW VALUES; 
+/* The CREATE MATERIALIZED VIEW LOG command was issued with the WITH PRIMARY KEY option and the master table did not contain a primary key constraint or the constraint was disabled. Reissue the command using only the WITH ROWID option, create a primary key constraint on the master table, or enable an existing primary key constraint. */
+
+CREATE MATERIALIZED VIEW LOG ON SS_ORDERS
+  WITH PRIMARY KEY, ROWID (customerid, orderdate)
+  INCLUDING NEW VALUES;
+
+CREATE MATERIALIZED VIEW LOG ON SS_CATEGORIES
+  WITH PRIMARY KEY, ROWID (categoryname)
+  INCLUDING NEW VALUES;
+
+CREATE MATERIALIZED VIEW LOG ON SS_CUSTOMERS
+  WITH PRIMARY KEY, ROWID (country)
+  INCLUDING NEW VALUES;
+
+CREATE MATERIALIZED VIEW LOG ON SS_TIME
+  WITH ROWID (row_identifier, end_date, time_span_in_days)
+  INCLUDING NEW VALUES;
+-- DROP MATERIALIZED VIEW LOG ON ss_time; </i>
+
+Next, we create the 'Materialized View':
+
+<i style="color: blue">CREATE MATERIALIZED VIEW ss_mv_total_sales_fact_table
+  BUILD IMMEDIATE
+  REFRESH FAST ON COMMIT
+  ENABLE QUERY REWRITE
+  AS
+    SELECT tim.row_identifier AS time_interval, cust.country, cat.categoryname, count(ord.orderid) as count_orders
+      FROM ss_time tim, ss_customers cust, ss_categories cat, ss_orders ord, ss_orderdetails odd, ss_products prd
+      WHERE ord.customerid = cust.customerid
+        AND odd.productid = prd.productid
+        AND prd.categoryid = cat.categoryid
+        AND tim.end_date >= ord.orderdate
+        AND (tim.end_date - tim.time_span_in_days + 1) &lt;= ord.orderdate
+      GROUP BY tim.row_identifier, cust.country, cat.categoryname; </i>
+
+Testing:
+
+SELECT * FROM ss_mv_total_sales_fact_table;
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-GW6XxnC9tsw/XuY0uSyHwbI/AAAAAAAAE8U/wSiQI8F8WgIyrvxnhNFb90IVS6htwqXqACK4BGAsYHg/s570/o1.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="417" data-original-width="570" src="https://1.bp.blogspot.com/-GW6XxnC9tsw/XuY0uSyHwbI/AAAAAAAAE8U/wSiQI8F8WgIyrvxnhNFb90IVS6htwqXqACK4BGAsYHg/d/o1.PNG" /></a></div>
+
+SELECT * FROM ss_mv_total_sales_fact_table where country = 'Germany' order by categoryname;
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-kpNY4BPduAg/XuY1Dnkc2QI/AAAAAAAAE8o/hHsYAuJa9cgI9EqypM5K4OGPDAIjEZpFQCK4BGAsYHg/s914/o2.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="456" data-original-width="914" height="320" src="https://1.bp.blogspot.com/-kpNY4BPduAg/XuY1Dnkc2QI/AAAAAAAAE8o/hHsYAuJa9cgI9EqypM5K4OGPDAIjEZpFQCK4BGAsYHg/w640-h320/o2.PNG" width="640" /></a></div>
+
+SELECT * FROM ss_mv_total_sales_fact_table where country = 'Germany' and time_interval = '1996'; -- No data found.
+
+SELECT * FROM ss_mv_total_sales_fact_table where country = 'Germany' and time_interval like '%1996%' order by categoryname;
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-RrtgiYm-YPY/XuY1ejx6-II/AAAAAAAAE9A/ozDInytnhzwATrNx2c6UQ3mtHHxF6rODQCK4BGAsYHg/s569/o4.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="379" data-original-width="569" src="https://1.bp.blogspot.com/-RrtgiYm-YPY/XuY1ejx6-II/AAAAAAAAE9A/ozDInytnhzwATrNx2c6UQ3mtHHxF6rODQCK4BGAsYHg/d/o4.PNG" /></a></div>
+
+All code files are here: <a href="https://drive.google.com/file/d/1g-q8Cec3FXSwDINPJCFMaXMz0-7DVHW-/view?usp=sharing" target="_blank">Google Drive</a>
+</pre>

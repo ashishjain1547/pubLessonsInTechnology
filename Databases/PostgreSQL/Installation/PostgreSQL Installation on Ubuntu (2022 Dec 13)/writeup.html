@@ -1,0 +1,142 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .ib {
+            color: blue
+        }
+
+        .ig {
+            color: green
+        }
+
+        .ir {
+            color: red
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h1>Contents of install_postgresql.sh</h1>
+
+<i class="ib">
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get -y install postgresql
+</i>
+
+Ref: <a href="https://www.postgresql.org/download/linux/ubuntu/" target="_blank">postgresql.org</a> 
+
+$ bash install_postgresql.sh
+
+<h1>Find the file "pg_hba.conf"</h1>
+
+(base) ashish@ashish-Lenovo-ideapad-130-15IKB:~/Desktop$ locate pg_hba.conf
+/etc/postgresql/15/main/pg_hba.conf
+/home/ashish/anaconda3/pkgs/libpq-12.9-h16c4e8d_3/share/pg_hba.conf.sample
+/home/ashish/anaconda3/share/pg_hba.conf.sample
+/usr/share/postgresql/15/pg_hba.conf.sample
+
+<h1>Edit the file "pg_hba.conf"</h1>
+
+$ sudo nano /etc/postgresql/15/main/pg_hba.conf
+$ sudo cat /etc/postgresql/15/main/pg_hba.conf
+<i class="ib">
+...
+# Database administrative login by Unix domain socket
+local   all             postgres                                md5
+
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust </i>
+
+<h1>Test the installed DB</h1>
+
+<i class="ib">
+$ sudo -i -u postgres
+postgres@ashish-Lenovo-ideapad-130-15IKB:~$ psql</i>
+
+psql (15.1 (Ubuntu 15.1-1.pgdg22.10+1))
+Type "help" for help.
+
+postgres=# \du
+<i class="ig">
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {} </i>
+
+postgres=# 
+
+postgres=# SELECT CURRENT_DATE ;
+
+<i class="ig">
+current_date 
+--------------
+    2022-12-13
+(1 row)
+</i>
+
+postgres=# select version();
+<i class="ig">
+                                                           version                                                           
+-----------------------------------------------------------------------------------------------------------------------------
+ PostgreSQL 15.1 (Ubuntu 15.1-1.pgdg22.10+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 12.2.0-3ubuntu1) 12.2.0, 64-bit
+(1 row)
+</i>
+</pre>
+<span style="display: none;">Tags: Technology,Database,</span>

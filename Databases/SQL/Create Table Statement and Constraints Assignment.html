@@ -1,0 +1,520 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customOl {
+            font-size: 15px;
+        }
+    </style>
+</head>
+<pre>Table Creation and Data insertion:
+Create following Tables with required constraints (as mentioned) using SQL DDL. </pre>
+
+<h3>Table: Student</h3>
+<table>
+    <tbody>
+        <tr>
+            <td><b><i>sid</i></b>
+                <br>
+                <i>(int)</i>
+                <br>
+                <i>Primary Key</i>
+            </td>
+            <td>
+                <b><i>sname </i></b>
+                <br>
+                <i>Varying Char (10)</i>
+            </td>
+            <td><b><i>sbranch </i></b>
+                <br>
+                <i>Char(5)</i>
+            </td>
+            <td> <b><i>sage</i></b>
+                <br>
+                <i> (int)</i>
+                <br>
+                <i>(not greater than 25)</i>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1001
+            </td>
+            <td>
+                Kamal
+            </td>
+            <td>
+                IT
+            </td>
+            <td>
+                18
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1004
+            </td>
+            <td>
+                Yogesh
+            </td>
+            <td>
+                IT
+            </td>
+            <td>
+                17
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1011
+            </td>
+            <td>
+                Mani
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    CSE
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    20
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1022
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    Farooq
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    EEE
+                </div>
+            </td>
+            <td>
+                21
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1027
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    Girija
+                </div>
+            </td>
+            <td>
+                CSE
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    24
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1030
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    Mousmi
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    CSE
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    22
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1036
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    Rajanish
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    EEE
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    21
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1052
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    Praneet
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    EEE
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    21
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1059
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    Joseph
+                </div>
+            </td>
+            <td>
+                CSE
+            </td>
+            <td>
+                17
+            </td>
+        </tr>
+        <tr>
+            <td>1063</td>
+            <td>Lahiri</td>
+            <td>IT</td>
+            <td>21</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h3>Table: Course</h3>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <b><i>cid</i></b>
+                <br>
+                <i> (int) PK</i>
+            </td>
+            <td>
+                <b><i>Cname</i></b>
+                <br>
+                <i>(chars 4 and unique)</i>
+            </td>
+            <td>
+                <b><i>units</i></b>
+                <br>
+                <i>(int) </i>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                10
+            </td>
+            <td>
+                OS
+            </td>
+            <td>
+                3
+            </td>
+        </tr>
+        <tr>
+            <td>
+                20
+            </td>
+            <td>
+                DBMS
+                </div>
+            </td>
+            <td>
+                4
+            </td>
+        </tr>
+        <tr>
+            <td>
+                30
+            </td>
+            <td>
+                CNW
+            </td>
+            <td>
+                5
+            </td>
+        </tr>
+        <tr>
+            <td>
+                40
+                </div>
+            </td>
+            <td>
+                PHY
+            </td>
+            <td>
+                3
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<h3>Table: StudentCourse</h3>
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <b><i>stid</i></b>
+                <br>
+                PK1 and FK to sid of student
+            </td>
+            <td>
+                <b><i>cno </i></b>
+                <br>
+                PK2 and FK to cid of course
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1001
+            </td>
+            <td>
+                20
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1001
+
+            </td>
+            <td>
+                30
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1004
+            </td>
+            <td>
+                10
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1004
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    20
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1004
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    30
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1004
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    40
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1027
+                </div>
+            </td>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    20
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt; margin-bottom: 0in;">
+                    1027
+                </div>
+            </td>
+            <td>
+                30
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1036
+            </td>
+            <td>
+                10
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1036
+            </td>
+            <td>
+                30
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1036
+
+            </td>
+            <td>
+                20
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1059
+
+            </td>
+            <td>
+                10
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1063
+
+            </td>
+            <td>
+                20
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Solution</h3>
+<pre>
+<h3>DDL: Data Definition Language</h3>
+ - create 
+ - alter 
+ - drop
+
+<h3>DML: Data Manipulation Language </h3>
+ - select 
+ - insert 
+ - update 
+ - delete 
+
+<h2>Microsoft SQL Server</h2>
+<h3>How to add a "Check Constraint" on a column:</h3>
+CREATE TABLE CountryList (
+  Id INT IDENTITY PRIMARY KEY,
+  CountryName VARCHAR(255) NOT NULL,
+  CountryPopulation INT CHECK(CountryPopulation > 0)
+)
+
+ALTER TABLE student ADD CONSTRAINT CheckSage CHECK (sage > 25);
+
+<h3>Adding a "Foreign Key"</h3>
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+); 
+
+<h3>Creating a 'Composite Primary Key'</h3>
+<i>Create table StudentCourse ( stid  integer FOREIGN Key REFERENCES Student (sid) , 
+cno integer Foreign Key References Course (cid),
+PRIMARY KEY (stid, cno) ); </i>
+
+<h4>A mistake that students make...</h4>
+<i style="color: red;">Create table StudentCourse ( stid  integer Primary Key FOREIGN Key REFERENCES Student (sid), 
+cno integer PRIMARY key Foreign Key References Course (cid) );
+
+<b>Msg 8110, Level 16, State 0, Line 1
+Cannot add multiple PRIMARY KEY constraints to table 'StudentCourse'.</b> </i>
+
+<h2>Oracle DB</h2>
+
+SQL> create table student_ashish_12345 (sid int primary key, sname varchar2(10), sbranch char(5), sage int constraint stud_sage_ck check (sage <= 25));
+
+SQL> create table course_ashish_12345 (cid int primary key, cname char(4) unique, units int);
+
+SQL> create table studentcourse_ashish_12345 (stid int, cno int, constraint sc_pk primary key(stid, cno), constraint sc_fk1 foreign key (stid) references bits_student (sid), constraint sc_fk2 foreign key (cno) references bits_course (cid));
+
+SQL> select table_name from tabs where table_name like '%ASHISH_12345';
+</pre>
+<span style="display: none;">Tags: Database,Technology,</span>

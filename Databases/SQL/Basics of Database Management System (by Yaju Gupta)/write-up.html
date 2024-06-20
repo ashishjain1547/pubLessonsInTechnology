@@ -1,0 +1,234 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        i.ibb {
+            display: block;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h3>Contents</h3>
+
+1. Data and Database
+2. Database Schema and Instance of DB
+3. Data View & Data Independence
+4. Data base Management System 
+5. Purpose of Designing DBMS
+6. Evolution of DBMS
+7. Database Languages 
+8. Database User's & Its Administration
+9. Structure of Database System and 
+10. Functionality of Various Components
+    
+~~~
+
+<h3>Data & Database : </h3>
+
+Data : Collection of Facts and Statistics together regarding an Object or Case or Scenario.
+
+Information : Meaningful data.
+
+Database : A place of storing or maintaining data.
+
+Statistics : Statistical process output, that deal with finding new things/facts from existing one based on analyzing collections, organizations and presentations.
+
+<h3>Database Schema & Instance</h3>
+
+DB Schema : Overall structure of database. Defined using Data Definition Language by Database Administrator .
+
+Instance of DB : Database state at a particular time. That can change with time. For Example :- Medical History database.
+
+~~~ 
+
+<h3>Data View : Look and structure at different levels</h3>
+
+Physical Level : How it is stored in file on Hard disk (Sequence of Blocks / Bytes).
+
+Logical Level : Overall logical structure of database, defined by administrator using Data Definition Language (DDL).
+
+View or User Level : The format in which user access the data , only of their concern. In terms of Records / Objects / View.
+
+Data Independence : Changes in the schema of database at any level , doesn't affect on the schema of any other level
+
+~~~
+
+<h3>Database Management System</h3>
+
+Collection of Inter-related data and set of programs which are used to access these data.
+
+Database is a part of DBMS.
+
+<h4>Purpose of Designing DBMS</h4>
+    
+To maintain a Information System for an enterprise .
+
+To provide secure and efficient access and management of data, and 
+
+To provide end user with abstract view of data. In other word they don't need to know how to access data and how it is stored internally.
+
+~~~
+
+<h3>Evolution of DBMS</h3>
+
+To overcome the problems that occurs while maintaining information System (Database) of an Enterprise in terms of collection of Files (File Processing System).
+	
+Disadvantages of using File Processing System : 
+
+    Data Access Problem
+    Data Isolation Problem
+    Data Redundancy & Inconsistency Problem
+    Data Atomicity (Transaction Management) Problem
+    Concurrent Access Anomalies  
+    Security Implementation Problem and 
+    Data Integrity Maintenance Problem (Domain, Entity, Validity and Referential Integrity)
+           
+File Processing System :
+
+In FPS all the data related to an organization / enterprise are stored in different files based on format of data. To access different types of data from different files, there is a need of separate data access programs. As the size of data increases (In parallel additional data access programs are required) their management becomes difficult.
+
+~~~
+
+Database Languages : The languages which are used to access and manipulate data of database ( Database Interaction languages )
+
+For Example : SQL ( Structured Query Language ), QUEL, Data log and QBE (Query by Example)
+
+<h3>Different Types of Database Languages</h3>
+
+Query Lang. : Used to retrieve information from database
+
+Data Definition Lang. : Used to define logical structure of database (DDL)
+
+Data Manipulation Lang. : Used to update data in database (DML: Procedural and Non Procedural)
+
+Data Control Lang. : Used for Transaction Management (DCL)
+
+~~~
+
+Database User's : Based on the way of interaction with database, all users are classified into following four categories: 
+
+Application User :  Through an Application
+Sophisticated User : Direct using Query Language
+Naive User : Through Predefined Application 
+Database Administrator : Through DDL 
+
+Database Administration : To control the access of data and the programs to access data by different type of users.
+
+Functions of DB Administrator :
+    Define & Change DB Logical Structure
+
+    Describe & Change Storage structure of data
+
+    Creation of Data access programs
+
+    Granting authorization to user to access data
+
+~~~
+
+<h3>Structure of DBMS</h3>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgqKSTeRrw8PUWBU9gHUTzXLEWoWj2-ct9B00m5QCuWW01M6Usg3Ty2fQF7KicOChFgOZdKBtgB0-5DFt_guREpyW3nH2j1HnSmhERvRScJA5M758-ZN9B717lfWesw5_959xyh0PyU4MF3mX1cBN4mhOaCD6VeCwyUskdfm1Z0CeNWiCc5Q9V478hdZQ=s829" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="829" data-original-width="579" src="https://blogger.googleusercontent.com/img/a/AVvXsEgqKSTeRrw8PUWBU9gHUTzXLEWoWj2-ct9B00m5QCuWW01M6Usg3Ty2fQF7KicOChFgOZdKBtgB0-5DFt_guREpyW3nH2j1HnSmhERvRScJA5M758-ZN9B717lfWesw5_959xyh0PyU4MF3mX1cBN4mhOaCD6VeCwyUskdfm1Z0CeNWiCc5Q9V478hdZQ=s600"/></a></div>
+
+~~~
+
+<h3>Components of DBMS </h3>
+
+Query Processor Components
+
+Storage Manager Components ( Operating System Functionality )
+
+Disk Storage ( Where actual data and data access programs are stored )
+
+Query Processor Components : DML Compiler , Embedded Pre DML Compiler , DDL Interpreter and Query Engine .
+
+Storage Manager Components : Buffer Manager , File Manager , Transaction Manager and Authorization and Integrity Manager .
+
+Disk Storage Contents : Data , Indices , Data Dictionary and Statistical Data .
+
+~~~
+
+<h3>Functionality of Various Components :</h3>
+
+Query Processor Components : 
+
+Embedded Pre DML Compiler : To compile DML statements in Host Language Procedure Call .
+DML Compiler : To break a DML statement into small lower level instructions to be executed by Query Engine.
+DDL Interpreter : To break DDL statements into small lower level instructions .     
+Query Engine : It execute lower level instructions by interacting on with various storage manager components depending on the task to be performed .     
+
+Storage Manager Components : 
+File Manager : Used to allocate space and define the structure of data to be stored on disk.
+
+Buffer Manager : Used to transfer data in between main memory and disk and decide data to be placed on Cache.
+
+Transaction Manager : To ensure proper execution of a Transaction ( Atomicity, Consistency, Isolation and Durability )
+
+Authorization & Integrity Manager : To ensure correctness and completeness of data. And also to check that it can be accessed only by authorized user's.    
+
+Disk Storage Contents : 
+
+Data : Collection of Facts related to an Enterprise / Organization .
+
+Statistical Data : New data learned from existing data through statistical process ( Analysis of Collections , Organizations and Presentation of existing data sets ) . Used by DML Compiler for Query Optimization .
+
+Indices : Maintain for fast access of data, or to make search fast for required data .
+
+Data Dictionary : Hold the overall logical structure of database which is defined by database administrator using DDL .
+
+<b>Credits: Yajuvendra Gupta</b>
+</pre>
+<span style="display: none;">Tags: Technology,Database,</span>

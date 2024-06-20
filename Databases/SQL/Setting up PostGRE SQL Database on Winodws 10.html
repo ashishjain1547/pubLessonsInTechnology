@@ -1,0 +1,81 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>Get PostgreSQL from here:
+https://www.postgresql.org/download/windows/
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-bD0C9dyP6lc/Xkq4WjoKkQI/AAAAAAAAEWg/NRkF7vzXqT8HoCHkcdvg843YYpAgnZ_-wCK4BGAYYCw/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-bD0C9dyP6lc/Xkq4WjoKkQI/AAAAAAAAEWg/NRkF7vzXqT8HoCHkcdvg843YYpAgnZ_-wCK4BGAYYCw/s1600/1.png" /></a></div>
+
+To start the DB:
+
+C:\Program Files\PostgreSQL\11\bin>pg_ctl -D "C:\Program Files\PostgreSQL\11\data" start
+
+•	waiting for server to start... 2019-07-13 21:43:40.833 IST [22656] LOG:  listening on IPv6 address "::1", port 5432
+•	2019-07-13 21:43:40.834 IST [22656] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+•	2019-07-13 21:43:41.712 IST [22728] LOG:  database system was shut down at 2019-07-13 17:28:37 IST
+•	2019-07-13 21:43:42.824 IST [22656] LOG:  database system is ready to accept connections
+•	Done
+
+Add this directory location to the PATH variable and you can access ’pg_ctl’ from anywhere.
+“C:\Program Files\PostgreSQL\11\bin”
+
+<b>Setting up PostGRE DB </b>
+
+Launch “pgAdmin3.exe” from here:
+C:\Program Files (x86)\PostgreSQL\9.3\bin
+
+OR
+
+For PostGRE 11, launch “pgAdmin4” from here:
+C:\Program Files\PostgreSQL\11\pgAdmin 4\bin
+
+Password for “postgres” user: postgres
+
+C:\Users\ashish>psql -U postgres
+Password for user postgres:
+psql (11.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=#
+
+</pre>

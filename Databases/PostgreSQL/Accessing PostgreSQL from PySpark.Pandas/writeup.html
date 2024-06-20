@@ -1,0 +1,160 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .ib {
+            color: blue
+        }
+
+        .ig {
+            color: green
+        }
+
+        .ir {
+            color: red
+        }
+    </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h1>Installing a couple of packages</h1>
+<i class="ib">
+$ conda install sqlalchemy -c conda-forge
+$ conda install psycopg2 -c conda-forge</i>
+
+<h1>Data Ingestion Via PostGRE SQL terminal</h1>
+
+PostGRE is case insensitive:
+
+These two statements are same:
+
+1:
+CREATE TABLE states_and_capitals( state_name TEXT NOT NULL, capital_name TEXT NOT NULL, PRIMARY KEY( state_name, capital_name ) );
+
+2:
+create table states_and_capitals (state_name text not null, capital_name text not null, primary key(state_name, capital_name));
+
+
+postgres=# CREATE TABLE states_and_capitals( state_name TEXT NOT NULL, capital_name TEXT NOT NULL, PRIMARY KEY( state_name, capital_name ) );
+CREATE TABLE
+postgres=# create table states_and_capitals (state_name text not null, capital_name text not null, primary key(state_name, capital_name));
+ERROR:  relation "states_and_capitals" already exists
+postgres=# 
+
+postgres=# select * from states_and_capitals;
+<i class="ig">
+ state_name | capital_name 
+------------+--------------
+(0 rows)</i>
+
+You can also view your table in the output of this command:
+<i class="ib">select * from information_schema.tables;</i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha70qOemmmNRoYynF3arKS1TNEfZIZpK2ZtYa4B0UMxbS2A4jRkbwR3oIo_mbPXJj6vUfPvF0jZiH02W1Je-hKZkwkdXZqfWrUc6wgdum_cVYilYgL-gJzVyWWRXCJZItgfkb1AH0Su8sXlOfiBNLqKtIrxXrYyVOjoslD5bJo_ZAMOpUJREytSWwyig/s701/output1.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="206" data-original-width="701" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEha70qOemmmNRoYynF3arKS1TNEfZIZpK2ZtYa4B0UMxbS2A4jRkbwR3oIo_mbPXJj6vUfPvF0jZiH02W1Je-hKZkwkdXZqfWrUc6wgdum_cVYilYgL-gJzVyWWRXCJZItgfkb1AH0Su8sXlOfiBNLqKtIrxXrYyVOjoslD5bJo_ZAMOpUJREytSWwyig/s600/output1.png"/></a></div>
+
+<i class="ib">
+INSERT INTO states_and_capitals (state_name, capital_name) VALUES ('haryana', 'chandigarh');
+
+INSERT INTO states_and_capitals (state_name, capital_name) VALUES ('punjab', 'chandigarh');</i>
+
+Let's say you made a spelling mistake in a record. Then you can delete that record using the following statement:
+DELETE FROM states_and_capitals WHERE state_name = 'harayana';
+
+
+postgres=# select * from states_and_capitals;
+<i class="ig">
+state_name | capital_name 
+------------+--------------
+    punjab     | chandigarh
+    haryana    | chandigarh
+(2 rows) </i>
+
+postgres=# 
+
+postgres=# \password postgres
+Enter new password for user "postgres": postgres
+Enter it again: postgres
+postgres=# 
+
+<h1>Reading data from PostgreSQL into Plain Pandas</h1>
+
+<i class="ib">from sqlalchemy import create_engine
+import pandas as pd
+
+engine = create_engine('postgresql://postgres:postgres@localhost/postgres')
+df = pd.read_sql("""SELECT * FROM states_and_capitals""", engine) 
+
+df </i>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6EmS0E7p6eKoVHZlWo_S9zuYBvuH4y-3zSWXT2kMsORBVgme-P1ecs0rSpwcTRtEImZigjclfMHdRoStX3w44gHc6xwB7ZMwOuCz8GnnV-_aFAVtN084Cbli0x9aq1hj6wGZe4_XHxZjK0O2InISAhChyGPk2mSKw-myWxaHgvRuZq0d777vsrF-A7A/s1600/output2.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="104" data-original-width="212" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6EmS0E7p6eKoVHZlWo_S9zuYBvuH4y-3zSWXT2kMsORBVgme-P1ecs0rSpwcTRtEImZigjclfMHdRoStX3w44gHc6xwB7ZMwOuCz8GnnV-_aFAVtN084Cbli0x9aq1hj6wGZe4_XHxZjK0O2InISAhChyGPk2mSKw-myWxaHgvRuZq0d777vsrF-A7A/s1600/output2.png"/></a></div>
+
+<h1>Issue while trying with pyspark.pandas</h1>
+<i class="ib">
+jdbc_engine = 'jdbc:postgresql://postgres:postgres@localhost/postgres'
+query = """SELECT * FROM states_and_capitals"""
+
+import pyspark.pandas as pspd
+from pyspark import SparkContext
+from pyspark.sql import SQLContext
+sc = SparkContext.getOrCreate()
+sqlCtx = SQLContext(sc)
+
+df_pspd = pspd.read_sql(query, jdbc_engine) </i>
+
+<i class="ir">
+Py4JJavaError: An error occurred while calling o48.load.
+: java.sql.SQLException: No suitable driver</i>
+</pre>
+<span style="display: none;">Tags: Technology,Spark,Database,</span>

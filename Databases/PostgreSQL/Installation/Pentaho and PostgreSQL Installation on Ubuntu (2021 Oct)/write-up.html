@@ -1,0 +1,308 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        });
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+i.ibb {
+background-color: black;
+color: white;
+display: block;
+}
+
+i.ibg {
+background-color: rgb(50, 50, 50);
+color: white;
+display: block;
+}
+
+i.ibgreen {
+    background-color: lawngreen;
+    color: black;
+    display: block;
+}
+
+i.ibr {
+    background-color: red;
+    color: white;
+    display: block;
+}
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+
+<pre>URL to download Pentaho Community Edition: <a href="https://sourceforge.net/projects/pentaho/" class="" target="_blank">https://sourceforge.net/projects/pentaho/</a>
+    
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-CWeStEdSxt0/YX60cD97YUI/AAAAAAAAHsA/gRiOzfGIs9koiP9zcM113rx2EMze5Y6CgCLcBGAsYHQ/s1360/Download%2BPentaho%2BCommunity%2BEdition%2B2021-Oct-31.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="768" data-original-width="1360" src="https://1.bp.blogspot.com/-CWeStEdSxt0/YX60cD97YUI/AAAAAAAAHsA/gRiOzfGIs9koiP9zcM113rx2EMze5Y6CgCLcBGAsYHQ/s600/Download%2BPentaho%2BCommunity%2BEdition%2B2021-Oct-31.png"/></a></div>
+    
+Unzip the downloaded .zip file using the command: 
+<i class="ibb">$ unzip xyx.zip</i>
+
+When you would try to run 'spoon.sh' for the first time, you might see this WARNING:
+
+<i class="ibb">(base) ashish@ashish-VirtualBox:~/Downloads/pdi-ce-9.2.0.0-290/data-integration$ source spoon.sh
+&nbsp;</i>
+
+<i class="ibg">
+#######################################################################
+WARNING:  no libwebkitgtk-1.0 detected, some features will be unavailable
+Consider installing the package with apt-get or yum.
+e.g. 'sudo apt-get install libwebkitgtk-1.0-0'
+#######################################################################
+Gtk-Message: 13:35:00.303: Failed to load module "canberra-gtk-module"
+13:35:05,128 INFO  [KarafBoot] Checking to see if org.pentaho.clean.karaf.cache is enabled
+13:35:05,510 INFO  [KarafInstance] 
+*******************************************************************************
+*** Karaf Instance Number: 1 at /home/ashish/Downloads/pdi-ce-9.2.0.0-290/d ***
+***   ata-integration/./system/karaf/caches/spoon/data-1                    ***
+*** Karaf Port:8802                                                         ***
+*** OSGI Service Port:9051</i>
+
+----- ----- -----
+
+<h3>ERROR IN INSTALLATION OF: libwebkitgtk</h3>
+
+<b>System Info:</b>
+
+<i class="ibb">
+(base) ashish@ashish-VirtualBox:~$ uname -a
+
+Linux ashish-VirtualBox 5.11.0-38-generic #42~20.04.1-Ubuntu SMP Tue Sep 28 20:41:07 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux </i>
+
+<i class="ibb">
+(base) ashish@ashish-VirtualBox:~/Downloads/pdi-ce-9.2.0.0-290/data-integration$ sudo apt-get install libwebkitgtk-1.0-0</i>
+
+<i class="ibr">
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package libwebkitgtk-1.0-0 is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'libwebkitgtk-1.0-0' has no installation candidate</i>
+
+<span style="display: none;">Ref: https://stackoverflow.com/questions/62301866/how-to-install-the-libwebkitgtk-package-on-ubuntu-20-04-lts</span>
+
+<b>Following the steps here fixed the issue for me:</b>
+
+1. Open terminal and write this:
+
+<i class="ibb">
+$ sudo nano /etc/apt/sources.list</i>
+
+2. Add this entry to the file and save:
+
+<i class="ibb">
+deb http://cz.archive.ubuntu.com/ubuntu bionic main universe 
+
+3. $ sudo apt-get update
+
+4.1. $ sudo apt-get install libwebkitgtk-1.0-0  ----> if you are using Vega and jdk of 64 bits
+
+4.2 $ sudo apt-get install libwebkitgtk-1.0-0:i386  ----> if you are using Vega and jdk of 32 bits</i>
+
+----- ----- -----
+
+<h3>POSTGRESQL</h3>
+
+<b>PostgreSQL Installation Script: install_postgresql.sh</b>
+
+<i class="ibb">
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get -y install postgresql</i>
+
+<h3>Continuing Installation and Solving Issues</h3>
+
+<i class="ibr">
+(base) ashish@ashish-VirtualBox:/$ cd ~
+
+(base) ashish@ashish-VirtualBox:~$ bash
+(base) ashish@ashish-VirtualBox:~$ psql
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  role "ashish" does not exist
+(base) ashish@ashish-VirtualBox:~$ psql -U ashish
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  role "ashish" does not exist
+(base) ashish@ashish-VirtualBox:~$ echo $USER
+ashish
+(base) ashish@ashish-VirtualBox:~$ psql -U postgres
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  Peer authentication failed for user "postgres"
+(base) ashish@ashish-VirtualBox:~$ 
+
+(base) ashish@ashish-VirtualBox:~$ sudo service postgresql restart
+(base) ashish@ashish-VirtualBox:~$ psql -U postgres
+Password for user postgres: 
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  password authentication failed for user "postgres"
+
+(base) ashish@ashish-VirtualBox:~$ sudo -i -u postgres
+postgres@ashish-VirtualBox:~$ psql
+Password for user postgres: 
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  password authentication failed for user "postgres"
+postgres@ashish-VirtualBox:~$ </i>
+
+----- ----- -----
+
+<i class="ibgreen">STACKOVERFLOW:
+The problem is your pg_hba.conf file*.
+
+This line:
+
+local   all             postgres                                peer
+
+Should be:
+
+local   all             postgres                                md5
+
+* The location of this file isn't very consistent. The command locate pg_hba.conf should help; here's some examples: /etc/postgresql/*/main/pg_hba.conf and /var/lib/pgsql/data/pg_hba.conf.
+
+After altering this file, don't forget to restart your PostgreSQL server. If you're on Linux, that would be sudo service postgresql restart.
+
+These are brief descriptions of both options according to the official PostgreSQL docs on authentication methods. </i>
+
+----- ----- -----
+
+<h3>ERROR</h3>
+
+<i class="ibr">
+postgres@ashish-VirtualBox:~$ exit
+logout
+
+(base) ashish@ashish-VirtualBox:~$ sudo nano /etc/postgresql/14/main/pg_hba.conf
+
+(base) ashish@ashish-VirtualBox:~$ sudo -i -u postgres
+postgres@ashish-VirtualBox:~$ psql -U postgres
+Password for user postgres: 
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  password authentication failed for user "postgres"
+postgres@ashish-VirtualBox:~$ </i>
+
+----- ----- -----
+
+<b>Solution</b>
+
+
+
+You need just set METHOD to trust.
+
+<i class="ibb">
+(base) ashish@ashish-VirtualBox:~$ sudo nano /etc/postgresql/14/main/pg_hba.conf
+
+#TYPE  DATABASE        USER            ADDRESS                 METHOD
+local  all             all                                     trust</i>
+
+And reload postgres server.
+
+$ service postgresql-9.5 reload
+
+----- ----- -----
+
+<h3>Snapshot of my own file</h3>
+
+<i class="ibg">
+# Database administrative login by Unix domain socket
+local   all             all                                     trust
+
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+
+# "local" is for Unix domain socket connections only
+#local   all             all                                     peer
+local   all             all                                     trust
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            scram-sha-256
+# IPv6 local connections:
+host    all             all             ::1/128                 scram-sha-256 </i>
+
+----- ----- -----
+
+<h3>TESTING POSTGRESQL COMMANDS:</h3>
+
+(base) ashish@ashish-VirtualBox:~$ sudo -i -u postgres
+postgres@ashish-VirtualBox:~$ psql
+psql (14.0 (Ubuntu 14.0-1.pgdg20.04+1))
+Type "help" for help.
+
+postgres-# \du
+                            List of roles
+Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+postgres-# \password postgres
+Enter new password: 
+Enter it again: 
+postgres-# 
+
+
+(base) ashish@ashish-VirtualBox:~$ psql -U postgres
+Password for user postgres: 
+psql (14.0 (Ubuntu 14.0-1.pgdg20.04+1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+postgres=# 
+postgres=# 
+postgres=# SELECT current_date;
+current_date 
+--------------
+2021-10-29
+(1 row)
+
+postgres=# 
+postgres-# quit
+Use \q to quit.
+postgres-# \q
+postgres@ashish-VirtualBox:~$ 
+postgres@ashish-VirtualBox:~$ exit
+logout
+(base) ashish@ashish-VirtualBox:~$ 
+
+----- ----- -----
+</pre>

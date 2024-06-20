@@ -1,0 +1,173 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      .dot {
+          height: 12px;
+          width: 12px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+      }
+
+      .arrow {
+          border: solid black;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+      }
+
+      .right {
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+      }
+
+      .left {
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+      }
+
+      .up {
+          transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+      }
+
+      .down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+      }
+
+      .ib {
+          color: blue
+      }
+
+      .ig {
+          color: green
+      }
+
+      .ir {
+          color: red
+      }
+  </style>
+</head>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><h1>Part 1: MongoDB</h1>
+(base) ashish@ashishlaptop:~/Desktop$ sudo apt-get install -y mongodb-org=6.0.2 mongodb-org-database=6.0.2 mongodb-org-server=6.0.2 mongodb-org-mongos=6.0.2 mongodb-org-tools=6.0.2
+<i class="ir">
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+<b>
+ mongodb-org-mongos : Depends: libssl1.1 (>= 1.1.1) but it is not installable
+ mongodb-org-server : Depends: libssl1.1 (>= 1.1.1) but it is not installable</b>
+E: Unable to correct problems, you have held broken packages.</i>
+
+<b>References</b> 
+
+1) <a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/" target="_blank">Install MongoDB (latest) on Ubuntu</a> 
+2) <a href="https://www.mongodb.com/docs/v6.0/tutorial/install-mongodb-on-ubuntu/" target="_blank">Install MongoDB (v6.0) on Ubuntu</a> 
+3) <a href="https://www.mongodb.com/docs/v5.0/tutorial/install-mongodb-on-ubuntu/" target="_blank">Install MongoDB (v5.0) on Ubuntu</a> 
+
+<h2>Resolution</h2>
+
+Dated: 2022-Oct-14
+MongoDb has no official build for ubuntu 22.04 at the moment.
+
+Ubuntu 22.04 has upgraded libssl to 3 and does not propose libssl1.1
+
+You can force the installation of libssl1.1 by adding the ubuntu 20.04 source:
+
+$ echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+
+$ sudo apt-get update
+$ sudo apt-get install libssl1.1
+
+Then use your commands to install mongodb-org.
+
+Then delete the focal-security list file you just created:
+
+$ sudo rm /etc/apt/sources.list.d/focal-security.list
+[ <a href="https://askubuntu.com/questions/1403619/mongodb-install-fails-on-ubuntu-22-04-depends-on-libssl1-1-but-it-is-not-insta" target="_blank">Ref</a> ]
+
+<h1>Part 2: Node.js</h1>
+
+(base) ashish@ashishlaptop:~/Desktop/node$ node
+<i class="ir">
+Command 'node' not found, but can be installed with:
+sudo apt install nodejs</i>
+
+(base) ashish@ashishlaptop:~/Desktop/node$ sudo apt install nodejs
+
+(base) ashish@ashishlaptop:~/Desktop/node$ node -v
+<i class="ig">v12.22.9</i> 
+
+(base) ashish@ashishlaptop:~/Desktop/node$ npm
+<i class="ir">
+Command 'npm' not found, but can be installed with:
+sudo apt install npm</i>
+
+$ sudo apt install npm
+
+(base) ashish@ashishlaptop:~/Desktop/node$ npm -v
+<i class="ig">8.5.1</i>
+
+<h2>Issue when MongoDB client is not installed</h2>
+<i class="ir">
+(base) ashish@ashishlaptop:~/Desktop/node$ node
+Welcome to Node.js v12.22.9.
+Type ".help" for more information.
+> var mongo = require('mongodb');
+<b>Uncaught Error: Cannot find module 'mongodb'</b> 
+Require stack:
+- &lt;repl>
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:815:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:667:27)
+    at Module.require (internal/modules/cjs/loader.js:887:19)
+    at require (internal/modules/cjs/helpers.js:74:18) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [ '&lt;repl>' ]
+}
+> </i>
+
+(base) ashish@ashishlaptop:~/Desktop/node$ npm install mongodb
+<i class="ig">
+added 20 packages, and audited 21 packages in 35s
+
+3 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities </i>
+
+<h3>After mongoDB client has been installed</h3>
+
+<i class="ig">
+> var mongo = require('mongodb');
+undefined
+> </i>
+</pre>
+<span style="display: none">Tags: Technology,Database,JavaScript,Linux,</span>

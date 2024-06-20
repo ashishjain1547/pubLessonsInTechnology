@@ -1,0 +1,91 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+from pprint import pprint
+import pymongo
+from pymongo import MongoClient
+import gridfs
+
+client = MongoClient()
+
+client = MongoClient('mongodb://localhost:27017/')
+
+db = client['local']
+
+fs = gridfs.GridFS(db)
+
+for grid_out in fs.find({"filename": "grid_fs.txt"}, no_cursor_timeout=True):
+    data = grid_out.read()
+
+print(data)
+OUT: b'Hello.\n'
+
+# INSERTION
+
+fileID = fs.put(open(r'/home/ashish/Desktop/workspace/jupyter/exp/files_1/insert_test.txt', 'rb'), 
+               filename="insert_test.txt")
+
+out = fs.get(fileID)
+print(type(out))
+print(out.length)
+print(out.read())
+
+OUT:
+class 'gridfs.grid_file.GridOut'
+16
+b'Insertion test.\n'
+
+fileID = fs.put( open(r'/home/ashish/Desktop/workspace/jupyter/exp/files_1/blue_rose.jfif', 'rb'), filename="blue_rose.jfif" )
+out = fs.get(fileID)
+print(type(out))
+print(out.length)
+
+OUT:
+class 'gridfs.grid_file.GridOut'
+6717
+
+# RETRIEVAL
+
+f_out_path = r'/home/ashish/Desktop/workspace/jupyter/exp/files_1/blue_rose_out.jfif'
+with open(f_out_path, 'wb') as f:
+    f.write(out.read())
+</pre>

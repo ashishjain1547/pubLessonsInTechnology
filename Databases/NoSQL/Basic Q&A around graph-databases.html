@@ -1,0 +1,117 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+Q1: Define knowledge graphs and triplets.
+Ans:
+We define a triplet in a sentence as a relation r between two entities e1 and e2: (e1, r, e2). A Knowledge Graph (KG) denotes a collection of triplets that draw a graph: vertices are entities and edges are relations.
+
+Ref: https://medium.com/heuritech/knowledge-extraction-from-unstructured-texts-c279e3b8f92f
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Q2: What is the distinction between sparse and dense graphs?
+Ans:
+Dense graph is a graph in which the number of edges is close to the maximal number of edges. Sparse graph is a graph in which the number of edges is close to the minimal number of edges. Sparse graph can be a disconnected graph.
+
+Ref: https://stackoverflow.com/questions/12599143/what-is-the-distinction-between-sparse-and-dense-graphs
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Q3: Compare RDBMS (such as PostGRE) and graph database (such as Neo4j)
+
+Answer: 
+
+RDBMS Vs Graph Database
+Following is the table which compares Relational databases and Graph databases.
+
+# -- RDBMS -- Graph Database
+1 -- Tables -- Graphs
+2 -- Rows -- Nodes
+3 -- Columns and Data -- Properties and its values
+4 -- Constraints -- Relationships
+5 -- Joins -- Traversal
+
+Ref: https://www.tutorialspoint.com/neo4j/neo4j_overview.htm
+
+When deriving a graph model from a relational model, we should keep a couple of general guidelines in mind.
+
+1. A row is a node
+2. A table name is a label name
+3. A join or foreign key is a relationship
+
+Ref: https://neo4j.com/developer/guide-importing-data-and-etl/
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Q4: What is Cypher?
+
+Answer:
+
+Cypher Query Language
+Cypher is Neo4j’s graph query language that allows users to store and retrieve data from the graph database. Neo4j wanted to make querying graph data easy to learn, understand, and use for everyone, but also incorporate the power and functionality of other standard data access languages. This is what Cypher aims to accomplish.
+
+Cypher’s syntax provides a visual and logical way to match patterns of nodes and relationships in the graph. It is a declarative, SQL-inspired language for describing visual patterns in graphs using ASCII-Art syntax. It allows us to state what we want to select, insert, update, or delete from our graph data without a description of exactly how to do it. Through Cypher, users can construct expressive and efficient queries to handle needed create, read, update, and delete functionality.
+
+Ref: https://neo4j.com/developer/cypher-query-language/
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Q5: What all graph database are available in the market?
+
+Answer:
+
+Top 8 Graph Databases Software
+1. Neo4j (open source)
+2. ArangoDB (free and open-source native multi-model database system)
+3. OrientDB (open source)
+4. Amazon Neptune (fully managed graph database service that works with highly connected datasets)
+5. FlockDB (open-source distributed, fault-tolerant graph database)
+
+6. DataStax (DataStax was built on the open source NoSQL database Apache Cassandra. ... Version 1.0, released in October 2011, was the first commercial distribution of the Cassandra database, designed to provide real-time application performance and heavy analytics on the same physical infrastructure.)
+
+7. Apache Cassandra (free and open-source, distributed, wide column store, NoSQL database management system)
+8. Cayley (CayleyGraph. Open-source graph inspired by the graph database behind Freebase and Google's Knowledge Graph. Built for linked data.)
+
+Ref: https://www.g2.com/categories/graph-databases
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+</pre>

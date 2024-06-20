@@ -1,0 +1,85 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>It is a common usecase when we have receive data in Excel sheet (a .XLS or .XLSX file) and we have to take it to an RDBMS such as Oracle Database or PostGRE SQL database.
+One way to do this transfer of data is: we first convert table data into SQL queries and then run those queries in the SQL interface of the database.
+
+This is what our Excel sheet looks like:
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-3voOYjMZksQ/XuXXVhuBz_I/AAAAAAAAE3o/ItUJ-dIzk9s0LTP2rYVJoofFxELQtY8gQCK4BGAsYHg/s547/Excel%2BData.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="326" data-original-width="547" src="https://1.bp.blogspot.com/-3voOYjMZksQ/XuXXVhuBz_I/AAAAAAAAE3o/ItUJ-dIzk9s0LTP2rYVJoofFxELQtY8gQCK4BGAsYHg/d/Excel%2BData.png" /></a></div>
+
+In the cell [Row 2, Column 7], we insert the following function call to "CONCATENATE":
+
+<i color="style: blue">=CONCATENATE("insert into employees values(",RC[-6],",'",RC[-5],"','",RC[-4],"',to_date('",RC[-3],"','MM/DD/YYYY'),'",RC[-2],"','",RC[-1],"');") </i>
+
+This fills our cell [Row 2, Column 7] with an 'INSERT' SQL statement. 
+
+<i style="color: green">insert into employees values(1 ,'Davolio ','Nancy ',to_date('12/8/1968 ','MM/DD/YYYY'),'EmpID1.pic ','Education includes a BA in psychology from Colorado State University. She also completed (The Art of the Cold Call). Nancy is a member of 'Toastmasters International'. '); </i>
+
+Copying this in the entire 'column 7' produces the SQL statements we want. 
+
+Before running the INSERT statements, we need to have the table "employees" in our database. The 'CREATE TABLE' statement for the "employees" table is:
+
+<i style="color: blue">create table employees (EmployeeID number(5) primary key, LastName varchar2(80), FirstName varchar2(80), BirthDate date, Photo varchar2(80), Notes varchar2(4000)); </i>
+
+Writing this 'CREATE TABLE' statement requires that we know the datatypes we want for our columns.
+
+Now we can populate our RDBMS database using the generated 'INSERT' statements.
+
+The Excel file used for this demo can be found here: <a href="https://drive.google.com/file/d/1xEs8Wc7fUtm1PzeN3heFjgh9ADmDc9Xn/view?usp=sharing" target="_blank">Google Drive</a>
+</pre>

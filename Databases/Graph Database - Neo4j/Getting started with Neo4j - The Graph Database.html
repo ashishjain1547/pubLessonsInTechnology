@@ -1,0 +1,192 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>
+Our system configuration is: Windows 10, 64-bit OS and 8 GB RAM
+
+The first thing to do after installing Neo4j from this link: https://neo4j.com/download/
+
+Next thing we do is create a graph in the "Neo4j Desktop" application.
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://2.bp.blogspot.com/-tphfVHQcvig/XeeVS3QdxFI/AAAAAAAAEGw/isgCMQWfLu0RAjw_v7RKXdwkMK_73Fm0gCK4BGAYYCw/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="606" src="https://2.bp.blogspot.com/-tphfVHQcvig/XeeVS3QdxFI/AAAAAAAAEGw/isgCMQWfLu0RAjw_v7RKXdwkMK_73Fm0gCK4BGAYYCw/s640/1.png" width="640" /></a></div>
+
+We create a graph named "Graphene" and set it's password.
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://3.bp.blogspot.com/--EIh4d8YNWk/XeeZEEHFy3I/AAAAAAAAEG8/m69NqdKQvQsodXz8hJ4koim012SeRe44gCK4BGAYYCw/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="461" src="https://3.bp.blogspot.com/--EIh4d8YNWk/XeeZEEHFy3I/AAAAAAAAEG8/m69NqdKQvQsodXz8hJ4koim012SeRe44gCK4BGAYYCw/s640/1.png" width="640" /></a></div>
+
+We start our graph "Graphene" by clicking on "Open Browser".
+
+### We create a Node with a Label using the Cypher Query Language:
+
+A label in Neo4j is used to group (classify) the nodes using labels. You can create a label for a node in Neo4j using the CREATE clause.
+
+Syntax:
+
+CREATE (node:label) 
+
+Example:
+
+CREATE (Dhawan:player) [ Ref: https://www.tutorialspoint.com/neo4j/neo4j_cql_creating_nodes.htm ]
+
+OR
+
+CREATE (a:Greeting)
+
+### Next, we "Create Node with Properties":
+
+Properties are the key-value pairs using which a node stores data. You can create a node with properties using the CREATE clause. You need to specify these properties separated by commas within the flower braces “{ }”.
+
+Syntax:
+
+CREATE (node:label { key1: value, key2: value, . . . . . . . . .  }) 
+
+Example: 
+
+CREATE (Dhawan:player{name: "Shikar Dhawan", YOB: 1985, POB: "Delhi"}) 
+
+This operation can also be done using a differently written query:
+
+CREATE (a:Greeting) SET a.message = "Hola!"
+
+### Query to get the complete graph as output in the browser view:
+
+MATCH (n) RETURN n
+
+### Querying an already created node:
+
+CREATE (a:Greeting)  
+SET a.message = ‘Hola’
+
+QUERY: MATCH (a:Greeting {message: "Hola"}) RETURN a
+
+### Deleting all nodes:
+
+In Neo4j, DELETE statement is always used with MATCH statement to delete whatever data is matched. The DELETE command is used in the same place we used the RETURN clause in our previous examples.
+
+MATCH (n) DELETE n
+
+Ref: https://www.javatpoint.com/neo4j-delete-a-node
+
+### The following query will delete the node "Kohli" where name is "Virat Kohli" with all its relationship.
+MATCH (Kohli) DETACH DELETE Kohli
+
+Ref: https://www.javatpoint.com/neo4j-delete-a-node
+
+### Create a Relationship between existing Nodes
+
+MATCH statement is used to create relationship between the existing Nodes.
+
+Syntax:
+
+MATCH (a:LabeofNode1), (b:LabeofNode2)   
+WHERE a.name = "nameofnode1" AND b.name = " nameofnode2"   
+CREATE (a)-[: Relation]->(b)   
+RETURN a,b  
+
+### Match by Relationship
+You can retrieve nodes based on relationship using the MATCH clause.
+
+Syntax
+Following is the syntax of retrieving nodes based on the relationship using the MATCH clause.
+
+MATCH (node:label)<-[: Relationship]-(n) 
+RETURN n 
+Example
+Following is a sample Cypher Query to retrieve nodes based on relationship using the MATCH clause.
+
+MATCH (Ind:Country {name: "India", result: "Winners"})<-[: TOP_SCORER_OF]-(n) 
+RETURN n.name 
+
+Ref: https://www.tutorialspoint.com/neo4j/neo4j_match_clause.htm
+
+### Find all the relations between two nodes in Neo4j
+
+MATCH (x:Test)-[r:CONNECTED_TO*]->(z:Test)
+RETURN x, r, z
+
+Ref: https://stackoverflow.com/questions/27848429/can-i-find-all-the-relations-between-two-nodes-in-neo4j
+
+### Code to create a node using the Python package 'neo4j'
+
+<pre>
+from neo4j import GraphDatabase
+
+class HelloWorldExample(object):
+
+    def __init__(self, uri, user, password):
+        self._driver = GraphDatabase.driver(uri, auth=(user, password))
+
+    def close(self):
+        self._driver.close()
+
+    def print_greeting(self, message):
+        with self._driver.session() as session:
+            greeting = session.write_transaction(self._create_and_return_greeting, message)
+            print(greeting)
+
+    @staticmethod
+    def _create_and_return_greeting(tx, message):
+        result = tx.run("CREATE (a:Greeting) "
+                        "SET a.message = $message "
+                        "RETURN a.message + ', from node ' + id(a)", message=message)
+        
+        # To get no results for query:
+        #result = tx.run("MATCH (a:Greeting {message: 'Holaa!'}) RETURN a")
+        
+        #print(result) # [neo4j.BoltStatementResult object at 0x0000020A6C2D87B8]
+
+        rtnVal = result.single()
+        if rtnVal is None:
+            return False
+        else:
+            return rtnVal[0]
+</pre>
+Testing the code:
+
+obj = HelloWorldExample('bolt://localhost:7687', 'neo4j', 'graphene')
+
+obj.print_greeting('Hola')
+OUTPUT: Hola, from node 40
+
+Ref: https://neo4j.com/developer/python/
+</pre>
