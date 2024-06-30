@@ -1,0 +1,125 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>(base) C:\Users\ashish>conda create --name test_env
+WARNING conda.base.context:use_only_tar_bz2(632): Conda is constrained to only using the old .tar.bz2 file format because you have conda-build installed, and it is <3.18.3.  Update or remove conda-build to get smaller downloads and faster extractions.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.7.5
+  latest version: 4.8.2
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\test_env
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate test_env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+(base) C:\Users\ashish>conda activate test_env
+
+(test_env) C:\Users\ashish>python
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+
+Warning:
+This Python interpreter is in a conda environment, but the environment has
+not been activated.  Libraries may fail to load.  To activate this environment
+please see https://conda.io/activation
+
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+
+
+
+(test_env) C:\Users\ashish>conda deactivate
+
+(base) C:\Users\ashish>conda remove --name test_env --all
+
+Remove all packages in environment C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\test_env:
+
+
+PackagesNotFoundError: The following packages are missing from the target environment:
+  -
+
+
+
+(base) C:\Users\ashish>conda env list
+# conda environments:
+#
+                         C:\ProgramData\Anaconda3
+base                  *  C:\Users\ashish\AppData\Local\Continuum\anaconda3
+test_env                 C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\test_env
+tf                       C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\tf
+
+
+(base) C:\Users\ashish>
+
+base) C:\Users\ashish>conda env remove --name test_env
+
+Remove all packages in environment C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\test_env:
+
+
+(base) C:\Users\ashish>conda env list
+# conda environments:
+#
+                         C:\ProgramData\Anaconda3
+base                  *  C:\Users\ashish\AppData\Local\Continuum\anaconda3
+tf                       C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs\tf
+
+</pre>

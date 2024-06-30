@@ -1,0 +1,9 @@
+name: erasa4
+channels:
+  - conda-forge
+dependencies:
+  - spacy
+  - python=3.8
+  - pip
+  - pip:
+    - rasa-core

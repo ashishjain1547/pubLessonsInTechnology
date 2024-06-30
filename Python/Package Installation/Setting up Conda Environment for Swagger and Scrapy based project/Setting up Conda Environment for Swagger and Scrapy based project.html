@@ -1,0 +1,265 @@
+<head>
+<script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+            success: function (result) {
+                $("div.customTemporaryCodeHolder").html(result);
+                $("nav.customDynamicNav").html(
+                    $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                );
+            }
+        });
+
+        $.ajax({
+            url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+            success: function (result) {
+                $("span.customTempCodeHolderForSocialMedia").html(result);
+                $("div.customSocialMediaBtnsWrapper").html(
+                    $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                );
+            }
+
+        });
+    }); 
+</script>
+<!-- Google AdSense Using Machine Learning Code -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3071098372371409",
+        enable_page_level_ads: true
+    });
+</script>
+
+<style>
+    .customTempCodeHolderForSocialMedia {
+        display: none;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+</style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-O-qrD3LlJNE/X1UIN5TGLGI/AAAAAAAAFdY/4AhF9Nbz8V8BFsIRVUyxBxN-ZqtdWGNQQCLcBGAsYHQ/s0/Conda.png" style="display: block; padding: 1em 0; text-align: center;"><img alt="" border="0" data-original-height="450" data-original-width="450" src="https://1.bp.blogspot.com/-O-qrD3LlJNE/X1UIN5TGLGI/AAAAAAAAFdY/4AhF9Nbz8V8BFsIRVUyxBxN-ZqtdWGNQQCLcBGAsYHQ/s0/Conda.png"/></a></div>
+
+We have a file that reads "my_yml.yml":
+
+<i style="color: blue">name: swagger2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - connexion
+  - flask
+  - flask_cors
+  - scrapy </i>
+
+It will do these three things:
+
+1. It will create an environment "swagger2".
+
+2. For downloading packages, it will use the channels: "conda-forge" and "defaults"
+
+3. The packages it will install are mentioned as "dependencies".
+
+Checking our current environments:
+(base) C:\Users\Ashish Jain><i style="color: blue">conda env list </i>
+<i style="color: green"># conda environments:
+base      *  E:\programfiles\Anaconda3
+env_py_36    E:\programfiles\Anaconda3\envs\env_py_36
+tf           E:\programfiles\Anaconda3\envs\tf </i>
+
+(base) C:\experiment_with_conda><i style="color: blue">conda env create -f my_yml.yml </i>
+
+<i style="color: green">Collecting package metadata (repodata.json): done
+Solving environment: done
+
+Downloading and Extracting Packages
+pysocks-1.7.1        | 27 KB     | ### | 100%
+flask_cors-3.0.9     | 15 KB     | ### | 100%
+chardet-3.0.4        | 189 KB    | ### | 100%
+clickclick-1.2.2     | 9 KB      | ### | 100%
+cssselect-1.1.0      | 18 KB     | ### | 100%
+importlib-metadata-1 | 45 KB     | ### | 100%
+attrs-20.2.0         | 41 KB     | ### | 100%
+protego-0.1.16       | 2.6 MB    | ### | 100%
+twisted-20.3.0       | 5.1 MB    | ### | 100%
+pywin32-227          | 6.9 MB    | ### | 100%
+pyrsistent-0.16.0    | 91 KB     | ### | 100%
+beautifulsoup4-4.9.1 | 86 KB     | ### | 100%
+connexion-2.7.0      | 51 KB     | ### | 100%
+pyhamcrest-2.0.2     | 29 KB     | ### | 100%
+libxslt-1.1.33       | 499 KB    | ### | 100%
+libxml2-2.9.10       | 3.5 MB    | ### | 100%
+incremental-17.5.0   | 14 KB     | ### | 100%
+flask-1.1.2          | 70 KB     | ### | 100%
+scrapy-2.3.0         | 640 KB    | ### | 100%
+automat-20.2.0       | 30 KB     | ### | 100%
+python-3.8.5         | 18.9 MB   | ### | 100%
+bcrypt-3.2.0         | 41 KB     | ### | 100%
+service_identity-18. | 12 KB     | ### | 100%
+win_inet_pton-1.1.0  | 7 KB      | ### | 100%
+cryptography-3.1     | 587 KB    | ### | 100%
+libiconv-1.16        | 680 KB    | ### | 100%
+jmespath-0.10.0      | 21 KB     | ### | 100%
+markupsafe-1.1.1     | 29 KB     | ### | 100%
+parsel-1.6.0         | 15 KB     | ### | 100%
+constantly-15.1.0    | 9 KB      | ### | 100%
+pydispatcher-2.0.5   | 12 KB     | ### | 100%
+zope.interface-5.1.0 | 299 KB    | ### | 100%
+pyasn1-modules-0.2.7 | 60 KB     | ### | 100%
+hyperlink-20.0.1     | 42 KB     | ### | 100%
+inflection-0.5.1     | 9 KB      | ### | 100%
+pyasn1-0.4.8         | 53 KB     | ### | 100%
+w3lib-1.22.0         | 21 KB     | ### | 100%
+pathlib2-2.3.5       | 34 KB     | ### | 100%
+jinja2-2.11.2        | 93 KB     | ### | 100%
+setuptools-49.6.0    | 968 KB    | ### | 100%
+queuelib-1.5.0       | 13 KB     | ### | 100%
+itemloaders-1.0.2    | 14 KB     | ### | 100%
+pyyaml-5.3.1         | 158 KB    | ### | 100%
+soupsieve-2.0.1      | 30 KB     | ### | 100%
+brotlipy-0.7.0       | 368 KB    | ### | 100%
+wincertstore-0.2     | 13 KB     | ### | 100%
+lxml-4.5.2           | 1.1 MB    | ### | 100%
+cffi-1.14.1          | 227 KB    | ### | 100%
+itsdangerous-1.1.0   | 16 KB     | ### | 100%
+click-7.1.2          | 64 KB     | ### | 100%
+certifi-2020.6.20    | 151 KB    | ### | 100%
+python_abi-3.8       | 4 KB      | ### | 100%
+zlib-1.2.11          | 126 KB    | ### | 100%
+openapi-spec-validat | 23 KB     | ### | 100%
+jsonschema-3.2.0     | 108 KB    | ### | 100%
+itemadapter-0.1.0    | 10 KB     | ### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate swagger2
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate </i>
+
+(base) C:\experiment_with_conda><i style="color: blue">conda activate swagger2 </i>
+
+<b>(swagger2)</b> C:\experiment_with_conda><i style="color: blue">conda env export </i>
+
+<i style="color: green">name: swagger2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - attrs=20.2.0=pyh9f0ad1d_0
+  - automat=20.2.0=py_0
+  - bcrypt=3.2.0=py38h1e8a9f7_0
+  - beautifulsoup4=4.9.1=py_1
+  - brotlipy=0.7.0=py38h1e8a9f7_1000
+  - ca-certificates=2020.6.20=hecda079_0
+  - certifi=2020.6.20=py38h32f6830_0
+  - cffi=1.14.1=py38hba49e27_0
+  - chardet=3.0.4=py38h32f6830_1006
+  - click=7.1.2=pyh9f0ad1d_0
+  - clickclick=1.2.2=py_1
+  - connexion=2.7.0=py_0
+  - constantly=15.1.0=py_0
+  - cryptography=3.1=py38hba49e27_0
+  - cssselect=1.1.0=py_0
+  - flask=1.1.2=pyh9f0ad1d_0
+  - flask_cors=3.0.9=pyh9f0ad1d_0
+  - hyperlink=20.0.1=pyh9f0ad1d_0
+  - idna=2.10=pyh9f0ad1d_0
+  - importlib-metadata=1.7.0=py38h32f6830_0
+  - importlib_metadata=1.7.0=0
+  - incremental=17.5.0=py_0
+  - inflection=0.5.1=pyh9f0ad1d_0
+  - itemadapter=0.1.0=py_0
+  - itemloaders=1.0.2=py_0
+  - itsdangerous=1.1.0=py_0
+  - jinja2=2.11.2=pyh9f0ad1d_0
+  - jmespath=0.10.0=pyh9f0ad1d_0
+  - jsonschema=3.2.0=py38h32f6830_1
+  - libiconv=1.16=he774522_0
+  - libxml2=2.9.10=h1006b36_2
+  - libxslt=1.1.33=h579f668_1
+  - lxml=4.5.2=py38he3d0fc9_0
+  - markupsafe=1.1.1=py38h9de7a3e_1
+  - openapi-spec-validator=0.2.9=pyh9f0ad1d_0
+  - openssl=1.1.1g=he774522_1
+  - parsel=1.6.0=py_0
+  - pathlib2=2.3.5=py38h32f6830_1
+  - pip=20.2.2=py_0
+  - protego=0.1.16=py_0
+  - pyasn1=0.4.8=py_0
+  - pyasn1-modules=0.2.7=py_0
+  - pycparser=2.20=pyh9f0ad1d_2
+  - pydispatcher=2.0.5=py_1
+  - pyhamcrest=2.0.2=py_0
+  - pyopenssl=19.1.0=py_1
+  - pyrsistent=0.16.0=py38h9de7a3e_0
+  - pysocks=1.7.1=py38h32f6830_1
+  - python=3.8.5=h60c2a47_7_cpython
+  - python_abi=3.8=1_cp38
+  - pywin32=227=py38hfa6e2cd_0
+  - pyyaml=5.3.1=py38h9de7a3e_0
+  - queuelib=1.5.0=pyh9f0ad1d_0
+  - requests=2.24.0=pyh9f0ad1d_0
+  - scrapy=2.3.0=py38h32f6830_0
+  - service_identity=18.1.0=py_0
+  - setuptools=49.6.0=py38h32f6830_0
+  - six=1.15.0=pyh9f0ad1d_0
+  - soupsieve=2.0.1=py_1
+  - sqlite=3.33.0=he774522_0
+  - twisted=20.3.0=py38h9de7a3e_0
+  - urllib3=1.25.10=py_0
+  - vc=14.1=h869be7e_1
+  - vs2015_runtime=14.16.27012=h30e32a0_2
+  - w3lib=1.22.0=pyh9f0ad1d_0
+  - werkzeug=1.0.1=pyh9f0ad1d_0
+  - wheel=0.35.1=pyh9f0ad1d_0
+  - win_inet_pton=1.1.0=py38_0
+  - wincertstore=0.2=py38_1003
+  - yaml=0.2.5=he774522_0
+  - zipp=3.1.0=py_0
+  - zlib=1.2.11=h62dcd97_1009
+  - zope.interface=5.1.0=py38h9de7a3e_0
+prefix: E:\programfiles\Anaconda3\envs\swagger2 </i>
+
+(swagger2) C:\experiment_with_conda><i style="color: blue">conda deactivate </i>
+
+(base) C:\experiment_with_conda><i style="color: blue">conda env remove --name swagger2 </i>
+
+<i style="color: green">Remove all packages in environment E:\programfiles\Anaconda3\envs\swagger2: </i>
+
+Alternatively: conda remove --name myenv --all
+
+(base) C:\experiment_with_conda><i style="color: blue">conda info --envs </i>
+
+<i style="color: green"># conda environments:
+#
+base      *  E:\programfiles\Anaconda3
+env_py_36    E:\programfiles\Anaconda3\envs\env_py_36
+tf           E:\programfiles\Anaconda3\envs\tf </i>
+
+Ref: <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#removing-an-environment" target="_blank">conda.io</a>
+
+</pre>

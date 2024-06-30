@@ -1,0 +1,10 @@
+name: swagger2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - beautifulsoup4
+  - connexion
+  - flask
+  - flask_cors
+  - scrapy

@@ -1,0 +1,100 @@
+<head>
+        <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+                src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+                $(document).ready(function () {
+                        $.ajax({
+                                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                                success: function (result) {
+                                        $("div.customTemporaryCodeHolder").html(result);
+                                        $("nav.customDynamicNav").html(
+                                                $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                                        );
+                                }
+                        });
+
+                        $.ajax({
+                                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                                success: function (result) {
+                                        $("span.customTempCodeHolderForSocialMedia").html(result);
+                                        $("div.customSocialMediaBtnsWrapper").html(
+                                                $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                                        );
+                                }
+
+                        });
+                }); 
+        </script>
+        <!-- Google AdSense Using Machine Learning Code -->
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+                (adsbygoogle = window.adsbygoogle || []).push({
+                        google_ad_client: "ca-pub-3071098372371409",
+                        enable_page_level_ads: true
+                });
+        </script>
+
+        <style>
+                .customTempCodeHolderForSocialMedia {
+                        display: none;
+                }
+
+                pre {
+                        white-space: pre-wrap;
+                        white-space: -moz-pre-wrap;
+                        white-space: -pre-wrap;
+                        white-space: -o-pre-wrap;
+                        word-wrap: break-word;
+                }
+        </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>First, we explore what "os.walk()" returns. We have following directory structure:
+
+<i style="color: green;">C:\Users\Ashish Jain\OneDrive\Desktop\test>tree /f
+
+C:.
+│   3.txt
+│
+├───1
+│   └───a
+│           b.txt
+│
+└───2
+        a.txt </i>
+
+Then we find how "os.walk()" works on it:
+C:\Users\Ashish Jain\OneDrive\Desktop\test><i style="color: blue;">python </i>
+<i style="color: green;">Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+
+>>> for dirpath, subdirs, files in os.walk("."):
+...  for f in files:
+...   print(f)
+...   print(dirpath)
+...   print(subdirs)
+...
+3.txt
+.
+['1', '2']
+b.txt
+.\1\a
+[]
+a.txt
+.\2
+[]
+>>> </i>
+
+Here is the Python code snippet run in Python CLI to copy contents of all the files in the current directory and subdirectories:
+<i style="color: green;">>>> for dirpath, subdirs, files in os.walk("."):
+...  for f in files:
+...   os.system("echo Filename: " + os.path.join(dirpath, f) + " >> abc.txt")
+...   os.system('type "' + os.path.join(dirpath, f) + '" >> abc.txt') </i>
+
+</pre>

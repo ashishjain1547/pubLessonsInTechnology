@@ -1,0 +1,9 @@
+name: rasa
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - tensorflow=1.14.0
+  - pip
+  - pip:
+    - rasa-core

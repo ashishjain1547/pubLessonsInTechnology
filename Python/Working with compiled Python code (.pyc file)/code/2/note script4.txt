@@ -1,0 +1,72 @@
+"""
+How can I import a .pyc compiled python file and use it?
+https://stackoverflow.com/questions/34709390/how-can-i-import-a-pyc-compiled-python-file-and-use-it
+
+Unfortunately, no, this cannot be done automatically. You can, of course, do it manually in a gritty ugly way.
+
+Setup:
+For demonstration purposes, I'll first generate a .pyc file. In order to do that, we first need a .py file for it. Our sample test.py file will look like:
+
+def foo():
+    print("In foo")
+
+if __name__ == "__main__":
+    print("Hello World")
+Super simple. Generating the .pyc file can done with the py_compile module found in the standard library. We simply pass in the name of the .py file and the name for our .pyc file in the following way:
+
+ py_compile.compile('test.py', 'mypyc.pyc')
+This will place mypyc.pyc in our current working directory.
+
+Getting the code from .pyc files:
+Now, .pyc files contain bytes that are structured in the following way:
+
+First 4 bytes signalling a 'magic number'
+Next 4 bytes holding a modification timestamp
+Rest of the contents are a marshalled code object.
+What we're after is that marshalled code object, so we need to import marshal to un-marshall it and execute it. Additionally, we really don't care/need the 8 first bytes, and un-marshalling the .pyc file with them is disallowed, so we'll ignore them (seek past them):
+
+import marshal
+
+s = open('mypyc.pyc', 'rb')
+s.seek(8)  # go past first eight bytes
+code_obj = marshal.load(s)
+So, now we have our fancy code object for test.py which is valid and ready to be executed as we wish. We have two options here:
+
+Execute it in the current global namespace. This will bind all definitions inside our .pyc file in the current namespace and will act as a sort of: from file import * statement.
+
+Create a new module object and execute the code inside the module. This will be like the import file statement.
+
+Emulating from file import * like behaviour:
+Performing this is pretty simple, just do:
+
+exec(code_obj)
+This will execute the code contained inside code_obj in the current namespace and bind everything there. After the call we can call foo like any other funtion:
+
+foo()
+# prints: In foo!
+Note: exec() is a built-in.
+
+Emulating import file like behaviour:
+This includes another requirement, the types module. This contains the type for ModuleType which we can use to create a new module object. It takes two arguments, the name for the module (mandatory) and the documentation for it (optional):
+
+m = types.ModuleType("Fancy Name", "Fancy Documentation")
+
+print(m)
+<module 'Fancy Name' (built-in)>
+Now that we have our module object, we can again use exec to execute the code contained in code_obj inside the module namespace (namely, m.__dict__):
+
+exec(code_obj, m.__dict__)
+Now, our module m has everything defined in code_obj, you can verify this by running:
+
+m.foo() 
+# prints: In foo
+These are the ways you can 'include' a .pyc file in your module. At least, the ways I can think of. I don't really see the practicality in this but hey, I'm not here to judge.
+"""
+
+
+
+
+
+While I don't have much confidence, but Python 3.3+ seems to requires another 4 bytes in a head magic munbers, so s.seek(8) needs to be s.seek(12).
+
+

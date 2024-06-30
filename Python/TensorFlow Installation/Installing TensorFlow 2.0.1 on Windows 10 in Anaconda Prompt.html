@@ -1,0 +1,134 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>(base) C:\Users\ashish>conda create --name tf
+
+(base) C:\Users\ashish>conda activate tf
+
+(tf) C:\Users\ashish>python
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+
+Warning:
+This Python interpreter is in a conda environment, but the environment has not been activated. Libraries may fail to load.  To activate this environment, please see https://conda.io/activation
+
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'tensorflow'
+>>> exit()
+
+(tf) C:\Users\ashish>pip install tensorflow==
+Collecting tensorflow==
+  ERROR: Could not find a version that satisfies the requirement tensorflow== (from versions: 1.13.0rc1, 1.13.0rc2, 1.13.1, 1.13.2, 1.14.0rc0, 1.14.0rc1, 1.14.0, 1.15.0rc0, 1.15.0rc1, 1.15.0rc2, 1.15.0rc3, 1.15.0, 1.15.2, 2.0.0a0, 2.0.0b0, 2.0.0b1, 2.0.0rc0, 2.0.0rc1, 2.0.0rc2, 2.0.0, 2.0.1, 2.1.0rc0, 2.1.0rc1, 2.1.0rc2, 2.1.0, 2.2.0rc0)
+ERROR: No matching distribution found for tensorflow==
+
+(tf) C:\Users\ashish>pip install tensorflow==2.0.1
+Collecting tensorflow==2.0.1
+  Downloading https://files.pythonhosted.org/packages/15/b0/4bfaaa6d598fd42c0db0b0d8ebac8ec23a929cdff1098b5f9b5c8cc79253/tensorflow-2.0.1-cp37-cp37m-win_amd64.whl (48.1MB)
+     |████████████████████████████████| 48.1MB 544kB/s
+Collecting gast==0.2.2 (from tensorflow==2.0.1)
+Collecting keras-applications>=1.0.8 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl
+Requirement already satisfied: wheel>=0.26; python_version >= "3" in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.0.1) (0.33.6)
+Collecting termcolor>=1.1.0 (from tensorflow==2.0.1)
+Requirement already satisfied: wrapt>=1.11.1 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.0.1) (1.11.2)
+Collecting absl-py>=0.7.0 (from tensorflow==2.0.1)
+Collecting astor>=0.6.0 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl
+Collecting tensorboard<2.1.0,>=2.0.0 (from tensorflow==2.0.1)
+  Downloading https://files.pythonhosted.org/packages/76/54/99b9d5d52d5cb732f099baaaf7740403e83fe6b0cedde940fabd2b13d75a/tensorboard-2.0.2-py3-none-any.whl (3.8MB)
+     |████████████████████████████████| 3.8MB 1.7MB/s
+Collecting tensorflow-estimator<2.1.0,>=2.0.0 (from tensorflow==2.0.1)
+  Downloading https://files.pythonhosted.org/packages/fc/08/8b927337b7019c374719145d1dceba21a8bb909b93b1ad6f8fb7d22c1ca1/tensorflow_estimator-2.0.1-py2.py3-none-any.whl (449kB)
+     |████████████████████████████████| 450kB 437kB/s
+Collecting google-pasta>=0.1.6 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/c3/fd/1e86bc4837cc9a3a5faf3db9b1854aa04ad35b5f381f9648fbe81a6f94e4/google_pasta-0.1.8-py3-none-any.whl
+Requirement already satisfied: numpy<2.0,>=1.16.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.0.1) (1.16.5)
+Collecting grpcio>=1.8.6 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/a7/6d/99aba8db04bf58193ed157dfe7e848494b93dd8aa3f6a4d1edfef318779c/grpcio-1.27.2-cp37-cp37m-win_amd64.whl
+Collecting opt-einsum>=2.3.2 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/b2/49/2233e63052d5686c72131b579837ddfb98ba9dd0b92bb91efcb441ada8ce/opt_einsum-3.2.0-py3-none-any.whl
+Collecting keras-preprocessing>=1.0.5 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl
+Requirement already satisfied: six>=1.10.0 in c:\programdata\anaconda3\lib\site-packages (from tensorflow==2.0.1) (1.12.0)
+Collecting protobuf>=3.6.1 (from tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/92/30/1b7ccde09bf0c535d11f18a574ed7d7572c729a8f754fd568b297be08b61/protobuf-3.11.3-cp37-cp37m-win_amd64.whl
+Requirement already satisfied: h5py in c:\programdata\anaconda3\lib\site-packages (from keras-applications>=1.0.8->tensorflow==2.0.1) (2.9.0)
+Collecting google-auth<2,>=1.6.3 (from tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Downloading https://files.pythonhosted.org/packages/5a/8d/e2ebbd0502627ed0d8a408162020e1c0792f088b49fddeedaaeebc206ed7/google_auth-1.11.2-py2.py3-none-any.whl (76kB)
+     |████████████████████████████████| 81kB 127kB/s
+Collecting google-auth-oauthlib<0.5,>=0.4.1 (from tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/7b/b8/88def36e74bee9fce511c9519571f4e485e890093ab7442284f4ffaef60b/google_auth_oauthlib-0.4.1-py2.py3-none-any.whl
+Requirement already satisfied: requests<3,>=2.21.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (2.22.0)
+Collecting markdown>=2.6.8 (from tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/ab/c4/ba46d44855e6eb1770a12edace5a165a0c6de13349f592b9036257f3c3d3/Markdown-3.2.1-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=41.0.0 in c:\programdata\anaconda3\lib\site-packages (from tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (41.4.0)
+Requirement already satisfied: werkzeug>=0.11.15 in c:\programdata\anaconda3\lib\site-packages (from tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (0.16.0)
+Collecting cachetools<5.0,>=2.0.0 (from google-auth<2,>=1.6.3->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Downloading https://files.pythonhosted.org/packages/08/6a/abf83cb951617793fd49c98cb9456860f5df66ff89883c8660aa0672d425/cachetools-4.0.0-py3-none-any.whl
+Collecting pyasn1-modules>=0.2.1 (from google-auth<2,>=1.6.3->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/95/de/214830a981892a3e286c3794f41ae67a4495df1108c3da8a9f62159b9a9d/pyasn1_modules-0.2.8-py2.py3-none-any.whl
+Collecting rsa<4.1,>=3.1.4 (from google-auth<2,>=1.6.3->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl
+Collecting requests-oauthlib>=0.7.0 (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (2019.9.11)
+Requirement already satisfied: idna<2.9,>=2.5 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (2.8)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in c:\programdata\anaconda3\lib\site-packages (from requests<3,>=2.21.0->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1) (1.24.2)
+Collecting pyasn1<0.5.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth<2,>=1.6.3->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/62/1e/a94a8d635fa3ce4cfc7f506003548d0a2447ae76fd5ca53932970fe3053f/pyasn1-0.4.8-py2.py3-none-any.whl
+Collecting oauthlib>=3.0.0 (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard<2.1.0,>=2.0.0->tensorflow==2.0.1)
+  Using cached https://files.pythonhosted.org/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl
+Installing collected packages: gast, keras-applications, termcolor, absl-py, astor, protobuf, cachetools, pyasn1, pyasn1-modules, rsa, google-auth, grpcio, oauthlib, requests-oauthlib, google-auth-oauthlib, markdown, tensorboard, tensorflow-estimator, google-pasta, opt-einsum, keras-preprocessing, tensorflow
+Successfully installed absl-py-0.9.0 astor-0.8.1 cachetools-4.0.0 gast-0.2.2 google-auth-1.11.2 google-auth-oauthlib-0.4.1 google-pasta-0.1.8 grpcio-1.27.2 keras-applications-1.0.8 keras-preprocessing-1.1.0 markdown-3.2.1 oauthlib-3.1.0 opt-einsum-3.2.0 protobuf-3.11.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-oauthlib-1.3.0 rsa-4.0 tensorboard-2.0.2 tensorflow-2.0.1 tensorflow-estimator-2.0.1 termcolor-1.1.0
+
+(tf) C:\Users\ashish>python
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+
+Warning:
+This Python interpreter is in a conda environment, but the environment has not been activated. Libraries may fail to load. To activate this environment, please see https://conda.io/activation
+
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+>>> tensorflow.__version__
+'2.0.1'
+>>>
+
+</pre>

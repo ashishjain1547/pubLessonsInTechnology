@@ -1,0 +1,127 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>
+Step 1: Create an environment.
+(base) C:\windows\system32>conda create -n tensorflow python=3.5
+
+#-----#-----#-----#-----#-----#-----#-----#-----#-----#-----#
+
+Step 2: Testing the latest version of TensorFlow.
+
+(base) C:\windows\system32>conda activate tensorflow
+
+(tensorflow) C:\windows\system32>pip install tensorflow
+
+Successfully installed absl-py-0.6.0 astor-0.7.1 gast-0.2.0 grpcio-1.16.0 h5py-2.8.0 keras-applications-1.0.6 keras-preprocessing-1.0.5 markdown-3.0.1 numpy-1.15.3 protobuf-3.6.1 setuptools-39.1.0 six-1.11.0 tensorboard-1.11.0 tensorflow-1.11.0 termcolor-1.1.0 werkzeug-0.14.1
+
+
+(tensorflow) C:\windows\system32>python
+Python 3.5.6 |Anaconda, Inc.| (default, Aug 26 2018, 16:05:27) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+Traceback (most recent call last):
+  File "C:\ProgramData\Anaconda3\envs\tensorflow\lib\site-packages\tensorflow\python\pywrap_tensorflow.py", line 58, in [module]
+    from tensorflow.python.pywrap_tensorflow_internal import *
+...
+ImportError: DLL load failed: A dynamic link library (DLL) initialization routine failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "[stdin]", line 1, in [module]
+...
+ImportError: DLL load failed: A dynamic link library (DLL) initialization routine failed.
+
+Failed to load the native TensorFlow runtime.
+
+See https://www.tensorflow.org/install/install_sources#common_installation_problems
+
+for some common reasons and solutions.  Include the entire stack trace
+above this error message when asking for help.
+>>>
+
+# Uninstall the older version.
+
+(tensorflow) C:\windows\system32>pip uninstall tensorflow
+  Successfully uninstalled tensorflow-1.11.0
+
+#-----#-----#-----#-----#-----#-----#-----#-----#-----#-----#
+
+Step 3: Installing an older, compatible version of TensorFlow.
+
+(tensorflow) C:\windows\system32>pip install tensorflow==1.5
+
+(tensorflow) C:\windows\system32>python
+Python 3.5.6 |Anaconda, Inc.| (default, Aug 26 2018, 16:05:27) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+
+>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+b'Hello, TensorFlow!'
+>>>
+
+#-----#-----#-----#-----#-----#-----#-----#-----#-----#-----# 
+
+Step 4: Setting up the kernel for Jupyter Notebook.
+
+(tensorflow) C:\Users\Admin>pip install ipykernel
+ 
+----- ----- ----- ----- -----
+
+(base) C:\Users\Admin>python -m ipykernel install --name "tensorflow"
+Installed kernelspec tensorflow in C:\ProgramData\jupyter\kernels\tensorflow
+
+The python kernel in Jupyter notebook points to the root kernel. If you need a specific environment to be displayed in your Jupyter notebook, do the following:
+
+# Creating a custom environment in anaconda prompt with python 3.6
+(base)C:\>conda create -n MyEnvironment python=3.6
+(base)C:\>activate MyEnvironment 
+# Install your custom pacakges like tensorflow etc
+(MyEnvironment)C:\>pip install tensorflow
+(MyEnvironment)C:\>python -m ipykernel install --name MyEnvironment
+(MyEnvironment)C:\>jupyter notebook
+
+Now you should be able to see both root kernal and MyEnvironment kernel version in Jupyter notebook (Navigation bar -> Kernel -> Change kernel -> My Environment).
+Ref: https://stackoverflow.com/questions/51687757/tensorflow-is-not-working-in-jupyter-notebook
+
+Related article: Setting Up TensorFlow Using Archives: http://survival8.blogspot.com/p/setting-up-tensorflow-using-archives.html
+</pre>

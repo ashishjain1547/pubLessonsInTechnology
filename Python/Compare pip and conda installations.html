@@ -1,0 +1,259 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>1. View all environments.
+
+<i style="color: blue;">(base) C:\Users\aj>conda env list</i>
+<i style="color: green;"># conda environments:
+#
+base                  *  D:\programfiles\Anaconda3
+bert_aas                 D:\programfiles\Anaconda3\envs\bert_aas
+e20200909                D:\programfiles\Anaconda3\envs\e20200909
+...
+tf                       D:\programfiles\Anaconda3\envs\tf </i>
+
+2. View all Jupyter Kernels.
+
+<i style="color: blue;">(base) C:\Users\aj>jupyter kernelspec list</i>
+<i style="color: green;">Available kernels:
+temp       C:\Users\aj\AppData\Roaming\jupyter\kernels\temp
+tf         C:\Users\aj\AppData\Roaming\jupyter\kernels\tf
+python3    D:\programfiles\Anaconda3\share\jupyter\kernels\python3
+py38       C:\ProgramData\jupyter\kernels\py38
+
+(base) C:\Users\aj> </i>
+
+==========
+
+<b>3. A note about updating a package in Conda (from debugging instructions).</b>
+
+<i style="color: blue;">(base) C:\Users\aj>conda update ipykernel jupyter -c conda-forge</i>
+<i style="color: red;">
+Updating ipykernel is constricted by
+
+anaconda -> requires ipykernel==5.1.4=py37h39e3cac_0
+
+If you are sure you want an update of your package either try `conda update --all` or install a specific version of the package you want using `conda install [pkg]=[version]`
+
+done
+
+==> WARNING: A newer version of conda exists.
+current version: 4.8.4
+latest version: 4.8.5
+
+Please update conda by running
+
+  $ conda update -n base -c defaults conda </i>
+
+In this command, by '-n base' we mean 'base' is the name of the environment.
+By '-c defaults', we mean download 'conda' from the 'defaults' channel.
+
+Note: Following are three commonly used channels for downloading Python packages:
+
+1. pkgs/main
+2. defaults
+3. conda-forge
+
+==========
+
+<b>4. Installing a new Jupyter kernel. </b>
+
+<i style="color: blue;">(e20200909) CMD>python -m ipykernel install --user --name e20200909 </i>
+<i style="color: green;">Installed kernelspec e20200909 in C:\Users\aj\AppData\Roaming\jupyter\kernels\e20200909 </i>
+
+==========
+
+<b>5. Checking installation 
+Differentiating between 'pip' and 'conda' installation. </b>
+
+<i style="color: blue;">(e20200909) D:\ws\jupyter>pip freeze | findstr /C:"jupyter" /C:"jupyterlab" </i>
+<i style="color: green;">jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1594826976318/work
+jupyter-console @ file:///home/conda/feedstock_root/build_artifacts/jupyter_console_1598728807792/work
+jupyter-core==4.6.3
+jupyterlab==2.2.8
+jupyterlab-pygments @ file:///home/conda/feedstock_root/build_artifacts/jupyterlab_pygments_1601375948261/work
+jupyterlab-server @ file:///home/conda/feedstock_root/build_artifacts/jupyterlab_server_1593951277307/work </i>
+
+<i style="color: blue;">(e20200909) C:\Users\aj>pip freeze | findstr /C:"transformers" /C:"tensorflow" /C:"torch" </i>
+<i style="color: green;"><b>torch @ file:///C:/ci/pytorch_1596373105144/work
+transformers==3.0.1 </b></i>
+
+<b>Important Note: In the above two outputs, where we see a "@ file" based path in place of package version, that package has been installed via 'conda'. </b>
+
+<i style="color: blue;">(e20200909) C:\Users\aj>python -c "import torch; print(torch.__version__);" </i>
+<i style="color: green;">1.6.0</i>
+
+
+<b>View only Conda installations </b>
+<i style="color: blue;">(e20200909) CMD>pip freeze | findstr /C:"file" </i>
+<i style="color: green;">argon2-cffi @ file:///D:/bld/argon2-cffi_1596630042503/work
+attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1599308529326/work
+bleach @ file:///home/conda/feedstock_root/build_artifacts/bleach_1600454382015/work
+cffi @ file:///C:/ci/cffi_1598352710791/work
+... </i>
+
+<b>View only Pip installations </b>
+<i style="color: blue;">(e20200909) CMD>pip freeze | findstr /v /C:"file" </i>
+<i style="color: green;">async-generator==1.10
+backcall==0.2.0
+bert-serving-client==1.10.0
+bert-serving-server==1.10.0
+certifi==2020.6.20
+chardet==3.0.4
+click==7.1.2
+... </i>
+
+<i style="color: blue;">(e20200909) CMD>pip list </i>
+<i style="color: green;">Package             Version
+-------------------  -------------------
+argon2-cffi          20.1.0
+async-generator      1.10
+attrs                20.2.0
+backcall             0.2.0
+bert-serving-client  1.10.0
+bert-serving-server  1.10.0
+bleach               3.2.1
+certifi              2020.6.20
+cffi                 1.14.2
+chardet              3.0.4
+click                7.1.2
+... </i>
+
+==========
+
+6. Conda has more clarity about getting a good match between versions of already installed packages and the new packages that are to be installed:
+
+<i style="color: blue;">(e20200909) C:\Users\Ashish Jain>conda install tensorflow -c conda-forge </i>
+<i style="color: red;">Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Solving environment: -
+Found conflicts! Looking for incompatible packages.
+This can take several minutes.  Press CTRL-C to abort.
+Examining python=3.8:  50%|███████████████          | 1/2 [00:03&lt;00:03,  3.41s/it]-failed
+
+UnsatisfiableError: The following specifications were found
+to be incompatible with the existing python installation in your environment:
+
+Specifications:
+
+  - tensorflow -> python[version='3.5.*|3.6.*|>=3.5,&lt;3.6.0a0|>=3.6,&lt;3.7.0a0|>=3.7,&lt;3.8.0a0|3.7.*']
+
+Your python: python=3.8
+
+If python is on the left-most side of the chain, that's the version you've asked for. When python appears to the right, that indicates that the thing on the left is somehow not available for the python version you are constrained to. Note that conda will not change your python version to a different minor version unless you explicitly specify that. </i>
+
+==========
+
+7. Getting all the available versions of a package in PyPI:
+
+<i style="color: blue;">(base) CMD>pip install tensorflow== </i>
+<i style="color: green;">ERROR: Could not find a version that satisfies the requirement tensorflow== (from versions: 1.13.0rc1, 1.13.0rc2, 1.13.1, 1.13.2, 1.14.0rc0, 1.14.0rc1, 1.14.0, 1.15.0rc0, 1.15.0rc1, 1.15.0rc2, 1.15.0rc3, 1.15.0, 1.15.2, 1.15.3, 1.15.4, 2.0.0a0, 2.0.0b0, 2.0.0b1, 2.0.0rc0, 2.0.0rc1, 2.0.0rc2, 2.0.0, 2.0.1, 2.0.2, 2.0.3, 2.1.0rc0, 2.1.0rc1, 2.1.0rc2, 2.1.0, 2.1.1, 2.1.2, 2.2.0rc0, 2.2.0rc1, 2.2.0rc2, 2.2.0rc3, 2.2.0rc4, 2.2.0, 2.2.1, 2.3.0rc0, 2.3.0rc1, 2.3.0rc2, 2.3.0, 2.3.1)
+ERROR: No matching distribution found for tensorflow== </i>
+
+If Conda does not have a package in one of the mentioned channels such as 'conda-forge' or 'defaults', it raises the below exception:
+
+<i style="color: red;">ResolvePackageNotFound:
+  - tensorflow=1.15.4 </i>
+
+==========
+
+8. Checking TensorFlow 1.X installation:
+
+<i style="color: blue;">(bert_env) CMD>conda list tensorflow </i>
+<i style="color: green;"># packages in environment at E:\programfiles\Anaconda3\envs\bert_env:
+#
+# Name                    Version                   Build  Channel
+tensorflow                1.14.0               h1f41ff6_0    conda-forge
+tensorflow-base           1.14.0           py37hc8dfbb8_0    conda-forge
+tensorflow-estimator      1.14.0           py37h5ca1d4c_0    conda-forge </i>
+
+<i style="color: blue;">(bert_env) CMD>python 
+>>> import tensorflow as tf
+>>> print(tf.__version__) </i>
+<i style="color: green;">2.3.0 </i>
+>>>       
+
+~ ~ ~ ~ ~
+
+<i style="color: blue;">(bert_env) CMD>pip freeze | find "tensorflow" </i>
+<i style="color: green;">tensorflow==2.3.0
+tensorflow-estimator==2.3.0 </i>
+
+<i style="color: blue;">(bert_env) CMD>pip freeze | findstr "tensorflow" </i>
+<i style="color: green;">tensorflow==2.3.0
+tensorflow-estimator==2.3.0 </i>
+
+<i style="color: blue;">(bert_env) CMD>python -c "import tensorflow as tf; print(tf.__version__)" </i>
+<i style="color: green;">2.3.0 </i>
+
+<i style="color: blue;">(bert_env) CMD>pip show tensorflow </i>
+<i style="color: green;">Name: tensorflow
+Version: 2.3.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: c:\users\aj\appdata\roaming\python\python37\site-packages
+Requires: wheel, astunparse, numpy, protobuf, wrapt, gast, six, tensorflow-estimator, scipy, grpcio, termcolor, tensorboard, opt-einsum, absl-py, keras-preprocessing, h5py, google-pasta
+Required-by: </i>
+
+==========
+
+
+</pre>

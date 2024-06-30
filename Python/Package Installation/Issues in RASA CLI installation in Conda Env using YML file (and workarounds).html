@@ -1,0 +1,429 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>We do not have "rasa" available in "conda-forge" channel:
+
+(erasa4) CMD><i style="color: blue;">conda install rasa -c conda-forge</i>
+<i style="color: red;">Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - rasa
+
+Current channels:
+
+  - https://conda.anaconda.org/conda-forge/win-64
+  - https://conda.anaconda.org/conda-forge/noarch
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.</i>
+
+-- -- -- -- --
+
+<b>ERRONEOUS CODE in FILE "env.yml"</b>
+
+<i style="color: blue;">name: erasa5
+channels:
+- conda-forge
+dependencies:
+- spacy
+- python=3.8
+- pip
+- pip:
+  - rasa
+  - rasa-core</i>
+
+<b>ERROR:</b>
+
+<i style="color: red;">/ Pip subprocess error:
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))': /simple/joblib/
+ERROR: Could not install packages due to an OSError: [WinError 5] Access is denied: 'e:\\anaconda3\\envs\\erasa5\\scripts\\tqdm.exe'
+Consider using the `--user` option or check the permissions.
+
+failed
+
+CondaEnvException: Pip failed</i>
+
+<b>Complete Logs</b>
+
+(base) CMD><i style="color: blue;">conda env create -f env.yml</i>
+
+<i style="color: red;">Collecting package metadata (repodata.json): done
+Solving environment: done
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Installing pip dependencies: / Ran pip subprocess with arguments:
+<b>['e:\\Anaconda3\\envs\\erasa5\\python.exe', '-m', 'pip', 'install', '-U', '-r', 'C:\\Users\\ashish\\Desktop\\condaenv.170xtvti.requirements.txt']</b>
+Pip subprocess output:
+...
+Installing collected packages: sniffio, rfc3986, ipython-genutils, h11, traitlets, pywin32, pyrsistent, httpcore, attrs, zope.interface, websockets, tornado, pyzmq, PyHamcrest, oauthlib, multidict, jupyter-core, jsonschema, incremental, hyperlink, httpx, httptools, constantly, Automat, aiofiles, webencodings, Twisted, sanic, requests-oauthlib, pytz, pyreadline, pygments, nest-asyncio, nbformat, jupyter-client, characteristic, async-generator, zope.event, werkzeug, wcwidth, tzlocal, Tubes, testpath, tensorboard-plugin-wit, sphinxcontrib-serializinghtml, sphinxcontrib-qthelp, sphinxcontrib-jsmath, sphinxcontrib-htmlhelp, sphinxcontrib-devhelp, sphinxcontrib-applehelp, snowballstemmer, sanic-plugins-framework, pillow, pandocfilters, pamqp, numpy, nbclient, mistune, markdown, kiwisolver, jupyterlab-pygments, imagesize, humanfriendly, greenlet, google-auth-oauthlib, entrypoints, docutils, defusedxml, cycler, bleach, babel, alabaster, absl-py, wrapt, typing, typeguard, tqdm, threadpoolctl, termcolor, tensorflow-estimator, tensorboard, tabulate, sphinx, sortedcontainers, simplejson, scipy, sanic-cors, ruamel.yaml.clib, requests-toolbelt, redis, PyYAML, python-engineio, python-crfsuite, pymongo, PyJWT, prompt-toolkit, ply, pathlib, opt-einsum, nbconvert, matplotlib, klein, keras-preprocessing, joblib, itsdangerous, httplib2, h5py, google-pasta, gevent, gast, future, docopt, dnspython, dm-tree, decorator, coloredlogs, cloudpickle, astunparse, apscheduler, aiormq, aiohttp, webexteamssdk, ujson, twilio, terminaltables, tensorflow-probability, tensorflow-hub, tensorflow-addons, tensorflow, SQLAlchemy, slackclient, sklearn-crfsuite, sentry-sdk, scikit-learn, sanic-jwt, ruamel.yaml, rocketchat-API, regex, rasa-sdk, rasa-nlu, questionary, python-telegram-bot, python-socketio, pyTelegramBotAPI, pykwalify, pydot, psycopg2-binary, pandoc, oauth2client, networkx, nbsphinx, mattermostwrapper, keras, kafka-python, jsonpickle, graphviz, flask, fbmessenger, fakeredis, ConfigArgParse, colorhash, colorclass, aio-pika, rasa-core, rasa
+  Attempting uninstall: attrs
+    Found existing installation: attrs 20.3.0
+    Uninstalling attrs-20.3.0:
+      Successfully uninstalled attrs-20.3.0
+  Attempting uninstall: multidict
+    Found existing installation: multidict 5.1.0
+    Uninstalling multidict-5.1.0:
+      Successfully uninstalled multidict-5.1.0
+  Attempting uninstall: pytz
+    Found existing installation: pytz 2021.1
+    Uninstalling pytz-2021.1:
+      Successfully uninstalled pytz-2021.1
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.20.0
+    Uninstalling numpy-1.20.0:
+      Successfully uninstalled numpy-1.20.0
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.56.0
+    Uninstalling tqdm-4.56.0:
+
+Pip subprocess error:
+ERROR: Could not install packages due to an OSError: [WinError 5] Access is denied: 'e:\\anaconda3\\envs\\erasa5\\scripts\\tqdm.exe'
+Consider using the `--user` option or check the permissions.
+
+failed
+
+CondaEnvException: Pip failed
+
+(base) CMD></i>
+
+-- -- -- -- -- 
+
+<b>We have a separate environment where we installed 'RASA_CORE' and 'RASA_NLU' separately, and here also we see that 'RASA' PYPI package (for RASA CLI) is failing to install.</b>
+
+ENV.YML for erasa4:
+
+<i style="color: blue;">name: erasa4
+channels:
+- conda-forge
+dependencies:
+- spacy
+- python=3.8
+- pip
+- pip:
+  - rasa-core</i>
+
+(base) CMD><i style="color: blue;">conda activate erasa4</i>
+
+<b>Issues:</b>
+(erasa4) CMD>pip show rasa_core
+<i style="color: green;">Name: rasa-core
+Version: 0.8.6
+Summary: Machine learning based dialogue engine for conversational software.
+Home-page: https://rasa.ai
+Author: Rasa Technologies GmbH
+Author-email: hi@rasa.ai
+License: UNKNOWN
+Location: e:\anaconda3\envs\erasa4\lib\site-packages
+Requires: pandoc, tensorflow, redis, scikit-learn, pykwalify, jsonpickle, typing, graphviz, apscheduler, ruamel.yaml, h5py, nbsphinx, coloredlogs, networkx, slackclient, rasa-nlu, flask, python-telegram-bot, six, fbmessenger, future, fakeredis, ConfigArgParse, numpy, requests, Keras, tqdm
+Required-by:</i>
+
+(erasa4) CMD>pip show rasa_nlu
+<i style="color: green;">Name: rasa-nlu
+Version: 0.11.5
+Summary: Rasa NLU a natural language parser for bots
+Home-page: https://rasa.com
+Author: Alan Nichol
+Author-email: alan@rasa.ai
+License: UNKNOWN
+Location: e:\anaconda3\envs\erasa4\lib\site-packages
+Requires: future, numpy, simplejson, jsonschema, requests, cloudpickle, matplotlib, pathlib, klein, boto3, gevent, six, typing, tqdm
+Required-by: rasa-core</i>
+
+(erasa4) CMD>pip show rasa
+<i style="color: red;">WARNING: Package(s) not found: rasa</i>
+
+-- -- -- -- -- 
+
+<b>ERROR</b>
+
+(erasa4) CMD>rasa
+<i style="color: red;">'rasa' is not recognized as an internal or external command, operable program or batch file.</i>
+
+(erasa4) CMD>rasa init
+<i style="color: red;">'rasa' is not recognized as an internal or external command, operable program or batch file.</i>
+
+<b>RASA fails to install for all users.</b>
+
+(erasa4) CMD><i style="color: blue;">pip3 install rasa</i>
+
+<i style="color: red;">Collecting rasa
+  Using cached rasa-2.2.9-py3-none-any.whl (689 kB)
+...
+Installing collected packages: sniffio, rfc3986, h11, httpcore, websockets, multidict, httpx, httptools, aiofiles, sanic, yarl, wcwidth, sanic-plugins-framework, pamqp, numpy, attrs, absl-py, typeguard, tqdm, tensorflow-estimator, tabulate, sanic-cors, requests-toolbelt, python-engineio, python-crfsuite, pymongo, PyJWT, prompt-toolkit, joblib, httplib2, dnspython, dm-tree, coloredlogs, cloudpickle, aiormq, aiohttp, webexteamssdk, ujson, twilio, terminaltables, tensorflow-probability, tensorflow-hub, tensorflow-addons, tensorflow, SQLAlchemy, sklearn-crfsuite, sentry-sdk, scikit-learn, sanic-jwt, rocketchat-API, regex, rasa-sdk, questionary, python-socketio, pyTelegramBotAPI, pykwalify, pydot, psycopg2-binary, oauth2client, mattermostwrapper, kafka-python, jsonpickle, fbmessenger, colorhash, colorclass, aio-pika, rasa
+  Attempting uninstall: multidict
+    Found existing installation: multidict 5.1.0
+    Uninstalling multidict-5.1.0:
+      Successfully uninstalled multidict-5.1.0
+  Attempting uninstall: yarl
+    Found existing installation: yarl 1.6.3
+    Uninstalling yarl-1.6.3:
+      Successfully uninstalled yarl-1.6.3
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.19.5
+    Uninstalling numpy-1.19.5:
+      Successfully uninstalled numpy-1.19.5
+  Attempting uninstall: attrs
+    Found existing installation: attrs 20.3.0
+    Uninstalling attrs-20.3.0:
+      Successfully uninstalled attrs-20.3.0
+  Attempting uninstall: absl-py
+    Found existing installation: absl-py 0.11.0
+    Uninstalling absl-py-0.11.0:
+      Successfully uninstalled absl-py-0.11.0
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.56.0
+    Uninstalling tqdm-4.56.0:
+ERROR: Could not install packages due to an OSError: [WinError 5] Access is denied: 'e:\\anaconda3\\envs\\erasa4\\scripts\\tqdm.exe'
+Consider using the `--user` option or check the permissions.
+
+(erasa4) CMD></i>
+
+-- -- -- -- --
+
+<b>To install RASA CLI (and overcome the installation issue in "erasa4" environment) we have to open the terminal and run the "pip3 install rasa --user" command there:</b>
+
+(erasa4) CMD><i style="color: blue;">pip3 install rasa --user</i>
+<i style="color: green;">Collecting rasa
+  Using cached rasa-2.2.9-py3-none-any.whl (689 kB)
+...
+Installing collected packages: tqdm, tensorflow-estimator, tabulate, sanic-cors, requests-toolbelt, python-engineio, python-crfsuite, pymongo, PyJWT, prompt-toolkit, joblib, httplib2, dnspython, dm-tree, coloredlogs, cloudpickle, aiormq, aiohttp, webexteamssdk, ujson, twilio, terminaltables, tensorflow-probability, tensorflow-hub, tensorflow-addons, tensorflow, SQLAlchemy, sklearn-crfsuite, sentry-sdk, scikit-learn, sanic-jwt, rocketchat-API, regex, rasa-sdk, questionary, python-socketio, pyTelegramBotAPI, pykwalify, pydot, psycopg2-binary, oauth2client, mattermostwrapper, kafka-python, jsonpickle, fbmessenger, colorhash, colorclass, aio-pika, rasa
+  WARNING: The script tqdm.exe is installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script tabulate.exe is installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script coloredlogs.exe is installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts make_image_classifier.exe and make_nearest_neighbour_index.exe are installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts estimator_ckpt_converter.exe, saved_model_cli.exe, tensorboard.exe, tf_upgrade_v2.exe, tflite_convert.exe, toco.exe and toco_from_protos.exe are installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pykwalify.exe is installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script rasa.exe is installed in 'C:\Users\ashish\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+rasa-core 0.8.6 requires fbmessenger&lt;5.0.0, but you have fbmessenger 6.0.0 which is incompatible.
+rasa-core 0.8.6 requires pykwalify&lt;=1.6.0, but you have pykwalify 1.7.0 which is incompatible.
+Successfully installed PyJWT-2.0.1 SQLAlchemy-1.3.23 aio-pika-6.7.1 aiohttp-3.6.3 aiormq-3.3.1 cloudpickle-1.4.1 colorclass-2.2.0 coloredlogs-14.3 colorhash-1.0.3 dm-tree-0.1.5 dnspython-1.16.0 fbmessenger-6.0.0 httplib2-0.18.1 joblib-0.15.1 jsonpickle-1.4.2 kafka-python-2.0.2 mattermostwrapper-2.2 oauth2client-4.1.3 prompt-toolkit-2.0.10 psycopg2-binary-2.8.6 pyTelegramBotAPI-3.7.6 pydot-1.4.1 pykwalify-1.7.0 pymongo-3.10.1 python-crfsuite-0.9.7 python-engineio-3.13.2 python-socketio-4.6.1 questionary-1.5.2 rasa-2.2.9 rasa-sdk-2.2.0 regex-2020.9.27 requests-toolbelt-0.9.1 rocketchat-API-1.9.1 sanic-cors-0.10.0.post3 sanic-jwt-1.5.0 scikit-learn-0.23.2 sentry-sdk-0.19.5 sklearn-crfsuite-0.3.6 tabulate-0.8.7 tensorflow-2.3.2 tensorflow-addons-0.12.0 tensorflow-estimator-2.3.0 tensorflow-hub-0.9.0 tensorflow-probability-0.11.1 terminaltables-3.1.0 tqdm-4.50.2 twilio-6.45.4 ujson-3.2.0 webexteamssdk-1.6
+
+(erasa4) CMD> </i>
+
+(erasa4) CMD><i style="color: blue;">pip show rasa</i>
+<i style="color: green;">Name: rasa
+Version: 2.2.9
+Summary: Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants
+Home-page: https://rasa.com
+Author: Rasa Technologies GmbH
+Author-email: hi@rasa.com
+License: Apache-2.0
+Location: c:\users\ashish\appdata\roaming\python\python38\site-packages
+Requires: pykwalify, ujson, matplotlib, mattermostwrapper, pyTelegramBotAPI, kafka-python, scipy, python-dateutil, pytz, ruamel.yaml, PyJWT, requests, jsonschema, attrs, oauth2client, python-engineio, pymongo, slackclient, tensorflow-addons, python-socketio, psycopg2-binary, SQLAlchemy, colorhash, joblib, rasa-sdk, tensorflow-estimator, cloudpickle, sentry-sdk, scikit-learn, multidict, coloredlogs, pydot, regex, sanic, setuptools, jsonpickle, networkx, twilio, tensorflow-hub, sanic-cors, tqdm, sanic-jwt, colorama, fbmessenger, colorclass, aiohttp, prompt-toolkit, apscheduler, boto3, webexteamssdk, sklearn-crfsuite, terminaltables, async-generator, packaging, numpy, questionary, aio-pika, tensorflow, absl-py, redis, rocketchat-API, tensorflow-probability
+Required-by: </i>
+
+-- -- -- -- --
+
+(erasa4) CMD><i style="color: blue;">rasa</i>
+<i style="color: green;">2021-02-03 14:50:58.305729: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2021-02-03 14:50:58.313121: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+usage: rasa [-h] [--version] {init,run,shell,train,interactive,telemetry,test,visualize,data,export,x} ...
+
+Rasa command line interface. Rasa allows you to build your own conversational assistants 🤖. The 'rasa' command allows you to easily run most common commands like creating a new bot, training or evaluating models.
+
+positional arguments:
+  {init,run,shell,train,interactive,telemetry,test,visualize,data,export,x}
+                        Rasa commands
+    init                Creates a new project, with example training data, actions, and config files.
+    run                 Starts a Rasa server with your trained model.
+    shell               Loads your trained model and lets you talk to your assistant on the command line.
+    train               Trains a Rasa model using your NLU data and stories.
+    interactive         Starts an interactive learning session to create new training data for a Rasa model by chatting.
+    telemetry           Configuration of Rasa Open Source telemetry reporting.
+    test                Tests Rasa models using your test NLU data and stories.
+    visualize           Visualize stories.
+    data                Utils for the Rasa training files.
+    export              Export conversations using an event broker.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             Print installed Rasa version
+
+(erasa4) CMD></i>
+
+-- -- -- -- --
+
+<b>ALSO, WE SHARE BELOW THE LOGS WHILE DOING INSTALLATION FROM TERMINAL WITHOUT USING YML FILE</b>
+
+(base) CMD><i style="color: blue;">conda create -n temp_rasa python=3.8</i>
+
+<i style="color: green;">Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: e:\Anaconda3\envs\temp_rasa
+
+  added / updated specs:
+    - python=3.8
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    certifi-2020.12.5          |   py38haa95532_0         141 KB
+    pip-20.3.3                 |   py38haa95532_0         1.8 MB
+    setuptools-52.0.0          |   py38haa95532_0         726 KB
+    ------------------------------------------------------------
+                                            Total:         2.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-2021.1.19-haa95532_0
+  certifi            pkgs/main/win-64::certifi-2020.12.5-py38haa95532_0
+  openssl            pkgs/main/win-64::openssl-1.1.1i-h2bbff1b_0
+  pip                pkgs/main/win-64::pip-20.3.3-py38haa95532_0
+  python             pkgs/main/win-64::python-3.8.5-h5fd99cc_1
+  setuptools         pkgs/main/win-64::setuptools-52.0.0-py38haa95532_0
+  sqlite             pkgs/main/win-64::sqlite-3.33.0-h2a8f88b_0
+  vc                 pkgs/main/win-64::vc-14.2-h21ff451_1
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.27.29016-h5e58377_2
+  wheel              pkgs/main/noarch::wheel-0.36.2-pyhd3eb1b0_0
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py38_0
+  zlib               pkgs/main/win-64::zlib-1.2.11-h62dcd97_4
+
+Proceed ([y]/n)? y
+
+Downloading and Extracting Packages
+certifi-2020.12.5    | 141 KB    | ### | 100%
+setuptools-52.0.0    | 726 KB    | ### | 100%
+pip-20.3.3           | 1.8 MB    | ### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate temp_rasa
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate </i>
+
+(temp_rasa) CMD><i style="color: blue;">pip install rasa</i>
+Requirement already satisfied: rasa in c:\users\ashish\appdata\roaming\python\python38\site-packages (2.2.9)
+...
+Installing collected packages: sniffio, rfc3986, idna, h11, urllib3, pyasn1, httpcore, chardet, websockets, six, rsa, requests, pyasn1-modules, oauthlib, multidict, httpx, httptools, cachetools, aiofiles, sanic, requests-oauthlib, python-dateutil, pyreadline, pycparser, jmespath, google-auth, yarl, werkzeug, wcwidth, tensorboard-plugin-wit, sanic-plugins-framework, pytz, protobuf, pamqp, numpy, markdown, humanfriendly, grpcio, google-auth-oauthlib, cffi, botocore, attrs, async-timeout, absl-py, wrapt, tzlocal, typeguard, threadpoolctl, termcolor, tensorboard, scipy, s3transfer, ruamel.yaml.clib, PyYAML, pyrsistent, pyparsing, pillow, opt-einsum, kiwisolver, keras-preprocessing, h5py, google-pasta, gast, future, docopt, decorator, cycler, cryptography, astunparse, slackclient, ruamel.yaml, redis, packaging, networkx, matplotlib, jsonschema, colorama, boto3, async-generator, apscheduler
+Successfully installed PyYAML-5.4.1 absl-py-0.10.0 aiofiles-0.6.0 apscheduler-3.6.3 astunparse-1.6.3 async-generator-1.10 async-timeout-3.0.1 attrs-20.2.0 boto3-1.17.0 botocore-1.20.0 cachetools-4.2.1 cffi-1.14.4 chardet-3.0.4 colorama-0.4.4 cryptography-3.3.1 cycler-0.10.0 decorator-4.4.2 docopt-0.6.2 future-0.18.2 gast-0.3.3 google-auth-1.24.0 google-auth-oauthlib-0.4.2 google-pasta-0.2.0 grpcio-1.35.0 h11-0.9.0 h5py-2.10.0 httpcore-0.11.1 httptools-0.1.1 httpx-0.15.4 humanfriendly-9.1 idna-2.10 jmespath-0.10.0 jsonschema-3.2.0 keras-preprocessing-1.1.2 kiwisolver-1.3.1 markdown-3.3.3 matplotlib-3.3.4 multidict-4.7.6 networkx-2.5 numpy-1.18.5 oauthlib-3.1.0 opt-einsum-3.3.0 packaging-20.9 pamqp-2.3.0 pillow-8.1.0 protobuf-3.14.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycparser-2.20 pyparsing-2.4.7 pyreadline-2.1 pyrsistent-0.17.3 python-dateutil-2.8.1 pytz-2020.5 redis-3.5.3 requests-2.25.1 requests-oauthlib-1.3.0 rfc3986-1.4.0 rsa-4.7 ruamel.yaml-0.16.12 ruamel.yaml.clib-0.2.2 s3transfer-0.3.4 sanic-20.9.0 sanic-plugins-framework-0.9.5 scipy-1.6.0 six-1.15.0 slackclient-2.9.3 sniffio-1.2.0 tensorboard-2.4.1 tensorboard-plugin-wit-1.8.0 termcolor-1.1.0 threadpoolctl-2.1.0 typeguard-2.10.0 tzlocal-2.1 urllib3-1.26.3 wcwidth-0.2.5 websockets-8.1 werkzeug-1.0.1 wrapt-1.12.1 yarl-1.5.1
+
+(temp_rasa) CMD>
+
+(temp_rasa) CMD><i style="color: blue;">pip show rasa</i>
+Name: rasa
+Version: 2.2.9
+Summary: Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants
+Home-page: https://rasa.com
+Author: Rasa Technologies GmbH
+Author-email: hi@rasa.com
+License: Apache-2.0
+Location: c:\users\ashish\appdata\roaming\python\python38\site-packages
+Requires: sanic-cors, tqdm, joblib, rasa-sdk, aio-pika, colorclass, redis, kafka-python, fbmessenger, packaging, sentry-sdk, tensorflow, requests, ujson, apscheduler, prompt-toolkit, tensorflow-addons, pyTelegramBotAPI, oauth2client, mattermostwrapper, psycopg2-binary, tensorflow-probability, sanic, scikit-learn, tensorflow-estimator, rocketchat-API, scipy, boto3, jsonschema, networkx, terminaltables, attrs, pymongo, numpy, python-socketio, tensorflow-hub, cloudpickle, python-engineio, aiohttp, jsonpickle, setuptools, questionary, async-generator, twilio, sanic-jwt, pykwalify, python-dateutil, pytz, regex, ruamel.yaml, slackclient, webexteamssdk, pydot, coloredlogs, sklearn-crfsuite, absl-py, colorama, PyJWT, multidict, matplotlib, SQLAlchemy, colorhash
+Required-by:
+
+(temp_rasa) CMD><i style="color: blue;">rasa</i>
+
+<i style="color: green;">2021-02-03 15:19:23.023468: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2021-02-03 15:19:23.030147: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+usage: rasa [-h] [--version] {init,run,shell,train,interactive,telemetry,test,visualize,data,export,x} ...
+
+Rasa command line interface. Rasa allows you to build your own conversational assistants 🤖. The 'rasa' command allows you to easily run most common commands like creating a new bot, training or evaluating models.
+
+positional arguments:
+  {init,run,shell,train,interactive,telemetry,test,visualize,data,export,x}
+                        Rasa commands
+    init                Creates a new project, with example training data, actions, and config files.
+    run                 Starts a Rasa server with your trained model.
+    shell               Loads your trained model and lets you talk to your assistant on the command line.
+    train               Trains a Rasa model using your NLU data and stories.
+    interactive         Starts an interactive learning session to create new training data for a Rasa model by chatting.
+    telemetry           Configuration of Rasa Open Source telemetry reporting.
+    test                Tests Rasa models using your test NLU data and stories.
+    visualize           Visualize stories.
+    data                Utils for the Rasa training files.
+    export              Export conversations using an event broker.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             Print installed Rasa version
+
+(temp_rasa) CMD></i>
+
+</pre>

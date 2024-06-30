@@ -1,0 +1,146 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>"pip" is a de facto standard package-management system used to install and manage software packages written in Python. Many packages can be found in the default source for packages and their dependencies — Python Package Index (PyPI).
+
+Most distributions of Python come with pip preinstalled. Python 2.7.9 and later (on the python2 series), and Python 3.4 and later include pip (pip3 for Python 3) by default.
+
+First introduced as pyinstall in 2008 by Ian Bicking (the creator of the virtualenv package) as an alternative to easy_install, pip was chosen as the new name from one of several suggestions that the creator received on his blog post. According to Bicking himself, the name is an acronym for "Pip Installs Packages". In 2011, the Python Packaging Authority (PyPA) was created to take over the maintenance of pip and virtualenv from Bicking, led by Carl Meyer, Brian Rosner, and Jannis Leidel.
+
+~ ~ ~
+
+"pip" INSTALLATION IN CASE IT IS NOT THERE.
+
+Installing with get-pip.py
+To install pip, securely 1 download get-pip.py by following this link: get-pip.py. Alternatively, use curl:
+
+<i>bash $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py </i>
+Then run the following command in the folder where you have downloaded get-pip.py:
+
+<i>bash $ python get-pip.py</i>
+
+Ref: <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">pip.pypa.io</a>
+
+~ ~ ~
+
+FEW CHANGES IN THE ENVIRONMENT VARIABLES (OUR OS IS WINDOWS 10):
+
+1: Add these to the 'PATH' variable:
+
+  A: C:\Program Files (x86)\Python38
+  B: C:\Program Files (x86)\Python38\Scripts
+
+"Scripts" has files such as: easy_install.exe, easy_install-3.8.exe, pip.exe, pip3.8.exe, pip3.exe
+
+2: Add a variable "PYTHONPATH"
+  This is the location where Python packages will be installed.
+  For us, it is: D:\Python_Repository\Python38
+  
+"Python38" has following contents:
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/--EQlI-A8mx8/XslCzcn9GjI/AAAAAAAAEwU/0LcoY_gV-LMWGEO284RL-eM4eZ9zLsvuACK4BGAsYHg/1.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="401" data-original-width="404" src="https://1.bp.blogspot.com/--EQlI-A8mx8/XslCzcn9GjI/AAAAAAAAEwU/0LcoY_gV-LMWGEO284RL-eM4eZ9zLsvuACK4BGAsYHg/d/1.PNG" /></a></div>
+
+~ ~ ~
+
+<b>Command-line interface </b>
+
+1: One major advantage of pip is the ease of its command-line interface, which makes installing Python software packages as easy as issuing a command:
+
+  <i>pip install some-package-name </i>
+
+2: Users can also easily remove the package:
+
+  <i>pip uninstall some-package-name </i>
+
+3: Most importantly pip has a feature to manage full lists of packages and corresponding version numbers, possible through a "requirements" file. This permits the efficient re-creation of an entire group of packages in a separate environment (e.g. another computer) or virtual environment. This can be achieved with a properly formatted file and the following command, where requirements.txt is the name of the file:
+
+  <i>pip install -r requirements.txt </i>
+
+4: You can download a package and it's dependencies to the local disk instead of installing them. Using this command, the packages mentioned in the 'req.txt' file will be downloaded to 'my_dir' directory.
+
+  <i>pip download -r req.txt -d my_dir </i>
+
+5: If you wish to install packages from the 'my_dir' created above, use the command:
+
+  <i>pip install -r req.txt --find-links=my_dir </i>
+
+6: If you wish to skip installing the dependencies of a package and install the package alone:
+  
+  <i>pip install --no-deps some-package-name </i>
+
+7: If you wish to skip re-installing a package that is already there:
+
+  <i>pip install --ignore-installed some-package-name </i>
+
+8: If you wish to force re-installing a package that is already there:
+
+  <i>pip install --upgrade some-package-name </i>
+
+9: If your packages are stored in multiple repositories, you can mention a second repository as given below:
+
+  <i>pip install some-package-name --extra-index-url=https://pypi.org/simple</i>
+
+10: If you wish to install the package to a specific directory, use the '-t' argument:
+
+  <i>pip install some-package-name -t D:\Python_Repository\Python38 </i>
+
+Ref: <a href="https://en.wikipedia.org/wiki/Pip_(package_manager)" target="_blank">Wikipedia</a>
+
+~ ~ ~
+
+</pre>

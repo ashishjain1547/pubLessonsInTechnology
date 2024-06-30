@@ -1,0 +1,244 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><b>How to manually generate a .pyc file from a .py file?</b>
+
+Answer: Use 'compileall' in the terminal. The following command will go recursively into sub directories and make .pyc files for all the python files it finds. The compileall module is part of the python standard library, so you don't need to install anything extra to use it. This works exactly the same way for python2 and python3.
+
+<i style="color: blue;">$ python -m compileall .</i>
+
+Or You can compile individual files(s) from the command line with:
+
+<i style="color: blue;">$ python -m compileall [file_1].py [file_n].py</i>
+
+-- -- -- -- --
+
+We have a script.py file that looks like this:
+
+<i style="color: blue">print("Hello World!")</i>
+
+<b>In Use</b>
+
+(base) C:\Users\ashish\Desktop\code\1>dir
+ Directory of C:\Users\ashish\Desktop\code\1
+
+01/28/2021  11:58 AM    [DIR]          .
+01/28/2021  11:58 AM    [DIR]          ..
+01/28/2021  11:59 AM                21 script.py
+               1 File(s)             21 bytes
+               2 Dir(s)  108,239,290,368 bytes free
+
+<i style="color:blue"></i>(base) C:\Users\ashish\Desktop\code\1>python -m compileall .</i>
+<i style="color: green;">Listing '.'...
+Compiling '.\\script.py'...</i>
+
+<i style="color: blue">(base) C:\Users\ashish\Desktop\code\1>tree /f</i>
+<i style="color: green;">Folder PATH listing for volume OSDisk
+
+C:.
+│   script.py
+│
+└───__pycache__
+        script.cpython-37.pyc </i>
+
+(base) C:\Users\ashish\Desktop\code\1>
+
+<b>Execution</b>
+
+<i style="color: blue;">(base) C:\Users\ashish\Desktop\code\2>dir</i>
+<i style="color: green;"> Directory of C:\Users\ashish\Desktop\code\2
+
+01/28/2021  12:00 PM    [DIR]          .
+01/28/2021  12:00 PM    [DIR]          ..
+01/28/2021  11:59 AM               124 script.cpython-37.pyc
+               1 File(s)            124 bytes
+               2 Dir(s)  108,236,578,816 bytes free </i>
+
+(base) C:\Users\ashish\Desktop\code\2>python script.cpython-37.pyc
+Hello World!
+
+(base) C:\Users\ashish\Desktop\code\2>cd ../1
+
+We create a file "script2.py" at path "\code\1":
+
+<i style="color: blue;">def myfunc(in_str = "Hello World"):
+    print(in_str)</i>
+
+(base) C:\Users\ashish\Desktop\code\1>dir
+<i style="color: green;"> Directory of C:\Users\ashish\Desktop\code\1
+
+01/28/2021  01:23 PM    [DIR]          .
+01/28/2021  01:23 PM    [DIR]          ..
+01/28/2021  11:59 AM                21 script.py
+01/28/2021  01:23 PM                56 script2.py
+01/28/2021  11:59 AM    [DIR]          __pycache__
+               2 File(s)             77 bytes
+               3 Dir(s)  107,205,185,536 bytes free </i>
+
+(base) C:\Users\ashish\Desktop\code\1>python -m compileall script2.py
+<i style="color: green;">Compiling 'script2.py'...</i>
+
+(base) C:\Users\ashish\Desktop\code\1>
+
+<b>We have "script3.py" at path "C:\Users\ashish\Desktop\code\1"</b>
+
+<i style="color: blue;">from script2 import myfunc
+
+myfunc()
+
+myfunc("From script 3.")</i>
+
+<b>We run it to get.</b>
+
+<i style="color: blue;">(base) C:\Users\ashish\Desktop\code\1>python script3.py</i>
+<i style="color: green;">Hello World
+From script 3.</i>
+
+<b>Next, we try and fail (then later succeed) in using a compiled Python code:</b>
+
+We did these tests after reading from StackOverflow and as a result we generate some error logs:
+
+<i style="color: red;">(base) C:\Users\ashish\Desktop\code\2>python script3.py
+Traceback (most recent call last):
+  File "script3.py", line 1, in [module]
+    from script2 import myfunc
+ModuleNotFoundError: No module named 'script2'
+
+(base) C:\Users\ashish\Desktop\code\2>python script2.cpython-37.pyc
+
+(base) C:\Users\ashish\Desktop\code\2>python script3.py
+  File "script3.py", line 1
+    from  script2.cpython-37 import myfunc
+                         ^
+SyntaxError: invalid syntax </i>
+
+<b>Another failed attempt (before success) using "marshal" package:</b>
+
+<i style="color: blue;">import marshal
+s = open('script2.cpython-37.pyc', 'rb')
+s.seek(12)  # Also tried s.seek(8) here. First 4 bytes are for signaling a 'magic number'. Next 4 bytes holding a modification timestamp.
+
+code_obj = marshal.load(s)
+exec(code_obj)
+myfunc()
+myfunc("Testing from script4")</i>
+
+<i style="color: red">(base) C:\Users\ashish\Desktop\code\2>python script4.py
+Traceback (most recent call last):
+  File "script4.py", line 5, in [module]
+    code_obj = marshal.load(s)
+ValueError: bad marshal data (unknown type code) </i>
+
+Note: Try fixing this code and post answer on <a href="https://stackoverflow.com/questions/65933705/facing-issue-with-loading-a-pyc-file-from-a-separate-script" target="_blank">StackOverflow [Link]</a>.
+
+- - - - - - - - - - - - - - - - - - -
+
+<b>Successful run (1):</b>
+
+We create a script "script5.py" using the "imp" package:
+<i style="color: blue;">import imp
+my_module = imp.load_compiled("script2", "script2.cpython-37.pyc")
+my_module.myfunc('Testing script 5.')</i>
+
+Execution:
+
+<i style="color: blue;">(base) C:\Users\ashish\Desktop\code\3>python script5.py</i>
+<i style="color: green;">script5.py:14: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Testing script 5.</i>
+
+<b>Successful run (2):</b>
+
+We create a script "script6.py" that uses the "importlib" package: [ <a href="https://docs.python.org/3/library/importlib.html#importing-a-source-file-directly" target="_blank">Reference</a> ] 
+
+<i style="color: blue;">import importlib
+import sys
+
+# For illustrative purposes.
+#import tokenize
+#file_path = tokenize.__file__
+#module_name = tokenize.__name__
+
+file_path = "script2.cpython-37.pyc"
+module_name = "script2"
+
+spec = importlib.util.spec_from_file_location(module_name, file_path)
+module = importlib.util.module_from_spec(spec)
+sys.modules[module_name] = module
+spec.loader.exec_module(module)
+
+module.myfunc()
+module.myfunc("Testing from script 6.") </i>
+
+<i style="color: blue;">(base) C:\Users\ashish\Desktop\code\3>DIR</i>
+<i style="color: green;"> Directory of C:\Users\ashish\Desktop\code\3
+
+01/28/2021  02:39 PM    [DIR]          .
+01/28/2021  02:39 PM    [DIR]          ..
+01/28/2021  02:06 PM               228 script2.cpython-37.pyc
+01/28/2021  02:24 PM               418 script5.py
+01/28/2021  02:38 PM               462 script6.py
+               3 File(s)          1,108 bytes
+               2 Dir(s)  106,838,298,624 bytes free</i>
+
+<i style="color: blue;">(base) C:\Users\ashish\Desktop\code\3>python script6.py</i>
+<i style="color: green;">Hello World
+Testing from script 6.</i>
+
+</pre>
+

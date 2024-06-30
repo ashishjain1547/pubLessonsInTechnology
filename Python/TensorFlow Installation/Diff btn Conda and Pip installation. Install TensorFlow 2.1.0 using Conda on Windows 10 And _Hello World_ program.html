@@ -1,0 +1,415 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>TensorFlow is a Python library for high-performance numerical calculations that allows users to create sophisticated deep learning and machine learning applications.
+There are a number of methods that can be used to install TensorFlow, such as using pip to install the wheels available on PyPI. Installing TensorFlow using conda packages offers a number of benefits, including a complete package management system, wider platform support, a more streamlined GPU experience, and better CPU performance. These packages are available via the Anaconda Repository, and installing them is as easy as running “conda install tensorflow” or “conda install tensorflow-gpu” from a command line interface.
+
+One key benefit of installing TensorFlow using conda rather than pip is a result of the conda package management system. When TensorFlow is installed using conda, conda installs all the necessary and compatible dependencies for the packages as well. This is done automatically; users do not need to install any additional software via system packages managers or other means.
+
+Like other packages in the Anaconda repository, TensorFlow is supported on a number of platforms. TensorFlow conda packages are available for Windows, Linux, and macOS. The Linux packages for the 1.10.0 release support a number of Linux distributions including older distributions such as CentOS 6. This is a further benefit of the conda packages: in spite of being labeled as manylinux1-compatible (works on many versions of linux), the wheels available on PyPI support only a minimum of Ubuntu 16.04, which is much newer than many enterprise Linux installations.
+
+The conda TensorFlow packages are also designed for better performance on CPUs through the use of the Intel® Math Kernel Library for Deep Neural Networks (Intel® MKL-DNN). Starting with version 1.9.0, the conda TensorFlow packages are built using the Intel® MKL-DNN library, which demonstrates considerable performance improvements. For example, Figure 1 compares the performance of training and inference on two different image classification models using TensorFlow installed using conda verses the same version installed using pip. The performance of the conda installed version is over eight times the speed of the pip installed package in many of the benchmarks.
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-eNMBzION02Y/Xzqmk9zAuMI/AAAAAAAAFW8/OdNarkaIYCYGSL2BYI3760WSV3koDZHIwCLcBGAsYHQ/s640/TensorFlowTrainingComparisonForCondaAndPipInstallation.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="480" data-original-width="640" src="https://1.bp.blogspot.com/-eNMBzION02Y/Xzqmk9zAuMI/AAAAAAAAFW8/OdNarkaIYCYGSL2BYI3760WSV3koDZHIwCLcBGAsYHQ/s0/TensorFlowTrainingComparisonForCondaAndPipInstallation.png" /></a></div>
+
+Figure 1: Training performance of TensorFlow on a number of common deep learning models using synthetic data. Benchmarks were performed on an Intel® Xeon® Gold 6130.
+
+Interested in trying out these TensorFlow packages? After installing Anaconda or Miniconda, create a new conda environment containing TensorFlow and activate it
+
+$ conda create -n tensorflow_env tensorflow
+$ conda activate tensorflow_env
+
+Or for the GPU version
+
+$ conda create -n tensorflow_gpuenv tensorflow-gpu
+$ conda activate tensorflow_gpuenv
+
+TensorFlow is now installed and ready for use. For those new to TensorFlow, the tutorials offer a great place to get started.
+
+Ref: <a href="https://www.anaconda.com/blog/tensorflow-in-anaconda" target="_blank">Anaconda Blog</a>
+
+
+<b>Implementation </b>
+
+(base) C:\Users\ashish>conda env list
+# conda environments:
+#
+base                  *  D:\programfiles\Anaconda3
+py38                     D:\programfiles\Anaconda3\envs\py38
+
+(base) C:\Users\ashish>pip install tensorflow==
+ERROR: Could not find a version that satisfies the requirement tensorflow== (from versions: 1.13.0rc1, 1.13.0rc2, 1.13.1, 1.13.2, 1.14.0rc0, 1.14.0rc1, 1.14.0, 1.15.0rc0, 1.15.0rc1, 1.15.0rc2, 1.15.0rc3, 1.15.0, 1.15.2, 1.15.3, 2.0.0a0, 2.0.0b0, 2.0.0b1, 2.0.0rc0, 2.0.0rc1, 2.0.0rc2, 2.0.0, 2.0.1, 2.0.2, 2.1.0rc0, 2.1.0rc1, 2.1.0rc2, 2.1.0, 2.1.1, 2.2.0rc0, 2.2.0rc1, 2.2.0rc2, 2.2.0rc3, 2.2.0rc4, 2.2.0, 2.3.0rc0, 2.3.0rc1, 2.3.0rc2, 2.3.0)
+ERROR: No matching distribution found for tensorflow==
+
+(base) C:\Users\ashish>conda create -n tf
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+==> WARNING: A newer version of conda exists. <==
+current version: 4.8.3
+latest version: 4.8.4
+
+Please update conda by running
+
+$ conda update -n base -c defaults conda
+
+## Package Plan ##
+
+environment location: D:\programfiles\Anaconda3\envs\tf
+
+Proceed ([y]/n)? y
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate tf
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+(base) C:\Users\ashish>conda activate tf
+
+(tf) C:\Users\ashish>pip install tensorflow==2.0.1
+'pip' is not recognized as an internal or external command,
+operable program or batch file.
+
+(tf) C:\Users\ashish>conda install tensorflow==2.0.1
+<i style="color: red">Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+- tensorflow==2.0.1
+
+Current channels:
+
+- https://repo.anaconda.com/pkgs/main/win-64
+- https://repo.anaconda.com/pkgs/main/noarch
+- https://repo.anaconda.com/pkgs/r/win-64
+- https://repo.anaconda.com/pkgs/r/noarch
+- https://repo.anaconda.com/pkgs/msys2/win-64
+- https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're looking for, navigate to
+
+https://anaconda.org
+
+and use the search bar at the top of the page. </i>
+
+<i style="color: blue;">(tf) C:\Users\ashish>conda deactivate 
+
+(base) C:\Users\ashish>conda remove --name tf --all </i>
+
+<i style="color: green;">Remove all packages in environment D:\programfiles\Anaconda3\envs\tf:
+
+No packages found in D:\programfiles\Anaconda3\envs\tf. Continuing environment removal </i>
+
+<i style="color: blue;">(base) C:\Users\ashish>conda env list </i>
+<i style="color: green;"># conda environments:
+#
+base                  *  D:\programfiles\Anaconda3
+py38                     D:\programfiles\Anaconda3\envs\py38 </i>
+
+<i style="color: blue;">(base) C:\Users\ashish>conda create -n tf tensorflow </i>
+<i style="color: green;">Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+==> WARNING: A newer version of conda exists. <==
+current version: 4.8.3
+latest version: 4.8.4
+
+Please update conda by running
+
+$ conda update -n base -c defaults conda
+
+## Package Plan ##
+
+environment location: D:\programfiles\Anaconda3\envs\tf
+
+added / updated specs:
+- tensorflow
+
+The following packages will be downloaded:
+
+package                    |            build
+---------------------------|-----------------
+_tflow_select-2.2.0        |            eigen           3 KB
+absl-py-0.9.0              |           py37_0         168 KB
+astor-0.8.1                |           py37_0          47 KB
+blinker-1.4                |           py37_0          22 KB
+brotlipy-0.7.0             |py37he774522_1000         336 KB
+ca-certificates-2020.6.24  |                0         125 KB
+cachetools-4.1.1           |             py_0          12 KB
+certifi-2020.6.20          |           py37_0         156 KB
+click-7.1.2                |             py_0          71 KB
+cryptography-2.9.2         |   py37h7a1dbc1_0         523 KB
+gast-0.2.2                 |           py37_0         155 KB
+google-auth-1.20.1         |             py_0          55 KB
+google-auth-oauthlib-0.4.1 |             py_2          20 KB
+google-pasta-0.2.0         |             py_0          46 KB
+grpcio-1.27.2              |   py37h351948d_0         1.2 MB
+idna-2.10                  |             py_0          50 KB
+importlib-metadata-1.7.0   |           py37_0          52 KB
+keras-applications-1.0.8   |             py_1          29 KB
+keras-preprocessing-1.1.0  |             py_1          37 KB
+libprotobuf-3.12.4         |       h200bbdf_0         1.8 MB
+markdown-3.2.2             |           py37_0         136 KB
+mkl_fft-1.1.0              |   py37h45dec08_0         116 KB
+mkl_random-1.1.1           |   py37h47e9c7a_0         233 KB
+numpy-1.19.1               |   py37h5510c5b_0          22 KB
+numpy-base-1.19.1          |   py37ha3acd2a_0         3.8 MB
+oauthlib-3.1.0             |             py_0          91 KB
+openssl-1.1.1g             |       he774522_1         4.8 MB
+opt_einsum-3.1.0           |             py_0          54 KB
+pip-20.2.2                 |           py37_0         1.7 MB
+protobuf-3.12.4            |   py37ha925a31_0         555 KB
+pyasn1-0.4.8               |             py_0          57 KB
+pyasn1-modules-0.2.7       |             py_0          68 KB
+pycparser-2.20             |             py_2          94 KB
+pyjwt-1.7.1                |           py37_0          49 KB
+pyopenssl-19.1.0           |             py_1          48 KB
+pysocks-1.7.1              |           py37_1          28 KB
+python-3.7.7               |       h81c818b_4        14.3 MB
+requests-2.24.0            |             py_0          56 KB
+requests-oauthlib-1.3.0    |             py_0          23 KB
+rsa-4.6                    |             py_0          26 KB
+scipy-1.5.0                |   py37h9439919_0        11.8 MB
+setuptools-49.6.0          |           py37_0         771 KB
+sqlite-3.32.3              |       h2a8f88b_0         802 KB
+tensorboard-2.2.1          |     pyh532a8cf_0         2.4 MB
+tensorboard-plugin-wit-1.6.0|             py_0         630 KB
+tensorflow-2.1.0           |eigen_py37hd727fc0_0           4 KB
+tensorflow-base-2.1.0      |eigen_py37h49b2757_0        35.4 MB
+tensorflow-estimator-2.1.0 |     pyhd54b08b_0         251 KB
+termcolor-1.1.0            |           py37_1           8 KB
+urllib3-1.25.10            |             py_0          98 KB
+vs2015_runtime-14.16.27012 |       hf0eaf9b_3         1.2 MB
+werkzeug-0.16.1            |             py_0         258 KB
+wrapt-1.12.1               |   py37he774522_1          49 KB
+zipp-3.1.0                 |             py_0          13 KB
+------------------------------------------------------------
+                            Total:        84.8 MB
+
+The following NEW packages will be INSTALLED:
+
+_tflow_select      pkgs/main/win-64::_tflow_select-2.2.0-eigen
+absl-py            pkgs/main/win-64::absl-py-0.9.0-py37_0
+astor              pkgs/main/win-64::astor-0.8.1-py37_0
+blas               pkgs/main/win-64::blas-1.0-mkl
+blinker            pkgs/main/win-64::blinker-1.4-py37_0
+brotlipy           pkgs/main/win-64::brotlipy-0.7.0-py37he774522_1000
+ca-certificates    pkgs/main/win-64::ca-certificates-2020.6.24-0
+cachetools         pkgs/main/noarch::cachetools-4.1.1-py_0
+certifi            pkgs/main/win-64::certifi-2020.6.20-py37_0
+cffi               pkgs/main/win-64::cffi-1.14.0-py37h7a1dbc1_0
+chardet            pkgs/main/win-64::chardet-3.0.4-py37_1003
+click              pkgs/main/noarch::click-7.1.2-py_0
+cryptography       pkgs/main/win-64::cryptography-2.9.2-py37h7a1dbc1_0
+gast               pkgs/main/win-64::gast-0.2.2-py37_0
+google-auth        pkgs/main/noarch::google-auth-1.20.1-py_0
+google-auth-oauth~ pkgs/main/noarch::google-auth-oauthlib-0.4.1-py_2
+google-pasta       pkgs/main/noarch::google-pasta-0.2.0-py_0
+grpcio             pkgs/main/win-64::grpcio-1.27.2-py37h351948d_0
+h5py               pkgs/main/win-64::h5py-2.10.0-py37h5e291fa_0
+hdf5               pkgs/main/win-64::hdf5-1.10.4-h7ebc959_0
+icc_rt             pkgs/main/win-64::icc_rt-2019.0.0-h0cc432a_1
+idna               pkgs/main/noarch::idna-2.10-py_0
+importlib-metadata pkgs/main/win-64::importlib-metadata-1.7.0-py37_0
+intel-openmp       pkgs/main/win-64::intel-openmp-2020.1-216
+keras-applications pkgs/main/noarch::keras-applications-1.0.8-py_1
+keras-preprocessi~ pkgs/main/noarch::keras-preprocessing-1.1.0-py_1
+libprotobuf        pkgs/main/win-64::libprotobuf-3.12.4-h200bbdf_0
+markdown           pkgs/main/win-64::markdown-3.2.2-py37_0
+mkl                pkgs/main/win-64::mkl-2020.1-216
+mkl-service        pkgs/main/win-64::mkl-service-2.3.0-py37hb782905_0
+mkl_fft            pkgs/main/win-64::mkl_fft-1.1.0-py37h45dec08_0
+mkl_random         pkgs/main/win-64::mkl_random-1.1.1-py37h47e9c7a_0
+numpy              pkgs/main/win-64::numpy-1.19.1-py37h5510c5b_0
+numpy-base         pkgs/main/win-64::numpy-base-1.19.1-py37ha3acd2a_0
+oauthlib           pkgs/main/noarch::oauthlib-3.1.0-py_0
+openssl            pkgs/main/win-64::openssl-1.1.1g-he774522_1
+opt_einsum         pkgs/main/noarch::opt_einsum-3.1.0-py_0
+pip                pkgs/main/win-64::pip-20.2.2-py37_0
+protobuf           pkgs/main/win-64::protobuf-3.12.4-py37ha925a31_0
+pyasn1             pkgs/main/noarch::pyasn1-0.4.8-py_0
+pyasn1-modules     pkgs/main/noarch::pyasn1-modules-0.2.7-py_0
+pycparser          pkgs/main/noarch::pycparser-2.20-py_2
+pyjwt              pkgs/main/win-64::pyjwt-1.7.1-py37_0
+pyopenssl          pkgs/main/noarch::pyopenssl-19.1.0-py_1
+pyreadline         pkgs/main/win-64::pyreadline-2.1-py37_1
+pysocks            pkgs/main/win-64::pysocks-1.7.1-py37_1
+python             pkgs/main/win-64::python-3.7.7-h81c818b_4
+requests           pkgs/main/noarch::requests-2.24.0-py_0
+requests-oauthlib  pkgs/main/noarch::requests-oauthlib-1.3.0-py_0
+rsa                pkgs/main/noarch::rsa-4.6-py_0
+scipy              pkgs/main/win-64::scipy-1.5.0-py37h9439919_0
+setuptools         pkgs/main/win-64::setuptools-49.6.0-py37_0
+six                pkgs/main/noarch::six-1.15.0-py_0
+sqlite             pkgs/main/win-64::sqlite-3.32.3-h2a8f88b_0
+tensorboard        pkgs/main/noarch::tensorboard-2.2.1-pyh532a8cf_0
+tensorboard-plugi~ pkgs/main/noarch::tensorboard-plugin-wit-1.6.0-py_0
+tensorflow         pkgs/main/win-64::tensorflow-2.1.0-eigen_py37hd727fc0_0
+tensorflow-base    pkgs/main/win-64::tensorflow-base-2.1.0-eigen_py37h49b2757_0
+tensorflow-estima~ pkgs/main/noarch::tensorflow-estimator-2.1.0-pyhd54b08b_0
+termcolor          pkgs/main/win-64::termcolor-1.1.0-py37_1
+urllib3            pkgs/main/noarch::urllib3-1.25.10-py_0
+vc                 pkgs/main/win-64::vc-14.1-h0510ff6_4
+vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.16.27012-hf0eaf9b_3
+werkzeug           pkgs/main/noarch::werkzeug-0.16.1-py_0
+wheel              pkgs/main/win-64::wheel-0.34.2-py37_0
+win_inet_pton      pkgs/main/win-64::win_inet_pton-1.1.0-py37_0
+wincertstore       pkgs/main/win-64::wincertstore-0.2-py37_0
+wrapt              pkgs/main/win-64::wrapt-1.12.1-py37he774522_1
+zipp               pkgs/main/noarch::zipp-3.1.0-py_0
+zlib               pkgs/main/win-64::zlib-1.2.11-h62dcd97_4
+
+
+Proceed ([y]/n)? y
+
+...
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate tf
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate </i>
+
+<i style="color: blue;">(base) C:\Users\ashish>conda activate tf
+
+(tf) C:\Users\ashish>pip show tensorflow </i>
+<i style="color: green;">Name: tensorflow
+Version: 2.1.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: d:\programfiles\anaconda3\envs\tf\lib\site-packages
+Requires: opt-einsum, six, gast, keras-preprocessing, wrapt, numpy, tensorboard, keras-applications, absl-py, google-pasta, termcolor, wheel, protobuf, scipy, grpcio, tensorflow-estimator, astor
+Required-by: </i>
+
+In TensorFlow 1.X, we would have written some code like this to check TensorFlow installation:
+
+<i style="color: blue;">import tensorflow as tf
+hello = tf.constant('Hello, TensorFlow!')
+sess = tf.Session()
+print(sess.run(hello)) </i>
+
+Out: <i style="color: green;">b'Hello, TensorFlow!'</i>
+
+Ref: <a href="https://stackoverflow.com/questions/49778790/hello-world-in-tensorflow" target="_blank">StackOverflow</a>
+
+This won't work in TensorFlow 2.X. With TensorFlow 2.X, you would get the error message: "AttributeError: module 'tensorflow' has no attribute 'session'" for line "sess = tf.Session()".
+
+The TF2.x "hello world" program would be like this:
+
+import tensorflow as tf
+msg = tf.constant('Hello, TensorFlow!')
+tf.print(msg)
+
+Out: Hello, TensorFlow!
+
+(tf) C:\Users\ashish>python
+Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+>>> tf.__version__
+'2.1.0'
+>>> hello = tf.constant('Hello, TensorFlow!')
+2020-08-17 12:59:21.446424: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+
+<i style="color: blue;">>>> hello </i>
+<i style="color: green;">[tf.Tensor: shape=(), dtype=string, numpy=b'Hello, TensorFlow!'] </i>
+
+<i style="color: blue;">>>> print(hello)</i>
+<i style="color: green;">tf.Tensor(b'Hello, TensorFlow!', shape=(), dtype=string)</i>
+
+>>> msg = tf.constant('Hello, TensorFlow!')
+>>> tf.print(msg)
+Hello, TensorFlow!
+>>>
+
+>>> tf.print(hello)
+<i style="color: green">Hello, TensorFlow! </i>
+
+Reason for this is: 
+
+TF2 runs Eager Execution by default, thus removing the need for Sessions. If you want to run static graphs, the more proper way is to use tf.function() in TF2. While Session can still be accessed via tf.compat.v1.Session() in TF2, I would discourage using it.
+
+References:
+
+% <a href="https://www.tensorflow.org/guide/migrate" target="_blank">TensorFlow.Org</a>
+
+% <a href="https://stackoverflow.com/questions/55142951/tensorflow-2-0-attributeerror-module-tensorflow-has-no-attribute-session" target="_blank">StackOverflow: AttributeError: module 'tensorflow' has no attribute 'session'</a> 
+
+</pre>

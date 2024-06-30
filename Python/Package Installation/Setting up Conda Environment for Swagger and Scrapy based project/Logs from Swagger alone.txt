@@ -1,0 +1,303 @@
+INSTALLATION WE DID:
+flask
+flask-cors
+connexion
+
+
+
+$$$
+
+(base) C:\Users\ashish.jain50>conda env list
+# conda environments:
+#
+base                  *  D:\programfiles\Anaconda3
+py38                     D:\programfiles\Anaconda3\envs\py38
+temp                     D:\programfiles\Anaconda3\envs\temp
+tf                       D:\programfiles\Anaconda3\envs\tf
+
+$$$
+
+(base) C:\Users\ashish.jain50>conda create -n swagger python=3.8
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.8.3
+  latest version: 4.8.4
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+$$$
+
+(base) C:\Users\ashish.jain50>conda create -n swagger python=3.9
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: failed
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - python=3.9
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(base) C:\Users\ashish.jain50>conda create -n swagger python=3.8
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.8.3
+  latest version: 4.8.4
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: D:\programfiles\Anaconda3\envs\swagger
+
+  added / updated specs:
+    - python=3.8
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    ca-certificates-2020.7.22  |                0         125 KB
+    certifi-2020.6.20          |           py38_0         157 KB
+    openssl-1.1.1g             |       he774522_1         4.8 MB
+    pip-20.2.2                 |           py38_0         1.8 MB
+    python-3.8.5               |       h5fd99cc_1        15.7 MB
+    setuptools-49.6.0          |           py38_0         763 KB
+    sqlite-3.33.0              |       h2a8f88b_0         809 KB
+    wheel-0.35.1               |             py_0          37 KB
+    ------------------------------------------------------------
+                                           Total:        24.1 MB
+
+The following NEW packages will be INSTALLED:
+
+  ca-certificates    pkgs/main/win-64::ca-certificates-2020.7.22-0
+  certifi            pkgs/main/win-64::certifi-2020.6.20-py38_0
+  openssl            pkgs/main/win-64::openssl-1.1.1g-he774522_1
+  pip                pkgs/main/win-64::pip-20.2.2-py38_0
+  python             pkgs/main/win-64::python-3.8.5-h5fd99cc_1
+  setuptools         pkgs/main/win-64::setuptools-49.6.0-py38_0
+  sqlite             pkgs/main/win-64::sqlite-3.33.0-h2a8f88b_0
+  vc                 pkgs/main/win-64::vc-14.1-h0510ff6_4
+  vs2015_runtime     pkgs/main/win-64::vs2015_runtime-14.16.27012-hf0eaf9b_3
+  wheel              pkgs/main/noarch::wheel-0.35.1-py_0
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py38_0
+  zlib               pkgs/main/win-64::zlib-1.2.11-h62dcd97_4
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+ca-certificates-2020 | 125 KB    | ##### | 100%
+python-3.8.5         | 15.7 MB   | ##### | 100%
+wheel-0.35.1         | 37 KB     | ##### | 100%
+sqlite-3.33.0        | 809 KB    | ##### | 100%
+pip-20.2.2           | 1.8 MB    | ##### | 100%
+openssl-1.1.1g       | 4.8 MB    | ##### | 100%
+certifi-2020.6.20    | 157 KB    | ##### | 100%
+setuptools-49.6.0    | 763 KB    | ##### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate swagger
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+(base) C:\Users\ashish.jain50>conda update -n base -c defaults conda
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: D:\programfiles\Anaconda3
+
+  added / updated specs:
+    - conda
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    conda-4.8.4                |           py37_0         2.9 MB
+    ------------------------------------------------------------
+                                           Total:         2.9 MB
+
+The following packages will be UPDATED:
+
+  conda                                        4.8.3-py37_0 --> 4.8.4-py37_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+conda-4.8.4          | 2.9 MB    | ##### | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+(base) C:\Users\ashish.jain50>
+
+
+
+$$$
+
+
+
+
+https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html
+
+*** Exporting an environment file across platforms ***
+
+If you want to make your environment file work across platforms, you can use the conda env export --from-history flag. This will only include packages that you’ve explicitly asked for, as opposed to including every package in your environment.
+
+For example, if you create an environment and install Python and a package:
+
+conda install python=3.7 codecov
+This will download and install numerous additional packages to solve for dependencies. This will introduce packages that may not be compatible across platforms.
+
+If you use conda env export, it will export all of those packages. However, if you use conda env export --from-history, it will only export those you specifically chose:
+
+(env-name) ➜  ~ conda env export --from-history
+name: env-name
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - codecov
+prefix: /Users/username/anaconda3/envs/env-name
+
+$$$ 
+
+https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually
+
+You can create an environment file (environment.yml) manually to share with others.
+
+EXAMPLE: A simple environment file:
+
+name: stats
+dependencies:
+  - numpy
+  - pandas
+EXAMPLE: A more complex environment file:
+
+name: stats2
+channels:
+  - javascript
+dependencies:
+  - python=3.6   # or 2.7
+  - bokeh=0.9.2
+  - numpy=1.9.*
+  - nodejs=0.10.*
+  - flask
+  - pip:
+    - Flask-Testing
+	
+	
+$$$ 
+
+
+(base) C:\Users\ashish.jain50>conda activate swagger
+
+(swagger) C:\Users\ashish.jain50>cd Desktop
+
+(swagger) C:\Users\ashish.jain50\Desktop>conda env export
+name: swagger
+channels:
+  - defaults
+dependencies:
+  - ca-certificates=2020.7.22=0
+  - certifi=2020.6.20=py38_0
+  - openssl=1.1.1g=he774522_1
+  - pip=20.2.2=py38_0
+  - python=3.8.5=h5fd99cc_1
+  - setuptools=49.6.0=py38_0
+  - sqlite=3.33.0=h2a8f88b_0
+  - vc=14.1=h0510ff6_4
+  - vs2015_runtime=14.16.27012=hf0eaf9b_3
+  - wheel=0.35.1=py_0
+  - wincertstore=0.2=py38_0
+  - zlib=1.2.11=h62dcd97_4
+prefix: D:\programfiles\Anaconda3\envs\swagger
+
+(swagger) C:\Users\ashish.jain50\Desktop>conda env export > 1744.yml
+
+
+
+$$$
+
+
+(swagger) C:\Users\ashish.jain50\Desktop\swagger_hello_world>python hw_app.py
+init.py
+ENV:  PRODUCTION
+'formatters'
+The swagger_ui directory could not be found.
+    Please install connexion with extra install: pip install connexion[swagger-ui]
+    or provide the path to your local installation by passing swagger_path=<your path>
+
+The swagger_ui directory could not be found.
+    Please install connexion with extra install: pip install connexion[swagger-ui]
+    or provide the path to your local installation by passing swagger_path=<your path>
+
+ * Serving Flask app "hw_app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:8083/ (Press CTRL+C to quit)
+
+
+$$$ 
+
+
+(swagger) C:\Users\ashish.jain50\Desktop\swagger_hello_world>python my_client.py
+Response text: "msg: Post Holla"
+Response text: "msg: Get Holla"
+
+
+SERVER LOGS:
+127.0.0.1 - - [06/Sep/2020 18:01:08] "[37mPOST /v1.0/post_test HTTP/1.1[0m" 201 -
+127.0.0.1 - - [06/Sep/2020 18:01:08] "[37mGET /v1.0/get_test HTTP/1.1[0m" 201 -
+
+
+$$$ 
+
+

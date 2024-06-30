@@ -1,0 +1,149 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-XwE9ZOCM6Y0/YDZ6MmLeWlI/AAAAAAAAGag/BI4lm0dFNlYVR9Db3kXIL_p8b1zDwCauQCLcBGAsYHQ/s0/python%2Blogo.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" data-original-height="208" data-original-width="480" src="https://1.bp.blogspot.com/-XwE9ZOCM6Y0/YDZ6MmLeWlI/AAAAAAAAGag/BI4lm0dFNlYVR9Db3kXIL_p8b1zDwCauQCLcBGAsYHQ/s0/python%2Blogo.png"/></a></div>
+  
+CONVERTING BACK AND FORTH BETWEEN STRING AND BYTES:
+
+<i style="color: blue;">>>> s = 'hello'
+>>> s.encode()</i>
+<i style="color: green;">b'hello'</i>
+<i style="color: blue;">>>> b = s.encode()
+>>> b.decode()</i>
+<i style="color: green;">'hello'</i>
+>>>  
+
+--- --- ---
+
+<i style="color: blue;">$ conda create --name py2 python=2</i>
+
+(base) ~/Desktop$ conda activate py2
+
+<b class="">By default, 'python' command runs Python 3.</b>
+
+(py2) ~/Desktop$ python
+<i style="color: green;">Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.</i>
+>>> exit()
+
+(py2) ~/Desktop$ python2
+Python 2.7.18 |Anaconda, Inc.| (default, Apr 23 2020, 22:42:48) 
+[GCC 7.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+<i style="color: red;">Traceback (most recent call last):
+  File "[stdin]", line 1, in [module]
+ImportError: No module named requests</i>
+>>> 
+
+--- --- ---
+
+(py2) ~/Desktop$ pip install requests
+
+<i style="color: green;">DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting requests
+  Using cached https://files.pythonhosted.org/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl
+Collecting chardet&lt;5,>=3.0.2
+  Using cached https://files.pythonhosted.org/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl
+Collecting urllib3&lt;1.27,>=1.21.1
+  Using cached https://files.pythonhosted.org/packages/23/fc/8a49991f7905261f9ca9df5aa9b58363c3c821ce3e7f671895442b7100f2/urllib3-1.26.3-py2.py3-none-any.whl
+Collecting idna&lt;3,>=2.5
+  Using cached https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl
+Requirement already satisfied: certifi>=2017.4.17 in /home/administrator/anaconda3/envs/py2/lib/python2.7/site-packages (from requests) (2020.6.20)
+Installing collected packages: chardet, urllib3, idna, requests
+Successfully installed chardet-4.0.0 idna-2.10 requests-2.25.1 urllib3-1.26.3 </i>
+
+--- --- --- 
+
+<b class="">With Python 2</b>
+
+(py2) ~/Desktop$ python2
+
+<i style="color: green;">Python 2.7.18 |Anaconda, Inc.| (default, Apr 23 2020, 22:42:48) 
+[GCC 7.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.</i>
+<i style="color: blue;">>>> import requests
+>>> from base64 import b64encode as b
+>>> b('hello')</i>
+<i style="color: green;">'aGVsbG8='</i>
+>>>
+
+--- --- ---
+
+<b class="">With Python 3</b>
+
+(py2) ~/Desktop$ python
+<i style="color: green;">Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.</i>
+<i style="color: blue;">>>> from base64 import b64encode as b
+>>> b('hello')</i>
+<i style="color: red;">Traceback (most recent call last):
+  File "[stdin]", line 1, in [module]
+  File "/usr/lib/python3.8/base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'str'</i>
+>>> b('hello'.encode())
+b'aGVsbG8='
+>>> b('hello'.encode()).decode()
+'aGVsbG8='
+>>> 
+
+--- --- ---</pre>
+<span class="" style="display: none;">Tags: Technology,Python,</span>

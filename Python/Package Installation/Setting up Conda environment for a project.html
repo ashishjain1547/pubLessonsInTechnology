@@ -1,0 +1,154 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>Step 1. You will create a new environment in Anaconda prompt.
+
+conda create --name myenv
+
+Ref: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
+
+Step 2. Then we install "pip" to do some installations that are available in PyPI but not in Conda repos.
+
+conda install pip
+
+Note: There are also packages that are not available in PyPI but are available in Conda.
+
+LIST OF PYTHON PACKAGES THAT ARE NOT AVAILABLE THROUGH 'PIP'
+
+ERROR: Could not find a version that satisfies the requirement conda==4.7.12 (from -r req.txt (line 36)) (from versions: 3.0.6, 3.5.0, 3.7.0, 3.17.0, 4.0.0, 4.0.1, 4.0.2, 4.0.3, 4.0.4, 4.0.5, 4.0.7, 4.0.8, 4.0.9, 4.1.2, 4.1.6, 4.2.6, 4.2.7, 4.3.13, 4.3.16)
+ERROR: No matching distribution found for conda==4.7.12 (from -r req.txt (line 36))
+
+###
+
+conda==4.7.12
+conda-build==3.18.9
+conda-package-handling==1.6.0
+conda-verify==3.4.2
+
+Step 3. If you only want to upgrade a package, you can do that as follows:
+
+(base) C:\Users\ashish\Desktop>pip install --upgrade flask
+
+Step 4. Create a "requirements.txt" file (in the current working directory for your terminal) with some packages such as given below:
+astor==0.8.0
+astroid==2.3.1
+astropy==3.2.1
+atomicwrites==1.3.0
+
+Step 5. Then you run the following command for "pip" or "conda" depending upon your required package:
+
+conda install --file requirements.txt
+pip install -r requirements.txt
+
+<b>UNRESOLVED / UNKNOWN ISSUES, AND SOME RESOLUTIONS: </b>
+
+# If a package is already installed in your 'conda (base)' environment (as was the case for us with PyYAML), we got this error:
+Installing collected packages: PyYAML, openapi-spec-validator, clickclick, connexion
+  Found existing installation: PyYAML 3.13
+Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall.
+
+# Issue with "bitarray":
+  LINK : fatal error LNK1158: cannot run 'rc.exe'
+  error: command 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\link.exe' failed with exit status 1158
+
+# Issue with "cffi":
+  LINK : fatal error LNK1158: cannot run 'rc.exe'
+  error: command 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\link.exe' failed with exit status 1158
+
+# Issue with "cytoolz":
+  cytoolz/dicttoolz.c(11394): error C2059: syntax error: ')'
+  error: command 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\cl.exe' failed with exit status 2
+ 
+# Failed to build astropy bitarray Bottleneck cffi cryptography Cython cytoolz Twisted
+
+# Issue with "twisted.test.raiser"
+  LINK : fatal error LNK1158: cannot run 'rc.exe'
+  error: command 'C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\BIN\\x86_amd64\\link.exe' failed with exit status 1158
+  
+RESOLUTION (From link: https://stackoverflow.com/questions/14372706/visual-studio-cant-build-due-to-rc-exe):
+
+Found this on Google... I would assume that in your case you would copy rc.exe and rcdll.dll to visual studio 2012\vc\bin or wherever you have it installed:
+
+Part 2: FIX LINK : fatal error LNK1158: cannot run ‘rc.exe’
+
+Add this to your PATH environment variables:
+
+C:\Program Files (x86)\Windows Kits\8.0\bin\x86
+
+Copy these files:
+
+rc.exe
+rcdll.dll
+
+From
+
+C:\Program Files (x86)\Windows Kits\8.0\bin\x86
+
+To
+
+C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin
+
+Or I also found this:
+Microsoft left a few things out of their MSVT package. Since no one knows whether they were left out by mistake or for license reasons, no one with MSVC is too interested in giving them out. A few Google searches turn up some tricky sources. Fortunately, Microsoft has finally wised up and solved this problem and many more.
+
+http://msdn.microsoft.com/vstudio/express/support/faq/default.aspx#pricing
+
+http://msdn.microsoft.com/vstudio/express/support/install/
+
+A good amount of MSVT missing files are there but the missing SDK files aren't.
+
+And this:::
+
+I had the same problem which I solved by doing this:
+
+Installing the Microsoft .Net Framework 2.0
+Adding the path of the .NET Framework files (for me "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727") to Global compiler settings > Programs > Additional Paths within Code::Blocks.
+Now I can build and link resource files without errors.
+
+
+POST RESOLUTION:
+
+#### FOR TWISTED
+
+Building wheels for collected packages: Twisted
+  Building wheel for Twisted (setup.py) ... done
+  Created wheel for Twisted: filename=Twisted-19.10.0-cp38-cp38-win_amd64.whl size=3087475 sha256=42d06847b471f115ae6925d43edef132d987b60bf5527e5ee99729872a99d0b4
+  Stored in directory: c:\users\ashish\appdata\local\pip\cache\wheels\6c\7b\65\db0c3de94e8e87bd1600c617da06cbfcf18f449640bbe053e0
+Successfully built Twisted
+Installing collected packages: protego, Twisted, queuelib, scrapy
+</pre>

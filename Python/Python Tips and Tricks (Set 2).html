@@ -1,0 +1,203 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+Tip 1:
+
+You can download wheels for Python packages from here such as of MySQLclient:
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#mysqlclient
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 2: 
+
+Resolving errors 2503 and 2502 while installing MS Visual C++ Compiler for Python 2.7.
+
+Question:
+Install / Uninstall error 2503 and error 2502.
+
+I've had trouble installing or uninstalling programs on my computer. I keep getting the error codes 2502 and 2503. Any ideas on what is needed to fix it?
+
+Answer:
+1. Goto TaskManager > Details > Explorer.exe & click on End Task.
+
+2. Now Click on File in Task Manager > type Explorer.exe ( here is the trick ) Check the box below shows as (Create this task with administrative privileges)
+
+3. Now install / uninstall this should work 100%.
+
+Ref: https://answers.microsoft.com/en-us/windows/forum/all/installuninstall-error-2503-and-error-2502/1b26575b-a4af-4891-93c3-87390abf4f4b
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 3:
+
+Create Executable from Python Script using Pyinstaller
+
+Python package installation:
+pip install PyInstaller
+
+Ref: https://datatofish.com/executable-pyinstaller/
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 4:
+
+Command to install python packages on Linux machine with inside a proxy network:
+
+	pip install psycopg -i http://xyz.abc.com/repository/pypi-all/simple --trusted-host xyz.abc.com
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 5:
+
+Running jupyter notebook on an Ubuntu VM:
+
+$ jupyter notebook --no-browser --port 8004
+[I 18:26:10.152 NotebookApp] Serving notebooks from local directory: /home/vagrant/path/to/jupyter/notebook/directory
+[I 18:26:10.153 NotebookApp] 0 active kernels
+[I 18:26:10.154 NotebookApp] The Jupyter Notebook is running at: http://localhost:8004/
+[I 18:26:10.154 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+
+
+Jupyter notebook starts in localhost. But to access the notebook from my host machine (Windows 10) I need to start the notebook in 0.0.0.0. How to bind the IP 0.0.0.0 so that it routes to 127.0.0.1 in the VM?
+
+Answer:
+
+First generate jupyter_notebook_config.py file
+
+$ jupyter notebook --generate-config
+By default jupyter_notebook_config.py would have everything commented. Modify the following entries:
+
+Example usage of the command:
+(base) ashish@ashish-VirtualBox:~$ jupyter notebook --generate-config
+Writing default config to: /home/ashish/.jupyter/jupyter_notebook_config.py
+
+Accept incoming request from any host (not only localhost).
+
+Find #c.NotebookApp.ip = 'localhost' and change it to c.NotebookApp.ip = '0.0.0.0' (and not "'*'", there is a bug in Jupyter related to this)
+
+To disable launching of a browser:
+Find #c.NotebookApp.open_browser = True and change it to c.NotebookApp.open_browser = False
+
+
+If you are using VirtualBox, also set up port forwarding for port "8004".
+
+Ref: https://jupyter-notebook.readthedocs.io/en/stable/public_server.html
+Ref: https://stackoverflow.com/questions/38545198/access-jupyter-notebook-running-on-vm
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 6: 
+
+How do you check port status on Windows command prompt?
+
+--> 
+C:\Users\ashish>netstat -ano | find "8080"
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       3884
+  TCP    [::]:8080              [::]:0                 LISTENING       3884
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 7:
+
+How do you connect SQLPlus with a specific DB user?
+
+--> 
+C:\Users\ashish>sqlplus system/manager@localhost:1521/xe
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 8:
+
+How do you check Ubuntu OS information?
+
+-->
+(base) ashish@ashish-vBox:~/Desktop/test$ lsb_release -a
+
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 19.04
+Release:	19.04
+Codename:	disco
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 9:
+
+When to use 'yield' and when to use 'return' in Python?
+
+-->
+Yield
+
+A yield statement in a function makes the function a generator function, which can be used in a loop. When the function is running, and the yield executes, the value after the yield is passed back to the loop that called it. The next time the loop iterates, the function starts immediately after the yield statements. For instance this loop (lines 6 to 7) prints the values 1 to 3
+def func():
+	yield 1
+	yield 2
+	yield 3
+ 
+for num in func():
+	print(num)
+The loop that invokes the function will complete when the func completes - either meets the end of the function, or a return statement.
+
+Any new loop which uses the same generator function will execute the function from the start again.
+
+Return
+
+A return statement is used to stop the execution of a function, and optionally return a value to the caller. A function which has a return (but not a yield) cannot be used in a loop (in contrast to above).
+If a function which has previously executed is called again, the function begins execution from the start (unlike yield above).
+Both in one function
+
+There are no rules against using yield and return in the function, but in that case the function will operate as a generator function; i.e. it operates as if it is invoked from a loop. If the function reaches the return, then the calling loop will exit and any return value is ignored.
+
+Ref: https://www.quora.com/What-is-the-difference-between-yield-and-return-in-python
+
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+Tip 10:
+
+Comparison --- conda --- pip
+manages --- binaries --- wheel or source
+can require compilers --- no --- yes
+package types --- any --- Python-only (conda may contain C or C++ libraries, R packages or any other software)
+create environment --- yes, built-in --- no, requires virtualenv or venv
+dependency checks --- yes --- no
+package sources --- Anaconda repo and cloud --- PyPI
+
+Ref: https://www.anaconda.com/understanding-conda-and-pip/
+</pre>

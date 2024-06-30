@@ -1,0 +1,100 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+        success: function (result) {
+          $("span.customTempCodeHolderForSocialMedia").html(result);
+          $("div.customSocialMediaBtnsWrapper").html(
+            $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+          );
+        }
+
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <style>
+    .customTempCodeHolderForSocialMedia {
+      display: none;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>A brief introduction of 'base64' functions 'b64encode' and 'b64decode':
+
+<i style="color: blue">(base) C:\Users\Ashish Jain>python
+Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from base64 import b64encode as b, b64decode as d
+>>> s = 'hello'
+>>> b(bytes(s, 'utf-8'))</i>
+<i style="color: green">b'aGVsbG8='</i>
+<i style="color: blue">>>> bs = b(bytes(s, 'utf-8'))
+>>> d(bs)</i>
+<i style="color: green">b'hello'</i>
+<i style="color: blue">>>> d(b'aGVsbG8=')</i>
+<i style="color: green">b'hello'</i>
+<i style="color: blue">>>> d(bs).decode("utf-8") </i>
+<i style="color: green">'hello'</i>
+
+Now with image:
+
+<i style="color: blue">from base64 import b64decode, b64encode
+image_handle = open('test_image.png', 'rb')
+raw_image_data = image_handle.read()
+encoded_data = b64encode(raw_image_data)
+
+with open('i.txt', 'wb') as f:
+  f.write(encoded_data)
+
+with open('i.txt', 'rb') as f:
+  b = f.read()
+
+print(type(b)) </i>
+<i style="color: green">[class 'bytes'] </i>
+<i style="color: blue">print(encoded_data == b) </i>
+<i style="color: green">True </i>
+<i style="color: blue">with open('i.png', 'wb') as f:
+  f.write(b64decode(b)) </i>
+
+If you have a text file and it has data such as this: b'iVB...ggg=='
+That means you had called str() function on 'bytes' type data and saved that string.
+
+If you have a text file that has data such as this: iVB...ggg==
+Then, you can read this file as ">>> with open('img.txt', 'rb') as f:" to get a 'bytes' type data. </pre>

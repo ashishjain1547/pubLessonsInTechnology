@@ -1,0 +1,140 @@
+<head>
+	<script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$.ajax({
+				url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+				success: function (result) {
+					$("div.customTemporaryCodeHolder").html(result);
+					$("nav.customDynamicNav").html(
+						$("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+					);
+				}
+			});
+
+			$.ajax({
+				url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+				success: function (result) {
+					$("span.customTempCodeHolderForSocialMedia").html(result);
+					$("div.customSocialMediaBtnsWrapper").html(
+						$("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+					);
+				}
+
+			});
+		}); 
+	</script>
+	<!-- Google AdSense Using Machine Learning Code -->
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-3071098372371409",
+			enable_page_level_ads: true
+		});
+	</script>
+
+	<style>
+		.customTempCodeHolderForSocialMedia {
+			display: none;
+		}
+
+		pre {
+			white-space: pre-wrap;
+			white-space: -moz-pre-wrap;
+			white-space: -pre-wrap;
+			white-space: -o-pre-wrap;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-P-9xDAnLiZg/Xz4xUvRzM5I/AAAAAAAAFX4/FCzZubJYnIYnN40bk3BVSp3uhNl5CiMTgCLcBGAsYHQ/s480/conda.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="193" data-original-width="480" src="https://1.bp.blogspot.com/-P-9xDAnLiZg/Xz4xUvRzM5I/AAAAAAAAFX4/FCzZubJYnIYnN40bk3BVSp3uhNl5CiMTgCLcBGAsYHQ/s0/conda.png" /></a></div>
+
+We are at path: E:\exp_snorkel\
+
+File we are writing: env.yml
+
+<b>CONTENTS OF THE YAML FILE FOR ENVIRONMENT: </b>
+<i style="color: blue;">
+name: temp
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - ca-certificates=2020.6.24=0
+  - matplotlib=3.1.1
+  - pip:
+    - names==0.3.0
+  - nltk=3.4.5
+  - numpy>=1.16.0,&lt;1.17.0
+  - pandas>=0.24.0,&lt;0.25.0
+  - scikit-learn>=0.20.2
+  - spacy>=2.1.6,&lt;2.2.0
+  - tensorflow=1.14.0
+  - textblob=0.15.3
+
+prefix: E:\programfiles\Anaconda3\envs\temp </i>
+
+<b>WORKING IN THE CONDA SHELL: </b>
+
+<i style="color: blue;">(base) E:\exp_snorkel>conda remove -n temp --all	
+(base) E:\exp_snorkel>conda env create -f env.yml </i>
+<i style="color: green;">Warning: you have pip-installed dependencies in your environment file, but you do not list pip itself as one of your conda dependencies.  Conda may not use the correct pip to install your packages, and they may end up in the wrong place.  Please add an explicit pip dependency.  I'm adding one for you, but still nagging you.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+Installing pip dependencies: | Ran pip subprocess with arguments:
+['E:\\programfiles\\Anaconda3\\envs\\temp\\python.exe', '-m', 'pip', 'install', '-U', '-r', 'E:\\exp_snorkel\\condaenv.m7xf9r2n.requirements.txt']
+Pip subprocess output:
+Collecting names==0.3.0
+	Using cached names-0.3.0.tar.gz (789 kB)
+Building wheels for collected packages: names
+	Building wheel for names (setup.py): started
+	Building wheel for names (setup.py): finished with status 'done'
+	Created wheel for names: filename=names-0.3.0-py3-none-any.whl size=803694 sha256=318443a7ae55ef0d24be16b374517a61494a29b2a0f0f07d164ab1ef058efb0a
+	Stored in directory: c:\users\ashish jain\appdata\local\pip\cache\wheels\05\ea\68\92f6b0669e478af9b7c3c524520d03050089e034edcc775c2b
+Successfully built names
+Installing collected packages: names
+Successfully installed names-0.3.0
+
+done
+#
+# To activate this environment, use
+#
+#     $ conda activate temp
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate </i>
+
+<b>MANAGING A KERNEL: </b>
+
+1. Create a kernel:
+  (base) E:\exp_snorkel>conda activate temp
+
+  (temp) E:\exp_snorkel>pip install ipykernel jupyter
+
+  (temp) E:\exp_snorkel>python -m ipykernel install --user --name temp
+
+2. To remove a kernel from Jupyter Notebook: [Kernel name is "temp"]
+  (base) E:\exp_snorkel>jupyter kernelspec uninstall temp
+
+3. To view all installed kernels:
+  (base) E:\exp_snorkel>jupyter kernelspec list
+    <i style="color: green;">Available kernels:
+	  temp       C:\Users\Ashish Jain\AppData\Roaming\jupyter\kernels\temp
+	  python3    E:\programfiles\Anaconda3\share\jupyter\kernels\python3 </i>
+
+Ref: <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html" target="_blank">docs.conda.io</a>
+
+</pre>

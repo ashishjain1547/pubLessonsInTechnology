@@ -1,0 +1,103 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>While integrating Anconda and PowerBI the error people at first attempt encounter is:
+
+<i style="color: red;">DataSource.Error: ADO.NET: Python script error.
+Traceback (most recent call last):
+  File "PythonScriptWrapper.PY", line 2, in &lt;module>
+    import os, pandas, matplotlib.pyplot
+  File "C:\Users\mm\AppData\Local\Continuum\anaconda3\lib\site-packages\pandas\__init__.py", line 19, in &lt;module>
+    "Missing required dependencies {0}".format(missing_dependencies))
+ImportError: Missing required dependencies ['numpy']
+
+Details:
+    DataSourceKind=Python
+	
+... </i>
+
+
+The issue you are facing is of the Power BI and Anaconda integration. You have to follow the below steps that link Anaconda with the Power BI.
+
+Check that PowerBI is configured to use Python.
+Go to "File" >> "Options and Settings" >> "Options" >> "Python Scripting"
+
+<div class="separator" style="clear: both;"><a
+  href="https://1.bp.blogspot.com/-w7Y0oez3Ebw/X55skAqhclI/AAAAAAAAFz4/a2THzWU2KHgwR_wRpn4U88cwCiVtqe1pQCLcBGAsYHQ/s643/4%2B-%2BPython%2BScripting%2BOptions.png"
+  style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+    data-original-height="508" data-original-width="643"
+    src="https://1.bp.blogspot.com/-w7Y0oez3Ebw/X55skAqhclI/AAAAAAAAFz4/a2THzWU2KHgwR_wRpn4U88cwCiVtqe1pQCLcBGAsYHQ/s600/4%2B-%2BPython%2BScripting%2BOptions.png" /></a>
+</div>
+
+Open the Anaconda Prompt:
+Then, you have to go to the Conda Environment that you want to use in PowerBI. Am having an environment 'temp', so I activate it first in the 'Anaconda Prompt':
+
+<i style="color: blue;">(base) C:\Users\ashish>conda activate temp</i>
+
+Then I go to the directory having the "PowerBI" executable file in the installation folder:
+
+<i style="color: blue;">(temp) C:\Users\ashish>cd "C:\Program Files\Microsoft Power BI Desktop\bin"</i>
+
+Then, I launch PowerBI from the Prompt:
+
+<i style="color: blue;">(temp) C:\Program Files\Microsoft Power BI Desktop\bin>PBIDesktop.exe</i>
+
+This fixes the NumPy error you are getting. If you want any other package to use with PowerBI, install that package in the respective "Conda Environment" (in my case it is "temp").
+
+Make sure the Python home directory (Anaconda3) has been added to the 'Power BI Desktop' global options in the Python scripting section too.
+</pre>

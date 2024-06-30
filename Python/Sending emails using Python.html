@@ -1,0 +1,153 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre class=""><b class="">Python packages to send emails</b>
+This is not an exhaustive list and we are not covering any of these in detail.
+
+1. smtplib
+
+2. yagmail [Ref: <a href="https://stackoverflow.com/questions/6270782/how-to-send-an-email-with-python" class="" target="_blank">stackoverflow</a>]
+
+3. From Google: 'googleapiclient', 'google_auth_oauthlib', 'google.auth.transport.requests' and (this is not from Google) email (as in from email.mime.text import MIMEText)
+
+Ref: <a href="https://developers.google.com/gmail/api/guides/sending#python" target="_blank" class="">developers.google.com</a>
+
+4. 'email' as in:
+
+<i class="" style="color: blue;">from email.message import EmailMessage
+from email.mime.base import MIMEBase 
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.parser import BytesParser, Parser
+from email.policy import default
+from email import encoders </i>
+
+5. win32com
+
+As in: 
+<i class="" style="color: blue;">import win32com.client as win32
+outlook=win32.Dispatch('outlook.application')"</i>
+
+6. sendgrid
+
+Ref: <a href="https://realpython.com/python-send-email/" target="_blank" class="">realpython</a>
+
+- - -
+
+1. smtplib
+This webpage has a very clear and basic code snippet for sending an email:
+https://www.tutorialspoint.com/python/python_sending_email.htm
+
+With this package, you have to provide the server details as in this line of code:
+smtpObj = smtplib.SMTP('localhost')
+
+Or as in here:
+# creates SMTP session 
+s = smtplib.SMTP('smtp.gmail.com', 587) # 587 is port.
+
+Or
+server = smtplib.SMTP('smtp.gmail.com:587')
+
+<b class="">An Example</b>
+
+<i class="" style="color: blue;">def send_email_gmail(subject, message, destination):
+    # First assemble the message
+    msg = MIMEText(message, 'plain')
+    msg['Subject'] = subject
+
+    # Login and send the message
+    port = 587
+    my_mail = 'my_mail@hotmail.com'
+    my_password = 'my_password'
+    with smtplib.SMTP('smtp-mail.outlook.com', port) as server:
+        server.starttls()
+        server.login(my_mail, my_password)
+        server.sendmail(my_mail, destination, msg.as_string())</i>
+
+<b class="">SENDING MAIL VIA SSL</b>
+
+<i class="" style="color: blue;">import smtplib, ssl
+from email.mime.text import MIMEText
+
+def send_email(subject, message, destination):
+    # First assemble the message
+    msg = MIMEText(message, 'plain')
+    msg['Subject'] = subject
+
+    # Login and send the message
+    port = 465
+    my_mail = 'me@gmail.com'
+    my_password = 'me'
+    context = ssl.create_default_context() 
+    with smtplib.SMTP_SSL('smtp.gmail.com', port, context=context) as server:
+        server.login(my_mail, my_password)
+        server.sendmail(my_mail, destination, msg.as_string())
+
+send_email('Test subject', 'This is the message', 'to_email@email.com') </i>
+
+Ref: <a href="https://stackoverflow.com/questions/60975490/how-does-one-send-an-e-mail-from-python-not-using-gmail" target="_blank" class="">stackoverflow</a>
+
+<b class="">Reference URLs</b>
+
+1. <a href="https://docs.python.org/3/library/email.examples.html" target="_blank" class="">docs.python.org</a>
+
+2. <a href="https://developers.google.com/gmail/api/guides/sending#python" target="_blank" class="">developers.google.com</a> 
+
+3. <a href="https://stackoverflow.com/questions/64505/sending-mail-from-python-using-smtp" target="_blank" class="">stackoverflow</a> 
+
+<span class="" style="display:none">Tags: Technology,Python,</span></pre>

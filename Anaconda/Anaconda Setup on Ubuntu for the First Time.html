@@ -1,0 +1,159 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        });
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ibb {
+            display: block;
+            background-color: black;
+            color: white;
+        }
+
+        i.ibg {
+            display: block;
+            background-color: rgb(50, 50, 50);
+            color: white;
+        }
+
+        i.ibl {
+            display: block;
+            background-color: lawngreen;
+            color: black;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- Header ends -->
+
+<pre>First time Anaconda setup is done using the following commands:
+
+1. 
+<i class="ibb">~/Downloads$ ls -l
+total 712608
+-rwxrwxrwx 1 ashi ashi 570853747 Sep 21 12:43 Anaconda3-2021.05-Linux-x86_64.sh
+
+2. 
+$ chmod 777 Anaconda3-2021.05-Linux-x86_64.sh
+
+3. 
+~/Downloads$ ./Anaconda3-2021.05-Linux-x86_64.sh 
+
+4. 
+$ cd ~/anaconda3/bin
+
+5. 
+~/anaconda3/bin$ ./conda init bash </i>
+<i class="ibg">
+no change     /home/ashi/anaconda3/condabin/conda
+no change     /home/ashi/anaconda3/bin/conda
+no change     /home/ashi/anaconda3/bin/conda-env
+no change     /home/ashi/anaconda3/bin/activate
+no change     /home/ashi/anaconda3/bin/deactivate
+no change     /home/ashi/anaconda3/etc/profile.d/conda.sh
+no change     /home/ashi/anaconda3/etc/fish/conf.d/conda.fish
+no change     /home/ashi/anaconda3/shell/condabin/Conda.psm1
+no change     /home/ashi/anaconda3/shell/condabin/conda-hook.ps1
+no change     /home/ashi/anaconda3/lib/python3.8/site-packages/xontrib/conda.xsh
+no change     /home/ashi/anaconda3/etc/profile.d/conda.csh
+modified      /home/ashi/.bashrc
+
+==> For changes to take effect, close and re-open your current shell. &lt;== </i>
+
+<i class="ibb">CHANGES AUTOMATICALLY PUSHED IN THE FILE: /home/ashi/.bashrc
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/ashi/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/ashi/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/ashi/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/ashi/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# &lt;&lt;&lt; conda initialize &lt;&lt;&lt;
+</i>
+
+~/anaconda3/bin$ ./conda activate base
+<i class="ibg">
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init &lt;SHELL_NAME>
+
+Currently supported shells are:
+    - bash
+    - fish
+    - tcsh
+    - xonsh
+    - zsh
+    - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'. </i>
+
+6.
+~/anaconda3/bin$ bash
+<i class="ibg">
+To run a command as administrator (user "root"), use "sudo &lt;command>".
+See "man sudo_root" for details.
+
+<b>(base) ~/anaconda3/bin$</b></i>
+<span class="" style="display: none;">Tags: Technology,Anaconda,Python,</span>
+</pre>

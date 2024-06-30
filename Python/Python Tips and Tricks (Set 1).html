@@ -1,0 +1,208 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <style>
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>
+Tip 1:
+
+Get the list of all the installed packages:
+(base) C:\Users\ashish>pip freeze
+alabaster==0.7.12
+...
+gevent==1.3.7
+...
+
+=============================================
+
+Tip 2:
+
+You can list all discoverable environments with:
+"conda info --envs"
+"conda info -e"
+"conda env list"
+
+=============================================  
+
+Tip 3:
+
+FIND ALL THE AVAILABLE RELEASES OF A PYTHON PACKAGE:
+
+(base) C:\Users\ashish>pip install scikit-learn==
+Collecting scikit-learn==
+  Could not find a version that satisfies the requirement scikit-learn== (from versions: 0.9, 0.10, 0.11, 0.12, 0.12.1, 0.13, 0.13.1, 0.14, 0.14.1, 0.15.0b1, 0.15.0b2, 0.15.0, 0.15.1, 0.15.2, 0.16b1, 0.16.0, 0.16.1, 0.17b1, 0.17, 0.17.1, 0.18, 0.18.1, 0.18.2, 0.19b2, 0.19.0, 0.19.1, 0.19.2, 0.20rc1, 0.20.0, 0.20.1, 0.20.2, 0.20.3, 0.21rc2, 0.21.0, 0.21.1, 0.21.2)
+No matching distribution found for scikit-learn==
+
+=============================================  
+
+Tip 4:
+
+You can set the "workspace" directory from where the Jupyter Notebook will pick up the notebooks.
+
+In our case, open this file: "C:\Users\Admin\.jupyter\jupyter_notebook_config.py"
+
+Search for property: "c.NotebookApp.notebook_dir".
+
+Set this to the directory where your ".ipynb" files are kept.
+
+Ref: https://stackoverflow.com/questions/15680463/change-ipython-jupyter-notebook-working-directory 
+
+=============================================  
+
+Tip 5:
+
+To remove all unused imports from your Python script:
+
+(base) C:\Users\ashish\Desktop\Workspace>autoflake --in-place Script.py
+
+$ autoflake --in-place --remove-all-unused-imports Script.py
+
+=============================================  
+
+Tip 6:
+
+To check the version of Anaconda installation:
+
+(base) C:\Users\ashish>conda --version
+conda 4.7.5
+
+(base) C:\Users\ashish>conda info
+
+     active environment : base
+    active env location : C:\Users\ashish\AppData\Local\Continuum\anaconda3
+            shell level : 1
+       user config file : C:\Users\ashish\.condarc
+ populated config files :
+          conda version : 4.7.5
+    conda-build version : 3.17.6
+         python version : 3.7.1.final.0
+       virtual packages :
+       base environment : C:\Users\ashish\AppData\Local\Continuum\anaconda3  (writable)
+           channel URLs : https://repo.anaconda.com/pkgs/main/win-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/win-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+                          https://repo.anaconda.com/pkgs/msys2/win-64
+                          https://repo.anaconda.com/pkgs/msys2/noarch
+          package cache : C:\Users\ashish\AppData\Local\Continuum\anaconda3\pkgs
+                          C:\Users\ashish\.conda\pkgs
+                          C:\Users\ashish\AppData\Local\conda\conda\pkgs
+       envs directories : C:\Users\ashish\AppData\Local\Continuum\anaconda3\envs
+                          C:\Users\ashish\.conda\envs
+                          C:\Users\ashish\AppData\Local\conda\conda\envs
+               platform : win-64
+             user-agent : conda/4.7.5 requests/2.21.0 CPython/3.7.1 Windows/10 Windows/10.0.16299
+          administrator : False
+             netrc file : None
+           offline mode : False
+
+Ref: https://stackoverflow.com/questions/48342098/how-to-check-python-anaconda-version-installed-on-windows-10-pc?rq=1
+
+=============================================  
+
+Tip 7:
+
+FOR LOADING A DIRECTORY AS PYTHON PACKAGE, IT SHOULD HAVE A FILE CALLED '__init__.py' THAT CAN BE AN EMPTY FILE.
+
+Usage:
+Suppose 'rnn_dir' is a directory with 'brown.py' file having a function 'get_sentences', then we can write the following line of code to import it:
+ 
+from rnn_dir.brown import get_sentences
+
+=============================================  
+
+Tip 8:
+
+How do you append directories to your Python path?
+
+Answer:
+
+Your path (i.e. the list of directories Python goes through to search for modules and files) is stored in the path attribute of the sys module. Since path is a list, you can use the append method to add new directories to the path.
+
+For instance, to add the directory /home/me/mypy to the path, just do:
+
+import sys
+sys.path.append("/home/me/mypy")
+
+Ref: https://www.johnny-lin.com/cdat_tips/tips_pylang/path.html
+
+=============================================  
+
+Tip 9: 
+
+How do get the absolute path to your present working directory?
+
+Answer:
+
+(base) C:\Users\ashish>python
+Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.path.abspath('..')
+'C:\\Users'
+>>> os.path.abspath('.')
+'C:\\Users\\ashish'
+>>> os.path.abspath('')
+'C:\\Users\\ashish'
+>>> os.path.abspath()
+Traceback (most recent call last):
+  File "[stdin]", line 1, in [module]
+TypeError: abspath() missing 1 required positional argument: 'path'
+>>>
+
+=============================================  
+
+Tip 10:
+
+WHEN TO USE NP.ISNAN AND PD.ISNULL?
+
+np.isnan can be applied to NumPy arrays of native dtype (such as np.float64):
+
+In [99]: np.isnan(np.array([np.nan, 0], dtype=np.float64))
+Out[99]: array([True, False], dtype=bool)
+
+But it raises TypeError when applied to object arrays:
+
+In [96]: np.isnan(np.array([np.nan, 0], dtype=object))
+TypeError: ufunc 'isnan' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+=============================================  
+</pre>
