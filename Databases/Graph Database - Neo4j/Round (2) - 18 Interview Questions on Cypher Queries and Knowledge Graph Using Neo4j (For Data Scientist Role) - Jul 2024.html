@@ -1,0 +1,589 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json", 
+              success: function (result) {
+                  let grouplink = JSON.parse(result)['Beta Tech Club'];
+                  $("#customWhatsAppGroupLinkWrapper").html(
+                      `
+                      <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                          <span>Join us on:</span>
+                          <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                          </a>
+                      </h2>
+                      `    
+                  );
+              }
+          });
+      });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      .customLink {
+          background-color: #4CAF50;
+          border: none;
+          color: white !important;
+          padding: 8px 13px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+
+      .customLink:hover {
+          text-decoration: none;
+      }
+
+      div.code-block-decoration.footer {
+          display: none;
+      }
+
+      button.export-sheets-button-wrapper {
+          display: none;
+      }
+  </style>
+
+  <style>
+      .custom_link_h2 a {
+          color: black;
+          text-decoration: none;
+          text-align: center;
+      }
+
+      .custom_link_h2 a:hover {
+          color: black;
+      }
+
+      .custom_link_h2 a:active {
+          color: black;
+      }
+
+      .custom_link_h2 span {
+          translate: 0px -5px;
+          display: inline-block;
+      }
+
+      .custom_link_h2 img {
+          width: 100px;
+          padding: 0px;
+          border: none;
+          box-shadow: none;
+      }
+  </style>
+  <style>
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+  </style>
+
+</head>
+
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Interview Preparation Articles: <a class="customLink" href="http://survival8.blogspot.com/2024/04/index-for-job-interviews-preparation.html" target="_blank">Index For Interviews Preparation</a>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQYmh_My2ThRaXEONMhSu0ZGGpf7HTrpXi9IrKPgjTWHDNRqcPcuMp3Ka1hg-HnnjIUSbUi2Q20hUvpiLq0Bh002cSW3ZQhv0Ef2o46dJjs73eymxCnrjoL-KqQkHcTI3pDmAzDlQ8_dTzcDxMVwE5rDpVcA9e8T_weJxV5JIpBp-0W7FuVXj2y9RbyvDP/s834/logo.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="313" data-original-width="834" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQYmh_My2ThRaXEONMhSu0ZGGpf7HTrpXi9IrKPgjTWHDNRqcPcuMp3Ka1hg-HnnjIUSbUi2Q20hUvpiLq0Bh002cSW3ZQhv0Ef2o46dJjs73eymxCnrjoL-KqQkHcTI3pDmAzDlQ8_dTzcDxMVwE5rDpVcA9e8T_weJxV5JIpBp-0W7FuVXj2y9RbyvDP/s600/logo.png"/></a></div>
+
+<pre>
+<b><i>THESE QUERIES HAVE BEEN TRIED ON:
+Server version:	Neo4j/5.20-aura
+Server address:	fd39c7f2.databases.neo4j.io:7687</i></b>
+
+QUESTION 1:
+
+HOW DO YOU CREATE AN INDEX ON STRING TYPE DATA IN NEO4J?
+
+ANSWER:
+
+(1)
+
+<a href="https://stackoverflow.com/questions/76265665/how-to-fix-create-node-index-error-in-neo4j" target="_blank">Ref</a>
+
+Question from site:
+
+I have a NextJS app using a Neo4j DB, in which I want to create a index like this:
+
+CALL db.index.fulltext.createNodeIndex(
+  "FTS_Person_Company_fullName",
+  ["Person", "Company"],
+  ["fullName"],
+  {analyzer: "standard-folding", eventually_consistent: "true"})
+
+Answer from site:
+
+In neo4j 5.x, the Cypher language directly supports creating fulltext indexes.
+
+For example, in your case:
+
+CREATE FULLTEXT INDEX FTS_Person_Company_fullName 
+FOR (n:Person|Company)
+ON EACH [n.fullName]
+OPTIONS {
+  indexConfig: {
+    `fulltext.analyzer`: "standard-folding",
+    `fulltext.eventually_consistent`: true
+  }
+}
+
+<a href="https://stackoverflow.com/questions/53149046/neo4j-fast-way-to-match-fuzzy-text-property" target="_blank">Ref (2)</a>
+
+CALL db.index.fulltext.createNodeIndex('documents', ['Document'], ['title','text'])
+
+~~~
+
+QUESTION 2:
+
+IF I WANT TO CREATE TO CREATE AN INDEX LIKE THIS:
+CALL db.index.fulltext.createNodeIndex('MY_FTS_EPICS', ['EPIC'], ['SUMMARY','DESCRIPTION', 'ACCEPTANCE_CRITERIA'])
+
+WHAT WOULD BE EQUIVALENT 'CREATE FULLTEXT INDEX' QUERY:
+
+
+ANSWER 2:
+
+<a href="https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/full-text-indexes/" target="_blank">Ref</a>
+
+CREATE FULLTEXT INDEX MY_FTS_EPICS 
+FOR (n:EPIC)
+ON EACH [n.SUMMARY, n.DESCRIPTION, n.ACCEPTANCE_CRITERIA]
+
+~~~
+
+QUESTION 3:
+
+WHY ARE WE DOING IT WITH 'CREATE FULLTEXT INDEX' QUERY:::
+
+INSTEAD OF SOME THIS LIKE THIS:
+CALL db.index.fulltext.createNodeIndex('MY_FTS_EPICS', ['EPIC'], ['SUMMARY','DESCRIPTION', 'ACCEPTANCE_CRITERIA'])
+
+ANSWER:
+
+Because createNodeIndex() is not supported in Neo4j AuraDB.
+
+Neo.ClientError.Procedure.ProcedureNotFound
+There is no procedure with the name `db.index.fulltext.createNodeIndex` registered for this database instance. Please ensure you've spelled the procedure name correctly and that the procedure is properly deployed.
+
+~~~
+
+QUESTION 4:
+
+WRITE A QUERY TO FETCH RESULTS FOR INPUT STRING 'SGQ' FOR THE INDEX (MY_FTS_EPICS) THAT YOU HAVE CREATED ABOVE.
+
+ANSWER:
+
+CALL db.index.fulltext.queryNodes('MY_FTS_EPICS', 'SGQ') 
+YIELD node, score 
+RETURN node, score
+
+<a href="https://neo4j.com/docs/cypher-manual/current/indexes/semantic-indexes/full-text-indexes/" target="_blank">Ref 1</a>
+<a href="https://graphaware.com/neo4j/2019/01/11/neo4j-full-text-search-deep-dive.html" target="_blank">Ref 2</a>
+<a href="https://neo4j.com/developer/kb/fulltext-search-in-neo4j/" target="_blank">Ref 3</a>
+
+~~~
+
+QUESTION 5:
+
+What would you get if you pass NODE LABEL in the above query in place of INDEX name?
+
+ANSWER:
+
+We get an error:
+
+
+CALL db.index.fulltext.queryNodes('EPIC', 'My SGQ and yours') YIELD node, score
+RETURN node, score
+
+
+Neo.ClientError.Procedure.ProcedureCallFailed
+Failed to invoke procedure `db.index.fulltext.queryNodes`: Caused by: java.lang.IllegalArgumentException: There is no such fulltext schema index: EPIC
+
+~~~
+
+QUESTION 6:
+
+Can you combine calls to queryNodes() with a WHERE clause as in a relational query?
+
+ANSWER:
+
+Short answer: No.
+
+<a href="https://stackoverflow.com/questions/55674703/neo4j-free-text-search-combined-with-relation-query" target="_blank">Ref</a>
+
+"I understand now that since the full-text-search is based on the Lucene index it can't be made on a subset of nodes."
+
+~~~
+
+QUESTION 7:
+
+What all string comparison operators do you know?
+
+Answer:
+
+<a href="https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-comparison" target="_blank">Ref</a>
+
+STRING-specific comparison operators
+
+	STARTS WITH, 
+	ENDS WITH, 
+	CONTAINS, 
+	=~ (regex matching)
+
+~~~
+
+QUESTION 8:
+
+Are there more operators for or related to strings?
+
+Answer:
+
+<a href="https://neo4j.com/docs/cypher-manual/current/syntax/operators/#query-operators-string" target="_blank">Ref</a>
+
+Yes. 
+
+The string operators comprise:
+
+	concatenating STRING values: + and ||
+
+	checking if a STRING is normalized: IS NORMALIZED
+
+~~~
+
+QUESTION 9:
+
+What does 'IS NORMALISED' do?
+
+Answer:
+
+Checking if a STRING IS NORMALIZED
+Introduced in 5.17
+The IS NORMALIZED operator is used to check whether the given STRING is in the NFC Unicode normalization form:
+
+Unicode normalization is a process that transforms different representations of the same string into a standardized form. For more information, see the documentation for Unicode normalization forms.
+
+Query
+RETURN "the \u212B char" IS NORMALIZED AS normalized
+
+Table 14. Result
+
+normalized
+false
+
+Because the given STRING contains a non-normalized Unicode character (\u212B), false is returned.
+
+~~~
+
+QUESTION 10:
+
+What all string related functions are available in Neo4j?
+Which all have you used?
+
+Answer:
+
+<a href="https://neo4j.com/docs/cypher-manual/current/functions/string/" target="_blank">Ref</a>
+
+btrim()
+btrim() returns the original STRING with leading and trailing trimCharacterString characters removed. If trimCharacterString is not specified then all leading and trailing whitespace will be removed.
+
+left()
+left() returns a STRING containing the specified number of leftmost characters of the given STRING.
+
+ltrim()
+ltrim() returns the original STRING with leading trimCharacterString characters removed. As of Neo4j 5.20, a trimCharacterString can be specified. If this is not specified all leading whitespace will be removed.
+
+normalize()
+normalize() returns the given STRING normalized using the NFC Unicode normalization form.
+
+Unicode normalization is a process that transforms different representations of the same string into a standardized form. For more information, see the documentation for Unicode normalization forms.
+
+The normalize() function is useful for converting STRING values into comparable forms. When comparing two STRING values, it is their Unicode codepoints that are compared. In Unicode, a codepoint for a character that looks the same may be represented by two, or more, different codepoints. For example, the character &lt; can be represented as \uFE64 (﹤) or \u003C (&lt;). To the human eye, the characters may appear identical. However, if compared, Cypher® will return false as \uFE64 does not equal \u003C. Using the normalize() function, it is possible to normalize the codepoint \uFE64 to \u003C, creating a single codepoint representation, allowing them to be successfully compared.
+
+
+normalize(), with specified normal form
+normalize() returns the given STRING normalized using the specified normalization form. The normalization form can be of type NFC, NFD, NFKC or NFKD.
+
+replace()
+replace() returns a STRING in which all occurrences of a specified STRING in the given STRING have been replaced by another (specified) replacement STRING.
+
+reverse()
+reverse() returns a STRING in which the order of all characters in the given STRING have been reversed.
+
+right()
+right() returns a STRING containing the specified number of rightmost characters in the given STRING.
+
+rtrim()
+rtrim() returns the original STRING with trailing trimCharacterString characters removed. As of Neo4j 5.20, a trimCharacterString can be specified. If this is not specified all trailing whitespace will be removed.
+
+split()
+split() returns a LIST<STRING> resulting from the splitting of the given STRING around matches of the given delimiter.
+
+substring()
+substring() returns a substring of the given STRING, beginning with a zero-based index start and length.
+
+toLower()
+toLower() returns the given STRING in lowercase.
+
+toString()
+toString() converts an INTEGER, FLOAT, BOOLEAN, STRING, POINT, DURATION, DATE, ZONED TIME, LOCAL TIME, LOCAL DATETIME or ZONED DATETIME value to a STRING.
+This function will return an error if provided with an expression that is not an INTEGER, FLOAT, BOOLEAN, STRING, POINT, DURATION, DATE, ZONED TIME, LOCAL TIME, LOCAL DATETIME or ZONED DATETIME value.
+
+toStringOrNull()
+The function toStringOrNull() converts an INTEGER, FLOAT, BOOLEAN, STRING, POINT, DURATION, DATE, ZONED TIME, LOCAL TIME, LOCAL DATETIME or ZONED DATETIME value to a STRING.
+If the expression is not an INTEGER, FLOAT, BOOLEAN, STRING, POINT, DURATION, DATE, ZONED TIME, LOCAL TIME, LOCAL DATETIME or ZONED DATETIME value, null will be returned.
+
+toUpper()
+toUpper() returns the given STRING in uppercase.
+
+trim()
+trim() returns the given STRING with the leading and/or trailing trimCharacterString character removed. As of Neo4j 5.20, a trimCharacterString can be specified. If this is not specified all leading and/or trailing whitespace will be removed.
+
+~~~
+
+QUESTION 11:
+
+STRINT matching in Neo4j using STRING COMPARISON operators is case-sensitive or case-insensitive?
+
+ANSWER:
+
+Short answer: case-sensitive
+
+<a href="https://neo4j.com/docs/cypher-manual/current/clauses/where/" target="_blank">Ref</a>
+
+STRING matching
+The prefix and suffix of a STRING can be matched using STARTS WITH and ENDS WITH. To undertake a substring search (that is, match regardless of the location within a STRING), use CONTAINS.
+
+The matching is case-sensitive. Attempting to use these operators on values which are not STRING values will return null.
+
+~~~
+
+QUESTION 12:
+
+Write the query to find out ENTITY(s) where SGQ appears in it's NAME property.
+
+ANSWER:
+
+MATCH (n:ENTITY) 
+WHERE n.NAME CONTAINS 'SGQ'
+RETURN n.NAME;
+
+~~~
+
+QUESTION 13:
+WRITE THE ABOVE QUERY USING REGEX:
+
+Answer:
+MATCH (n:ENTITY) 
+WHERE n.NAME =~ '.*SGQ.*'
+RETURN n.NAME;
+
+~~~
+
+QUESTION 14:
+
+WRITE THE ABOVE QUERY USING FULLTEXT INDEX:
+
+Answer:
+
+CREATE FULLTEXT INDEX MY_FTS_ON_ENTITY 
+FOR (n:ENTITY)
+ON EACH [n.NAME]
+
+CALL db.index.fulltext.queryNodes('MY_FTS_ON_ENTITY', 'SGQ') 
+YIELD node, score 
+RETURN node.NAME, score
+
+
+
+1
+"SGQ"
+2.5313024520874023
+
+2
+"ABANDON SGQ"
+2.0718064308166504
+
+3
+"SGQ output file"
+1.7535011768341064
+
+4
+"SGQ quoting process"
+1.7535011768341064
+
+5
+"SGQ Quote PDF"
+1.7535011768341064
+
+6
+"BPR-SGQ-ISG Refresh"
+1.5199768543243408
+
+~~~
+
+QUESTION 15:
+Which query runs faster one that uses 'CONTAINS', one that uses "REGEX" or one that uses db.index.fulltext.queryNodes()?
+An example of query: 
+MATCH (n:ENTITY) 
+WHERE n.NAME CONTAINS 'SGQ'
+RETURN n.NAME;
+
+And what one is best to use?
+
+Answer:
+
+All the three queries run in a comparable times.
+
+Time for CONTAINS:
+# 71.3 ms ± 2.52 ms per loop
+# 70.6 ms ± 635 µs per loop
+
+Time for REGEX:
+# 72 ms ± 2.32 ms per loop
+# 70.6 ms ± 643 µs per loop
+
+Time for fulltext.QUERYNODES():
+# 70.8 ms ± 601 µs per loop
+# 70.1 ms ± 393 µs per loop
+
+
+The advantage is in using the fulltext.queryNodes() because it also returns a SCORE to figure out which is the best match, or which is the worst match.
+
+'SGQ'	2.5313024520874023
+'ABANDON SGQ'	2.0718064308166504
+'SGQ output file'	1.7535011768341064
+'SGQ quoting process'	1.7535011768341064
+'SGQ Quote PDF'	1.7535011768341064
+'BPR-SGQ-ISG Refresh'	1.5199768543243408
+
+~~~
+
+QUESTION 16:
+
+Match a node in Neo4j from a couple options for it's label. 
+
+<a href="https://stackoverflow.com/questions/42932080/neo4j-match-node-with-or" target="_blank">Ref</a>
+
+I want to match a graph where a node can be typeX or typeY... 
+
+###
+One way is
+
+MATCH (n) WHERE labels(n) IN ['typeX','typeY'] 
+WITH n
+MATCH (n)-[]-(z)
+RETURN z
+However, if "either typeX or typeY" are queried frequently and share some common purpose in your domain, you could add another common label to them like "commonXY" and query using that label instead.
+
+--------------------------------------------------------------------------
+
+MATCH (x:ENTITY) WHERE x.NAME IN ['SGQ','ABANDON SGQ'] 
+WITH x
+MATCH (x)-[:APPEARS_IN_EPIC]->(z:EPIC)&lt;-[:APPEARS_IN_EPIC]-(y:ENTITY)
+WHERE y.NAME in ['SGQ quoting process']
+RETURN x, y, z
+
+OUTPUT:
+
+(:ENTITY {NAME: SGQ})	
+(:ENTITY {NAME: SGQ quoting process})	
+(:EPIC {SUMMARY: BPR-QTE-Dental Rate Bank updated to support DHMO on SGQ output file, DESCRIPTION: As an agent quoting DHMO Dental Plans in SGQ, _x000D_@@NL@@I want to be able to update the rates for these plans, _x000D_@@NL@@So that the price for these dental plans will be more compelling to the small group employer. , ACCEPTANCE_CRITERIA: Problem Statement _x000D_Current dental rate bank in SGQ does not support DHMO planss. _x000D__x000D_Benefit Hypothesis _x000D_By allowing DHMO plan rates to be updated through Rate Bank in SGQ, ElevanceHealth can present more competitive prices for the selected dental rate plans. _x000D__x000D_Process Flow (Scenario - new sales) _x000D_Given an agent has successfully accessed SGQ, _x000D_And the agent is quoting DHMO dental plans for a small group employer. _x000D_After proceeding through the SGQ quoting process as designed, _x000D_And the agent is on the quotes tab to see the plans selected to be quoted.  _x000D_When reviewing the DHMO plans there will be an 'override' link where the agent will be able to update the rates for the selected DHMO plans., KY: BPP-149271, CUSTOM_ID: 2})
+
+~~~
+
+QUESTION 17:
+How do set a property on all nodes with label EPIC?
+
+<a href="https://neo4j.com/docs/cypher-manual/current/clauses/set/" target="_blank">Ref</a>
+
+MATCH (n:EPIC)
+SET n.GeneratedFrom = 'JIRA', n.CreatedOn = date("2024-07-05")
+RETURN n
+
+# ALSO CHECK:
+# Set multiple properties using one SET clause
+MATCH (n {name: 'Andy'})
+SET n.position = 'Developer', n.surname = 'Taylor'
+
+# ALSO CHECK:
+https://neo4j.com/docs/getting-started/cypher-intro/dates-datetimes-durations/
+# Creating and updating Date and Datetime type values
+
+MATCH (article:Article {title: "Dates, Datetimes, and Durations in Neo4j"})
+SET article.datePublished = date("2019-09-30")
+
+# HOW DO YOU SET A PROPERTY ON ALL NODES WITH LABEL EPIC OR STORY?
+
+MATCH (n) 
+WHERE n:EPIC OR n:STORY
+SET n.GeneratedFrom = 'JIRA', n.CreatedOn = date("2024-07-05")
+RETURN n
+
+# ALSO CHECK
+Update a property:
+SET can be used to update a property on a node or relationship. This query forces a change of type in the age property:
+
+Query
+MATCH (n {name: 'Andy'})
+SET n.age = toString(n.age)
+RETURN n.name, n.age
+
+MATCH (n:EPIC)
+WHERE n.GeneratedFrom = 'Bot'
+SET n.CreatedOn = date(n.CreatedOn)
+RETURN n;
+
+~~~
+
+QUESTION 18:
+RETURN ALL NODES WITH LABEL 'EPIC' WITH PROPERTY GeneratedFrom = 'Bot'
+
+ANSWER:
+
+MATCH (n:EPIC)
+WHERE n.GeneratedFrom = 'Bot'
+RETURN n;
+
+...
+
+# ALSO CHECK THE ASSOCIATED DELETE QUERY
+
+# Delete a node with all its relationships
+MATCH (n:EPIC)
+WHERE n.GeneratedFrom = 'Bot'
+DETACH DELETE n;
+
+If you would use just 'DELETE n' instead of 'DETACH DELETE n', following error would come:
+Neo.ClientError.Schema.ConstraintValidationFailed
+Cannot delete node&lt;555>, because it still has relationships. To delete this node, you must first delete its relationships.
+</pre>
+
+<span style="display: none;">Tags: Database,Technology</span>
