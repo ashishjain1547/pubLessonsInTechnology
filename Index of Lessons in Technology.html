@@ -10,6 +10,29 @@
             enable_page_level_ads: true
         });
     </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         pre {
             white-space: pre-wrap;
@@ -54,6 +77,7 @@
             -webkit-transform: rotate(45deg);
         }
 
+
         .customLink {
             background-color: #4CAF50;
             border: none;
@@ -70,9 +94,66 @@
         .customLink:hover {
             text-decoration: none;
         }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
     </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        i.ir {
+            color: red;
+        }
+
+        p.pb {
+            color: blue;
+        }
+    </style>
+
 </head>
-<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
 
 <span class="customLink toggleBtn">Toggle All Sections</span>
 
@@ -1865,6 +1946,12 @@
         <li>
             <a href="https://survival8.blogspot.com/2024/06/trying-some-prompts-listing-all-models.html" target="_blank">
                 Trying some prompts, listing all models and trying embeddings model of Google's Generative AI package
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2024/08/questions-from-pair-programming-with.html" target="_blank">
+                Questions from Course 'Pair Programming With a Large Language Model'
             </a>
         </li>
     </ol>

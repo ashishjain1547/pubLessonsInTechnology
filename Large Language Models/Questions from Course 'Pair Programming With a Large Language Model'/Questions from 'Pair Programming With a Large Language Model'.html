@@ -1,0 +1,155 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Python Articles: <a class="customLink"
+    href="https://survival8.blogspot.com/2023/07/python-course-index.html" target="_blank">Python Course (Index)</a>
+
+<br>
+Course by DeepLearning.AI: <a class="customLink"
+    href="https://learn.deeplearning.ai/courses/pair-programming-llm/lesson/1/introduction" target="_blank">Pair Programming with a Large Language Model</a>
+
+
+<pre><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNkBhglEUvgjupnki6EQxyfoKSvTYG5nl-BMEPtoFOtvBI7VTI_FkRg17S-ljmSdvSfHJy-wlSkqbK5Y69Dl1llqpV7PGFTnzawkIvEB8bATBKGpcn7HpLFFbA6zECFlfLnHQu4uupTZiH4JuVZklq1CxcVvRj9isHAbTFrATaXyfcjjOgp4CVrssTzHQM/s512/cover.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="512" data-original-width="512" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNkBhglEUvgjupnki6EQxyfoKSvTYG5nl-BMEPtoFOtvBI7VTI_FkRg17S-ljmSdvSfHJy-wlSkqbK5Y69Dl1llqpV7PGFTnzawkIvEB8bATBKGpcn7HpLFFbA6zECFlfLnHQu4uupTZiH4JuVZklq1CxcVvRj9isHAbTFrATaXyfcjjOgp4CVrssTzHQM/s600/cover.png"/></a></div>
+
+<b>1. What are the four parts of a prompt?</b>
+
+Ans:
+1. Priming of the Bot / System Role
+2. Instruction / Query / Problem
+3. Decoration
+4. Input (Optional: Depends on whether it is Zero Shot Prompting or Few Shot Prompting)
+
+<b>2. What is zero shot prompting?</b>
+
+<b>3. What is few shot prompting?</b>
+
+<b>4. What things should a developer take care of when using an LLM as a Pair Programmer?</b>
+
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose w-full break-words dark:prose-invert light"><p>When using a Large Language Model (LLM) as a pair programmer, a developer should be mindful of several key considerations to ensure productive collaboration and to mitigate potential risks. Here are some important things to keep in mind:</p><h3>1. <strong>Understanding the Model’s Strengths and Limitations</strong></h3><ul><li><strong>Strengths</strong>: LLMs are excellent at generating code snippets, suggesting improvements, providing explanations, and automating repetitive tasks. They can also assist in learning new languages or frameworks by providing quick examples and explanations.</li><li><strong>Limitations</strong>: LLMs lack real-world understanding, may generate incorrect or inefficient code, and can make errors in complex logic or architecture. They might not understand the specific context of a project or the nuances of a development environment.</li></ul><h3>2. <strong>Code Review and Verification</strong></h3><ul><li><strong>Manual Review</strong>: Always review and test code suggestions from an LLM. The model can produce code that looks correct but has subtle bugs or security vulnerabilities.</li><li><strong>Testing</strong>: Implement proper unit tests and integration tests to verify the correctness of any generated code before merging it into production.</li></ul><h3>3. <strong>Security and Privacy</strong></h3><ul><li><strong>Sensitive Data</strong>: Avoid sharing sensitive or proprietary information with the LLM. Be cautious about inputting code that contains secrets, credentials, or personally identifiable information (PII).</li><li><strong>Data Handling</strong>: Understand how the LLM processes and stores data, especially if using a third-party API. Ensure compliance with data protection regulations and company policies.</li></ul><h3>4. <strong>Bias and Ethical Considerations</strong></h3><ul><li><strong>Bias</strong>: LLMs can sometimes reflect biases present in their training data, leading to suggestions that are discriminatory or unethical. Be vigilant about such biases and correct them if they appear in code or comments.</li><li><strong>Ethical Use</strong>: Use the LLM ethically, ensuring it contributes positively to the project and does not introduce unethical practices, such as generating code for malicious purposes.</li></ul><h3>5. <strong>Context Awareness</strong></h3><ul><li><strong>Project Context</strong>: The LLM may not be fully aware of the project’s broader context, such as architectural patterns, long-term goals, or existing codebase nuances. Supplement its suggestions with your contextual knowledge.</li><li><strong>Documentation</strong>: Ensure that generated code fits well within the existing codebase, follows project conventions, and is well-documented to maintain consistency.</li></ul><h3>6. <strong>Model Dependency</strong></h3><ul><li><strong>Avoid Over-Reliance</strong>: While LLMs are powerful tools, avoid becoming overly reliant on them. Maintain and develop your own problem-solving and coding skills.</li><li><strong>Critical Thinking</strong>: Use the LLM as a tool to enhance your productivity, not as a replacement for critical thinking. Always question and evaluate the model’s suggestions.</li></ul><h3>7. <strong>Collaboration and Communication</strong></h3><ul><li><strong>Human Collaboration</strong>: Balance the use of LLMs with collaboration among human team members. Human insight and experience are invaluable, especially in complex or novel situations.</li><li><strong>Feedback</strong>: Provide feedback to the LLM when possible, to improve its suggestions over time (if using a system that allows learning or customization based on feedback).</li></ul><h3>8. <strong>Legal and Compliance Considerations</strong></h3><ul><li><strong>Licensing Issues</strong>: Ensure that any code generated by the LLM does not violate software licenses or intellectual property rights.</li><li><strong>Compliance</strong>: Make sure that the code and practices suggested by the LLM comply with industry regulations and standards applicable to your project.</li></ul><h3>9. <strong>Performance and Efficiency</strong></h3><ul><li><strong>Code Quality</strong>: Evaluate the performance and efficiency of the code generated by the LLM. It may generate suboptimal solutions that require refinement.</li><li><strong>Optimization</strong>: Be prepared to optimize or refactor the generated code to meet performance requirements or to improve readability and maintainability.</li></ul><h3>10. <strong>Continual Learning</strong></h3><ul><li><strong>Stay Updated</strong>: Continuously learn and stay updated on the capabilities and limitations of LLMs as they evolve. This will help you use them more effectively and responsibly.</li><li><strong>Skill Development</strong>: Use the LLM as a learning tool to deepen your understanding of new languages, frameworks, or algorithms by exploring its suggestions and explanations.</li></ul><p>By considering these aspects, developers can effectively and responsibly integrate LLMs into their workflow, enhancing productivity while minimizing potential risks.</p></div></div>
+</pre>
+
+<span style="display: none;">Tags: Technology,Python,Generative AI,Large Language Models,</span>
