@@ -1,0 +1,577 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+</style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEv7NTuT9QUs-_nVnFjUNCYGzPgh_AGZfQPFMI5etR9U1DIUyTESr9UugYYbCP39dyDq-RYNkZo74naFTU4uYEQwPfX1fKD1aWdw2j7OOmFK4AqX0OK5TYVYoe8dTQtR94V_5CfGTNo_lKg2UC8MJ79WRfas-h0ROwZ__5uC_9r38e2AC4xHTDvUyuWreX/s400/Codeium.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="400" data-original-width="400" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEv7NTuT9QUs-_nVnFjUNCYGzPgh_AGZfQPFMI5etR9U1DIUyTESr9UugYYbCP39dyDq-RYNkZo74naFTU4uYEQwPfX1fKD1aWdw2j7OOmFK4AqX0OK5TYVYoe8dTQtR94V_5CfGTNo_lKg2UC8MJ79WRfas-h0ROwZ__5uC_9r38e2AC4xHTDvUyuWreX/s600/Codeium.png"/></a></div>
+
+<div>
+    <p>What are the best AI code tools in 2024?</p>
+
+    <p><strong>TL;DR</strong> - As of September 2024, most programmers achieve the best results by using <a
+            href="https://cursor.ai/" target="_blank">Cursor</a> with <a
+            href="https://www.anthropic.com/news/claude-3-5-sonnet" target="_blank">Anthropic Sonnet 3.5</a> or <a
+            href="https://openai.com/index/introducing-openai-o1-preview/" target="_blank">OpenAI o1.</a></p>
+            
+    <p>AI coding tools are becoming standard practice for many developers. And today, you’ll learn which code generators
+        &nbsp;and tools are the best ones out there for creating high-quality code with the help of artificial
+        intelligence.</p>
+    <p>Want to learn more? Read on!</p>
+    <h3 >Is it possible to code with AI tools?</h3>
+    <p>Yes, it is possible to code with AI tools. &nbsp;In fact, leveraging AI tools for coding is not only possible,
+        but it can also significantly enhance <strong>productivity and accuracy.</strong></p>
+    <p>AI code is code written by artificial intelligence (AI), often times utilizing large language models (LLMs).
+        These AI programs can write their own programs or translate from one programming language to another. They also
+        perform tasks like offering assistance in auto-generating documentation and finding code snippets faster.</p>
+    <p>One of the most popular tools is Open AI’s Codex, an AI system that translates natural language to code. Codex
+        powers<a href="https://github.com/features/copilot" target="_blank"> GitHub Copilot,</a> another popular AI code tool.</p>
+    <p>OpenAI Codex is capable of interpreting simple commands in natural language and carrying them out for the
+        programmer. This makes it possible to build on top of the existing application with a natural language
+        interface.</p>
+    <p>As a general-purpose programming model, OpenAI Codex can be applied to almost any programming task. That said,
+        the tool is in beta and so results will vary.</p>
+    <p>AlphaCode by DeepMind is another tool that is shaking up the industry. Interestingly, this tool outperforms human
+        coders in certain situations. You see, AlphaCode outperformed <a
+            href="https://www.science.org/content/article/ai-learns-write-computer-code-stunning-advance" target="_blank">45% of
+            programmers</a> in coding competitions with at least 5,000 participants.</p>
+    <p>However, there are problems with code generators, too. That's why AI <a
+            href="https://codesubmit.io/blog/no-code-tools-for-developers/" target="_blank">coding tools</a> are used to help developers
+        become more productive and efficient, rather than to replace them entirely.</p>
+    <p>For example, a <a
+            href="https://techcrunch.com/2022/12/28/code-generating-ai-can-introduce-security-vulnerabilities-study-finds/">Stanford-affiliated
+            research team</a> found that engineers who use AI tools are more likely to cause security vulnerabilities in
+        their apps. Plus, questions around copyright are not entirely resolved.</p>
+    <p>In other words, AI code tools are not yet completely safe to use. That said, the popularity of these tools means
+        that they can’t be overlooked.</p>
+    <h3 >What is AI code written in?</h3>
+    <p>AI code is written in languages supported by the AI code generator. For example, OpenAI Codex is most fluent in
+        <a href="https://codesubmit.io/library/python" target="_blank">Python</a> but is also quite capable in several languages,
+        including <a href="https://codesubmit.io/library/javascript" target="_blank">JavaScript</a>, <a
+            href="https://codesubmit.io/library/ruby" target="_blank">Ruby</a>, and <a
+            href="https://codesubmit.io/library/typescript" target="_blank">TypeScript</a>.</p>
+    <p>Now, let’s take a look at the best code generators out there.</p>
+    <h2 >The best AI code generators and AI development tools
+    </h2>
+    <p>What are some effective AI code generators? The most popular ones include OpenAI Codex, Copilot by Github,
+        &nbsp;ChatGPT by OpenAI as well as open-source models such as Llama 3.</p>
+    <p>But there are plenty of other tools out there. I’ve listed them here below, including their features,
+        capabilities, and which companies are behind them. Let’s dive in!</p>
+    <p>Here are the best AI code generators of 2024.</p>
+    <h3 ><a href="https://platform.openai.com/" target="_blank">1. OpenAI (ChatGPT, GPT-4, o1)</a></h3>
+    <p>GPT-4, OpenAI's latest AI model, is a multimodal tool that <a
+            href="https://www.youtube.com/watch?v=outcGtbnMuQ" target="_blank">excels in programming tasks</a>. It understands and
+        explains code, writes new code, and outperforms existing models on Python coding tasks. Despite its ability to
+        handle complex tasks, it has limitations like reasoning errors and potential security vulnerabilities in the
+        code it produces. &nbsp;</p>
+    <p><a href="https://chatgpt.com" target="_blank">ChatGPT is primarily a user-friendly interface developed by OpenAI</a> that allows
+        you to interact conversationally with advanced language models like GPT-4 and o1-mini. While it's often referred
+        to as a model, ChatGPT is essentially the platform that enables you to generate or debug code and perform other
+        text-based tasks by communicating with these underlying AI models.</p>
+    <p><strong>Update May 14th</strong>: OpenAI just releaded GPT-4o - their new flagship model that’s as smart as GPT-4
+        Turbo and much more efficient. With 50% reduced pricing and 2x faster latency, it <a
+            href="https://aider.chat/docs/leaderboards/" target="_blank">achieves impressive results.</a> </p>
+    <p><strong>Update September 16th: &nbsp;</strong><a
+            href="https://openai.com/index/introducing-openai-o1-preview/" target="_blank">o1 is a new series of AI models</a> designed
+        to enhance reasoning by spending more time thinking through problems before responding, excelling in complex
+        tasks in science, coding, and math. OpenAI o1-mini is a faster, more cost-effective model particularly effective
+        at coding, offering an affordable solution for applications that require reasoning but not extensive world
+        knowledge. Both models are now available in ChatGPT and via the API for users to tackle complex problems
+        efficiently. </p>
+
+    <p>Price: Free or $20 for GPT Plus</p>
+    <h3 >2. <a href="https://copilot.github.com/" target="_blank">Copilot</a></h3>
+    <p>Copilot uses publicly available code from GitHub repositories so that users can access large datasets and quickly
+        develop accurate code. The tool detects errors in code and recommends changes to it. You can start using GitHub
+        Copilot by <a href="https://docs.github.com/en/copilot/getting-started-with-github-copilot" target="_blank">installing one of
+            the extensions</a> in your preferred environment.</p>
+
+    <p>Price: $10-$19 - GitHub Copilot is <strong>free to use for verified students, teachers, and maintainers of
+            popular open source projects.</strong></p>
+    
+    <h3 >3. <a href="https://aws.amazon.com/bedrock/" target="_blank">AWS Bedrock</a></h3>
+    <p>AWS Bedrock is Amazon Web Services' fully managed service that provides developers with access to a variety of
+        powerful foundation models for building and scaling generative AI applications. For programmers, it offers APIs
+        to interact with models like Amazon's Titan and others from leading AI startups, enabling tasks such as code
+        generation, debugging, and text synthesis. While AWS Bedrock simplifies integrating AI into applications, it may
+        have limitations like model accuracy and potential security vulnerabilities in generated code, so developers
+        should exercise caution and perform thorough testing.</p>
+    
+        
+    <p>Pricing information can be found <a
+            href="https://docs.aws.amazon.com/bedrock/latest/userguide/bedrock-pricing.html" target="_blank">here</a></p>
+    <h3 >4. <a href="https://www.deepmind.com/blog/competitive-programming-with-alphacode" target="_blank">AlphaCode</a>
+    </h3>
+    <p>Another AI-based code generator is Google-backed DeepMind’s AlphaCode, which gives developers access to source
+        code from various language libraries. With AlphaCode, developers can leverage thousands of pre-made libraries,
+        helping them connect and use third-party APIs quickly and easily. AlphaCode is not yet available to the public.
+    </p>
+    
+    <p>Price: No information available</p>
+    <h3 >5. <a href="https://www.tabnine.com/" target="_blank">Tabnine</a></h3>
+    <p>Tabnine is an AI code completion tool that utilizes deep learning algorithms to provide the user with intelligent
+        code completion capabilities. Tabnine supports several programming languages such as Java, Python, C++, and
+        more. This tool is open-source and is used by leading tech companies like Facebook and Google.</p>
+    
+    <p>Price: Paid plans start from $12/month per seat</p>
+    <h3 >6. <a href="https://github.com/salesforce/CodeT5" target="_blank">CodeT5</a></h3>
+    <p>CodeT5 is an open AI code generator that helps developers to create reliable and bug-free code quickly and
+        easily. It is also open-source and provides support for various programming languages such as Java, Python, and
+        JavaScript. CodeT5 also has an online version as well as an offline version for data security.</p>
+    
+    <p>Price: Free</p>
+    <h3 >7. <a href="https://github.com/VHellendoorn/Code-LMs" target="_blank">Polycoder</a></h3>
+    <p>Polycoder is an open-source alternative to OpenAI Codex. It is trained on a 249 GB codebase written in 12
+        programming languages. With Polycoder, users can generate code for web applications, machine learning, natural
+        language processing and more. It is well-regarded amongst programmers because of its capability of generating
+        code quickly.</p>
+    
+    <p>Price: Free</p>
+    <h3 >8. <a href="https://www.deepcode.ai/" target="_blank">Deepcode</a></h3>
+    <p>DeepCode is a cloud-based AI code analysis tool that automatically scans the codebase of a project and identifies
+        potential bugs and vulnerabilities. It offers support for multiple languages such as Java, Python, and
+        JavaScript. DeepCode is well-regarded for its accurate bug detection.</p>
+    
+    <p>Price: No information available</p>
+    <h3 >9. <a href="https://wpcode.com/" target="_blank">WPCode</a></h3>
+    <p>WPCode is an AI-driven WordPress code generator created by Isotropic. It supports both developers and
+        non-technical WordPress creators, allowing them to quickly generate high-quality code snippets. CodeWP supports
+        not only HTML and CSS but languages such as Java and Python. It even includes AI assistants to suggest
+        improvements to code snippets.</p>
+    
+    <p>Price: Starting at $49</p>
+    <h3 >10. <a href="https://www.askcodi.com/" target="_blank">AskCodi</a></h3>
+    <p>AskCodi is a code generator that offers a full suite of development tools to help developers build and ship
+        projects faster. With its AI-based code generation, it helps developers write better code and shorter code
+        blocks, with fewer mistakes. AskCodi can be used to develop both web and mobile applications.</p>
+    
+    <p>Price: Paid plans start from $7.99/month per seat</p>
+    <h3 >11. <a href="https://www.codiga.io/" target="_blank">Codiga</a></h3>
+    <p>Codiga is a static analysis tool that ensures code is secure and efficient. It supports popular languages like
+        JavaScript, Python, Ruby, Kotlin, and more. With Codiga, you can test your code for vulnerabilities and security
+        issues in real time. It also includes an auto-fixer to quickly address any issues in the code.</p>
+    
+    <p>Price: Paid plans start from $14/month per seat</p>
+    <h3 >12. <a href="https://visualstudio.microsoft.com/services/intellicode/" target="_blank">Visual
+            Studio IntelliCode</a></h3>
+    <p>Visual Studio IntelliCode is an extension of the Visual Studio Code editor created by Microsoft that provides
+        AI-assisted development experiences to improve developer productivity. It offers smarter IntelliSense
+        completions and helps reduce the amount of time developers spend navigating and debugging code.</p>
+    
+    <p>Price: Starting from $45/month</p>
+    <h3 >13. <a href="https://www.jetbrains.com/pycharm/" target="_blank">PyCharm</a></h3>
+    <p>PyCharm is an AI code completion tool from JetBrains which provides developers with intelligent code completion
+        capabilities. This tool supports various programming languages such as Java, Python, and JavaScript. PyCharm is
+        well regarded for its accuracy and can help developers reduce the amount of time spent on coding tasks.</p>
+    
+    <p>Price: Starting from $24.90/month per seat</p>
+    <h3 >14. <a href="https://www.aixcoder.com/en/" target="_blank">AIXcoder</a></h3>
+    <p>AIXcoder is an AI-powered programming pair designed to aid development teams in writing code. It supports
+        languages such as Java, Python, and JavaScript. This tool also offers a range of features such as automated
+        routine tasks, AI-powered code completion, real-time code analysis and error checks while typing.</p>
+    
+    <p>Price: No information available</p>
+    <h3 >15. <a href="https://www.ponicode.com/" target="_blank">Ponicode</a></h3>
+    <p>Ponicode is an AI-powered code assistant designed to help developers optimize their coding workflow. It uses
+        natural language processing and machine learning to generate code from user-defined descriptions. The tool is
+        maintained by CircleCI.</p>
+    
+    <p>Price: No information available</p>
+    <h3 >16. <a href="https://jedi.readthedocs.io/en/latest/" target="_blank">Jedi</a></h3>
+    <p>Jedi is an open-source option for code completion in AI. It mostly functions as a plugin for editors and IDEs
+        that use Python static analysis tools.</p>
+    
+    <p>Price: Free</p>
+    <h3 >17. <a href="https://wingware.com/" target="_blank">Wing Python IDE Pro</a></h3>
+    <p>Created by Wingware, Wing IDE is a Python-specific software setup that combines the code editing, code
+        navigation, and debugging mechanisms required to Code and Test Software applications. It offers various features
+        such as an intelligent auto-completing Editor, Refactoring, Multi-Selection, and Code Snippets, which make
+        coding much easier and more efficient.</p>
+    
+    <p>Price: Annual licenses starting at $179/month</p>
+    <h3 >18. <a href="https://github.com/smol-ai/developer" target="_blank">Smol Developer</a></h3>
+    <p>Smol is an open-source artificial intelligence agent designed to function as a personal junior developer, capable
+        of generating an entire codebase from your specific product specifications. Unlike traditional, rigid starter
+        templates, Smol can create any kind of application based on your unique requirements. Boasting a codebase that
+        is simple, safe, and small, it offers the perfect blend of ease-of-understanding, customization, and a helpful,
+        harmless, and honest approach to AI development.</p>
+    
+    <p>Price: Smol is open-source with a MIT License.</p>
+    <h3 >19. <a href="https://about.sourcegraph.com/cody?utm_source=codesubmit" target="_blank">Cody
+            (Sourcegraph)</a></h3>
+    <p>Cody (not to be confused with AskCodi), Sourcegraph's AI tool, is a comprehensive coding assistant. It
+        understands your entire codebase, answers queries, and writes code. Beyond guidance, Cody provides detailed code
+        explanations, locates specific components, and identifies potential issues with suggested fixes. Cody works
+        directly in <a href="https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai" target="_blank">VS code with an
+            extension</a>. </p>
+    
+    <p>Price: Cody is free for personal use, Sourcegraph starts at $5k/year</p>
+    <h3 >20. <a href="https://aws.amazon.com/codewhisperer?ref=codesubmit" target="_blank">CodeWhisperer
+            (Amazon)</a></h3>
+    <p>CodeWhisperer is a tool developed by Amazon. It offers real-time, AI-driven code suggestions and identifies
+        potential open-source code matches for easier review. It even scans for security vulnerabilities, suggesting
+        immediate patches. An added bonus is its commitment to code safety, always aligning with best security practices
+        such as OWASP guidelines.</p>
+    
+    <p>Price: Free for personal use, <a href="https://aws.amazon.com/codewhisperer/pricing/" target="_blank">$19/month professional
+            use</a></p>
+    <h3 >21. <a href="https://bard.google.com?utm_source=codesubmit.io" target="_blank">Bard (Google) </a></h3>
+    
+    <p>Bard can help with programming and software development tasks, including code generation, debugging and code
+        explanation. These capabilities are supported in more than 20 programming languages including C++, Go, Java,
+        Javascript, Python and Typescript. And you can easily export Python code to Google Colab — no copy and paste
+        required. Bard can also assist with writing functions for Google Sheets.</p>
+    <p>Price: Google Bard is Free</p>
+    <h3 >22. <a href="https://github.com/facebookresearch/codellama" target="_blank">Code Llama (Meta) </a></h3>
+    
+    <p>Code Llama is a set of large language models specialized for coding, built on the Llama 2 platform. It includes
+        different models for various needs: the general-purpose Code Llama, Code Llama - Python for Python-specific
+        tasks, and Code Llama - Instruct for instruction-based coding. These models vary in size (7B, 13B, and 34B
+        parameters) and can handle up to 16k token inputs, with some improvements on up to 100k tokens. The 7B and 13B
+        models also offer content-based infilling.</p>
+    <p>Code Llama’s training recipes are available on their <a href="https://github.com/facebookresearch/codellama"
+            rel="noreferrer">Github repository</a> - <a href="https://ai.meta.com/llama/" target="_blank">Model weights</a> are also
+        available.</p>
+    <h3 >23. <a href="https://www.anthropic.com/index/claude-2" target="_blank">Claude 2 &amp; 3, 3.5
+            (Anthropic)</a> </h3>
+    
+    <p><strong>Claude 3.5 Sonnet</strong> is the latest natural language AI model introduced by Anthropic, a firm
+        established by Dario Amodei, formerly of OpenAI. This new iteration is engineered for enhanced input and output
+        lengths and boasts superior performance relative to its earlier version. In an internal agentic coding
+        evaluation, Claude 3.5 Sonnet solved 64% of problems, outperforming Claude 3 Opus which solved 38%. Users can
+        input up to <a href="https://www.anthropic.com/index/100k-context-windows" target="_blank">100K tokens in each prompt</a>, which
+        means that Claude can work over hundreds of pages of technical documentation. The earlier version, Claude 2
+        scored a 71.2% up from 56.0% on the <a href="https://github.com/openai/human-eval" target="_blank">Codex HumanEval</a>, a Python
+        coding test. </p>
+    <p>Their evaluation tests the model’s ability to fix a bug or add functionality to an open source codebase, given a
+        natural language description of the desired improvement. When instructed and provided with the relevant tools,
+        Claude 3.5 Sonnet can independently write, edit, and execute code with sophisticated reasoning and
+        troubleshooting capabilities. It handles code translations with ease, making it particularly effective for
+        updating legacy applications and migrating codebases.</p>
+    <p>A Stability AI Membership is required for commerical application</p>
+    <h3 ><a href="https://stability.ai/news/stable-code-2024-llm-code-completion-release" target="_blank">24.
+            Stable Code 3B</a></h3>
+    
+    <p>Stability AI's Stable Code 3B, a new 3 billion parameter Large Language Model specialized in code completion,
+        which is 60% smaller yet performs similarly to the larger CodeLLaMA 7b. This model, trained on diverse
+        programming languages and software engineering-specific data, can run in real-time on modern laptops without a
+        GPU. Stable Code 3B is part of Stability AI's Membership program and offers advanced features like Fill in the
+        Middle capabilities and expanded context size, demonstrating state-of-the-art performance in multi-language
+        coding tasks.</p>
+    <p>A <a href="https://stability.ai/membership#select_membership" target="_blank">Stability AI Membership</a> (Starting at $20/mo) is
+        required for commercial applications. Free for non-commercial.</p>
+    <h3 ><a href="https://replit.com/ai?ref=codesubmit" target="_blank">25. Replit AI</a></h3>
+    
+    <p>Replit AI is an innovative code completion tool designed to streamline your coding experience by offering
+        tailored suggestions that align with the context of your current file. As you delve into coding, the tool
+        intuitively presents inline suggestions, enhancing your efficiency and accuracy. Additionally, Replit AI offers
+        advanced features such as the ability to refine suggestions through code comments, the application of prompt
+        engineering for more relevant results, and the flexibility to toggle the code completion feature on or off
+        within the editor settings, ensuring a customized coding environment tailored to your preferences.</p>
+    <p>Replit AI is available in <a href="https://replit.com/pricing" target="_blank">Replit's Free tier (Limited) and in their Core
+            tier</a> (Advanced Model). &nbsp;</p>
+    <h3 ><a href="https://github.com/plandex-ai/plandex" target="_blank">26. Plandex</a></h3>
+    
+    <p>Plandex employs persistent agents that tackle extensive tasks spanning numerous files and involving multiple
+        steps. It segments sizable tasks into manageable subtasks, executing each in sequence until the entire task is
+        accomplished. This tool aids in clearing your backlog, navigating new technologies, overcoming obstacles, and
+        reducing the time spent on mundane activities.</p>
+    <p><a href="https://github.com/plandex-ai/plandex?tab=readme-ov-file" target="_blank">Plandex is open-source on Github </a></p>
+    <h3 ><a href="https://github.com/meta-llama/llama3/" target="_blank">27. Meta AI (Meta Lama 3)</a></h3>
+    
+    <p>Meta has launched Meta AI, powered by the Llama 3 model with 70 billion parameters. &nbsp;The model positions
+        itself as a powerful asset for improving application functionalities, but it does not match the customization
+        and transparency of more advanced models like GPT-4 Turbo and Claude Opus. The benefits of Meta's approach to
+        open-source AI are multifaceted, including attracting top talent, leveraging community contributions, fostering
+        standardization and lower costs, building goodwill, and aligning with business models that do not rely solely on
+        AI products. &nbsp;While it is described as "open weight," providing access to the model's weights, it does not
+        include the full toolkit necessary for reproduction. They also co-developed Llama 3 with <a
+            href="https://github.com/pytorch/torchtune" rel="noreferrer" target="_blank"><u>torchtune</u></a>, the new PyTorch-native
+        library for easily authoring, fine-tuning, and experimenting with LLMs.</p>
+    <p>Moreover, Meta is also currently <strong>pretraining a 405B parameter </strong>model, signaling an ambitious
+        expansion of its AI capabilities. This larger model, set to be released later, promises even more powerful
+        functionalities and potential industry leadership if it surpasses current leaders like GPT-4 and Claude Opus.
+        Such a development could reshape industry standards and perceptions, especially against competitors who guard
+        their models under the guise of safety concerns. This bold move by Meta not only showcases their commitment to
+        advancing AI technology but also challenges the industry's more cautious narratives around the sharing and
+        utilization of AI models, setting new benchmarks for what’s achievable in AI development.</p>
+    
+    <h3 ><a href="https://github.com/geekan/MetaGPT" target="_blank">28. MetaGPT</a></h3>
+    
+    <p>Not to be confused with Meta AI, MetaGPT is a tool that automates the generation of software development outputs
+        such as user stories, competitive analysis, requirements, data structures, APIs, and documents from a single
+        line of input. It integrates roles typically found in a software company—product managers, architects, project
+        managers, and engineers—into its workflow. These roles are executed by large language models (LLMs) following
+        detailed Standard Operating Procedures (SOPs). The core philosophy behind MetaGPT is "Code = SOP(Team),"
+        emphasizing the application of SOPs to organize and direct the work of its LLM teams. This structure aims to
+        mimic the entire process of a software company, simplifying and automating complex tasks.</p>
+    <p>MetaGPT is <a href="https://github.com/geekan/MetaGPT/blob/main/LICENSE" target="_blank">MIT licensed</a> and open-source </p>
+    <h3 ><a href="https://www.autoregex.xyz/" target="_blank">29. AutoRegex</a></h3>
+    
+    <p>AutoRegex is my favorite tool to translate natural language to regex. If you're like me, you wiped all traces of
+        regex syntax from your memory the moment ChatGPT released - this helps!</p>
+    <h3 ><a href="https://github.com/ggerganov/llama.cpp" target="_blank">30. llama.cpp</a></h3>
+    
+    <p>Llama.cpp is designed to facilitate LLM inference with optimal performance and minimal initial setup across
+        various hardware, both locally and in the cloud. It is implemented in plain C/C++ without dependencies and
+        features extensive support for Apple silicon through ARM NEON, Accelerate, and Metal frameworks. It also
+        supports AVX, AVX2, and AVX512 for x86 architectures and offers integer quantization from 1.5 to 8 bits to
+        enhance inference speed and reduce memory consumption. For NVIDIA GPUs, llama.cpp includes custom CUDA kernels,
+        with AMD GPU support through HIP. Additionally, it supports Vulkan, SYCL, and partial OpenCL backends and can
+        perform hybrid CPU+GPU inference to manage models that exceed VRAM capacity.</p>
+    <h3 ><a href="https://aider.chat/" target="_blank">31. Aider</a></h3>
+    
+    <p>Aider is a &nbsp;command line tool &nbsp;allowing you to pair program with LLMs directly in your terminal. It
+        seamlessly integrates with your local git repository, editing code directly in your source files and crafting
+        smart commit messages for each change. </p>
+    <p>Aider is <a href="https://github.com/paul-gauthier/aider" target="_blank">open-source on Github</a></p>
+    <h3 ><a href="https://mistral.ai/news/codestral/" target="_blank">32. Codestral (Mistral) </a></h3>
+    
+    <p>A model fluent in 80+ programming languages, Codestral, is Mistrral's first-ever code model. Codestral is an
+        open-weight generative AI model explicitly designed for code generation tasks. It helps developers write and
+        interact with code through a shared instruction and completion API endpoint. As it masters code and English, it
+        can be used to design advanced AI applications for software developers.</p>
+    <p>Codestral is a 22B open-weight model licensed under the new <em><a
+                href="https://mistral.ai/news/mistral-ai-non-production-license-mnpl/" target="_blank"><strong>Mistral AI Non-Production
+                    License</strong></a></em>, which means that you can use it for research and testing purposes.
+        Codestral can be downloaded on <a
+            href="https://huggingface.co/mistralai/Codestral-22B-v0.1" target="_blank"><strong>HuggingFace</strong></a></p>
+    <p>Update July 16th: <strong><a href="https://mistral.ai/news/codestral-mamba/" target="_blank">Codestral Mamba</a>
+            release</strong>: &nbsp;For easy testing, they made Codestral Mamba available on la Plateforme
+        (codestral-mamba-2407), alongside its big sister, Codestral 22B. While Codestral Mamba is available under the
+        Apache 2.0 license, Codestral 22B is available under a commercial license for self-deployment or a community
+        license for testing purposes.</p>
+    <h3 ><a href="https://www.cursor.com?ref=codesubmit" target="_blank">33. Cursor</a></h3>
+    
+    <p>Cursor is an AI-enhanced code editor designed to boost productivity by enabling developers to interact with their
+        codebase through conversational AI and natural language commands. It includes features like Copilot++, which
+        predicts your next code edit, and Cmd-K, which allows code modifications through simple prompts.</p>
+    <p>You can try <a href="https://www.cursor.com/pricing" target="_blank">Cursor for free</a></p>
+    <h3 ><a href="https://www.warp.dev/warp-ai" target="_blank">34. Warp</a></h3>
+    
+    <p>Warp is a modern, Rust-based terminal with AI built in. Type ‘#’ on your command line and start describing the
+        command you want to run using natural language. Warp will load AI Command Suggestions as you type.</p>
+    <p>Warp AI is free to use up to 40 requests per user per month. You can create a Team and upgrade to a Team plan to
+        unlock higher Warp AI request limits. Visit <a
+            href="https://codesubmit.io/blog/ai-code-tools/warp.dev/pricing" target="_blank">the pricing page</a> to learn more.</p>
+</div>
+
+<pre>
+<h3>35. CodiumAI</h3>
+
+CodiumAI is a trending tool that developers can use to enhance their coding experience with the power of AI.
+
+Key features: When compared to the other tools, CodiumAI provides a set of unique features:
+
+Precise code suggestions: CodiumAI thoroughly analyzes your code, providing tailored suggestions. These include adding docstrings, refining exception handling, and implementing best practices, directly improving your code’s quality.
+Code explanation: This tool offers detailed descriptions of your source code or snippets, breaking down each component and offering insights and sample usage scenarios to enhance code comprehension.
+Automated test generation: Testing is essential in large codebases. CodiumAI simplifies this by swiftly generating accurate and reliable unit tests without manual intervention, saving significant time and effort and ensuring thorough testing of your codebase.
+Code behavior coverage: Comprehensive testing means covering all possible code behaviors. CodiumAI’s “Behavior Coverage” feature generates test cases covering various code behaviors and seamlessly applies related changes to your source code.
+Streamlined collaboration: CodiumAI facilitates teamwork by enabling seamless collaboration among developers. Its Git platform integration allows for sharing and reviewing code suggestions and test cases within your development team, promoting efficient workflows and code quality.
+Seamless implementation: With CodiumAI’s intelligent auto-completion agent, implementation becomes effortless. It seamlessly integrates with your task plans, ensuring smooth execution from concept to completion of your code.
+Multiple language and IDE support: CodiumAI supports popular programming languages such as Python, JavaScript, and TypeScript while seamlessly integrating with leading IDEs, including VSCode, WebStorm, IntelliJ IDEA, CLion, PyCharm, and JetBrains.
+Pricing
+
+The pricing of CodiumAI offers free code integrity for developers at $0/user per month, while teams can access optimized collaboration for $19/user per month.
+
+<h3>36. MutableAI</h3>
+
+MutableAI is a tool that revolutionizes the coding experience with features such as AI autocomplete, one-click production code enhancements, prompt-driven development, test generation, and extensive language and IDE integration, empowering developers to write code more efficiently and effectively.
+
+Key features
+
+Here are the key features of MutableAI:
+
+AI Autocomplete: Minimize time spent on boilerplate code and searching for solutions on Stack Overflow with specialized neural networks providing intelligent code suggestions.
+Production Quality Code: Refactor, document, and add types to your code effortlessly, ensuring high-quality code output.
+Prompt-driven Development: Interact directly with the AI by giving instructions to modify your code, enabling a more intuitive and interactive coding experience.
+Test Generation: Automatically generate unit tests using AI and metaprogramming techniques, ensuring comprehensive test coverage for your code.
+Language and IDE Integration: Supports popular languages like Python, Go, JavaScript, TypeScript, Rust, Solidity, and more, as well as integration with IDEs like JetBrains and Visual Studio (VS) Code.
+Pricing
+
+MutableAI’s basic plan offers $2 per repo per month, while its premium plan offers $15 per repo per month.
+
+<h3>37. Figstack</h3>
+
+Figstack is an innovative AI tool that provides developers with various features to improve code understanding, translation, documentation, and optimization. Figstack caters to developers at all levels, from beginners looking to understand complex code to experienced professionals aiming to automate tedious tasks like writing documentation or measuring code efficiency.
+
+Key features
+
+Code explanation in natural language: This feature helps users easily understand the code written in any language by translating it into clear, natural language descriptions.
+Cross-Language code translation: Developers can easily convert code from one programming language to another. This simplifies the process of porting applications across different technology stacks.
+Automated function documentation: Figstack automatically generates detailed docstrings that describe the function’s purpose, parameters, and return values, ensuring that your code is always readable, maintainable, and well-documented.
+Time complexity analysis: The tool helps developers assess the efficiency of their code in Big O notation, pinpoint bottlenecks, and optimize their code for better performance by identifying the time complexity of a program.
+Pricing
+
+Figstack is free to use and includes most of the essential features.
+
+<h3>38. CodeGeeX</h3>
+
+CodeGeeX is an AI-powered code generation tool designed to assist developers in writing, completing, and optimizing code more efficiently. It leverages deep learning models trained on a wide variety of programming languages and codebases, where it can provide context-aware code suggestions, complete code snippets, and even generate entire functions or modules.
+
+Key features
+
+Code generation and completion: CodeGeeX offers accurate code generation capabilities based on natural language descriptions. Also, it can complete the current line or multiple lines ahead, making the development process faster.
+Code translation: Developers can effortlessly convert their code from one programming language to another.
+Automated comment generation: The tool saves time by automatically generating line-level comments, which helps improve code readability and maintainability.
+AI chatbot: The AI chatbot in CodeGeeX provides quick answers to technical questions directly within the development environment instead of having developers find solutions on the internet.
+Wide IDE and language support: CodeGeeX supports various popular IDEs, including Visual Studio Code, JetBrains IDEs and multiple programming languages, such as Python, C++, JavaScript, and Go.
+Pricing
+
+CodeGeeX offers their plugin completely free for individual users. If there are more advanced requirements, they provide an enterprise plan.
+
+<h3>39. <a href="https://codeium.com/" target="_blank">Codeium</a></h3>
+
+<b>One I personally use.</b>
+
+Millions of engineers, including our own, use these features every single day.
+Autocomplete
+Autocomplete faster than thought. Codeium's generative code can save you time and help you ship products faster.
+
+Command
+Give instructions in your editor to perform inline refactors, whether it is generating code, adding comments, or something even more complex.
+
+Chat
+Generate boilerplate, refactor code, add documentation, explain code, suggest bug fixes, and so much more. Powered by the largest models, optimized for coding workflows and Codeium's industry-leading reasoning engine.
+
+Context
+All of Codeium's features are powered by an industry-leading context awareness and reasoning engine. With full repository and multi repository codebase awareness, Codeium provides 35% more value purely from providing more grounded results. 
+</pre>
+
+<h2>References</h2>
+
+<ul>
+    <li>
+        <a href="https://codesubmit.io/blog/ai-code-tools/" target="_blank">code submit</a>
+    </li>
+
+    <li>
+        <a href="https://www.codium.ai/blog/best-ai-coding-assistant-tools/" target="_blank">codium.ai</a>
+    </li>
+</ul>
+
+<span style="display: none">Tags: Technology,Artificial Intelligence,Generative AI,Large Language Models,Python,JavaScript,</span>
