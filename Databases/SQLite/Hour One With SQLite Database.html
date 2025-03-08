@@ -1,0 +1,387 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+  
+        i.ig {
+          color: green;
+        }
+  
+        i.ib {
+          color: blue;
+        }
+  
+        i.ir {
+          color: red;
+        }
+    </style>
+</head>
+  
+<body>
+<h1 style="page-break-before:always; ">What does SQLite database contain?</h1>
+<p>SQLite Database has data stored in it in the form of tables.</p>
+<p></p>
+<p>What does a table contain? </p>
+<p></p>
+<p>It contains rows and columns.</p>
+<p>A row is also called a record or tuple.</p>
+<p>A column is also called an attribute.</p>
+<p></p>
+<p>Let's say we have a table called 'marks'.</p>
+<p></p>
+<p>What all columns can table of marks contain?</p>
+<p>1. Year</p>
+<p>2. Class</p>
+<p>3. Subject</p>
+<p>4. Marks</p>
+<h1 style="page-break-before:always; ">Four Basic Types of Operations We Do in Databases</h1>
+<p>Assuming you have a database with you:</p>
+<p></p>
+<p>Insert: To add or create a new record or tuple in your database.</p>
+<p></p>
+<p>Select: To read a records or tuples present in the database.</p>
+<p></p>
+<p>Update: To change an existing record or tuple in your database.</p>
+<p></p>
+<p>Delete: To remove or delete a record or tuple from the database.</p>
+<p></p>
+<p></p>
+<p>Can be remembered using the acronym: CRUD for Create, Read, Update, Delete</p>
+<h1 style="page-break-before:always; ">Single File For Storing a Database</h1>
+<p>Note: SQLite uses a single file for storing data related a database. For example: we have two databases with us and there names are 'marks.db' and 'sharks.db'.</p>
+<p></p>
+<p>(base) ashish@ashish:~/Desktop/ws/sqlite_db$ ls</p>
+<p>marks.csv  marks.db  sharks.db</p>
+<p></p>
+<p>(base) ashish@ashish:~/Desktop/ws/sqlite_db$ </p>
+<p></p>
+<h1 style="page-break-before:always; ">Creating a Database file and Creating a Table</h1>
+<pre>
+(base) ashish@ashish:~$ sqlite3 sharks.db
+
+# Here, sqlit3 is your application and sharks.db is the filename for that application to open.
+
+SQLite version 3.39.3 2022-09-05 11:02:23
+Enter '.help' for usage hints.
+
+sqlite&gt; CREATE TABLE sharks(id integer NOT NULL, name text NOT NULL, sharktype text NOT NULL, length integer NOT NULL);
+
+INSERT INTO sharks VALUES (1, 'Sammy', 'Greenland Shark', 427);
+INSERT INTO sharks VALUES (2, 'Alyoshka', 'Great White Shark', 600);
+INSERT INTO sharks VALUES (3, 'Himari', 'Megaladon', 1800);
+
+sqlite&gt; select * from sharks;
+
+<i class="ig">
+1|Sammy|Greenland Shark|427
+2|Alyoshka|Great White Shark|600
+3|Himari|Megaladon|1800    
+</i>
+</pre>
+
+<p>sqlite&gt; </p>
+<p></p>
+<h1 style="page-break-before:always; "></h1>
+<p>(base) ashish@ashish:~/Desktop/ws/sqlite_db$ sqlite3 sharks.db</p>
+<p>SQLite version 3.39.3 2022-09-05 11:02:23</p>
+<p>Enter '.help' for usage hints.</p>
+<p>sqlite&gt; .schema sharks</p>
+<p>CREATE TABLE sharks(id integer NOT NULL, name text NOT NULL, sharktype text NOT NULL, length integer NOT NULL);</p>
+<p>sqlite&gt; </p>
+<p>Viewing the Structure of a Table</p>
+<h1 style="page-break-before:always; ">Exploring a Database file</h1>
+<p>(base) ashish@ashish:~/Desktop/ws/sqlite_db$ sqlite3 sharks.db</p>
+<p>SQLite version 3.39.3 2022-09-05 11:02:23</p>
+<p>Enter '.help' for usage hints.</p>
+<p>sqlite&gt; .tables</p>
+<p>sharks</p>
+<p>sqlite&gt; select * from sharks;</p>
+<p>1|Sammy|Greenland Shark|427</p>
+<p>2|Alyoshka|Great White Shark|600</p>
+<p>3|Himari|Megaladon|1800</p>
+<p>sqlite&gt; ^Z</p>
+<p>[3]+  Stopped                 sqlite3 sharks.db</p>
+<p>(base) ashish@ashish:~/Desktop/ws/sqlite_db$ sqlite3 marks.db</p>
+<p>SQLite version 3.39.3 2022-09-05 11:02:23</p>
+<p>Enter '.help' for usage hints.</p>
+<p>sqlite&gt; .tables</p>
+<p>marks</p>
+<p>sqlite&gt; select * from marks;</p>
+<p>2023|8|english|75</p>
+<p>2023|8|math|85</p>
+<p>2023|8|computer|90</p>
+<p>2022|7|english|90</p>
+<p>2022|7|math|85</p>
+<p>2022|7|computer|95</p>
+<p>2023|8|physics|99</p>
+<p>2023|8|chemistry|97</p>
+<p>2023|8|biology|95</p>
+<p>sqlite&gt; </p>
+<p></p>
+<h1 style="page-break-before:always; ">Import a CSV file</h1>
+<pre>
+(base) ashish@ashish:~/Desktop/ws/sqlite_db$ sqlite3 marks.db
+SQLite version 3.39.3 2022-09-05 11:02:23
+Enter '.help' for usage hints.
+sqlite&gt;
+sqlite&gt; .tables
+sqlite&gt; .mode csv
+sqlite&gt; .import ./marks.csv marks
+
+<b>First line in marks.csv should contain the header with column names.</b>
+
+sqlite&gt; .tables
+</pre>
+
+<p>marks</p>
+<p>sqlite&gt; </p>
+<p>sqlite&gt; select * from marks;</p>
+<p>2023,8,english,75</p>
+<p>2023,8,math,80</p>
+<p>2023,8,computer,90</p>
+<p>2022,7,english,90</p>
+<p>2022,7,math,85</p>
+<p>2022,7,computer,95</p>
+<p>sqlite&gt; </p>
+<p></p>
+<h1 style="page-break-before:always; ">Inserting a single row</h1>
+<p>sqlite&gt; .schema marks</p>
+<p>CREATE TABLE IF NOT EXISTS 'marks' ('year' TEXT, 'class' TEXT, 'subject' TEXT, 'marks' TEXT);</p>
+<p>sqlite&gt; </p>
+<p>sqlite&gt; insert into marks (year, class, subject, marks) values (2023, 8, 'sanskrit', 90);</p>
+<p>sqlite&gt; select * from marks;</p>
+<p>2023|8|english|75</p>
+<p>2023|8|math|80</p>
+<p>2023|8|computer|90</p>
+<p>2022|7|english|90</p>
+<p>2022|7|math|85</p>
+<p>2022|7|computer|95</p>
+<p>2023|8|sanskrit|90</p>
+<p>sqlite&gt; </p>
+<p></p>
+<h1 style="page-break-before:always; ">Inserting multiple rows</h1>
+<p>sqlite&gt; insert into marks (year, class, subject, marks) values (2023, 8, 'physics', 99), (2023, 8, 'chemistry', '97'), (2023, 8, 'biology', 95);</p>
+<p>sqlite&gt; select * from marks;</p>
+<p>2023|8|english|75</p>
+<p>2023|8|math|80</p>
+<p>2023|8|computer|90</p>
+<p>2022|7|english|90</p>
+<p>2022|7|math|85</p>
+<p>2022|7|computer|95</p>
+<p>2023|8|sanskrit|90</p>
+<p>2023|8|physics|99</p>
+<p>2023|8|chemistry|97</p>
+<p>2023|8|biology|95</p>
+<p></p>
+<h1 style="page-break-before:always; ">Selection and Filtering</h1>
+<p>sqlite&gt; select * from marks where marks &gt; 90;</p>
+<p>2022|7|computer|95</p>
+<p>2023|8|physics|99</p>
+<p>2023|8|chemistry|97</p>
+<p>2023|8|biology|95</p>
+<p></p>
+<p>sqlite&gt; select * from marks where class = 8;</p>
+<p>2023|8|english|75</p>
+<p>2023|8|math|80</p>
+<p>2023|8|computer|90</p>
+<p>2023|8|sanskrit|90</p>
+<p>2023|8|physics|99</p>
+<p>2023|8|chemistry|97</p>
+<p>2023|8|biology|95</p>
+<p></p>
+<h1 style="page-break-before:always; ">Update</h1>
+<p>sqlite&gt; select * from marks where class = 8 and subject = 'math';</p>
+<p>2023|8|math|80</p>
+<p>sqlite&gt; </p>
+<p>sqlite&gt; update marks set marks = marks + 5 where class = 8 and subject = 'math';</p>
+<p>sqlite&gt; select * from marks where class = 8 and subject = 'math';</p>
+<p>2023|8|math|85</p>
+<p></p>
+<h1 style="page-break-before:always; ">Deleting a record</h1>
+<p>sqlite&gt; select count(*) from marks where subject = 'sanskrit';</p>
+<p>1</p>
+<p>sqlite&gt; select * from marks where subject = 'sanskrit';</p>
+<p>2023|8|sanskrit|90</p>
+<p></p>
+<p>sqlite&gt; delete from marks where subject = 'sanskrit';</p>
+<p></p>
+<p>sqlite&gt; select * from marks where subject = 'sanskrit';</p>
+<p>sqlite&gt; select count(*) from marks where subject = 'sanskrit';</p>
+<p>0</p>
+<p>sqlite&gt; </p>
+<p></p>
+<h1 style="page-break-before:always; ">Cursor</h1>
+<table>
+  <tr>
+    <td>
+<p>Row Num</p>
+    </td>
+    <td>
+<p>0:ID </p>
+    </td>
+    <td>
+<p>1:Name</p>
+    </td>
+    <td>
+<p>2:SharkType</p>
+    </td>
+    <td>
+<p>3:Length</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>0</p>
+    </td>
+    <td>
+<p>1</p>
+    </td>
+    <td>
+<p>Sammy</p>
+    </td>
+    <td>
+<p>Greenland Shark</p>
+    </td>
+    <td>
+<p>427</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>1</p>
+    </td>
+    <td>
+<p>2</p>
+    </td>
+    <td>
+<p>Alyoshka</p>
+    </td>
+    <td>
+<p>Great White Shark</p>
+    </td>
+    <td>
+<p>600</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>2</p>
+    </td>
+    <td>
+<p>3</p>
+    </td>
+    <td>
+<p>Himari</p>
+    </td>
+    <td>
+<p>Megaladon</p>
+    </td>
+    <td>
+<p>1800</p>
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>
+<p>[0][0]</p>
+    </td>
+    <td>
+<p>[0][1]</p>
+    </td>
+    <td>
+<p>[0][2]</p>
+    </td>
+    <td>
+<p>[0][3]</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>[1][0]</p>
+    </td>
+    <td>
+<p>[1][1]</p>
+    </td>
+    <td>
+<p>[1][2]</p>
+    </td>
+    <td>
+<p>[1][3]</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+<p>[2][0]</p>
+    </td>
+    <td>
+<p>[2][1]</p>
+    </td>
+    <td>
+<p>[2][2]</p>
+    </td>
+    <td>
+<p>[2][3]</p>
+    </td>
+  </tr>
+</table>
+<p>A cursor allows us to iterate over a table.</p>
+<p>And, a table can be viewed as a list of rows. </p>
+<p>And, a row can be viewed as a tuple of cells.</p>
+<h1 style="page-break-before:always; ">In Code (Part 1) </h1>
+<p>import sqlite3</p>
+<p></p>
+<p>conn = sqlite3.connect('sharks.db')</p>
+<p>print('Opened database successfully')</p>
+<p></p>
+<p>cursor = conn.execute('SELECT id, name, sharktype, length FROM sharks')</p>
+<p><b>for row in cursor</b>:</p>
+<p>   print('ID = ', <b>row[0]</b>)</p>
+<p>   print('NAME = ', <b>row[1]</b>)</p>
+<p>   print('SHARKTYPE = ', <b>row[2]</b>)</p>
+<p>   print('LENGTH = ', <b>row[3]</b>)</p>
+<p>   print('\n')</p>
+<p></p>
+<p>print('Operation done successfully')</p>
+<p>conn.close()</p>
+<h1 style="page-break-before:always; ">Output</h1>
+<i class="ig">
+<p>Opened database successfully</p>
+<p>ID =  1</p>
+<p>NAME =  Sammy</p>
+<p>SHARKTYPE =  Greenland Shark</p>
+<p>LENGTH =  427</p>
+<p></p>
+<p></p>
+<p>ID =  2</p>
+<p>NAME =  Alyoshka</p>
+<p>SHARKTYPE =  Great White Shark</p>
+<p>LENGTH =  600</p>
+<p></p>
+<p></p>
+<p>ID =  3</p>
+<p>NAME =  Himari</p>
+<p>SHARKTYPE =  Megaladon</p>
+<p>LENGTH =  1800</p>
+<p></p>
+<p></p>
+<p>Operation done successfully</p></i>
+</body>
+
+<span style="display: none;">Tags: Technology,Database,</span>
