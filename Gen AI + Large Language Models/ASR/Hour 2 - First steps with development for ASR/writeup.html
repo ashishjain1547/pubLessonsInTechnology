@@ -1,0 +1,286 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+
+<pre>
+Note: We are using this model: 
+https://huggingface.co/openai/whisper-tiny/tree/main
+
+$ pwd
+/home/ashish/Desktop/Using OpenAI-Whisper-Tiny via HuggingFace for Automatic Speech Recognition app (Research)/models--openai--whisper-tiny
+
+$ ls -lR
+...
+...
+...
+
+./snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af:
+total 4
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 added_tokens.json -> ../../blobs/e3d256c988462aa153dcabe2aa38b8e9b436c06f
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 config.json -> ../../blobs/417aa9de49a132dd3eb6a56d3be2718b15f08917
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 generation_config.json -> ../../blobs/4b26dd66b8f7bca37d851d259fdc118315cacc62
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 merges.txt -> ../../blobs/6038932a2a1f09a66991b1c2adae0d14066fa29e
+lrwxrwxrwx 1 ashish ashish 76 Mar  8 22:46 model.safetensors -> ../../blobs/7ebd0e69e78190ffe1438491fa05cc1f5c1aa3a4c4db3bc1723adbb551ea2395
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 normalizer.json -> ../../blobs/dd6ae819ad738ac1a546e9f9282ef325c33b9ea0
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 preprocessor_config.json -> ../../blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 special_tokens_map.json -> ../../blobs/bf69932dca4b3719b59fdd8f6cc1978109509f6c
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 tokenizer_config.json -> ../../blobs/d13b786c04765fb1a06492b53587752cd67665ea
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 tokenizer.json -> ../../blobs/1e95340ff836fad1b5932e800fb7b8c5e6d78a74
+lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 vocab.json -> ../../blobs/d7016e21da8776c8a9d577d0f559600f09a240eb
+
+
+</pre>
+<h2>I am getting this error with my local setup:
+<br>OSError: ./models--openai--whisper-tiny does not appear to have a file named preprocessor_config.json. Checkout 'https://huggingface.co/./models--openai-
+<br>
+<br>But this file is present in my model_dir as I can check using "ls -lR"
+<br>lrwxrwxrwx 1 ashish ashish 52 Mar  8 22:46 preprocessor_config.json -> ../../blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="391">This error usually happens when the model directory contains symbolic links (symlinks) that point to files (like preprocessor_config.json) outside the current folder, and the Transformers library can’t resolve them. Even though your ls output shows the symlink, if the target file (in this case, the blob file) isn’t actually available in the expected relative location, you’ll get an error.</p>
+    <p data-start="393" data-end="427">Here are some steps to resolve it:</p>
+    <ol data-start="429" data-end="2022">
+    <li data-start="429" data-end="698">
+    <p data-start="432" data-end="471"><strong data-start="432" data-end="461">Check the Symlink Target:</strong><br data-start="461" data-end="464">
+    Run:</p>
+    <pre class="!overflow-visible" data-start="475" data-end="526"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span><span class="hljs-built_in">readlink</span> preprocessor_config.json
+    </span></code></div></div></pre>
+    <p data-start="530" data-end="698">Verify that the target file (e.g. <code data-start="564" data-end="618">../../blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2</code>) exists relative to your model directory. If it doesn’t, the symlink is broken.</p>
+    </li>
+    <li data-start="700" data-end="1032">
+    <p data-start="703" data-end="846"><strong data-start="703" data-end="740">Properly Download the Repository:</strong><br data-start="740" data-end="743">
+    The recommended way to obtain the model files is to clone the repository using Git LFS. For example:</p>
+    <pre class="!overflow-visible" data-start="850" data-end="939"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span>git lfs install
+    git <span class="hljs-built_in">clone</span> https://huggingface.co/openai/whisper-tiny
+    </span></code></div></div></pre>
+    <p data-start="943" data-end="1032">This ensures that all the blob files are downloaded and the symlinks point to real files.</p>
+    </li>
+    <li data-start="1034" data-end="1442">
+    <p data-start="1037" data-end="1297"><strong data-start="1037" data-end="1066">Manually Fix the Symlink:</strong><br data-start="1066" data-end="1069">
+    If you already downloaded the files manually and have the blob file somewhere else, copy that blob file into the expected relative path so the symlink resolves. Alternatively, you can replace the symlink with the actual file:</p>
+    <pre class="!overflow-visible" data-start="1301" data-end="1399"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span><span class="hljs-built_in">cp</span> ../../blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2 preprocessor_config.json
+    </span></code></div></div></pre>
+    <p data-start="1403" data-end="1442">(Make sure the source path is correct.)</p>
+    </li>
+    <li data-start="1444" data-end="2022">
+    <p data-start="1447" data-end="1644"><strong data-start="1447" data-end="1480">Use the Hugging Face Hub API:</strong><br data-start="1480" data-end="1483">
+    Instead of manually handling files, you can let the Transformers library handle the download and caching by specifying the model repository name. For example:</p>
+    <pre class="!overflow-visible" data-start="1648" data-end="1969"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> WhisperProcessor, AutoModelForConditionalGeneration
+    
+    model_dir = <span class="hljs-string">"openai/whisper-tiny"</span>  <span class="hljs-comment"># This will download the files and cache them properly</span>
+    processor = WhisperProcessor.from_pretrained(model_dir)
+    model = AutoModelForConditionalGeneration.from_pretrained(model_dir)
+    </span></code></div></div></pre>
+    <p data-start="1973" data-end="2022">This avoids the need to manage symlinks manually.</p>
+    </li>
+    </ol>
+    <p data-start="2024" data-end="2248">By ensuring that the symlinks are valid (either by using Git LFS to clone the repository or by copying the actual files in place), the Transformers library should be able to load the preprocessor configuration without error.</p>
+    <p data-start="2250" data-end="2284" data-is-last-node="" data-is-only-node="">Let me know if you need more help!</p></div>
+
+<pre><b>If you don't fix the symlinks manually, you will get the below error:</b>
+
+04:04 ~ $ python app_pt.py 
+2025-03-09 04:06:00.012059: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.10/site-packages/cv2/../../lib64:
+2025-03-09 04:06:00.012096: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "/home/keshavpawar137/app_pt.py", line 13, in [module]
+    processor = WhisperProcessor.from_pretrained(model_dir)
+  File "/home/keshavpawar137/.local/lib/python3.10/site-packages/transformers/processing_utils.py", line 1070, in from_pretrained
+    args = cls._get_arguments_from_pretrained(pretrained_model_name_or_path, **kwargs)
+  File "/home/keshavpawar137/.local/lib/python3.10/site-packages/transformers/processing_utils.py", line 1116, in _get_arguments_from_pretrained
+    args.append(attribute_class.from_pretrained(pretrained_model_name_or_path, **kwargs))
+  File "/home/keshavpawar137/.local/lib/python3.10/site-packages/transformers/feature_extraction_utils.py", line 385, in from_pretrained
+    feature_extractor_dict, kwargs = cls.get_feature_extractor_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/keshavpawar137/.local/lib/python3.10/site-packages/transformers/feature_extraction_utils.py", line 511, in get_feature_extractor_dict
+    resolved_feature_extractor_file = cached_file(
+  File "/home/keshavpawar137/.local/lib/python3.10/site-packages/transformers/utils/hub.py", line 313, in cached_file
+    raise EnvironmentError(
+OSError: ./models--openai--whisper-tiny does not appear to have a file named preprocessor_config.json. Checkout 'https://huggingface.co/./models--openai--whisper-tiny/tree/main' for available files.
+
+<h2>Manually Fixing the Symlink</h2>
+$ pwd
+/home/ashish/Desktop/Using OpenAI-Whisper-Tiny via HuggingFace for Automatic Speech Recognition app (Research)/models--openai--whisper-tiny
+
+
+cp ./blobs/e3d256c988462aa153dcabe2aa38b8e9b436c06f added_tokens.json
+cp ./blobs/417aa9de49a132dd3eb6a56d3be2718b15f08917 config.json
+cp ./blobs/4b26dd66b8f7bca37d851d259fdc118315cacc62 generation_config.json
+cp ./blobs/6038932a2a1f09a66991b1c2adae0d14066fa29e merges.txt
+cp ./blobs/7ebd0e69e78190ffe1438491fa05cc1f5c1aa3a4c4db3bc1723adbb551ea2395 model.safetensors
+cp ./blobs/dd6ae819ad738ac1a546e9f9282ef325c33b9ea0 normalizer.json
+cp ./blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2 preprocessor_config.json
+cp ./blobs/bf69932dca4b3719b59fdd8f6cc1978109509f6c special_tokens_map.json
+cp ./blobs/d13b786c04765fb1a06492b53587752cd67665ea tokenizer_config.json
+cp ./blobs/1e95340ff836fad1b5932e800fb7b8c5e6d78a74 tokenizer.json
+cp ./blobs/d7016e21da8776c8a9d577d0f559600f09a240eb vocab.json
+
+~~~
+
+
+
+05:34 ~/mysite $ ls
+__pycache__  flask_app.py  models--openai--whisper-tiny
+
+
+<b>https://www.pythonanywhere.com/user/keshavpawar137/files/var/log/keshavpawar137.pythonanywhere.com.error.log</b>
+
+2025-03-09 05:31:23,560: OSError: Incorrect path_or_model_id: './models--openai--whisper-tiny'. Please provide either the path to a local folder or the repo_id of a model on the Hub.
+2025-03-09 05:31:23,560:   File "/var/www/keshavpawar137_pythonanywhere_com_wsgi.py", line 16, in [module>
+2025-03-09 05:31:23,560:     from flask_app import app as application  # noqa
+2025-03-09 05:31:23,560: 
+2025-03-09 05:31:23,560:   File "/home/keshavpawar137/mysite/flask_app.py", line 23, in [module>
+2025-03-09 05:31:23,561:     processor = WhisperProcessor.from_pretrained(model_dir)
+
+
+</pre>
+
+<span style="display: none;">Tags: Large Language Models,Technology,</span>

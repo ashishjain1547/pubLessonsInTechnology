@@ -1,0 +1,634 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<pre>
+<h2>Step 1: Setup teacher (Ashish) - student (Keshav) accounts on PythonAnywhere</h2>
+
+To do this step, follow instructions from this <a href="https://help.pythonanywhere.com/pages/Education" target="_blank">page (pythonanywhere.com/pages/Education)</a>.</pre>
+
+<h2>Step 2: I want to check if this package is already installed: ffmpeg</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="167">You can check whether ffmpeg is installed on your system by running a command like <code data-start="83" data-end="100">ffmpeg -version</code> in your terminal or by using a small Python script to do the same.</p>
+    <hr data-start="169" data-end="172">
+    <h3 data-start="174" data-end="210"><strong data-start="178" data-end="210">Method 1: Using the Terminal</strong></h3>
+    <p data-start="212" data-end="270">Open your terminal (or Command Prompt on Windows) and run:</p>
+    <pre class="!overflow-visible" data-start="272" data-end="297"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">sh</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-sh"><span>ffmpeg -version
+    </span></code></div></div></pre>
+    <ul data-start="299" data-end="510">
+    <li data-start="299" data-end="385"><strong data-start="301" data-end="318">If installed:</strong> You’ll see version information and details about the ffmpeg build.</li>
+    <li data-start="386" data-end="510"><strong data-start="388" data-end="409">If not installed:</strong> You might see an error message like <code data-start="446" data-end="465">command not found</code> (Linux/Mac) or a similar message on Windows.</li>
+    </ul>
+    <hr data-start="512" data-end="515">
+    <h3 data-start="517" data-end="547"><strong data-start="521" data-end="547">Method 2: Using Python</strong></h3>
+    <p data-start="549" data-end="622">You can use Python’s <code data-start="570" data-end="582">subprocess</code> module to check if ffmpeg is available:</p>
+    <pre class="!overflow-visible" data-start="624" data-end="1197"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">import</span> subprocess
+    
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">check_ffmpeg_installed</span>():
+        <span class="hljs-keyword">try</span>:
+            result = subprocess.run(
+                [<span class="hljs-string">"ffmpeg"</span>, <span class="hljs-string">"-version"</span>],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=<span class="hljs-literal">True</span>
+            )
+            <span class="hljs-keyword">if</span> result.returncode == <span class="hljs-number">0</span>:
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">"ffmpeg is installed!"</span>)
+                <span class="hljs-built_in">print</span>(result.stdout)
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-built_in">print</span>(<span class="hljs-string">"ffmpeg appears to be installed but returned an error."</span>)
+        <span class="hljs-keyword">except</span> FileNotFoundError:
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">"ffmpeg is not installed or not found in the system PATH."</span>)
+    
+    check_ffmpeg_installed()
+    </span></code></div></div></pre>
+    <ul data-start="1199" data-end="1433">
+    <li data-start="1199" data-end="1433"><strong data-start="1201" data-end="1217">Explanation:</strong>
+    <ul data-start="1222" data-end="1433">
+    <li data-start="1222" data-end="1290">The script tries to run <code data-start="1248" data-end="1265">ffmpeg -version</code> and captures its output.</li>
+    <li data-start="1293" data-end="1351">If ffmpeg is not found, a <code data-start="1321" data-end="1340">FileNotFoundError</code> is raised.</li>
+    <li data-start="1354" data-end="1433">If the command runs successfully (return code 0), it prints the version info.</li>
+    </ul>
+    </li>
+    </ul>
+    <p data-start="1435" data-end="1538" data-is-last-node="" data-is-only-node="">Choose the method that best fits your needs. Would you like more details on using or installing ffmpeg?</p></div>
+
+<pre>12:57 ~ $ ffmpeg -version
+ffmpeg version 4.2.7-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
+built with gcc 9 (Ubuntu 9.4.0-1ubuntu1~20.04.1)
+configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
+libavutil      56. 31.100 / 56. 31.100
+libavcodec     58. 54.100 / 58. 54.100
+libavformat    58. 29.100 / 58. 29.100
+libavdevice    58.  8.100 / 58.  8.100
+libavfilter     7. 57.100 /  7. 57.100
+libavresample   4.  0.  0 /  4.  0.  0
+libswscale      5.  5.100 /  5.  5.100
+libswresample   3.  5.100 /  3.  5.100
+libpostproc    55.  5.100 / 55.  5.100
+
+<h2>Step 3: Check for "flask"</h2>
+
+12:58 ~ $ pip show flask
+Name: Flask
+Version: 2.1.2
+Summary: A simple framework for building complex web applications.
+Home-page: https://palletsprojects.com/p/flask
+Author: Armin Ronacher
+Author-email: armin.ronacher@active-4.com
+License: BSD-3-Clause
+Location: /usr/local/lib/python3.10/site-packages
+Requires: click, itsdangerous, Jinja2, Werkzeug
+Required-by: dash, Flask-Admin, Flask-Babel, Flask-Bcrypt, Flask-Bootstrap, Flask-Compress, Flask-HTTPAuth, Flask-Login, Flask-RESTful, Flask-SQLAlchemy, Flask-SSLify, Flask-WTF
+</pre>
+
+<h2>Step 4: What is the difference between whisper openai-whisper and what are there uses?</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="189">Both names generally refer to the same underlying technology—a state‐of‐the‐art automatic speech recognition (ASR) model developed by OpenAI—but they’re used in slightly different contexts:</p>
+    <hr data-start="191" data-end="194">
+    <h3 data-start="196" data-end="218"><strong data-start="200" data-end="218">OpenAI Whisper</strong></h3>
+    <ul data-start="220" data-end="1106">
+    <li data-start="220" data-end="501">
+    <p data-start="222" data-end="501"><strong data-start="222" data-end="250">Official Implementation:</strong><br data-start="250" data-end="253">
+    OpenAI Whisper is the original model released by OpenAI. It’s available on GitHub (in the <a data-start="345" data-end="396" rel="noopener" target="_new" href="https://github.com/openai/whisper">openai/whisper</a> repository) and comes in several sizes (tiny, base, small, medium, large) to balance accuracy and speed.</p>
+    </li>
+    <li data-start="503" data-end="887">
+    <p data-start="505" data-end="529"><strong data-start="505" data-end="527">Primary Use Cases:</strong></p>
+    <ul data-start="532" data-end="887">
+    <li data-start="532" data-end="601"><strong data-start="534" data-end="565">High-Quality Transcription:</strong> Converts spoken language into text.</li>
+    <li data-start="604" data-end="706"><strong data-start="606" data-end="635">Multilingual Recognition:</strong> Supports multiple languages and can also identify the language spoken.</li>
+    <li data-start="709" data-end="795"><strong data-start="711" data-end="741">Subtitling and Captioning:</strong> Can be used to generate subtitles or closed captions.</li>
+    <li data-start="798" data-end="887"><strong data-start="800" data-end="833">Voice-Activated Applications:</strong> Powers various voice assistant and dictation systems.</li>
+    </ul>
+    </li>
+    <li data-start="889" data-end="1106">
+    <p data-start="891" data-end="980"><strong data-start="891" data-end="906">How to Use:</strong><br data-start="906" data-end="909">
+    You typically install it via pip as the package <strong data-start="959" data-end="979"><code data-start="961" data-end="977">openai-whisper</code></strong>:</p>
+    <pre class="!overflow-visible" data-start="983" data-end="1025"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span>pip install openai-whisper
+    </span></code></div></div></pre>
+    <p data-start="1028" data-end="1106">Then you can load and run the model directly in Python using its provided API.</p>
+    </li>
+    </ul>
+    <hr data-start="1108" data-end="1111">
+    <h3 data-start="1113" data-end="1165"><strong data-start="1117" data-end="1165">"whisper" or "openai-whisper" (as a Package)</strong></h3>
+    <ul data-start="1167" data-end="1980">
+    <li data-start="1167" data-end="1492">
+    <p data-start="1169" data-end="1359"><strong data-start="1169" data-end="1191">Naming Convention:</strong><br data-start="1191" data-end="1194">
+    When you see references to “whisper” or “openai-whisper” (especially on PyPI), they are referring to the official package that implements OpenAI’s Whisper model.</p>
+    <ul data-start="1362" data-end="1492">
+    <li data-start="1362" data-end="1492">The <strong data-start="1368" data-end="1384">PyPI package</strong> is named <code data-start="1394" data-end="1410">openai-whisper</code>, which is simply the packaged form of the original OpenAI Whisper implementation.</li>
+    </ul>
+    </li>
+    <li data-start="1494" data-end="1980">
+    <p data-start="1496" data-end="1516"><strong data-start="1496" data-end="1514">Usage Context:</strong></p>
+    <ul data-start="1519" data-end="1980">
+    <li data-start="1519" data-end="1768">If you’re building an application (for example, a Flask endpoint or an offline speech-to-text app), you would install the package using the PyPI name and then use the provided API to load one of the available model sizes and perform transcription.</li>
+    <li data-start="1771" data-end="1980">The package supports both CPU and GPU inference, making it adaptable for different deployment scenarios—from high-end servers to on-device applications after appropriate optimizations (such as quantization).</li>
+    </ul>
+    </li>
+    </ul>
+    <hr data-start="1982" data-end="1985">
+    <h3 data-start="1987" data-end="2005"><strong data-start="1991" data-end="2005">In Summary</strong></h3>
+    <ul data-start="2007" data-end="2410">
+    <li data-start="2007" data-end="2222">
+    <p data-start="2009" data-end="2222"><strong data-start="2009" data-end="2042">They’re Essentially the Same:</strong><br data-start="2042" data-end="2045">
+    “OpenAI Whisper” is the name of the model and the technology, while <strong data-start="2115" data-end="2135"><code data-start="2117" data-end="2133">openai-whisper</code></strong> is the name you’ll use to install and work with the official implementation in Python.</p>
+    </li>
+    <li data-start="2224" data-end="2410">
+    <p data-start="2226" data-end="2410"><strong data-start="2226" data-end="2253">Their Uses Are Aligned:</strong><br data-start="2253" data-end="2256">
+    Both are designed for accurate and multilingual speech recognition, suitable for applications like transcription, voice assistants, subtitles, and more.</p>
+    </li>
+    </ul>
+    <p data-start="2412" data-end="2627" data-is-last-node="" data-is-only-node="">If you plan to build applications that leverage this technology (whether via a Flask endpoint, desktop app, or mobile integration), you’ll be using the official OpenAI Whisper model via the <code data-start="2602" data-end="2618">openai-whisper</code> package.</p></div>
+
+
+<h2>Step 5: Setup "whisper"</h2>
+
+<pre>
+13:17 ~ $ cat test_whisper.py 
+import whisper
+model = whisper.load_model("small")
+print(model)
+13:17 ~ $ python test_whisper.py 
+Traceback (most recent call last):
+  File "/home/keshavpawar137/test_whisper.py", line 1, in <module>
+    import whisper
+ModuleNotFoundError: No module named 'whisper'
+13:17 ~ $ pip install whisper
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: /usr/share/pip-wheels
+Collecting whisper
+  Downloading whisper-1.1.10.tar.gz (42 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.8/42.8 kB 618.8 kB/s eta 0:00:00
+  Preparing metadata (setup.py) ... done
+Requirement already satisfied: six in /usr/local/lib/python3.10/site-packages (from whisper) (1.16.0)
+Building wheels for collected packages: whisper
+  Building wheel for whisper (setup.py) ... done
+  Created wheel for whisper: filename=whisper-1.1.10-py3-none-any.whl size=41138 sha256=f7c359cb3ced55eba4775c1d331167df4286838de0288cf0bce194d38bc48da1
+  Stored in directory: /home/keshavpawar137/.cache/pip/wheels/aa/7c/1d/015619716e2facae6631312503baf3c3220e6a9a3508cb14b6
+Successfully built whisper
+Installing collected packages: whisper
+Successfully installed whisper-1.1.10
+
+
+
+<b>Get the current space usage in my account in PythonAnywhere</b>
+
+13:21 ~ $ pwd
+/home/keshavpawar137
+
+13:19 ~ $ du -sh .
+668K
+
+<h2>Step 6: Uninstall "whisper" (if you installed that) and install "openai-whisper"</h2>
+
+<b>With "whisper:"</b>
+13:22 ~ $ python test_whisper.py 
+Traceback (most recent call last):
+  File "/home/keshavpawar137/test_whisper.py", line 2, in [module]
+    model = whisper.load_model("small")
+AttributeError: module 'whisper' has no attribute 'load_model'</pre>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="128">This error usually indicates that Python isn’t loading the expected Whisper module. Here are a few common reasons and solutions:</p>
+    <hr data-start="130" data-end="133">
+    <h3 data-start="135" data-end="162"><strong data-start="139" data-end="162">1. Naming Conflicts</strong></h3>
+    <ul data-start="164" data-end="563">
+    <li data-start="164" data-end="418">
+    <p data-start="166" data-end="418"><strong data-start="166" data-end="195">Local File Name Conflict:</strong><br data-start="195" data-end="198">
+    If you have a file named <code data-start="225" data-end="237">whisper.py</code> in your working directory, Python will import that instead of the official package.<br data-start="321" data-end="324">
+    <strong data-start="326" data-end="339">Solution:</strong> Rename your file (and remove any associated <code data-start="384" data-end="397">whisper.pyc</code>) to avoid conflicts.</p>
+    </li>
+    <li data-start="420" data-end="563">
+    <p data-start="422" data-end="563"><strong data-start="422" data-end="443">Module Shadowing:</strong><br data-start="443" data-end="446">
+    Make sure there’s no directory or module named “whisper” in your project that could be interfering with the import.</p>
+    </li>
+    </ul>
+    <hr data-start="565" data-end="568">
+    <h3 data-start="570" data-end="611"><strong data-start="574" data-end="611">2. Incorrect Package Installation</strong></h3>
+    <ul data-start="613" data-end="902">
+    <li data-start="613" data-end="902"><strong data-start="615" data-end="646">Verify the Correct Package:</strong><br data-start="646" data-end="649">
+    The official package is called <strong data-start="682" data-end="700">openai-whisper</strong>.<br data-start="701" data-end="704">
+    <strong data-start="706" data-end="719">Solution:</strong>
+    <pre class="!overflow-visible" data-start="724" data-end="790"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span>pip uninstall whisper
+    pip install openai-whisper
+    </span></code></div></div></pre>
+    Then, ensure you’re importing it as:
+    <pre class="!overflow-visible" data-start="832" data-end="902"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">import</span> whisper
+    model = whisper.load_model(<span class="hljs-string">"small"</span>)
+    </span></code></div></div></pre>
+    </li>
+    </ul>
+    <hr data-start="904" data-end="907">
+    <h3 data-start="909" data-end="941"><strong data-start="913" data-end="941">3. Check Module Contents</strong></h3>
+    <p data-start="943" data-end="1000">You can verify which attributes the module provides with:</p>
+    <pre class="!overflow-visible" data-start="1002" data-end="1050"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">import</span> whisper
+    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">dir</span>(whisper))
+    </span></code></div></div></pre>
+    <p data-start="1052" data-end="1139">If you don’t see <code data-start="1069" data-end="1081">load_model</code> in the output, it means the wrong module is being loaded.</p>
+    <hr data-start="1141" data-end="1144">
+    <p data-start="1146" data-end="1288" data-is-last-node="" data-is-only-node="">By ensuring you’re using the official <strong data-start="1184" data-end="1202">openai-whisper</strong> package and avoiding naming conflicts, the <code data-start="1246" data-end="1258">load_model</code> function should be available.</p></div>
+
+
+<pre>
+13:22 ~ $ pip uninstall whisper
+Found existing installation: whisper 1.1.10
+Uninstalling whisper-1.1.10:
+    Would remove:
+    /home/keshavpawar137/.local/bin/find-corrupt-whisper-files.py
+    /home/keshavpawar137/.local/bin/rrd2whisper.py
+    /home/keshavpawar137/.local/bin/update-storage-times.py
+    /home/keshavpawar137/.local/bin/whisper-auto-resize.py
+    /home/keshavpawar137/.local/bin/whisper-auto-update.py
+    /home/keshavpawar137/.local/bin/whisper-create.py
+    /home/keshavpawar137/.local/bin/whisper-diff.py
+    /home/keshavpawar137/.local/bin/whisper-dump.py
+    /home/keshavpawar137/.local/bin/whisper-fetch.py
+    /home/keshavpawar137/.local/bin/whisper-fill.py
+    /home/keshavpawar137/.local/bin/whisper-info.py
+    /home/keshavpawar137/.local/bin/whisper-merge.py
+    /home/keshavpawar137/.local/bin/whisper-resize.py
+    /home/keshavpawar137/.local/bin/whisper-set-aggregation-method.py
+    /home/keshavpawar137/.local/bin/whisper-set-xfilesfactor.py
+    /home/keshavpawar137/.local/bin/whisper-update.py
+    /home/keshavpawar137/.local/lib/python3.10/site-packages/whisper-1.1.10.dist-info/*
+    /home/keshavpawar137/.local/lib/python3.10/site-packages/whisper.py
+Proceed (Y/n)? y
+    Successfully uninstalled whisper-1.1.10
+
+
+13:28 ~ $ pip install openai-whisper
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: /usr/share/pip-wheels
+Collecting openai-whisper
+    Downloading openai-whisper-20240930.tar.gz (800 kB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 800.5/800.5 kB 14.1 MB/s eta 0:00:00
+    Installing build dependencies ... done
+    Getting requirements to build wheel ... done
+    Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: numpy in /usr/local/lib/python3.10/site-packages (from openai-whisper) (1.21.6)
+Collecting triton>=2.0.0
+    Downloading triton-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (253.1 MB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.1/253.1 MB 5.0 MB/s eta 0:00:00
+ERROR: Could not install packages due to an OSError: [Errno 122] Disk quota exceeded
+
+13:29 ~ $ du -sh .
+83M     .
+13:30 ~ $ 
+
+Requirements:
+pip install flask openai-whisper soundfile
+
+conda-forge / flask 3.1.0
+A simple framework for building complex web applications.
+
+piiq / openai-whisper 20230308
+Robust Speech Recognition via Large-Scale Weak Supervisionconda	osx-arm64
+
+Sheepless / openai-whisper 20231117
+Robust Speech Recognition via Large-Scale Weak Supervisionconda	noarch
+</pre>
+
+<br> <hr> <br>
+
+<h2>Moving away from "openai-whisper" and using Whisper-Tiny via HuggingFace:</h2>
+<b>Using OpenAI-Whisper-Tiny via HuggingFace for Automatic Speech Recognition app (Research)</b>
+
+<pre>
+16:34 ~ $ pip install transformers
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: /usr/share/pip-wheels
+Collecting transformers
+    Downloading transformers-4.49.0-py3-none-any.whl (10.0 MB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.0/10.0 MB 49.6 MB/s eta 0:00:00
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/site-packages (from transformers) (2021.11.10)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.10/site-packages (from transformers) (1.21.6)
+Collecting tokenizers&lt;0.22,>=0.21
+    Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 42.7 MB/s eta 0:00:00
+Collecting safetensors>=0.4.1
+    Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (471 kB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 471.6/471.6 kB 8.0 MB/s eta 0:00:00
+Requirement already satisfied: requests in /usr/local/lib/python3.10/site-packages (from transformers) (2.28.1)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.10/site-packages (from transformers) (6.0)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/site-packages (from transformers) (21.3)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.10/site-packages (from transformers) (4.62.3)
+Collecting huggingface-hub&lt;1.0,>=0.26.0
+    Downloading huggingface_hub-0.29.2-py3-none-any.whl (468 kB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 468.1/468.1 kB 10.7 MB/s eta 0:00:00
+Requirement already satisfied: filelock in /usr/local/lib/python3.10/site-packages (from transformers) (3.4.2)
+Collecting fsspec>=2023.5.0
+    Downloading fsspec-2025.3.0-py3-none-any.whl (193 kB)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.6/193.6 kB 4.3 MB/s eta 0:00:00
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /usr/local/lib/python3.10/site-packages (from huggingface-hub&lt;1.0,>=0.26.0->transformers) (3.10.0.2)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.10/site-packages (from packaging>=20.0->transformers) (2.4.7)
+Requirement already satisfied: idna&lt;4,>=2.5 in /usr/local/lib/python3.10/site-packages (from requests->transformers) (3.3)
+Requirement already satisfied: urllib3&lt;1.27,>=1.21.1 in /usr/local/lib/python3.10/site-packages (from requests->transformers) (1.26.9)
+Requirement already satisfied: charset-normalizer&lt;3,>=2 in /usr/local/lib/python3.10/site-packages (from requests->transformers) (2.1.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/site-packages (from requests->transformers) (2022.6.15)
+Installing collected packages: safetensors, fsspec, huggingface-hub, tokenizers, transformers
+Successfully installed fsspec-2025.3.0 huggingface-hub-0.29.2 safetensors-0.5.3 tokenizers-0.21.0 transformers-4.49.0
+
+
+<b><i>We are going to use TensorFlow as backend for HuggingFace implementation as that comes with PythonAnywhere cloud by default.</i></b>
+
+16:39 ~ $ pip show tensorflow
+Name: tensorflow
+Version: 2.9.0
+Summary: TensorFlow is an open source machine learning framework for everyone.
+Home-page: https://www.tensorflow.org/
+Author: Google Inc.
+Author-email: packages@tensorflow.org
+License: Apache 2.0
+Location: /usr/local/lib/python3.10/site-packages
+Requires: absl-py, astunparse, flatbuffers, gast, google-pasta, grpcio, h5py, keras, keras-preprocessing, libclang, numpy, opt-einsum, packaging, protobuf, setuptools, six, tensorboard, tensorflow-estimator, tensorflow-io-gcs-filesystem, termcolor, typing-extensions, wrapt
+Required-by:
+
+
+
+
+16:43 ~ $ pip install librosa
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: /usr/share/pip-wheels
+Collecting librosa
+  Downloading librosa-0.10.2.post1-py3-none-any.whl (260 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 260.1/260.1 kB 6.5 MB/s eta 0:00:00
+Requirement already satisfied: scikit-learn>=0.20.0 in /usr/local/lib/python3.10/site-packages (from librosa) (1.0.2)
+Collecting audioread>=2.1.9
+  Downloading audioread-3.0.1-py3-none-any.whl (23 kB)
+Collecting pooch>=1.1
+  Downloading pooch-1.8.2-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.6/64.6 kB 1.3 MB/s eta 0:00:00
+Collecting typing-extensions>=4.1.1
+  Downloading typing_extensions-4.12.2-py3-none-any.whl (37 kB)
+Requirement already satisfied: numpy!=1.22.0,!=1.22.1,!=1.22.2,>=1.20.3 in /usr/local/lib/python3.10/site-packages (from librosa) (1.21.6)
+Collecting msgpack>=1.0
+  Downloading msgpack-1.1.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (378 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 378.0/378.0 kB 9.6 MB/s eta 0:00:00
+Requirement already satisfied: numba>=0.51.0 in /usr/local/lib/python3.10/site-packages (from librosa) (0.55.1)
+Requirement already satisfied: decorator>=4.3.0 in /usr/local/lib/python3.10/site-packages (from librosa) (5.1.1)
+Collecting lazy-loader>=0.1
+  Downloading lazy_loader-0.4-py3-none-any.whl (12 kB)
+Collecting soundfile>=0.12.1
+  Downloading soundfile-0.13.1-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 25.1 MB/s eta 0:00:00
+Collecting soxr>=0.3.2
+  Downloading soxr-0.5.0.post1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (252 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 252.8/252.8 kB 4.7 MB/s eta 0:00:00
+Requirement already satisfied: joblib>=0.14 in /usr/local/lib/python3.10/site-packages (from librosa) (1.1.0)
+Requirement already satisfied: scipy>=1.2.0 in /usr/local/lib/python3.10/site-packages (from librosa) (1.7.3)
+Requirement already satisfied: packaging in /usr/local/lib/python3.10/site-packages (from lazy-loader>=0.1->librosa) (21.3)
+Requirement already satisfied: llvmlite&lt;0.39,>=0.38.0rc1 in /usr/local/lib/python3.10/site-packages (from numba>=0.51.0->librosa) (0.38.0)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.10/site-packages (from numba>=0.51.0->librosa) (60.2.0)
+Requirement already satisfied: platformdirs>=2.5.0 in /usr/local/lib/python3.10/site-packages (from pooch>=1.1->librosa) (2.5.2)
+Requirement already satisfied: requests>=2.19.0 in /usr/local/lib/python3.10/site-packages (from pooch>=1.1->librosa) (2.28.1)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /usr/local/lib/python3.10/site-packages (from scikit-learn>=0.20.0->librosa) (3.0.0)
+Requirement already satisfied: cffi>=1.0 in /usr/local/lib/python3.10/site-packages (from soundfile>=0.12.1->librosa) (1.15.1)
+Requirement already satisfied: pycparser in /usr/local/lib/python3.10/site-packages (from cffi>=1.0->soundfile>=0.12.1->librosa) (2.21)
+Requirement already satisfied: pyparsing!=3.0.5,>=2.0.2 in /usr/local/lib/python3.10/site-packages (from packaging->lazy-loader>=0.1->librosa) (2.4.7)
+Requirement already satisfied: charset-normalizer&lt;3,>=2 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (2.1.0)
+Requirement already satisfied: urllib3&lt;1.27,>=1.21.1 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (1.26.9)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (2022.6.15)
+Requirement already satisfied: idna&lt;4,>=2.5 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pooch>=1.1->librosa) (3.3)
+Installing collected packages: typing-extensions, soxr, msgpack, audioread, soundfile, pooch, lazy-loader, librosa
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+arviz 0.11.4 requires typing-extensions&lt;4,>=3.7.4.3, but you have typing-extensions 4.12.2 which is incompatible.
+Successfully installed audioread-3.0.1 lazy-loader-0.4 librosa-0.10.2.post1 msgpack-1.1.0 pooch-1.8.2 soundfile-0.13.1 soxr-0.5.0.post1 typing-extensions-4.12.2
+16:44 ~ $ du -sh .
+209M    .
+16:44 ~ $ 
+
+(hf_202412) ashish@ashish-ThinkPad-T440s:~/Desktop/Using OpenAI-Whisper-Tiny via HuggingFace for Automatic Speech Recognition app (Research)$ conda list librosa                                                                                                                                             
+# packages in environment at /home/ashish/anaconda3/envs/hf_202412:                                                                                      
+#                                                                                                                                                        
+# Name                    Version                   Build  Channel                                                                                       
+librosa                   0.10.2.post1       pyhd8ed1ab_1    conda-forge  
+
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+
+16:56 ~ $ pip install torch
+Defaulting to user installation because normal site-packages is not writeable
+Looking in links: /usr/share/pip-wheels
+Requirement already satisfied: torch in /usr/local/lib/python3.10/site-packages (1.11.0+cpu)
+Requirement already satisfied: typing-extensions in ./.local/lib/python3.10/site-packages (from torch) (4.12.2)
+16:59 ~ $ 
+16:59 ~ $ pip show torch
+Name: torch
+Version: 1.11.0+cpu
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3
+Location: /usr/local/lib/python3.10/site-packages
+Requires: typing-extensions
+Required-by: torchaudio, torchvision
+17:00 ~ $ 
+
+
+
+17:22 ~ $ ls
+README.txt  app_pt.py  models--openai--whisper-tiny.zip
+17:22 ~ $ unzip models--openai--whisper-tiny.zip 
+Archive:  models--openai--whisper-tiny.zip
+   creating: models--openai--whisper-tiny/
+   creating: models--openai--whisper-tiny/blobs/
+  inflating: models--openai--whisper-tiny/blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2  
+  inflating: models--openai--whisper-tiny/blobs/d13b786c04765fb1a06492b53587752cd67665ea  
+  inflating: models--openai--whisper-tiny/blobs/d7016e21da8776c8a9d577d0f559600f09a240eb  
+  inflating: models--openai--whisper-tiny/blobs/1e95340ff836fad1b5932e800fb7b8c5e6d78a74  
+  inflating: models--openai--whisper-tiny/blobs/6038932a2a1f09a66991b1c2adae0d14066fa29e  
+  inflating: models--openai--whisper-tiny/blobs/dd6ae819ad738ac1a546e9f9282ef325c33b9ea0  
+  inflating: models--openai--whisper-tiny/blobs/e3d256c988462aa153dcabe2aa38b8e9b436c06f  
+  inflating: models--openai--whisper-tiny/blobs/bf69932dca4b3719b59fdd8f6cc1978109509f6c  
+  inflating: models--openai--whisper-tiny/blobs/417aa9de49a132dd3eb6a56d3be2718b15f08917  
+  inflating: models--openai--whisper-tiny/blobs/7ebd0e69e78190ffe1438491fa05cc1f5c1aa3a4c4db3bc1723adbb551ea2395  
+  inflating: models--openai--whisper-tiny/blobs/4b26dd66b8f7bca37d851d259fdc118315cacc62  
+   creating: models--openai--whisper-tiny/snapshots/
+   creating: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/preprocessor_config.json  -> ../../blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/tokenizer_config.json  -> ../../blobs/d13b786c04765fb1a06492b53587752cd67665ea 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/vocab.json  -> ../../blobs/d7016e21da8776c8a9d577d0f559600f09a240eb 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/tokenizer.json  -> ../../blobs/1e95340ff836fad1b5932e800fb7b8c5e6d78a74 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/merges.txt  -> ../../blobs/6038932a2a1f09a66991b1c2adae0d14066fa29e 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/normalizer.json  -> ../../blobs/dd6ae819ad738ac1a546e9f9282ef325c33b9ea0 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/added_tokens.json  -> ../../blobs/e3d256c988462aa153dcabe2aa38b8e9b436c06f 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/special_tokens_map.json  -> ../../blobs/bf69932dca4b3719b59fdd8f6cc1978109509f6c 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/config.json  -> ../../blobs/417aa9de49a132dd3eb6a56d3be2718b15f08917 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/model.safetensors  -> ../../blobs/7ebd0e69e78190ffe1438491fa05cc1f5c1aa3a4c4db3bc1723adbb551ea2395 
+    linking: models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/generation_config.json  -> ../../blobs/4b26dd66b8f7bca37d851d259fdc118315cacc62 
+   creating: models--openai--whisper-tiny/refs/
+  inflating: models--openai--whisper-tiny/refs/main  
+   creating: models--openai--whisper-tiny/.no_exist/
+   creating: models--openai--whisper-tiny/.no_exist/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/
+  inflating: models--openai--whisper-tiny/.no_exist/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/chat_template.jinja  
+  inflating: models--openai--whisper-tiny/.no_exist/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/processor_config.json  
+  inflating: models--openai--whisper-tiny/.no_exist/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/chat_template.json  
+finishing deferred symbolic links:
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/preprocessor_config.json -> ../../blobs/c2048dfa9fd94a052e62e908d2c4dfb18534b4d2
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/tokenizer_config.json -> ../../blobs/d13b786c04765fb1a06492b53587752cd67665ea
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/vocab.json -> ../../blobs/d7016e21da8776c8a9d577d0f559600f09a240eb
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/tokenizer.json -> ../../blobs/1e95340ff836fad1b5932e800fb7b8c5e6d78a74
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/merges.txt -> ../../blobs/6038932a2a1f09a66991b1c2adae0d14066fa29e
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/normalizer.json -> ../../blobs/dd6ae819ad738ac1a546e9f9282ef325c33b9ea0
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/added_tokens.json -> ../../blobs/e3d256c988462aa153dcabe2aa38b8e9b436c06f
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/special_tokens_map.json -> ../../blobs/bf69932dca4b3719b59fdd8f6cc1978109509f6c
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/config.json -> ../../blobs/417aa9de49a132dd3eb6a56d3be2718b15f08917
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/model.safetensors -> ../../blobs/7ebd0e69e78190ffe1438491fa05cc1f5c1aa3a4c4db3bc1723adbb551ea2395
+  models--openai--whisper-tiny/snapshots/169d4a4341b33bc18d8881c4b69c2e104e1cc0af/generation_config.json -> ../../blobs/4b26dd66b8f7bca37d851d259fdc118315cacc62
+17:22 ~ $ 
+17:22 ~ $ 
+17:22 ~ $ du -sh .
+446M    .
+17:22 ~ $ 
+</pre>
+<span style="display: none;">Tags: Technology,Large Language Models,Cloud</span>

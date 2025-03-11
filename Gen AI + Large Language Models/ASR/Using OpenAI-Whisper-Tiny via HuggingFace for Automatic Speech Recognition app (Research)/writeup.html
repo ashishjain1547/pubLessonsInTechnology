@@ -1,0 +1,505 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<h2>Can you show to create a flask based endpoint that does transcription of audio recorded from browser using the above model. Also give the associated frontend code.</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="456">Below is a complete example that shows how to build a Flask endpoint using the Hugging Face model "openai/whisper-tiny" to transcribe audio files uploaded from a browser. The Flask app will accept an audio file (recorded via the browser), process it with the Hugging Face Transformers pipeline, and return the transcription as JSON. A simple HTML/JavaScript front end is provided that records audio using the MediaRecorder API and sends it to the endpoint.</p>
+    <hr data-start="458" data-end="461">
+    <h2 data-start="463" data-end="489">Flask Endpoint (app.py)</h2>
+    <pre class="!overflow-visible" data-start="491" data-end="2094"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request, jsonify
+    <span class="hljs-keyword">import</span> os
+    <span class="hljs-keyword">import</span> uuid
+    <span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> WhisperProcessor, WhisperForConditionalGeneration
+    <span class="hljs-keyword">import</span> torch
+    <span class="hljs-keyword">import</span> librosa
+    
+    app = Flask(__name__)
+    
+    <span class="hljs-comment"># Load the processor and model from Hugging Face</span>
+    model_name = <span class="hljs-string">"openai/whisper-tiny"</span>
+    processor = WhisperProcessor.from_pretrained(model_name)
+    model = WhisperForConditionalGeneration.from_pretrained(model_name)
+    
+    <span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">"/transcribe"</span>, methods=[<span class="hljs-string">"POST"</span>]</span>)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">transcribe</span>():
+        <span class="hljs-keyword">if</span> <span class="hljs-string">"audio"</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> request.files:
+            <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"error"</span>: <span class="hljs-string">"No audio file provided."</span>}), <span class="hljs-number">400</span>
+    
+        audio_file = request.files[<span class="hljs-string">"audio"</span>]
+        <span class="hljs-comment"># Save the incoming audio file temporarily</span>
+        temp_filename = <span class="hljs-string">f"temp_<span class="hljs-subst">{uuid.uuid4().<span class="hljs-built_in">hex</span>}</span>.wav"</span>
+        audio_file.save(temp_filename)
+    
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-comment"># Load the audio using librosa and resample to 16kHz</span>
+            audio, sr = librosa.load(temp_filename, sr=<span class="hljs-number">16000</span>)
+            <span class="hljs-comment"># Process audio into input features expected by the model</span>
+            input_features = processor(audio, sampling_rate=sr, return_tensors=<span class="hljs-string">"pt"</span>).input_features
+            <span class="hljs-comment"># Generate transcription (default generation parameters; adjust if needed)</span>
+            predicted_ids = model.generate(input_features)
+            transcription = processor.batch_decode(predicted_ids, skip_special_tokens=<span class="hljs-literal">True</span>)[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            transcription = <span class="hljs-string">f"Error processing audio: <span class="hljs-subst">{<span class="hljs-built_in">str</span>(e)}</span>"</span>
+        <span class="hljs-keyword">finally</span>:
+            os.remove(temp_filename)
+    
+        <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"transcription"</span>: transcription})
+    
+    <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+        <span class="hljs-comment"># Run the server on port 5000 and listen on all interfaces.</span>
+        app.run(host=<span class="hljs-string">"0.0.0.0"</span>, port=<span class="hljs-number">5000</span>, debug=<span class="hljs-literal">True</span>)
+    </span></code></div></div></pre>
+    <blockquote data-start="2096" data-end="2313">
+    <p data-start="2098" data-end="2110"><strong data-start="2098" data-end="2108">Notes:</strong></p>
+    <ul data-start="2113" data-end="2313">
+    <li data-start="2113" data-end="2239">Make sure you have installed the required packages:
+    <pre class="!overflow-visible" data-start="2173" data-end="2239"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span>pip install flask transformers torch librosa
+    </span></code></div></div></pre>
+    </li>
+    <li data-start="2242" data-end="2313">The audio file is saved temporarily then removed after transcription.</li>
+    </ul>
+    </blockquote>
+    <hr data-start="2315" data-end="2318">
+    <h2 data-start="2320" data-end="2344">Frontend (index.html)</h2>
+    <p data-start="2346" data-end="2534">This HTML page uses the MediaRecorder API to capture audio from the user's microphone, creates a Blob from the recorded data, and sends it via a POST request to the <code data-start="2511" data-end="2524">/transcribe</code> endpoint.</p>
+    <pre class="!overflow-visible" data-start="2536" data-end="5279"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">html</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Speech Transcription Demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+        <span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">font-family</span>: Arial, sans-serif; <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span>; }
+        <span class="hljs-selector-id">#recordButton</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2em</span>; }
+        <span class="hljs-selector-id">#status</span> { <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>; }
+        <span class="hljs-selector-id">#transcription</span> { <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.1em</span>; <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>; }
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Speech Transcription Demo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"recordButton"</span>&gt;</span>Start Recording<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"status"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Transcription:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"transcription"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">let</span> mediaRecorder;
+        <span class="hljs-keyword">let</span> audioChunks = [];
+        <span class="hljs-keyword">const</span> recordButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'recordButton'</span>);
+        <span class="hljs-keyword">const</span> statusDisplay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'status'</span>);
+        <span class="hljs-keyword">const</span> transcriptionDisplay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'transcription'</span>);
+        <span class="hljs-keyword">let</span> isRecording = <span class="hljs-literal">false</span>;
+    
+        recordButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">async</span> () =&gt; {
+          <span class="hljs-keyword">if</span> (!isRecording) {
+            <span class="hljs-keyword">try</span> {
+              <span class="hljs-comment">// Request access to the microphone</span>
+              <span class="hljs-keyword">const</span> stream = <span class="hljs-keyword">await</span> navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>({ <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span> });
+              mediaRecorder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MediaRecorder</span>(stream);
+              audioChunks = [];
+    
+              mediaRecorder.<span class="hljs-property">ondataavailable</span> = <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> {
+                <span class="hljs-keyword">if</span> (event.<span class="hljs-property">data</span> &amp;&amp; event.<span class="hljs-property">data</span>.<span class="hljs-property">size</span> &gt; <span class="hljs-number">0</span>) {
+                  audioChunks.<span class="hljs-title function_">push</span>(event.<span class="hljs-property">data</span>);
+                }
+              };
+    
+              mediaRecorder.<span class="hljs-property">onstop</span> = <span class="hljs-keyword">async</span> () =&gt; {
+                <span class="hljs-comment">// Create a Blob from the recorded audio chunks</span>
+                <span class="hljs-keyword">const</span> audioBlob = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Blob</span>(audioChunks, { <span class="hljs-attr">type</span>: <span class="hljs-string">'audio/wav'</span> });
+                <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>();
+                formData.<span class="hljs-title function_">append</span>(<span class="hljs-string">'audio'</span>, audioBlob, <span class="hljs-string">'recording.wav'</span>);
+    
+                statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Sending audio for transcription...'</span>;
+    
+                <span class="hljs-keyword">try</span> {
+                  <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/transcribe'</span>, {
+                    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+                    <span class="hljs-attr">body</span>: formData
+                  });
+                  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+                  transcriptionDisplay.<span class="hljs-property">textContent</span> = data.<span class="hljs-property">transcription</span> || <span class="hljs-string">'No transcription available.'</span>;
+                } <span class="hljs-keyword">catch</span> (error) {
+                  transcriptionDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Error: '</span> + error;
+                }
+                statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">''</span>;
+              };
+    
+              mediaRecorder.<span class="hljs-title function_">start</span>();
+              recordButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Stop Recording'</span>;
+              isRecording = <span class="hljs-literal">true</span>;
+              statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Recording...'</span>;
+            } <span class="hljs-keyword">catch</span> (error) {
+              statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Error accessing microphone: '</span> + error;
+            }
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// Stop recording and trigger transcription</span>
+            mediaRecorder.<span class="hljs-title function_">stop</span>();
+            recordButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Start Recording'</span>;
+            isRecording = <span class="hljs-literal">false</span>;
+            statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Processing audio...'</span>;
+          }
+        });
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </span></code></div></div></pre>
+    <blockquote data-start="5281" data-end="5645">
+    <p data-start="5283" data-end="5308"><strong data-start="5283" data-end="5306">Usage Instructions:</strong></p>
+    <ul data-start="5311" data-end="5645">
+    <li data-start="5311" data-end="5414">Place this <code data-start="5324" data-end="5336">index.html</code> file in a directory served by your Flask app (or use a static file server).</li>
+    <li data-start="5417" data-end="5567">When you load the page, click <strong data-start="5449" data-end="5468">Start Recording</strong> to record your voice. Click the button again to stop recording and send the audio to the server.</li>
+    <li data-start="5570" data-end="5645">The transcription returned from the server will be displayed on the page.</li>
+    </ul>
+    </blockquote>
+    <hr data-start="5647" data-end="5650">
+    <p data-start="5652" data-end="5929" data-is-last-node="" data-is-only-node="">This setup gives you an end-to-end solution where your Flask endpoint leverages the Hugging Face "openai/whisper-tiny" model to transcribe audio recorded from the browser. Feel free to adjust generation parameters, error handling, and UI details as needed for your application.</p></div>
+
+
+<br><hr><br>
+<h2>Can rewrite the python code to use tensorflow as backend for transformers?</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="562">Below is an example of a Flask endpoint that uses the Hugging Face Transformers library with TensorFlow as the backend to load the "openai/whisper-tiny" model for transcription. In this example, we use the TensorFlow‑compatible model loader (via TFAutoModelForConditionalGeneration) and tell the processor to return TensorFlow tensors. The endpoint accepts an uploaded audio file, processes it with the model, and returns the transcription as JSON. The accompanying HTML page uses the MediaRecorder API to record audio in the browser and send it to the endpoint.</p>
+    <hr data-start="564" data-end="567">
+    <h2 data-start="569" data-end="598">Flask Endpoint (app_tf.py)</h2>
+    <pre class="!overflow-visible" data-start="600" data-end="2233"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request, jsonify
+    <span class="hljs-keyword">import</span> os
+    <span class="hljs-keyword">import</span> uuid
+    <span class="hljs-keyword">import</span> librosa
+    <span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> WhisperProcessor, TFAutoModelForConditionalGeneration
+    
+    app = Flask(__name__)
+    
+    <span class="hljs-comment"># Use the TensorFlow version of the model</span>
+    model_name = <span class="hljs-string">"openai/whisper-tiny"</span>
+    processor = WhisperProcessor.from_pretrained(model_name)
+    model = TFAutoModelForConditionalGeneration.from_pretrained(model_name)
+    
+    <span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">"/transcribe"</span>, methods=[<span class="hljs-string">"POST"</span>]</span>)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">transcribe</span>():
+        <span class="hljs-keyword">if</span> <span class="hljs-string">"audio"</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> request.files:
+            <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"error"</span>: <span class="hljs-string">"No audio file provided."</span>}), <span class="hljs-number">400</span>
+    
+        audio_file = request.files[<span class="hljs-string">"audio"</span>]
+        <span class="hljs-comment"># Save the audio file temporarily</span>
+        temp_filename = <span class="hljs-string">f"temp_<span class="hljs-subst">{uuid.uuid4().<span class="hljs-built_in">hex</span>}</span>.wav"</span>
+        audio_file.save(temp_filename)
+    
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-comment"># Load the audio with librosa and ensure a 16kHz sampling rate</span>
+            audio, sr = librosa.load(temp_filename, sr=<span class="hljs-number">16000</span>)
+            <span class="hljs-comment"># Process the audio and get input features as a TensorFlow tensor</span>
+            inputs = processor(audio, sampling_rate=sr, return_tensors=<span class="hljs-string">"tf"</span>)
+            input_features = inputs.input_features
+    
+            <span class="hljs-comment"># Generate transcription using the TF model (generate returns a TF tensor)</span>
+            predicted_ids = model.generate(input_features)
+            <span class="hljs-comment"># Convert predicted_ids tensor to numpy before decoding</span>
+            transcription = processor.batch_decode(predicted_ids.numpy(), skip_special_tokens=<span class="hljs-literal">True</span>)[<span class="hljs-number">0</span>]
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            transcription = <span class="hljs-string">f"Error processing audio: <span class="hljs-subst">{<span class="hljs-built_in">str</span>(e)}</span>"</span>
+        <span class="hljs-keyword">finally</span>:
+            os.remove(temp_filename)
+    
+        <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"transcription"</span>: transcription})
+    
+    <span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+        app.run(host=<span class="hljs-string">"0.0.0.0"</span>, port=<span class="hljs-number">5000</span>, debug=<span class="hljs-literal">True</span>)
+    </span></code></div></div></pre>
+    <blockquote data-start="2235" data-end="2374">
+    <p data-start="2237" data-end="2306"><strong data-start="2237" data-end="2254">Dependencies:</strong><br data-start="2254" data-end="2257">
+    Make sure you install the necessary packages:</p>
+    <pre class="!overflow-visible" data-start="2309" data-end="2374"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span>pip install flask transformers tensorflow librosa
+    </span></code></div></div></pre>
+    </blockquote>
+    <hr data-start="2376" data-end="2379">
+    <h2 data-start="2381" data-end="2405">Frontend (index.html)</h2>
+    <p data-start="2407" data-end="2550">This HTML page uses the browser’s MediaRecorder API to record the user’s voice and send the resulting audio file to the <code data-start="2527" data-end="2540">/transcribe</code> endpoint.</p>
+    <pre class="!overflow-visible" data-start="2552" data-end="5276"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">html</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Speech Transcription Demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+        <span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">font-family</span>: Arial, sans-serif; <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span>; }
+        <span class="hljs-selector-id">#recordButton</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2em</span>; }
+        <span class="hljs-selector-id">#status</span> { <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>; }
+        <span class="hljs-selector-id">#transcription</span> { <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.1em</span>; <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>; }
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Speech Transcription Demo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"recordButton"</span>&gt;</span>Start Recording<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"status"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Transcription:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"transcription"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">let</span> mediaRecorder;
+        <span class="hljs-keyword">let</span> audioChunks = [];
+        <span class="hljs-keyword">const</span> recordButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'recordButton'</span>);
+        <span class="hljs-keyword">const</span> statusDisplay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'status'</span>);
+        <span class="hljs-keyword">const</span> transcriptionDisplay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'transcription'</span>);
+        <span class="hljs-keyword">let</span> isRecording = <span class="hljs-literal">false</span>;
+    
+        recordButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">async</span> () =&gt; {
+          <span class="hljs-keyword">if</span> (!isRecording) {
+            <span class="hljs-keyword">try</span> {
+              <span class="hljs-comment">// Request microphone access</span>
+              <span class="hljs-keyword">const</span> stream = <span class="hljs-keyword">await</span> navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>({ <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span> });
+              mediaRecorder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MediaRecorder</span>(stream);
+              audioChunks = [];
+    
+              mediaRecorder.<span class="hljs-property">ondataavailable</span> = <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> {
+                <span class="hljs-keyword">if</span> (event.<span class="hljs-property">data</span> &amp;&amp; event.<span class="hljs-property">data</span>.<span class="hljs-property">size</span> &gt; <span class="hljs-number">0</span>) {
+                  audioChunks.<span class="hljs-title function_">push</span>(event.<span class="hljs-property">data</span>);
+                }
+              };
+    
+              mediaRecorder.<span class="hljs-property">onstop</span> = <span class="hljs-keyword">async</span> () =&gt; {
+                <span class="hljs-comment">// Combine audio chunks into a Blob</span>
+                <span class="hljs-keyword">const</span> audioBlob = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Blob</span>(audioChunks, { <span class="hljs-attr">type</span>: <span class="hljs-string">'audio/wav'</span> });
+                <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>();
+                formData.<span class="hljs-title function_">append</span>(<span class="hljs-string">'audio'</span>, audioBlob, <span class="hljs-string">'recording.wav'</span>);
+    
+                statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Sending audio for transcription...'</span>;
+    
+                <span class="hljs-keyword">try</span> {
+                  <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/transcribe'</span>, {
+                    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+                    <span class="hljs-attr">body</span>: formData
+                  });
+                  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+                  transcriptionDisplay.<span class="hljs-property">textContent</span> = data.<span class="hljs-property">transcription</span> || <span class="hljs-string">'No transcription available.'</span>;
+                } <span class="hljs-keyword">catch</span> (error) {
+                  transcriptionDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Error: '</span> + error;
+                }
+                statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">''</span>;
+              };
+    
+              mediaRecorder.<span class="hljs-title function_">start</span>();
+              recordButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Stop Recording'</span>;
+              isRecording = <span class="hljs-literal">true</span>;
+              statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Recording...'</span>;
+            } <span class="hljs-keyword">catch</span> (error) {
+              statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Error accessing microphone: '</span> + error;
+            }
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// Stop recording and trigger transcription</span>
+            mediaRecorder.<span class="hljs-title function_">stop</span>();
+            recordButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Start Recording'</span>;
+            isRecording = <span class="hljs-literal">false</span>;
+            statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Processing audio...'</span>;
+          }
+        });
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </span></code></div></div></pre>
+    <hr data-start="5278" data-end="5281">
+    <h2 data-start="5283" data-end="5293">Summary</h2>
+    <ul data-start="5295" data-end="5671">
+    <li data-start="5295" data-end="5489">The <strong data-start="5301" data-end="5331">Flask endpoint (app_tf.py)</strong> uses TensorFlow as the backend by loading the model with <code data-start="5389" data-end="5426">TFAutoModelForConditionalGeneration</code> and returning TensorFlow tensors (with <code data-start="5466" data-end="5487">return_tensors="tf"</code>).</li>
+    <li data-start="5490" data-end="5671">The <strong data-start="5496" data-end="5521">Frontend (index.html)</strong> records audio using the browser’s MediaRecorder API, sends the recorded audio as a file to the Flask endpoint, and displays the transcription result.</li>
+    </ul>
+    <p data-start="5673" data-end="5869" data-is-last-node="" data-is-only-node="">This setup provides an end-to-end solution where a browser-based client records audio and sends it to a TensorFlow‑backed transcription endpoint using the Hugging Face "openai/whisper-tiny" model.</p></div>
+
+<br><hr><br>
+<h2>from transformers import WhisperProcessor, <br>TFAutoModelForConditionalGeneration                                                                       
+<br>ImportError: cannot import name 'TFAutoModelForConditionalGeneration' from 'transformers' (/home/ashish/anaconda3/envs/hf_202412/lib/python3.12/site-packages/transformers/__init__.py)</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="217">This error indicates that the class you're trying to import—<strong data-start="60" data-end="99">TFAutoModelForConditionalGeneration</strong>—is not available in your current Transformers installation. Here are a few points to consider and possible solutions:</p>
+    <hr data-start="219" data-end="222">
+    <h3 data-start="224" data-end="260">1. Version or Availability Issue</h3>
+    <ul data-start="262" data-end="902">
+    <li data-start="262" data-end="543">
+    <p data-start="264" data-end="386"><strong data-start="264" data-end="289">Transformers Version:</strong><br data-start="289" data-end="292">
+    Make sure you’re using a recent version of the Transformers library. You can upgrade with:</p>
+    <pre class="!overflow-visible" data-start="389" data-end="441"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">bash</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-bash"><span>pip install --upgrade transformers
+    </span></code></div></div></pre>
+    <p data-start="444" data-end="543">However, even with the latest version, not all model architectures have TensorFlow implementations.</p>
+    </li>
+    <li data-start="545" data-end="902">
+    <p data-start="547" data-end="902"><strong data-start="547" data-end="582">TensorFlow Support for Whisper:</strong><br data-start="582" data-end="585">
+    Currently, the Whisper models (like <code data-start="623" data-end="646">"openai/whisper-tiny"</code>) are primarily implemented in PyTorch. The TensorFlow equivalents (for conditional generation) may not be available yet. The class <strong data-start="778" data-end="817">TFAutoModelForConditionalGeneration</strong> might not support Whisper because a TensorFlow version of Whisper isn’t implemented.</p>
+    </li>
+    </ul>
+    <hr data-start="904" data-end="907">
+    <h3 data-start="909" data-end="944">2. Alternatives and Workarounds</h3>
+    <ul data-start="946" data-end="1939">
+    <li data-start="946" data-end="1352">
+    <p data-start="948" data-end="1101"><strong data-start="948" data-end="976">Use the PyTorch Version:</strong><br data-start="976" data-end="979">
+    Since the Whisper model is officially available as a PyTorch model, you might consider using the PyTorch backend with:</p>
+    <pre class="!overflow-visible" data-start="1104" data-end="1283"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">python</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-python"><span><span class="hljs-keyword">from</span> transformers <span class="hljs-keyword">import</span> WhisperProcessor, AutoModelForConditionalGeneration
+    model = AutoModelForConditionalGeneration.from_pretrained(<span class="hljs-string">"openai/whisper-tiny"</span>)
+    </span></code></div></div></pre>
+    <p data-start="1286" data-end="1352">This approach is currently the recommended path for using Whisper.</p>
+    </li>
+    <li data-start="1354" data-end="1695">
+    <p data-start="1356" data-end="1695"><strong data-start="1356" data-end="1394">Check for Experimental TF Support:</strong><br data-start="1394" data-end="1397">
+    If you specifically need a TensorFlow implementation, you could check the <a data-start="1473" data-end="1550" rel="noopener" target="_new" href="https://github.com/huggingface/transformers">Transformers GitHub repository</a> or its release notes for any experimental support for Whisper on TF. At the time of writing, Whisper’s TensorFlow support is not yet mainstream.</p>
+    </li>
+    <li data-start="1697" data-end="1939">
+    <p data-start="1699" data-end="1939"><strong data-start="1699" data-end="1747">Use TFAutoModelForSeq2SeqLM (If Applicable):</strong><br data-start="1747" data-end="1750">
+    Some sequence-to-sequence models use the class <code data-start="1799" data-end="1824">TFAutoModelForSeq2SeqLM</code> for TensorFlow. However, unless the Whisper model is explicitly supported in TensorFlow, this may not work either.</p>
+    </li>
+    </ul>
+    <hr data-start="1941" data-end="1944">
+    <h3 data-start="1946" data-end="1957">Summary</h3>
+    <ul data-start="1959" data-end="2429">
+    <li data-start="1959" data-end="2136"><strong data-start="1961" data-end="1977">Error Cause:</strong> The error is raised because <strong data-start="2006" data-end="2045">TFAutoModelForConditionalGeneration</strong> isn’t implemented (or isn’t available in your Transformers version) for the Whisper model.</li>
+    <li data-start="2137" data-end="2293"><strong data-start="2139" data-end="2158">Recommendation:</strong> For now, use the PyTorch implementation (via <code data-start="2204" data-end="2239">AutoModelForConditionalGeneration</code>) when working with the <code data-start="2263" data-end="2286">"openai/whisper-tiny"</code> model.</li>
+    <li data-start="2294" data-end="2429"><strong data-start="2296" data-end="2315">Future Updates:</strong> Keep an eye on the Transformers release notes; TensorFlow support for Whisper might be added in a future release.</li>
+    </ul>
+    <p data-start="2431" data-end="2507" data-is-last-node="" data-is-only-node="">If you need further guidance or have additional questions, feel free to ask!</p></div>
+
+<span style="display: none;">Tags: Technology,Large Language Models,</span>
