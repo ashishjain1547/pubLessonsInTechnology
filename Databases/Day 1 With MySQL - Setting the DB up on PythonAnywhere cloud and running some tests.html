@@ -223,26 +223,4 @@ Collecting python-dotenv
 Installing collected packages: python-dotenv
 Successfully installed python-dotenv-1.0.1
 12:25 ~/mysite $
-
-<b>Issue of: "Address already in use"</b>
-
-<i>* Serving Flask app '__main__' (lazy loading)
-* Environment: production
-  WARNING: This is a development server. Do not use it in a production deployment.
-  Use a production WSGI server instead.
-* Debug mode: on
-Address already in use
-Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.10/site-packages/werkzeug/serving.py", line 908, in prepare_socket
-    s.bind(server_address)
-OSError: [Errno 98] Address already in use</i>
-
-
-FIX:
-if __name__ == '__main__':
-    app.run(debug=True, port=5002, use_reloader=False)
-
-
-
 </pre>
