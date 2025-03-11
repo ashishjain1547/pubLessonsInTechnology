@@ -1,0 +1,77 @@
+(base) C:\Users\ashish.jain50>python
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> import requests
+
+>>> url = 'https://www.googleapis.com/blogger/v3/blogs/1969144627074060944/posts/'
+
+>>> data = {'kind': 'blogger#post', 'blog': {'id': '1969144627074060944'}, 'title': 'new title', 'content': 'new content'}
+
+>>> headers = {'authorization': 'AIzaSyBvHbv7O7E74KpCKULjfO2D46kdfjs6y5s', 'content-type': 'application/json'}
+
+>>> requests.post(url = url, json=data, headers = headers)
+<Response [403]>
+
+>>> url_get_posts = 'https://www.googleapis.com/blogger/v3/blogs/{}/posts?key={}'.format('1969144627074060944', 'AIzaSyBvHbv7O7E74KpCKULjfO2D46kdfjs6y5s')
+>>> requests.get(url_get_posts)
+<Response [200]>
+>>> requests.get(url_get_posts).json()
+{'kind': 'blogger#postList', 'etag': '"MjAyMC0wOS0yNVQxMDo0MzoxOC43MTda"'}
+>>> url_create_post = 'https://www.googleapis.com/blogger/v3/blogs/{}/posts/'.format('1969144627074060944')
+>>> requests.post(url = url_create_post, json=data, headers = headers)
+<Response [403]>
+
+>>> data
+{'kind': 'blogger#post', 'blog': {'id': '1969144627074060944'}, 'title': 'new title', 'content': 'new content'}
+>>> requests.post(url = url_create_post, json=data, headers = headers).json()
+{'error': {'code': 403, 'message': 'The request is missing a valid API key.', 'errors': [{'message': 'The request is missing a valid API key.', 'domain': 'global', 'reason': 'forbidden'}], 'status': 'PERMISSION_DENIED'}}
+>>> 
+
+==========================================================================================================
+
+(base) C:\Users\ashish.jain50>python
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> url_get_posts = 'https://www.googleapis.com/blogger/v3/blogs/{}/posts?key={}'.format('1969144627074060944', 'AIzaSyBvHbv7O7E74KpCKULjfO2D46kdfjs6y5s')
+>>> requests.get(url_get_posts).json()
+{'kind': 'blogger#postList', 'etag': '"MjAyMC0wOS0zMFQxNzowMToyMS45NzNa"'}
+>>> data = {'kind': 'blogger#post', 'blog': {'id': '1969144627074060944'}, 'title': 'new title', 'content': 'new content'}
+
+>>> headers = {'authorization': 'AIzaSyBvHbv7O7E74KpCKULjfO2D46kdfjs6y5s', 'content-type': 'application/json'}
+>>> requests.post(url = url_get_posts, json=data, headers = headers).json()
+{'error': {'code': 403, 'message': 'The caller does not have permission', 'errors': [{'message': 'The caller does not have permission', 'domain': 'global', 'reason': 'forbidden'}], 'status': 'PERMISSION_DENIED'}}
+>>>    
+
+============================================================================================================
+
+(base) C:\Users\ashish.jain50>pip install requests_oauthlib
+Collecting requests_oauthlib
+  Downloading requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Requirement already satisfied: requests>=2.0.0 in d:\programfiles\anaconda3\lib\site-packages (from requests_oauthlib) (2.22.0)
+Collecting oauthlib>=3.0.0
+  Downloading oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+     |████████████████████████████████| 147 kB 467 kB/s
+Requirement already satisfied: idna<2.9,>=2.5 in d:\programfiles\anaconda3\lib\site-packages (from requests>=2.0.0->requests_oauthlib) (2.8)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in d:\programfiles\anaconda3\lib\site-packages (from requests>=2.0.0->requests_oauthlib) (1.25.8)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in d:\programfiles\anaconda3\lib\site-packages (from requests>=2.0.0->requests_oauthlib) (3.0.4)
+Requirement already satisfied: certifi>=2017.4.17 in d:\programfiles\anaconda3\lib\site-packages (from requests>=2.0.0->requests_oauthlib) (2019.11.28)
+Installing collected packages: oauthlib, requests-oauthlib
+Successfully installed oauthlib-3.1.0 requests-oauthlib-1.3.0
+
+
+CODE SAMPLE:
+
+auth = OAuth1('YOUR_APP_KEY', 'YOUR_APP_SECRET', 'USER_OAUTH_TOKEN', 'USER_OAUTH_TOKEN_SECRET')
+
+https://2.python-requests.org/en/v2.8.1/user/authentication/
+https://requests.readthedocs.io/en/master/user/authentication/
+
+============================================================================================================
+
+ANOTHER REF:
+https://www.tutorialspoint.com/requests/requests_authentication.htm
+https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html
+============================================================================================================
+

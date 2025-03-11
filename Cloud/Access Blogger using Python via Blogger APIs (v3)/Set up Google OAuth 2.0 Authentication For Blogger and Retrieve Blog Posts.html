@@ -1,0 +1,359 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+        success: function (result) {
+          $("span.customTempCodeHolderForSocialMedia").html(result);
+          $("div.customSocialMediaBtnsWrapper").html(
+            $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+          );
+        }
+
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <style>
+    .customTempCodeHolderForSocialMedia {
+      display: none;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><b>Installation </b>
+Blogger APIs Client Library for Python
+<i style="color: blue;">CMD> pip install --upgrade google-api-python-client </i>
+Ref: <a href="https://developers.google.com/blogger/docs/3.0/api-lib/python" target="_blank">developers.google.com</a>
+
+(base) C:\Users\ashish\Desktop>pip install oauth2client
+
+(base) C:\Users\ashish\Desktop\blogger>pip show google-api-python-client
+<i style="color: green">Name: google-api-python-client
+Version: 1.12.3
+Summary: Google API Client Library for Python
+Home-page: https://github.com/googleapis/google-api-python-client/
+Author: Google LLC
+Author-email: googleapis-packages@google.com
+License: Apache 2.0
+Location: d:\programfiles\anaconda3\lib\site-packages
+Requires: six, google-auth-httplib2, google-auth, google-api-core, uritemplate, httplib2
+Required-by: </i>
+
+(base) C:\Users\ashish\Desktop\blogger>pip show oauth2client
+<i style="color: green">Name: oauth2client
+Version: 4.1.3
+Summary: OAuth 2.0 client library
+Home-page: http://github.com/google/oauth2client/
+Author: Google Inc.
+Author-email: jonwayne+oauth2client@google.com
+License: Apache 2.0
+Location: d:\programfiles\anaconda3\lib\site-packages
+Requires: pyasn1, six, rsa, pyasn1-modules, httplib2
+Required-by: </i>
+
+==  ==  ==  ==  ==
+
+Basic structure of the "client_secrets.json" is as written below:
+
+Ref: <a href="https://github.com/googleapis/google-api-python-client/blob/master/samples/blogger/client_secrets.json" target="_blank">GitHub</a>
+
+<i style="color: blue">{
+  "web": {
+    "client_id": "[[INSERT CLIENT ID HERE]]",
+    "client_secret": "[[INSERT CLIENT SECRET HERE]]",
+    "redirect_uris": [],
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token"
+  }
+} </i>
+
+Our "client_secrets.json" file looks like this:
+
+<i style="color: blue">{
+  "installed":
+  {
+    "client_id": "0...9-a...z.apps.googleusercontent.com",
+    "project_id": "banded...",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "2.....v",
+    "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
+  }
+} </i>
+
+==  ==  ==  ==  ==
+
+<b>About authorization protocols </b>
+Your application must use <a href="https://developers.google.com/identity/protocols/oauth2" target="_blank">OAuth 2.0</a> to authorize requests. No other authorization protocols are supported. If your application uses <a href="https://developers.google.com/identity/#google-sign-in" target="_blank">Google Sign-In</a>, some aspects of authorization are handled for you.
+
+You can create "OAuth Client ID" from here: <a href="https://developers.google.com/blogger/docs/3.0/using" target="_blank">developers.google.com</a>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-JPpTcC4mJtw/X3qRmlYHMcI/AAAAAAAAFmc/ghLWtXN1cZUTNjtFlHBIqFOw8_uTQu-9QCLcBGAsYHQ/s498/Get%2BOAuth%2BClient%2BID.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="351" data-original-width="498" src="https://1.bp.blogspot.com/-JPpTcC4mJtw/X3qRmlYHMcI/AAAAAAAAFmc/ghLWtXN1cZUTNjtFlHBIqFOw8_uTQu-9QCLcBGAsYHQ/s600/Get%2BOAuth%2BClient%2BID.png"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-D-ydXQhoLsw/X3qRmfe_F5I/AAAAAAAAFmY/lod-mxacCR0E2vSabnGh-WZrEOxMyc2bQCLcBGAsYHQ/s671/Enable%2BBlogger%2BAPI%2Bv3%2BOAuth%2BClient%2BID.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="284" data-original-width="671" src="https://1.bp.blogspot.com/-D-ydXQhoLsw/X3qRmfe_F5I/AAAAAAAAFmY/lod-mxacCR0E2vSabnGh-WZrEOxMyc2bQCLcBGAsYHQ/s600/Enable%2BBlogger%2BAPI%2Bv3%2BOAuth%2BClient%2BID.png"/></a></div>
+
+You can also create a new "Project".
+
+We will select already created "My Project".
+
+We will select the "OAuth Client" as "Desktop App":
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-OQmxMAMXNFU/X3qRmADOtlI/AAAAAAAAFmU/B96dKoJH8GMzOhmWzIjQ6I0dQndRgniPQCLcBGAsYHQ/s516/Configure%2Byour%2BOAuth%2BClient.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="490" data-original-width="516" src="https://1.bp.blogspot.com/-OQmxMAMXNFU/X3qRmADOtlI/AAAAAAAAFmU/B96dKoJH8GMzOhmWzIjQ6I0dQndRgniPQCLcBGAsYHQ/s600/Configure%2Byour%2BOAuth%2BClient.png"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-b2JwrR5wnas/X3qRl3Fw_OI/AAAAAAAAFmQ/5x6Hv-EYCfoPcvrwbOmok4gb1bIhhvQygCLcBGAsYHQ/s579/Client%2BID%2Band%2BClient%2BSecret.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="391" data-original-width="579" src="https://1.bp.blogspot.com/-b2JwrR5wnas/X3qRl3Fw_OI/AAAAAAAAFmQ/5x6Hv-EYCfoPcvrwbOmok4gb1bIhhvQygCLcBGAsYHQ/s600/Client%2BID%2Band%2BClient%2BSecret.png"/></a></div>
+
+==  ==  ==  ==  ==
+
+Error if the 'client_secrets.json' file is not present alongside "blogger.py":
+
+(base) C:\Users\ashish\Desktop>python blogger.py
+<i style="color: red">The client secrets were invalid:
+('Error opening file', 'client_secrets.json', 'No such file or directory', 2)
+WARNING: Please configure OAuth 2.0
+
+To make this sample run you will need to populate the client_secrets.json file
+found at:
+
+   client_secrets.json
+
+with information from the APIs Console [ https://code.google.com/apis/console ]. </i>
+
+==  ==  ==  ==  ==
+
+Error on placing "empty (0KB)" file named "client_secrets.json":
+
+<i style="color: red">(base) C:\Users\ashish\Desktop\blogger>python blogger_v2.py
+Traceback (most recent call last):
+  File "blogger_v2.py", line 43, in [module]
+    main(sys.argv)
+  File "blogger_v2.py", line 12, in main
+    scope='https://www.googleapis.com/auth/blogger')
+  File "D:\programfiles\Anaconda3\lib\site-packages\googleapiclient\sample_tools.py", line 88, in init
+    client_secrets, scope=scope, message=tools.message_if_missing(client_secrets)
+  File "D:\programfiles\Anaconda3\lib\site-packages\oauth2client\_helpers.py", line 133, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "D:\programfiles\Anaconda3\lib\site-packages\oauth2client\client.py", line 2135, in flow_from_clientsecrets
+    cache=cache)
+  File "D:\programfiles\Anaconda3\lib\site-packages\oauth2client\clientsecrets.py", line 165, in loadfile
+    return _loadfile(filename)
+  File "D:\programfiles\Anaconda3\lib\site-packages\oauth2client\clientsecrets.py", line 122, in _loadfile
+    obj = json.load(fp)
+  File "D:\programfiles\Anaconda3\lib\json\__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "D:\programfiles\Anaconda3\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\programfiles\Anaconda3\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\programfiles\Anaconda3\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0) </i>
+
+==  ==  ==  ==  ==
+
+Before authentication:
+
+  <i style="color: red">C:\Users\ashish\Desktop\blogger>tree /f
+  
+  C:.
+      blogger_v1.py
+      client_secrets.json
+  
+  No subfolders exist </i>
+
+After authentication (the authentication steps are shown below), a 'blogger.dat' file is created:
+
+  <i style="color: green">C:\Users\ashish\Desktop\blogger>tree /f
+  
+  C:.
+      blogger.dat
+      blogger_v1.py
+      client_secrets.json
+  
+  No subfolders exist </i>
+
+==  ==  ==  ==  ==
+
+When we run the application the application the first time, it opens the "Google's User Authentication" window to give access to the application to the Blogger for a Google account by logging into the respective Google Account. 
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-gHPrASlnN2s/X3qRnIHyGYI/AAAAAAAAFmo/wlOnemZdT5MTH0uidyQaZ38kZSOtODD0wCLcBGAsYHQ/s469/Google%2BSign-in.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="316" data-original-width="469" src="https://1.bp.blogspot.com/-gHPrASlnN2s/X3qRnIHyGYI/AAAAAAAAFmo/wlOnemZdT5MTH0uidyQaZ38kZSOtODD0wCLcBGAsYHQ/s600/Google%2BSign-in.png"/></a></div>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-pHca_FWmCnQ/X3qRnLXQzrI/AAAAAAAAFmk/zjwuCUlk4C4rHcznKYoAOYidPWfK2MiVwCLcBGAsYHQ/s457/Grant%2Bpermission%2Bto%2Bmanage%2B%2527Blogger%2527%2Baccount.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="422" data-original-width="457" src="https://1.bp.blogspot.com/-pHca_FWmCnQ/X3qRnLXQzrI/AAAAAAAAFmk/zjwuCUlk4C4rHcznKYoAOYidPWfK2MiVwCLcBGAsYHQ/s600/Grant%2Bpermission%2Bto%2Bmanage%2B%2527Blogger%2527%2Baccount.png"/></a></div>
+
+Last prompt will ask you to confirm your choice:
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-dt_FrvBaN5g/X3qRmpI6BrI/AAAAAAAAFmg/kW_pdKA6LKEB5R6w5d07sFHt_hs92NusQCLcBGAsYHQ/s532/Google%2BAccount%2BSign-in%2B--%2BConfirm%2Byour%2Bchoices.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="532" data-original-width="461" src="https://1.bp.blogspot.com/-dt_FrvBaN5g/X3qRmpI6BrI/AAAAAAAAFmg/kW_pdKA6LKEB5R6w5d07sFHt_hs92NusQCLcBGAsYHQ/s600/Google%2BAccount%2BSign-in%2B--%2BConfirm%2Byour%2Bchoices.png"/></a></div>
+
+Once the sign-in is complete it opens a Broswer Window (our browser is Chrome) as shown below:
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-_C5Hj0X1oQY/X3TBDIWL2XI/AAAAAAAAFlQ/_UqngVljNicCduxtDNhYy7jDtm1dz70SgCLcBGAsYHQ/s640/Application%2BStatus%2Bin%2BChrome.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="111" data-original-width="640" src="https://1.bp.blogspot.com/-_C5Hj0X1oQY/X3TBDIWL2XI/AAAAAAAAFlQ/_UqngVljNicCduxtDNhYy7jDtm1dz70SgCLcBGAsYHQ/s600/Application%2BStatus%2Bin%2BChrome.png"/></a></div>
+
+Message: Application flow has been completed
+
+==  ==  ==  ==  ==
+
+<b>CODE V1 </b>
+
+<i style="color: blue">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""Simple command-line sample for Blogger.
+Command-line application that retrieves the users blogs and posts.
+
+Usage:
+  $ python blogger.py
+
+You can also get help on all the command-line flags the program understands
+by running:
+  $ python blogger.py --help
+
+To get detailed log output run:
+  $ python blogger.py --logging_level=DEBUG
+"""
+
+from __future__ import print_function
+
+import sys
+
+from oauth2client import client
+from googleapiclient import sample_tools
+
+
+def main(argv):
+  # Authenticate and construct service.
+  service, flags = sample_tools.init(
+      argv, 'blogger', 'v3', __doc__, __file__,
+      scope='https://www.googleapis.com/auth/blogger')
+
+  try:
+      users = service.users()
+
+      # Retrieve this user's profile information
+      thisuser = users.get(userId='self').execute()
+      print('This user\'s display name is: %s' % thisuser['displayName'])
+
+      blogs = service.blogs()
+
+      # Retrieve the list of Blogs this user has write privileges on
+      thisusersblogs = blogs.listByUser(userId='self').execute()
+      for blog in thisusersblogs['items']:
+        print('The blog named \'%s\' is at: %s' % (blog['name'], blog['url']))
+
+      posts = service.posts()
+
+      # List the posts for each blog this user has
+      for blog in thisusersblogs['items']:
+        print('The posts for %s:' % blog['name'])
+        request = posts.list(blogId=blog['id'])
+        while request != None:
+          posts_doc = request.execute()
+          if 'items' in posts_doc and not (posts_doc['items'] is None):
+            for post in posts_doc['items']:
+              print('  %s (%s)' % (post['title'], post['url']))
+          request = posts.list_next(request, posts_doc)
+
+  except client.AccessTokenRefreshError:
+    print ('The credentials have been revoked or expired, please re-run'
+      'the application to re-authorize')
+
+if __name__ == '__main__':
+  main(sys.argv) </i>
+
+==  ==  ==  ==  ==
+
+(base) CMD>python blogger_v1.py
+<i style="color: green">D:\programfiles\Anaconda3\lib\site-packages\oauth2client\_helpers.py:255: UserWarning: Cannot access blogger.dat: No such file or directory
+  warnings.warn(_MISSING_FILE_MESSAGE.format(filename))
+
+Your browser has been opened to visit:
+  https://accounts.google.com/o/oauth2/auth?client_id=1...
+
+If your browser is on a different machine then exit and re-run this
+application with the command-line parameter
+
+  --noauth_local_webserver
+
+Authentication successful.
+This user's display name is: Ashish Jain
+The blog named 'survival8' is at: http://survival8.blogspot.com/
+The blog named 'ashish' is at: http://ashish.blogspot.com/
+
+The posts for survival8:
+  Difficult Conversations. How to Discuss What Matters Most (D. Stone, B. Patton, S. Heen, 2010) (http://survival8.blogspot.com/2020/09/douglas-stone-b-patton-s-heen-difficult.html)
+  ...
+  Is having a water fountain a sensible thing to do? (http://survival8.blogspot.com/2016/11/is-having-water-fountain-sensible-thing_21.html)
+  
+The posts for ashish:
+  ... </i>
+
+==  ==  ==  ==  ==
+
+<b>'Cloud Resource Manager' Screenshot Showing Our Usage</b>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-ur8aPyyyujY/X3qRl-i9CYI/AAAAAAAAFmM/5_SScHtd4l8Sr-cchuSZ7GHVZuulgYe6gCLcBGAsYHQ/s516/Cloud%2BResource%2BManager%2B%2528Screenshot%2529.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="408" data-original-width="516" src="https://1.bp.blogspot.com/-ur8aPyyyujY/X3qRl-i9CYI/AAAAAAAAFmM/5_SScHtd4l8Sr-cchuSZ7GHVZuulgYe6gCLcBGAsYHQ/s600/Cloud%2BResource%2BManager%2B%2528Screenshot%2529.png"/></a></div>
+
+==  ==  ==  ==  ==
+
+<b>References</b>
+
+GitHub
+
+  % <a href="https://github.com/googleapis/google-api-python-client/tree/master/samples/blogger" target="_blank">Blogger: google-api-python-client</a>
+  
+  % <a href="https://github.com/googleapis/google-api-python-client/blob/master/samples/blogger/blogger.py" target="_blank">blogger.py</a>
+
+Google API Console
+
+  % <a href="https://console.developers.google.com" target="_blank">Google API Console</a>
+  
+  % <a href="https://console.developers.google.com/apis/dashboard" target="_blank">Dashboard</a>
+ 
+  % <a href="https://console.developers.google.com/cloud-resource-manager" target="_blank">Cloud Resource Manager</a>
+  
+Documentation
+
+  % <a href="https://developers.google.com/blogger/docs/3.0/api-lib/python" target="_blank">Blogger APIs Client Library for Python</a>
+  
+  % <a href="https://developers.google.com/blogger/docs/3.0/using" target="_blank">Blogger API: Using the API</a>
+  
+  % <a href="https://developers.google.com/resources/api-libraries/documentation/blogger/v3/python/latest/" target="_blank">Blogger API v3 (Instance Methods)</a>
+  
+  % <a href="https://developers.google.com/resources/api-libraries/documentation/blogger/v3/python/latest/blogger_v3.posts.html#insert" target="_blank">Blogger API v3 . posts (Instance Methods)</a>
+  
+</pre>

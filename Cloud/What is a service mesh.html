@@ -1,0 +1,82 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre>
+URL: https://www.hashicorp.com/resources/what-is-a-service-mesh
+URL: https://youtu.be/vh1YtWjfcyk
+
+The way we describe console is as a service mesh for microservices which then leads to the question: What is a service mesh? So when we start to take a step back and look at what are the sort of architectural challenges of operating either sort of a microservice architecture or what we used to call a service oriented architecture. Well we tend to find is that what we're really doing is having a collection of different services. We might have sort of our frontend login portal or sort of ability to tap check the balance of a bank account, wire transfers, bill pay and all these are sort of discrete services that are part of the larger bank right as an example. And so we talk about these different services, all of them are communicating to each other over a network fundamentally. So the challenge becomes how did these different services that exist at different IP addresses on different machines and our infrastructure. How do they first of all talk to each other? How do they discover and route and make sure that our login portal knows how to communicate with our check-balance service. 
+
+So this first challenge is the one of sort of routing and discovery and the way most organizations think about solving that is by putting a load balancer in front of every service. So we'll have a load balancer that is sort of hard coded at a particular IP. And so each of our services will hard-code that IP address of the load balancer and that load balancer will take us back to the backend service. 
+
+Now the challenge with that approach is you end up with a proliferation of load balancers, you need thousands of them in an environment, but to that they end up usually being manually managed. So I end up having to file a ticket and wait five weeks, six weeks for someone to go in and add a new instance to that load balancer before traffic gets to it. 
+
+So we're introducing both sort of a cost penalty. But as well as sort of an agility penalty to how fast could our organization deploy new services, scale up and down, react to machine failures, etc. 
+
+So what we really start to look at first of all is those challenges around routing and discovery. The second set of major challenges: How do I secure all of this? Historically what you would see is a flat open network. We would put all of our security at sort of the perimeter of the network and define sort of the castle walls and use firewalls and Sims and other devices to filter all the traffic coming into the data center. 
+
+But then once you're in in general what you tend to see as large flat namespaces, potentially there are some firewalls and sort of the East-West path. But often times those firewalls are also a management burden they end up with tens of thousands or millions of rules that are manually manage and you have this sort of mismatch of agility, which is it might take me weeks to update my firewall rule but only takes me seconds to launch a new application. So this creates friction for development teams as they're trying to scale up, scale down, deploy new versions, but are sort of shackled by how quickly firewalls and load balancers can be updated. 
+
+So those are some of the problems as we talked about what exists in a micro service or service oriented architecture and the goal of a service mesh is really to solve that problem holistically.
+
+So that starts with is by having a central registry of what are all of the services that are running. So anytime a new application comes online, it populates that central registry and so we know "service instance 'B' is now available at this IP". So what this lets us do is anyone who wants to discover that service can query the central registry say "where's that service running?" What's its IP? How do I talk to it? So this lets us build much more dynamic infrastructure where as servers come and go or we scale up and down, we don't have to file a ticket and wait weeks for load balancers and firewalls to get updated. Right? It comes up and goes to the registry. It can be discovered immediately. The other side of that problem is how do we secure the traffic East-West inside the castle walls, right? So it's not enough anymore for us to say this network perimeter is perfectly secure. We really have to be realistic and say an attacker will get on to that network. 
+
+Right and if an attacker does get on that network, we can't have it be wide open instead. Every service should require explicit authorization. You can only talk to the database if you need to talk to the database, right? And so that really becomes the second sort of challenge service meshes look at solving is how do we let you explicitly define rules around which service can talk to what? So we can centrally define and say my web server is allowed to talk to my database but we do it at the sort of a logical service layer level. 
+
+We're not doing it like "IP1 can talk to IP2" at a firewall level and the advantage of this logical service level is its scale independent. It doesn't matter. Do we have one, ten, or a thousand web servers the rule web server database is the same and so the challenge of the sort of identity based security is now we need to have service identity. So part of what a service mesh does is distribute certificates to these end applications. 
+
+These are standard TLS certificates much like we use to secure the public internet, but we distribute these to our web servers that are databases that are APIs so that they can use it to identify themselves in service to service communication. So when a web server talks to a database, it's presenting a certificate says I'm a web server likewise the database presents a certificates. I'm a database and what this lets them do is establish mutual TLS. So both sides verify the identity of the other side but they also establish an encrypted channel. So all of the traffic going over the network is now encrypted. 
+
+So this is the core idea behind zero trust. We're not trusting our network and sort of a TLS layer or asserting both identity and encryption for confidentiality. So the final part of that is tie into that central rule set. Just because we know a web server is talking to a database, doesn't mean that should be allowed. Instead, we have to talk back to that central rule set and determine should the web server be allowed to talk to the database, right so we can centerally manage these rules as to who's allowed to talk to who but then distribute certificates and distribute these rules to the edge so that at the network layer Services can communicate to each other without going over a central bus, right? 
+
+So unlike something like an enterprise service bus or technologies that require going through centralized brokers, we can push all of the communication to the edge and it's all node to node. Authorization decisions are made at the edge without having to come back through a centralized bus. So what this really brings us to is how do we think about what are the requirements for organizations that are adopting a service mesh. 
+
+So one of those challenges really relates back to the fact that we don't want to go back to a centralized broker or a centralized bus. The moment we have that sort of centralization. We've added the single point of failure. Now all of this traffic potentially has to come back to a central point and that becomes our bottleneck. So one key thing to look at is how much of these decisions in terms of you know, authentication and authorization can be pushed to the edge without causing that to come back to a central point. 
+
+So there's this question of what does the scalability of the system look like? We start talking about thousands or tens of thousands of nodes. 
+
+Second sort of problem is the network is fundamentally are sort of compatibility layer what let's our mainframe talk to our metal, talk to our VM, talk to our container, talk to our serverless function is that they all speak TCP IP. The network is the compatibility layer and so as you look at service mesh technologies, you need it to also be a compatibility layer. So a challenge is how do I make sure that my modern containerized application is still able to talk back to my main frame because if it's not able to, we end up creating these silos on the network where our different services can no longer communicate breaking what the network has always given us, which is compatibility between different technologies, different operating systems and different languages. So that sort of compatibility is key. 
+
+The other thing that's important is how much to our applications have to be aware or be retooled to make use of this technology, right? So particularly if we have thousands of applications some of which speaking custom protocols some of which you know, we don't control the source code to that might be on the shelf. How do we actually make sure they can fit into this environment? And so what's important to understand is does the surface mesh give me just level 4 capability, right, which is where we really focus on is that level 3 level 4 to make sure that we get compatibility across every type of protocol. So we don't have to be protocol aware to be able to proxy the traffic, secure it, authenticate and authorize it but as we look further up to level 7 for protocols that we are aware of can we do things like traffic shaping and more intelligent sort of traffic management at that layer, but what we don't want is only a level 7 awareness where now it's impossible to use protocols that we're not level 7 aware of, this creates a compatibility problem once again.
+
+The final thing we want to consider is what does the operation of the system look like right? We're starting to put these kind of things at the core of our networks. So taking an outage of these types of systems will impact all of the systems running on top of it, right potentially our entire data center. So we want to make sure these are items that are easy to scale but easy to make sure that they run reliably in our 24 by 7 available. So that's how we think about what are the requirements as an organization evaluates different service mesh technologies.
+</pre>

@@ -1,0 +1,91 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+        success: function (result) {
+          $("div.customTemporaryCodeHolder").html(result);
+          $("nav.customDynamicNav").html(
+            $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+          );
+        }
+      });
+    }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<nav class="customDynamicNav">
+</nav>
+<div class="customTemporaryCodeHolder">
+</div>
+<br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<pre>
+Create a JSON file in the Google Drive at a location inside "My Drive".
+
+We will call it 'properties.json'. It has the following contents:
+
+{
+    "firstname": "Ashish",
+    "lastname": "Jain",
+    "country": "India"
+}
+
+Next, create "Google Colaboratory" (it will be an .ipynb file) in the Drive.
+
+Follow this sequence: New -> More -> Google Colaboratory
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="http://1.bp.blogspot.com/-YkQ5Xkj6nBk/Xf0WDd80yoI/AAAAAAAAELI/MsiQKCXWve0Zsj2W17Nq3JjKoNlzY2OZACK4BGAYYCw/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-YkQ5Xkj6nBk/Xf0WDd80yoI/AAAAAAAAELI/MsiQKCXWve0Zsj2W17Nq3JjKoNlzY2OZACK4BGAYYCw/s1600/1.png" /></a></div>
+
+Write this code in the first cell: CELL 1# 
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+In the output, you get an instruction to follow and authenticate the access to a Drive using an access code.
+
+OUTPUT:
+Go to this URL in a browser: https://accounts.google.com/o/oauth2/auth?client_id=9...
+
+Enter your authorization code:
+··········
+Mounted at /content/drive
+
+CELL 2#
+
+# load json
+path_to_json_file = "/content/drive/My Drive/Colab Notebooks/files_1_1/properties.json"
+
+json_file = open(path_to_json_file, 'r')
+loaded_json = json_file.read()
+json_file.close()
+print(loaded_json)
+
+OUTPUT:
+
+{
+    "firstname": "Ashish",
+    "lastname": "Jain",
+    "country": "India"
+}
+
+CELL 3#
+
+import json
+with open(path_to_json_file, "r") as content:
+  print(json.load(content))
+  
+OUTPUT:
+
+{ 'firstname': 'Ashish', 'lastname': 'Jain', 'country': 'India' }
+</pre>
