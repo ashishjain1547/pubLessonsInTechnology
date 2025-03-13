@@ -1,0 +1,235 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<div class="markdown prose w-full break-words dark:prose-invert light">
+    <p data-start="181" data-end="418">Developing an <strong data-start="195" data-end="240">Automatic Speech Recognition (ASR) system</strong> on <strong data-start="244" data-end="262">PythonAnywhere</strong>, especially with a <strong data-start="282" data-end="295">free-tier</strong> account, presents multiple challenges. Below, we outline these challenges along with possible approaches to mitigate them.</p>
+    <h2 data-start="420" data-end="482"><strong data-start="423" data-end="480">1. Storage Constraints on PythonAnywhere Free Account</strong></h2>
+    <p data-start="484" data-end="605">PythonAnywhere's free-tier provides <strong data-start="520" data-end="542">limited disk space</strong>, making it difficult to host and run ASR models effectively.</p>
+    <ul data-start="607" data-end="869">
+    <li data-start="607" data-end="704"><strong data-start="609" data-end="625">Whisper Tiny</strong>, the smallest variant of OpenAI's Whisper ASR models, is <strong data-start="683" data-end="693">~155MB</strong> in size.</li>
+    <li data-start="705" data-end="778">The model and its dependencies must fit within the available storage.</li>
+    <li data-start="779" data-end="869"><strong data-start="781" data-end="793">Solution</strong>: Implement <strong data-start="805" data-end="826">periodic clean-up</strong> scripts to remove unused files and logs.</li>
+    </ul>
+    <h2 data-start="871" data-end="924"><strong data-start="874" data-end="922">2. Audio Processing Errors on PythonAnywhere</strong></h2>
+    <p data-start="926" data-end="1012">When processing microphone recordings via Flask, we encountered the following error:</p>
+    <blockquote data-start="1014" data-end="1091">
+    <p data-start="1016" data-end="1091"><strong data-start="1016" data-end="1089">"Error processing audio: expected scalar type double but found float"</strong></p>
+    </blockquote>
+    <p data-start="1093" data-end="1207">This issue arises due to <strong data-start="1118" data-end="1148">incompatible audio formats</strong> when using libraries like <strong data-start="1175" data-end="1186">Librosa</strong> and <strong data-start="1191" data-end="1204">Soundfile</strong>.</p>
+    <ul data-start="1209" data-end="1537">
+    <li data-start="1209" data-end="1306">The <strong data-start="1215" data-end="1246">Chrome browser's WebRTC API</strong> records audio in <strong data-start="1264" data-end="1279">Opus format</strong> inside a WebM container.</li>
+    <li data-start="1307" data-end="1397">This format needs <strong data-start="1327" data-end="1341">conversion</strong> before it can be processed by <strong data-start="1372" data-end="1383">Librosa</strong> or Whisper.</li>
+    <li data-start="1398" data-end="1537"><strong data-start="1400" data-end="1408">Fix:</strong> Use <strong data-start="1413" data-end="1432">FFmpeg or PyDub</strong> to <strong data-start="1436" data-end="1447">convert</strong> the WebM/Opus file to a standard <strong data-start="1481" data-end="1499">16kHz WAV file</strong> before feeding it into the ASR model.</li>
+    </ul>
+    <hr data-start="1539" data-end="1542">
+    <h2 data-start="1544" data-end="1585"><strong data-start="1547" data-end="1583">3. Low Accuracy of Transcription</strong></h2>
+    <p data-start="1587" data-end="1680">Despite being optimized for size, <strong data-start="1621" data-end="1637">Whisper Tiny</strong> struggles with accuracy, especially for:</p>
+    <ul data-start="1682" data-end="1784">
+    <li data-start="1682" data-end="1745"><strong data-start="1684" data-end="1701">Short phrases</strong> (e.g., <em data-start="1709" data-end="1724">"Hello 1-2-3"</em>, <em data-start="1726" data-end="1742">"Good morning"</em>)</li>
+    <li data-start="1746" data-end="1784"><strong data-start="1748" data-end="1782">Accents and noisy environments</strong></li>
+    </ul>
+    <p data-start="1786" data-end="1811"><strong data-start="1786" data-end="1809">Possible Solutions:</strong></p>
+    <ul data-start="1812" data-end="2046">
+    <li data-start="1812" data-end="1901"><strong data-start="1814" data-end="1845">Try a slightly larger model</strong> like <strong data-start="1851" data-end="1875">Whisper Base (289MB)</strong> for better recognition.</li>
+    <li data-start="1902" data-end="1962"><strong data-start="1904" data-end="1927">Fine-tune the model</strong> with domain-specific audio data.</li>
+    <li data-start="1963" data-end="2046"><strong data-start="1965" data-end="1997">Use a noise reduction filter</strong> to clean the input audio before transcription.</li>
+    </ul>
+    <hr data-start="2048" data-end="2051">
+    <h2 data-start="2053" data-end="2091"><strong data-start="2056" data-end="2089">4. High Latency in Processing</strong></h2>
+    <p data-start="2093" data-end="2198">ASR models require <strong data-start="2112" data-end="2147">significant computational power</strong>, which is limited on PythonAnywhere's free-tier.</p>
+    <ul data-start="2200" data-end="2367">
+    <li data-start="2200" data-end="2272">The transcription process takes too long for real-time applications.</li>
+    <li data-start="2273" data-end="2367">PythonAnywhere's free-tier <strong data-start="2302" data-end="2339">does not support GPU acceleration</strong>, making inference slower.</li>
+    </ul>
+    <p data-start="2369" data-end="2395"><strong data-start="2369" data-end="2393">Potential Solutions:</strong></p>
+    <ul data-start="2396" data-end="2690">
+    <li data-start="2396" data-end="2505"><strong data-start="2398" data-end="2448">Move to a more powerful cloud hosting solution</strong> (e.g., <strong data-start="2456" data-end="2492">Render, Google Colab, AWS Lambda</strong> with GPU).</li>
+    <li data-start="2506" data-end="2596"><strong data-start="2508" data-end="2542">Use a streaming-based approach</strong> to process audio in chunks rather than all at once.</li>
+    <li data-start="2597" data-end="2690"><strong data-start="2599" data-end="2633">Explore lightweight ASR models</strong> like <strong data-start="2639" data-end="2659">Deepgram or Vosk</strong> for real-time transcription.</li>
+    </ul>
+    <hr data-start="2692" data-end="2695">
+    <h2 data-start="2697" data-end="2745"><strong data-start="2700" data-end="2743">5. Uncharted Issues &amp; Future Roadblocks</strong></h2>
+    <p data-start="2747" data-end="2840">Since ASR is a <strong data-start="2762" data-end="2778">complex task</strong>, there are additional concerns that we have yet to explore:</p>
+    <ul data-start="2842" data-end="3117">
+    <li data-start="2842" data-end="2937"><strong data-start="2844" data-end="2873">Speech length limitations</strong>: How long can a single audio file be before processing fails?</li>
+    <li data-start="2938" data-end="3055"><strong data-start="2940" data-end="2973">Continuous speech recognition</strong>: Can we implement <strong data-start="2992" data-end="3019">real-time transcription</strong> for a <strong data-start="3026" data-end="3052">Read-Along application</strong>?</li>
+    <li data-start="3056" data-end="3117"><strong data-start="3058" data-end="3102">Handling different languages and accents</strong> effectively.</li>
+    </ul>
+    <hr data-start="3119" data-end="3122">
+    <h1 data-start="3124" data-end="3163"><strong data-start="3126" data-end="3161">Exploring Alternative Solutions</strong></h1>
+    <h3 data-start="3165" data-end="3225">✅ <strong data-start="3171" data-end="3223">Option 1: Try a Different Cloud Hosting Platform</strong></h3>
+    <ul data-start="3226" data-end="3389">
+    <li data-start="3226" data-end="3311"><strong data-start="3228" data-end="3238">Render</strong>, <strong data-start="3240" data-end="3260">Google Cloud Run</strong>, or <strong data-start="3265" data-end="3279">AWS Lambda</strong> may provide more flexibility.</li>
+    <li data-start="3312" data-end="3389">Some platforms offer <strong data-start="3335" data-end="3349">GPU access</strong>, which speeds up ASR model inference.</li>
+    </ul>
+    <h3 data-start="3391" data-end="3441">✅ <strong data-start="3397" data-end="3439">Option 2: Use an API-Based ASR Service</strong></h3>
+    <p data-start="3442" data-end="3524">Instead of running <strong data-start="3461" data-end="3480">Whisper locally</strong>, we can leverage APIs for speech-to-text:</p>
+    <ul data-start="3525" data-end="3739">
+    <li data-start="3525" data-end="3586"><strong data-start="3527" data-end="3549">OpenAI Whisper API</strong> – Paid but provides high accuracy.</li>
+    <li data-start="3587" data-end="3665"><strong data-start="3589" data-end="3609">Deepgram ASR API</strong> – Fast and accurate for real-time speech recognition.</li>
+    <li data-start="3666" data-end="3739"><strong data-start="3668" data-end="3697">Google Speech-to-Text API</strong> – Excellent for multi-language support.</li>
+    </ul>
+    <p data-start="3741" data-end="3878">By integrating a cloud-based ASR API, we <strong data-start="3782" data-end="3824">eliminate local processing constraints</strong> and benefit from <strong data-start="3842" data-end="3877">better accuracy and scalability</strong>.</p>
+    <hr data-start="3880" data-end="3883">
+    <h2 data-start="3885" data-end="3908"><strong data-start="3888" data-end="3906">Final Thoughts</strong></h2>
+    <p data-start="3909" data-end="4227">PythonAnywhere provides a <strong data-start="3935" data-end="3949">convenient</strong> way to deploy Python-based applications, but it may not be <strong data-start="4009" data-end="4036">ideal for ASR workloads</strong>. While Whisper Tiny can run within the free-tier constraints, issues like <strong data-start="4111" data-end="4163">format mismatches, processing time, and accuracy</strong> make it challenging to implement a production-ready ASR system.</p>
+    <p data-start="4229" data-end="4246"><strong data-start="4229" data-end="4244">Next Steps:</strong></p>
+    <ul data-start="4247" data-end="4477">
+    <li data-start="4247" data-end="4325"><strong data-start="4249" data-end="4292">Try alternative cloud hosting solutions</strong> with better compute resources.</li>
+    <li data-start="4326" data-end="4391"><strong data-start="4328" data-end="4359">Test API-based ASR services</strong> to reduce processing latency.</li>
+    <li data-start="4392" data-end="4477"><strong data-start="4394" data-end="4436">Optimize the audio processing pipeline</strong> to improve compatibility and accuracy.</li>
+    </ul>
+    <p data-start="4479" data-end="4586">Would love to hear your thoughts or experiences with running ASR models in constrained environments! 🚀🔊</p>
+    </div>
+
+<span style="display: none;">Tags: Large Language Models,Technology,Cloud</span>
