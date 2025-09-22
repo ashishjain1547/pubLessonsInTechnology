@@ -1,0 +1,296 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+  
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json", 
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `    
+                    );
+                }
+            });
+        });
+    </script>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+  
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+  
+        .customLink:hover {
+            text-decoration: none;
+        }
+  
+        div.code-block-decoration.footer {
+            display: none;
+        }
+  
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+  
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+  
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+  
+        .custom_link_h2 a:active {
+            color: black;
+        }
+  
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+  
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+      .customul {
+        list-style: none;
+      }
+  
+      [aria-hidden='true'] {
+        display: none;
+      }
+
+      button.flex.gap-1.items-center.select-none {
+        display: none;
+      }
+    </style>
+  
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All React Native Articles: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customReactNative" target="_blank">Index of Lessons in Technology</a>
+<br>
+
+<pre>
+(base) jain@jain-ThinkPad-T440s:~/Desktop/ws/react_native_apps$ npx react-native@latest init ReadingAppForBrightOrange
+Need to install the following packages:
+  react-native@0.81.1
+Ok to proceed? (y) y
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'react-native@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/assets-registry@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/codegen@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/community-cli-plugin@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/gradle-plugin@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/js-polyfills@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/virtualized-lists@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-runtime@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-source-map@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/dev-middleware@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-config@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-core@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: '@react-native/debugger-frontend@0.81.1',
+npm WARN EBADENGINE   required: { node: '>= 20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-babel-transformer@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-cache@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-cache-key@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-file-map@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-resolver@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-symbolicate@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-transform-plugins@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-transform-worker@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'ob1@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'metro-minify-terser@0.83.1',
+npm WARN EBADENGINE   required: { node: '>=20.19.4' },
+npm WARN EBADENGINE   current: { node: 'v18.19.1', npm: '9.2.0' }
+npm WARN EBADENGINE }
+/home/jain/.npm/_npx/dea611a43221eddd/node_modules/react-native/cli.js:147
+- Switch to ${styleText(['grey', 'bold'], 'npx @react-native-community/cli init')} for the identical behavior.
+              ^
+
+TypeError: styleText is not a function
+    at warnWithDeprecated (/home/jain/.npm/_npx/dea611a43221eddd/node_modules/react-native/cli.js:147:15)
+    at main (/home/jain/.npm/_npx/dea611a43221eddd/node_modules/react-native/cli.js:219:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Node.js v18.19.1
+</pre>
+
+<h2>FIX</h2>
+
+<pre>
+(base) jain@jain-ThinkPad-T440s:~/Desktop/ws/react_native_apps$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16555  100 16555    0     0   105k      0 --:--:-- --:--:-- --:--:--  105k
+=> Downloading nvm from git to '/home/jain/.nvm'
+=> Cloning into '/home/jain/.nvm'...
+remote: Enumerating objects: 383, done.
+remote: Counting objects: 100% (383/383), done.
+remote: Compressing objects: 100% (326/326), done.
+remote: Total 383 (delta 43), reused 179 (delta 29), pack-reused 0 (from 0)
+Receiving objects: 100% (383/383), 392.12 KiB | 2.10 MiB/s, done.
+Resolving deltas: 100% (43/43), done.
+* (HEAD detached at FETCH_HEAD)
+  master
+=> Compressing and cleaning up git repository
+
+=> Appending nvm source string to /home/jain/.bashrc
+=> Appending bash_completion source string to /home/jain/.bashrc
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+(base) jain@jain-ThinkPad-T440s:~/Desktop/ws/react_native_apps$ nvm install 20
+Downloading and installing node v20.19.4...
+Downloading https://nodejs.org/dist/v20.19.4/node-v20.19.4-linux-x64.tar.xz...
+################################################################################################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v20.19.4 (npm v10.8.2)
+Creating default alias: default -> 20 (-> v20.19.4)
+(base) jain@jain-ThinkPad-T440s:~/Desktop/ws/react_native_apps$ nvm use 20
+Now using node v20.19.4 (npm v10.8.2)
+(base) jain@jain-ThinkPad-T440s:~/Desktop/ws/react_native_apps$ node -v
+v20.19.4
+
+</pre>
