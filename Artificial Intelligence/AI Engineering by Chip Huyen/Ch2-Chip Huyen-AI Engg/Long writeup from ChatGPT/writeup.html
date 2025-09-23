@@ -1,0 +1,693 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['current book club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<a class="customLink" href="https://github.com/ashishjain1547/agentic_ai_books/blob/main/1_Chip%20Huyen%20-%20AI%20Engineering_%20Building%20Applications%20with%20Foundation%20Models-O'Reilly%20Media%20(2025).pdf" target="_blank">Download Book</a>
+<br><br>
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigCuANDr8rihCNvkpsxyFUOemO9pcK6MJAaHe9AaR7V1m766NznPyvEWLWtLLfnk8ZRI4NjQkHLnhO9ljovbMsHqpg8IaKAnJ1F4nBc3jxkAzc7p3Prue1meNsPkXMBe19-p_Kmq23Hz4oPFB6x3qYWqMSb6ieGviU8Jcl24a3T1Z9EHfRs4neLXlbnN6m/s686/Screenshot%20from%202025-06-26%2009-45-44.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="686" data-original-width="546" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigCuANDr8rihCNvkpsxyFUOemO9pcK6MJAaHe9AaR7V1m766NznPyvEWLWtLLfnk8ZRI4NjQkHLnhO9ljovbMsHqpg8IaKAnJ1F4nBc3jxkAzc7p3Prue1meNsPkXMBe19-p_Kmq23Hz4oPFB6x3qYWqMSb6ieGviU8Jcl24a3T1Z9EHfRs4neLXlbnN6m/s600/Screenshot%20from%202025-06-26%2009-45-44.png"/></a></div>
+
+<div class="customWrapper">
+<h3>Outline</h3>
+<ol data-start="216" data-end="528">
+<li data-start="216" data-end="261">
+<p data-start="219" data-end="261"><strong data-start="219" data-end="259">Intro + Why Foundation Models Matter</strong></p>
+</li>
+<li data-start="262" data-end="304">
+<p data-start="265" data-end="304"><strong data-start="265" data-end="302">Training Data: The Backbone of AI</strong></p>
+</li>
+<li data-start="305" data-end="355">
+<p data-start="308" data-end="355"><strong data-start="308" data-end="353">Modeling Choices: Transformers and Beyond</strong></p>
+</li>
+<li data-start="356" data-end="392">
+<p data-start="359" data-end="392"><strong data-start="359" data-end="390">Scaling Laws and Model Size</strong></p>
+</li>
+<li data-start="393" data-end="442">
+<p data-start="396" data-end="442"><strong data-start="396" data-end="440">Post-Training: Teaching Models to Behave</strong></p>
+</li>
+<li data-start="443" data-end="528">
+<p data-start="446" data-end="528"><strong data-start="446" data-end="526">Sampling + Future Challenges (Data, Energy, Proprietary Models) + Conclusion</strong></p>
+</li>
+</ol>
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<hr data-start="112" data-end="115">
+<h1 data-start="117" data-end="182">Understanding Foundation Models: The Engines Behind Modern AI</h1>
+<p data-start="183" data-end="233"><em data-start="183" data-end="231">(Section 1 – Introduction and Why They Matter)</em></p>
+<p data-start="235" data-end="601">Artificial Intelligence is no longer a niche field tucked away in research labs. It’s woven into our daily lives—whether it’s the autocomplete on your phone, recommendation engines on Netflix, or advanced copilots that help write code, debug errors, and even draft entire essays. Behind this surge of AI applications lies a quiet revolution: <strong data-start="577" data-end="598">foundation models</strong>.</p>
+<p data-start="603" data-end="1073">If AI is the car, foundation models are the engine. They are the large-scale, pre-trained systems—like GPT, Gemini, or Llama—that power the vast majority of applications. Instead of building a model from scratch for every new task, developers can now start with a foundation model and adapt it. This shift has been compared to the leap from handcrafting engines to mass-producing reliable, general-purpose engines that can be placed inside cars, trucks, or even boats.</p>
+<p data-start="1075" data-end="1389">But here’s the catch: while you don’t need to be a mechanic to drive, if you want to design the next great sports car, you need to understand how the engine works. Similarly, if you’re building serious applications on top of AI, it helps to understand how these foundation models are built, trained, and aligned.</p>
+<p data-start="1391" data-end="1776">This blog series will take you under the hood. We’ll explore the design decisions that give each model its unique strengths and quirks, why some are better at coding than translation, and why others hallucinate less. We’ll also talk about what’s coming next: new architectures, scaling bottlenecks, and the trade-offs that engineers face when balancing performance, cost, and safety.</p>
+<p data-start="1778" data-end="1836">At the core, foundation models differ in three big ways:</p>
+<ol data-start="1837" data-end="2059">
+<li data-start="1837" data-end="1895">
+<p data-start="1840" data-end="1895"><strong data-start="1840" data-end="1857">Training Data</strong> – what goes into the model’s brain.</p>
+</li>
+<li data-start="1896" data-end="1977">
+<p data-start="1899" data-end="1977"><strong data-start="1899" data-end="1919">Modeling Choices</strong> – how the brain is structured (architectures and size).</p>
+</li>
+<li data-start="1978" data-end="2059">
+<p data-start="1981" data-end="2059"><strong data-start="1981" data-end="2008">Post-Training Alignment</strong> – how the brain is taught to behave with humans.</p>
+</li>
+</ol>
+<p data-start="2061" data-end="2317">On top of that, there’s a subtle but crucial piece that often gets overlooked: <strong data-start="2140" data-end="2152">sampling</strong>, or how the model decides which word to generate next. Believe it or not, this one detail explains much of the “weirdness” people see in ChatGPT and other models.</p>
+<p data-start="2319" data-end="2560">Why does all this matter? Because whether you’re building a startup around generative AI, deploying models inside enterprises, or just trying to understand the technology reshaping the economy, knowing how these engines work will help you:</p>
+<ul data-start="2561" data-end="2802">
+<li data-start="2561" data-end="2604">
+<p data-start="2563" data-end="2604">Pick the right model for your use case.</p>
+</li>
+<li data-start="2605" data-end="2670">
+<p data-start="2607" data-end="2670">Anticipate where the model will excel—and where it will fail.</p>
+</li>
+<li data-start="2671" data-end="2721">
+<p data-start="2673" data-end="2721">Save money by making efficient design choices.</p>
+</li>
+<li data-start="2722" data-end="2802">
+<p data-start="2724" data-end="2802">Stay ahead of the curve as architectures evolve beyond today’s transformers.</p>
+</li>
+</ul>
+<p data-start="2804" data-end="2988">Think of this as your <strong data-start="2826" data-end="2862">field guide to foundation models</strong>—not a deep dive into the math, but a clear roadmap of how these systems are designed and why those design decisions matter.</p>
+<p data-start="2990" data-end="3303">In the next section, we’ll start with the raw material every model is built on: <strong data-start="3070" data-end="3087">training data</strong>. Just like a chef is only as good as their ingredients, an AI model can only be as good as the data it’s trained on. And as we’ll see, this is where many of the biases, limitations, and even surprises in AI begin.</p>
+<hr data-start="3305" data-end="3308">
+
+</div><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h1 data-start="100" data-end="137">Training Data: The Backbone of AI</h1>
+<p data-start="138" data-end="158"><em data-start="138" data-end="156">(Section 2 of 6)</em></p>
+<p data-start="160" data-end="367">If foundation models are engines, then <strong data-start="199" data-end="228">training data is the fuel</strong>. The kind of data you feed into a model determines what it can do, how well it can do it, and—just as importantly—where it will stumble.</p>
+<p data-start="369" data-end="654">There’s a simple rule in AI: <em data-start="398" data-end="447">a model is only as good as the data it has seen</em>. If a model has never seen Vietnamese text, it won’t magically learn to translate English into Vietnamese. If an image model has only been trained on animals, it will have no clue how to recognize plants.</p>
+<p data-start="656" data-end="913">That sounds obvious, but the implications run deep. Today’s foundation models, despite their power, are still products of their training sets. And those training sets come with quirks, biases, and blind spots. Let’s unpack some of the most important ones.</p>
+<hr data-start="915" data-end="918">
+<h2 data-start="920" data-end="950">Where the Data Comes From</h2>
+<p data-start="951" data-end="1316">The internet is the single largest source of training data. One of the most common datasets used is <strong data-start="1051" data-end="1067">Common Crawl</strong>, a nonprofit project that scrapes billions of web pages each month. For example, in 2022 and 2023, it captured between <strong data-start="1187" data-end="1224">2 and 3 billion pages every month</strong>. That’s a staggering amount of text—blogs, news sites, forums, and everything in between.</p>
+<p data-start="1318" data-end="1764">Companies often use subsets of this data, such as Google’s <strong data-start="1377" data-end="1423">C4 dataset (Colossal Clean Crawled Corpus)</strong>, which attempts to filter out spam and low-quality pages. But here’s the problem: the internet is messy. Alongside useful information, Common Crawl also contains clickbait, propaganda, conspiracy theories, and hate speech. A Washington Post analysis showed that many of the most frequently included sites rank very low in trustworthiness.</p>
+<p data-start="1766" data-end="1940">So while it might feel like foundation models are “smarter than the internet,” in reality, they <em data-start="1862" data-end="1880">are the internet</em>—with all its brilliance, nonsense, and toxicity baked in.</p>
+<p data-start="1942" data-end="2290">To mitigate this, model developers apply filters. OpenAI, for instance, used only Reddit links with at least three upvotes when training GPT-2. That sounds clever—after all, if nobody upvoted a post, why bother including it? But Reddit isn’t exactly a goldmine of reliability or civility either. Filtering helps, but it doesn’t guarantee quality.</p>
+<hr data-start="2292" data-end="2295">
+<h2 data-start="2297" data-end="2342">The Language Problem: English Everywhere</h2>
+<p data-start="2343" data-end="2469">One of the most striking imbalances in training data is <strong data-start="2399" data-end="2426">language representation</strong>. An analysis of Common Crawl found that:</p>
+<ul data-start="2471" data-end="2688">
+<li data-start="2471" data-end="2521">
+<p data-start="2473" data-end="2521">English makes up <strong data-start="2490" data-end="2503">about 46%</strong> of the dataset.</p>
+</li>
+<li data-start="2522" data-end="2591">
+<p data-start="2524" data-end="2591">The next most common language, Russian, accounts for just <strong data-start="2582" data-end="2588">6%</strong>.</p>
+</li>
+<li data-start="2592" data-end="2688">
+<p data-start="2594" data-end="2688">Many widely spoken languages—like Punjabi, Urdu, Swahili, and Telugu—barely register at all.</p>
+</li>
+</ul>
+<p data-start="2690" data-end="2777">The result? Models perform much better in English than in underrepresented languages.</p>
+<p data-start="2779" data-end="3106">For instance, OpenAI’s GPT-4 does extremely well on benchmarks in English. But when the same benchmark questions are translated into Telugu or Marathi, performance drops dramatically. In one study, GPT-4 couldn’t solve a single math problem when presented in Burmese or Amharic, even though it solved many of them in English.</p>
+<p data-start="3108" data-end="3313">This underrepresentation has practical consequences. If you’re building an app for a global audience, you may find that your AI assistant is brilliant in English but frustratingly bad in other languages.</p>
+<p data-start="3315" data-end="3725">Some developers try to work around this by translating queries into English, letting the model respond, and then translating back. That can work, but it risks losing important cultural or relational nuances. For example, Vietnamese uses pronouns that indicate the relationship between speakers—uncle, aunt, older sibling—that all collapse into “I” and “you” in English. Translation alone can flatten meaning.</p>
+<hr data-start="3727" data-end="3730">
+<h2 data-start="3732" data-end="3780">Domain Coverage: Not All Knowledge is Equal</h2>
+<p data-start="3781" data-end="4026">Another challenge is <strong data-start="3802" data-end="3826">domain-specific data</strong>. General-purpose models like GPT or Gemini are trained on a mix of domains: coding, law, science, entertainment, sports, and so on. This breadth is powerful, but it also means depth can be lacking.</p>
+<p data-start="4028" data-end="4454">Take medicine or biochemistry. Critical datasets in these areas—like protein sequences or MRI scans—aren’t freely available on the internet. As a result, general-purpose models can answer basic questions about health but stumble on serious medical reasoning. That’s why companies like DeepMind built <strong data-start="4328" data-end="4341">AlphaFold</strong>, trained specifically on protein structures, and why NVIDIA launched <strong data-start="4411" data-end="4422">BioNeMo</strong>, tailored for drug discovery.</p>
+<p data-start="4456" data-end="4724">Domain-specific models aren’t limited to medicine. Imagine an AI trained exclusively on architectural blueprints or manufacturing plant designs. Such models could provide far more accurate, actionable insights in their niches than a general-purpose model ever could.</p>
+<hr data-start="4726" data-end="4729">
+<h2 data-start="4731" data-end="4757">Quality Over Quantity</h2>
+<p data-start="4758" data-end="4909">You might assume that “more data is always better,” but that’s not true. Sometimes, a smaller, high-quality dataset outperforms a massive, messy one.</p>
+<p data-start="4911" data-end="5164">A striking example comes from coding models. Researchers trained a <strong data-start="4978" data-end="5009">1.3 billion parameter model</strong> on just <strong data-start="5018" data-end="5071">7 billion tokens of carefully curated coding data</strong>. Despite its modest size, this model outperformed much larger models on coding benchmarks.</p>
+<p data-start="5166" data-end="5404">The lesson: the <em data-start="5182" data-end="5205">quality and relevance</em> of data can matter more than raw quantity. For builders, this means curating or fine-tuning on the right domain data often gives better results than simply throwing more generic data at the model.</p>
+<hr data-start="5406" data-end="5409">
+<h2 data-start="5411" data-end="5442">The Cost of Data Imbalance</h2>
+<p data-start="5443" data-end="5725">Finally, there’s a hidden cost to imbalanced data: <strong data-start="5494" data-end="5508">efficiency</strong>. Models process text as tokens (subword units). Some languages tokenize efficiently—English might take 7 tokens for a sentence—while others don’t. Burmese, for example, might require 72 tokens for the same content.</p>
+<p data-start="5727" data-end="5997">That means inference in Burmese is not only slower but also up to <strong data-start="5793" data-end="5815">10x more expensive</strong> on token-based pricing models. This raises uncomfortable questions about accessibility: people who speak underrepresented languages may literally have to pay more to use AI tools.</p>
+<hr data-start="5999" data-end="6002">
+<p data-start="6004" data-end="6268"><strong data-start="6004" data-end="6021">Key takeaway:</strong> Training data is the invisible hand shaping everything a foundation model can and cannot do. Biases in language representation, gaps in domain-specific knowledge, and the messy reality of internet data all ripple forward into the apps we build.</p>
+<p data-start="6270" data-end="6456">Next up, we’ll shift from the <em data-start="6300" data-end="6306">fuel</em> to the <em data-start="6314" data-end="6322">engine</em>: the architectures that power foundation models. Why are transformers everywhere, and are we finally on the verge of something new?</p>
+<hr data-start="6458" data-end="6461">
+
+</div><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h1 data-start="110" data-end="155">Modeling Choices: Transformers and Beyond</h1>
+<p data-start="156" data-end="176"><em data-start="156" data-end="174">(Section 3 of 6)</em></p>
+<p data-start="178" data-end="487">If training data is the <strong data-start="202" data-end="210">fuel</strong> for AI, then the <strong data-start="228" data-end="250">model architecture</strong> is the <strong data-start="258" data-end="275">engine design</strong>. It determines how the data is processed, how knowledge is represented, and how well the system can scale. And in the last seven years, one design has dominated the landscape: the <strong data-start="456" data-end="484">transformer architecture</strong>.</p>
+<p data-start="489" data-end="729">But transformers are not the only game in town. To understand where AI is today—and where it might be going tomorrow—we need to explore why transformers became so successful, what limitations they face, and what alternatives are emerging.</p>
+<hr data-start="731" data-end="734">
+<h2 data-start="736" data-end="778">Before Transformers: Seq2Seq and RNNs</h2>
+<p data-start="779" data-end="932">Before 2017, the leading architecture for language tasks was <strong data-start="840" data-end="874">sequence-to-sequence (seq2seq)</strong>, usually built on <strong data-start="893" data-end="929">recurrent neural networks (RNNs)</strong>.</p>
+<p data-start="934" data-end="1241">Think of RNNs as readers who process a text one word at a time, remembering what came before and updating their memory as they go. This was revolutionary for machine translation in the mid-2010s. In fact, Google Translate’s 2016 upgrade to RNN-based seq2seq was described as its biggest quality jump ever.</p>
+<p data-start="1243" data-end="1267">But RNNs had problems:</p>
+<ol data-start="1268" data-end="1711">
+<li data-start="1268" data-end="1470">
+<p data-start="1271" data-end="1470"><strong data-start="1271" data-end="1296">Bottlenecks in memory</strong> – They compressed the entire input into a single “hidden state,” like trying to summarize a book into one sentence and then answering questions based only on that summary.</p>
+</li>
+<li data-start="1471" data-end="1591">
+<p data-start="1474" data-end="1591"><strong data-start="1474" data-end="1499">Sequential processing</strong> – Inputs and outputs had to be handled step by step, making them slow for long sequences.</p>
+</li>
+<li data-start="1592" data-end="1711">
+<p data-start="1595" data-end="1711"><strong data-start="1595" data-end="1618">Training challenges</strong> – RNNs often suffered from vanishing or exploding gradients, making optimization unstable.</p>
+</li>
+</ol>
+<p data-start="1713" data-end="1750">Clearly, a new approach was needed.</p>
+<hr data-start="1752" data-end="1755">
+<h2 data-start="1757" data-end="1810">Enter the Transformer: Attention is All You Need</h2>
+<p data-start="1811" data-end="1931">In 2017, Vaswani et al. introduced the <strong data-start="1850" data-end="1865">transformer</strong>, a model architecture built around one key idea: <strong data-start="1915" data-end="1928">attention</strong>.</p>
+<p data-start="1933" data-end="2163">Instead of reading input sequentially, transformers process all tokens in parallel. And instead of relying on one compressed summary, they use attention to decide which words (or tokens) are most relevant when generating output.</p>
+<p data-start="2165" data-end="2415">Imagine reading a book and, instead of relying only on memory, being able to instantly flip back to <em data-start="2265" data-end="2275">any page</em> that might help answer a question. That’s what attention does—it lets the model look directly at the parts of the input that matter most.</p>
+<p data-start="2417" data-end="2450">This solved two major problems:</p>
+<ul data-start="2451" data-end="2634">
+<li data-start="2451" data-end="2532">
+<p data-start="2453" data-end="2532"><strong data-start="2453" data-end="2462">Speed</strong>: Inputs could be processed in parallel, making training far faster.</p>
+</li>
+<li data-start="2533" data-end="2634">
+<p data-start="2535" data-end="2634"><strong data-start="2535" data-end="2547">Accuracy</strong>: Outputs could directly reference any input token, reducing the loss of information.</p>
+</li>
+</ul>
+<p data-start="2636" data-end="2780">Transformers quickly displaced RNNs and seq2seq. Today, nearly every leading foundation model—GPT, Gemini, Llama, Claude—is transformer-based.</p>
+<hr data-start="2782" data-end="2785">
+<h2 data-start="2787" data-end="2823">Under the Hood of a Transformer</h2>
+<p data-start="2824" data-end="2916">At a high level, transformers consist of repeating <strong data-start="2875" data-end="2885">blocks</strong> made up of two main modules:</p>
+<ol data-start="2918" data-end="3315">
+<li data-start="2918" data-end="3172">
+<p data-start="2921" data-end="3172"><strong data-start="2921" data-end="2941">Attention Module</strong> – This is where query, key, and value vectors interact to determine how much weight to give to each token. Multi-head attention allows the model to track different types of relationships simultaneously (syntax, semantics, etc.).</p>
+</li>
+<li data-start="3173" data-end="3315">
+<p data-start="3176" data-end="3315"><strong data-start="3176" data-end="3204">Feedforward Module (MLP)</strong> – A simple neural network that processes the outputs of attention and introduces non-linear transformations.</p>
+</li>
+</ol>
+<p data-start="3317" data-end="3348">Surrounding these blocks are:</p>
+<ul data-start="3349" data-end="3526">
+<li data-start="3349" data-end="3428">
+<p data-start="3351" data-end="3428"><strong data-start="3351" data-end="3371">Embedding layers</strong>, which convert words or tokens into numerical vectors.</p>
+</li>
+<li data-start="3429" data-end="3526">
+<p data-start="3431" data-end="3526"><strong data-start="3431" data-end="3448">Output layers</strong>, which map internal states back to probabilities over possible next tokens.</p>
+</li>
+</ul>
+<p data-start="3528" data-end="3777">The number of layers, the dimensionality of embeddings, and the size of feedforward modules all determine the <strong data-start="3638" data-end="3650">capacity</strong> of the model. That’s why you’ll often see specs like “Llama 2-7B has 32 transformer blocks and a hidden dimension of 4,096.”</p>
+<hr data-start="3779" data-end="3782">
+<h2 data-start="3784" data-end="3815">The Limits of Transformers</h2>
+<p data-start="3816" data-end="3896">Despite their dominance, transformers aren’t perfect. Some challenges include:</p>
+<ul data-start="3898" data-end="4533">
+<li data-start="3898" data-end="4133">
+<p data-start="3900" data-end="4133"><strong data-start="3900" data-end="3925">Context length limits</strong>: The need to compute and store attention for every token pair makes transformers expensive for very long inputs. Extending context windows (e.g., 128K tokens in Llama 3) requires clever engineering tricks.</p>
+</li>
+<li data-start="4134" data-end="4279">
+<p data-start="4136" data-end="4279"><strong data-start="4136" data-end="4157">Quadratic scaling</strong>: Attention costs grow quadratically with sequence length, which means doubling the input length quadruples the compute.</p>
+</li>
+<li data-start="4280" data-end="4388">
+<p data-start="4282" data-end="4388"><strong data-start="4282" data-end="4300">Memory demands</strong>: Storing key and value vectors for long contexts consumes huge amounts of GPU memory.</p>
+</li>
+<li data-start="4389" data-end="4533">
+<p data-start="4391" data-end="4533"><strong data-start="4391" data-end="4416">Inference bottlenecks</strong>: While input processing can be parallelized, output generation (decoding) is still sequential—one token at a time.</p>
+</li>
+</ul>
+<p data-start="4535" data-end="4673">For most real-world applications, these limits aren’t deal-breakers, but they highlight why researchers are exploring new architectures.</p>
+<hr data-start="4675" data-end="4678">
+<h2 data-start="4680" data-end="4712">Alternatives on the Horizon</h2>
+<p data-start="4713" data-end="4814">Several architectures are gaining attention as potential successors—or complements—to transformers:</p>
+<ul data-start="4816" data-end="5494">
+<li data-start="4816" data-end="5031">
+<p data-start="4818" data-end="5031"><strong data-start="4818" data-end="4833">RWKV (2023)</strong> – A modern reimagining of RNNs that can be parallelized during training. In theory, RWKV avoids transformers’ context-length limitations, though performance at long sequences remains under study.</p>
+</li>
+<li data-start="5032" data-end="5267">
+<p data-start="5034" data-end="5267"><strong data-start="5034" data-end="5063">State Space Models (SSMs)</strong> – Introduced in 2021, these architectures aim to model long sequences efficiently. Variants like <strong data-start="5161" data-end="5167">S4</strong>, <strong data-start="5169" data-end="5175">H3</strong>, and <strong data-start="5181" data-end="5190">Mamba</strong> have shown promising results, especially in scaling to millions of tokens.</p>
+</li>
+<li data-start="5268" data-end="5494">
+<p data-start="5270" data-end="5494"><strong data-start="5270" data-end="5305">Hybrid Approaches (e.g., Jamba)</strong> – Combining transformer layers with newer SSM-based blocks to balance strengths. Jamba, for instance, supports up to 256K token contexts with lower memory demands than pure transformers.</p>
+</li>
+</ul>
+<p data-start="5496" data-end="5618">These challengers aren’t mainstream yet, but they point to a future where “transformer” might not be the default answer.</p>
+<hr data-start="5620" data-end="5623">
+<h2 data-start="5625" data-end="5659">Why This Matters for Builders</h2>
+<p data-start="5660" data-end="5814">You don’t need to master the math of attention or state spaces to use AI effectively. But knowing the <strong data-start="5762" data-end="5793">trade-offs of architectures</strong> helps in two ways:</p>
+<ol data-start="5816" data-end="6149">
+<li data-start="5816" data-end="5986">
+<p data-start="5819" data-end="5986"><strong data-start="5819" data-end="5841">Deployment choices</strong>: A smaller transformer might be easier to deploy on edge devices, while an SSM-based model could shine in scenarios with ultra-long documents.</p>
+</li>
+<li data-start="5987" data-end="6149">
+<p data-start="5990" data-end="6149"><strong data-start="5990" data-end="6009">Future-proofing</strong>: If you’re building a product meant to last years, betting on architectures that scale well with context and cost might give you an edge.</p>
+</li>
+</ol>
+<p data-start="6151" data-end="6299">In other words, transformers are today’s workhorses, but the AI ecosystem is already experimenting with faster, leaner, and longer-memory engines.</p>
+<hr data-start="6301" data-end="6304">
+<p data-start="6306" data-end="6554"><strong data-start="6306" data-end="6323">Key takeaway:</strong> The transformer solved critical bottlenecks and unlocked the current AI boom. But it isn’t the end of the story. A new wave of architectures—RWKV, Mamba, Jamba—could reshape how future foundation models are trained and deployed.</p>
+<p data-start="6556" data-end="6723">Next, we’ll look at another big design decision: <strong data-start="6605" data-end="6619">model size</strong>. How big should a foundation model be? Is “bigger always better,” or are there smarter ways to scale?</p>
+<hr data-start="6725" data-end="6728">
+
+</div><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h1 data-start="105" data-end="136">Scaling Laws and Model Size</h1>
+<p data-start="137" data-end="157"><em data-start="137" data-end="155">(Section 4 of 6)</em></p>
+<p data-start="159" data-end="254">When people hear about AI models, one of the first things they often ask is: <em data-start="236" data-end="252">How big is it?</em></p>
+<ul data-start="255" data-end="397">
+<li data-start="255" data-end="293">
+<p data-start="257" data-end="293">GPT-3? <strong data-start="264" data-end="290">175 billion parameters</strong>.</p>
+</li>
+<li data-start="294" data-end="355">
+<p data-start="296" data-end="355">GPT-4? Rumored to be in the <strong data-start="324" data-end="352">trillion-parameter range</strong>.</p>
+</li>
+<li data-start="356" data-end="397">
+<p data-start="358" data-end="397">Llama 2? Variants from <strong data-start="381" data-end="394">7B to 70B</strong>.</p>
+</li>
+</ul>
+<p data-start="399" data-end="572">Model size has become a kind of bragging right in AI—a shorthand for capability. But how much does size really matter? And are there limits to simply making models bigger?</p>
+<p data-start="574" data-end="685">Let’s unpack the story of <strong data-start="600" data-end="616">scaling laws</strong>, model size, and the trade-offs that every AI builder should know.</p>
+<hr data-start="687" data-end="690">
+<h2 data-start="692" data-end="726">Parameters: The Neurons of AI</h2>
+<p data-start="727" data-end="949">At the simplest level, the <strong data-start="754" data-end="778">number of parameters</strong> in a model is like the number of knobs you can adjust when teaching it. More parameters generally mean more capacity to learn patterns, store knowledge, and generalize.</p>
+<p data-start="951" data-end="995">For example, within the same model family:</p>
+<ul data-start="996" data-end="1116">
+<li data-start="996" data-end="1064">
+<p data-start="998" data-end="1064">A <strong data-start="1000" data-end="1023">13B-parameter model</strong> will usually outperform its 7B cousin.</p>
+</li>
+<li data-start="1065" data-end="1116">
+<p data-start="1067" data-end="1116">A <strong data-start="1069" data-end="1092">70B-parameter model</strong> will outperform both.</p>
+</li>
+</ul>
+<p data-start="1118" data-end="1225">But bigger isn’t always better. Parameters are only one side of the equation. The other side is <strong data-start="1214" data-end="1222">data</strong>.</p>
+<hr data-start="1227" data-end="1230">
+<h2 data-start="1232" data-end="1272">Data and Compute: The Balancing Act</h2>
+<p data-start="1273" data-end="1488">Imagine hiring a brilliant student but only giving them one book to study. No matter how intelligent they are, their knowledge will be limited. Similarly, a huge model trained on too little data will underperform.</p>
+<p data-start="1490" data-end="1610">This is where <strong data-start="1504" data-end="1520">scaling laws</strong> come in. Researchers at DeepMind studied hundreds of models and discovered a neat rule:</p>
+<p data-start="1612" data-end="1726">👉 For compute-optimal training, the number of training tokens should be about <strong data-start="1691" data-end="1723">20x the number of parameters</strong>.</p>
+<p data-start="1728" data-end="1828">So, a 3B-parameter model should be trained on roughly 60B tokens. A 70B model? Around 1.4T tokens.</p>
+<p data-start="1830" data-end="1994">This relationship is called the <strong data-start="1862" data-end="1888">Chinchilla scaling law</strong>. It tells us that it’s not just about model size—it’s about matching size with data and compute budget.</p>
+<hr data-start="1996" data-end="1999">
+<h2 data-start="2001" data-end="2031">The Cost of Bigger Models</h2>
+<p data-start="2032" data-end="2098">Training at scale isn’t cheap. Consider GPT-3 (175B parameters):</p>
+<ul data-start="2099" data-end="2346">
+<li data-start="2099" data-end="2153">
+<p data-start="2101" data-end="2153">Estimated training compute: <strong data-start="2129" data-end="2150">3.14 × 10²³ FLOPs</strong>.</p>
+</li>
+<li data-start="2154" data-end="2249">
+<p data-start="2156" data-end="2249">If you had 256 Nvidia H100 GPUs running flat out, training would take about <strong data-start="2232" data-end="2246">7–8 months</strong>.</p>
+</li>
+<li data-start="2250" data-end="2346">
+<p data-start="2252" data-end="2346">At $2/hour per GPU (a conservative estimate), the training bill would exceed <strong data-start="2329" data-end="2343">$4 million</strong>.</p>
+</li>
+</ul>
+<p data-start="2348" data-end="2463">And that’s just one training run. If you mess up hyperparameters or want to test variations, the costs skyrocket.</p>
+<p data-start="2465" data-end="2711">Deployment costs matter too. Running a massive model in production means more GPUs, more electricity, and higher latency for end users. This is why smaller models (like 7B or 13B) are often more practical, even if they’re slightly less capable.</p>
+<hr data-start="2713" data-end="2716">
+<h2 data-start="2718" data-end="2759">Sparse Models and Mixture-of-Experts</h2>
+<p data-start="2760" data-end="2894">One clever workaround is <strong data-start="2785" data-end="2797">sparsity</strong>. Instead of activating every parameter for every input, why not only use the ones that matter?</p>
+<p data-start="2896" data-end="2995">This is the idea behind <strong data-start="2920" data-end="2948">Mixture-of-Experts (MoE)</strong> models. Take <strong data-start="2962" data-end="2978">Mixtral 8x7B</strong> as an example:</p>
+<ul data-start="2996" data-end="3173">
+<li data-start="2996" data-end="3054">
+<p data-start="2998" data-end="3054">It has 8 experts, each with 7B parameters (total 56B).</p>
+</li>
+<li data-start="3055" data-end="3099">
+<p data-start="3057" data-end="3099">But only 2 experts are active per input.</p>
+</li>
+<li data-start="3100" data-end="3173">
+<p data-start="3102" data-end="3173">Effective cost and speed = ~13B, while total capacity is much larger.</p>
+</li>
+</ul>
+<p data-start="3175" data-end="3285">This approach offers a middle ground: you get the richness of a large model without the full inference cost.</p>
+<hr data-start="3287" data-end="3290">
+<h2 data-start="3292" data-end="3338">When Bigger Isn’t Better: Inverse Scaling</h2>
+<p data-start="3339" data-end="3478">Interestingly, some research has shown that larger models don’t always outperform smaller ones. In fact, in certain tasks, they do worse.</p>
+<p data-start="3480" data-end="3793">Anthropic coined this the <strong data-start="3506" data-end="3536">inverse scaling phenomenon</strong>. For example, more alignment training sometimes caused models to adopt stronger political or religious opinions, deviating from neutrality. Other tasks requiring rote memorization or resisting strong biases also revealed cases where bigger wasn’t better.</p>
+<p data-start="3795" data-end="3892">These cases are rare but remind us that scaling has diminishing—and sometimes negative—returns.</p>
+<hr data-start="3894" data-end="3897">
+<h2 data-start="3899" data-end="3936">The Bottlenecks: Data and Energy</h2>
+<p data-start="3937" data-end="4008">Even if we wanted to keep making models bigger, two hard limits loom:</p>
+<ol data-start="4010" data-end="4465">
+<li data-start="4010" data-end="4253">
+<p data-start="4013" data-end="4253"><strong data-start="4013" data-end="4021">Data</strong>: We’re running out of high-quality internet text. According to projections, by the late 2020s, AI will have consumed most of the web’s useful content. Proprietary data (books, contracts, medical records) will become the new gold.</p>
+</li>
+<li data-start="4254" data-end="4465">
+<p data-start="4257" data-end="4465"><strong data-start="4257" data-end="4272">Electricity</strong>: Data centers already consume <strong data-start="4303" data-end="4333">1–2% of global electricity</strong>. By 2030, that could rise to 4–20%. Without breakthroughs in energy production, scaling another 100x may simply be unsustainable.</p>
+</li>
+</ol>
+<hr data-start="4467" data-end="4470">
+<h2 data-start="4472" data-end="4509">Practical Takeaways for Builders</h2>
+<p data-start="4510" data-end="4621">For AI engineers and product developers, the lesson isn’t “always pick the biggest model.” Instead, consider:</p>
+<ul data-start="4623" data-end="5038">
+<li data-start="4623" data-end="4774">
+<p data-start="4625" data-end="4774"><strong data-start="4625" data-end="4641">Right-sizing</strong>: If you’re building a chatbot for customer service, a 13B model fine-tuned on support tickets may outperform a generic 175B model.</p>
+</li>
+<li data-start="4775" data-end="4874">
+<p data-start="4777" data-end="4874"><strong data-start="4777" data-end="4797">Cost vs. benefit</strong>: Bigger models often deliver marginal gains at exponentially higher costs.</p>
+</li>
+<li data-start="4875" data-end="5038">
+<p data-start="4877" data-end="5038"><strong data-start="4877" data-end="4894">Future trends</strong>: Expect more focus on <strong data-start="4917" data-end="4931">efficiency</strong>—through sparsity, distillation, quantization, and smarter architectures—rather than raw parameter count.</p>
+</li>
+</ul>
+<hr data-start="5040" data-end="5043">
+<p data-start="5045" data-end="5321"><strong data-start="5045" data-end="5062">Key takeaway:</strong> Scaling laws teach us that size alone doesn’t guarantee performance. It’s about the balance between parameters, data, and compute. As the costs of training and deployment rise, the industry is shifting from “how big can we go?” to “how smart can we scale?”</p>
+<p data-start="5323" data-end="5524">In the next section, we’ll explore how raw model capacity is turned into usable intelligence. Pre-training gives us raw power, but it’s post-training—teaching models to behave—that makes them useful.</p>
+<hr data-start="5526" data-end="5529">
+
+</div><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h1 data-start="112" data-end="156">Post-Training: Teaching Models to Behave</h1>
+<p data-start="157" data-end="177"><em data-start="157" data-end="175">(Section 5 of 6)</em></p>
+<p data-start="179" data-end="513">Pre-training gives foundation models their raw power. After chewing through trillions of words, they emerge with an uncanny ability to predict the next token in a sequence. But left unrefined, a pre-trained model is like a brilliant child with no manners: smart, but unhelpful, verbose, sometimes offensive, and often unpredictable.</p>
+<p data-start="515" data-end="733">That’s where <strong data-start="528" data-end="545">post-training</strong> comes in. This is the process of turning raw pre-trained models into useful assistants that follow instructions, align with human values, and avoid saying harmful or nonsensical things.</p>
+<hr data-start="735" data-end="738">
+<h2 data-start="740" data-end="775">Why Post-Training is Necessary</h2>
+<p data-start="776" data-end="944">A pre-trained model is essentially a <em data-start="813" data-end="840">giant autocomplete engine</em>. Ask it a question, and it doesn’t “know” what you want—it just continues the sequence statistically.</p>
+<ul data-start="946" data-end="1193">
+<li data-start="946" data-end="1031">
+<p data-start="948" data-end="1031">If you prompt it with <em data-start="970" data-end="998">“The capital of France is”</em>, it may correctly say “Paris.”</p>
+</li>
+<li data-start="1032" data-end="1193">
+<p data-start="1034" data-end="1193">But if you ask, <em data-start="1050" data-end="1084">“Explain why the Earth is flat,”</em> it will happily generate an essay arguing for flat Earth, because it’s seen enough of that content online.</p>
+</li>
+</ul>
+<p data-start="1195" data-end="1324">Without further training, the model has no sense of truth, helpfulness, or safety. It just reflects the internet—warts and all.</p>
+<p data-start="1326" data-end="1476">Post-training is about <strong data-start="1349" data-end="1369">shaping behavior</strong>, so the model can understand instructions, refuse harmful requests, and give consistent, useful answers.</p>
+<hr data-start="1478" data-end="1481">
+<h2 data-start="1483" data-end="1525">Stage 1: Supervised Fine-Tuning (SFT)</h2>
+<p data-start="1526" data-end="1678">The first step is usually <strong data-start="1552" data-end="1584">supervised fine-tuning (SFT)</strong>. Here, human annotators provide <strong data-start="1617" data-end="1639">input-output pairs</strong> that represent the desired behavior.</p>
+<p data-start="1680" data-end="1694">For example:</p>
+<ul data-start="1696" data-end="1809">
+<li data-start="1696" data-end="1754">
+<p data-start="1698" data-end="1754">Input: <em data-start="1705" data-end="1752">“Write a polite email declining a job offer.”</em></p>
+</li>
+<li data-start="1755" data-end="1809">
+<p data-start="1757" data-end="1809">Output: <em data-start="1765" data-end="1807">(a carefully written, respectful email).</em></p>
+</li>
+</ul>
+<p data-start="1811" data-end="1910">By training on thousands of such examples, the model learns to follow instructions more reliably.</p>
+<p data-start="1912" data-end="2128">OpenAI’s <strong data-start="1921" data-end="1936">InstructGPT</strong> was one of the first big demonstrations of this approach. By fine-tuning GPT-3 with curated instruction-response pairs, they transformed a raw language model into something far more usable.</p>
+<p data-start="2130" data-end="2320">But SFT alone has limits. You can’t possibly cover every scenario with supervised examples. And sometimes the model produces multiple reasonable outputs—how do we decide which one is best?</p>
+<hr data-start="2322" data-end="2325">
+<h2 data-start="2327" data-end="2390">Stage 2: Reinforcement Learning from Human Feedback (RLHF)</h2>
+<p data-start="2391" data-end="2521">Enter <strong data-start="2397" data-end="2450">reinforcement learning from human feedback (RLHF)</strong>, the technique that turned models like ChatGPT into household names.</p>
+<p data-start="2523" data-end="2558">The process works in three steps:</p>
+<ol data-start="2560" data-end="2997">
+<li data-start="2560" data-end="2694">
+<p data-start="2563" data-end="2694"><strong data-start="2563" data-end="2582">Data collection</strong> – Annotators rank multiple model responses to the same prompt (e.g., “Response A is better than Response B”).</p>
+</li>
+<li data-start="2695" data-end="2841">
+<p data-start="2698" data-end="2841"><strong data-start="2698" data-end="2723">Reward model training</strong> – These rankings are used to train a separate model (the “reward model”) that predicts which outputs humans prefer.</p>
+</li>
+<li data-start="2842" data-end="2997">
+<p data-start="2845" data-end="2997"><strong data-start="2845" data-end="2871">Reinforcement learning</strong> – The base model is then fine-tuned to maximize the reward model’s scores, nudging it toward outputs that humans like more.</p>
+</li>
+</ol>
+<p data-start="2999" data-end="3089">Think of it as giving the model a “taste” for what people find helpful, polite, or safe.</p>
+<p data-start="3091" data-end="3271">This technique works, but it’s expensive. Collecting human feedback at scale is slow and costly. And human annotators bring their own biases, which can seep into the final model.</p>
+<hr data-start="3273" data-end="3276">
+<h2 data-start="3278" data-end="3312">Stage 3: Alternatives to RLHF</h2>
+<p data-start="3313" data-end="3407">Because RLHF is costly and imperfect, researchers are exploring other post-training methods:</p>
+<ul data-start="3409" data-end="4065">
+<li data-start="3409" data-end="3594">
+<p data-start="3411" data-end="3594"><strong data-start="3411" data-end="3451">Direct Preference Optimization (DPO)</strong> – A simpler way to align models directly with preference data, skipping the intermediate reward model. It’s cheaper and easier to implement.</p>
+</li>
+<li data-start="3595" data-end="3816">
+<p data-start="3597" data-end="3816"><strong data-start="3597" data-end="3648">Reinforcement Learning from AI Feedback (RLAIF)</strong> – Instead of humans ranking responses, a stronger model does the ranking. This drastically reduces cost, though it risks propagating the biases of the teacher model.</p>
+</li>
+<li data-start="3817" data-end="4065">
+<p data-start="3819" data-end="4065"><strong data-start="3819" data-end="3852">Constitutional AI (Anthropic)</strong> – Instead of relying heavily on human raters, the model is guided by a “constitution”—a set of principles (like avoiding harmful content, respecting privacy) that it uses to critique and revise its own outputs.</p>
+</li>
+</ul>
+<p data-start="4067" data-end="4171">These approaches all share one goal: <strong data-start="4104" data-end="4168">teaching models to be helpful, honest, and harmless at scale</strong>.</p>
+<hr data-start="4173" data-end="4176">
+<h2 data-start="4178" data-end="4203">Alignment Challenges</h2>
+<p data-start="4204" data-end="4290">Post-training is powerful, but it’s not perfect. Some of the key challenges include:</p>
+<ul data-start="4292" data-end="4738">
+<li data-start="4292" data-end="4438">
+<p data-start="4294" data-end="4438"><strong data-start="4294" data-end="4312">Over-alignment</strong>: Models sometimes become too cautious, refusing harmless requests (“I can’t provide recipes because cooking is dangerous”).</p>
+</li>
+<li data-start="4439" data-end="4604">
+<p data-start="4441" data-end="4604"><strong data-start="4441" data-end="4458">Cultural bias</strong>: A model trained with mostly U.S.-based annotators may reflect American norms of politeness or morality, which don’t always translate globally.</p>
+</li>
+<li data-start="4605" data-end="4738">
+<p data-start="4607" data-end="4738"><strong data-start="4607" data-end="4620">Fragility</strong>: Clever prompts or adversarial attacks can still bypass safeguards, making models say unsafe or undesirable things.</p>
+</li>
+</ul>
+<p data-start="4740" data-end="4837">These challenges highlight that alignment isn’t a solved problem—it’s an ongoing balancing act.</p>
+<hr data-start="4839" data-end="4842">
+<h2 data-start="4844" data-end="4878">Why This Matters for Builders</h2>
+<p data-start="4879" data-end="5080">As an AI builder, you don’t directly control the pre-training of foundation models—that’s the realm of big labs with supercomputers. But you <em data-start="5020" data-end="5024">do</em> control how you adapt these models for your use case.</p>
+<ul data-start="5082" data-end="5520">
+<li data-start="5082" data-end="5228">
+<p data-start="5084" data-end="5228"><strong data-start="5084" data-end="5107">SFT and fine-tuning</strong> let you teach a general-purpose model to excel in your domain (e.g., legal writing, medical advice, customer service).</p>
+</li>
+<li data-start="5229" data-end="5362">
+<p data-start="5231" data-end="5362"><strong data-start="5231" data-end="5258">Preference-based tuning</strong> lets you align the model with your organization’s values (e.g., tone of voice, politeness standards).</p>
+</li>
+<li data-start="5363" data-end="5520">
+<p data-start="5365" data-end="5520"><strong data-start="5365" data-end="5402">Awareness of alignment trade-offs</strong> helps you pick the right foundation model. Some are tuned for creativity, others for safety, others for efficiency.</p>
+</li>
+</ul>
+<p data-start="5522" data-end="5734">In short, post-training is where raw intelligence becomes usable intelligence. Without it, we wouldn’t have ChatGPT, Claude, or Gemini—we’d just have giant autocomplete engines with unpredictable personalities.</p>
+<hr data-start="5736" data-end="5739">
+<p data-start="5741" data-end="5974"><strong data-start="5741" data-end="5758">Key takeaway:</strong> Pre-training gives models raw knowledge, but post-training makes them <em data-start="5829" data-end="5865">useful, safe, and human-compatible</em>. Techniques like SFT, RLHF, and DPO are the invisible hand shaping how models talk, refuse, and cooperate.</p>
+<p data-start="5976" data-end="6180">Next, we’ll dive into the last major piece: <strong data-start="6020" data-end="6032">sampling</strong>. Even with perfect training and alignment, the way a model chooses its words—literally, token by token—can completely change how it feels to use.</p>
+<hr data-start="6182" data-end="6185">
+
+</div><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h1 data-start="117" data-end="170">Sampling, Future Challenges, and Where We Go Next</h1>
+<p data-start="171" data-end="191"><em data-start="171" data-end="189">(Section 6 of 6)</em></p>
+<p data-start="193" data-end="349">Even after all the careful training and post-training, there’s still one final stage that shapes the experience of using a foundation model: <strong data-start="334" data-end="346">sampling</strong>.</p>
+<p data-start="351" data-end="570">If training is about what the model <em data-start="387" data-end="394">knows</em>, and post-training is about how it <em data-start="430" data-end="439">behaves</em>, then sampling is about how it <em data-start="471" data-end="479">speaks</em>. It determines whether the model feels deterministic and robotic, or creative and human.</p>
+<hr data-start="572" data-end="575">
+<h2 data-start="577" data-end="604">The Basics of Sampling</h2>
+<p data-start="605" data-end="772">When a model generates text, it doesn’t “decide” the next word with certainty. Instead, it produces a <strong data-start="707" data-end="735">probability distribution</strong> over possible tokens. For example:</p>
+<p data-start="774" data-end="806">Prompt: <em data-start="782" data-end="804">“The cat sat on the”</em></p>
+<ul data-start="807" data-end="884">
+<li data-start="807" data-end="834">
+<p data-start="809" data-end="834">60% probability → “mat”</p>
+</li>
+<li data-start="835" data-end="851">
+<p data-start="837" data-end="851">15% → “sofa”</p>
+</li>
+<li data-start="852" data-end="868">
+<p data-start="854" data-end="868">5% → “floor”</p>
+</li>
+<li data-start="869" data-end="884">
+<p data-start="871" data-end="884">1% → “moon”</p>
+</li>
+</ul>
+<p data-start="886" data-end="1105">Sampling is the process of choosing from this distribution. If the model always picked the highest probability (a method called <em data-start="1014" data-end="1031">greedy decoding</em>), it would be boringly predictable. Every story would end the same way.</p>
+<p data-start="1107" data-end="1149">Instead, developers use techniques like:</p>
+<ul data-start="1150" data-end="1451">
+<li data-start="1150" data-end="1212">
+<p data-start="1152" data-end="1212"><strong data-start="1152" data-end="1170">Top-k sampling</strong> – Pick from the <em data-start="1187" data-end="1190">k</em> most likely tokens.</p>
+</li>
+<li data-start="1213" data-end="1341">
+<p data-start="1215" data-end="1341"><strong data-start="1215" data-end="1243">Nucleus sampling (top-p)</strong> – Pick from the smallest set of tokens that cover <em data-start="1294" data-end="1298">p%</em> of the probability mass (e.g., top 90%).</p>
+</li>
+<li data-start="1342" data-end="1451">
+<p data-start="1344" data-end="1451"><strong data-start="1344" data-end="1367">Temperature scaling</strong> – Control randomness: low temperature = predictable, high temperature = creative.</p>
+</li>
+</ul>
+<p data-start="1453" data-end="1564">By tuning these settings, you can make the same model act like a precise fact-checker or a free-flowing poet.</p>
+<hr data-start="1566" data-end="1569">
+<h2 data-start="1571" data-end="1596">Why Sampling Matters</h2>
+<p data-start="1597" data-end="1792">Users often judge a model less by its raw intelligence than by its <em data-start="1664" data-end="1677">personality</em>. Two people using the same model with different sampling settings can walk away with very different impressions:</p>
+<ul data-start="1794" data-end="1971">
+<li data-start="1794" data-end="1868">
+<p data-start="1796" data-end="1868">At low temperature, GPT feels like an encyclopedia: factual, but dull.</p>
+</li>
+<li data-start="1869" data-end="1971">
+<p data-start="1871" data-end="1971">At higher temperature, it feels like a brainstorming partner: less reliable, but more imaginative.</p>
+</li>
+</ul>
+<p data-start="1973" data-end="2195">This is why some chatbots are famous for creativity (e.g., Anthropic’s Claude), while others emphasize consistency (e.g., enterprise-tuned models). Often, the difference lies not in architecture but in sampling defaults.</p>
+<p data-start="2197" data-end="2386">For builders, this is a powerful lever. If you’re designing an app for legal drafting, you’ll want low randomness. If you’re building a tool for fiction writers, crank the temperature up.</p>
+<hr data-start="2388" data-end="2391">
+<h2 data-start="2393" data-end="2437">The Future Bottlenecks: Data and Energy</h2>
+<p data-start="2438" data-end="2581">Looking forward, the AI industry faces challenges that can’t be solved by clever sampling or alignment alone. Two hard bottlenecks stand out:</p>
+<ol data-start="2583" data-end="3214">
+<li data-start="2583" data-end="2885">
+<p data-start="2586" data-end="2885"><strong data-start="2586" data-end="2609">Running out of data</strong>: High-quality internet text is finite. By the late 2020s, estimates suggest we’ll exhaust the pool of “clean” training data. Future gains may require synthetic data, multimodal sources, or access to private datasets (medical records, legal contracts, proprietary research).</p>
+</li>
+<li data-start="2886" data-end="3214">
+<p data-start="2889" data-end="3214"><strong data-start="2889" data-end="2906">Energy limits</strong>: Training GPT-4-level models already requires megawatt-scale compute clusters. Data centers account for ~2% of global electricity use today, and AI could push that much higher. Without breakthroughs in energy efficiency or renewable scaling, “bigger and bigger models” may hit physical and economic walls.</p>
+</li>
+</ol>
+<hr data-start="3216" data-end="3219">
+<h2 data-start="3221" data-end="3253">Proprietary vs. Open Models</h2>
+<p data-start="3254" data-end="3531">Another emerging fault line is <strong data-start="3285" data-end="3295">access</strong>. Large labs like OpenAI, Google DeepMind, and Anthropic have the compute and data to build frontier models. Meanwhile, open-source communities (Meta’s Llama, Mistral, Stability AI) are focusing on smaller but highly efficient models.</p>
+<p data-start="3533" data-end="3571">This split will shape the ecosystem:</p>
+<ul data-start="3572" data-end="3844">
+<li data-start="3572" data-end="3646">
+<p data-start="3574" data-end="3646">Enterprises may lean on proprietary giants for mission-critical tasks.</p>
+</li>
+<li data-start="3647" data-end="3737">
+<p data-start="3649" data-end="3737">Startups and researchers may prefer open models they can customize and deploy cheaply.</p>
+</li>
+<li data-start="3738" data-end="3844">
+<p data-start="3740" data-end="3844">Hybrid strategies (using proprietary APIs for some tasks, open-source for others) are becoming common.</p>
+</li>
+</ul>
+<hr data-start="3846" data-end="3849">
+<h2 data-start="3851" data-end="3881">Where Do We Go from Here?</h2>
+<p data-start="3882" data-end="4194">Foundation models today are powerful but imperfect. They hallucinate, carry biases, and burn through enormous energy budgets. But they’ve already redefined what’s possible in software: instead of programming step by step, we can now describe our intent in natural language and let the model generate solutions.</p>
+<p data-start="4196" data-end="4232">For builders, the key lessons are:</p>
+<ul data-start="4233" data-end="4733">
+<li data-start="4233" data-end="4330">
+<p data-start="4235" data-end="4330"><strong data-start="4235" data-end="4260">Know your ingredients</strong>: Training data shapes the strengths and blind spots of every model.</p>
+</li>
+<li data-start="4331" data-end="4443">
+<p data-start="4333" data-end="4443"><strong data-start="4333" data-end="4358">Understand the engine</strong>: Transformers dominate today, but alternatives are emerging that may scale better.</p>
+</li>
+<li data-start="4444" data-end="4546">
+<p data-start="4446" data-end="4546"><strong data-start="4446" data-end="4471">Right-size your tools</strong>: Bigger isn’t always better. Match model size and cost to your use case.</p>
+</li>
+<li data-start="4547" data-end="4639">
+<p data-start="4549" data-end="4639"><strong data-start="4549" data-end="4567">Shape behavior</strong>: Post-training and fine-tuning are where intelligence becomes usable.</p>
+</li>
+<li data-start="4640" data-end="4733">
+<p data-start="4642" data-end="4733"><strong data-start="4642" data-end="4666">Tune for personality</strong>: Sampling controls creativity, reliability, and user experience.</p>
+</li>
+</ul>
+<p data-start="4735" data-end="4940">The next wave of AI innovation won’t just be about bigger models. It will be about smarter scaling, creative use of domain-specific data, and building applications that harness these engines responsibly.</p>
+<hr data-start="4942" data-end="4945">
+<h2 data-start="4947" data-end="4992">Conclusion: The Age of Foundation Models</h2>
+<p data-start="4993" data-end="5250">We’re living in the early years of the <strong data-start="5032" data-end="5056">foundation model era</strong>. Just as the steam engine reshaped the industrial world, foundation models are reshaping the digital one. They’re not perfect, but they’re versatile, powerful, and—most importantly—adaptable.</p>
+<p data-start="5252" data-end="5501">The engineers who thrive in this era won’t necessarily be the ones with the biggest GPUs. They’ll be the ones who understand how these models work under the hood, who can anticipate their quirks, and who can creatively apply them to real problems.</p>
+<p data-start="5503" data-end="5733">So whether you’re building apps for language learning, coding, medicine, or art, remember: the foundation model is your engine. Learn its design, respect its limits, and tune it carefully—and you’ll be ready to build the future.</p>
+<hr data-start="5735" data-end="5738">
+</div>
+</div>
+<span style="opacity: 0;">Tags: Artificial Intelligence,Generative AI,Agentic AI,Technology,</span>

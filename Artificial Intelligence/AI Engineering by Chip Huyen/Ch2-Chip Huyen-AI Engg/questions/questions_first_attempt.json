@@ -1,0 +1,282 @@
+[
+  {
+    "question": "What is a common source for training data mentioned in the text, which is known for containing low-quality content like 'fake news'?",
+    "options": [
+      "Wikipedia",
+      "Common Crawl",
+      "Reddit",
+      "Project Gutenberg"
+    ],
+    "answer": [
+      "Common Crawl"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "What is the most dominant architecture for language-based foundation models as of the writing of the text?",
+    "options": [
+      "Recurrent Neural Network (RNN)",
+      "Seq2seq",
+      "Transformer",
+      "State Space Model (SSM)"
+    ],
+    "answer": [
+      "Transformer"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "What are the two main steps of the post-training process designed to align a model with human preferences?",
+    "options": [
+      "Pre-training and Sampling",
+      "Supervised Finetuning (SFT) and Preference Finetuning",
+      "Scaling and Extrapolation",
+      "Data Curation and Modeling"
+    ],
+    "answer": [
+      "Supervised Finetuning (SFT) and Preference Finetuning"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "In sampling, what is the effect of using a higher 'temperature' value?",
+    "options": [
+      "It makes the model's output more predictable.",
+      "It makes the model's output more creative and potentially less coherent.",
+      "It forces the model to only use words from the input prompt.",
+      "It guarantees the output is factually correct."
+    ],
+    "answer": [
+      "It makes the model's output more creative and potentially less coherent."
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "Which three key numbers are used to signal a model's overall scale?",
+    "options": [
+      "Number of layers, batch size, and learning rate",
+      "Number of parameters, number of training tokens, and number of FLOPs",
+      "Latency, throughput, and cost per token",
+      "Vocabulary size, context length, and number of attention heads"
+    ],
+    "answer": [
+      "Number of parameters, number of training tokens, and number of FLOPs"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "What is the primary goal of the post-training phase for a foundation model?",
+    "options": [
+      "To increase the model's parameter count.",
+      "To make the model capable, but not necessarily safe.",
+      "To align the model with human preferences.",
+      "To train the model on a wider variety of internet data."
+    ],
+    "answer": [
+      "To align the model with human preferences."
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "According to an analysis of the Common Crawl dataset, which language is the most prevalent, accounting for almost half of the data?",
+    "options": [
+      "Chinese",
+      "Russian",
+      "German",
+      "English"
+    ],
+    "answer": [
+      "English"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "Which sampling strategy involves always selecting the single most likely token at each step?",
+    "options": [
+      "Top-k sampling",
+      "Nucleus sampling",
+      "Greedy sampling",
+      "Temperature sampling"
+    ],
+    "answer": [
+      "Greedy sampling"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "The probabilistic nature of AI models is a primary cause for which two common issues?",
+    "options": [
+      "High cost and slow speed",
+      "Inconsistency and hallucinations",
+      "Limited context windows and small vocabulary",
+      "Biased outputs and data privacy violations"
+    ],
+    "answer": [
+      "Inconsistency and hallucinations"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "What does SFT, the first step of post-training, stand for?",
+    "options": [
+      "Systematic Finetuning",
+      "Supervised Finetuning",
+      "Scaling Factor Training",
+      "Standard Form Transformation"
+    ],
+    "answer": [
+      "Supervised Finetuning"
+    ],
+    "type": "SCQ",
+    "complexity": "easy"
+  },
+  {
+    "question": "According to the Chinchilla scaling law for compute-optimal training, what is the ideal relationship between model size and the number of training tokens?",
+    "options": [
+      "The number of parameters should be 20 times the number of training tokens.",
+      "The number of training tokens should be roughly equal to the number of parameters.",
+      "For every doubling of model size, the number of training tokens should be halved.",
+      "The number of training tokens should be approximately 20 times the number of model parameters."
+    ],
+    "answer": [
+      "The number of training tokens should be approximately 20 times the number of model parameters."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "In the transformer architecture's attention mechanism, how are the query (Q), key (K), and value (V) vectors used?",
+    "options": [
+      "They are added together to create a final output vector.",
+      "The dot product of Q and K determines an attention weight, which is then applied to the V vector to create a weighted representation.",
+      "Q represents the input, K represents positional encoding, and V represents the final token probability.",
+      "They are concatenated and passed through a feedforward network to calculate the next token."
+    ],
+    "answer": [
+      "The dot product of Q and K determines an attention weight, which is then applied to the V vector to create a weighted representation."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "What is the role of the reward model within the Reinforcement Learning from Human Feedback (RLHF) process?",
+    "options": [
+      "It generates high-quality (prompt, response) pairs for supervised finetuning.",
+      "It learns to assign a scalar score to a (prompt, response) pair based on human preference data, which is then used to optimize the main model.",
+      "It corrects factual errors in the model's output after it has been generated.",
+      "It directly modifies the weights of the SFT model to reduce toxicity."
+    ],
+    "answer": [
+      "It learns to assign a scalar score to a (prompt, response) pair based on human preference data, which is then used to optimize the main model."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "Why can a large Mixture-of-Experts (MoE) model have inference costs and speeds comparable to a much smaller dense model?",
+    "options": [
+      "Because MoE models are trained on less data.",
+      "Because MoE models use a different, more efficient architecture than transformers.",
+      "Because only a subset of the model's total parameters (the 'experts') are activated to process each token.",
+      "Because MoE models share all their parameters across different experts, reducing the effective size."
+    ],
+    "answer": [
+      "Because only a subset of the model's total parameters (the 'experts') are activated to process each token."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "The text describes two primary hypotheses for why language models hallucinate. Which of the following best summarizes them?",
+    "options": [
+      "1) Too much training data confuses the model, and 2) The learning rate is too high.",
+      "1) The model cannot distinguish between external data and its own generated output (self-delusion), and 2) There's a mismatch between the model's knowledge and what it's taught by human labelers.",
+      "1) The model intentionally generates false information, and 2) The temperature setting is too low, restricting creativity.",
+      "1) Data from the internet contains misinformation, and 2) The model's architecture has inherent flaws that cause random errors."
+    ],
+    "answer": [
+      "1) The model cannot distinguish between external data and its own generated output (self-delusion), and 2) There's a mismatch between the model's knowledge and what it's taught by human labelers."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "According to one study mentioned, using a 'verifier' during test-time compute provided a performance boost equivalent to what change in model scale?",
+    "options": [
+      "A 2x increase in the number of transformer blocks.",
+      "A 10x increase in the training dataset size.",
+      "A 30x increase in model size (parameters).",
+      "A 50% reduction in model latency."
+    ],
+    "answer": [
+      "A 30x increase in model size (parameters)."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "What are the two most pressing bottlenecks for the continued scaling of foundation models discussed in the text?",
+    "options": [
+      "A shortage of new model architectures and the limitations of current hardware.",
+      "The difficulty of parallelizing training and the slow speed of data transfer.",
+      "A potential exhaustion of high-quality training data and the massive electricity consumption of data centers.",
+      "Public distrust in AI and restrictive government regulations."
+    ],
+    "answer": [
+      "A potential exhaustion of high-quality training data and the massive electricity consumption of data centers."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "How does 'constrained sampling' work to generate structured outputs like JSON?",
+    "options": [
+      "It finetunes the model on thousands of JSON examples.",
+      "It uses a second AI model to correct the output into a valid JSON format.",
+      "At each token generation step, it filters the model's logits to only allow tokens that conform to the specified grammar (e.g., JSON grammar).",
+      "It repeatedly prompts the model until a valid JSON output is produced."
+    ],
+    "answer": [
+      "At each token generation step, it filters the model's logits to only allow tokens that conform to the specified grammar (e.g., JSON grammar)."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "The text explains that cost and latency can differ greatly by language. Why might a query in Burmese cost ten times more than the same query in English?",
+    "options": [
+      "Because the model must first translate Burmese to English, which is a slow process.",
+      "Because Burmese has a fundamentally more complex grammar for the model to process.",
+      "Because the model's tokenization is inefficient for Burmese, requiring many more tokens to represent the same meaning.",
+      "Because the model charges a premium for low-resource languages."
+    ],
+    "answer": [
+      "Because the model's tokenization is inefficient for Burmese, requiring many more tokens to represent the same meaning."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  },
+  {
+    "question": "What is the 'snowballing hallucinations' phenomenon?",
+    "options": [
+      "When a model gets stuck in a repetitive loop, generating the same token over and over.",
+      "When a model makes an initial incorrect assumption and then continues to generate more false information to justify it.",
+      "When multiple different models agree on the same hallucinated fact.",
+      "When a model hallucinates more frequently in colder temperatures."
+    ],
+    "answer": [
+      "When a model makes an initial incorrect assumption and then continues to generate more false information to justify it."
+    ],
+    "type": "SCQ",
+    "complexity": "complex"
+  }
+]
