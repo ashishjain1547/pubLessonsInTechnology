@@ -1,0 +1,945 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['current book club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<a class="customLink" href="https://github.com/ashishjain1547/agentic_ai_books/blob/main/1_Chip%20Huyen%20-%20AI%20Engineering_%20Building%20Applications%20with%20Foundation%20Models-O'Reilly%20Media%20(2025).pdf" target="_blank">Download Book</a>
+<br><br>
+<div id="customWhatsAppGroupLinkWrapper"></div>
+<a class="customLink" href="https://survival8.blogspot.com/2025/09/ch3-evaluation-methodology-ai.html" target="_blank">&lt;&lt;&lt; Previous Chapter</a>
+<a class="customLink" href="https://survival8.blogspot.com/2025/09/the-art-and-science-of-prompt.html" target="_blank">Next Chapter &gt;&gt;&gt;</a>
+<br><br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigCuANDr8rihCNvkpsxyFUOemO9pcK6MJAaHe9AaR7V1m766NznPyvEWLWtLLfnk8ZRI4NjQkHLnhO9ljovbMsHqpg8IaKAnJ1F4nBc3jxkAzc7p3Prue1meNsPkXMBe19-p_Kmq23Hz4oPFB6x3qYWqMSb6ieGviU8Jcl24a3T1Z9EHfRs4neLXlbnN6m/s686/Screenshot%20from%202025-06-26%2009-45-44.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="686" data-original-width="546" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigCuANDr8rihCNvkpsxyFUOemO9pcK6MJAaHe9AaR7V1m766NznPyvEWLWtLLfnk8ZRI4NjQkHLnhO9ljovbMsHqpg8IaKAnJ1F4nBc3jxkAzc7p3Prue1meNsPkXMBe19-p_Kmq23Hz4oPFB6x3qYWqMSb6ieGviU8Jcl24a3T1Z9EHfRs4neLXlbnN6m/s600/Screenshot%20from%202025-06-26%2009-45-44.png"/></a></div>
+
+
+<div class="customWrapper">
+<h3>Outline</h3>
+<ol data-start="172" data-end="1573">
+<li data-start="172" data-end="318">
+<p data-start="175" data-end="210"><strong data-start="175" data-end="191">Introduction</strong> (~300–400 words)</p>
+<ul data-start="214" data-end="318">
+<li data-start="214" data-end="252">
+<p data-start="216" data-end="252">Why evaluating AI systems matters.</p>
+</li>
+<li data-start="256" data-end="318">
+<p data-start="258" data-end="318">Real-world examples of what goes wrong without evaluation.</p>
+</li>
+</ul>
+</li>
+<li data-start="320" data-end="525">
+<p data-start="323" data-end="371"><strong data-start="323" data-end="356">Evaluation-Driven Development</strong> (~600 words)</p>
+<ul data-start="375" data-end="525">
+<li data-start="375" data-end="404">
+<p data-start="377" data-end="404">Concept explained simply.</p>
+</li>
+<li data-start="408" data-end="451">
+<p data-start="410" data-end="451">Parallels with test-driven development.</p>
+</li>
+<li data-start="455" data-end="525">
+<p data-start="457" data-end="525">Examples: recommender systems, fraud detection, coding assistants.</p>
+</li>
+</ul>
+</li>
+<li data-start="527" data-end="892">
+<p data-start="530" data-end="589"><strong data-start="530" data-end="573">The Four Buckets of Evaluation Criteria</strong> (~1000 words)</p>
+<ul data-start="593" data-end="892">
+<li data-start="593" data-end="661">
+<p data-start="595" data-end="661"><strong data-start="595" data-end="625">Domain-specific capability</strong> (e.g., coding, math, legal docs).</p>
+</li>
+<li data-start="665" data-end="739">
+<p data-start="667" data-end="739"><strong data-start="667" data-end="692">Generation capability</strong> (fluency, coherence, hallucination, safety).</p>
+</li>
+<li data-start="743" data-end="823">
+<p data-start="745" data-end="823"><strong data-start="745" data-end="781">Instruction-following capability</strong> (formatting, roleplay, task adherence).</p>
+</li>
+<li data-start="827" data-end="892">
+<p data-start="829" data-end="892"><strong data-start="829" data-end="847">Cost &amp; latency</strong> (balancing speed, performance, and money).</p>
+</li>
+</ul>
+</li>
+<li data-start="894" data-end="1077">
+<p data-start="897" data-end="949"><strong data-start="897" data-end="934">Model Selection in the Real World</strong> (~600 words)</p>
+<ul data-start="953" data-end="1077">
+<li data-start="953" data-end="981">
+<p data-start="955" data-end="981">Hard vs soft attributes.</p>
+</li>
+<li data-start="985" data-end="1030">
+<p data-start="987" data-end="1030">Public benchmarks vs your own benchmarks.</p>
+</li>
+<li data-start="1034" data-end="1077">
+<p data-start="1036" data-end="1077">Practical workflow for choosing models.</p>
+</li>
+</ul>
+</li>
+<li data-start="1079" data-end="1258">
+<p data-start="1082" data-end="1138"><strong data-start="1082" data-end="1119">Build vs Buy (Open Source vs API)</strong> (~400–500 words)</p>
+<ul data-start="1142" data-end="1258">
+<li data-start="1142" data-end="1194">
+<p data-start="1144" data-end="1194">Trade-offs: privacy, control, performance, cost.</p>
+</li>
+<li data-start="1198" data-end="1258">
+<p data-start="1200" data-end="1258">When APIs make sense vs when hosting your own is better.</p>
+</li>
+</ul>
+</li>
+<li data-start="1260" data-end="1449">
+<p data-start="1263" data-end="1338"><strong data-start="1263" data-end="1323">Putting It All Together: Building an Evaluation Pipeline</strong> (~400 words)</p>
+<ul data-start="1342" data-end="1449">
+<li data-start="1342" data-end="1392">
+<p data-start="1344" data-end="1392">How teams can continuously monitor and refine.</p>
+</li>
+<li data-start="1396" data-end="1449">
+<p data-start="1398" data-end="1449">Why evaluation is a journey, not a one-time step.</p>
+</li>
+</ul>
+</li>
+<li data-start="1451" data-end="1573">
+<p data-start="1454" data-end="1487"><strong data-start="1454" data-end="1468">Conclusion</strong> (~200–300 words)</p>
+<ul data-start="1491" data-end="1573">
+<li data-start="1491" data-end="1523">
+<p data-start="1493" data-end="1523">The future of AI evaluation.</p>
+</li>
+<li data-start="1527" data-end="1573">
+<p data-start="1529" data-end="1573">Key takeaways for businesses and builders.</p>
+</li>
+</ul>
+</li>
+</ol>
+
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<hr data-start="85" data-end="88">
+<h1 data-start="90" data-end="151">1: Evaluating AI Systems: Why It Matters More Than You Think</h1>
+<p data-start="153" data-end="465">Artificial intelligence is everywhere. From the chatbot that greets you on a shopping website, to the recommendation engine suggesting your next binge-worthy series, to the fraud detection system quietly scanning your credit card transactions — AI is shaping our daily lives in ways both visible and invisible.</p>
+<p data-start="467" data-end="544">But here’s a hard truth: <strong data-start="492" data-end="542">an AI model is only as good as its evaluation.</strong></p>
+<p data-start="546" data-end="884">Think about it. You could build the most advanced model in the world, train it on terabytes of data, and deploy it at scale. But if you don’t know whether it’s actually working as intended, then what’s the point? Worse, a poorly evaluated model can cause more harm than good — wasting money, breaking trust, and even endangering people.</p>
+<p data-start="886" data-end="925">Let’s take a few real-world examples:</p>
+<ul data-start="927" data-end="1738">
+<li data-start="927" data-end="1231">
+<p data-start="929" data-end="1231"><strong data-start="929" data-end="957">The Car Dealership Story</strong>: A used car dealership once deployed a model to predict car values based on owner-provided details. Customers seemed to like the tool, but a year later, the engineer admitted he had no clue if the predictions were even accurate. The business was essentially flying blind.</p>
+</li>
+<li data-start="1233" data-end="1481">
+<p data-start="1235" data-end="1481"><strong data-start="1235" data-end="1258">Chatbots Gone Wrong</strong>: When ChatGPT fever first hit, companies rushed to add AI-powered customer support bots. Many of them still don’t know if these bots are improving user experience — or quietly frustrating customers and driving them away.</p>
+</li>
+<li data-start="1483" data-end="1738">
+<p data-start="1485" data-end="1738"><strong data-start="1485" data-end="1523">Recommenders and False Attribution</strong>: A spike in purchases might look like your recommendation system is working. But was it really the algorithm — or just a holiday discount campaign? Without proper evaluation, you can’t separate signal from noise.</p>
+</li>
+</ul>
+<p data-start="1740" data-end="1991">These stories highlight a simple but crucial insight: <strong data-start="1794" data-end="1884">deploying AI without evaluation is like launching a rocket without navigation systems.</strong> You might get off the ground, but you have no idea where you’ll land — or if you’ll crash along the way.</p>
+<p data-start="1993" data-end="2161">That’s why evaluation is increasingly seen as the biggest bottleneck to AI adoption. We already know how to train powerful models. The real challenge is figuring out:</p>
+<ul data-start="2162" data-end="2268">
+<li data-start="2162" data-end="2184">
+<p data-start="2164" data-end="2184">Are they reliable?</p>
+</li>
+<li data-start="2185" data-end="2203">
+<p data-start="2187" data-end="2203">Are they safe?</p>
+</li>
+<li data-start="2204" data-end="2232">
+<p data-start="2206" data-end="2232">Are they cost-effective?</p>
+</li>
+<li data-start="2233" data-end="2268">
+<p data-start="2235" data-end="2268">Do they actually deliver value?</p>
+</li>
+</ul>
+<p data-start="2270" data-end="2739">This blog post will walk you through the art and science of evaluating AI systems — not in abstract, academic terms, but in practical ways that any builder, business leader, or curious reader can grasp. We’ll explore evaluation-driven development, the key criteria for measuring AI performance, the trade-offs between open source and API-based models, and why building a robust evaluation pipeline may be the most important investment you can make in your AI journey.</p>
+<p data-start="2741" data-end="2858">Because at the end of the day, <strong data-start="2772" data-end="2856">AI isn’t magic — it’s engineering. And good engineering demands good evaluation.</strong></p>
+<hr data-start="2860" data-end="2863">
+
+</div></div>
+
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h2 data-start="81" data-end="149">2: Evaluation-Driven Development: Building AI with the End in Mind</h2>
+<p data-start="151" data-end="493">In software engineering, there’s a practice called <strong data-start="202" data-end="235">test-driven development (TDD)</strong>. The idea is simple: before writing any code, you first write the tests that define what “success” looks like. Then, you write the code to pass those tests. It forces engineers to think about outcomes before they get lost in the details of implementation.</p>
+<p data-start="495" data-end="571">AI engineering needs something similar: <strong data-start="535" data-end="568">evaluation-driven development</strong>.</p>
+<p data-start="573" data-end="646">Instead of jumping headfirst into building models, you start by asking:</p>
+<ul data-start="647" data-end="801">
+<li data-start="647" data-end="681">
+<p data-start="649" data-end="681"><em data-start="649" data-end="679">How will we measure success?</em></p>
+</li>
+<li data-start="682" data-end="734">
+<p data-start="684" data-end="734"><em data-start="684" data-end="732">What outcomes matter most for our application?</em></p>
+</li>
+<li data-start="735" data-end="801">
+<p data-start="737" data-end="801"><em data-start="737" data-end="799">How will we know if the system is doing more harm than good?</em></p>
+</li>
+</ul>
+<p data-start="803" data-end="997">This mindset shift might sound small, but it’s transformative. It keeps teams focused on business value, user experience, and measurable impact — not just chasing the hype of the latest model.</p>
+<hr data-start="999" data-end="1002">
+<h3 data-start="1004" data-end="1035">Why This Approach Matters</h3>
+<p data-start="1037" data-end="1392">Far too many AI projects fail not because the models are “bad,” but because nobody defined success in the first place. A chatbot is launched without metrics for customer satisfaction. A fraud detection model is rolled out without tracking the money it actually saves. A content generator is deployed without safeguards against harmful or biased outputs.</p>
+<p data-start="1394" data-end="1549">When there are no clear criteria, teams fall back on intuition, anecdotes, or superficial metrics (like “users seem to like it”). That’s not good enough.</p>
+<p data-start="1551" data-end="1682">Evaluation-driven development forces you to ground your project in <strong data-start="1618" data-end="1658">measurable, outcome-oriented metrics</strong> right from the start.</p>
+<hr data-start="1684" data-end="1687">
+<h3 data-start="1689" data-end="1714">Real-World Examples</h3>
+<ul data-start="1716" data-end="2630">
+<li data-start="1716" data-end="1991">
+<p data-start="1718" data-end="1991"><strong data-start="1718" data-end="1741">Recommender Systems</strong><br data-start="1741" data-end="1744">
+Success here can be measured by whether users engage more or purchase more. But remember: correlation isn’t causation. If sales go up, was it because of the recommender or because of a marketing campaign? A/B testing helps isolate the impact.</p>
+</li>
+<li data-start="1993" data-end="2149">
+<p data-start="1995" data-end="2149"><strong data-start="1995" data-end="2022">Fraud Detection Systems</strong><br data-start="2022" data-end="2025">
+Clear evaluation metric: <em data-start="2053" data-end="2103">How much money did we prevent from being stolen?</em> Simple, tangible, and tied directly to ROI.</p>
+</li>
+<li data-start="2151" data-end="2378">
+<p data-start="2153" data-end="2378"><strong data-start="2153" data-end="2178">Code Generation Tools</strong><br data-start="2178" data-end="2181">
+For AI coding assistants, evaluation is easier than for most generative tasks: you can test if the code actually runs. This functional correctness makes it a favorite use case for enterprises.</p>
+</li>
+<li data-start="2380" data-end="2630">
+<p data-start="2382" data-end="2630"><strong data-start="2382" data-end="2406">Classification Tasks</strong><br data-start="2406" data-end="2409">
+Even though foundation models are open-ended, many business applications (like sentiment analysis or intent classification) are close-ended. These are easier to evaluate because outputs can be clearly right or wrong.</p>
+</li>
+</ul>
+<hr data-start="2632" data-end="2635">
+<h3 data-start="2637" data-end="2665">The “Lamppost Problem”</h3>
+<p data-start="2667" data-end="2922">There’s a catch, though. Focusing only on applications that are easy to measure can blind us to opportunities. It’s like looking for your lost keys only under the lamppost because that’s where the light is — even though the keys might be somewhere else.</p>
+<p data-start="2924" data-end="3023">Some of the most exciting and transformative uses of AI don’t yet have easy metrics. For example:</p>
+<ul data-start="3024" data-end="3189">
+<li data-start="3024" data-end="3106">
+<p data-start="3026" data-end="3106">How do you measure the long-term impact of an AI tutor on a child’s curiosity?</p>
+</li>
+<li data-start="3107" data-end="3189">
+<p data-start="3109" data-end="3189">How do you quantify whether an AI creative assistant truly inspires new ideas?</p>
+</li>
+</ul>
+<p data-start="3191" data-end="3329">Just because these are harder to measure doesn’t mean they’re less valuable. It just means we need to get more creative with evaluation.</p>
+<hr data-start="3331" data-end="3334">
+<h3 data-start="3336" data-end="3371">The Bottleneck of AI Adoption</h3>
+<p data-start="3373" data-end="3553">Many experts believe evaluation is the <strong data-start="3412" data-end="3434">biggest bottleneck</strong> to AI adoption. We can build powerful models, but unless we can evaluate them reliably, businesses won’t trust them.</p>
+<p data-start="3555" data-end="3813">That’s why evaluation-driven development isn’t just a “best practice” — it’s a survival skill for AI teams. It ensures that before any model is trained, fine-tuned, or deployed, the team knows exactly <strong data-start="3756" data-end="3810">what success looks like and how they’ll measure it</strong>.</p>
+<p data-start="3815" data-end="3941">In the next section, we’ll break down the four big buckets of evaluation criteria that every AI application should consider:</p>
+<ol data-start="3942" data-end="4060">
+<li data-start="3942" data-end="3973">
+<p data-start="3945" data-end="3973">Domain-specific capability</p>
+</li>
+<li data-start="3974" data-end="4000">
+<p data-start="3977" data-end="4000">Generation capability</p>
+</li>
+<li data-start="4001" data-end="4038">
+<p data-start="4004" data-end="4038">Instruction-following capability</p>
+</li>
+<li data-start="4039" data-end="4060">
+<p data-start="4042" data-end="4060">Cost and latency</p>
+</li>
+</ol>
+<p data-start="4062" data-end="4151">Together, they provide a roadmap for thinking about AI performance in a structured way.</p>
+<hr data-start="4153" data-end="4156">
+
+</div></div>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h2 data-start="138" data-end="185">3: The Four Buckets of AI Evaluation Criteria</h2>
+<p data-start="187" data-end="408">Not all AI applications are created equal. A fraud detection system cares about very different things than a story-writing assistant. A real-time medical diagnosis tool has different priorities than a movie recommender.</p>
+<p data-start="410" data-end="446">So how do we make sense of it all?</p>
+<p data-start="448" data-end="525">A useful way is to think about evaluation criteria in <strong data-start="502" data-end="522">four big buckets</strong>:</p>
+<ol data-start="527" data-end="661">
+<li data-start="527" data-end="562">
+<p data-start="530" data-end="562"><strong data-start="530" data-end="560">Domain-Specific Capability</strong></p>
+</li>
+<li data-start="563" data-end="593">
+<p data-start="566" data-end="593"><strong data-start="566" data-end="591">Generation Capability</strong></p>
+</li>
+<li data-start="594" data-end="635">
+<p data-start="597" data-end="635"><strong data-start="597" data-end="633">Instruction-Following Capability</strong></p>
+</li>
+<li data-start="636" data-end="661">
+<p data-start="639" data-end="661"><strong data-start="639" data-end="659">Cost and Latency</strong></p>
+</li>
+</ol>
+<p data-start="663" data-end="724">Let’s unpack each of these with examples you can relate to.</p>
+<hr data-start="726" data-end="729">
+<h3 data-start="731" data-end="766">1. Domain-Specific Capability</h3>
+<p data-start="768" data-end="858">This is about whether the model knows the stuff it <em data-start="819" data-end="826">needs</em> to know for your application.</p>
+<ul data-start="860" data-end="1151">
+<li data-start="860" data-end="956">
+<p data-start="862" data-end="956">If you’re building a <strong data-start="883" data-end="903">coding assistant</strong>, your model must understand programming languages.</p>
+</li>
+<li data-start="957" data-end="1052">
+<p data-start="959" data-end="1052">If you’re creating a <strong data-start="980" data-end="1009">legal document summarizer</strong>, your model needs to grasp legal jargon.</p>
+</li>
+<li data-start="1053" data-end="1151">
+<p data-start="1055" data-end="1151">If you’re building a <strong data-start="1076" data-end="1096">translation tool</strong>, it must understand the source and target languages.</p>
+</li>
+</ul>
+<p data-start="1153" data-end="1281">It doesn’t matter how fluent or creative the model is — if it simply doesn’t have the knowledge of your domain, it won’t work.</p>
+<p data-start="1283" data-end="1495"><strong data-start="1283" data-end="1294">Example</strong>: Imagine trying to build an app that translates Latin into English. If your model has never “seen” Latin during training, it will just produce gibberish. No amount of clever prompting will fix that.</p>
+<p data-start="1497" data-end="1526"><strong data-start="1497" data-end="1524">How do you evaluate it?</strong></p>
+<ul data-start="1527" data-end="1942">
+<li data-start="1527" data-end="1729">
+<p data-start="1529" data-end="1729">Use <strong data-start="1533" data-end="1560">benchmarks or test sets</strong> that reflect your domain. For example, coding benchmarks to test programming ability, math benchmarks to test problem-solving, or legal quizzes for law-related tools.</p>
+</li>
+<li data-start="1730" data-end="1942">
+<p data-start="1732" data-end="1942">Don’t just check if the answer is correct — check if it’s <em data-start="1790" data-end="1801">efficient</em> and <em data-start="1806" data-end="1814">usable</em>. A SQL query that technically works but takes forever to run is as useless as a car that consumes five times the normal fuel.</p>
+</li>
+</ul>
+<hr data-start="1944" data-end="1947">
+<h3 data-start="1949" data-end="1979">2. Generation Capability</h3>
+<p data-start="1981" data-end="2146">AI models are often asked to generate open-ended text: essays, summaries, translations, answers to complex questions. That’s where <strong data-start="2112" data-end="2134">generation quality</strong> comes in.</p>
+<p data-start="2148" data-end="2400">In the early days of natural language generation, researchers worried about things like fluency (“Does it sound natural?”) and coherence (“Does it make sense as a whole?”). Today’s advanced models like GPT-4 or Claude have mostly nailed these basics.</p>
+<p data-start="2402" data-end="2436">But new challenges have emerged:</p>
+<ul data-start="2438" data-end="2941">
+<li data-start="2438" data-end="2596">
+<p data-start="2440" data-end="2596"><strong data-start="2440" data-end="2458">Hallucinations</strong>: When models confidently make things up. Fine if you’re writing a sci-fi short story; catastrophic if you’re generating medical advice.</p>
+</li>
+<li data-start="2597" data-end="2765">
+<p data-start="2599" data-end="2765"><strong data-start="2599" data-end="2622">Factual consistency</strong>: Does the output stick to the facts in the given context? If you ask a model to summarize a report, the summary shouldn’t invent new claims.</p>
+</li>
+<li data-start="2766" data-end="2941">
+<p data-start="2768" data-end="2941"><strong data-start="2768" data-end="2787">Safety and bias</strong>: Models can generate harmful, toxic, or biased outputs. From offensive language to reinforcing stereotypes, safety is now a central part of evaluation.</p>
+</li>
+</ul>
+<p data-start="2943" data-end="3167"><strong data-start="2943" data-end="2954">Example</strong>: If you ask a model, <em data-start="2976" data-end="3040">“What rules do all artificial intelligences currently follow?”</em> and it replies with <em data-start="3061" data-end="3091">“The Three Laws of Robotics”</em>, it sounds convincing — but it’s totally made up. That’s a hallucination.</p>
+<p data-start="3169" data-end="3198"><strong data-start="3169" data-end="3196">How do you evaluate it?</strong></p>
+<ul data-start="3199" data-end="3567">
+<li data-start="3199" data-end="3321">
+<p data-start="3201" data-end="3321">Compare generated text against known facts (easier when a source document is available, harder for general knowledge).</p>
+</li>
+<li data-start="3322" data-end="3399">
+<p data-start="3324" data-end="3399">Use human or AI “judges” to rate safety, coherence, and factual accuracy.</p>
+</li>
+<li data-start="3400" data-end="3567">
+<p data-start="3402" data-end="3567">Track hallucination-prone scenarios: rare knowledge (like niche competitions) and nonexistent events (asking “What did X say about Y?” when X never said anything).</p>
+</li>
+</ul>
+<p data-start="3569" data-end="3662">In short: <strong data-start="3579" data-end="3659">good generation means fluent, coherent, safe, and factually grounded outputs</strong>.</p>
+<hr data-start="3664" data-end="3667">
+<h3 data-start="3669" data-end="3710">3. Instruction-Following Capability</h3>
+<p data-start="3712" data-end="3806">This one is about obedience. Can the model actually do what you asked, in the way you asked?</p>
+<p data-start="3808" data-end="3906">Large language models (LLMs) are trained to follow instructions, but not all do it equally well.</p>
+<p data-start="3908" data-end="4000"><strong data-start="3908" data-end="3922">Example 1:</strong> You ask a model:<br data-start="3939" data-end="3942">
+“Classify this tweet as POSITIVE, NEGATIVE, or NEUTRAL.”</p>
+<p data-start="4002" data-end="4114">If it replies with “HAPPY” or “ANGRY”, it clearly understood the sentiment — but failed to follow your format.</p>
+<p data-start="4116" data-end="4313"><strong data-start="4116" data-end="4130">Example 2:</strong> A startup building AI-powered children’s books wants stories restricted to words that first graders can understand. If the model ignores that and uses big words, it breaks the app.</p>
+<p data-start="4315" data-end="4558"><strong data-start="4315" data-end="4334">Why it matters:</strong> Many real-world applications rely on structured outputs. APIs, databases, and downstream systems expect outputs in JSON, YAML, or other specific formats. If the model ignores instructions, the whole pipeline can collapse.</p>
+<p data-start="4560" data-end="4589"><strong data-start="4560" data-end="4587">How do you evaluate it?</strong></p>
+<ul data-start="4590" data-end="4840">
+<li data-start="4590" data-end="4691">
+<p data-start="4592" data-end="4691">Test with prompts that include clear constraints: word count, JSON formatting, keyword inclusion.</p>
+</li>
+<li data-start="4692" data-end="4753">
+<p data-start="4694" data-end="4753">See if the model consistently respects these constraints.</p>
+</li>
+<li data-start="4754" data-end="4840">
+<p data-start="4756" data-end="4840">Build your own mini-benchmarks with the exact instructions your system depends on.</p>
+</li>
+</ul>
+<p data-start="4842" data-end="5224"><strong data-start="4842" data-end="4874">Bonus use case: Roleplaying.</strong><br data-start="4874" data-end="4877">
+One of the most popular real-world instructions is: <em data-start="4929" data-end="4944">“Act like X.”</em> Whether it’s a celebrity, a helpful teacher, or a medieval knight in a game, roleplaying requires the model to stay “in character.” Evaluating this involves checking both <strong data-start="5116" data-end="5125">style</strong> (does it sound like the role?) and <strong data-start="5161" data-end="5174">knowledge</strong> (does it only say things the role would know?).</p>
+<hr data-start="5226" data-end="5229">
+<h3 data-start="5231" data-end="5256">4. Cost and Latency</h3>
+<p data-start="5258" data-end="5337">Finally, the practical bucket: <strong data-start="5289" data-end="5335">how much does it cost, and how fast is it?</strong></p>
+<p data-start="5339" data-end="5495">You could have the smartest, most reliable model in the world — but if it takes 2 minutes to answer and costs $5 per query, most users won’t stick around.</p>
+<p data-start="5497" data-end="5522"><strong data-start="5497" data-end="5520">Key considerations:</strong></p>
+<ul data-start="5523" data-end="5867">
+<li data-start="5523" data-end="5631">
+<p data-start="5525" data-end="5631"><strong data-start="5525" data-end="5536">Latency</strong>: How long does the user wait? Metrics include time to first token and time to full response.</p>
+</li>
+<li data-start="5632" data-end="5768">
+<p data-start="5634" data-end="5768"><strong data-start="5634" data-end="5642">Cost</strong>: For API-based models, this is usually measured in tokens (input + output). For self-hosted models, it’s compute resources.</p>
+</li>
+<li data-start="5769" data-end="5867">
+<p data-start="5771" data-end="5867"><strong data-start="5771" data-end="5780">Scale</strong>: Can the system handle thousands or millions of queries per minute without breaking?</p>
+</li>
+</ul>
+<p data-start="5869" data-end="6043"><strong data-start="5869" data-end="5880">Example</strong>: A customer service chatbot must reply in under a second to feel conversational. If it lags, users get frustrated — even if the answers are technically correct.</p>
+<p data-start="6045" data-end="6062"><strong data-start="6045" data-end="6060">Trade-offs:</strong></p>
+<ul data-start="6063" data-end="6325">
+<li data-start="6063" data-end="6160">
+<p data-start="6065" data-end="6160">Some companies deliberately choose slightly weaker models because they’re faster and cheaper.</p>
+</li>
+<li data-start="6161" data-end="6227">
+<p data-start="6163" data-end="6227">Others optimize prompts (shorter, more concise) to save costs.</p>
+</li>
+<li data-start="6228" data-end="6325">
+<p data-start="6230" data-end="6325">Hosting your own model may be cheaper at scale, but expensive in terms of engineering effort.</p>
+</li>
+</ul>
+<p data-start="6327" data-end="6431">At the end of the day, it’s a balancing act: <strong data-start="6372" data-end="6429">find the sweet spot between quality, speed, and cost.</strong></p>
+<hr data-start="6433" data-end="6436">
+<h3 data-start="6438" data-end="6472">Wrapping Up the Four Buckets</h3>
+<p data-start="6474" data-end="6550">These four categories give you a structured way to think about evaluation:</p>
+<ol data-start="6552" data-end="6806">
+<li data-start="6552" data-end="6605">
+<p data-start="6555" data-end="6605">Does the model <strong data-start="6570" data-end="6585">know enough</strong> about the domain?</p>
+</li>
+<li data-start="6606" data-end="6675">
+<p data-start="6609" data-end="6675">Does it <strong data-start="6617" data-end="6637">generate outputs</strong> that are useful, factual, and safe?</p>
+</li>
+<li data-start="6676" data-end="6738">
+<p data-start="6679" data-end="6738">Can it <strong data-start="6686" data-end="6709">follow instructions</strong> reliably and consistently?</p>
+</li>
+<li data-start="6739" data-end="6806">
+<p data-start="6742" data-end="6806">Is it <strong data-start="6748" data-end="6777">affordable and responsive</strong> enough for real-world use?</p>
+</li>
+</ol>
+<p data-start="6808" data-end="6899">Together, they cover the spectrum from accuracy to user experience to business viability.</p>
+<p data-start="6901" data-end="7132">In the next section, we’ll explore how these criteria translate into <strong data-start="6970" data-end="6989">model selection</strong> — because knowing what to measure is one thing, but actually choosing the right model from the sea of options is another challenge entirely.</p>
+<hr data-start="7134" data-end="7137">
+
+</div>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h2 data-start="84" data-end="122">4: Model Selection in the Real World</h2>
+<p data-start="124" data-end="379">Here’s the situation: you’ve defined your evaluation criteria, built a few test cases, and you’re staring at a long list of possible models. Some are open-source, some are proprietary. Some are tiny, some are massive. Some are free, some cost a fortune.</p>
+<p data-start="381" data-end="446">So how do you decide which model is right for your application?</p>
+<p data-start="448" data-end="653">The truth is, <strong data-start="462" data-end="508">there’s no such thing as “the best model.”</strong> There’s only the best model <em data-start="537" data-end="556">for your use case</em>. Choosing wisely means balancing trade-offs across accuracy, safety, speed, cost, and control.</p>
+<hr data-start="655" data-end="658">
+<h3 data-start="660" data-end="690">Hard vs. Soft Attributes</h3>
+<p data-start="692" data-end="793">One way to think about model selection is to separate <strong data-start="746" data-end="765">hard attributes</strong> from <strong data-start="771" data-end="790">soft attributes</strong>.</p>
+<ul data-start="795" data-end="1479">
+<li data-start="795" data-end="1190">
+<p data-start="797" data-end="919"><strong data-start="797" data-end="816">Hard attributes</strong> are dealbreakers. If a model doesn’t meet them, it’s out — no matter how great it is in other areas.</p>
+<ul data-start="923" data-end="1190">
+<li data-start="923" data-end="1075">
+<p data-start="925" data-end="1075">Example: Your company policy forbids sending sensitive data to third-party APIs. That instantly rules out hosted models and forces you to self-host.</p>
+</li>
+<li data-start="1079" data-end="1190">
+<p data-start="1081" data-end="1190">Example: If you need a model that supports real-time responses under 1 second, anything slower is unusable.</p>
+</li>
+</ul>
+</li>
+<li data-start="1192" data-end="1479">
+<p data-start="1194" data-end="1260"><strong data-start="1194" data-end="1213">Soft attributes</strong> are things you <em data-start="1229" data-end="1234">can</em> work around or improve.</p>
+<ul data-start="1264" data-end="1479">
+<li data-start="1264" data-end="1388">
+<p data-start="1266" data-end="1388">Example: If a model’s factual accuracy is a little low, you can supplement it with retrieval-augmented generation (RAG).</p>
+</li>
+<li data-start="1392" data-end="1479">
+<p data-start="1394" data-end="1479">Example: If outputs are a bit wordy, you can refine prompts to enforce conciseness.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="1481" data-end="1659">Framing attributes this way helps you avoid wasting time on models that will never work for your use case — while keeping an open mind about ones that can be tuned or extended.</p>
+<hr data-start="1661" data-end="1664">
+<h3 data-start="1666" data-end="1702">Don’t Blindly Trust Benchmarks</h3>
+<p data-start="1704" data-end="1848">If you’ve looked at AI leaderboards online, you know there’s a dizzying number of benchmarks: MMLU, ARC, HumanEval, TruthfulQA, and many more.</p>
+<p data-start="1850" data-end="1947">They can be useful, but here’s the catch: <strong data-start="1892" data-end="1945">benchmarks often don’t reflect your actual needs.</strong></p>
+<ul data-start="1949" data-end="2250">
+<li data-start="1949" data-end="2052">
+<p data-start="1951" data-end="2052">A model might score high on a general knowledge quiz but still fail at summarizing legal contracts.</p>
+</li>
+<li data-start="2053" data-end="2155">
+<p data-start="2055" data-end="2155">A leaderboard might emphasize English tasks, while your application needs multilingual capability.</p>
+</li>
+<li data-start="2156" data-end="2250">
+<p data-start="2158" data-end="2250">Some models are tuned to “game” certain benchmarks without truly being better in practice.</p>
+</li>
+</ul>
+<p data-start="2252" data-end="2362">Public benchmarks are like car reviews in magazines: good for a rough idea, but you still need a test drive.</p>
+<hr data-start="2364" data-end="2367">
+<h3 data-start="2369" data-end="2415">A Practical Workflow for Model Selection</h3>
+<p data-start="2417" data-end="2467">Here’s a four-step workflow that many teams use:</p>
+<ol data-start="2469" data-end="3062">
+<li data-start="2469" data-end="2612">
+<p data-start="2472" data-end="2612"><strong data-start="2472" data-end="2501">Filter by hard attributes</strong><br data-start="2501" data-end="2504">
+Remove any models that violate your constraints (privacy, licensing, latency limits, deployment needs).</p>
+</li>
+<li data-start="2614" data-end="2740">
+<p data-start="2617" data-end="2740"><strong data-start="2617" data-end="2649">Use public data to shortlist</strong><br data-start="2649" data-end="2652">
+Look at benchmarks and community reviews to pick a handful of promising candidates.</p>
+</li>
+<li data-start="2742" data-end="2900">
+<p data-start="2745" data-end="2900"><strong data-start="2745" data-end="2773">Run your own evaluations</strong><br data-start="2773" data-end="2776">
+Test the short-listed models against your own evaluation pipeline (using your real prompts, data, and success metrics).</p>
+</li>
+<li data-start="2902" data-end="3062">
+<p data-start="2905" data-end="3062"><strong data-start="2905" data-end="2929">Monitor continuously</strong><br data-start="2929" data-end="2932">
+Even after deployment, keep testing. Models evolve, APIs change, and user needs shift. What works today may degrade tomorrow.</p>
+</li>
+</ol>
+<p data-start="3064" data-end="3306">This workflow is iterative. You might start with a hosted model to test feasibility, then later switch to an open-source model for scale. Or you might initially favor speed, then realize accuracy is more critical and change your priorities.</p>
+<hr data-start="3308" data-end="3311">
+<h3 data-start="3313" data-end="3341">A Story from the Field</h3>
+<p data-start="3343" data-end="3431">A fintech startup wanted to build a fraud detection chatbot. They tested three models:</p>
+<ul data-start="3433" data-end="3629">
+<li data-start="3433" data-end="3503">
+<p data-start="3435" data-end="3503">Model A was lightning fast but often missed subtle fraud patterns.</p>
+</li>
+<li data-start="3504" data-end="3555">
+<p data-start="3506" data-end="3555">Model B was highly accurate but painfully slow.</p>
+</li>
+<li data-start="3556" data-end="3629">
+<p data-start="3558" data-end="3629">Model C was middle-of-the-road but allowed fine-tuning on their data.</p>
+</li>
+</ul>
+<p data-start="3631" data-end="3878">At first, they leaned toward Model A for speed. But after internal testing, they realized missed fraud cases cost them more money than the time saved. They switched to Model C, fine-tuned it, and achieved both good accuracy and acceptable speed.</p>
+<p data-start="3880" data-end="3989">The lesson? <strong data-start="3892" data-end="3987">The “best” model depends on what hurts more — false negatives, slow latency, or high costs.</strong></p>
+<hr data-start="3991" data-end="3994">
+<h3 data-start="3996" data-end="4019">The Reality Check</h3>
+<p data-start="4021" data-end="4179">Model selection isn’t a one-time decision. It’s an ongoing process of <strong data-start="4091" data-end="4115">trade-off management</strong>. The model you launch with may not be the one you stick with.</p>
+<p data-start="4181" data-end="4357">What matters most is building an evaluation pipeline that lets you compare, monitor, and switch models as needed. That way, you stay flexible in a rapidly evolving landscape.</p>
+<p data-start="4359" data-end="4525">In the next section, we’ll dive into one of the biggest strategic questions teams face: <strong data-start="4447" data-end="4523">should you build on open-source models or buy access to commercial APIs?</strong></p>
+<hr data-start="4527" data-end="4530">
+
+</div>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h2 data-start="81" data-end="138">5: Build vs Buy: Open Source Models or Commercial APIs?</h2>
+<p data-start="140" data-end="251">One of the toughest choices AI teams face today isn’t just <em data-start="199" data-end="206">which</em> model to use, but <em data-start="225" data-end="230">how</em> to use it. Do you:</p>
+<ul data-start="253" data-end="474">
+<li data-start="253" data-end="373">
+<p data-start="255" data-end="373"><strong data-start="255" data-end="264">“Buy”</strong> access to a commercial model through an API (like OpenAI’s GPT-4, Anthropic’s Claude, or Google’s Gemini)?</p>
+</li>
+<li data-start="374" data-end="474">
+<p data-start="376" data-end="474">Or <strong data-start="379" data-end="390">“build”</strong> by hosting and customizing an open-source model (like LLaMA, Mistral, or Falcon)?</p>
+</li>
+</ul>
+<p data-start="476" data-end="583">This decision can shape everything from performance and cost to privacy and control. Let’s break it down.</p>
+<hr data-start="585" data-end="588">
+<h3 data-start="590" data-end="613">The Case for APIs</h3>
+<p data-start="615" data-end="817">Commercial APIs are the <strong data-start="639" data-end="669">fastest way to get started</strong>. You don’t need to worry about infrastructure, scaling, or optimization. Just send a request, get a response, and integrate it into your product.</p>
+<p data-start="819" data-end="836"><strong data-start="819" data-end="833">Advantages</strong>:</p>
+<ul data-start="837" data-end="1162">
+<li data-start="837" data-end="903">
+<p data-start="839" data-end="903"><strong data-start="839" data-end="854">Ease of use</strong>: No setup headaches, no GPU clusters required.</p>
+</li>
+<li data-start="904" data-end="1040">
+<p data-start="906" data-end="1040"><strong data-start="906" data-end="934">Cutting-edge performance</strong>: Proprietary models are often ahead of open-source ones in accuracy, safety, and instruction-following.</p>
+</li>
+<li data-start="1041" data-end="1162">
+<p data-start="1043" data-end="1162"><strong data-start="1043" data-end="1065">Ecosystem features</strong>: Many APIs come with extras like moderation tools, structured outputs, or fine-tuning options.</p>
+</li>
+</ul>
+<p data-start="1164" data-end="1181"><strong data-start="1164" data-end="1178">Trade-offs</strong>:</p>
+<ul data-start="1182" data-end="1441">
+<li data-start="1182" data-end="1241">
+<p data-start="1184" data-end="1241"><strong data-start="1184" data-end="1192">Cost</strong>: Pay-as-you-go pricing can skyrocket at scale.</p>
+</li>
+<li data-start="1242" data-end="1343">
+<p data-start="1244" data-end="1343"><strong data-start="1244" data-end="1260">Data privacy</strong>: Some organizations can’t (or won’t) send sensitive data to third-party servers.</p>
+</li>
+<li data-start="1344" data-end="1441">
+<p data-start="1346" data-end="1441"><strong data-start="1346" data-end="1362">Lock-in risk</strong>: If the provider changes pricing, policies, or model behavior, you’re stuck.</p>
+</li>
+</ul>
+<p data-start="1443" data-end="1470"><strong data-start="1443" data-end="1467">When APIs make sense</strong>:</p>
+<ul data-start="1471" data-end="1609">
+<li data-start="1471" data-end="1493">
+<p data-start="1473" data-end="1493">Early prototyping.</p>
+</li>
+<li data-start="1494" data-end="1559">
+<p data-start="1496" data-end="1559">Small-to-medium scale apps where usage costs stay manageable.</p>
+</li>
+<li data-start="1560" data-end="1609">
+<p data-start="1562" data-end="1609">Teams without heavy infrastructure expertise.</p>
+</li>
+</ul>
+<hr data-start="1611" data-end="1614">
+<h3 data-start="1616" data-end="1646">The Case for Open Source</h3>
+<p data-start="1648" data-end="1740">Hosting an open-source model is harder, but it gives you <strong data-start="1705" data-end="1737">more control and flexibility</strong>.</p>
+<p data-start="1742" data-end="1759"><strong data-start="1742" data-end="1756">Advantages</strong>:</p>
+<ul data-start="1760" data-end="2129">
+<li data-start="1760" data-end="1883">
+<p data-start="1762" data-end="1883"><strong data-start="1762" data-end="1790">Cost efficiency at scale</strong>: Once infrastructure is set up, serving millions of queries can be cheaper than API costs.</p>
+</li>
+<li data-start="1884" data-end="2016">
+<p data-start="1886" data-end="2016"><strong data-start="1886" data-end="1903">Customization</strong>: You can fine-tune the model on your own data, adapt it to niche tasks, and even strip out unwanted behaviors.</p>
+</li>
+<li data-start="2017" data-end="2129">
+<p data-start="2019" data-end="2129"><strong data-start="2019" data-end="2045">Control &amp; transparency</strong>: You decide when to upgrade, what guardrails to apply, and how the model evolves.</p>
+</li>
+</ul>
+<p data-start="2131" data-end="2148"><strong data-start="2131" data-end="2145">Trade-offs</strong>:</p>
+<ul data-start="2149" data-end="2489">
+<li data-start="2149" data-end="2264">
+<p data-start="2151" data-end="2264"><strong data-start="2151" data-end="2175">Engineering overhead</strong>: You need people who can manage GPUs, optimize inference, and keep the system running.</p>
+</li>
+<li data-start="2265" data-end="2383">
+<p data-start="2267" data-end="2383"><strong data-start="2267" data-end="2290">Lagging performance</strong>: Open-source models are catching up fast, but often still trail the best proprietary ones.</p>
+</li>
+<li data-start="2384" data-end="2489">
+<p data-start="2386" data-end="2489"><strong data-start="2386" data-end="2408">Maintenance burden</strong>: Security patches, scaling bottlenecks, and cost optimization all fall on you.</p>
+</li>
+</ul>
+<p data-start="2491" data-end="2526"><strong data-start="2491" data-end="2523">When open source makes sense</strong>:</p>
+<ul data-start="2527" data-end="2712">
+<li data-start="2527" data-end="2583">
+<p data-start="2529" data-end="2583">You need strict privacy and can’t send data outside.</p>
+</li>
+<li data-start="2584" data-end="2659">
+<p data-start="2586" data-end="2659">You’re operating at massive scale where API costs become unsustainable.</p>
+</li>
+<li data-start="2660" data-end="2712">
+<p data-start="2662" data-end="2712">You want deep control over the model’s behavior.</p>
+</li>
+</ul>
+<hr data-start="2714" data-end="2717">
+<h3 data-start="2719" data-end="2743">The Hybrid Reality</h3>
+<p data-start="2745" data-end="2804">For many teams, the answer isn’t <em data-start="2778" data-end="2789">either-or</em>, but <em data-start="2795" data-end="2801">both</em>.</p>
+<p data-start="2806" data-end="2824">A company might:</p>
+<ul data-start="2825" data-end="2993">
+<li data-start="2825" data-end="2911">
+<p data-start="2827" data-end="2911">Use a commercial API for customer-facing features where quality must be top-notch.</p>
+</li>
+<li data-start="2912" data-end="2993">
+<p data-start="2914" data-end="2993">Use open-source models for internal tools where cost and privacy matter more.</p>
+</li>
+</ul>
+<p data-start="2995" data-end="3134">This hybrid approach gives flexibility: test ideas quickly with APIs, then migrate to open source once the product stabilizes and scales.</p>
+<hr data-start="3136" data-end="3139">
+<h3 data-start="3141" data-end="3166">A Practical Analogy</h3>
+<p data-start="3168" data-end="3231">Think of it like choosing between renting and buying a house.</p>
+<ul data-start="3233" data-end="3473">
+<li data-start="3233" data-end="3350">
+<p data-start="3235" data-end="3350">Renting (APIs) is fast, convenient, and flexible, but the landlord sets the rules, and rent can increase anytime.</p>
+</li>
+<li data-start="3351" data-end="3473">
+<p data-start="3353" data-end="3473">Buying (open source) gives you freedom and long-term savings, but requires upfront investment and ongoing maintenance.</p>
+</li>
+</ul>
+<p data-start="3475" data-end="3560">Neither is universally better — it depends on your situation, resources, and goals.</p>
+<hr data-start="3562" data-end="3565">
+<p data-start="3567" data-end="3725">In the next section, we’ll look at how to <strong data-start="3609" data-end="3675">bring all these decisions together into an evaluation pipeline</strong> that ensures your AI system improves over time.</p>
+<hr data-start="3727" data-end="3730">
+
+</div>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h2 data-start="87" data-end="123">6: Building an Evaluation Pipeline</h2>
+<p data-start="125" data-end="337">So far, we’ve talked about what to measure (evaluation criteria), how to choose models (selection trade-offs), and whether to build or buy. But here’s the real-world challenge: <strong data-start="302" data-end="335">AI systems don’t stay static.</strong></p>
+<p data-start="339" data-end="518">Models evolve, APIs change, user needs shift, and data drifts. That’s why evaluation isn’t a one-time step — it’s a continuous process. The solution? <strong data-start="489" data-end="516">An evaluation pipeline.</strong></p>
+<hr data-start="520" data-end="523">
+<h3 data-start="525" data-end="562">What Is an Evaluation Pipeline?</h3>
+<p data-start="564" data-end="770">Think of it like a health monitoring system for your AI. Just as a hospital doesn’t declare a patient “healthy” after a single checkup, you shouldn’t assume your AI is reliable after one round of testing.</p>
+<p data-start="772" data-end="830">An evaluation pipeline is a <strong data-start="800" data-end="822">repeatable process</strong> that:</p>
+<ol data-start="831" data-end="1027">
+<li data-start="831" data-end="875">
+<p data-start="834" data-end="875">Runs tests on models before deployment.</p>
+</li>
+<li data-start="876" data-end="938">
+<p data-start="879" data-end="938">Continuously monitors their performance after deployment.</p>
+</li>
+<li data-start="939" data-end="981">
+<p data-start="942" data-end="981">Alerts you when something goes wrong.</p>
+</li>
+<li data-start="982" data-end="1027">
+<p data-start="985" data-end="1027">Provides feedback to improve the system.</p>
+</li>
+</ol>
+<hr data-start="1029" data-end="1032">
+<h3 data-start="1034" data-end="1080">Key Components of an Evaluation Pipeline</h3>
+<ol data-start="1082" data-end="2177">
+<li data-start="1082" data-end="1316">
+<p data-start="1085" data-end="1102"><strong data-start="1085" data-end="1100">Test Suites</strong></p>
+<ul data-start="1106" data-end="1316">
+<li data-start="1106" data-end="1202">
+<p data-start="1108" data-end="1202">Just like software tests, you create a library of evaluation prompts and expected behaviors.</p>
+</li>
+<li data-start="1206" data-end="1316">
+<p data-start="1208" data-end="1316">Example: For a customer service bot, tests might include FAQs, edge cases, and “angry customer” roleplays.</p>
+</li>
+</ul>
+</li>
+<li data-start="1318" data-end="1527">
+<p data-start="1321" data-end="1351"><strong data-start="1321" data-end="1349">Human-in-the-Loop Checks</strong></p>
+<ul data-start="1355" data-end="1527">
+<li data-start="1355" data-end="1473">
+<p data-start="1357" data-end="1473">For tasks where correctness is subjective (e.g., creativity, empathy), human reviewers periodically score outputs.</p>
+</li>
+<li data-start="1477" data-end="1527">
+<p data-start="1479" data-end="1527">These scores help calibrate automated metrics.</p>
+</li>
+</ul>
+</li>
+<li data-start="1529" data-end="1735">
+<p data-start="1532" data-end="1555"><strong data-start="1532" data-end="1553">Automated Metrics</strong></p>
+<ul data-start="1559" data-end="1735">
+<li data-start="1559" data-end="1632">
+<p data-start="1561" data-end="1632">Set up scripts to track latency, cost, and error rates automatically.</p>
+</li>
+<li data-start="1636" data-end="1735">
+<p data-start="1638" data-end="1735">Example: if latency jumps above 2 seconds or cost per query doubles, the system should flag it.</p>
+</li>
+</ul>
+</li>
+<li data-start="1737" data-end="1942">
+<p data-start="1740" data-end="1757"><strong data-start="1740" data-end="1755">A/B Testing</strong></p>
+<ul data-start="1761" data-end="1942">
+<li data-start="1761" data-end="1847">
+<p data-start="1763" data-end="1847">Instead of switching models blindly, test them against each other with real users.</p>
+</li>
+<li data-start="1851" data-end="1942">
+<p data-start="1853" data-end="1942">Example: route 10% of traffic to a new model and compare customer satisfaction metrics.</p>
+</li>
+</ul>
+</li>
+<li data-start="1944" data-end="2177">
+<p data-start="1947" data-end="1981"><strong data-start="1947" data-end="1979">Monitoring &amp; Drift Detection</strong></p>
+<ul data-start="1985" data-end="2177">
+<li data-start="1985" data-end="2086">
+<p data-start="1987" data-end="2086">Over time, user data changes. An AI trained on last year’s trends may become less accurate today.</p>
+</li>
+<li data-start="2090" data-end="2177">
+<p data-start="2092" data-end="2177">Pipelines track drift and trigger retraining or adjustments when performance drops.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr data-start="2179" data-end="2182">
+<h3 data-start="2184" data-end="2210">Why Pipelines Matter</h3>
+<p data-start="2212" data-end="2417">Without a pipeline, you’re stuck doing “evaluation theater”: a flashy demo that looks great once, but doesn’t hold up in production. With a pipeline, evaluation becomes part of the DNA of your AI system.</p>
+<p data-start="2419" data-end="2454">It’s like the difference between:</p>
+<ul data-start="2455" data-end="2593">
+<li data-start="2455" data-end="2529">
+<p data-start="2457" data-end="2529"><strong data-start="2457" data-end="2493">A student who crams for one test</strong> and forgets everything afterward.</p>
+</li>
+<li data-start="2530" data-end="2593">
+<p data-start="2532" data-end="2593"><strong data-start="2532" data-end="2554">A lifelong learner</strong> who keeps building skills over time.</p>
+</li>
+</ul>
+<p data-start="2595" data-end="2632">Your AI needs to be the second one.</p>
+<hr data-start="2634" data-end="2637">
+<h3 data-start="2639" data-end="2662">Practical Example</h3>
+<p data-start="2664" data-end="2939">Imagine you’re running an AI tutor app. Without a pipeline, you might test it once on a math quiz, see good results, and launch. But three months later, the model starts struggling with new problem types kids are asking about. Parents complain, and your app’s ratings drop.</p>
+<p data-start="2941" data-end="2959">With a pipeline:</p>
+<ul data-start="2960" data-end="3188">
+<li data-start="2960" data-end="3033">
+<p data-start="2962" data-end="3033">Every week, you run the model against a growing set of math problems.</p>
+</li>
+<li data-start="3034" data-end="3077">
+<p data-start="3036" data-end="3077">You monitor if accuracy dips below 90%.</p>
+</li>
+<li data-start="3078" data-end="3136">
+<p data-start="3080" data-end="3136">You A/B test fine-tuned versions against the original.</p>
+</li>
+<li data-start="3137" data-end="3188">
+<p data-start="3139" data-end="3188">You catch the drift before it reaches students.</p>
+</li>
+</ul>
+<p data-start="3190" data-end="3284">That’s the power of a pipeline: <strong data-start="3222" data-end="3282">proactive evaluation instead of reactive damage control.</strong></p>
+<hr data-start="3286" data-end="3289">
+<h3 data-start="3291" data-end="3316">The Continuous Loop</h3>
+<p data-start="3318" data-end="3374">The best teams treat evaluation as a loop, not a line:</p>
+<ol data-start="3376" data-end="3511">
+<li data-start="3376" data-end="3396">
+<p data-start="3379" data-end="3396">Define success.</p>
+</li>
+<li data-start="3397" data-end="3418">
+<p data-start="3400" data-end="3418">Evaluate models.</p>
+</li>
+<li data-start="3419" data-end="3447">
+<p data-start="3422" data-end="3447">Deploy with monitoring.</p>
+</li>
+<li data-start="3448" data-end="3474">
+<p data-start="3451" data-end="3474">Gather user feedback.</p>
+</li>
+<li data-start="3475" data-end="3498">
+<p data-start="3478" data-end="3498">Refine the system.</p>
+</li>
+<li data-start="3499" data-end="3511">
+<p data-start="3502" data-end="3511">Repeat.</p>
+</li>
+</ol>
+<p data-start="3513" data-end="3627">This loop ensures your AI system doesn’t just work today — it keeps working tomorrow, next month, and next year.</p>
+<hr data-start="3629" data-end="3632">
+<p data-start="3634" data-end="3749">In the final section, we’ll wrap everything up with some key takeaways and a look at the future of AI evaluation.</p>
+<hr data-start="3751" data-end="3754">
+
+</div>
+
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<h2 data-start="71" data-end="115">7: Conclusion: The Future of AI Evaluation</h2>
+<p data-start="117" data-end="149">We’ve covered a lot of ground:</p>
+<ul data-start="150" data-end="568">
+<li data-start="150" data-end="192">
+<p data-start="152" data-end="192">Why evaluation matters more than hype.</p>
+</li>
+<li data-start="193" data-end="251">
+<p data-start="195" data-end="251">How evaluation-driven development keeps teams focused.</p>
+</li>
+<li data-start="252" data-end="369">
+<p data-start="254" data-end="369">The four key buckets of criteria — domain knowledge, generation quality, instruction-following, and cost/latency.</p>
+</li>
+<li data-start="370" data-end="428">
+<p data-start="372" data-end="428">The messy but necessary trade-offs in model selection.</p>
+</li>
+<li data-start="429" data-end="484">
+<p data-start="431" data-end="484">The build vs buy dilemma with open source and APIs.</p>
+</li>
+<li data-start="485" data-end="568">
+<p data-start="487" data-end="568">And the importance of building an evaluation pipeline that never stops running.</p>
+</li>
+</ul>
+<p data-start="570" data-end="704">If there’s one big takeaway, it’s this: <strong data-start="610" data-end="702">AI isn’t magic — it’s engineering. And engineering without evaluation is just guesswork.</strong></p>
+<p data-start="706" data-end="1000">In the early days of AI, it was enough to wow people with flashy demos. Today, that’s not enough. Businesses, regulators, and users demand systems that are <strong data-start="862" data-end="913">reliable, safe, cost-effective, and accountable</strong>. That means evaluation is no longer a “nice-to-have” — it’s the foundation of trust.</p>
+<p data-start="1002" data-end="1067">Looking ahead, evaluation itself will keep evolving. We’ll see:</p>
+<ul data-start="1068" data-end="1568">
+<li data-start="1068" data-end="1170">
+<p data-start="1070" data-end="1170"><strong data-start="1070" data-end="1102">Smarter automated evaluators</strong>: AI systems judging other AI outputs with increasing reliability.</p>
+</li>
+<li data-start="1171" data-end="1272">
+<p data-start="1173" data-end="1272"><strong data-start="1173" data-end="1203">Domain-specific benchmarks</strong>: Custom test sets tailored for medicine, law, education, and more.</p>
+</li>
+<li data-start="1273" data-end="1390">
+<p data-start="1275" data-end="1390"><strong data-start="1275" data-end="1307">Ethics and fairness baked in</strong>: Evaluation pipelines that track bias and safety alongside accuracy and latency.</p>
+</li>
+<li data-start="1391" data-end="1568">
+<p data-start="1393" data-end="1568"><strong data-start="1393" data-end="1418">User-centered metrics</strong>: Moving beyond technical scores to measure what really matters — user satisfaction, learning outcomes, financial savings, and creative inspiration.</p>
+</li>
+</ul>
+<p data-start="1570" data-end="1826">The companies that win in the AI race won’t just be the ones with the biggest models or the most GPUs. They’ll be the ones who build <strong data-start="1703" data-end="1736">evaluation into their culture</strong> — who measure relentlessly, refine constantly, and never confuse outputs with outcomes.</p>
+<p data-start="1828" data-end="2131">So if you’re an engineer, start writing tests for your AI like you would for your code. If you’re a business leader, demand metrics that tie back to real value. And if you’re an AI enthusiast, remember: behind every “smart” system you use, there should be an even smarter process making sure it works.</p>
+<p data-start="2133" data-end="2314">Because in the end, the future of AI won’t be defined by who builds the flashiest demo. It will be defined by who builds the most <strong data-start="2263" data-end="2311">trustworthy, evaluated, and reliable systems</strong>.</p>
+<p data-start="2316" data-end="2355">And that’s a future worth aiming for.</p>
+<hr data-start="2357" data-end="2360">
+
+
+</div>
+
+</div>
+<span style="opacity: 0;">Tags: Artificial Intelligence,Generative AI,Agentic AI,Technology,Book Summary,</span>
