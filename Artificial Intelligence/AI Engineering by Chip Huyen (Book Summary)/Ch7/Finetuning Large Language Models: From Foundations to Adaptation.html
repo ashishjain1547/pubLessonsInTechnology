@@ -1,0 +1,1168 @@
+<h3>Outline</h3>
+
+<ol data-start="219" data-end="537">
+<li data-start="219" data-end="281">
+<p data-start="222" data-end="281"><strong data-start="222" data-end="279">Section 1: Introduction + The Evolution of Finetuning</strong></p>
+</li>
+<li data-start="282" data-end="330">
+<p data-start="285" data-end="330"><strong data-start="285" data-end="328">Section 2: Memory Bottlenecks Explained</strong></p>
+</li>
+<li data-start="331" data-end="412">
+<p data-start="334" data-end="412"><strong data-start="334" data-end="410">Section 3: Parameter-Efficient Finetuning (PEFT) &amp; Adapter-Based Methods</strong></p>
+</li>
+<li data-start="413" data-end="458">
+<p data-start="416" data-end="458"><strong data-start="416" data-end="456">Section 4: LoRA Deep Dive + Variants</strong></p>
+</li>
+<li data-start="459" data-end="537">
+<p data-start="462" data-end="537"><strong data-start="462" data-end="535">Section 5: Model Merging, Frameworks, Hyperparameters, and Conclusion</strong></p>
+</li>
+</ol>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="61">Great! Here’s <strong data-start="14" data-end="27">Section 1</strong> of the blog post (~1200 words).</p>
+<hr data-start="63" data-end="66">
+<h1 data-start="68" data-end="136">Finetuning Large Language Models: From Foundations to Adaptation</h1>
+<p data-start="137" data-end="193"><em data-start="137" data-end="193">Section 1 – Introduction &amp; The Evolution of Finetuning</em></p>
+<hr data-start="195" data-end="198">
+<h2 data-start="200" data-end="273">Introduction: Why Finetuning Matters in the Age of Foundation Models</h2>
+<p data-start="275" data-end="739">In the past few years, the way we build artificial intelligence (AI) applications has changed dramatically. At the center of this transformation are <strong data-start="424" data-end="445">foundation models</strong>—large language models (LLMs) like GPT-4, Claude, Llama 3, and Mistral. These models come pre-trained on massive amounts of text data, enabling them to perform a wide variety of tasks right out of the box: answering questions, generating code, summarizing documents, and even creating poetry.</p>
+<p data-start="741" data-end="1103">But while these models are incredibly powerful, they are not perfect for every situation. Imagine using a general-purpose LLM to handle specialized legal queries, medical diagnostics, or customer service conversations in a very specific tone of voice. The model may be <em data-start="1010" data-end="1023">good enough</em>, but it may not fully align with your domain, data, or desired output format.</p>
+<p data-start="1105" data-end="1152">This is where <strong data-start="1119" data-end="1133">finetuning</strong> comes into play.</p>
+<p data-start="1154" data-end="1611">Finetuning is the process of adapting a pre-trained model by training it further—either on your specific data, or with modifications that make it better suited for a specialized task. Unlike prompt engineering, which adjusts the input you feed into a model, finetuning adjusts the <em data-start="1435" data-end="1468">weights inside the model itself</em>. The difference is subtle but significant: finetuning rewires how the model thinks, while prompting merely nudges it in the right direction.</p>
+<p data-start="1613" data-end="1636">To borrow an analogy:</p>
+<ul data-start="1637" data-end="1897">
+<li data-start="1637" data-end="1759">
+<p data-start="1639" data-end="1759"><strong data-start="1639" data-end="1652">Prompting</strong> is like instructing a professional chef to cook a new dish by giving detailed step-by-step instructions.</p>
+</li>
+<li data-start="1760" data-end="1897">
+<p data-start="1762" data-end="1897"><strong data-start="1762" data-end="1776">Finetuning</strong> is like training the chef to permanently learn that dish so they can cook it without explicit reminders in the future.</p>
+</li>
+</ul>
+<p data-start="1899" data-end="2038">Finetuning is not just about better outputs—it’s about <strong data-start="1954" data-end="1992">efficiency, alignment, and control</strong>. It allows developers and organizations to:</p>
+<ul data-start="2039" data-end="2352">
+<li data-start="2039" data-end="2122">
+<p data-start="2041" data-end="2122">Improve <strong data-start="2049" data-end="2074">instruction following</strong> (e.g., ensuring outputs always come in JSON).</p>
+</li>
+<li data-start="2123" data-end="2179">
+<p data-start="2125" data-end="2179">Reduce <strong data-start="2132" data-end="2142">biases</strong> by retraining on curated datasets.</p>
+</li>
+<li data-start="2180" data-end="2270">
+<p data-start="2182" data-end="2270">Enhance <strong data-start="2190" data-end="2221">domain-specific performance</strong>, such as financial modeling or SQL generation.</p>
+</li>
+<li data-start="2271" data-end="2352">
+<p data-start="2273" data-end="2352">Create smaller, cheaper models that outperform larger ones on targeted tasks.</p>
+</li>
+</ul>
+<p data-start="2354" data-end="2622">Of course, finetuning comes at a cost. It requires high-quality data, computational resources, and expertise in machine learning (ML). It also raises questions: <em data-start="2515" data-end="2620">When should you finetune? When is Retrieval-Augmented Generation (RAG) enough? What are the trade-offs?</em></p>
+<p data-start="2624" data-end="2814">This blog series explores these questions in depth. In this first section, we’ll walk through the <strong data-start="2722" data-end="2749">evolution of finetuning</strong>—from its early days to today’s parameter-efficient techniques.</p>
+<hr data-start="2816" data-end="2819">
+<h2 data-start="2821" data-end="2868">The Roots of Finetuning: Transfer Learning</h2>
+<p data-start="2870" data-end="3268">The story of finetuning begins with <strong data-start="2906" data-end="2927">transfer learning</strong>, a concept first introduced by Bozinovski and Fulgosi in 1976. Transfer learning is the idea that knowledge gained in one task can be transferred to accelerate learning in another. Humans do this all the time—if you know how to play the piano, learning the guitar is easier because you already understand rhythm, scales, and coordination.</p>
+<p data-start="3270" data-end="3688">In machine learning, transfer learning became popular in computer vision. Models trained on <strong data-start="3362" data-end="3374">ImageNet</strong>, a massive image dataset, learned general features like edges, textures, and shapes. These features could then be reused for new tasks like detecting tumors in X-rays or recognizing traffic signs. Instead of training a new model from scratch, developers fine-tuned the ImageNet model for their specific problem.</p>
+<p data-start="3690" data-end="3981">The same principle applies to LLMs. A language model trained on billions of words already “knows” grammar, facts, and reasoning patterns. Instead of starting from scratch, developers finetune it for specialized tasks like legal document analysis, financial forecasting, or code generation.</p>
+<p data-start="3983" data-end="4316">A famous early success was Google’s <strong data-start="4019" data-end="4054">multilingual translation system</strong> (Johnson et al., 2016). The system could translate Portuguese ↔ English and English ↔ Spanish. Surprisingly, without explicit examples, it learned to translate Portuguese ↔ Spanish—a task it was never directly trained on. That was transfer learning in action.</p>
+<hr data-start="4318" data-end="4321">
+<h2 data-start="4323" data-end="4374">Finetuning in the Era of Large Language Models</h2>
+<p data-start="4376" data-end="4735">When it comes to LLMs, finetuning builds on the <strong data-start="4424" data-end="4446">pre-training phase</strong>. Pre-training is typically done in a <strong data-start="4484" data-end="4503">self-supervised</strong> manner, meaning the model learns by predicting the next word in massive text datasets. This equips the model with broad knowledge but not necessarily the ability to follow instructions well or produce outputs in a specific style.</p>
+<p data-start="4737" data-end="4791">Here’s where <strong data-start="4750" data-end="4767">post-training</strong> and finetuning enter:</p>
+<ol data-start="4792" data-end="5490">
+<li data-start="4792" data-end="5085">
+<p data-start="4795" data-end="4901"><strong data-start="4795" data-end="4826">Supervised Finetuning (SFT)</strong> – The model is trained on pairs of (instruction, response). For example:</p>
+<ul data-start="4905" data-end="5085">
+<li data-start="4905" data-end="4966">
+<p data-start="4907" data-end="4966"><em data-start="4907" data-end="4920">Instruction</em>: “Summarize this contract in simple terms.”</p>
+</li>
+<li data-start="4970" data-end="5085">
+<p data-start="4972" data-end="5085"><em data-start="4972" data-end="4982">Response</em>: “This contract states that the employee will…”<br data-start="5030" data-end="5033">
+SFT improves alignment with human expectations.</p>
+</li>
+</ul>
+</li>
+<li data-start="5087" data-end="5296">
+<p data-start="5090" data-end="5296"><strong data-start="5090" data-end="5122">Preference Finetuning (RLHF)</strong> – The model learns to prefer outputs that humans like, usually through reinforcement learning with human feedback. This makes responses more helpful, harmless, and honest.</p>
+</li>
+<li data-start="5298" data-end="5490">
+<p data-start="5301" data-end="5490"><strong data-start="5301" data-end="5327">Continued Pre-Training</strong> – The model is further trained on large amounts of raw domain-specific text (e.g., legal documents or medical literature) before fine-grained supervised tuning.</p>
+</li>
+</ol>
+<p data-start="5492" data-end="5660">Each of these forms of finetuning is an extension of pre-training. The difference is in <strong data-start="5580" data-end="5657">how much data you use, what kind of data, and which parameters you update</strong>.</p>
+<hr data-start="5662" data-end="5665">
+<h2 data-start="5667" data-end="5687">Why Finetuning?</h2>
+<p data-start="5689" data-end="5732">Let’s consider some real-world scenarios:</p>
+<ul data-start="5734" data-end="6548">
+<li data-start="5734" data-end="5951">
+<p data-start="5736" data-end="5951"><strong data-start="5736" data-end="5758">Structured Outputs</strong>: Suppose you need a model to always respond in strict JSON format for downstream automation. Prompting can work, but it’s fragile. Finetuning ensures the model internalizes this requirement.</p>
+</li>
+<li data-start="5953" data-end="6169">
+<p data-start="5955" data-end="6169"><strong data-start="5955" data-end="5981">Domain-Specific Jargon</strong>: A healthcare chatbot may need to understand abbreviations like “BP” (blood pressure) or “HbA1c” (a diabetes measure). General models may stumble; finetuning on medical data fixes this.</p>
+</li>
+<li data-start="6171" data-end="6331">
+<p data-start="6173" data-end="6331"><strong data-start="6173" data-end="6192">Bias Mitigation</strong>: If a model frequently associates “CEO” with male names, finetuning on curated datasets that include female CEOs can rebalance the bias.</p>
+</li>
+<li data-start="6333" data-end="6548">
+<p data-start="6335" data-end="6548"><strong data-start="6335" data-end="6361">Smaller, Faster Models</strong>: Grammarly reported that their <strong data-start="6393" data-end="6414">finetuned Flan-T5</strong> models (much smaller than GPT-3) outperformed GPT-3 on text editing tasks. This made their models cheaper and faster in production.</p>
+</li>
+</ul>
+<p data-start="6550" data-end="6680">In short, finetuning helps bridge the gap between a model’s <strong data-start="6610" data-end="6634">general intelligence</strong> and the <strong data-start="6643" data-end="6668">specific intelligence</strong> you need.</p>
+<hr data-start="6682" data-end="6685">
+<h2 data-start="6687" data-end="6735">The Shift from Full to Efficient Finetuning</h2>
+<p data-start="6737" data-end="6973">In the early days, finetuning meant updating <strong data-start="6782" data-end="6804">all the parameters</strong> of a model. This is called <strong data-start="6832" data-end="6851">full finetuning</strong>. For small models, this was feasible. But as models grew to billions of parameters, full finetuning became impractical:</p>
+<ul data-start="6975" data-end="7188">
+<li data-start="6975" data-end="7062">
+<p data-start="6977" data-end="7062">A 7B parameter model in 16-bit precision requires ~14 GB just to store the weights.</p>
+</li>
+<li data-start="7063" data-end="7137">
+<p data-start="7065" data-end="7137">To finetune it with optimizers like Adam, you may need ~56 GB or more.</p>
+</li>
+<li data-start="7138" data-end="7188">
+<p data-start="7140" data-end="7188">This exceeds the memory of most consumer GPUs.</p>
+</li>
+</ul>
+<p data-start="7190" data-end="7450">To solve this, researchers moved toward <strong data-start="7230" data-end="7252">partial finetuning</strong>: instead of updating the entire model, they updated only parts—often the final layers. While this reduced memory requirements, it was inefficient: performance dropped compared to full finetuning.</p>
+<p data-start="7452" data-end="7718">The breakthrough came with <strong data-start="7479" data-end="7520">Parameter-Efficient Finetuning (PEFT)</strong>. Instead of touching billions of parameters, PEFT techniques add or modify only a small fraction of the model while freezing the rest. The result: near-full performance at a fraction of the cost.</p>
+<p data-start="7720" data-end="7768">PEFT methods fall broadly into two categories:</p>
+<ul data-start="7769" data-end="7962">
+<li data-start="7769" data-end="7867">
+<p data-start="7771" data-end="7867"><strong data-start="7771" data-end="7796">Adapter-based methods</strong>: Insert small modules (adapters) into the model and train only them.</p>
+</li>
+<li data-start="7868" data-end="7962">
+<p data-start="7870" data-end="7962"><strong data-start="7870" data-end="7899">Soft prompt–based methods</strong>: Add trainable embeddings (soft prompts) to guide the model.</p>
+</li>
+</ul>
+<p data-start="7964" data-end="8185">One adapter-based technique, <strong data-start="7993" data-end="8023">LoRA (Low-Rank Adaptation)</strong>, has become especially dominant. LoRA allows developers to finetune massive models using only a few percent of the parameters, without hurting inference speed.</p>
+<hr data-start="8187" data-end="8190">
+<h2 data-start="8192" data-end="8210">Looking Ahead</h2>
+<p data-start="8212" data-end="8234">We’ve set the stage:</p>
+<ul data-start="8235" data-end="8392">
+<li data-start="8235" data-end="8277">
+<p data-start="8237" data-end="8277">Finetuning began as transfer learning.</p>
+</li>
+<li data-start="8278" data-end="8326">
+<p data-start="8280" data-end="8326">It evolved into full and partial finetuning.</p>
+</li>
+<li data-start="8327" data-end="8392">
+<p data-start="8329" data-end="8392">The need for scalability gave rise to PEFT methods like LoRA.</p>
+</li>
+</ul>
+<p data-start="8394" data-end="8654">In the next section, we’ll explore <strong data-start="8429" data-end="8470">why finetuning is so memory-intensive</strong>, breaking down the concepts of trainable parameters, backpropagation, and numerical representations. Understanding these bottlenecks is key to appreciating why PEFT matters so much.</p>
+<hr data-start="8656" data-end="8659">
+<p data-start="8661" data-end="8700">✅ That’s <strong data-start="8670" data-end="8697">Section 1 (~1200 words)</strong>.</p>
+<p data-start="8702" data-end="8788" data-is-last-node="" data-is-only-node="">Do you want me to go ahead and draft <strong data-start="8739" data-end="8782">Section 2: Memory Bottlenecks Explained</strong> next?</p></div>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="63">Great 🚀 Here’s <strong data-start="16" data-end="29">Section 2</strong> of the blog post (~1200 words).</p>
+<hr data-start="65" data-end="68">
+<h1 data-start="70" data-end="138">Finetuning Large Language Models: From Foundations to Adaptation</h1>
+<p data-start="139" data-end="181"><em data-start="139" data-end="181">Section 2 – Memory Bottlenecks Explained</em></p>
+<hr data-start="183" data-end="186">
+<h2 data-start="188" data-end="239">Why Memory Is the Achilles’ Heel of Finetuning</h2>
+<p data-start="241" data-end="357">When developers first attempt to finetune a large language model (LLM), one of the most common errors they see is:</p>
+<pre class="overflow-visible!" data-start="359" data-end="401"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">csharp</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>RuntimeError: CUDA </span><span><span class="hljs-keyword">out</span></span><span> of memory
+</span></span></code></div></div></pre>
+<p data-start="403" data-end="657">This isn’t just a beginner’s mistake—it’s a fundamental reality of working with models that contain <strong data-start="503" data-end="529">billions of parameters</strong>. Memory is the biggest bottleneck in finetuning, and unless you understand where that memory goes, you’ll quickly hit a wall.</p>
+<p data-start="659" data-end="978">At inference time (when the model is simply generating outputs), memory requirements are high but manageable. Finetuning, however, is far more demanding. That’s because finetuning doesn’t just <em data-start="852" data-end="857">run</em> the model—it also needs to <strong data-start="885" data-end="910">update its parameters</strong>, store gradients, and keep optimizer states. All of this adds up.</p>
+<p data-start="980" data-end="1228">In this section, we’ll unpack the <strong data-start="1014" data-end="1047">sources of memory consumption</strong> in finetuning, run through some <strong data-start="1080" data-end="1117">back-of-the-envelope calculations</strong>, and explore techniques like <strong data-start="1147" data-end="1163">quantization</strong> and <strong data-start="1168" data-end="1194">gradient checkpointing</strong> that help mitigate the problem.</p>
+<hr data-start="1230" data-end="1233">
+<h2 data-start="1235" data-end="1291">Parameters, Trainable Parameters, and Frozen Layers</h2>
+<p data-start="1293" data-end="1409">Every model is made up of <strong data-start="1319" data-end="1333">parameters</strong>—the numerical weights that determine how it processes input. For example:</p>
+<ul data-start="1410" data-end="1599">
+<li data-start="1410" data-end="1447">
+<p data-start="1412" data-end="1447">GPT-3 has 175 billion parameters.</p>
+</li>
+<li data-start="1448" data-end="1521">
+<p data-start="1450" data-end="1521">Llama 2 has versions ranging from 7 billion to 70 billion parameters.</p>
+</li>
+<li data-start="1522" data-end="1599">
+<p data-start="1524" data-end="1599">Even a “small” model like Mistral 7B requires tens of gigabytes to store.</p>
+</li>
+</ul>
+<p data-start="1601" data-end="1733">When you perform <strong data-start="1618" data-end="1631">inference</strong>, the model loads all its parameters into memory but does not modify them. That’s relatively simple.</p>
+<p data-start="1735" data-end="1903">When you perform <strong data-start="1752" data-end="1766">finetuning</strong>, however, you allow some or all of those parameters to be updated. The parameters that can change are called <strong data-start="1876" data-end="1900">trainable parameters</strong>.</p>
+<ul data-start="1905" data-end="2136">
+<li data-start="1905" data-end="1959">
+<p data-start="1907" data-end="1959"><strong data-start="1907" data-end="1926">Full finetuning</strong>: All parameters are trainable.</p>
+</li>
+<li data-start="1960" data-end="2043">
+<p data-start="1962" data-end="2043"><strong data-start="1962" data-end="1984">Partial finetuning</strong>: Some parameters are trainable, the rest are <strong data-start="2030" data-end="2040">frozen</strong>.</p>
+</li>
+<li data-start="2044" data-end="2136">
+<p data-start="2046" data-end="2136"><strong data-start="2046" data-end="2075">PEFT methods (e.g., LoRA)</strong>: Only a tiny fraction of parameters are added or modified.</p>
+</li>
+</ul>
+<p data-start="2138" data-end="2212">The more trainable parameters you have, the higher the memory footprint.</p>
+<hr data-start="2214" data-end="2217">
+<h2 data-start="2219" data-end="2262">Backpropagation: The Memory Multiplier</h2>
+<p data-start="2264" data-end="2401">The reason finetuning consumes so much more memory than inference comes down to the training process, specifically <strong data-start="2379" data-end="2398">backpropagation</strong>.</p>
+<p data-start="2403" data-end="2436">Training happens in two stages:</p>
+<ol data-start="2438" data-end="2690">
+<li data-start="2438" data-end="2539">
+<p data-start="2441" data-end="2539"><strong data-start="2441" data-end="2457">Forward pass</strong> – The model computes an output given an input. (This is the same as inference.)</p>
+</li>
+<li data-start="2540" data-end="2690">
+<p data-start="2543" data-end="2690"><strong data-start="2543" data-end="2560">Backward pass</strong> – The model computes how wrong its output was compared to the expected result (the <em data-start="2644" data-end="2650">loss</em>) and adjusts its weights accordingly.</p>
+</li>
+</ol>
+<p data-start="2692" data-end="2771">During the backward pass, each trainable parameter requires extra memory for:</p>
+<ul data-start="2772" data-end="2942">
+<li data-start="2772" data-end="2844">
+<p data-start="2774" data-end="2844">Its <strong data-start="2778" data-end="2790">gradient</strong> (how much that parameter contributed to the error).</p>
+</li>
+<li data-start="2845" data-end="2942">
+<p data-start="2847" data-end="2942">Its <strong data-start="2851" data-end="2871">optimizer states</strong> (values used by optimizers like Adam to update weights efficiently).</p>
+</li>
+</ul>
+<p data-start="2944" data-end="2983">For example, with the Adam optimizer:</p>
+<ul data-start="2984" data-end="3176">
+<li data-start="2984" data-end="3074">
+<p data-start="2986" data-end="3074">Each trainable parameter requires <strong data-start="3020" data-end="3038">3 extra values</strong>: 1 gradient + 2 optimizer states.</p>
+</li>
+<li data-start="3075" data-end="3176">
+<p data-start="3077" data-end="3176">If you store each value in 2 bytes (16-bit precision), that’s an extra <strong data-start="3148" data-end="3173">6 bytes per parameter</strong>.</p>
+</li>
+</ul>
+<p data-start="3178" data-end="3240">So for a 13B-parameter model, updating all parameters means:</p>
+<pre class="overflow-visible!" data-start="3242" data-end="3282"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>13B parameters × </span><span><span class="hljs-number">6</span></span><span> </span><span><span class="hljs-built_in">bytes</span></span><span> = </span><span><span class="hljs-number">78</span></span><span> GB
+</span></span></code></div></div></pre>
+<p data-start="3284" data-end="3465">And that’s just for gradients and optimizer states! Add in the original weights (~26 GB in 16-bit precision) plus activations, and you’re well beyond the capacity of a single GPU.</p>
+<hr data-start="3467" data-end="3470">
+<h2 data-start="3472" data-end="3511">Activations: The Hidden Memory Hog</h2>
+<p data-start="3513" data-end="3663">Parameters aren’t the only concern. Neural networks also generate <strong data-start="3579" data-end="3594">activations</strong>—the intermediate values produced as data flows through the layers.</p>
+<p data-start="3665" data-end="3764">During inference, activations are ephemeral: once the output is generated, they can be discarded.</p>
+<p data-start="3766" data-end="3957">During training, however, activations must be <strong data-start="3812" data-end="3822">stored</strong> so they can be reused in the backward pass to calculate gradients. This means activations can dwarf the size of the model’s weights.</p>
+<p data-start="3959" data-end="4104">Research from Microsoft (Korthikanti et al., 2022) showed that for large transformer models, <strong data-start="4052" data-end="4101">activation memory often exceeds weight memory</strong>.</p>
+<p data-start="4106" data-end="4323">To cope with this, developers use <strong data-start="4140" data-end="4193">gradient checkpointing (activation recomputation)</strong>. Instead of storing all activations, the model recomputes them when needed. This reduces memory at the cost of slower training.</p>
+<hr data-start="4325" data-end="4328">
+<h2 data-start="4330" data-end="4364">Memory Math: A Simple Formula</h2>
+<p data-start="4366" data-end="4457">To get a rough estimate of how much memory finetuning requires, you can use this formula:</p>
+<pre class="overflow-visible!" data-start="4459" data-end="4539"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">java</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-type">Training</span></span><span> </span><span><span class="hljs-variable">memory</span></span><span> </span><span><span class="hljs-operator">=</span></span><span> Weights + Activations + Gradients + Optimizer states
+</span></span></code></div></div></pre>
+<p data-start="4541" data-end="4582">Let’s work through a practical example.</p>
+<h3 data-start="4584" data-end="4632">Example: 13B-parameter model (LLaMA 2-13B)</h3>
+<ul data-start="4633" data-end="4846">
+<li data-start="4633" data-end="4681">
+<p data-start="4635" data-end="4681"><strong data-start="4635" data-end="4655">Weights (16-bit)</strong> = 13B × 2 bytes = 26 GB</p>
+</li>
+<li data-start="4682" data-end="4761">
+<p data-start="4684" data-end="4761"><strong data-start="4684" data-end="4731">Gradients + Optimizer states (Adam, 16-bit)</strong> = 13B × 3 × 2 bytes = 78 GB</p>
+</li>
+<li data-start="4762" data-end="4846">
+<p data-start="4764" data-end="4846"><strong data-start="4764" data-end="4804">Activations (approx. 20% of weights)</strong> = ~5 GB (in practice often much higher)</p>
+</li>
+</ul>
+<p data-start="4848" data-end="4886"><strong data-start="4848" data-end="4857">Total</strong> = 26 + 78 + 5 ≈ <strong data-start="4874" data-end="4884">109 GB</strong></p>
+<p data-start="4888" data-end="5033">That’s well beyond even high-end GPUs. The Nvidia A100 tops out at 80 GB of memory, and most developers use far less powerful cards (24–48 GB).</p>
+<p data-start="5035" data-end="5123">This is why <strong data-start="5047" data-end="5120">full finetuning of large models is impractical for most organizations</strong>.</p>
+<hr data-start="5125" data-end="5128">
+<h2 data-start="5130" data-end="5188">Numerical Representations: FP32, FP16, BF16, and INT8</h2>
+<p data-start="5190" data-end="5276">Another key factor in memory usage is the <strong data-start="5232" data-end="5252">numerical format</strong> used to store values.</p>
+<p data-start="5278" data-end="5373">Traditionally, models were trained in <strong data-start="5316" data-end="5324">FP32</strong> (32-bit floating point). But this is overkill:</p>
+<ul data-start="5374" data-end="5626">
+<li data-start="5374" data-end="5403">
+<p data-start="5376" data-end="5403">FP32 = 4 bytes per value.</p>
+</li>
+<li data-start="5404" data-end="5450">
+<p data-start="5406" data-end="5450">FP16 (half precision) = 2 bytes per value.</p>
+</li>
+<li data-start="5451" data-end="5570">
+<p data-start="5453" data-end="5570">BF16 (Google’s “Brain Floating Point”) also = 2 bytes, but with different trade-offs (wider range, less precision).</p>
+</li>
+<li data-start="5571" data-end="5626">
+<p data-start="5573" data-end="5626">INT8 and INT4 = 1 byte and 0.5 bytes, respectively.</p>
+</li>
+</ul>
+<p data-start="5628" data-end="5776">For example, a 13B-parameter model in FP32 requires <strong data-start="5680" data-end="5689">52 GB</strong> just for weights. In FP16 or BF16, that drops to <strong data-start="5739" data-end="5748">26 GB</strong>. In INT8, it’s <strong data-start="5764" data-end="5773">13 GB</strong>.</p>
+<p data-start="5778" data-end="5858">This reduction is called <strong data-start="5803" data-end="5819">quantization</strong>—representing values with fewer bits.</p>
+<ul data-start="5860" data-end="6076">
+<li data-start="5860" data-end="5960">
+<p data-start="5862" data-end="5960"><strong data-start="5862" data-end="5898">Post-training quantization (PTQ)</strong>: Quantize after the model is trained. Common for inference.</p>
+</li>
+<li data-start="5961" data-end="6076">
+<p data-start="5963" data-end="6076"><strong data-start="5963" data-end="6000">Quantization-aware training (QAT)</strong>: Simulate low precision during training so the model learns to handle it.</p>
+</li>
+</ul>
+<p data-start="6078" data-end="6223">Quantization can reduce both memory and compute time, but it risks <strong data-start="6145" data-end="6162">accuracy loss</strong>. Striking the right balance is an active area of research.</p>
+<hr data-start="6225" data-end="6228">
+<h2 data-start="6230" data-end="6273">Inference vs. Training Memory Profiles</h2>
+<p data-start="6275" data-end="6358">It’s important to distinguish between inference and training memory requirements:</p>
+<ul data-start="6360" data-end="6532">
+<li data-start="6360" data-end="6451">
+<p data-start="6362" data-end="6451"><strong data-start="6362" data-end="6382">Inference memory</strong> ≈ <code data-start="6385" data-end="6449">Weights + Activations (scaled by sequence length &amp; batch size)</code></p>
+</li>
+<li data-start="6452" data-end="6532">
+<p data-start="6454" data-end="6532"><strong data-start="6454" data-end="6473">Training memory</strong> ≈ <code data-start="6476" data-end="6530">Weights + Activations + Gradients + Optimizer states</code></p>
+</li>
+</ul>
+<p data-start="6534" data-end="6666">That extra overhead for gradients and optimizer states is what makes finetuning orders of magnitude more demanding than inference.</p>
+<p data-start="6668" data-end="6851">This difference is why we see <strong data-start="6698" data-end="6719">specialized chips</strong> for inference (optimized for low precision, speed, and efficiency) versus training (optimized for high throughput and precision).</p>
+<hr data-start="6853" data-end="6856">
+<h2 data-start="6858" data-end="6898">Tricks to Reduce Memory Bottlenecks</h2>
+<p data-start="6900" data-end="6976">Several strategies exist to make finetuning possible without 100+ GB GPUs:</p>
+<ol data-start="6978" data-end="8036">
+<li data-start="6978" data-end="7120">
+<p data-start="6981" data-end="7009"><strong data-start="6981" data-end="7007">Gradient Checkpointing</strong></p>
+<ul data-start="7013" data-end="7120">
+<li data-start="7013" data-end="7073">
+<p data-start="7015" data-end="7073">Don’t store all activations; recompute them when needed.</p>
+</li>
+<li data-start="7077" data-end="7120">
+<p data-start="7079" data-end="7120">Saves memory, costs extra compute time.</p>
+</li>
+</ul>
+</li>
+<li data-start="7122" data-end="7342">
+<p data-start="7125" data-end="7155"><strong data-start="7125" data-end="7153">Mixed Precision Training</strong></p>
+<ul data-start="7159" data-end="7342">
+<li data-start="7159" data-end="7261">
+<p data-start="7161" data-end="7261">Store some values (like gradients) in FP16 or BF16 while keeping others (like embeddings) in FP32.</p>
+</li>
+<li data-start="7265" data-end="7342">
+<p data-start="7267" data-end="7342">Most ML frameworks (PyTorch AMP, TensorFlow) support this out of the box.</p>
+</li>
+</ul>
+</li>
+<li data-start="7344" data-end="7510">
+<p data-start="7347" data-end="7365"><strong data-start="7347" data-end="7363">Quantization</strong></p>
+<ul data-start="7369" data-end="7510">
+<li data-start="7369" data-end="7442">
+<p data-start="7371" data-end="7442">Use INT8, INT4, or even experimental 1.58-bit formats (BitNet, 2024).</p>
+</li>
+<li data-start="7446" data-end="7510">
+<p data-start="7448" data-end="7510">Reduces memory, but may hurt accuracy if not done carefully.</p>
+</li>
+</ul>
+</li>
+<li data-start="7512" data-end="7745">
+<p data-start="7515" data-end="7558"><strong data-start="7515" data-end="7556">PEFT (Parameter-Efficient Finetuning)</strong></p>
+<ul data-start="7562" data-end="7745">
+<li data-start="7562" data-end="7679">
+<p data-start="7564" data-end="7679">Instead of updating all parameters, update only a small fraction (we’ll dive deep into this in the next section).</p>
+</li>
+<li data-start="7683" data-end="7745">
+<p data-start="7685" data-end="7745">Can reduce trainable parameters from billions to millions.</p>
+</li>
+</ul>
+</li>
+<li data-start="7747" data-end="7879">
+<p data-start="7750" data-end="7766"><strong data-start="7750" data-end="7764">Offloading</strong></p>
+<ul data-start="7770" data-end="7879">
+<li data-start="7770" data-end="7830">
+<p data-start="7772" data-end="7830">Move some weights to CPU or disk (e.g., DeepSpeed ZeRO).</p>
+</li>
+<li data-start="7834" data-end="7879">
+<p data-start="7836" data-end="7879">Slower, but allows fitting larger models.</p>
+</li>
+</ul>
+</li>
+<li data-start="7881" data-end="8036">
+<p data-start="7884" data-end="7904"><strong data-start="7884" data-end="7902">Smaller Models</strong></p>
+<ul data-start="7908" data-end="8036">
+<li data-start="7908" data-end="8036">
+<p data-start="7910" data-end="8036">Don’t underestimate the power of smaller models! A well-finetuned 7B model may outperform an unfined 70B model on your task.</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr data-start="8038" data-end="8041">
+<h2 data-start="8043" data-end="8064">Why This Matters</h2>
+<p data-start="8066" data-end="8185">Understanding memory bottlenecks is not just about avoiding runtime errors. It’s about <strong data-start="8153" data-end="8182">strategic decision-making</strong>:</p>
+<ul data-start="8186" data-end="8410">
+<li data-start="8186" data-end="8244">
+<p data-start="8188" data-end="8244">Do you attempt full finetuning, or is PEFT sufficient?</p>
+</li>
+<li data-start="8245" data-end="8325">
+<p data-start="8247" data-end="8325">Should you invest in expensive GPUs, or use clever memory-saving techniques?</p>
+</li>
+<li data-start="8326" data-end="8410">
+<p data-start="8328" data-end="8410">Do you quantize aggressively for efficiency, or preserve precision for accuracy?</p>
+</li>
+</ul>
+<p data-start="8412" data-end="8570">Every organization will make different trade-offs. But the key takeaway is this: <strong data-start="8493" data-end="8567">memory, not compute, is the limiting factor in finetuning today’s LLMs</strong>.</p>
+<hr data-start="8572" data-end="8575">
+<h2 data-start="8577" data-end="8595">Looking Ahead</h2>
+<p data-start="8597" data-end="8794">We’ve now seen why finetuning is so challenging from a memory perspective. The natural next step is to explore how researchers solved this problem—enter <strong data-start="8750" data-end="8791">Parameter-Efficient Finetuning (PEFT)</strong>.</p>
+<p data-start="8796" data-end="8992">In the next section, we’ll dive into <strong data-start="8833" data-end="8858">adapter-based methods</strong> and <strong data-start="8863" data-end="8879">soft prompts</strong>, the two main families of PEFT techniques that have made finetuning practical for developers around the world.</p>
+<hr data-start="8994" data-end="8997">
+<p data-start="8999" data-end="9038">✅ That’s <strong data-start="9008" data-end="9035">Section 2 (~1200 words)</strong>.</p>
+<p data-start="9040" data-end="9159" data-is-last-node="" data-is-only-node="">Do you want me to go ahead and draft <strong data-start="9077" data-end="9153">Section 3: Parameter-Efficient Finetuning (PEFT) &amp; Adapter-Based Methods</strong> next?</p></div>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="65">Perfect 👍 Here’s <strong data-start="18" data-end="31">Section 3</strong> of the blog post (~1200 words).</p>
+<hr data-start="67" data-end="70">
+<h1 data-start="72" data-end="140">Finetuning Large Language Models: From Foundations to Adaptation</h1>
+<p data-start="141" data-end="216"><em data-start="141" data-end="216">Section 3 – Parameter-Efficient Finetuning (PEFT) &amp; Adapter-Based Methods</em></p>
+<hr data-start="218" data-end="221">
+<h2 data-start="223" data-end="277">The Rise of Parameter-Efficient Finetuning (PEFT)</h2>
+<p data-start="279" data-end="580">In the previous section, we saw how <strong data-start="315" data-end="337">memory bottlenecks</strong> make full finetuning of large language models (LLMs) impractical for most developers. Training all parameters in a multi-billion-parameter model requires <strong data-start="492" data-end="527">hundreds of gigabytes of memory</strong>—far more than what a typical GPU setup can handle.</p>
+<p data-start="582" data-end="660">So researchers asked: <em data-start="604" data-end="658">What if we didn’t need to update all the parameters?</em></p>
+<p data-start="662" data-end="1052">This gave rise to <strong data-start="680" data-end="721">Parameter-Efficient Finetuning (PEFT)</strong>. Instead of retraining billions of parameters, PEFT techniques modify or add a <strong data-start="801" data-end="818">tiny fraction</strong> of parameters—sometimes as little as <strong data-start="856" data-end="877">0.1% of the model</strong>—while freezing the rest. The results are astonishing: models finetuned with PEFT often perform within a few percentage points of full finetuning, at a fraction of the cost.</p>
+<p data-start="1054" data-end="1340">Why does this work? Because <strong data-start="1082" data-end="1122">foundation models already know a lot</strong>. Finetuning isn’t about teaching them entirely new concepts; it’s about nudging them into the right shape for a specific task or domain. You don’t need to rewire the whole brain, just adjust a few critical pathways.</p>
+<hr data-start="1342" data-end="1345">
+<h2 data-start="1347" data-end="1403">Full vs. Partial vs. Parameter-Efficient Finetuning</h2>
+<p data-start="1405" data-end="1450">Let’s quickly compare the three approaches:</p>
+<ul data-start="1452" data-end="2123">
+<li data-start="1452" data-end="1636">
+<p data-start="1454" data-end="1475"><strong data-start="1454" data-end="1473">Full Finetuning</strong></p>
+<ul data-start="1478" data-end="1636">
+<li data-start="1478" data-end="1513">
+<p data-start="1480" data-end="1513">Updates <em data-start="1488" data-end="1493">all</em> model parameters.</p>
+</li>
+<li data-start="1516" data-end="1554">
+<p data-start="1518" data-end="1554">Very expensive (memory + compute).</p>
+</li>
+<li data-start="1557" data-end="1636">
+<p data-start="1559" data-end="1636">Highest performance, but diminishing returns compared to efficient methods.</p>
+</li>
+</ul>
+</li>
+<li data-start="1638" data-end="1895">
+<p data-start="1640" data-end="1664"><strong data-start="1640" data-end="1662">Partial Finetuning</strong></p>
+<ul data-start="1667" data-end="1895">
+<li data-start="1667" data-end="1739">
+<p data-start="1669" data-end="1739">Updates only a subset of layers (e.g., the final transformer block).</p>
+</li>
+<li data-start="1742" data-end="1825">
+<p data-start="1744" data-end="1825">Reduces cost but often requires 20–30% of parameters to match full performance.</p>
+</li>
+<li data-start="1828" data-end="1895">
+<p data-start="1830" data-end="1895">Parameter-inefficient: too many parameters for too little gain.</p>
+</li>
+</ul>
+</li>
+<li data-start="1897" data-end="2123">
+<p data-start="1899" data-end="1909"><strong data-start="1899" data-end="1907">PEFT</strong></p>
+<ul data-start="1912" data-end="2123">
+<li data-start="1912" data-end="1971">
+<p data-start="1914" data-end="1971">Updates or adds only a very small number of parameters.</p>
+</li>
+<li data-start="1974" data-end="2064">
+<p data-start="1976" data-end="2064">Can achieve near full-finetuning performance with 1–5% of parameters (sometimes less).</p>
+</li>
+<li data-start="2067" data-end="2123">
+<p data-start="2069" data-end="2123">The dominant approach today for adapting large LLMs.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="2125" data-end="2285">The breakthrough paper by Houlsby et al. (2019) introduced the first widely adopted PEFT method: <strong data-start="2222" data-end="2234">adapters</strong>. Let’s dive into how adapter-based methods work.</p>
+<hr data-start="2287" data-end="2290">
+<h2 data-start="2292" data-end="2318">Adapter-Based Methods</h2>
+<h3 data-start="2320" data-end="2339">The Core Idea</h3>
+<p data-start="2341" data-end="2546">Adapters are small, trainable modules inserted into each transformer block of an LLM. Instead of updating the billions of frozen parameters in the base model, finetuning updates only the adapter weights.</p>
+<p data-start="2548" data-end="2598">Think of adapters as <strong data-start="2569" data-end="2581">plug-ins</strong> for the model:</p>
+<ul data-start="2599" data-end="2714">
+<li data-start="2599" data-end="2649">
+<p data-start="2601" data-end="2649">The frozen base model is the operating system.</p>
+</li>
+<li data-start="2650" data-end="2714">
+<p data-start="2652" data-end="2714">The adapters are small applications that customize behavior.</p>
+</li>
+</ul>
+<p data-start="2716" data-end="2961">During inference, the model processes inputs as usual, but the adapters intercept the flow, add their learned adjustments, and pass the signal back. This way, adapters can teach the model new tricks without rewriting its entire knowledge base.</p>
+<hr data-start="2963" data-end="2966">
+<h3 data-start="2968" data-end="2997">Houlsby Adapters (2019)</h3>
+<p data-start="2999" data-end="3110">The original adapter method added two small feed-forward layers into each transformer block. During training:</p>
+<ul data-start="3111" data-end="3199">
+<li data-start="3111" data-end="3157">
+<p data-start="3113" data-end="3157">The base model’s parameters stayed frozen.</p>
+</li>
+<li data-start="3158" data-end="3199">
+<p data-start="3160" data-end="3199">Only the adapter layers were updated.</p>
+</li>
+</ul>
+<p data-start="3201" data-end="3403">The results were striking. On the GLUE benchmark for natural language understanding, Houlsby adapters achieved performance <strong data-start="3324" data-end="3358">within 0.4% of full finetuning</strong>, while training only <strong data-start="3380" data-end="3400">3% of parameters</strong>.</p>
+<p data-start="3405" data-end="3499">This was a game-changer. Suddenly, adapting large models became feasible on modest hardware.</p>
+<hr data-start="3501" data-end="3504">
+<h3 data-start="3506" data-end="3525">BitFit (2021)</h3>
+<p data-start="3527" data-end="3784">BitFit took the idea even further: instead of inserting new layers, it updated only the <strong data-start="3615" data-end="3629">bias terms</strong> of the model (hence the name). Since bias parameters make up a tiny fraction of the total weights, this meant updating <strong data-start="3749" data-end="3781">less than 0.1% of parameters</strong>.</p>
+<p data-start="3786" data-end="3952">Surprisingly, BitFit still delivered competitive results in many tasks. It wasn’t always as strong as adapters, but it showed just how much efficiency was possible.</p>
+<hr data-start="3954" data-end="3957">
+<h3 data-start="3959" data-end="3975">IA³ (2022)</h3>
+<p data-start="3977" data-end="4206">IA³ (Infused Adapter by Inhibiting and Amplifying Inner Activations) proposed a more elegant method: instead of adding full adapter layers, it learned small scaling vectors that multiplied existing activations inside the model.</p>
+<p data-start="4208" data-end="4221">This meant:</p>
+<ul data-start="4222" data-end="4367">
+<li data-start="4222" data-end="4257">
+<p data-start="4224" data-end="4257">Extremely lightweight overhead.</p>
+</li>
+<li data-start="4258" data-end="4302">
+<p data-start="4260" data-end="4302">Easy batching for multi-task finetuning.</p>
+</li>
+<li data-start="4303" data-end="4367">
+<p data-start="4305" data-end="4367">In some cases, even better performance than full finetuning.</p>
+</li>
+</ul>
+<hr data-start="4369" data-end="4372">
+<h3 data-start="4374" data-end="4395">LongLoRA (2023)</h3>
+<p data-start="4397" data-end="4559">One limitation of many LLMs is <strong data-start="4428" data-end="4446">context length</strong>—how much text they can handle at once. Most models are trained with a context window of a few thousand tokens.</p>
+<p data-start="4561" data-end="4824">LongLoRA adapted LoRA (which we’ll cover in depth in Section 4) to extend context length. By tweaking attention mechanisms and training with long-sequence data, LongLoRA enabled models to handle much larger contexts (e.g., from 4k tokens to 16k tokens or more).</p>
+<p data-start="4826" data-end="4874">This made it especially useful for tasks like:</p>
+<ul data-start="4875" data-end="4999">
+<li data-start="4875" data-end="4904">
+<p data-start="4877" data-end="4904">Handling long code files.</p>
+</li>
+<li data-start="4905" data-end="4950">
+<p data-start="4907" data-end="4950">Processing legal or scientific documents.</p>
+</li>
+<li data-start="4951" data-end="4999">
+<p data-start="4953" data-end="4999">Multi-turn dialogue with extended histories.</p>
+</li>
+</ul>
+<hr data-start="5001" data-end="5004">
+<h2 data-start="5006" data-end="5036">Soft Prompt–Based Methods</h2>
+<p data-start="5038" data-end="5172">While adapter-based methods add <strong data-start="5070" data-end="5111">trainable parameters inside the model</strong>, soft prompt methods modify the <strong data-start="5144" data-end="5154">inputs</strong> the model sees.</p>
+<p data-start="5174" data-end="5198">Here’s the difference:</p>
+<ul data-start="5199" data-end="5372">
+<li data-start="5199" data-end="5283">
+<p data-start="5201" data-end="5283"><strong data-start="5201" data-end="5217">Hard prompts</strong> = Human-readable text prompts (e.g., <em data-start="5255" data-end="5279">“Translate to French:”</em>).</p>
+</li>
+<li data-start="5284" data-end="5372">
+<p data-start="5286" data-end="5372"><strong data-start="5286" data-end="5302">Soft prompts</strong> = Trainable vectors (continuous embeddings) prepended to the input.</p>
+</li>
+</ul>
+<p data-start="5374" data-end="5480">Soft prompts aren’t human-readable, but they act like invisible “hints” that steer the model’s behavior.</p>
+<hr data-start="5482" data-end="5485">
+<h3 data-start="5487" data-end="5513">Prompt Tuning (2021)</h3>
+<p data-start="5515" data-end="5637">In <strong data-start="5518" data-end="5535">prompt tuning</strong>, a small set of trainable embeddings is added to the input at the embedding layer. During training:</p>
+<ul data-start="5638" data-end="5709">
+<li data-start="5638" data-end="5670">
+<p data-start="5640" data-end="5670">The base model stays frozen.</p>
+</li>
+<li data-start="5671" data-end="5709">
+<p data-start="5673" data-end="5709">Only the soft prompts are updated.</p>
+</li>
+</ul>
+<p data-start="5711" data-end="5814">This allows a single base model to be quickly adapted to many tasks by swapping out the soft prompts.</p>
+<hr data-start="5816" data-end="5819">
+<h3 data-start="5821" data-end="5847">Prefix Tuning (2021)</h3>
+<p data-start="5849" data-end="6052"><strong data-start="5849" data-end="5866">Prefix tuning</strong> goes a step further: instead of adding tokens only at the input, it prepends soft prompts at every transformer layer. This provides more control over the model’s internal activations.</p>
+<p data-start="6054" data-end="6132">Prefix tuning is more powerful but also slightly heavier than prompt tuning.</p>
+<hr data-start="6134" data-end="6137">
+<h3 data-start="6139" data-end="6160">P-Tuning (2021)</h3>
+<p data-start="6162" data-end="6438"><strong data-start="6162" data-end="6174">P-Tuning</strong> is another variant that optimizes where and how soft prompts are injected. These subtle differences in architecture make each method slightly better for certain tasks, but the underlying idea is the same: train a small set of vectors instead of the whole model.</p>
+<hr data-start="6440" data-end="6443">
+<h2 data-start="6445" data-end="6491">Comparing Adapter vs. Soft Prompt Methods</h2>
+<div class="_tableContainer_1rjym_1"><div tabindex="-1" class="group _tableWrapper_1rjym_13 flex w-fit flex-col-reverse"><table data-start="6493" data-end="7100" class="w-fit min-w-(--thread-content-width)"><thead data-start="6493" data-end="6540"><tr data-start="6493" data-end="6540"><th data-start="6493" data-end="6503" data-col-size="sm">Feature</th><th data-start="6503" data-end="6519" data-col-size="sm">Adapter-Based</th><th data-start="6519" data-end="6540" data-col-size="sm">Soft Prompt–Based</th></tr></thead><tbody data-start="6589" data-end="7100"><tr data-start="6589" data-end="6680"><td data-start="6589" data-end="6609" data-col-size="sm"><strong data-start="6591" data-end="6608">Where it acts</strong></td><td data-start="6609" data-end="6637" data-col-size="sm">Inside transformer layers</td><td data-start="6637" data-end="6680" data-col-size="sm">Input embeddings (and sometimes layers)</td></tr><tr data-start="6681" data-end="6762"><td data-start="6681" data-end="6708" data-col-size="sm"><strong data-start="6683" data-end="6707">Parameter efficiency</strong></td><td data-start="6708" data-end="6732" data-col-size="sm">1–5% trainable params</td><td data-start="6732" data-end="6762" data-col-size="sm">Often &lt;1% trainable params</td></tr><tr data-start="6763" data-end="6849"><td data-start="6763" data-end="6781" data-col-size="sm"><strong data-start="6765" data-end="6780">Performance</strong></td><td data-start="6781" data-end="6812" data-col-size="sm">Strong, near full finetuning</td><td data-start="6812" data-end="6849" data-col-size="sm">Competitive, but sometimes weaker</td></tr><tr data-start="6850" data-end="6924"><td data-start="6850" data-end="6867" data-col-size="sm"><strong data-start="6852" data-end="6866">Modularity</strong></td><td data-start="6867" data-end="6897" data-col-size="sm">Can stack multiple adapters</td><td data-start="6897" data-end="6924" data-col-size="sm">Can swap prompts easily</td></tr><tr data-start="6925" data-end="7002"><td data-start="6925" data-end="6947" data-col-size="sm"><strong data-start="6927" data-end="6946">Inference speed</strong></td><td data-start="6947" data-end="6980" data-col-size="sm">Slightly slower (extra layers)</td><td data-start="6980" data-end="7002" data-col-size="sm">Same as base model</td></tr><tr data-start="7003" data-end="7100"><td data-start="7003" data-end="7019" data-col-size="sm"><strong data-start="7005" data-end="7018">Use cases</strong></td><td data-start="7019" data-end="7059" data-col-size="sm">Domain adaptation, syntax enforcement</td><td data-start="7059" data-end="7100" data-col-size="sm">Multi-task, lightweight customization</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 32.8906px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg></button></span></div></div></div></div>
+<p data-start="7102" data-end="7199">Both families of methods are actively used today, depending on the application and constraints.</p>
+<hr data-start="7201" data-end="7204">
+<h2 data-start="7206" data-end="7230">Real-World Adoption</h2>
+<p data-start="7232" data-end="7383">To see what’s popular in practice, researchers analyzed thousands of GitHub issues from the Hugging Face <strong data-start="7337" data-end="7353">PEFT library</strong> (2024). The results showed:</p>
+<ul data-start="7384" data-end="7574">
+<li data-start="7384" data-end="7429">
+<p data-start="7386" data-end="7429"><strong data-start="7386" data-end="7394">LoRA</strong> dominates adapter-based methods.</p>
+</li>
+<li data-start="7430" data-end="7574">
+<p data-start="7432" data-end="7574">Soft prompts are less common but gaining traction among teams that want more flexibility than prompting but less complexity than finetuning.</p>
+</li>
+</ul>
+<p data-start="7576" data-end="7711">This aligns with industry trends: LoRA is the go-to choice for finetuning today, thanks to its balance of efficiency and performance.</p>
+<hr data-start="7713" data-end="7716">
+<h2 data-start="7718" data-end="7754">Why PEFT Matters for Developers</h2>
+<p data-start="7756" data-end="7914">For most application developers, full finetuning is out of reach. Even partial finetuning may be impractical. PEFT bridges the gap by making it possible to:</p>
+<ul data-start="7915" data-end="8199">
+<li data-start="7915" data-end="8006">
+<p data-start="7917" data-end="8006">Run finetuning on a <strong data-start="7937" data-end="7968">single GPU or small cluster</strong>, instead of massive infrastructure.</p>
+</li>
+<li data-start="8007" data-end="8127">
+<p data-start="8009" data-end="8127">Maintain multiple task-specific models by swapping adapters or prompts, rather than training from scratch each time.</p>
+</li>
+<li data-start="8128" data-end="8199">
+<p data-start="8130" data-end="8199">Deploy <strong data-start="8137" data-end="8163">cheaper, faster models</strong> that still meet production needs.</p>
+</li>
+</ul>
+<p data-start="8201" data-end="8255">In other words, PEFT democratizes LLM customization.</p>
+<hr data-start="8257" data-end="8260">
+<h2 data-start="8262" data-end="8280">Looking Ahead</h2>
+<p data-start="8282" data-end="8538">We’ve covered the two main families of PEFT: <strong data-start="8327" data-end="8339">adapters</strong> and <strong data-start="8344" data-end="8360">soft prompts</strong>. But one method in particular—<strong data-start="8391" data-end="8421">LoRA (Low-Rank Adaptation)</strong>—has become the de facto standard, powering everything from open-source community models to enterprise deployments.</p>
+<p data-start="8540" data-end="8688">In the next section, we’ll dive deep into <strong data-start="8582" data-end="8590">LoRA</strong>, exploring how it works, why it’s so effective, and the many variants that have sprung from it.</p>
+<hr data-start="8690" data-end="8693">
+<p data-start="8695" data-end="8734">✅ That’s <strong data-start="8704" data-end="8731">Section 3 (~1200 words)</strong>.</p>
+<p data-start="8736" data-end="8814" data-is-last-node="" data-is-only-node="">Do you want me to continue with <strong data-start="8768" data-end="8808">Section 4: LoRA Deep Dive + Variants</strong> next?</p></div>
+
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="65">Awesome 🙌 Here’s <strong data-start="18" data-end="31">Section 4</strong> of the blog post (~1200 words).</p>
+<hr data-start="67" data-end="70">
+<h1 data-start="72" data-end="140">Finetuning Large Language Models: From Foundations to Adaptation</h1>
+<p data-start="141" data-end="180"><em data-start="141" data-end="180">Section 4 – LoRA Deep Dive &amp; Variants</em></p>
+<hr data-start="182" data-end="185">
+<h2 data-start="187" data-end="213">The Emergence of LoRA</h2>
+<p data-start="215" data-end="558">Among all the parameter-efficient finetuning (PEFT) methods, <strong data-start="276" data-end="306">LoRA (Low-Rank Adaptation)</strong> has emerged as the most widely used. Originally introduced by Hu et al. (2021), LoRA was designed with a simple but powerful idea: instead of updating huge weight matrices directly, approximate their updates using much smaller <strong data-start="534" data-end="555">low-rank matrices</strong>.</p>
+<p data-start="560" data-end="773">This approach slashes the number of trainable parameters by orders of magnitude while preserving performance. Today, if you see a community finetuned model on Hugging Face, chances are it was trained using LoRA.</p>
+<p data-start="775" data-end="886">But why did LoRA succeed where others were just “good enough”? To answer that, let’s break down how it works.</p>
+<hr data-start="888" data-end="891">
+<h2 data-start="893" data-end="919">The Core Idea of LoRA</h2>
+<p data-start="921" data-end="1080">Transformer models, like GPT and LLaMA, are filled with <strong data-start="977" data-end="994">linear layers</strong>—essentially giant matrices that multiply with vectors to process data. For example:</p>
+<pre class="overflow-visible!" data-start="1082" data-end="1099"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">ini</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">y</span></span><span> = W × x
+</span></span></code></div></div></pre>
+<p data-start="1101" data-end="1109">where:</p>
+<ul data-start="1110" data-end="1220">
+<li data-start="1110" data-end="1168">
+<p data-start="1112" data-end="1168"><code data-start="1112" data-end="1115">W</code> is a weight matrix (often billions of parameters).</p>
+</li>
+<li data-start="1169" data-end="1197">
+<p data-start="1171" data-end="1197"><code data-start="1171" data-end="1174">x</code> is the input vector.</p>
+</li>
+<li data-start="1198" data-end="1220">
+<p data-start="1200" data-end="1220"><code data-start="1200" data-end="1203">y</code> is the output.</p>
+</li>
+</ul>
+<p data-start="1222" data-end="1333">In finetuning, we want to adjust <code data-start="1255" data-end="1258">W</code>. But directly storing and updating such a massive matrix is impractical.</p>
+<p data-start="1335" data-end="1368">LoRA introduces a clever trick:</p>
+<ul data-start="1369" data-end="1483">
+<li data-start="1369" data-end="1483">
+<p data-start="1371" data-end="1483">Instead of updating <code data-start="1391" data-end="1394">W</code> directly, represent the update ΔW as the product of two smaller matrices, <code data-start="1469" data-end="1472">A</code> and <code data-start="1477" data-end="1480">B</code>.</p>
+</li>
+</ul>
+<pre class="overflow-visible!" data-start="1485" data-end="1517"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl"></div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>W’ = W + ΔW  
+ΔW = A × B
+</span></span></code></div></div></pre>
+<p data-start="1519" data-end="1526">Here:</p>
+<ul data-start="1527" data-end="1651">
+<li data-start="1527" data-end="1558">
+<p data-start="1529" data-end="1558"><code data-start="1529" data-end="1532">A</code> is an <strong data-start="1539" data-end="1548">m × r</strong> matrix.</p>
+</li>
+<li data-start="1559" data-end="1590">
+<p data-start="1561" data-end="1590"><code data-start="1561" data-end="1564">B</code> is an <strong data-start="1571" data-end="1580">r × n</strong> matrix.</p>
+</li>
+<li data-start="1591" data-end="1651">
+<p data-start="1593" data-end="1651"><code data-start="1593" data-end="1596">r</code> is the <strong data-start="1604" data-end="1612">rank</strong> (a small number, often 4, 8, or 16).</p>
+</li>
+</ul>
+<p data-start="1653" data-end="1766">Because <code data-start="1661" data-end="1664">r</code> is small, <code data-start="1675" data-end="1682">A × B</code> has far fewer parameters than <code data-start="1713" data-end="1716">W</code>. This is the “low-rank” in Low-Rank Adaptation.</p>
+<hr data-start="1768" data-end="1771">
+<h2 data-start="1773" data-end="1828">Why LoRA Works: The Intrinsic Dimension Hypothesis</h2>
+<p data-start="1830" data-end="1949">At first glance, you might wonder: <em data-start="1865" data-end="1947">How can tiny matrices possibly capture the complexity of massive weight updates?</em></p>
+<p data-start="1951" data-end="2256">The answer lies in the <strong data-start="1974" data-end="2008">intrinsic dimension hypothesis</strong>. Research suggests that many high-dimensional tasks can actually be solved in a much lower-dimensional subspace. In other words, even though models have billions of parameters, the meaningful changes for a given task lie in a much smaller space.</p>
+<p data-start="2258" data-end="2420">LoRA exploits this by only learning updates within that smaller subspace. The base model provides the “knowledge,” and LoRA adapters learn the “specialization.”</p>
+<hr data-start="2422" data-end="2425">
+<h2 data-start="2427" data-end="2458">Practical Benefits of LoRA</h2>
+<p data-start="2460" data-end="2530">LoRA offers several advantages that explain its widespread adoption:</p>
+<ol data-start="2532" data-end="3108">
+<li data-start="2532" data-end="2658">
+<p data-start="2535" data-end="2551"><strong data-start="2535" data-end="2549">Efficiency</strong></p>
+<ul data-start="2555" data-end="2658">
+<li data-start="2555" data-end="2606">
+<p data-start="2557" data-end="2606">Only a tiny fraction of parameters are trained.</p>
+</li>
+<li data-start="2610" data-end="2658">
+<p data-start="2612" data-end="2658">Finetuning becomes feasible on a single GPU.</p>
+</li>
+</ul>
+</li>
+<li data-start="2660" data-end="2809">
+<p data-start="2663" data-end="2679"><strong data-start="2663" data-end="2677">Modularity</strong></p>
+<ul data-start="2683" data-end="2809">
+<li data-start="2683" data-end="2745">
+<p data-start="2685" data-end="2745">You can train different LoRA adapters for different tasks.</p>
+</li>
+<li data-start="2749" data-end="2809">
+<p data-start="2751" data-end="2809">Swap them in and out without retraining the whole model.</p>
+</li>
+</ul>
+</li>
+<li data-start="2811" data-end="2971">
+<p data-start="2814" data-end="2833"><strong data-start="2814" data-end="2831">Composability</strong></p>
+<ul data-start="2837" data-end="2971">
+<li data-start="2837" data-end="2925">
+<p data-start="2839" data-end="2925">Multiple LoRAs can be combined (e.g., one for medical text, another for legal text).</p>
+</li>
+<li data-start="2929" data-end="2971">
+<p data-start="2931" data-end="2971">This makes models highly customizable.</p>
+</li>
+</ul>
+</li>
+<li data-start="2973" data-end="3108">
+<p data-start="2976" data-end="3010"><strong data-start="2976" data-end="3008">No Inference Latency Penalty</strong></p>
+<ul data-start="3014" data-end="3108">
+<li data-start="3014" data-end="3108">
+<p data-start="3016" data-end="3108">LoRA updates are folded into the weight multiplication, so inference remains just as fast.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p data-start="3110" data-end="3190">These factors made LoRA the go-to choice for researchers and developers alike.</p>
+<hr data-start="3192" data-end="3195">
+<h2 data-start="3197" data-end="3218">Variants of LoRA</h2>
+<p data-start="3220" data-end="3337">Like all good ideas in AI, LoRA quickly inspired numerous extensions and adaptations. Let’s look at the major ones.</p>
+<hr data-start="3339" data-end="3342">
+<h3 data-start="3344" data-end="3372">Quantized LoRA (QLoRA)</h3>
+<p data-start="3374" data-end="3452">Introduced by Dettmers et al. (2023), <strong data-start="3412" data-end="3421">QLoRA</strong> combined two powerful ideas:</p>
+<ol data-start="3453" data-end="3609">
+<li data-start="3453" data-end="3538">
+<p data-start="3456" data-end="3538"><strong data-start="3456" data-end="3472">Quantization</strong> – Store base model weights in 4-bit precision to reduce memory.</p>
+</li>
+<li data-start="3539" data-end="3609">
+<p data-start="3542" data-end="3609"><strong data-start="3542" data-end="3550">LoRA</strong> – Train low-rank adapters on top of the quantized model.</p>
+</li>
+</ol>
+<p data-start="3611" data-end="3764">This made it possible to finetune 65B-parameter models on a single 48 GB GPU. Before QLoRA, such large-scale finetuning was reserved for top-tier labs.</p>
+<p data-start="3766" data-end="3920">QLoRA democratized finetuning by drastically lowering hardware requirements. Today, it’s one of the most practical setups for community-driven projects.</p>
+<hr data-start="3922" data-end="3925">
+<h3 data-start="3927" data-end="3941">LongLoRA</h3>
+<p data-start="3943" data-end="4158">We briefly mentioned <strong data-start="3964" data-end="3976">LongLoRA</strong> earlier. It modifies the attention mechanism to allow models to handle longer sequences during finetuning. Combined with LoRA, it makes training for long-context tasks affordable.</p>
+<p data-start="4160" data-end="4172">Use cases:</p>
+<ul data-start="4173" data-end="4290">
+<li data-start="4173" data-end="4208">
+<p data-start="4175" data-end="4208">Reading entire legal contracts.</p>
+</li>
+<li data-start="4209" data-end="4241">
+<p data-start="4211" data-end="4241">Summarizing research papers.</p>
+</li>
+<li data-start="4242" data-end="4290">
+<p data-start="4244" data-end="4290">Multi-turn chatbots with extended histories.</p>
+</li>
+</ul>
+<hr data-start="4292" data-end="4295">
+<h3 data-start="4297" data-end="4326">ReLoRA (Restarted LoRA)</h3>
+<p data-start="4328" data-end="4553">ReLoRA addresses a subtle issue: as training progresses, low-rank updates may lose effectiveness. ReLoRA periodically <strong data-start="4446" data-end="4478">resets the low-rank matrices</strong> and reinitializes them, allowing the model to keep learning efficiently.</p>
+<p data-start="4555" data-end="4648">This is especially useful for <strong data-start="4585" data-end="4609">longer training runs</strong> where LoRA might otherwise stagnate.</p>
+<hr data-start="4650" data-end="4653">
+<h3 data-start="4655" data-end="4698">GaLore (Gradient Low-Rank Projection)</h3>
+<p data-start="4700" data-end="4917">GaLore, a 2024 innovation, applies the low-rank trick not just to weight updates, but directly to <strong data-start="4798" data-end="4811">gradients</strong>. Instead of storing full gradients (which consume huge memory), it projects them into a low-rank space.</p>
+<p data-start="4919" data-end="5015">This slashes memory requirements for backpropagation and makes finetuning even more efficient.</p>
+<hr data-start="5017" data-end="5020">
+<h2 data-start="5022" data-end="5045">Multi-LoRA Serving</h2>
+<p data-start="5047" data-end="5159">One of LoRA’s killer features is that you can <strong data-start="5093" data-end="5120">serve multiple adapters</strong> on the same base model. For example:</p>
+<ul data-start="5161" data-end="5409">
+<li data-start="5161" data-end="5266">
+<p data-start="5163" data-end="5266">A customer service company could maintain separate LoRAs for retail, banking, and healthcare clients.</p>
+</li>
+<li data-start="5267" data-end="5409">
+<p data-start="5269" data-end="5409">A developer could train LoRAs for different tasks (summarization, sentiment analysis, translation) and load whichever is needed on demand.</p>
+</li>
+</ul>
+<p data-start="5411" data-end="5585">This modularity is similar to having multiple browser extensions installed on the same web browser. The core system remains unchanged; each extension adds a specialization.</p>
+<p data-start="5587" data-end="5743">Serving frameworks like Hugging Face’s <code data-start="5626" data-end="5632">peft</code> library and 🤗 Transformers already support this capability, making LoRA-based deployments production-ready.</p>
+<hr data-start="5745" data-end="5748">
+<h2 data-start="5750" data-end="5786">Real-World Applications of LoRA</h2>
+<ol data-start="5788" data-end="6391">
+<li data-start="5788" data-end="5960">
+<p data-start="5791" data-end="5813"><strong data-start="5791" data-end="5811">Community Models</strong></p>
+<ul data-start="5817" data-end="5960">
+<li data-start="5817" data-end="5871">
+<p data-start="5819" data-end="5871">Hugging Face is filled with LoRA-finetuned models.</p>
+</li>
+<li data-start="5875" data-end="5960">
+<p data-start="5877" data-end="5960">From roleplay chatbots to code assistants, LoRA makes experimentation accessible.</p>
+</li>
+</ul>
+</li>
+<li data-start="5962" data-end="6178">
+<p data-start="5965" data-end="5995"><strong data-start="5965" data-end="5993">Enterprise Customization</strong></p>
+<ul data-start="5999" data-end="6178">
+<li data-start="5999" data-end="6074">
+<p data-start="6001" data-end="6074">Companies use LoRA to adapt foundation models to domain-specific needs.</p>
+</li>
+<li data-start="6078" data-end="6178">
+<p data-start="6080" data-end="6178">Example: A financial firm finetuning a Llama model with LoRA for SEC filings and earnings calls.</p>
+</li>
+</ul>
+</li>
+<li data-start="6180" data-end="6391">
+<p data-start="6183" data-end="6211"><strong data-start="6183" data-end="6209">Education and Research</strong></p>
+<ul data-start="6215" data-end="6391">
+<li data-start="6215" data-end="6309">
+<p data-start="6217" data-end="6309">Universities and independent researchers can now finetune models without massive clusters.</p>
+</li>
+<li data-start="6313" data-end="6391">
+<p data-start="6315" data-end="6391">LoRA has become the default teaching method for “hands-on LLM finetuning.”</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr data-start="6393" data-end="6396">
+<h2 data-start="6398" data-end="6421">Why LoRA Dominates</h2>
+<p data-start="6423" data-end="6557">While other PEFT methods (like adapters and soft prompts) are useful, LoRA has several unique advantages that explain its dominance:</p>
+<ul data-start="6559" data-end="6854">
+<li data-start="6559" data-end="6618">
+<p data-start="6561" data-end="6618"><strong data-start="6561" data-end="6576">Performance</strong> – Often matches or beats other methods.</p>
+</li>
+<li data-start="6619" data-end="6694">
+<p data-start="6621" data-end="6694"><strong data-start="6621" data-end="6644">Ease of Integration</strong> – Works seamlessly with existing architectures.</p>
+</li>
+<li data-start="6695" data-end="6753">
+<p data-start="6697" data-end="6753"><strong data-start="6697" data-end="6712">Scalability</strong> – Handles small and very large models.</p>
+</li>
+<li data-start="6754" data-end="6854">
+<p data-start="6756" data-end="6854"><strong data-start="6756" data-end="6778">Community Momentum</strong> – Supported by libraries like Hugging Face PEFT, PyTorch, and ColossalAI.</p>
+</li>
+</ul>
+<p data-start="6856" data-end="6944">In fact, many researchers now assume LoRA as the default PEFT baseline in experiments.</p>
+<hr data-start="6946" data-end="6949">
+<h2 data-start="6951" data-end="6999">Beyond LoRA: The Future of Low-Rank Methods</h2>
+<p data-start="7001" data-end="7078">LoRA is not the end of the story. Several exciting directions are emerging:</p>
+<ul data-start="7079" data-end="7349">
+<li data-start="7079" data-end="7163">
+<p data-start="7081" data-end="7163"><strong data-start="7081" data-end="7107">Dynamic rank selection</strong> – Adapting rank <code data-start="7124" data-end="7127">r</code> per layer for optimal efficiency.</p>
+</li>
+<li data-start="7164" data-end="7251">
+<p data-start="7166" data-end="7251"><strong data-start="7166" data-end="7191">Low-rank pre-training</strong> – Training models from scratch with low-rank constraints.</p>
+</li>
+<li data-start="7252" data-end="7349">
+<p data-start="7254" data-end="7349"><strong data-start="7254" data-end="7275">Hybrid approaches</strong> – Combining LoRA with soft prompts or adapters for maximum flexibility.</p>
+</li>
+</ul>
+<p data-start="7351" data-end="7486">The field is evolving fast, but one thing is clear: the low-rank principle has unlocked a new era of scalable, affordable finetuning.</p>
+<hr data-start="7488" data-end="7491">
+<h2 data-start="7493" data-end="7511">Looking Ahead</h2>
+<p data-start="7513" data-end="7753">We’ve now explored LoRA and its variants in depth. But LoRA isn’t the only alternative to full finetuning. Another powerful approach is <strong data-start="7649" data-end="7666">model merging</strong>, where instead of training adapters, developers directly combine pre-trained models.</p>
+<p data-start="7755" data-end="7790">In the next section, we’ll cover:</p>
+<ul data-start="7791" data-end="7962">
+<li data-start="7791" data-end="7855">
+<p data-start="7793" data-end="7855">Model merging techniques (summing, stacking, concatenation).</p>
+</li>
+<li data-start="7856" data-end="7902">
+<p data-start="7858" data-end="7902">Finetuning frameworks and hyperparameters.</p>
+</li>
+<li data-start="7903" data-end="7962">
+<p data-start="7905" data-end="7962">Practical decision-making for when and how to finetune.</p>
+</li>
+</ul>
+<hr data-start="7964" data-end="7967">
+<p data-start="7969" data-end="8008">✅ That’s <strong data-start="7978" data-end="8005">Section 4 (~1200 words)</strong>.</p>
+<p data-start="8010" data-end="8126" data-is-last-node="" data-is-only-node="">Do you want me to go ahead and draft <strong data-start="8047" data-end="8120">Section 5: Model Merging, Frameworks, Hyperparameters, and Conclusion</strong> next?</p></div>
+
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="84">Perfect ✅ Here’s the <strong data-start="21" data-end="50">final section (Section 5)</strong> of the blog post (~1200 words).</p>
+<hr data-start="86" data-end="89">
+<h1 data-start="91" data-end="159">Finetuning Large Language Models: From Foundations to Adaptation</h1>
+<p data-start="160" data-end="232"><em data-start="160" data-end="232">Section 5 – Model Merging, Frameworks, Hyperparameters, and Conclusion</em></p>
+<hr data-start="234" data-end="237">
+<h2 data-start="239" data-end="288">Beyond Finetuning: The Idea of Model Merging</h2>
+<p data-start="290" data-end="436">So far, we’ve focused on <strong data-start="315" data-end="329">finetuning</strong>—whether full, partial, or parameter-efficient. But there’s another emerging paradigm: <strong data-start="416" data-end="433">model merging</strong>.</p>
+<p data-start="438" data-end="566">Instead of training adapters or updating weights, model merging combines <strong data-start="511" data-end="539">already finetuned models</strong> into a single new model.</p>
+<p data-start="568" data-end="746">Why does this work? Because finetuned models often contain complementary knowledge. By merging, we can capture the strengths of multiple models without retraining from scratch.</p>
+<hr data-start="748" data-end="751">
+<h3 data-start="753" data-end="787">Techniques for Model Merging</h3>
+<ol data-start="789" data-end="1457">
+<li data-start="789" data-end="1085">
+<p data-start="792" data-end="827"><strong data-start="792" data-end="825">Weight Averaging (Model Soup)</strong></p>
+<ul data-start="831" data-end="1085">
+<li data-start="831" data-end="870">
+<p data-start="833" data-end="870">Proposed by Wortsman et al. (2022).</p>
+</li>
+<li data-start="874" data-end="949">
+<p data-start="876" data-end="949">Merge multiple models by taking a weighted average of their parameters.</p>
+</li>
+<li data-start="953" data-end="1085">
+<p data-start="955" data-end="1085">Example: If you have three LoRA-finetuned models for different NLP tasks, averaging them can yield a single, more general model.</p>
+</li>
+</ul>
+</li>
+<li data-start="1087" data-end="1270">
+<p data-start="1090" data-end="1110"><strong data-start="1090" data-end="1108">Layer Stacking</strong></p>
+<ul data-start="1114" data-end="1270">
+<li data-start="1114" data-end="1153">
+<p data-start="1116" data-end="1153">Stack layers from different models.</p>
+</li>
+<li data-start="1157" data-end="1270">
+<p data-start="1159" data-end="1270">Example: Lower layers from a language model trained on code + higher layers from a model trained on dialogue.</p>
+</li>
+</ul>
+</li>
+<li data-start="1272" data-end="1457">
+<p data-start="1275" data-end="1294"><strong data-start="1275" data-end="1292">Concatenation</strong></p>
+<ul data-start="1298" data-end="1457">
+<li data-start="1298" data-end="1374">
+<p data-start="1300" data-end="1374">Combine embeddings or intermediate representations from multiple models.</p>
+</li>
+<li data-start="1378" data-end="1457">
+<p data-start="1380" data-end="1457">More experimental, but promising for multimodal tasks (e.g., text + image).</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr data-start="1459" data-end="1462">
+<h3 data-start="1464" data-end="1489">Real-World Examples</h3>
+<ul data-start="1491" data-end="1855">
+<li data-start="1491" data-end="1680">
+<p data-start="1493" data-end="1680"><strong data-start="1493" data-end="1515">SOLAR 10.7B (2023)</strong>: A model built by merging multiple open-weight models (up to 16). Despite being only 10.7B parameters, it achieved performance close to LLaMA-2-70B on benchmarks.</p>
+</li>
+<li data-start="1681" data-end="1855">
+<p data-start="1683" data-end="1855"><strong data-start="1683" data-end="1703">On-device models</strong>: Small models on smartphones can be “merged” from different finetuned variants, allowing them to perform diverse tasks without huge storage overhead.</p>
+</li>
+</ul>
+<p data-start="1857" data-end="2030">Model merging isn’t yet as mature as LoRA, but it shows the future may involve <strong data-start="1936" data-end="1978">mixing and matching specialized models</strong> rather than finetuning one base model repeatedly.</p>
+<hr data-start="2032" data-end="2035">
+<h2 data-start="2037" data-end="2071">Choosing the Right Base Model</h2>
+<p data-start="2073" data-end="2153">When planning finetuning or merging, the choice of <strong data-start="2124" data-end="2138">base model</strong> is critical.</p>
+<ul data-start="2155" data-end="2510">
+<li data-start="2155" data-end="2327">
+<p data-start="2157" data-end="2222"><strong data-start="2157" data-end="2179">Open-source models</strong>: LLaMA, Mistral, Falcon, Mixtral, Gemma.</p>
+<ul data-start="2225" data-end="2327">
+<li data-start="2225" data-end="2275">
+<p data-start="2227" data-end="2275">Pros: Customizable, transparent, cheap to run.</p>
+</li>
+<li data-start="2278" data-end="2327">
+<p data-start="2280" data-end="2327">Cons: May lack the polish of commercial APIs.</p>
+</li>
+</ul>
+</li>
+<li data-start="2329" data-end="2510">
+<p data-start="2331" data-end="2401"><strong data-start="2331" data-end="2353">Proprietary models</strong>: OpenAI GPT, Anthropic Claude, Google Gemini.</p>
+<ul data-start="2404" data-end="2510">
+<li data-start="2404" data-end="2459">
+<p data-start="2406" data-end="2459">Pros: State-of-the-art performance, strong support.</p>
+</li>
+<li data-start="2462" data-end="2510">
+<p data-start="2464" data-end="2510">Cons: Limited finetuning access, high costs.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="2512" data-end="2532">A common strategy:</p>
+<ul data-start="2533" data-end="2672">
+<li data-start="2533" data-end="2609">
+<p data-start="2535" data-end="2609">Use open-source models for <strong data-start="2562" data-end="2606">heavily customized or private data tasks</strong>.</p>
+</li>
+<li data-start="2610" data-end="2672">
+<p data-start="2612" data-end="2672">Use APIs for <strong data-start="2625" data-end="2669">general-purpose or low-maintenance tasks</strong>.</p>
+</li>
+</ul>
+<hr data-start="2674" data-end="2677">
+<h2 data-start="2679" data-end="2705">Finetuning Frameworks</h2>
+<p data-start="2707" data-end="2774">Several frameworks make PEFT and LoRA finetuning more accessible:</p>
+<ol data-start="2776" data-end="3590">
+<li data-start="2776" data-end="2923">
+<p data-start="2779" data-end="2802"><strong data-start="2779" data-end="2800">Hugging Face PEFT</strong></p>
+<ul data-start="2806" data-end="2923">
+<li data-start="2806" data-end="2871">
+<p data-start="2808" data-end="2871">Most widely used library for LoRA, QLoRA, prefix tuning, etc.</p>
+</li>
+<li data-start="2875" data-end="2923">
+<p data-start="2877" data-end="2923">Integrates with Transformers and Accelerate.</p>
+</li>
+</ul>
+</li>
+<li data-start="2925" data-end="3087">
+<p data-start="2928" data-end="2941"><strong data-start="2928" data-end="2939">Axolotl</strong></p>
+<ul data-start="2945" data-end="3087">
+<li data-start="2945" data-end="3010">
+<p data-start="2947" data-end="3010">Community-driven framework for multi-GPU LoRA/QLoRA training.</p>
+</li>
+<li data-start="3014" data-end="3087">
+<p data-start="3016" data-end="3087">Popular for fine-tuning LLaMA, Mistral, and other open-source models.</p>
+</li>
+</ul>
+</li>
+<li data-start="3089" data-end="3203">
+<p data-start="3092" data-end="3104"><strong data-start="3092" data-end="3102">LitGPT</strong></p>
+<ul data-start="3108" data-end="3203">
+<li data-start="3108" data-end="3153">
+<p data-start="3110" data-end="3153">Lightweight, research-friendly framework.</p>
+</li>
+<li data-start="3157" data-end="3203">
+<p data-start="3159" data-end="3203">Focused on reproducibility and simplicity.</p>
+</li>
+</ul>
+</li>
+<li data-start="3205" data-end="3347">
+<p data-start="3208" data-end="3221"><strong data-start="3208" data-end="3219">Unsloth</strong></p>
+<ul data-start="3225" data-end="3347">
+<li data-start="3225" data-end="3302">
+<p data-start="3227" data-end="3302">Emerging framework specializing in <strong data-start="3262" data-end="3299">extremely efficient LoRA training</strong>.</p>
+</li>
+<li data-start="3306" data-end="3347">
+<p data-start="3308" data-end="3347">Often used for rapid experimentation.</p>
+</li>
+</ul>
+</li>
+<li data-start="3349" data-end="3590">
+<p data-start="3352" data-end="3388"><strong data-start="3352" data-end="3386">Distributed Training Libraries</strong></p>
+<ul data-start="3392" data-end="3590">
+<li data-start="3392" data-end="3464">
+<p data-start="3394" data-end="3464"><strong data-start="3394" data-end="3407">DeepSpeed</strong> (Microsoft): Sharding and offloading for large models.</p>
+</li>
+<li data-start="3468" data-end="3523">
+<p data-start="3470" data-end="3523"><strong data-start="3470" data-end="3484">ColossalAI</strong>: Scales LoRA finetuning efficiently.</p>
+</li>
+<li data-start="3527" data-end="3590">
+<p data-start="3529" data-end="3590"><strong data-start="3529" data-end="3552">PyTorch Distributed</strong>: General-purpose parallel training.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p data-start="3592" data-end="3728">For most developers, <strong data-start="3613" data-end="3636">PEFT + Transformers</strong> is enough. For larger teams, frameworks like DeepSpeed and ColossalAI unlock scalability.</p>
+<hr data-start="3730" data-end="3733">
+<h2 data-start="3735" data-end="3767">Hyperparameters That Matter</h2>
+<p data-start="3769" data-end="3837">Finetuning involves many knobs, but a few matter more than others:</p>
+<ol data-start="3839" data-end="4616">
+<li data-start="3839" data-end="4049">
+<p data-start="3842" data-end="3861"><strong data-start="3842" data-end="3859">Learning Rate</strong></p>
+<ul data-start="3865" data-end="4049">
+<li data-start="3865" data-end="3936">
+<p data-start="3867" data-end="3936">Too high → catastrophic forgetting (model loses general knowledge).</p>
+</li>
+<li data-start="3940" data-end="3967">
+<p data-start="3942" data-end="3967">Too low → underfitting.</p>
+</li>
+<li data-start="3971" data-end="4049">
+<p data-start="3973" data-end="4049">Rule of thumb: LoRA adapters often use learning rates around 1e-4 to 1e-5.</p>
+</li>
+</ul>
+</li>
+<li data-start="4051" data-end="4206">
+<p data-start="4054" data-end="4070"><strong data-start="4054" data-end="4068">Batch Size</strong></p>
+<ul data-start="4074" data-end="4206">
+<li data-start="4074" data-end="4136">
+<p data-start="4076" data-end="4136">Larger batches → more stable gradients, but higher memory.</p>
+</li>
+<li data-start="4140" data-end="4206">
+<p data-start="4142" data-end="4206">Smaller batches → noisier but sometimes better generalization.</p>
+</li>
+</ul>
+</li>
+<li data-start="4208" data-end="4360">
+<p data-start="4211" data-end="4232"><strong data-start="4211" data-end="4230">Sequence Length</strong></p>
+<ul data-start="4236" data-end="4360">
+<li data-start="4236" data-end="4298">
+<p data-start="4238" data-end="4298">Longer sequences capture more context but increase memory.</p>
+</li>
+<li data-start="4302" data-end="4360">
+<p data-start="4304" data-end="4360">Use gradient checkpointing or LongLoRA for efficiency.</p>
+</li>
+</ul>
+</li>
+<li data-start="4362" data-end="4477">
+<p data-start="4365" data-end="4392"><strong data-start="4365" data-end="4390">Prompt Loss Weighting</strong></p>
+<ul data-start="4396" data-end="4477">
+<li data-start="4396" data-end="4477">
+<p data-start="4398" data-end="4477">Important when balancing instruction-following with task-specific objectives.</p>
+</li>
+</ul>
+</li>
+<li data-start="4479" data-end="4616">
+<p data-start="4482" data-end="4511"><strong data-start="4482" data-end="4509">Epochs &amp; Early Stopping</strong></p>
+<ul data-start="4515" data-end="4616">
+<li data-start="4515" data-end="4570">
+<p data-start="4517" data-end="4570">Overtraining can lead to overfitting or forgetting.</p>
+</li>
+<li data-start="4574" data-end="4616">
+<p data-start="4576" data-end="4616">Early stopping helps maintain balance.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p data-start="4618" data-end="4774">In practice, hyperparameter tuning is as much <strong data-start="4664" data-end="4671">art</strong> as <strong data-start="4675" data-end="4686">science</strong>. Many teams start with community defaults and adjust based on validation performance.</p>
+<hr data-start="4776" data-end="4779">
+<h2 data-start="4781" data-end="4813">Practical Development Paths</h2>
+<h3 data-start="4815" data-end="4834">OpenAI’s Path</h3>
+<p data-start="4836" data-end="4883">OpenAI suggests a progression for developers:</p>
+<ol data-start="4884" data-end="5153">
+<li data-start="4884" data-end="4933">
+<p data-start="4887" data-end="4933"><strong data-start="4887" data-end="4909">Prompt engineering</strong> – Cheapest, simplest.</p>
+</li>
+<li data-start="4934" data-end="4993">
+<p data-start="4937" data-end="4993"><strong data-start="4937" data-end="4959">Few-shot prompting</strong> – Better results with examples.</p>
+</li>
+<li data-start="4994" data-end="5070">
+<p data-start="4997" data-end="5070"><strong data-start="4997" data-end="5037">RAG (Retrieval-Augmented Generation)</strong> – Bring external knowledge in.</p>
+</li>
+<li data-start="5071" data-end="5153">
+<p data-start="5074" data-end="5153"><strong data-start="5074" data-end="5099">Finetuning (SFT/LoRA)</strong> – When you need strict formats or domain alignment.</p>
+</li>
+</ol>
+<p data-start="5155" data-end="5241">This ensures you don’t overinvest in finetuning when prompting or RAG would suffice.</p>
+<hr data-start="5243" data-end="5246">
+<h3 data-start="5248" data-end="5271">Distillation Path</h3>
+<p data-start="5273" data-end="5316">Another popular path is <strong data-start="5297" data-end="5313">distillation</strong>:</p>
+<ul data-start="5317" data-end="5468">
+<li data-start="5317" data-end="5380">
+<p data-start="5319" data-end="5380">Train a small student model to mimic a large teacher model.</p>
+</li>
+<li data-start="5381" data-end="5416">
+<p data-start="5383" data-end="5416">Use finetuned LLMs as teachers.</p>
+</li>
+<li data-start="5417" data-end="5468">
+<p data-start="5419" data-end="5468">Deploy smaller, faster students for production.</p>
+</li>
+</ul>
+<p data-start="5470" data-end="5559">This allows enterprises to get <strong data-start="5501" data-end="5530">80–90% of the performance</strong> at a fraction of the cost.</p>
+<hr data-start="5561" data-end="5564">
+<h2 data-start="5566" data-end="5596">Challenges and Trade-Offs</h2>
+<ol data-start="5598" data-end="6181">
+<li data-start="5598" data-end="5763">
+<p data-start="5601" data-end="5624"><strong data-start="5601" data-end="5622">Data Availability</strong></p>
+<ul data-start="5628" data-end="5763">
+<li data-start="5628" data-end="5675">
+<p data-start="5630" data-end="5675">Good finetuning data is rare and expensive.</p>
+</li>
+<li data-start="5679" data-end="5763">
+<p data-start="5681" data-end="5763">Synthetic data generation (using GPT-4 or Claude) helps but can introduce noise.</p>
+</li>
+</ul>
+</li>
+<li data-start="5765" data-end="5958">
+<p data-start="5768" data-end="5796"><strong data-start="5768" data-end="5794">Latency and Deployment</strong></p>
+<ul data-start="5800" data-end="5958">
+<li data-start="5800" data-end="5868">
+<p data-start="5802" data-end="5868">Adapters can increase latency if not merged back into the model.</p>
+</li>
+<li data-start="5872" data-end="5958">
+<p data-start="5874" data-end="5958">Some frameworks support <strong data-start="5898" data-end="5940">merging LoRA weights into base weights</strong> for deployment.</p>
+</li>
+</ul>
+</li>
+<li data-start="5960" data-end="6181">
+<p data-start="5963" data-end="5989"><strong data-start="5963" data-end="5987">When Not to Finetune</strong></p>
+<ul data-start="5993" data-end="6181">
+<li data-start="5993" data-end="6043">
+<p data-start="5995" data-end="6043">If the goal is to add new facts → Use <strong data-start="6033" data-end="6040">RAG</strong>.</p>
+</li>
+<li data-start="6047" data-end="6114">
+<p data-start="6049" data-end="6114">If the goal is structured output or style → Use <strong data-start="6097" data-end="6111">finetuning</strong>.</p>
+</li>
+<li data-start="6118" data-end="6181">
+<p data-start="6120" data-end="6181">Key mantra: <strong data-start="6132" data-end="6179">“Finetuning is for form, RAG is for facts.”</strong></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr data-start="6183" data-end="6186">
+<h2 data-start="6188" data-end="6217">The Future of Finetuning</h2>
+<p data-start="6219" data-end="6277">Where is finetuning headed? Several trends are emerging:</p>
+<ul data-start="6279" data-end="6692">
+<li data-start="6279" data-end="6366">
+<p data-start="6281" data-end="6366"><strong data-start="6281" data-end="6306">Low-rank pre-training</strong>: Training models from scratch with LoRA-like constraints.</p>
+</li>
+<li data-start="6367" data-end="6464">
+<p data-start="6369" data-end="6464"><strong data-start="6369" data-end="6392">Composable adapters</strong>: Building “adapter stores” where LoRAs can be mixed like Lego blocks.</p>
+</li>
+<li data-start="6465" data-end="6552">
+<p data-start="6467" data-end="6552"><strong data-start="6467" data-end="6493">Model merging at scale</strong>: Building models like SOLAR that rival much larger ones.</p>
+</li>
+<li data-start="6553" data-end="6692">
+<p data-start="6555" data-end="6692"><strong data-start="6555" data-end="6581">Ultra-low-bit training</strong>: BitNet (2024) showed training in <strong data-start="6616" data-end="6638">1.58-bit precision</strong> can be stable, hinting at massive efficiency gains.</p>
+</li>
+</ul>
+<p data-start="6694" data-end="6786">The direction is clear: finetuning will become cheaper, more modular, and more accessible.</p>
+<hr data-start="6788" data-end="6791">
+<h2 data-start="6793" data-end="6836">Conclusion: A New Era of Customization</h2>
+<p data-start="6838" data-end="6892">We’ve journeyed through the evolution of finetuning:</p>
+<ul data-start="6893" data-end="7091">
+<li data-start="6893" data-end="6945">
+<p data-start="6895" data-end="6945">From full finetuning and its memory bottlenecks…</p>
+</li>
+<li data-start="6946" data-end="6997">
+<p data-start="6948" data-end="6997">To PEFT methods like adapters and soft prompts…</p>
+</li>
+<li data-start="6998" data-end="7044">
+<p data-start="7000" data-end="7044">To the dominance of LoRA and its variants…</p>
+</li>
+<li data-start="7045" data-end="7091">
+<p data-start="7047" data-end="7091">To emerging approaches like model merging.</p>
+</li>
+</ul>
+<p data-start="7093" data-end="7288">The takeaway is simple: <strong data-start="7117" data-end="7186">you no longer need a billion-dollar budget to adapt powerful LLMs</strong>. With techniques like LoRA and QLoRA, even modest setups can achieve near state-of-the-art results.</p>
+<p data-start="7290" data-end="7350">For developers and enterprises, the message is empowering:</p>
+<ul data-start="7351" data-end="7519">
+<li data-start="7351" data-end="7391">
+<p data-start="7353" data-end="7391">Use prompting and RAG when possible.</p>
+</li>
+<li data-start="7392" data-end="7454">
+<p data-start="7394" data-end="7454">Use finetuning when you need control, style, or structure.</p>
+</li>
+<li data-start="7455" data-end="7519">
+<p data-start="7457" data-end="7519">Explore merging and distillation to push efficiency further.</p>
+</li>
+</ul>
+<p data-start="7521" data-end="7690">The field is moving fast, but one principle remains constant: <strong data-start="7583" data-end="7688">foundation models are the clay, and finetuning is how we sculpt them into tools that serve our needs.</strong></p>
+<hr data-start="7692" data-end="7695">
+<p data-start="7697" data-end="7821">✅ That’s <strong data-start="7706" data-end="7733">Section 5 (~1200 words)</strong> — wrapping up the blog post.<br data-start="7762" data-end="7765">
+We now have all <strong data-start="7781" data-end="7818">five sections (~5000 words total)</strong>.</p>
+<p data-start="7823" data-end="8013" data-is-last-node="" data-is-only-node="">Would you like me to <strong data-start="7844" data-end="7904">stitch all sections into one single continuous blog post</strong> for you (with headings and smooth transitions), or do you prefer to keep them as separate publishable parts?</p></div>
