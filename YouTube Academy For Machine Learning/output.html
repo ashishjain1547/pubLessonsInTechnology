@@ -1,0 +1,524 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"> </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.igrey {
+            color: #333;
+        }
+
+        .customli {
+            padding: 7px 0 !important;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+
+</head>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAOpqO5aeygcDo6OsCPtkSf_5Ptej0qhrMDO-2G1jfy3yMd6iSiymz8prJYy3OVPtScOrkzj2Boic5cKIr4p_NokGBl36fvmsuMQGOU_8QyZWRUcGv5fV0T3Xtow1Ello2vGjFjjW3dPKEPnzudQxs3K-85e_TYT6HBav4re448YmEm-umcF2gKblTz864/s650/ChatGPT%20Image%20Nov%208,%202025,%2009_28_32%20AM.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="433" data-original-width="650" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiAOpqO5aeygcDo6OsCPtkSf_5Ptej0qhrMDO-2G1jfy3yMd6iSiymz8prJYy3OVPtScOrkzj2Boic5cKIr4p_NokGBl36fvmsuMQGOU_8QyZWRUcGv5fV0T3Xtow1Ello2vGjFjjW3dPKEPnzudQxs3K-85e_TYT6HBav4re448YmEm-umcF2gKblTz864/s600/ChatGPT%20Image%20Nov%208,%202025,%2009_28_32%20AM.png"/></a></div>
+
+<br>
+<div id="customWhatsAppGroupLinkWrapper"></div>
+<br>
+<span class="customLink toggleBtn">Toggle All Sections</span>
+<br>
+
+<h2 class='customWhatisMachineLearningHeader'> <span class='arrow up'></span> What is Machine Learning?</h2>
+<div id='customWhatisMachineLearning'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=SAUeGtyLsrk' target='_blank'>Machine Learning Crash Course: Intro & What's New</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/SAUeGtyLsrk" title="Machine Learning Crash Course: Intro & What's New" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://youtu.be/RdC7KZ6OFPA' target='_blank'>What is ML?</a></div>
+    <div>Google Open Online Education</div>
+    <div><a href='https://survival8.blogspot.com/2024/08/what-is-machine-learning.html' target='_blank'>Interview Questions</a></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/RdC7KZ6OFPA" title="What is ML?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://youtu.be/KNAWp2S3w94' target='_blank'>Intro to Machine Learning (ML Zero to Hero - Part 1)</a></div>
+    <div>TensorFlow</div>
+    <div><a href='https://survival8.blogspot.com/2024/08/what-is-machine-learning-learn-from.html' target='_blank'>Interview Questions</a></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/KNAWp2S3w94" title="Intro to Machine Learning (ML Zero to Hero - Part 1)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://youtu.be/_Z9TRANg4c0' target='_blank'>Machine Learning Foundations: Ep #1 - What is ML?</a></div>
+    <div>Google for Developers</div>
+    <div><a href='https://survival8.blogspot.com/2024/08/what-is-machine-learning-learn-from.html' target='_blank'>Interview Questions</a></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/_Z9TRANg4c0" title="Machine Learning Foundations: Ep #1 - What is ML?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customWhatisOndeviceMachineLearningHeader'> <span class='arrow up'></span> What is On-device Machine Learning?</h2>
+<div id='customWhatisOndeviceMachineLearning'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=AkgDid5oYFM' target='_blank'>Introduction to ML on Android with MediaPipe</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/AkgDid5oYFM" title="Introduction to ML on Android with MediaPipe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customSupervisedMachineLearningHeader'> <span class='arrow up'></span> Supervised Machine Learning</h2>
+<div id='customSupervisedMachineLearning'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=NNue6rkDrws' target='_blank'>Supervised Machine Learning</a></div>
+    <div>Google Open Online Education</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/NNue6rkDrws" title="Supervised Machine Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customTypesofMachineLearningHeader'> <span class='arrow up'></span> Types of Machine Learning</h2>
+<div id='customTypesofMachineLearning'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=mMc_PIemSnU&list=PLqXS1b2lRpYTpUIEu3oxfhhTuBXmMPppA' target='_blank'>Machine Learning FOR BEGINNERS - Supervised, Unsupervised and Reinforcement Learning</a></div>
+    <div>Python Simplified</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/mMc_PIemSnU&list=PLqXS1b2lRpYTpUIEu3oxfhhTuBXmMPppA" title="Machine Learning FOR BEGINNERS - Supervised, Unsupervised and Reinforcement Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=9gGnTQTYNaE' target='_blank'>What is Machine Learning?</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/9gGnTQTYNaE" title="What is Machine Learning?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customGeneralizationHeader'> <span class='arrow up'></span> Generalization</h2>
+<div id='customGeneralization'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=TyT8i8YIcwI' target='_blank'>Machine Learning Crash Course: Generalization</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/TyT8i8YIcwI" title="Machine Learning Crash Course: Generalization" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customLinearRegressionHeader'> <span class='arrow up'></span> Linear Regression</h2>
+<div id='customLinearRegression'><ol>
+
+<li class="customli">
+    <div><a href='https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data' target='_blank'>Unit 5: Exploring bivariate numerical data</a></div>
+    <div>Khan Academy</div>
+    <div></div>
+    <div></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customSupervisedLearningHeader'> <span class='arrow up'></span> Supervised Learning</h2>
+<div id='customSupervisedLearning'><ol>
+
+<li class="customli">
+    <div><a href='https://youtu.be/cKxRvEZd3Mw' target='_blank'>Hello World - Machine Learning Recipes #1</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/cKxRvEZd3Mw" title="Hello World - Machine Learning Recipes #1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customLogisticRegressionHeader'> <span class='arrow up'></span> Logistic Regression</h2>
+<div id='customLogisticRegression'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=72AHKztZN44' target='_blank'>Machine Learning Crash Course: Logistic Regression</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/72AHKztZN44" title="Machine Learning Crash Course: Logistic Regression" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=r8OjlgWpAI0' target='_blank'>Lec-5: Logistic Regression with Simplest & Easiest Example | Machine Learning</a></div>
+    <div>Gate Smashers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/r8OjlgWpAI0" title="Lec-5: Logistic Regression with Simplest & Easiest Example | Machine Learning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=VImxF-9jk1E' target='_blank'>Logistic Regression Explained in Hindi</a></div>
+    <div>5 Minutes Engineering</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/VImxF-9jk1E" title="Logistic Regression Explained in Hindi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=L_xBe7MbPwk' target='_blank'>Tutorial 35- Logistic Regression Indepth Intuition- Part 1| Data Science</a></div>
+    <div>Krish Naik</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/L_xBe7MbPwk" title="Tutorial 35- Logistic Regression Indepth Intuition- Part 1| Data Science" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customDecisionTreeHeader'> <span class='arrow up'></span> Decision Tree</h2>
+<div id='customDecisionTree'><ol>
+
+<li class="customli">
+    <div><a href='https://youtu.be/JcI5E2Ng6r4?si=wsFMezPKr4luk8of' target='_blank'>Decision Tree: Important things to know</a></div>
+    <div>Intuitive Machine Learning</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/JcI5E2Ng6r4?si=wsFMezPKr4luk8of" title="Decision Tree: Important things to know" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customSupportVectorMachinesHeader'> <span class='arrow up'></span> Support Vector Machines</h2>
+<div id='customSupportVectorMachines'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=ny1iZ5A8ilA' target='_blank'>Support Vector Machines: All you need to know!</a></div>
+    <div>Intuitive Machine Learning</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/ny1iZ5A8ilA" title="Support Vector Machines: All you need to know!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://youtu.be/gUzEN2TxnxE' target='_blank'>Support Vector Machines (SVM) - the basics | simply explained</a></div>
+    <div>TileStats</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/gUzEN2TxnxE" title="Support Vector Machines (SVM) - the basics | simply explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=Q7vT0--5VII' target='_blank'>The Kernel Trick in Support Vector Machine (SVM)</a></div>
+    <div>Visually Explained</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/Q7vT0--5VII" title="The Kernel Trick in Support Vector Machine (SVM)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customGradientDescentHeader'> <span class='arrow up'></span> Gradient Descent</h2>
+<div id='customGradientDescent'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=QoK1nNAURw4' target='_blank'>Machine Learning Crash Course: Gradient Descent</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/QoK1nNAURw4" title="Machine Learning Crash Course: Gradient Descent" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customNeuralNetworksHeader'> <span class='arrow up'></span> Neural Networks</h2>
+<div id='customNeuralNetworks'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=jmmW0F0biz0' target='_blank'>Neural Networks Explained in 5 minutes</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/jmmW0F0biz0" title="Neural Networks Explained in 5 minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=XxZ0BibMTjw' target='_blank'>Artificial neural networks (ANN) - explained super simple</a></div>
+    <div>TileStats</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/XxZ0BibMTjw" title="Artificial neural networks (ANN) - explained super simple" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=IHZwWFHWa-w' target='_blank'>Gradient descent, how neural networks learn | Deep Learning Chapter 2</a></div>
+    <div>3Blue1Brown</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/IHZwWFHWa-w" title="Gradient descent, how neural networks learn | Deep Learning Chapter 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://youtu.be/i62czvwDlsw' target='_blank'>Gradient Descent Explained</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/i62czvwDlsw" title="Gradient Descent Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=S5AGN9XfPK4' target='_blank'>What is Back Propagation</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/S5AGN9XfPK4" title="What is Back Propagation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=NMZ0Tgc2jFQ' target='_blank'>Understanding Neural Networks and AI</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/NMZ0Tgc2jFQ" title="Understanding Neural Networks and AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customMachineLearningCoursesHeader'> <span class='arrow up'></span> Machine Learning Courses</h2>
+<div id='customMachineLearningCourses'><ol>
+
+<li class="customli">
+    <div><a href='https://developers.google.com/machine-learning/intro-to-ml' target='_blank'>Introduction to Machine Learning</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/playlist?list=PLOU2XLYxmsILZnKn6Erxdyhxmc3fxyitP' target='_blank'>ML on Android with MediaPipe (Course: On-device Machine Learning)</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal' target='_blank'>Machine Learning Recipes with Josh Gordon (Course: ML Recipes)</a></div>
+    <div>Google for Developers</div>
+    <div></div>
+    <div></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/playlist?list=PLOspHqNVtKABpPMnwkx27tEO2KOBvHLu6' target='_blank'>Data and AI</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU' target='_blank'>Stanford CS229: Machine Learning Full Course</a></div>
+    <div>Stanford Online</div>
+    <div></div>
+    <div></div>
+</li>
+
+</ol>
+</div>
+
+<span style='opacity:0;'>Tags: Machine Learning,Technology,Video,YouTube Academy,</span>
+<script>
+$('h2.customWhatisMachineLearningHeader').click(function () {
+            $("div#customWhatisMachineLearning").fadeToggle();
+            $("h2.customWhatisMachineLearningHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customWhatisOndeviceMachineLearningHeader').click(function () {
+            $("div#customWhatisOndeviceMachineLearning").fadeToggle();
+            $("h2.customWhatisOndeviceMachineLearningHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customSupervisedMachineLearningHeader').click(function () {
+            $("div#customSupervisedMachineLearning").fadeToggle();
+            $("h2.customSupervisedMachineLearningHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customTypesofMachineLearningHeader').click(function () {
+            $("div#customTypesofMachineLearning").fadeToggle();
+            $("h2.customTypesofMachineLearningHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customGeneralizationHeader').click(function () {
+            $("div#customGeneralization").fadeToggle();
+            $("h2.customGeneralizationHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customLinearRegressionHeader').click(function () {
+            $("div#customLinearRegression").fadeToggle();
+            $("h2.customLinearRegressionHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customSupervisedLearningHeader').click(function () {
+            $("div#customSupervisedLearning").fadeToggle();
+            $("h2.customSupervisedLearningHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customLogisticRegressionHeader').click(function () {
+            $("div#customLogisticRegression").fadeToggle();
+            $("h2.customLogisticRegressionHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customDecisionTreeHeader').click(function () {
+            $("div#customDecisionTree").fadeToggle();
+            $("h2.customDecisionTreeHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customSupportVectorMachinesHeader').click(function () {
+            $("div#customSupportVectorMachines").fadeToggle();
+            $("h2.customSupportVectorMachinesHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customGradientDescentHeader').click(function () {
+            $("div#customGradientDescent").fadeToggle();
+            $("h2.customGradientDescentHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customNeuralNetworksHeader').click(function () {
+            $("div#customNeuralNetworks").fadeToggle();
+            $("h2.customNeuralNetworksHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customMachineLearningCoursesHeader').click(function () {
+            $("div#customMachineLearningCourses").fadeToggle();
+            $("h2.customMachineLearningCoursesHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+
+ $(".customLink.toggleBtn").click(function () {
+        $("h2[class$='Header']").click();
+    });
+</script>

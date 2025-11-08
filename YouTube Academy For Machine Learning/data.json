@@ -1,0 +1,32 @@
+[
+    {
+        "TITLE": "<a href='https://developers.google.com/machine-learning/intro-to-ml' target='_blank'>Introduction to Machine Learning</a>",
+        "INSTRUCTOR": "Google for Developers",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "NA"
+    },
+    {
+        "TITLE": "<a href='https://www.youtube.com/playlist?list=PLOU2XLYxmsILZnKn6Erxdyhxmc3fxyitP' target='_blank'>ML on Android with MediaPipe (Course: On-device Machine Learning)</a>",
+        "INSTRUCTOR": "Google for Developers",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "NA"
+    },
+    {
+        "TITLE": "<a href='https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal' target='_blank'>Machine Learning Recipes with Josh Gordon (Course: ML Recipes)</a>",
+        "INSTRUCTOR": "Google for Developers",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "NA"
+    },
+    {
+        "TITLE": "<a href='https://www.youtube.com/playlist?list=PLOspHqNVtKABpPMnwkx27tEO2KOBvHLu6' target='_blank'>Data and AI</a>",
+        "INSTRUCTOR": "IBM Technology",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "NA"
+    },
+    {
+        "TITLE": "<a href='https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU' target='_blank'>Stanford CS229: Machine Learning Full Course</a>",
+        "INSTRUCTOR": "Stanford Online",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "NA"
+    }
+]
