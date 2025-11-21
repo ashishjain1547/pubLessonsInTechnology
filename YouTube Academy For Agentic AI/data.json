@@ -1,0 +1,14 @@
+[
+    {
+        "TITLE": "<a href='https://www.youtube.com/watch?v=7j1t3UZA1TY' target='_blank'>MCP vs API: Simplifying AI Agent Integration with External Data</a>",
+        "INSTRUCTOR": "IBM Technology",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "<iframe class=\"custom_iframe\" height=\"310\" src=\"https://www.youtube.com/embed/7j1t3UZA1TY\" title=\"MCP vs API: Simplifying AI Agent Integration with External Data\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    },
+    {
+        "TITLE": "<a href='https://www.youtube.com/watch?v=kQmXtrmQ5Zg' target='_blank'>Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic</a>",
+        "INSTRUCTOR": "AI Engineer",
+        "INTERVIEW_QUES": "NA",
+        "EMBED_CODE": "<iframe class=\"custom_iframe\" height=\"310\" src=\"https://www.youtube.com/embed/kQmXtrmQ5Zg\" title=\"Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
+    }
+]

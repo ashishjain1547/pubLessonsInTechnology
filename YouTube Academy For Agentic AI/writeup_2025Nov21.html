@@ -1,0 +1,457 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script src="https://knockoutjs.com/downloads/knockout-3.5.1.js"> </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.igrey {
+            color: #333;
+        }
+
+        .customli {
+            padding: 7px 0 !important;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+
+</head>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRNb_XNBvKr4RwBYRx8IvszHslbKOYjPeLoDCcpc9_wb_D-kycBlvPl2b1Md5HjhWsFVALlkhNHY6qkvsmX7uPfYmEf16l9HT0dtuyoN8QWE4XQCfGsxAxdJ5aFKIF7JtPWahGDi7pUKb_DOmuytt0ug2Yd3g5tpXruH-6f3jc0zVehHfpEYyI-25g2ysA/s650/ChatGPT%20Image%20Nov%2021,%202025,%2010_45_48%20PM.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="433" data-original-width="650" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRNb_XNBvKr4RwBYRx8IvszHslbKOYjPeLoDCcpc9_wb_D-kycBlvPl2b1Md5HjhWsFVALlkhNHY6qkvsmX7uPfYmEf16l9HT0dtuyoN8QWE4XQCfGsxAxdJ5aFKIF7JtPWahGDi7pUKb_DOmuytt0ug2Yd3g5tpXruH-6f3jc0zVehHfpEYyI-25g2ysA/s600/ChatGPT%20Image%20Nov%2021,%202025,%2010_45_48%20PM.png"/></a></div>
+
+<br>
+<div id="customWhatsAppGroupLinkWrapper"></div>
+<br>
+<span class="customLink toggleBtn">Toggle All Sections</span>
+<br>
+
+<h2 class='customAgenticAIInceptionHeader'> <span class='arrow up'></span> Agentic AI Inception</h2>
+<div id='customAgenticAIInception'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=z7shPnkFjt0' target='_blank'>AI agents: The scientist's new superpower | Stefan Harrer | TEDxSydney Salon</a></div>
+    <div>TED</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/z7shPnkFjt0" title="AI agents: The scientist's new superpower | Stefan Harrer | TEDxSydney Salon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://youtu.be/IityUpVVD38' target='_blank'>The Future Of AI Agents With Dharmesh Shah | INBOUND 2024</a></div>
+    <div>HubSpot - INBOUND</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/IityUpVVD38" title="The Future Of AI Agents With Dharmesh Shah | INBOUND 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=z7-fPFtgRE4' target='_blank'>Generative AI is just the Beginning. AI Agents are what Comes next | Daoud Abdel Hadi | TEDxPSUT</a></div>
+    <div>TED</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/z7-fPFtgRE4" title="Generative AI is just the Beginning. AI Agents are what Comes next | Daoud Abdel Hadi | TEDxPSUT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customWhatisAgenticAIHeader'> <span class='arrow up'></span> What is Agentic AI?</h2>
+<div id='customWhatisAgenticAI'><ol>
+
+<li class="customli">
+    <div><a href='https://youtu.be/F8NKVhkZZWI' target='_blank'>What are AI Agents?</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://youtube.com/embed/F8NKVhkZZWI" title="What are AI Agents?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=ZZ2QUCePgYw' target='_blank'>Intro to AI agents</a></div>
+    <div>Google Cloud Tech</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/ZZ2QUCePgYw" title="Intro to AI agents" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customLargeLanguageModelsHeader'> <span class='arrow up'></span> Large Language Models</h2>
+<div id='customLargeLanguageModels'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=zjkBMFhNj_g' target='_blank'>[1hr Talk] Intro to Large Language Models</a></div>
+    <div>Andrej Karpathy</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/zjkBMFhNj_g" title="[1hr Talk] Intro to Large Language Models" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=9vM4p9NN0Ts' target='_blank'>Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)</a></div>
+    <div>Stanford Online</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/9vM4p9NN0Ts" title="Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=enLbj0igyx4' target='_blank'>What Are Large Reasoning Models (LRMs)? Smarter AI Beyond LLMs</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/enLbj0igyx4" title="What Are Large Reasoning Models (LRMs)? Smarter AI Beyond LLMs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customAgenticAIOverviewStanfordHeader'> <span class='arrow up'></span> Agentic AI Overview (Stanford)</h2>
+<div id='customAgenticAIOverviewStanford'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=kJLiOGle3Lw' target='_blank'>Stanford Webinar - Agentic AI: A Progression of Language Model Usage</a></div>
+    <div>Stanford Online</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/kJLiOGle3Lw" title="Stanford Webinar - Agentic AI: A Progression of Language Model Usage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customBuildingAgentsHeader'> <span class='arrow up'></span> Building Agents</h2>
+<div id='customBuildingAgents'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=d5EltXhbcfA' target='_blank'>Building and evaluating AI Agents — Sayash Kapoor, AI Snake Oil</a></div>
+    <div>AI Engineer</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/d5EltXhbcfA" title="Building and evaluating AI Agents — Sayash Kapoor, AI Snake Oil" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=D7_ipDqhtwk' target='_blank'>How We Build Effective Agents: Barry Zhang, Anthropic</a></div>
+    <div>AI Engineer</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/D7_ipDqhtwk" title="How We Build Effective Agents: Barry Zhang, Anthropic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=xzXdLRUyjUg' target='_blank'>Lets Build An Agent from Scratch</a></div>
+    <div>AI Engineer</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/xzXdLRUyjUg" title="Lets Build An Agent from Scratch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customModelContextProtocolHeader'> <span class='arrow up'></span> Model Context Protocol</h2>
+<div id='customModelContextProtocol'><ol>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=7j1t3UZA1TY' target='_blank'>MCP vs API: Simplifying AI Agent Integration with External Data</a></div>
+    <div>IBM Technology</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/7j1t3UZA1TY" title="MCP vs API: Simplifying AI Agent Integration with External Data" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+<li class="customli">
+    <div><a href='https://www.youtube.com/watch?v=kQmXtrmQ5Zg' target='_blank'>Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic</a></div>
+    <div>AI Engineer</div>
+    <div></div>
+    <div><iframe class="custom_iframe" height="310" src="https://www.youtube.com/embed/kQmXtrmQ5Zg" title="Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</li>
+
+</ol>
+</div>
+
+<h2 class='customDeepLearningAIHeader'> <span class='arrow up'></span> Free Courses at DeepLearning.AI</h2>
+<div id='customDeepLearningAI'>
+1:<br>
+<a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank">
+Multi AI Agent Systems with CrewAI <br>
+→ Intro to multi-agent systems <br>
+Instructor: João Moura <br>
+
+<div class="separator" style="clear: both;"><img alt="" border="0" data-original-height="328" data-original-width="582" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRfiHznLigKDjDwVjMEL0oB-JU1JAoQVBB2WG3ZQYJDLmKZDCYLnM2vC4Yg_SUHa9mliL-gAz8rAGLuEegp4dwXp70N-S9UbT3demZ0-Ykdc8lgSh9H-6MAj8kyj6iWBIDnHgZYVfKh19KTgHophZyPQY99OhuZdq6JD3qZUPTLlLcSHDcJ3MDrO2LXeFp/s600/Screenshot%20from%202025-11-21%2021-48-35.png" width="600" /></div>
+</a>
+<br>
+2: <br>
+<a href="https://www.deeplearning.ai/short-courses/practical-multi-ai-agents-and-advanced-use-cases-with-crewai/" target="_blank">
+Practical Multi AI Agents and Advanced Use Cases with CrewAI <br>
+→ Builds on foundational CrewAI skills <br>
+Instructor: João Moura <br>
+
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="329" data-original-width="596" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdXWucFVjt3RmTDt-mD3a0nk7qpERkEHpagPMptpneWSZafxaesTLDVhyc_Qrc3DQPwHCcSvPuJt0nzU9awdRI9EU1SCck1OWJh47fMFQcXyKsC1kCVM8mflOUJzlzPn_rWqyQSdfU5mGQu3iIrb20PqmX3J8R5sftxMiKnrPMuiwxAmcz2Na7ZeYrsdXM/s600/Screenshot%20from%202025-11-21%2021-53-35.png"/></div>
+</a>
+<br>
+3:<br>
+<a href="https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/" target="_blank">
+AI Agents in LangGraph <br>
+→ LangGraph’s execution model + architecture <br>
+Instructors: Harrison Chase, Rotem Weiss <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghknX8372kyUWI2Ot9XzXNOFMIsSq4Qqvu3RRMrFEX5oqeloFYL2tLprv8x7doSETccVIsP7hjGxK-eyLOx2MLpnuQ_gxl3IBkQWeLWsakycYGp-uUfIgA8GTlNJNVStBXfhliEfQaozQRmmcpwrnYp4NuyMFQ1IIr7Q4XjT8jyNUElpZi8oqmzQTBquDd/s600/Screenshot%20from%202025-11-21%2021-56-33.png"/></div>
+</a>
+<br>
+4: <br>
+<a href="https://www.deeplearning.ai/short-courses/long-term-agentic-memory-with-langgraph/" target="_blank">
+Long-Term Agentic Memory with LangGraph <br>
+→ Advanced memory handling for agents <br>
+Instructor: Harrison Chase <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjlKviE54crauYx4xxyTTtIAby7BQ_60Wjt30mWU-1LuOopqB_HQkuPgbUP4_rpQ_Ced0P6CHt1tCPgNTlM9J39rIK41BK4XDW3f2BITwUznrSWQsg6lbileNOewELxeqCe4koWDuZR5Qc9PZ2WU3vwEVL1-NOy49WUGlLqbaIkf7M_p8YUWIAgtOaK14ND/s600/Screenshot%20from%202025-11-21%2022-03-02.png"/></div>
+</a>
+<br>
+5: <br>
+<a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank">
+AI Agentic Design Patterns with AutoGen <br>
+→ Design and coordination best practices <br>
+Instructors: Chi Wang, Qingyun Wu <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyWKghoMlLvx6y5MTWCo9Ki5a3Sp4eYlwNh31s7q89uIhxLl3LcmYFz2yo7u2rbdDwUUezGz4K_DH8bv-uoo3Mn77AJvThofNvBdGUSD4X6He9hmqmqSFeGFVCLpatIV4ZTWgn2FlDpR2is4ftjFtnHxrwZ-sNykwaM4dtQsDaBWuli3VL03HAEyP_CcF4/s600/Screenshot%20from%202025-11-21%2022-06-19.png"/></div>
+</a>
+<br>
+6: <br>
+<a href="https://www.deeplearning.ai/short-courses/evaluating-ai-agents/" target="_blank">
+Evaluating AI Agents <br>
+→ Measurement and performance evaluation <br>
+Instructors: John Gilhuly, Aman Khan <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZeiB89gbaFGdwi8AwqtI7y-WrKwqY6ndfR7bvGIbNGcia4z5R21xARVs09JdPhHTRoEx9bp5YPQ4IrciT7aHmgcXqi10jJa8iTygxIqlf-v2L153ZB44zKJMPm90alMnERxPW5IgGC_qNSrOccwvIN-fB7z3B4LTmDLENLzr9YwORcdA9IL-snFKtCUT0/s600/Screenshot%20from%202025-11-21%2022-10-26.png"/></div>
+</a>
+<br>
+7: <br>
+<a href="https://www.deeplearning.ai/short-courses/event-driven-agentic-document-workflows/" target="_blank">
+Event-Driven Agentic Document Workflows with LlamaIndex <br>
+→ Automate document workflows with RAG + agents <br>
+Instructor: Laurie Voss <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKHXZNx4KZJedhBceUQpYLZs3A0SR5zFHKTR5YCGlho_pDKTqVqHUthaayXdSRE7FMf_n8mA-yh83ei4ALvsMGGfsNwVbCStha90UYf579n3Xq1kl0-T3EYz0UVD8BBI4NOxk_1zI6y8iVYlMiIKSlDRoVsSp9d_lAXiq8BPXaiHLFuCzYHvICnxI_1Bgp/s600/Screenshot%20from%202025-11-21%2022-13-03.png"/></div>
+</a> 
+<br>
+8: <br>
+<a href="https://www.deeplearning.ai/short-courses/build-apps-with-windsurfs-ai-coding-agents/" target="_blank">
+Build Apps with Windsurf's AI Coding Agents <br>
+→ Code generation agents in practice <br>
+Instructor: Anshul Ramachandran <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh56T15wFF3wrjunmEOlGsHokP8FAwna1BA0UzgQDg1SAnzulbM1pUwxAstcJvTGErudEr8olL70osZ_5wFtnzOSt9oBJsH81cUanKlfuynS1rEnkts5O6pChbT8ECXdPVFth3b5IE6EoREGuhi5NvQvl8KQsSHMWdKAl-mysg9Q3d36htXwjKrv-o_3kWW/s600/Screenshot%20from%202025-11-21%2022-14-37.png"/></div>
+</a>
+<br>
+9: <br>
+<a href="https://www.deeplearning.ai/short-courses/building-code-agents-with-hugging-face-smolagents/" target="_blank">
+Building Code Agents with Hugging Face <br>
+→ Explore Hugging Face's agent capabilities <br>
+Instructors: Thomas Wolf, Aymeric Roucher <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhh6zm365MnDnw38Ru_VzpFuA9WDt0wu0IJGznDH2ABw1NPLah6CCDfuazhS89Z59ameTnRHhM-fW0KMW2a-HRl3zG1FyYluJVdlylH1zEYoMk1hcXz1nT__0XBZHLDwT4Hgq8RmOqZ2-Pch_POm0h5zNRyMt2WOKkfWRF8LG8bZxRdh2g-qhDLlVl7YaLP/s600/Screenshot%20from%202025-11-21%2022-16-54.png"/></div>
+</a>
+<br>
+10: <br>
+<a href="https://www.deeplearning.ai/short-courses/building-ai-browser-agents/" target="_blank">
+Building AI Browser Agents <br>
+→ Web-interacting agents <br>
+Instructors: Div Garg, Naman Garg <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGImK1CUc-_1pbZ19LyHVvbIsy9syIEI-U1sUbuqygwr6AOKdfaBoT6e3NpltG7Ob1LJQJbAUpFgTHkXozBTi7LYbQXdSLWS1jbJYKFIrzXo3Xa2wRb2U12fd5DNLZQanDxkSMY-eZHT3O3fIMR7G6bHiMdFfaChw7qDEtltL8hOiTVirmjst0YNV0qNKA/s600/Screenshot%20from%202025-11-21%2022-19-07.png"/></div>
+</a>
+<br>
+11: <br>
+<a href="https://www.deeplearning.ai/short-courses/dspy-build-optimize-agentic-apps/" target="_blank">
+DsPy: Build and Optimize Agentic Apps <br>
+→ Pythonic framework for optimizing agents <br>
+Instructor: Chen Qian <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="327" data-original-width="586" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjaGxs73ylJBQFe3ZK-sgkATYglhzrpHByu-qPbo7kyo9Y0aL3RyHXOiLCF9ndurAGysPiAjh8O-yaBgLlrcBdGHIrKPfdAMfczSlpPWesPTOp0xNOIYSBDn6hXRlzBIQduqbkP0noVusk4vJH79gb9HU1jm4q4VQL1MMyyCq2HMKNczzaFpHFKzBb5Moz6/s600/Screenshot%20from%202025-11-21%2022-20-43.png"/></div>
+</a>
+<br>
+12: <br>
+<a href="https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/" target="_blank">
+MCP: Build Rich-Context AI Apps with Anthropic <br>
+→ Anthropic’s take on context-rich agents <br>
+Instructor: Elie Schoppik <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="335" data-original-width="591" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_u0HHfmYBRoPvJErS6blbvwgirhKMfrfT5Xm1FUWvJ5bScp8xmo60JzhTfB2xitaATGnS3V3bm1994fRgxjW82sKuWLDX_Ihg6ffzGaduDIG7nRM04vxtkp-mlxiNS9PkDVA9ywfPLMRx8D3ODzlMS9P7E8oASPcXoc-ys2EPNb-ugU5apQSI_qC_RYYQ/s600/Screenshot%20from%202025-11-21%2022-22-28.png"/></div>
+</a>
+<br>
+13: <br>
+<a href="https://www.deeplearning.ai/short-courses/semantic-caching-for-ai-agents/" target="_blank">
+Semantic Caching for AI Agents using Redis <br>
+Instructors: Tyler Hutcherson, Iliya Zhechev <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="335" data-original-width="591" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjhXi-lZAZkNd7PclQhe035I5GxSrP4xX0rc_NIJU4fj3L_gDwOYV8gfSEPXZyBFi-pJws9EshXEAJeEqvOwkF6p0ekvyKsrmAOh67qwxBD6DK-5-0QJxUhqjufrK92VljMRu5vyfCgyhlHjPwqJ4E3-a56OT8GVXfLWBzQIhlCsfsVaZy4HKlcESwRZoNR/s600/Screenshot%20from%202025-11-21%2022-25-12.png"/></div>
+</a>
+<br>
+14: <br>
+<a href="https://www.deeplearning.ai/short-courses/governing-ai-agents/" target="_blank">
+Governing AI Agents <br>
+Instructor: Amber Roberts <br>
+With: DataBricks <br>
+<div class="separator" style="clear: both;"><img alt="" border="0" width="600" data-original-height="335" data-original-width="591" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7hbpH1HF45OYQezRWjhhRUFjAeAUdZBbnNvq-yfzrMPKenZCX1vNOofeL03MGFCqvF_CNTuolFPfyYzqAj3wv1Ndjy3TSw_MLW77db5RCBHkTPp6h-bohEox33Tk1qu-JjE8X5eq3EE0nmvbpCBTjykMLdNlmOgvsh_DbJff4XEdl6vImSj0D332KaV95/s600/Screenshot%20from%202025-11-21%2022-28-47.png"/></div>
+</a>
+</div>
+
+<span style="opacity: 0;">Tags: Agentic AI,YouTube Academy,</span>
+
+<script>
+$('h2.customAgenticAIInceptionHeader').click(function () {
+            $("div#customAgenticAIInception").fadeToggle();
+            $("h2.customAgenticAIInceptionHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customWhatisAgenticAIHeader').click(function () {
+            $("div#customWhatisAgenticAI").fadeToggle();
+            $("h2.customWhatisAgenticAIHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customLargeLanguageModelsHeader').click(function () {
+            $("div#customLargeLanguageModels").fadeToggle();
+            $("h2.customLargeLanguageModelsHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customAgenticAIOverviewStanfordHeader').click(function () {
+            $("div#customAgenticAIOverviewStanford").fadeToggle();
+            $("h2.customAgenticAIOverviewStanfordHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customBuildingAgentsHeader').click(function () {
+            $("div#customBuildingAgents").fadeToggle();
+            $("h2.customBuildingAgentsHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+$('h2.customModelContextProtocolHeader').click(function () {
+            $("div#customModelContextProtocol").fadeToggle();
+            $("h2.customModelContextProtocolHeader > .arrow").toggleClass('up').toggleClass('down');
+        }); 
+
+$('h2.customDeepLearningAIHeader').click(function () {
+    $("div#customDeepLearningAI").fadeToggle();
+    $("h2.customDeepLearningAIHeader > .arrow").toggleClass('up').toggleClass('down');
+}); 
+
+ $(".customLink.toggleBtn").click(function () {
+        $("h2[class$='Header']").click();
+    });
+</script>
