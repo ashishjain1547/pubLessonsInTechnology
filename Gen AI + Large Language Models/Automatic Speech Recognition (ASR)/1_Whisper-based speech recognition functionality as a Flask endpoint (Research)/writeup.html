@@ -1,0 +1,598 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customAutomaticSpeechRecognitionASRHeader" target="_blank">Check out all on 'Automatic Speech Recognition'</a>
+
+<h1>Part 1</h1>
+<h2>Dated: March 2025</h2>
+<h3>I want to run a Speech Recognition app as a flask endpoint?</h3>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="255">Below is an example of how to expose your Whisper-based speech recognition functionality as a Flask endpoint. In this example, the server accepts an audio file via a POST request, processes it with the Whisper model, and returns the transcription as JSON.</p>
+    <hr data-start="257" data-end="260">
+    <h3 data-start="262" data-end="287"><strong data-start="266" data-end="287">Example: <code data-start="277" data-end="285">app.py</code></strong></h3>
+<i style="color: blue;"><pre class="!overflow-visible" data-start="289" data-end="1951">
+    
+<code class="!whitespace-pre language-python"><span><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, request, jsonify
+<span class="hljs-keyword">import</span> whisper
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> uuid
+<span class="hljs-keyword">import</span> soundfile <span class="hljs-keyword">as</span> sf
+
+app = Flask(__name__)
+
+<span class="hljs-comment"># Load the Whisper model (choose "base", "small", "medium", or "large")</span>
+model = whisper.load_model(<span class="hljs-string">"base"</span>)
+
+<span class="hljs-meta">@app.route(<span class="hljs-params"><span class="hljs-string">"/transcribe"</span>, methods=[<span class="hljs-string">"POST"</span>]</span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">transcribe</span>():
+    <span class="hljs-comment"># Check if an audio file is included in the request</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-string">"audio"</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> request.files:
+        <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"error"</span>: <span class="hljs-string">"No audio file provided."</span>}), <span class="hljs-number">400</span>
+
+    audio_file = request.files[<span class="hljs-string">"audio"</span>]
+    <span class="hljs-comment"># Generate a unique filename to temporarily store the audio file</span>
+    temp_filename = <span class="hljs-string">f"temp_<span class="hljs-subst">{uuid.uuid4().<span class="hljs-built_in">hex</span>}</span>.wav"</span>
+    audio_file.save(temp_filename)
+
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-comment"># Optional: Ensure the audio is 16kHz. </span>
+        <span class="hljs-comment"># This reads the file and, if needed, rewrites it with the correct sample rate.</span>
+        audio_data, samplerate = sf.read(temp_filename)
+        <span class="hljs-keyword">if</span> samplerate != <span class="hljs-number">16000</span>:
+            sf.write(temp_filename, audio_data, <span class="hljs-number">16000</span>)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        os.remove(temp_filename)
+        <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"error"</span>: <span class="hljs-string">"Failed to process audio file"</span>, <span class="hljs-string">"details"</span>: <span class="hljs-built_in">str</span>(e)}), <span class="hljs-number">500</span>
+
+    <span class="hljs-keyword">try</span>:
+        <span class="hljs-comment"># Run transcription using Whisper</span>
+        result = model.transcribe(temp_filename)
+        transcription = result.get(<span class="hljs-string">"text"</span>, <span class="hljs-string">""</span>)
+    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+        os.remove(temp_filename)
+        <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"error"</span>: <span class="hljs-string">"Transcription failed"</span>, <span class="hljs-string">"details"</span>: <span class="hljs-built_in">str</span>(e)}), <span class="hljs-number">500</span>
+
+    <span class="hljs-comment"># Clean up the temporary file</span>
+    os.remove(temp_filename)
+    <span class="hljs-keyword">return</span> jsonify({<span class="hljs-string">"transcription"</span>: transcription})
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    <span class="hljs-comment"># Run the Flask server on 0.0.0.0 so it's accessible on your network</span>
+    app.run(debug=<span class="hljs-literal">True</span>, host=<span class="hljs-string">"0.0.0.0"</span>, port=<span class="hljs-number">5000</span>)
+</span></code></div></div></pre></i>
+    <hr data-start="1953" data-end="1956">
+    <h3 data-start="1958" data-end="2011"><strong data-start="1962" data-end="2011">How to Run the Flask Endpoint on Linux/Ubuntu</strong></h3>
+    <ol data-start="2013" data-end="2918">
+    <li data-start="2013" data-end="2323">
+    <p data-start="2016" data-end="2126"><strong data-start="2016" data-end="2040">Install Dependencies</strong><br data-start="2040" data-end="2043">
+    Make sure you have the necessary packages installed. Open your terminal and run:</p>
+    <pre class="!overflow-visible" data-start="2130" data-end="2245"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">sh</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-sh"><span>sudo apt update &amp;&amp; sudo apt install -y ffmpeg
+    pip install flask whisper openai-whisper soundfile
+    </span></code></div></div></pre>
+    <blockquote data-start="2249" data-end="2323">
+    <p data-start="2251" data-end="2323">Note: The <code data-start="2261" data-end="2269">ffmpeg</code> package is useful for handling various audio formats.</p>
+    </blockquote>
+    </li>
+    <li data-start="2325" data-end="2398">
+    <p data-start="2328" data-end="2398"><strong data-start="2328" data-end="2345">Save the Code</strong><br data-start="2345" data-end="2348">
+    Save the code above into a file named <code data-start="2389" data-end="2397">app.py</code>.</p>
+    </li>
+    <li data-start="2400" data-end="2636">
+    <p data-start="2403" data-end="2510"><strong data-start="2403" data-end="2427">Run the Flask Server</strong><br data-start="2427" data-end="2430">
+    In your terminal, navigate to the folder where <code data-start="2480" data-end="2488">app.py</code> is saved and execute:</p>
+    <pre class="!overflow-visible" data-start="2514" data-end="2543"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">sh</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-sh"><span>python app.py
+    </span></code></div></div></pre>
+    <p data-start="2547" data-end="2636">The server will start on port 5000 and be accessible at <code data-start="2603" data-end="2635">http://0.0.0.0:5000/transcribe</code>.</p>
+    </li>
+    <li data-start="2638" data-end="2918">
+    <p data-start="2641" data-end="2756"><strong data-start="2641" data-end="2662">Test the Endpoint</strong><br data-start="2662" data-end="2665">
+    You can test the endpoint using tools like <code data-start="2711" data-end="2717">curl</code> or Postman. For example, using <code data-start="2749" data-end="2755">curl</code>:</p>
+    <pre class="!overflow-visible" data-start="2760" data-end="2856"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">sh</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-sh"><span>curl -X POST -F <span class="hljs-string">"audio=@path/to/your/audio.wav"</span> http://localhost:5000/transcribe
+    </span></code></div></div></pre>
+    <p data-start="2860" data-end="2918">You should receive a JSON response with the transcription.</p>
+    </li>
+    </ol>
+    <hr data-start="2920" data-end="2923">
+    <h3 data-start="2925" data-end="2958"><strong data-start="2929" data-end="2958">Additional Considerations</strong></h3>
+    <ul data-start="2960" data-end="3486">
+    <li data-start="2960" data-end="3169">
+    <p data-start="2962" data-end="3169"><strong data-start="2962" data-end="2986">Audio Preprocessing:</strong><br data-start="2986" data-end="2989">
+    In a production system, you might want to include more robust audio processing (e.g., noise reduction, resampling using a dedicated library) before passing the file to the model.</p>
+    </li>
+    <li data-start="3171" data-end="3340">
+    <p data-start="3173" data-end="3340"><strong data-start="3173" data-end="3192">Error Handling:</strong><br data-start="3192" data-end="3195">
+    The code includes basic error handling for missing files and processing issues. You can extend these handlers to meet your application's needs.</p>
+    </li>
+    <li data-start="3342" data-end="3486">
+    <p data-start="3344" data-end="3486"><strong data-start="3344" data-end="3359">Deployment:</strong><br data-start="3359" data-end="3362">
+    When deploying in production, consider using a production-grade server like Gunicorn behind a reverse proxy (e.g., Nginx).</p>
+    </li>
+    </ul>
+    <p data-start="3488" data-end="3634" data-is-last-node="" data-is-only-node="">This setup transforms your offline Whisper-based speech recognition functionality into a RESTful Flask endpoint that you can call from any client.</p></div>
+
+
+<h2>Can you also provide a webpage to run as per this flask endpoint?
+<br>But note: I want to record user voice and send that</h2>
+
+<div class="markdown prose w-full break-words dark:prose-invert light"><p data-start="0" data-end="306">Below is an example HTML page that uses the browser’s MediaRecorder API to record the user’s voice, then sends the recorded audio as a file to your Flask endpoint. In this example, the endpoint is assumed to be hosted on the same origin at <code data-start="240" data-end="253">/transcribe</code>. (If it’s hosted elsewhere, simply update the URL.)</p>
+    <blockquote data-start="308" data-end="575">
+    <p data-start="310" data-end="575"><strong data-start="310" data-end="319">Note:</strong><br data-start="319" data-end="322">
+    Most browsers will record audio as WebM/Opus. On the Flask side, if needed, you can use ffmpeg (or similar) to convert the file to WAV or another format that works best with Whisper. Alternatively, you can modify the Flask code to accept WebM input.</p>
+    </blockquote>
+    <hr data-start="577" data-end="580">
+    <h3 data-start="582" data-end="600"><strong data-start="586" data-end="600">index.html</strong></h3>
+    <pre class="!overflow-visible" data-start="602" data-end="3323"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between rounded-t-[5px] h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none">html</div><div class="sticky top-9 md:top-[5.75rem]"><div class="absolute bottom-0 right-2 flex h-9 items-center"><div class="flex items-center rounded bg-token-sidebar-surface-primary px-2 font-sans text-xs text-token-text-secondary dark:bg-token-main-surface-secondary"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex select-none items-center gap-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre language-html"><span><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Speech Recognition Demo<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+        <span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">font-family</span>: Arial, sans-serif; <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span>; }
+        <span class="hljs-selector-id">#recordButton</span> { <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2em</span>; }
+        <span class="hljs-selector-id">#status</span> { <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>; }
+        <span class="hljs-selector-id">#transcription</span> { <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">1em</span>; <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.1em</span>; <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>; }
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Speech Recognition Demo<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"recordButton"</span>&gt;</span>Start Recording<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"status"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Transcription:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"transcription"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    
+      <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+        <span class="hljs-keyword">let</span> mediaRecorder;
+        <span class="hljs-keyword">let</span> audioChunks = [];
+        <span class="hljs-keyword">const</span> recordButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'recordButton'</span>);
+        <span class="hljs-keyword">const</span> statusDisplay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'status'</span>);
+        <span class="hljs-keyword">const</span> transcriptionDisplay = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">'transcription'</span>);
+        <span class="hljs-keyword">let</span> isRecording = <span class="hljs-literal">false</span>;
+    
+        recordButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">async</span> () =&gt; {
+          <span class="hljs-keyword">if</span> (!isRecording) {
+            <span class="hljs-comment">// Request microphone access and start recording.</span>
+            <span class="hljs-keyword">try</span> {
+              <span class="hljs-keyword">const</span> stream = <span class="hljs-keyword">await</span> navigator.<span class="hljs-property">mediaDevices</span>.<span class="hljs-title function_">getUserMedia</span>({ <span class="hljs-attr">audio</span>: <span class="hljs-literal">true</span> });
+              mediaRecorder = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MediaRecorder</span>(stream);
+              audioChunks = [];
+    
+              mediaRecorder.<span class="hljs-property">ondataavailable</span> = <span class="hljs-function"><span class="hljs-params">event</span> =&gt;</span> {
+                <span class="hljs-keyword">if</span> (event.<span class="hljs-property">data</span> &amp;&amp; event.<span class="hljs-property">data</span>.<span class="hljs-property">size</span> &gt; <span class="hljs-number">0</span>) {
+                  audioChunks.<span class="hljs-title function_">push</span>(event.<span class="hljs-property">data</span>);
+                }
+              };
+    
+              mediaRecorder.<span class="hljs-property">onstop</span> = <span class="hljs-keyword">async</span> () =&gt; {
+                <span class="hljs-keyword">const</span> audioBlob = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Blob</span>(audioChunks, { <span class="hljs-attr">type</span>: <span class="hljs-string">'audio/webm'</span> });
+                <span class="hljs-comment">// Prepare the audio file for upload.</span>
+                <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>();
+                formData.<span class="hljs-title function_">append</span>(<span class="hljs-string">'audio'</span>, audioBlob, <span class="hljs-string">'recording.webm'</span>);
+    
+                statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Sending audio for transcription...'</span>;
+                <span class="hljs-keyword">try</span> {
+                  <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">'/transcribe'</span>, {
+                    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+                    <span class="hljs-attr">body</span>: formData
+                  });
+                  <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> response.<span class="hljs-title function_">json</span>();
+                  transcriptionDisplay.<span class="hljs-property">textContent</span> = data.<span class="hljs-property">transcription</span> || <span class="hljs-string">'No transcription available.'</span>;
+                } <span class="hljs-keyword">catch</span> (error) {
+                  transcriptionDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Error: '</span> + error;
+                }
+                statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">''</span>;
+              };
+    
+              mediaRecorder.<span class="hljs-title function_">start</span>();
+              recordButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Stop Recording'</span>;
+              isRecording = <span class="hljs-literal">true</span>;
+              statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Recording...'</span>;
+            } <span class="hljs-keyword">catch</span> (error) {
+              statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Error accessing microphone: '</span> + error;
+            }
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">// Stop the recording.</span>
+            mediaRecorder.<span class="hljs-title function_">stop</span>();
+            recordButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Start Recording'</span>;
+            isRecording = <span class="hljs-literal">false</span>;
+            statusDisplay.<span class="hljs-property">textContent</span> = <span class="hljs-string">'Processing audio...'</span>;
+          }
+        });
+      </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+    </span></code></div></div></pre>
+    <hr data-start="3325" data-end="3328">
+    <h3 data-start="3330" data-end="3350"><strong data-start="3334" data-end="3350">How It Works</strong></h3>
+    <ol data-start="3352" data-end="4167">
+    <li data-start="3352" data-end="3532">
+    <p data-start="3355" data-end="3378"><strong data-start="3355" data-end="3376">User Interaction:</strong></p>
+    <ul data-start="3382" data-end="3532">
+    <li data-start="3382" data-end="3431">The user clicks the <strong data-start="3404" data-end="3423">Start Recording</strong> button.</li>
+    <li data-start="3435" data-end="3532">The page requests microphone access via <code data-start="3477" data-end="3531">navigator.mediaDevices.getUserMedia({ audio: true })</code>.</li>
+    </ul>
+    </li>
+    <li data-start="3534" data-end="3656">
+    <p data-start="3537" data-end="3553"><strong data-start="3537" data-end="3551">Recording:</strong></p>
+    <ul data-start="3557" data-end="3656">
+    <li data-start="3557" data-end="3611">A <code data-start="3561" data-end="3576">MediaRecorder</code> instance records the audio stream.</li>
+    <li data-start="3615" data-end="3656">Recorded chunks are stored in an array.</li>
+    </ul>
+    </li>
+    <li data-start="3658" data-end="3989">
+    <p data-start="3661" data-end="3692"><strong data-start="3661" data-end="3690">Stopping &amp; Sending Audio:</strong></p>
+    <ul data-start="3696" data-end="3989">
+    <li data-start="3696" data-end="3789">When the user clicks the button again (now labeled <strong data-start="3749" data-end="3767">Stop Recording</strong>), the recorder stops.</li>
+    <li data-start="3793" data-end="3871">The recorded chunks are assembled into a Blob (with MIME type <code data-start="3857" data-end="3869">audio/webm</code>).</li>
+    <li data-start="3875" data-end="3989">The Blob is appended to a <code data-start="3903" data-end="3913">FormData</code> object and sent via a <code data-start="3936" data-end="3945">fetch()</code> POST request to the <code data-start="3966" data-end="3979">/transcribe</code> endpoint.</li>
+    </ul>
+    </li>
+    <li data-start="3991" data-end="4167">
+    <p data-start="3994" data-end="4016"><strong data-start="3994" data-end="4014">Display Results:</strong></p>
+    <ul data-start="4020" data-end="4167">
+    <li data-start="4020" data-end="4110">The Flask endpoint processes the audio and returns a JSON object with the transcription.</li>
+    <li data-start="4114" data-end="4167">The transcription is then displayed on the webpage.</li>
+    </ul>
+    </li>
+    </ol>
+    <hr data-start="4169" data-end="4172">
+    <p data-start="4174" data-end="4412" data-is-last-node="" data-is-only-node="">This simple webpage allows you to record audio in the browser and send it to your Flask endpoint where Whisper can process it. Adjust the MIME type or perform client-side conversion if your Flask endpoint requires a specific audio format.</p></div>
+
+
+<hr>
+
+<h1>Part 2</h1>
+<h2>Dated: Dec 2025</h2>
+
+<b><i>I have this code for Automatic speech recognition. Is this still valid? Or there are any updates or changes needed in it?</i></b>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="127">Short answer: <strong data-start="14" data-end="37">yes, it still works</strong>, as long as you're using the original <strong data-start="76" data-end="126">OpenAI Whisper (openai/whisper Python library)</strong>.</p>
+<p data-start="129" data-end="318">But — depending on your goals — <strong data-start="161" data-end="251">there are some important updates, improvements, and optimizations you should consider.</strong> I’ll break it into sections so you can decide what applies to you.</p>
+<hr data-start="320" data-end="323">
+<h1 data-start="325" data-end="357">✅ <strong data-start="329" data-end="357">Your Code is Still Valid</strong></h1>
+<p data-start="358" data-end="361">If:</p>
+<ul data-start="362" data-end="540">
+<li data-start="362" data-end="434">
+<p data-start="364" data-end="434">You have <code data-start="373" data-end="424">pip install git+https://github.com/openai/whisper</code> installed</p>
+</li>
+<li data-start="435" data-end="464">
+<p data-start="437" data-end="464">You are running Python 3.8+</p>
+</li>
+<li data-start="465" data-end="540">
+<p data-start="467" data-end="540">You have FFmpeg installed (<code data-start="494" data-end="514">apt install ffmpeg</code> or <code data-start="518" data-end="539">brew install ffmpeg</code>)</p>
+</li>
+</ul>
+<p data-start="542" data-end="598">…then your code will run and transcribe audio correctly.</p>
+<p data-start="600" data-end="711">Your API structure is fine, the 16kHz conversion is fine, and <code data-start="662" data-end="682">model.transcribe()</code> is still the correct method.</p>
+<hr data-start="713" data-end="716">
+<h1 data-start="718" data-end="776">⚠️ <strong data-start="723" data-end="776">But: Whisper Python Is No Longer Updated Actively</strong></h1>
+<p data-start="777" data-end="848">The <strong data-start="781" data-end="815">classic Whisper Python library</strong> is stable but not evolving much.</p>
+<p data-start="850" data-end="909">Latest improvements in speech recognition are happening in:</p>
+<h3 data-start="911" data-end="973">⭐ <strong data-start="917" data-end="971">OpenAI Whisper v3 / v3-turbo (via API, not Python)</strong></h3>
+<ul data-start="974" data-end="1112">
+<li data-start="974" data-end="992">
+<p data-start="976" data-end="992">Faster inference</p>
+</li>
+<li data-start="993" data-end="1023">
+<p data-start="995" data-end="1023">Better multilingual accuracy</p>
+</li>
+<li data-start="1024" data-end="1070">
+<p data-start="1026" data-end="1070">Whisper supports VAD and segmentation better</p>
+</li>
+<li data-start="1071" data-end="1112">
+<p data-start="1073" data-end="1112">Streaming transcription (not in Python)</p>
+</li>
+</ul>
+<p data-start="1114" data-end="1184">If you want latest quality + speed improvements, you should switch to:</p>
+<pre class="overflow-visible!" data-start="1186" data-end="1390"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">from</span></span><span> openai </span><span><span class="hljs-keyword">import</span></span><span> OpenAI
+client = OpenAI()
+
+audio = client.audio.transcriptions.create(
+    file=</span><span><span class="hljs-built_in">open</span></span><span>(</span><span><span class="hljs-string">"audio.wav"</span></span><span>,</span><span><span class="hljs-string">"rb"</span></span><span>),
+    model=</span><span><span class="hljs-string">"gpt-4o-mini-tts"</span></span><span>  </span><span><span class="hljs-comment"># Whisper successor</span></span><span>
+)
+</span><span><span class="hljs-built_in">print</span></span><span>(audio.text)
+</span></span></code></div></div></pre>
+<p data-start="1392" data-end="1453">This is <strong data-start="1400" data-end="1427">much faster and cleaner</strong>, but requires an API key.</p>
+<hr data-start="1455" data-end="1458">
+<h1 data-start="1460" data-end="1500">🚀 <strong data-start="1465" data-end="1500">If You Want Local ASR (No API):</strong></h1>
+<h3 data-start="1501" data-end="1530">Best Whisper forks today:</h3>
+<p data-start="1531" data-end="1557"><strong data-start="1531" data-end="1557">1. CTranslate2 Whisper</strong></p>
+<ul data-start="1558" data-end="1652">
+<li data-start="1558" data-end="1576">
+<p data-start="1560" data-end="1576">3× to 10× faster</p>
+</li>
+<li data-start="1577" data-end="1609">
+<p data-start="1579" data-end="1609">Runs on CPU or GPU efficiently</p>
+</li>
+<li data-start="1610" data-end="1652">
+<p data-start="1612" data-end="1652">Drop-in replacement for original Whisper</p>
+</li>
+</ul>
+<p data-start="1654" data-end="1700"><a data-start="1654" data-end="1700" rel="noopener" target="_new" class="decorated-link cursor-pointer">https://github.com/guillaumekln/faster-whisper<span aria-hidden="true" class="ms-0.5 inline-block align-middle leading-none"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-rtl-flip="" class="block h-[0.75em] w-[0.75em] stroke-current stroke-[0.75]"><path d="M14.3349 13.3301V6.60645L5.47065 15.4707C5.21095 15.7304 4.78895 15.7304 4.52925 15.4707C4.26955 15.211 4.26955 14.789 4.52925 14.5293L13.3935 5.66504H6.66011C6.29284 5.66504 5.99507 5.36727 5.99507 5C5.99507 4.63273 6.29284 4.33496 6.66011 4.33496H14.9999L15.1337 4.34863C15.4369 4.41057 15.665 4.67857 15.665 5V13.3301C15.6649 13.6973 15.3672 13.9951 14.9999 13.9951C14.6327 13.9951 14.335 13.6973 14.3349 13.3301Z"></path></svg></span></a></p>
+<p data-start="1702" data-end="1716">Minimal usage:</p>
+<pre class="overflow-visible!" data-start="1718" data-end="1903"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">from</span></span><span> faster_whisper </span><span><span class="hljs-keyword">import</span></span><span> WhisperModel
+
+model = WhisperModel(</span><span><span class="hljs-string">"base"</span></span><span>, device=</span><span><span class="hljs-string">"cpu"</span></span><span>)
+segments, info = model.transcribe(</span><span><span class="hljs-string">"audio.wav"</span></span><span>)
+</span><span><span class="hljs-keyword">for</span></span><span> seg </span><span><span class="hljs-keyword">in</span></span><span> segments:
+    </span><span><span class="hljs-built_in">print</span></span><span>(seg.text)
+</span></span></code></div></div></pre>
+<h3 data-start="1905" data-end="1947"><strong data-start="1909" data-end="1947">Why faster-whisper is recommended:</strong></h3>
+<ul data-start="1948" data-end="2089">
+<li data-start="1948" data-end="2019">
+<p data-start="1950" data-end="2019">Most production Whisper deployments have already moved to CTranslate2</p>
+</li>
+<li data-start="2020" data-end="2037">
+<p data-start="2022" data-end="2037">Lower RAM usage</p>
+</li>
+<li data-start="2038" data-end="2057">
+<p data-start="2040" data-end="2057">Streaming support</p>
+</li>
+<li data-start="2058" data-end="2089">
+<p data-start="2060" data-end="2089">Higher real-time factor (RTF)</p>
+</li>
+</ul>
+<hr data-start="2091" data-end="2094">
+<h1 data-start="2096" data-end="2137">🧹 <strong data-start="2101" data-end="2137">Your Current Script Improvements</strong></h1>
+<h3 data-start="2139" data-end="2194">1️⃣ Avoid saving WAV if you just want transcription</h3>
+<p data-start="2195" data-end="2284">Whisper works with direct file paths or numpy arrays. You can avoid convert-rewrite step.</p>
+<h3 data-start="2286" data-end="2321">2️⃣ Use streaming file handling</h3>
+<p data-start="2322" data-end="2407">Right now you're loading entire audio into memory. For long audio, consider chunking.</p>
+<h3 data-start="2409" data-end="2447">3️⃣ Consider GPU device selection:</h3>
+<pre class="overflow-visible!" data-start="2448" data-end="2511"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>model = whisper.load_model(</span><span><span class="hljs-string">"base"</span></span><span>, device=</span><span><span class="hljs-string">"cuda"</span></span><span>)
+</span></span></code></div></div></pre>
+<h3 data-start="2513" data-end="2544">4️⃣ Consider language hints</h3>
+<pre class="overflow-visible!" data-start="2545" data-end="2614"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>result = model.transcribe(temp_filename, language=</span><span><span class="hljs-string">"hi"</span></span><span>)
+</span></span></code></div></div></pre>
+<hr data-start="2616" data-end="2619">
+<h1 data-start="2621" data-end="2676">⭐ <strong data-start="2625" data-end="2676">Major Architecture Consideration for Production</strong></h1>
+<p data-start="2677" data-end="2741">If the transcription API is <strong data-start="2705" data-end="2724">for mobile apps</strong> (Android), then:</p>
+<ul data-start="2743" data-end="2862">
+<li data-start="2743" data-end="2791">
+<p data-start="2745" data-end="2791">Avoid Python Whisper in server if load is high</p>
+</li>
+<li data-start="2792" data-end="2826">
+<p data-start="2794" data-end="2826">Consider faster-whisper + GPU OR</p>
+</li>
+<li data-start="2827" data-end="2862">
+<p data-start="2829" data-end="2862">Just use OpenAI API transcription</p>
+</li>
+</ul>
+<p data-start="2864" data-end="2968">If you're building <strong data-start="2883" data-end="2904">Android local ASR</strong>, then Python Whisper + Kivy/Chaquopy is heavy; better approach:</p>
+<ul data-start="2970" data-end="3044">
+<li data-start="2970" data-end="2993">
+<p data-start="2972" data-end="2993">Whisper.cpp on-device</p>
+</li>
+<li data-start="2994" data-end="3010">
+<p data-start="2996" data-end="3010">Vosk on-device</p>
+</li>
+<li data-start="3011" data-end="3044">
+<p data-start="3013" data-end="3044">or Mozilla DeepSpeech on-device</p>
+</li>
+</ul>
+<hr data-start="3046" data-end="3049">
+<h1 data-start="3051" data-end="3112">🆕 <strong data-start="3056" data-end="3112">If You Want Real-Time Streaming (ASR as live speech)</strong></h1>
+<p data-start="3114" data-end="3166">Classic Whisper Python <strong data-start="3137" data-end="3165">cannot do real streaming</strong>.</p>
+<p data-start="3168" data-end="3198">But you can get streaming via:</p>
+<ul data-start="3200" data-end="3305">
+<li data-start="3200" data-end="3231">
+<p data-start="3202" data-end="3231">faster-whisper streaming mode</p>
+</li>
+<li data-start="3232" data-end="3262">
+<p data-start="3234" data-end="3262">whisper.cpp WebRTC streaming</p>
+</li>
+<li data-start="3263" data-end="3305">
+<p data-start="3265" data-end="3305">OpenAI Whisper API streaming mode (BEST)</p>
+</li>
+</ul>
+<hr data-start="3307" data-end="3310">
+<h1 data-start="3312" data-end="3342">⭐ <strong data-start="3316" data-end="3342">Recommendation Summary</strong></h1>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex w-fit flex-col-reverse"><table data-start="3344" data-end="3622" class="w-fit min-w-(--thread-content-width)"><thead data-start="3344" data-end="3370"><tr data-start="3344" data-end="3370"><th data-start="3344" data-end="3355" data-col-size="md">Use Case</th><th data-start="3355" data-end="3370" data-col-size="sm">Best Choice</th></tr></thead><tbody data-start="3381" data-end="3622"><tr data-start="3381" data-end="3454"><td data-start="3381" data-end="3428" data-col-size="md">You want highest accuracy with simplest code</td><td data-col-size="sm" data-start="3428" data-end="3454"><strong data-start="3430" data-end="3452">OpenAI Whisper API</strong></td></tr><tr data-start="3455" data-end="3510"><td data-start="3455" data-end="3488" data-col-size="md">You want local ASR without API</td><td data-col-size="sm" data-start="3488" data-end="3510"><strong data-start="3490" data-end="3508">faster-whisper</strong></td></tr><tr data-start="3511" data-end="3565"><td data-start="3511" data-end="3536" data-col-size="md">You want streaming ASR</td><td data-col-size="sm" data-start="3536" data-end="3565"><strong data-start="3538" data-end="3563">Whisper API streaming</strong></td></tr><tr data-start="3566" data-end="3622"><td data-start="3566" data-end="3595" data-col-size="md">You want Android/on-device</td><td data-col-size="sm" data-start="3595" data-end="3622"><strong data-start="3597" data-end="3620">whisper.cpp or vosk</strong></td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg></button></span></div></div></div></div>
+<hr data-start="3624" data-end="3627">
+<h1 data-start="3629" data-end="3684">🔁 <strong data-start="3634" data-end="3684">Minimal Update to Your Existing Code (Drop-in)</strong></h1>
+<p data-start="3686" data-end="3699">Just replace:</p>
+<pre class="overflow-visible!" data-start="3701" data-end="3805"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">import</span></span><span> whisper
+model = whisper.load_model(</span><span><span class="hljs-string">"base"</span></span><span>)
+result = model.transcribe(temp_filename)
+</span></span></code></div></div></pre>
+<p data-start="3807" data-end="3812">with:</p>
+<pre class="overflow-visible!" data-start="3814" data-end="4037"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">from</span></span><span> faster_whisper </span><span><span class="hljs-keyword">import</span></span><span> WhisperModel
+model = WhisperModel(</span><span><span class="hljs-string">"base"</span></span><span>, device=</span><span><span class="hljs-string">"cpu"</span></span><span>, compute_type=</span><span><span class="hljs-string">"int8"</span></span><span>)
+segments, info = model.transcribe(temp_filename)
+transcription = </span><span><span class="hljs-string">" "</span></span><span>.join([seg.text </span><span><span class="hljs-keyword">for</span></span><span> seg </span><span><span class="hljs-keyword">in</span></span><span> segments])
+</span></span></code></div></div></pre>
+<p data-start="4039" data-end="4070">Everything else stays the same.</p>
+<p data-start="4072" data-end="4098">This makes your Flask API:</p>
+<ul data-start="4099" data-end="4153">
+<li data-start="4099" data-end="4114">
+<p data-start="4101" data-end="4114"><strong data-start="4101" data-end="4114">4× faster</strong></p>
+</li>
+<li data-start="4115" data-end="4133">
+<p data-start="4117" data-end="4133"><strong data-start="4117" data-end="4133">lower memory</strong></p>
+</li>
+<li data-start="4134" data-end="4153">
+<p data-start="4136" data-end="4153"><strong data-start="4136" data-end="4153">same accuracy</strong></p>
+</li>
+</ul>
+<hr data-start="4155" data-end="4158">
+<h1 data-start="4160" data-end="4170">📌 TL;DR</h1>
+<p data-start="4172" data-end="4292">✔ Your existing Flask + Whisper code <strong data-start="4209" data-end="4224">still works</strong><br data-start="4224" data-end="4227">
+⚠ Whisper Python is older and slower now<br data-start="4267" data-end="4270">
+⭐ Better to switch to:</p>
+<ul data-start="4293" data-end="4391">
+<li data-start="4293" data-end="4342">
+<p data-start="4295" data-end="4342"><strong data-start="4295" data-end="4317">OpenAI Whisper API</strong> (best accuracy, fastest)</p>
+</li>
+<li data-start="4343" data-end="4391">
+<p data-start="4345" data-end="4391">or <strong data-start="4348" data-end="4366">faster-whisper</strong> (best local performance)</p>
+</li>
+</ul>
+<p data-start="4393" data-end="4448">If you want, I can rewrite your Flask ASR server using:</p>
+<ul data-start="4449" data-end="4532">
+<li data-start="4449" data-end="4465">
+<p data-start="4451" data-end="4465">faster-whisper</p>
+</li>
+<li data-start="4466" data-end="4477">
+<p data-start="4468" data-end="4477">streaming</p>
+</li>
+<li data-start="4478" data-end="4498">
+<p data-start="4480" data-end="4498">background cleanup</p>
+</li>
+<li data-start="4499" data-end="4509">
+<p data-start="4501" data-end="4509">batching</p>
+</li>
+<li data-start="4510" data-end="4532">
+<p data-start="4512" data-end="4532">queue load balancing</p>
+</li>
+</ul>
+<p data-start="4534" data-end="4581">…or convert it to FastAPI for async throughput.</p>
+<p data-start="4583" data-end="4621" data-is-last-node="" data-is-only-node="">Just tell me which direction you want.</p></div>
+<span style="display: none;">Tags: Technology,Generative AI</span>
