@@ -1,0 +1,254 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        .ir { color: red; }
+        .ig { color: green; }
+        .ib { color: blue; }
+        .im { color: magenta; }
+        .ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+
+<pre>
+<b>#1 MySQL Console</b>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiX6hxgYLD90h7ceoEwZOfIyo__V8Z5IVM47il6cu90dM9PjJg87twGF3nxBubDeDsvqCyXNtAOl13W9fH0wX8g7BGV7utytKTF_xw3hNwe5D2sOQnElC-9gOi34gUbXjR2A4YDzsdzIbkmTgOKt1a26MvfmYG1H14j9suKgWZhwW3uP_UIKlN0hMGJaHDq/s683/mysql%20console.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="432" data-original-width="683" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiX6hxgYLD90h7ceoEwZOfIyo__V8Z5IVM47il6cu90dM9PjJg87twGF3nxBubDeDsvqCyXNtAOl13W9fH0wX8g7BGV7utytKTF_xw3hNwe5D2sOQnElC-9gOi34gUbXjR2A4YDzsdzIbkmTgOKt1a26MvfmYG1H14j9suKgWZhwW3uP_UIKlN0hMGJaHDq/s600/mysql%20console.png"/></a></div>
+
+<b>#2 Bash Console (With Error Message)</b>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1Sc5T6H4vaqUmyYnWGLOX-F33rfCxt6j9EhKJfzp8ToKRl9v0Nwf4AVHagOrxmTiv9IKAf3UXpOAyUEk7tDfqYtur6z4uqEjA5Zxs2cN7z30F-u-wtcNXbTUUylpK8lq2DgGXY98hsj9JuPBQw3VVigZa4Ej24DGBlpDZz_y1TVWb48_EoCS1cx3LCzl6/s893/erroneous%20bash%20console.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="237" data-original-width="893" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1Sc5T6H4vaqUmyYnWGLOX-F33rfCxt6j9EhKJfzp8ToKRl9v0Nwf4AVHagOrxmTiv9IKAf3UXpOAyUEk7tDfqYtur6z4uqEjA5Zxs2cN7z30F-u-wtcNXbTUUylpK8lq2DgGXY98hsj9JuPBQw3VVigZa4Ej24DGBlpDZz_y1TVWb48_EoCS1cx3LCzl6/s600/erroneous%20bash%20console.png"/></a></div>
+</pre>
+
+<h2>Can you tell me what's the issue with my bash</h2>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="171">Yes — this is a <strong data-start="16" data-end="56">very common PythonAnywhere confusion</strong>, and your setup is actually fine 👍<br data-start="92" data-end="95">
+The issue is <strong data-start="108" data-end="125">not your bash</strong>. It’s <em data-start="132" data-end="139">where</em> MySQL exists on PythonAnywhere.</p>
+<hr data-start="173" data-end="176">
+<h2 data-start="178" data-end="209">What you’re seeing (and why)</h2>
+<h3 data-start="211" data-end="246">✅ Image 1 (MySQL console works)</h3>
+<p data-start="247" data-end="293">You opened <strong data-start="258" data-end="292">PythonAnywhere’s MySQL console</strong>:</p>
+<pre class="overflow-visible! px-0!" data-start="295" data-end="375"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">pgsql</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>MySQL: ashishjain1545$</span><span><span class="hljs-keyword">default</span></span><span>
+</span><span><span class="hljs-keyword">Server</span></span><span> </span><span><span class="hljs-keyword">version</span></span><span>: </span><span><span class="hljs-number">8.0</span></span><span><span class="hljs-number">.40</span></span><span> Source distribution
+</span></span></code></div></div></pre>
+<p data-start="377" data-end="569">✔ This is <strong data-start="387" data-end="428">PythonAnywhere’s managed MySQL server</strong><br data-start="428" data-end="431">
+✔ It lives on <strong data-start="445" data-end="478">PythonAnywhere infrastructure</strong>, not inside your bash VM<br data-start="503" data-end="506">
+✔ PythonAnywhere connects you using <strong data-start="542" data-end="549">TCP</strong>, not a local socket</p>
+<p data-start="571" data-end="586">So this works ✅</p>
+<hr data-start="588" data-end="591">
+<h3 data-start="593" data-end="627">❌ Image 2 (Bash → mysql fails)</h3>
+<p data-start="628" data-end="656">In the Bash console you ran:</p>
+<pre class="overflow-visible! px-0!" data-start="658" data-end="675"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>mysql
+</span></span></code></div></div></pre>
+<p data-start="677" data-end="685">And got:</p>
+<pre class="overflow-visible! px-0!" data-start="687" data-end="795"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">vbnet</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-keyword">ERROR</span></span><span> </span><span><span class="hljs-number">2002</span></span><span> (HY000): Can</span><span><span class="hljs-comment">'t connect to local MySQL server</span></span><span>
+through socket </span><span><span class="hljs-comment">'/var/run/mysqld/mysqld.sock'</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="797" data-end="818">This happens because:</p>
+<p data-start="820" data-end="1003">❌ <strong data-start="822" data-end="891">There is NO local MySQL server running inside your bash container</strong><br data-start="891" data-end="894">
+❌ <code data-start="896" data-end="925">/var/run/mysqld/mysqld.sock</code> does not exist<br data-start="940" data-end="943">
+❌ PythonAnywhere <strong data-start="960" data-end="1003">does not allow you to run MySQL locally</strong></p>
+<p data-start="1005" data-end="1084">So Bash is doing exactly what it should — it’s just looking in the wrong place.</p>
+<hr data-start="1086" data-end="1089">
+<h2 data-start="1091" data-end="1120">🔑 Key Concept (Important)</h2>
+<p data-start="1121" data-end="1143">On <strong data-start="1124" data-end="1142">PythonAnywhere</strong>:</p>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex w-fit flex-col-reverse"><table data-start="1145" data-end="1328" class="w-fit min-w-(--thread-content-width)"><thead data-start="1145" data-end="1164"><tr data-start="1145" data-end="1164"><th data-start="1145" data-end="1153" data-col-size="sm">Thing</th><th data-start="1153" data-end="1164" data-col-size="sm">Exists?</th></tr></thead><tbody data-start="1177" data-end="1328"><tr data-start="1177" data-end="1214"><td data-start="1177" data-end="1206" data-col-size="sm">Local MySQL server in bash</td><td data-start="1206" data-end="1214" data-col-size="sm">❌ No</td></tr><tr data-start="1215" data-end="1255"><td data-start="1215" data-end="1247" data-col-size="sm"><code data-start="1217" data-end="1246">/var/run/mysqld/mysqld.sock</code></td><td data-start="1247" data-end="1255" data-col-size="sm">❌ No</td></tr><tr data-start="1256" data-end="1296"><td data-start="1256" data-end="1287" data-col-size="sm">PythonAnywhere MySQL service</td><td data-col-size="sm" data-start="1287" data-end="1296">✅ Yes</td></tr><tr data-start="1297" data-end="1328"><td data-start="1297" data-end="1319" data-col-size="sm">Access via TCP host</td><td data-start="1319" data-end="1328" data-col-size="sm">✅ Yes</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<hr data-start="1330" data-end="1333">
+<h2 data-start="1335" data-end="1392">✅ Correct way to use MySQL from Bash on PythonAnywhere</h2>
+<p data-start="1394" data-end="1440">You <strong data-start="1398" data-end="1439">must specify host, user, and database</strong>:</p>
+<pre class="overflow-visible! px-0!" data-start="1442" data-end="1544"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>mysql \
+  -u ashishjain1545 \
+  -h ashishjain1545.mysql.pythonanywhere-services.com \
+  -p
+</span></span></code></div></div></pre>
+<p data-start="1546" data-end="1562">OR (short form):</p>
+<pre class="overflow-visible! px-0!" data-start="1564" data-end="1654"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>mysql -u ashishjain1545 -h ashishjain1545.mysql.pythonanywhere-services.com -p
+</span></span></code></div></div></pre>
+<p data-start="1656" data-end="1716">Then enter your <strong data-start="1672" data-end="1690">MySQL password</strong> (from the Databases tab).</p>
+<hr data-start="1718" data-end="1721">
+<h2 data-start="1723" data-end="1760">❌ What NOT to do on PythonAnywhere</h2>
+<pre class="overflow-visible! px-0!" data-start="1761" data-end="1851"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-bash"><span><span>mysql
+mysql -u root
+mysql -u ashish
+mysql --socket=/var/run/mysqld/mysqld.sock
+</span></span></code></div></div></pre>
+<p data-start="1853" data-end="1955">These only work on machines where <strong data-start="1887" data-end="1917">MySQL is installed locally</strong>, which PythonAnywhere does not allow.</p>
+<hr data-start="1957" data-end="1960">
+<h2 data-start="1962" data-end="1987">✅ Correct mental model</h2>
+<p data-start="1988" data-end="2022">Think of PythonAnywhere like this:</p>
+<pre class="overflow-visible! px-0!" data-start="2024" data-end="2120"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">arduino</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>[ Your Bash </span><span><span class="hljs-built_in">Console</span></span><span> ]
+        |
+        |  TCP
+        v
+[ PythonAnywhere MySQL </span><span><span class="hljs-built_in">Server</span></span><span> ]
+</span></span></code></div></div></pre>
+<p data-start="2122" data-end="2126">Not:</p>
+<pre class="overflow-visible! px-0!" data-start="2127" data-end="2163"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">css</div><div class="@w-xl/main:top-9 sticky top-[calc(--spacing(9)+var(--header-height))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-btjmrd1b.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-selector-attr">[ Bash ]</span></span><span> → </span><span><span class="hljs-selector-attr">[ Local MySQL ]</span></span><span> ❌
+</span></span></code></div></div></pre>
+<hr data-start="2165" data-end="2168">
+<h2 data-start="2170" data-end="2190">✅ Summary (TL;DR)</h2>
+<ul data-start="2191" data-end="2412">
+<li data-start="2191" data-end="2216">
+<p data-start="2193" data-end="2216">✔ Your MySQL is working</p>
+</li>
+<li data-start="2217" data-end="2241">
+<p data-start="2219" data-end="2241">✔ Your bash is working</p>
+</li>
+<li data-start="2242" data-end="2276">
+<p data-start="2244" data-end="2276">❌ There is no local MySQL daemon</p>
+</li>
+<li data-start="2277" data-end="2351">
+<p data-start="2279" data-end="2351">✅ Always connect using <code data-start="2302" data-end="2351">-h &lt;username&gt;.mysql.pythonanywhere-services.com</code></p>
+</li>
+<li data-start="2352" data-end="2412">
+<p data-start="2354" data-end="2412">✅ Or use the <strong data-start="2367" data-end="2388">MySQL console tab</strong> (which you already did)</p>
+</li>
+</ul>
+<hr data-start="2414" data-end="2417">
+</div>
+
+<b>Query: $ mysql -u ashishjain1545 -h ashishjain1545.mysql.pythonanywhere-services.com -p</b>
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGcSui03ZKWLXcYSW6iECMUVNmZ8T62lAKGsxrZrQkJBEkjthkqOVR4qyD8gGN7hxbR7Cv7gZ_QGEluOoLAC3TbZxHaZ5zFVNXT-YzdSXse6Jeby4ZaKt6RjfzDpEt6S8iJns-9rkynFP9XfUxMhgcj5FWyeWNkNZwb_1winW4Llp4Jc92YXiu1YZwtYjI/s746/bash%20console%20-%20success.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="304" data-original-width="746" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGcSui03ZKWLXcYSW6iECMUVNmZ8T62lAKGsxrZrQkJBEkjthkqOVR4qyD8gGN7hxbR7Cv7gZ_QGEluOoLAC3TbZxHaZ5zFVNXT-YzdSXse6Jeby4ZaKt6RjfzDpEt6S8iJns-9rkynFP9XfUxMhgcj5FWyeWNkNZwb_1winW4Llp4Jc92YXiu1YZwtYjI/s600/bash%20console%20-%20success.png"/></a></div>
+
+
+<span style="opacity: 0;">Tags: Technology,Database,Cloud,</span>

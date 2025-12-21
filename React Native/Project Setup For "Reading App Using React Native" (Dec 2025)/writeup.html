@@ -1,0 +1,219 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+  
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json", 
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `    
+                    );
+                }
+            });
+        });
+    </script>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+  
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+  
+        .customLink:hover {
+            text-decoration: none;
+        }
+  
+        div.code-block-decoration.footer {
+            display: none;
+        }
+  
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+  
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+  
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+  
+        .custom_link_h2 a:active {
+            color: black;
+        }
+  
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+  
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+      .customul {
+        list-style: none;
+      }
+  
+      [aria-hidden='true'] {
+        display: none;
+      }
+
+      button.flex.gap-1.items-center.select-none {
+        display: none;
+      }
+
+      i.ig {
+        color: green
+      }
+    </style>
+  
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All React Native Articles: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customReactNative" target="_blank">Index of Lessons in Technology</a>
+<br>
+<br>
+
+<pre>
+1. Clone the repository.
+
+https://github.com/ashishjain1547/pvt_reading_mobile_app_using_react_native
+
+2. Create a local working copy.
+
+/home/jain/Desktop/ws/react_native_apps/Reading_App_For_Bright_Orange
+
+3. Connect test device (phone/tablet) with the laptop
+
+<a href="https://survival8.blogspot.com/2025/12/how-i-enabled-wireless-debugging-on-my.html" target="_blank">How I enabled "Wireless Debugging" on my Samsung phone</a>
+
+4. Trial launch of the app on the test device (phone/tablet)
+
+5. Check whether the backend API is operational.
+
+https://ashishjain1545.pythonanywhere.com/
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcebsQJyQBH61zJ2ct9NknzrCaaZ8xDiso5wor3o6QPFPhns6mpx7coUnrWlt0-mM2Jpr8Fhr_zYqC-ynYajvYOt0quYnLCuhE81jD1o8qrI8KBSOOz9o-DbWDol3bHATyCztNxOpkFZ2XgPuQAezK_lqFQn5UndIJz57Wrg15OAF1MuwhLGdQOx64l_fn/s1058/backend%20api%20at%20pythonanywhere.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="541" data-original-width="1058" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcebsQJyQBH61zJ2ct9NknzrCaaZ8xDiso5wor3o6QPFPhns6mpx7coUnrWlt0-mM2Jpr8Fhr_zYqC-ynYajvYOt0quYnLCuhE81jD1o8qrI8KBSOOz9o-DbWDol3bHATyCztNxOpkFZ2XgPuQAezK_lqFQn5UndIJz57Wrg15OAF1MuwhLGdQOx64l_fn/s600/backend%20api%20at%20pythonanywhere.png"/></a></div>
+
+6. Setup the local database (MySQL)
+
+DB Details (local and remote) can be found here: 
+/home/jain/Desktop/ws/react_native_apps/Reading_App_For_Bright_Orange/design_documents/flask_app.py
+
+
+db_details = {
+    "host": "localhost",
+    "user": "ashish",
+    "password": "pass",
+    "database": "reading_app_v2"
+}
+
+<b>Testing in MySQL Workbench (local)</b>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjIxVUqozVAzB3rI8f9DusclURR33_gniVwoTU1sIbjnaF6mLZiv3b5qJkYDt80mK16mIiWh7E3vPKbu8eK0jCT4d4imXX6gh-2TgKruM5utJdC27MfzNmql8i6W7CFjM2fZTYYzkeOUFp2vaXgQhXeca845WCRVk3BJLhcmelTNCTVoBmZAWtxlS3Ljj9/s848/mysql1.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="539" data-original-width="848" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgjIxVUqozVAzB3rI8f9DusclURR33_gniVwoTU1sIbjnaF6mLZiv3b5qJkYDt80mK16mIiWh7E3vPKbu8eK0jCT4d4imXX6gh-2TgKruM5utJdC27MfzNmql8i6W7CFjM2fZTYYzkeOUFp2vaXgQhXeca845WCRVk3BJLhcmelTNCTVoBmZAWtxlS3Ljj9/s600/mysql1.png"/></a></div>
+
+
+<b>Checking if remote DB also has this one table: reading_artifacts</b>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQAm9FoUiLixnVB52TCrpENljSZsZQcqrTZ9HrjBPiGYeLWKRc-SEBzTPTIUr9cifgT9O5D94OI2Me0oRhqv0SReJV0ZM3Swu1ka0Eny2AUSuGd9fC3yzPz2q9MCLvW-YszuoQbu3Ijv8IicYJOJ-9K3sg1Q1dArxoIy5Rsa8L7LpVX0cDI8hCWRAGdw5n/s659/mysql2%20-%20remote.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="452" data-original-width="659" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQAm9FoUiLixnVB52TCrpENljSZsZQcqrTZ9HrjBPiGYeLWKRc-SEBzTPTIUr9cifgT9O5D94OI2Me0oRhqv0SReJV0ZM3Swu1ka0Eny2AUSuGd9fC3yzPz2q9MCLvW-YszuoQbu3Ijv8IicYJOJ-9K3sg1Q1dArxoIy5Rsa8L7LpVX0cDI8hCWRAGdw5n/s600/mysql2%20-%20remote.png"/></a></div>
+
+<i>Query: show tables;</i>
+
+<b><i>Well: the mobile app on the device won't be able to connect to local DB so we would need to work with the hosted (remote) DB.</i></b>
+
+<h2>7: Getting 'create' statement for a table</h2>
+
+<i>Query: SHOW CREATE TABLE reading_artifacts;</i>
+
+CREATE TABLE `reading_artifacts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `book_title` varchar(255) DEFAULT NULL,
+  `sequence_number_as_per_book` int DEFAULT NULL,
+  `reading_artifact_type` varchar(150) NOT NULL,
+  `reading_artifact_title` varchar(4000) DEFAULT NULL,
+  `reading_artifact_text` varchar(4000) DEFAULT NULL,
+  `reading_artifact_metadata` longtext,
+  `image_base64` mediumtext,
+  `description_hindi` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `soft_delete_flag` tinyint(1) NOT NULL DEFAULT '0',
+  `date_created` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3;
+
+<h2>8: Basic Report From 'reading_artifacts'</h2>
+
+select id, book_title, sequence_number_as_per_book, reading_artifact_type, reading_artifact_title from reading_artifacts order by book_title, reading_artifact_type, sequence_number_as_per_book;
+
+<h2>9: How to launch the app</h2>
+
+$ pwd
+/home/jain/Desktop/ws/private/pvt_reading_mobile_app_using_react_native
+
+TO START THE METRO SERVER:
+$ npx react-native start
+
+
+TO CHECK IF YOUR DEVICE IS CONNECTED:
+(base) jain@jain-ThinkPad-T440s:~/Desktop/ws/private/pvt_reading_mobile_app_using_react_native$ adb devices
+List of devices attached
+adb-R9ZY3098GYX-8MEOzx._adb-tls-connect._tcp	device
+
+
+TO RUN THE APP ON THE DEVICE:
+$ npx react-native run-android
+
+<i>
+<b>Addendum</b>
+
+Repository for design documents / supporting code / meeting notes and presentations related to this app:
+https://github.com/ashishjain1547/reading_app_design_docs_for_bright_orange_school</i>
+</pre>
+
+<span style="opacity: 0;">Tags: Technology,React Native,</span>
