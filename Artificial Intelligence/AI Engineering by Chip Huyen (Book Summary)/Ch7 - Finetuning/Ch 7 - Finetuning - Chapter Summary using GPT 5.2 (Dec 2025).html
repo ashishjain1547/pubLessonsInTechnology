@@ -1,0 +1,956 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['current book club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+
+    <style>
+        span.relative.inline-flex.items-center button {
+            display: none;
+        }
+
+        div.bg-token-bg-elevated-secondary.text-token-text-secondary.flex button {
+            display: none;
+        }
+    </style>
+</head>
+
+<a class="customLink" href="https://github.com/ashishjain1547/agentic_ai_books/blob/main/1_Chip%20Huyen%20-%20AI%20Engineering_%20Building%20Applications%20with%20Foundation%20Models-O'Reilly%20Media%20(2025).pdf" target="_blank">Download Book</a>
+<br><br>
+<div id="customWhatsAppGroupLinkWrapper"></div>
+<a class="customLink" href="https://survival8.blogspot.com/2025/09/rag-and-agents-future-of-ai-systems.html" target="_blank">&lt;&lt;&lt; Previous Chapter</a>
+<a class="customLink" href="https://survival8.blogspot.com/2025/12/chapter-8-ai-engineering-by-chip-huyen.html" target="_blank">Next Chapter &gt;&gt;&gt;</a>
+<br><br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigCuANDr8rihCNvkpsxyFUOemO9pcK6MJAaHe9AaR7V1m766NznPyvEWLWtLLfnk8ZRI4NjQkHLnhO9ljovbMsHqpg8IaKAnJ1F4nBc3jxkAzc7p3Prue1meNsPkXMBe19-p_Kmq23Hz4oPFB6x3qYWqMSb6ieGviU8Jcl24a3T1Z9EHfRs4neLXlbnN6m/s686/Screenshot%20from%202025-06-26%2009-45-44.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="686" data-original-width="546" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigCuANDr8rihCNvkpsxyFUOemO9pcK6MJAaHe9AaR7V1m766NznPyvEWLWtLLfnk8ZRI4NjQkHLnhO9ljovbMsHqpg8IaKAnJ1F4nBc3jxkAzc7p3Prue1meNsPkXMBe19-p_Kmq23Hz4oPFB6x3qYWqMSb6ieGviU8Jcl24a3T1Z9EHfRs4neLXlbnN6m/s600/Screenshot%20from%202025-06-26%2009-45-44.png"/></a></div>
+
+<h3>Prompt</h3>
+
+<pre><b><i>Role: You are an Expert Professor of Agentic AI
+Task: Explain the attached PDF (Chapter 7 - Finetuning) in layman terms
+Strictly Follow: Do not miss out any details while simplying things.
+Word Limit: Respond in about 5000 to 7000 words</i></b></pre>
+
+<h3>Response</h3>
+
+<div class="streaming-animation markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+
+<h1 data-start="537" data-end="602">Chapter 7 — Finetuning (Explained Simply, Without Losing Depth)</h1>
+<hr data-start="604" data-end="607">
+<h2 data-start="609" data-end="659">1. What “Finetuning” Really Means (Big Picture)</h2>
+<p data-start="661" data-end="692">Let’s start with the core idea.</p>
+<p data-start="694" data-end="822"><strong data-start="694" data-end="708">Finetuning</strong> is the process of <strong data-start="727" data-end="821">taking an already-trained AI model and teaching it to behave better for a specific purpose</strong>.</p>
+<p data-start="824" data-end="846">Think of it like this:</p>
+<ul data-start="848" data-end="1108">
+<li data-start="848" data-end="935">
+<p data-start="850" data-end="935">Pre-training = going to school and learning <em data-start="894" data-end="906">everything</em> (language, math, reasoning).</p>
+</li>
+<li data-start="936" data-end="1005">
+<p data-start="938" data-end="1005">Prompting = giving instructions like “please answer like a lawyer.”</p>
+</li>
+<li data-start="1006" data-end="1108">
+<p data-start="1008" data-end="1108"><strong data-start="1008" data-end="1068">Finetuning = sending the model for professional training</strong> so it permanently learns that behavior.</p>
+</li>
+</ul>
+<p data-start="1110" data-end="1287">Instead of just telling the model what to do at runtime (prompting), finetuning <strong data-start="1190" data-end="1243">changes the model’s internal parameters (weights)</strong> so it <em data-start="1250" data-end="1261">naturally</em> behaves the way you want.</p>
+<p data-start="1289" data-end="1461">This is fundamentally different from prompt-based methods discussed in earlier chapters, which <strong data-start="1384" data-end="1422">do not change the model internally</strong> <span class="" data-state="closed"><span class="relative inline-flex items-center"><button class="ms-1 flex h-[25px] text-[10px] leading-[13px] rounded-xl corner-superellipse/1.1 items-center justify-center gap-1 px-2 relative text-token-text-secondary! hover:text-token-text-primary! hover:bg-token-bg-secondary dark:bg-token-main-surface-secondary dark:hover:bg-token-bg-secondary bg-[#f4f4f4] "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="h-[16px] w-[16px] object-contain text-token-text-primary! flex-none icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#554074" fill="currentColor"></use></svg><p class="not-prose mt-0! mb-0! flex-auto truncate">Ch 7 - Finetuning</p></button></span></span>.</p>
+<hr data-start="1463" data-end="1466">
+<h2 data-start="1468" data-end="1502">2. Why Finetuning Exists at All</h2>
+<p data-start="1504" data-end="1562">Large language models already know a lot. So why finetune?</p>
+<p data-start="1564" data-end="1572">Because:</p>
+<ol data-start="1574" data-end="1810">
+<li data-start="1574" data-end="1627">
+<p data-start="1577" data-end="1627"><strong data-start="1577" data-end="1627">They don’t always follow instructions reliably</strong></p>
+</li>
+<li data-start="1628" data-end="1691">
+<p data-start="1631" data-end="1691"><strong data-start="1631" data-end="1691">They may not produce output in the exact format you need</strong></p>
+</li>
+<li data-start="1692" data-end="1757">
+<p data-start="1695" data-end="1757"><strong data-start="1695" data-end="1757">They may not specialize well in niche or proprietary tasks</strong></p>
+</li>
+<li data-start="1758" data-end="1810">
+<p data-start="1761" data-end="1810"><strong data-start="1761" data-end="1810">They may behave inconsistently across prompts</strong></p>
+</li>
+</ol>
+<p data-start="1812" data-end="1834">Finetuning helps with:</p>
+<ul data-start="1836" data-end="1991">
+<li data-start="1836" data-end="1859">
+<p data-start="1838" data-end="1859">Instruction following</p>
+</li>
+<li data-start="1860" data-end="1904">
+<p data-start="1862" data-end="1904">Output formatting (JSON, YAML, code, DSLs)</p>
+</li>
+<li data-start="1905" data-end="1954">
+<p data-start="1907" data-end="1954">Domain specialization (legal, medical, finance)</p>
+</li>
+<li data-start="1955" data-end="1972">
+<p data-start="1957" data-end="1972">Bias mitigation</p>
+</li>
+<li data-start="1973" data-end="1991">
+<p data-start="1975" data-end="1991">Safety alignment</p>
+</li>
+</ul>
+<p data-start="1993" data-end="2002">In short:</p>
+<blockquote data-start="2004" data-end="2086">
+<p data-start="2006" data-end="2086"><strong data-start="2006" data-end="2086">Prompting changes what you ask.<br data-start="2039" data-end="2042">
+Finetuning changes how the model thinks.</strong></p>
+</blockquote>
+<hr data-start="2088" data-end="2091">
+<h2 data-start="2093" data-end="2130">3. Finetuning Is Transfer Learning</h2>
+<p data-start="2132" data-end="2229">Finetuning is not a new idea. It’s a form of <strong data-start="2177" data-end="2198">transfer learning</strong>, first described in the 1970s.</p>
+<h3 data-start="2231" data-end="2249">Human analogy:</h3>
+<p data-start="2250" data-end="2323">If you already know how to play the piano, learning the guitar is easier.</p>
+<h3 data-start="2325" data-end="2340">AI analogy:</h3>
+<p data-start="2341" data-end="2425">If a model already knows language, learning <em data-start="2385" data-end="2396">legal Q&amp;A</em> requires far fewer examples.</p>
+<p data-start="2427" data-end="2439">This is why:</p>
+<ul data-start="2441" data-end="2573">
+<li data-start="2441" data-end="2517">
+<p data-start="2443" data-end="2517">Training a legal QA model from scratch might need <strong data-start="2493" data-end="2517">millions of examples</strong></p>
+</li>
+<li data-start="2518" data-end="2573">
+<p data-start="2520" data-end="2573">Finetuning a pretrained model might need <strong data-start="2561" data-end="2573">hundreds</strong></p>
+</li>
+</ul>
+<p data-start="2575" data-end="2677">This efficiency is what makes <strong data-start="2605" data-end="2638">foundation models so powerful</strong> <span class="" data-state="closed"><span class="relative inline-flex items-center"><button class="ms-1 flex h-[25px] text-[10px] leading-[13px] rounded-xl corner-superellipse/1.1 items-center justify-center gap-1 px-2 relative text-token-text-secondary! hover:text-token-text-primary! hover:bg-token-bg-secondary dark:bg-token-main-surface-secondary dark:hover:bg-token-bg-secondary bg-[#f4f4f4] "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="h-[16px] w-[16px] object-contain text-token-text-primary! flex-none icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#554074" fill="currentColor"></use></svg><p class="not-prose mt-0! mb-0! flex-auto truncate">Ch 7 - Finetuning</p></button></span></span>.</p>
+<hr data-start="2679" data-end="2682">
+<h2 data-start="2684" data-end="2731">4. Types of Finetuning (Conceptual Overview)</h2>
+<h3 data-start="2733" data-end="2792">4.1 Continued Pre-Training (Self-Supervised Finetuning)</h3>
+<p data-start="2794" data-end="2833">Before expensive labeled data, you can:</p>
+<ul data-start="2835" data-end="2966">
+<li data-start="2835" data-end="2871">
+<p data-start="2837" data-end="2871">Feed the model <strong data-start="2852" data-end="2871">raw domain text</strong></p>
+</li>
+<li data-start="2872" data-end="2892">
+<p data-start="2874" data-end="2892">No labels required</p>
+</li>
+<li data-start="2893" data-end="2966">
+<p data-start="2895" data-end="2904">Examples:</p>
+<ul data-start="2907" data-end="2966">
+<li data-start="2907" data-end="2924">
+<p data-start="2909" data-end="2924">Legal documents</p>
+</li>
+<li data-start="2927" data-end="2945">
+<p data-start="2929" data-end="2945">Medical journals</p>
+</li>
+<li data-start="2948" data-end="2966">
+<p data-start="2950" data-end="2966">Vietnamese books</p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="2968" data-end="3024">This helps the model <strong data-start="2989" data-end="3015">absorb domain language</strong> cheaply.</p>
+<p data-start="3026" data-end="3068">This is called <strong data-start="3041" data-end="3067">continued pre-training</strong>.</p>
+<hr data-start="3070" data-end="3073">
+<h3 data-start="3075" data-end="3110">4.2 Supervised Finetuning (SFT)</h3>
+<p data-start="3112" data-end="3151">Now you use <strong data-start="3124" data-end="3144">(input → output)</strong> pairs.</p>
+<p data-start="3153" data-end="3162">Examples:</p>
+<ul data-start="3163" data-end="3219">
+<li data-start="3163" data-end="3185">
+<p data-start="3165" data-end="3185">Instruction → Answer</p>
+</li>
+<li data-start="3186" data-end="3206">
+<p data-start="3188" data-end="3206">Question → Summary</p>
+</li>
+<li data-start="3207" data-end="3219">
+<p data-start="3209" data-end="3219">Text → SQL</p>
+</li>
+</ul>
+<p data-start="3221" data-end="3246">This is how models learn:</p>
+<ul data-start="3247" data-end="3320">
+<li data-start="3247" data-end="3267">
+<p data-start="3249" data-end="3267">What humans expect</p>
+</li>
+<li data-start="3268" data-end="3293">
+<p data-start="3270" data-end="3293">How to respond politely</p>
+</li>
+<li data-start="3294" data-end="3320">
+<p data-start="3296" data-end="3320">How to structure answers</p>
+</li>
+</ul>
+<p data-start="3322" data-end="3360">Instruction data is expensive because:</p>
+<ul data-start="3361" data-end="3433">
+<li data-start="3361" data-end="3388">
+<p data-start="3363" data-end="3388">It needs domain expertise</p>
+</li>
+<li data-start="3389" data-end="3409">
+<p data-start="3391" data-end="3409">It must be correct</p>
+</li>
+<li data-start="3410" data-end="3433">
+<p data-start="3412" data-end="3433">It must be consistent</p>
+</li>
+</ul>
+<hr data-start="3435" data-end="3438">
+<h3 data-start="3440" data-end="3482">4.3 Preference Finetuning (RLHF-style)</h3>
+<p data-start="3484" data-end="3531">Instead of a single “correct” answer, you give:</p>
+<ul data-start="3533" data-end="3589">
+<li data-start="3533" data-end="3546">
+<p data-start="3535" data-end="3546">Instruction</p>
+</li>
+<li data-start="3547" data-end="3565">
+<p data-start="3549" data-end="3565">Preferred answer</p>
+</li>
+<li data-start="3566" data-end="3589">
+<p data-start="3568" data-end="3589">Less-preferred answer</p>
+</li>
+</ul>
+<p data-start="3591" data-end="3651">The model learns <strong data-start="3608" data-end="3628">human preference</strong>, not just correctness.</p>
+<hr data-start="3653" data-end="3656">
+<h3 data-start="3658" data-end="3689">4.4 Long-Context Finetuning</h3>
+<p data-start="3691" data-end="3743">This extends how much text a model can read at once.</p>
+<p data-start="3745" data-end="3749">But:</p>
+<ul data-start="3750" data-end="3872">
+<li data-start="3750" data-end="3785">
+<p data-start="3752" data-end="3785">It requires architectural changes</p>
+</li>
+<li data-start="3786" data-end="3828">
+<p data-start="3788" data-end="3828">It can degrade short-context performance</p>
+</li>
+<li data-start="3829" data-end="3872">
+<p data-start="3831" data-end="3872">It’s harder than other finetuning methods</p>
+</li>
+</ul>
+<p data-start="3874" data-end="3970">Example: Code Llama extended context from 4K → 16K tokens <span class="" data-state="closed"><span class="relative inline-flex items-center"><button class="ms-1 flex h-[25px] text-[10px] leading-[13px] rounded-xl corner-superellipse/1.1 items-center justify-center gap-1 px-2 relative text-token-text-secondary! hover:text-token-text-primary! hover:bg-token-bg-secondary dark:bg-token-main-surface-secondary dark:hover:bg-token-bg-secondary bg-[#f4f4f4] "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="h-[16px] w-[16px] object-contain text-token-text-primary! flex-none icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#554074" fill="currentColor"></use></svg><p class="not-prose mt-0! mb-0! flex-auto truncate">Ch 7 - Finetuning</p></button></span></span>.</p>
+<hr data-start="3972" data-end="3975">
+<h2 data-start="3977" data-end="4004">5. Who Finetunes Models?</h2>
+<h3 data-start="4006" data-end="4027">Model developers:</h3>
+<ul data-start="4028" data-end="4092">
+<li data-start="4028" data-end="4051">
+<p data-start="4030" data-end="4051">OpenAI, Meta, Mistral</p>
+</li>
+<li data-start="4052" data-end="4092">
+<p data-start="4054" data-end="4092">Release multiple post-trained variants</p>
+</li>
+</ul>
+<h3 data-start="4094" data-end="4121">Application developers:</h3>
+<ul data-start="4122" data-end="4193">
+<li data-start="4122" data-end="4170">
+<p data-start="4124" data-end="4170">Usually finetune <em data-start="4141" data-end="4170">already post-trained models</em></p>
+</li>
+<li data-start="4171" data-end="4193">
+<p data-start="4173" data-end="4193">Less work, less cost</p>
+</li>
+</ul>
+<p data-start="4195" data-end="4257">The more refined the base model, the less finetuning you need.</p>
+<hr data-start="4259" data-end="4262">
+<h2 data-start="4264" data-end="4295">6. When Should You Finetune?</h2>
+<p data-start="4297" data-end="4340">This is one of the most important sections.</p>
+<h3 data-start="4342" data-end="4360">Key principle:</h3>
+<blockquote data-start="4361" data-end="4408">
+<p data-start="4363" data-end="4408"><strong data-start="4363" data-end="4408">Finetuning should NOT be your first move.</strong></p>
+</blockquote>
+<p data-start="4410" data-end="4422">It requires:</p>
+<ul data-start="4423" data-end="4488">
+<li data-start="4423" data-end="4429">
+<p data-start="4425" data-end="4429">Data</p>
+</li>
+<li data-start="4430" data-end="4436">
+<p data-start="4432" data-end="4436">GPUs</p>
+</li>
+<li data-start="4437" data-end="4451">
+<p data-start="4439" data-end="4451">ML expertise</p>
+</li>
+<li data-start="4452" data-end="4464">
+<p data-start="4454" data-end="4464">Monitoring</p>
+</li>
+<li data-start="4465" data-end="4488">
+<p data-start="4467" data-end="4488">Long-term maintenance</p>
+</li>
+</ul>
+<p data-start="4490" data-end="4538">You should try <strong data-start="4505" data-end="4537">prompting exhaustively first</strong>.</p>
+<p data-start="4540" data-end="4578">Many teams rush to finetuning because:</p>
+<ul data-start="4579" data-end="4661">
+<li data-start="4579" data-end="4608">
+<p data-start="4581" data-end="4608">Prompts were poorly written</p>
+</li>
+<li data-start="4609" data-end="4636">
+<p data-start="4611" data-end="4636">Examples were unrealistic</p>
+</li>
+<li data-start="4637" data-end="4661">
+<p data-start="4639" data-end="4661">Metrics were undefined</p>
+</li>
+</ul>
+<p data-start="4663" data-end="4760">After fixing prompts, finetuning often becomes unnecessary <span class="" data-state="closed"><span class="relative inline-flex items-center"><button class="ms-1 flex h-[25px] text-[10px] leading-[13px] rounded-xl corner-superellipse/1.1 items-center justify-center gap-1 px-2 relative text-token-text-secondary! hover:text-token-text-primary! hover:bg-token-bg-secondary dark:bg-token-main-surface-secondary dark:hover:bg-token-bg-secondary bg-[#f4f4f4] "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="h-[16px] w-[16px] object-contain text-token-text-primary! flex-none icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#554074" fill="currentColor"></use></svg><p class="not-prose mt-0! mb-0! flex-auto truncate">Ch 7 - Finetuning</p></button></span></span>.</p>
+<hr data-start="4762" data-end="4765">
+<h2 data-start="4767" data-end="4797">7. Good Reasons to Finetune</h2>
+<h3 data-start="4799" data-end="4831">7.1 Task-Specific Weaknesses</h3>
+<p data-start="4833" data-end="4841">Example:</p>
+<ul data-start="4842" data-end="4905">
+<li data-start="4842" data-end="4861">
+<p data-start="4844" data-end="4861">Model handles SQL</p>
+</li>
+<li data-start="4862" data-end="4905">
+<p data-start="4864" data-end="4905">But fails on <em data-start="4877" data-end="4905">your company’s SQL dialect</em></p>
+</li>
+</ul>
+<p data-start="4907" data-end="4945">Finetuning on your dialect fixes this.</p>
+<hr data-start="4947" data-end="4950">
+<h3 data-start="4952" data-end="4978">7.2 Structured Outputs</h3>
+<p data-start="4980" data-end="4998">If you <em data-start="4987" data-end="4993">must</em> get:</p>
+<ul data-start="4999" data-end="5054">
+<li data-start="4999" data-end="5011">
+<p data-start="5001" data-end="5011">Valid JSON</p>
+</li>
+<li data-start="5012" data-end="5029">
+<p data-start="5014" data-end="5029">Compilable code</p>
+</li>
+<li data-start="5030" data-end="5054">
+<p data-start="5032" data-end="5054">Domain-specific syntax</p>
+</li>
+</ul>
+<p data-start="5056" data-end="5093">Finetuning helps more than prompting.</p>
+<hr data-start="5095" data-end="5098">
+<h3 data-start="5100" data-end="5123">7.3 Bias Mitigation</h3>
+<p data-start="5125" data-end="5147">If a model shows bias:</p>
+<ul data-start="5148" data-end="5175">
+<li data-start="5148" data-end="5161">
+<p data-start="5150" data-end="5161">Gender bias</p>
+</li>
+<li data-start="5162" data-end="5175">
+<p data-start="5164" data-end="5175">Racial bias</p>
+</li>
+</ul>
+<p data-start="5177" data-end="5225">Carefully curated finetuning data can reduce it.</p>
+<hr data-start="5227" data-end="5230">
+<h3 data-start="5232" data-end="5272">7.4 Small Models Can Beat Big Models</h3>
+<p data-start="5274" data-end="5359">A finetuned <strong data-start="5286" data-end="5301">small model</strong> can outperform a <strong data-start="5319" data-end="5341">huge generic model</strong> on a narrow task.</p>
+<p data-start="5361" data-end="5369">Example:</p>
+<ul data-start="5370" data-end="5475">
+<li data-start="5370" data-end="5399">
+<p data-start="5372" data-end="5399">Grammarly finetuned Flan-T5</p>
+</li>
+<li data-start="5400" data-end="5422">
+<p data-start="5402" data-end="5422">Beat a GPT-3 variant</p>
+</li>
+<li data-start="5423" data-end="5447">
+<p data-start="5425" data-end="5447">Used only 82k examples</p>
+</li>
+<li data-start="5448" data-end="5475">
+<p data-start="5450" data-end="5475">Model was <strong data-start="5460" data-end="5475">60× smaller</strong></p>
+</li>
+</ul>
+<hr data-start="5477" data-end="5480">
+<h2 data-start="5482" data-end="5511">8. Reasons NOT to Finetune</h2>
+<h3 data-start="5513" data-end="5543">8.1 Performance Trade-offs</h3>
+<p data-start="5545" data-end="5586">Finetuning for Task A can degrade Task B.</p>
+<p data-start="5588" data-end="5633">This is called <strong data-start="5603" data-end="5632">catastrophic interference</strong>.</p>
+<hr data-start="5635" data-end="5638">
+<h3 data-start="5640" data-end="5666">8.2 High Up-Front Cost</h3>
+<p data-start="5668" data-end="5677">You need:</p>
+<ul data-start="5678" data-end="5745">
+<li data-start="5678" data-end="5694">
+<p data-start="5680" data-end="5694">Annotated data</p>
+</li>
+<li data-start="5695" data-end="5709">
+<p data-start="5697" data-end="5709">ML knowledge</p>
+</li>
+<li data-start="5710" data-end="5726">
+<p data-start="5712" data-end="5726">Infrastructure</p>
+</li>
+<li data-start="5727" data-end="5745">
+<p data-start="5729" data-end="5745">Serving strategy</p>
+</li>
+</ul>
+<hr data-start="5747" data-end="5750">
+<h3 data-start="5752" data-end="5779">8.3 Ongoing Maintenance</h3>
+<p data-start="5781" data-end="5812">New base models keep appearing.</p>
+<p data-start="5814" data-end="5830">You must decide:</p>
+<ul data-start="5831" data-end="5897">
+<li data-start="5831" data-end="5847">
+<p data-start="5833" data-end="5847">When to switch</p>
+</li>
+<li data-start="5848" data-end="5869">
+<p data-start="5850" data-end="5869">When to re-finetune</p>
+</li>
+<li data-start="5870" data-end="5897">
+<p data-start="5872" data-end="5897">When gains are “worth it”</p>
+</li>
+</ul>
+<hr data-start="5899" data-end="5902">
+<h2 data-start="5904" data-end="5950">9. Finetuning vs RAG (Critical Distinction)</h2>
+<p data-start="5952" data-end="5997">This chapter makes a <strong data-start="5973" data-end="5996">very important rule</strong>:</p>
+<blockquote data-start="5999" data-end="6054">
+<p data-start="6001" data-end="6054"><strong data-start="6001" data-end="6054">RAG is for facts.<br data-start="6020" data-end="6023">
+Finetuning is for behavior.</strong></p>
+</blockquote>
+<h3 data-start="6056" data-end="6073">Use RAG when:</h3>
+<ul data-start="6074" data-end="6165">
+<li data-start="6074" data-end="6099">
+<p data-start="6076" data-end="6099">Model lacks information</p>
+</li>
+<li data-start="6100" data-end="6117">
+<p data-start="6102" data-end="6117">Data is private</p>
+</li>
+<li data-start="6118" data-end="6136">
+<p data-start="6120" data-end="6136">Data is changing</p>
+</li>
+<li data-start="6137" data-end="6165">
+<p data-start="6139" data-end="6165">Answers must be up-to-date</p>
+</li>
+</ul>
+<h3 data-start="6167" data-end="6191">Use finetuning when:</h3>
+<ul data-start="6192" data-end="6284">
+<li data-start="6192" data-end="6220">
+<p data-start="6194" data-end="6220">Model output is irrelevant</p>
+</li>
+<li data-start="6221" data-end="6238">
+<p data-start="6223" data-end="6238">Format is wrong</p>
+</li>
+<li data-start="6239" data-end="6260">
+<p data-start="6241" data-end="6260">Syntax is incorrect</p>
+</li>
+<li data-start="6261" data-end="6284">
+<p data-start="6263" data-end="6284">Style is inconsistent</p>
+</li>
+</ul>
+<p data-start="6286" data-end="6299">Studies show:</p>
+<ul data-start="6300" data-end="6426">
+<li data-start="6300" data-end="6344">
+<p data-start="6302" data-end="6344">RAG often beats finetuning for factual Q&amp;A</p>
+</li>
+<li data-start="6345" data-end="6426">
+<p data-start="6347" data-end="6426">RAG + base model &gt; finetuned model alone <span class="" data-state="closed"><span class="relative inline-flex items-center"><button class="ms-1 flex h-[25px] text-[10px] leading-[13px] rounded-xl corner-superellipse/1.1 items-center justify-center gap-1 px-2 relative text-token-text-secondary! hover:text-token-text-primary! hover:bg-token-bg-secondary dark:bg-token-main-surface-secondary dark:hover:bg-token-bg-secondary bg-[#f4f4f4] "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="h-[16px] w-[16px] object-contain text-token-text-primary! flex-none icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#554074" fill="currentColor"></use></svg><p class="not-prose mt-0! mb-0! flex-auto truncate">Ch 7 - Finetuning</p></button></span></span>.</p>
+</li>
+</ul>
+<hr data-start="6428" data-end="6431">
+<h2 data-start="6433" data-end="6474">10. Why Finetuning Is So Memory-Hungry</h2>
+<p data-start="6476" data-end="6518">This is the <strong data-start="6488" data-end="6517">core technical bottleneck</strong>.</p>
+<h3 data-start="6520" data-end="6534">Inference:</h3>
+<ul data-start="6535" data-end="6583">
+<li data-start="6535" data-end="6554">
+<p data-start="6537" data-end="6554">Only forward pass</p>
+</li>
+<li data-start="6555" data-end="6583">
+<p data-start="6557" data-end="6583">Need weights + activations</p>
+</li>
+</ul>
+<h3 data-start="6585" data-end="6611">Training (Finetuning):</h3>
+<ul data-start="6612" data-end="6673">
+<li data-start="6612" data-end="6626">
+<p data-start="6614" data-end="6626">Forward pass</p>
+</li>
+<li data-start="6627" data-end="6642">
+<p data-start="6629" data-end="6642">Backward pass</p>
+</li>
+<li data-start="6643" data-end="6654">
+<p data-start="6645" data-end="6654">Gradients</p>
+</li>
+<li data-start="6655" data-end="6673">
+<p data-start="6657" data-end="6673">Optimizer states</p>
+</li>
+</ul>
+<p data-start="6675" data-end="6709">Each trainable parameter requires:</p>
+<ul data-start="6710" data-end="6774">
+<li data-start="6710" data-end="6722">
+<p data-start="6712" data-end="6722">The weight</p>
+</li>
+<li data-start="6723" data-end="6737">
+<p data-start="6725" data-end="6737">The gradient</p>
+</li>
+<li data-start="6738" data-end="6774">
+<p data-start="6740" data-end="6774">1–2 optimizer values (Adam uses 2)</p>
+</li>
+</ul>
+<p data-start="6776" data-end="6795">So memory explodes.</p>
+<hr data-start="6797" data-end="6800">
+<h2 data-start="6802" data-end="6832">11. Memory Math (Intuition)</h2>
+<h3 data-start="6834" data-end="6856">Inference memory ≈</h3>
+<pre class="overflow-visible! px-0!" data-start="6857" data-end="6878"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">nginx</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">weights</span></span><span> × </span><span><span class="hljs-number">1</span></span><span>.</span><span><span class="hljs-number">2</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="6880" data-end="6888">Example:</p>
+<ul data-start="6889" data-end="6940">
+<li data-start="6889" data-end="6901">
+<p data-start="6891" data-end="6901">13B params</p>
+</li>
+<li data-start="6902" data-end="6924">
+<p data-start="6904" data-end="6924">2 bytes each → 26 GB</p>
+</li>
+<li data-start="6925" data-end="6940">
+<p data-start="6927" data-end="6940">Total ≈ 31 GB</p>
+</li>
+</ul>
+<hr data-start="6942" data-end="6945">
+<h3 data-start="6947" data-end="6968">Training memory =</h3>
+<pre class="overflow-visible! px-0!" data-start="6969" data-end="7029"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">nginx</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">weights</span></span><span> + activations + gradients + optimizer states
+</span></span></code></div></div></pre>
+<p data-start="7031" data-end="7039">Example:</p>
+<ul data-start="7040" data-end="7088">
+<li data-start="7040" data-end="7052">
+<p data-start="7042" data-end="7052">13B params</p>
+</li>
+<li data-start="7053" data-end="7069">
+<p data-start="7055" data-end="7069">Adam optimizer</p>
+</li>
+<li data-start="7070" data-end="7088">
+<p data-start="7072" data-end="7088">16-bit precision</p>
+</li>
+</ul>
+<p data-start="7090" data-end="7135">Just gradients + optimizer states = <strong data-start="7126" data-end="7135">78 GB</strong></p>
+<p data-start="7137" data-end="7167">That’s why finetuning is hard.</p>
+<hr data-start="7169" data-end="7172">
+<h2 data-start="7174" data-end="7215">12. Numerical Precision &amp; Quantization</h2>
+<h3 data-start="7217" data-end="7244">Floating-point formats:</h3>
+<ul data-start="7245" data-end="7292">
+<li data-start="7245" data-end="7261">
+<p data-start="7247" data-end="7261">FP32 (4 bytes)</p>
+</li>
+<li data-start="7262" data-end="7278">
+<p data-start="7264" data-end="7278">FP16 (2 bytes)</p>
+</li>
+<li data-start="7279" data-end="7285">
+<p data-start="7281" data-end="7285">BF16</p>
+</li>
+<li data-start="7286" data-end="7292">
+<p data-start="7288" data-end="7292">TF32</p>
+</li>
+</ul>
+<p data-start="7294" data-end="7340">Lower precision = less memory, faster compute.</p>
+<hr data-start="7342" data-end="7345">
+<h3 data-start="7347" data-end="7363">Quantization</h3>
+<p data-start="7365" data-end="7399">Quantization = reducing precision.</p>
+<p data-start="7401" data-end="7410">Examples:</p>
+<ul data-start="7411" data-end="7452">
+<li data-start="7411" data-end="7424">
+<p data-start="7413" data-end="7424">FP32 → FP16</p>
+</li>
+<li data-start="7425" data-end="7438">
+<p data-start="7427" data-end="7438">FP16 → INT8</p>
+</li>
+<li data-start="7439" data-end="7452">
+<p data-start="7441" data-end="7452">INT8 → INT4</p>
+</li>
+</ul>
+<p data-start="7454" data-end="7487">This dramatically reduces memory.</p>
+<hr data-start="7489" data-end="7492">
+<h3 data-start="7494" data-end="7530">Post-Training Quantization (PTQ)</h3>
+<p data-start="7532" data-end="7544">Most common.</p>
+<ul data-start="7545" data-end="7595">
+<li data-start="7545" data-end="7570">
+<p data-start="7547" data-end="7570">Train in high precision</p>
+</li>
+<li data-start="7571" data-end="7595">
+<p data-start="7573" data-end="7595">Quantize for inference</p>
+</li>
+</ul>
+<hr data-start="7597" data-end="7600">
+<h3 data-start="7602" data-end="7639">Quantization-Aware Training (QAT)</h3>
+<p data-start="7641" data-end="7681">Simulates low precision during training.</p>
+<ul data-start="7682" data-end="7747">
+<li data-start="7682" data-end="7716">
+<p data-start="7684" data-end="7716">Improves low-precision inference</p>
+</li>
+<li data-start="7717" data-end="7747">
+<p data-start="7719" data-end="7747">Doesn’t reduce training cost</p>
+</li>
+</ul>
+<hr data-start="7749" data-end="7752">
+<h3 data-start="7754" data-end="7792">Training Directly in Low Precision</h3>
+<p data-start="7794" data-end="7812">Hard but powerful.</p>
+<ul data-start="7813" data-end="7893">
+<li data-start="7813" data-end="7856">
+<p data-start="7815" data-end="7856">Character.AI trained models fully in INT8</p>
+</li>
+<li data-start="7857" data-end="7878">
+<p data-start="7859" data-end="7878">Eliminated mismatch</p>
+</li>
+<li data-start="7879" data-end="7893">
+<p data-start="7881" data-end="7893">Reduced cost</p>
+</li>
+</ul>
+<hr data-start="7895" data-end="7898">
+<h2 data-start="7900" data-end="7940">13. Why Full Finetuning Doesn’t Scale</h2>
+<p data-start="7942" data-end="7950">Example:</p>
+<ul data-start="7951" data-end="8048">
+<li data-start="7951" data-end="7961">
+<p data-start="7953" data-end="7961">7B model</p>
+</li>
+<li data-start="7962" data-end="7984">
+<p data-start="7964" data-end="7984">FP16 weights = 14 GB</p>
+</li>
+<li data-start="7985" data-end="8010">
+<p data-start="7987" data-end="8010">Adam optimizer = +42 GB</p>
+</li>
+<li data-start="8011" data-end="8048">
+<p data-start="8013" data-end="8048">Total = 56 GB (without activations)</p>
+</li>
+</ul>
+<p data-start="8050" data-end="8079">Most GPUs cannot handle this.</p>
+<p data-start="8081" data-end="8099">Hence the rise of:</p>
+<hr data-start="8101" data-end="8104">
+<h2 data-start="8106" data-end="8150">14. Parameter-Efficient Finetuning (PEFT)</h2>
+<h3 data-start="8152" data-end="8161">Idea:</h3>
+<blockquote data-start="8162" data-end="8217">
+<p data-start="8164" data-end="8217"><strong data-start="8164" data-end="8217">Update fewer parameters, get most of the benefit.</strong></p>
+</blockquote>
+<p data-start="8219" data-end="8250">Instead of changing everything:</p>
+<ul data-start="8251" data-end="8305">
+<li data-start="8251" data-end="8272">
+<p data-start="8253" data-end="8272">Freeze most weights</p>
+</li>
+<li data-start="8273" data-end="8305">
+<p data-start="8275" data-end="8305">Add small trainable components</p>
+</li>
+</ul>
+<hr data-start="8307" data-end="8310">
+<h2 data-start="8312" data-end="8359">15. Partial Finetuning (Why It’s Not Enough)</h2>
+<p data-start="8361" data-end="8401">Freezing early layers helps memory, but:</p>
+<ul data-start="8403" data-end="8459">
+<li data-start="8403" data-end="8432">
+<p data-start="8405" data-end="8432">You need ~25% of parameters</p>
+</li>
+<li data-start="8433" data-end="8459">
+<p data-start="8435" data-end="8459">To match full finetuning</p>
+</li>
+</ul>
+<p data-start="8461" data-end="8477">Still expensive.</p>
+<hr data-start="8479" data-end="8482">
+<h2 data-start="8484" data-end="8509">16. Adapter-Based PEFT</h2>
+<p data-start="8511" data-end="8550">Houlsby et al. introduced <strong data-start="8537" data-end="8549">adapters</strong>:</p>
+<ul data-start="8551" data-end="8642">
+<li data-start="8551" data-end="8591">
+<p data-start="8553" data-end="8591">Small modules inserted into each layer</p>
+</li>
+<li data-start="8592" data-end="8619">
+<p data-start="8594" data-end="8619">Only adapters are trained</p>
+</li>
+<li data-start="8620" data-end="8642">
+<p data-start="8622" data-end="8642">Base model is frozen</p>
+</li>
+</ul>
+<p data-start="8644" data-end="8651">Result:</p>
+<ul data-start="8652" data-end="8689">
+<li data-start="8652" data-end="8668">
+<p data-start="8654" data-end="8668">~3% parameters</p>
+</li>
+<li data-start="8669" data-end="8689">
+<p data-start="8671" data-end="8689">~99.6% performance</p>
+</li>
+</ul>
+<p data-start="8691" data-end="8700">Downside:</p>
+<ul data-start="8701" data-end="8726">
+<li data-start="8701" data-end="8726">
+<p data-start="8703" data-end="8726">Extra inference latency</p>
+</li>
+</ul>
+<hr data-start="8728" data-end="8731">
+<h2 data-start="8733" data-end="8766">17. LoRA (Low-Rank Adaptation)</h2>
+<p data-start="8768" data-end="8796">LoRA solved adapter latency.</p>
+<h3 data-start="8798" data-end="8812">Core idea:</h3>
+<p data-start="8813" data-end="8881">Instead of adding layers, <strong data-start="8839" data-end="8880">modify weight matrices mathematically</strong>.</p>
+<p data-start="8883" data-end="8896">A big matrix:</p>
+<pre class="overflow-visible! px-0!" data-start="8897" data-end="8906"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">nginx</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">W</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="8908" data-end="8916">Becomes:</p>
+<pre class="overflow-visible! px-0!" data-start="8917" data-end="8936"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">css</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-i9agxugi.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>W + (</span><span><span class="hljs-selector-tag">A</span></span><span> × </span><span><span class="hljs-selector-tag">B</span></span><span>)
+</span></span></code></div></div></pre>
+<p data-start="8938" data-end="8944">Where:</p>
+<ul data-start="8945" data-end="9008">
+<li data-start="8945" data-end="8964">
+<p data-start="8947" data-end="8964">A and B are small</p>
+</li>
+<li data-start="8965" data-end="8991">
+<p data-start="8967" data-end="8991">Only A and B are trained</p>
+</li>
+<li data-start="8992" data-end="9008">
+<p data-start="8994" data-end="9008">W stays frozen</p>
+</li>
+</ul>
+<p data-start="9010" data-end="9047">This uses <strong data-start="9020" data-end="9046">low-rank factorization</strong>.</p>
+<hr data-start="9049" data-end="9052">
+<h3 data-start="9054" data-end="9072">Why LoRA Works</h3>
+<ul data-start="9074" data-end="9184">
+<li data-start="9074" data-end="9116">
+<p data-start="9076" data-end="9116">Neural weight updates are often low-rank</p>
+</li>
+<li data-start="9117" data-end="9154">
+<p data-start="9119" data-end="9154">You don’t need to update everything</p>
+</li>
+<li data-start="9155" data-end="9184">
+<p data-start="9157" data-end="9184">Rank 4–64 is usually enough</p>
+</li>
+</ul>
+<p data-start="9186" data-end="9194">Example:</p>
+<ul data-start="9195" data-end="9278">
+<li data-start="9195" data-end="9240">
+<p data-start="9197" data-end="9240">GPT-3 finetuned with <strong data-start="9218" data-end="9229">0.0027%</strong> parameters</p>
+</li>
+<li data-start="9241" data-end="9278">
+<p data-start="9243" data-end="9278">Matched full finetuning performance</p>
+</li>
+</ul>
+<hr data-start="9280" data-end="9283">
+<h2 data-start="9285" data-end="9313">18. Where LoRA Is Applied</h2>
+<p data-start="9315" data-end="9325">Mostly to:</p>
+<ul data-start="9326" data-end="9376">
+<li data-start="9326" data-end="9338">
+<p data-start="9328" data-end="9338">Query (Wq)</p>
+</li>
+<li data-start="9339" data-end="9349">
+<p data-start="9341" data-end="9349">Key (Wk)</p>
+</li>
+<li data-start="9350" data-end="9362">
+<p data-start="9352" data-end="9362">Value (Wv)</p>
+</li>
+<li data-start="9363" data-end="9376">
+<p data-start="9365" data-end="9376">Output (Wo)</p>
+</li>
+</ul>
+<p data-start="9378" data-end="9438">Applying LoRA to <strong data-start="9395" data-end="9412">query + value</strong> often gives best returns.</p>
+<hr data-start="9440" data-end="9443">
+<h2 data-start="9445" data-end="9471">19. Serving LoRA Models</h2>
+<p data-start="9473" data-end="9488">Two strategies:</p>
+<h3 data-start="9490" data-end="9523">1. Merge LoRA into base model</h3>
+<ul data-start="9524" data-end="9557">
+<li data-start="9524" data-end="9542">
+<p data-start="9526" data-end="9542">Faster inference</p>
+</li>
+<li data-start="9543" data-end="9557">
+<p data-start="9545" data-end="9557">More storage</p>
+</li>
+</ul>
+<h3 data-start="9559" data-end="9588">2. Keep adapters separate</h3>
+<ul data-start="9589" data-end="9669">
+<li data-start="9589" data-end="9610">
+<p data-start="9591" data-end="9610">Slight latency cost</p>
+</li>
+<li data-start="9611" data-end="9636">
+<p data-start="9613" data-end="9636">Massive storage savings</p>
+</li>
+<li data-start="9637" data-end="9669">
+<p data-start="9639" data-end="9669">Enables <strong data-start="9647" data-end="9669">multi-LoRA serving</strong></p>
+</li>
+</ul>
+<p data-start="9671" data-end="9739">Apple uses this approach to serve many features from one base model.</p>
+<hr data-start="9741" data-end="9744">
+<h2 data-start="9746" data-end="9775">20. QLoRA (Quantized LoRA)</h2>
+<p data-start="9777" data-end="9811">QLoRA = LoRA + 4-bit quantization.</p>
+<ul data-start="9813" data-end="9920">
+<li data-start="9813" data-end="9843">
+<p data-start="9815" data-end="9843">Base weights stored in 4-bit</p>
+</li>
+<li data-start="9844" data-end="9880">
+<p data-start="9846" data-end="9880">Dequantized to BF16 during compute</p>
+</li>
+<li data-start="9881" data-end="9898">
+<p data-start="9883" data-end="9898">Uses NF4 format</p>
+</li>
+<li data-start="9899" data-end="9920">
+<p data-start="9901" data-end="9920">Uses CPU–GPU paging</p>
+</li>
+</ul>
+<p data-start="9922" data-end="9929">Result:</p>
+<ul data-start="9930" data-end="9976">
+<li data-start="9930" data-end="9976">
+<p data-start="9932" data-end="9976">65B models finetuned on <strong data-start="9956" data-end="9976">single 48 GB GPU</strong></p>
+</li>
+</ul>
+<p data-start="9978" data-end="9987">Downside:</p>
+<ul data-start="9988" data-end="10034">
+<li data-start="9988" data-end="10034">
+<p data-start="9990" data-end="10034">Slower training due to quantization overhead</p>
+</li>
+</ul>
+<hr data-start="10036" data-end="10039">
+<h2 data-start="10041" data-end="10061">21. Model Merging</h2>
+<p data-start="10063" data-end="10095">Instead of finetuning one model:</p>
+<ul data-start="10097" data-end="10153">
+<li data-start="10097" data-end="10134">
+<p data-start="10099" data-end="10134">Finetune multiple models separately</p>
+</li>
+<li data-start="10135" data-end="10153">
+<p data-start="10137" data-end="10153">Merge them later</p>
+</li>
+</ul>
+<p data-start="10155" data-end="10164">Benefits:</p>
+<ul data-start="10165" data-end="10276">
+<li data-start="10165" data-end="10197">
+<p data-start="10167" data-end="10197">Avoids catastrophic forgetting</p>
+</li>
+<li data-start="10198" data-end="10214">
+<p data-start="10200" data-end="10214">Reduces memory</p>
+</li>
+<li data-start="10215" data-end="10242">
+<p data-start="10217" data-end="10242">Enables multi-task models</p>
+</li>
+<li data-start="10243" data-end="10276">
+<p data-start="10245" data-end="10276">Useful for on-device deployment</p>
+</li>
+</ul>
+<p data-start="10278" data-end="10357">Model merging generalizes <strong data-start="10304" data-end="10317">ensembles</strong>, but merges weights instead of outputs.</p>
+<hr data-start="10359" data-end="10362">
+<h2 data-start="10364" data-end="10399">22. Final Summary (Mental Model)</h2>
+<h3 data-start="10401" data-end="10439">Finetuning is powerful—but costly.</h3>
+<ul data-start="10441" data-end="10611">
+<li data-start="10441" data-end="10463">
+<p data-start="10443" data-end="10463">Start with prompting</p>
+</li>
+<li data-start="10464" data-end="10487">
+<p data-start="10466" data-end="10487">Add RAG for knowledge</p>
+</li>
+<li data-start="10488" data-end="10511">
+<p data-start="10490" data-end="10511">Finetune for behavior</p>
+</li>
+<li data-start="10512" data-end="10540">
+<p data-start="10514" data-end="10540">Use PEFT whenever possible</p>
+</li>
+<li data-start="10541" data-end="10563">
+<p data-start="10543" data-end="10563">Prefer LoRA or QLoRA</p>
+</li>
+<li data-start="10564" data-end="10611">
+<p data-start="10566" data-end="10611">Consider model merging for multi-task systems</p>
+</li>
+</ul>
+<p data-start="10613" data-end="10655">The <strong data-start="10617" data-end="10654">hard part isn’t finetuning itself</strong>.</p>
+<blockquote data-start="10657" data-end="10724">
+<p data-start="10659" data-end="10724"><strong data-start="10659" data-end="10724">The hard part is data, evaluation, and long-term maintenance.</strong></p>
+</blockquote>
+<p data-start="10726" data-end="10783">That’s why the next chapter focuses entirely on <strong data-start="10774" data-end="10782">data</strong>.</p>
+<hr data-start="10785" data-end="10788">
+
+
+</div>
