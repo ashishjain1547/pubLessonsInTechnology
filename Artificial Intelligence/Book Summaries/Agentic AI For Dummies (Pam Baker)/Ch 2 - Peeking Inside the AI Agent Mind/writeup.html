@@ -1,0 +1,946 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['current book club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+
+    <style>
+        span.relative.inline-flex.items-center button {
+            display: none;
+        }
+
+        div.bg-token-bg-elevated-secondary.text-token-text-secondary.flex button {
+            display: none;
+        }
+    </style>
+</head>
+
+<a class="customLink" href="https://github.com/ashishjain1547/agentic_ai_books/blob/main/2025-Nov/58_Agentic%20AI%20For%20Dummies/Agentic_AI_For_Dummies_-_Pam_Baker.pdf" target="_blank">Download Book</a>
+<br><br>
+<div id="customWhatsAppGroupLinkWrapper"></div>
+<a class="customLink" href="https://survival8.blogspot.com/2026/01/introducing-agentic-ai-chapter-1.html" target="_blank">&lt;&lt;&lt; Previous Chapter</a>
+<a class="customLink" href="https://survival8.blogspot.com/2026/01/meeting-agentic-ai-core-technologies-ch.html" target="_blank">Next Chapter &gt;&gt;&gt;</a>
+
+<br><br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwFabY1kBwnqpxg1erFGZiBgneSpAvIL2R9b2p4ugXOWEkRef7iwtbgjPcTozZKEVVKFdwEwN4nHlhmCXJM30j2nvImDYugO9DPfEHpCUPie5cnP9PJBrsY10jjteW91GShA0_XYkWZkwxOg1jHrmicpEVL0CYrWmw-uGYrjO1G6GdMB2_-h_ZNSnBRLED/s725/cover.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="725" data-original-width="557" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwFabY1kBwnqpxg1erFGZiBgneSpAvIL2R9b2p4ugXOWEkRef7iwtbgjPcTozZKEVVKFdwEwN4nHlhmCXJM30j2nvImDYugO9DPfEHpCUPie5cnP9PJBrsY10jjteW91GShA0_XYkWZkwxOg1jHrmicpEVL0CYrWmw-uGYrjO1G6GdMB2_-h_ZNSnBRLED/s600/cover.png"/></a></div>
+
+<b><i>From The Book: Agentic AI For Dummies (by Pam Baker)</i></b>    
+ 
+
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+
+<h2 data-start="440" data-end="493">What’s Really Going On Inside an AI Agent’s “Mind”</h2>
+<hr data-start="495" data-end="498">
+<h2 data-start="500" data-end="554">Why This Chapter Matters More Than It First Appears</h2>
+<p data-start="556" data-end="692">Chapter 1 introduced the <em data-start="581" data-end="587">idea</em> of Agentic AI — AI that can act, plan, and pursue goals.<br data-start="644" data-end="647">
+Chapter 2 does something even more important:</p>
+<blockquote data-start="694" data-end="756">
+<p data-start="696" data-end="756">It opens the hood and shows you <strong data-start="728" data-end="755">how that actually works</strong>.</p>
+</blockquote>
+<p data-start="758" data-end="827">This chapter answers questions people don’t always realize they have:</p>
+<ul data-start="828" data-end="1055">
+<li data-start="828" data-end="874">
+<p data-start="830" data-end="874">How does an AI agent decide what to do next?</p>
+</li>
+<li data-start="875" data-end="905">
+<p data-start="877" data-end="905">How does it remember things?</p>
+</li>
+<li data-start="906" data-end="952">
+<p data-start="908" data-end="952">How does it adapt when something goes wrong?</p>
+</li>
+<li data-start="953" data-end="1007">
+<p data-start="955" data-end="1007">How is this different from just “a smarter chatbot”?</p>
+</li>
+<li data-start="1008" data-end="1055">
+<p data-start="1010" data-end="1055">Why do humans still need to stay in the loop?</p>
+</li>
+</ul>
+<p data-start="1057" data-end="1119">If Chapter 1 was the <em data-start="1078" data-end="1086">vision</em>, Chapter 2 is the <strong data-start="1105" data-end="1118">machinery</strong>.</p>
+<hr data-start="1121" data-end="1124">
+<h2 data-start="1126" data-end="1161">Agentic AI Is Built, Not Magical</h2>
+<p data-start="1163" data-end="1210">A crucial message early in the chapter is this:</p>
+<blockquote data-start="1212" data-end="1255">
+<p data-start="1214" data-end="1255">Agentic AI does not “emerge by accident.”</p>
+</blockquote>
+<p data-start="1257" data-end="1288">It is <strong data-start="1263" data-end="1287">carefully engineered</strong>.</p>
+<p data-start="1290" data-end="1357">Developers don’t just turn on autonomy and hope for the best. They:</p>
+<ul data-start="1358" data-end="1496">
+<li data-start="1358" data-end="1378">
+<p data-start="1360" data-end="1378">define objectives,</p>
+</li>
+<li data-start="1379" data-end="1398">
+<p data-start="1381" data-end="1398">design workflows,</p>
+</li>
+<li data-start="1399" data-end="1415">
+<p data-start="1401" data-end="1415">connect tools,</p>
+</li>
+<li data-start="1416" data-end="1429">
+<p data-start="1418" data-end="1429">add memory,</p>
+</li>
+<li data-start="1430" data-end="1454">
+<p data-start="1432" data-end="1454">create feedback loops,</p>
+</li>
+<li data-start="1455" data-end="1496">
+<p data-start="1457" data-end="1496">and place safety boundaries everywhere.</p>
+</li>
+</ul>
+<p data-start="1498" data-end="1572">Without these, Agentic AI doesn’t function — or worse, it functions badly.</p>
+<hr data-start="1574" data-end="1577">
+<h2 data-start="1579" data-end="1632">The Core Idea: Agentic AI Is a System, Not a Model</h2>
+<p data-start="1634" data-end="1717">One of the most important clarifications in this chapter is the difference between:</p>
+<ul data-start="1718" data-end="1798">
+<li data-start="1718" data-end="1766">
+<p data-start="1720" data-end="1766">an <strong data-start="1723" data-end="1735">AI model</strong> (like a large language model),</p>
+</li>
+<li data-start="1767" data-end="1798">
+<p data-start="1769" data-end="1798">and an <strong data-start="1776" data-end="1797">Agentic AI system</strong>.</p>
+</li>
+</ul>
+<p data-start="1800" data-end="1808">A model:</p>
+<ul data-start="1809" data-end="1843">
+<li data-start="1809" data-end="1843">
+<p data-start="1811" data-end="1843">generates outputs when prompted.</p>
+</li>
+</ul>
+<p data-start="1845" data-end="1866">An Agentic AI system:</p>
+<ul data-start="1867" data-end="1989">
+<li data-start="1867" data-end="1888">
+<p data-start="1869" data-end="1888">includes the model,</p>
+</li>
+<li data-start="1889" data-end="1907">
+<p data-start="1891" data-end="1907">but also memory,</p>
+</li>
+<li data-start="1908" data-end="1926">
+<p data-start="1910" data-end="1926">reasoning logic,</p>
+</li>
+<li data-start="1927" data-end="1943">
+<p data-start="1929" data-end="1943">goal tracking,</p>
+</li>
+<li data-start="1944" data-end="1958">
+<p data-start="1946" data-end="1958">tool access,</p>
+</li>
+<li data-start="1959" data-end="1989">
+<p data-start="1961" data-end="1989">and coordination mechanisms.</p>
+</li>
+</ul>
+<p data-start="1991" data-end="2089">Think of the model as the <em data-start="2017" data-end="2031">brain tissue</em>, and the agentic system as the <strong data-start="2063" data-end="2088">entire nervous system</strong>.</p>
+<hr data-start="2091" data-end="2094">
+<h2 data-start="2096" data-end="2144">The Fundamental Building Blocks of Agentic AI</h2>
+<p data-start="2146" data-end="2289">The chapter breaks Agentic AI down into <strong data-start="2186" data-end="2205">building blocks</strong>.<br data-start="2206" data-end="2209">
+Each one is essential — remove any one, and the system becomes far less capable.</p>
+<hr data-start="2291" data-end="2294">
+<h3 data-start="2296" data-end="2337">1. A Mission or Objective (The “Why”)</h3>
+<p data-start="2339" data-end="2370">Every agent starts with a goal.</p>
+<p data-start="2372" data-end="2382">This goal:</p>
+<ul data-start="2383" data-end="2455">
+<li data-start="2383" data-end="2416">
+<p data-start="2385" data-end="2416">may come directly from a human,</p>
+</li>
+<li data-start="2417" data-end="2455">
+<p data-start="2419" data-end="2455">or be derived from a larger mission.</p>
+</li>
+</ul>
+<p data-start="2457" data-end="2544">Unlike Generative AI, the goal is <strong data-start="2491" data-end="2519">not a single instruction</strong>.<br data-start="2520" data-end="2523">
+It’s a <strong data-start="2530" data-end="2543">direction</strong>.</p>
+<p data-start="2546" data-end="2558">For example:</p>
+<ul data-start="2559" data-end="2677">
+<li data-start="2559" data-end="2592">
+<p data-start="2561" data-end="2592">“Improve customer satisfaction”</p>
+</li>
+<li data-start="2593" data-end="2636">
+<p data-start="2595" data-end="2636">“Find inefficiencies in our supply chain”</p>
+</li>
+<li data-start="2637" data-end="2677">
+<p data-start="2639" data-end="2677">“Prepare a monthly performance report”</p>
+</li>
+</ul>
+<p data-start="2679" data-end="2705">The agent must figure out:</p>
+<ul data-start="2706" data-end="2768">
+<li data-start="2706" data-end="2730">
+<p data-start="2708" data-end="2730">what steps are needed,</p>
+</li>
+<li data-start="2731" data-end="2747">
+<p data-start="2733" data-end="2747">in what order,</p>
+</li>
+<li data-start="2748" data-end="2768">
+<p data-start="2750" data-end="2768">using which tools.</p>
+</li>
+</ul>
+<hr data-start="2770" data-end="2773">
+<h3 data-start="2775" data-end="2835">Task Decomposition: Breaking Big Goals into Smaller Ones</h3>
+<p data-start="2837" data-end="2907">When goals are complex, agents break them down into manageable pieces.</p>
+<p data-start="2909" data-end="2991">This process — task decomposition — is exactly how humans approach large projects:</p>
+<ul data-start="2992" data-end="3054">
+<li data-start="2992" data-end="3016">
+<p data-start="2994" data-end="3016">break work into tasks,</p>
+</li>
+<li data-start="3017" data-end="3030">
+<p data-start="3019" data-end="3030">prioritize,</p>
+</li>
+<li data-start="3031" data-end="3054">
+<p data-start="3033" data-end="3054">execute step by step.</p>
+</li>
+</ul>
+<p data-start="3056" data-end="3108">Agentic AI uses the same idea, but programmatically.</p>
+<p data-start="3110" data-end="3169">This is why it feels more <em data-start="3136" data-end="3145">capable</em> than simple automation.</p>
+<hr data-start="3171" data-end="3174">
+<h2 data-start="3176" data-end="3233">2. Memory: The Difference Between “Smart” and “Useful”</h2>
+<p data-start="3235" data-end="3294">Without memory, every AI interaction would start from zero.</p>
+<p data-start="3296" data-end="3332">That’s what traditional chatbots do.</p>
+<p data-start="3334" data-end="3369">Agentic AI changes this completely.</p>
+<hr data-start="3371" data-end="3374">
+<h3 data-start="3376" data-end="3415">Short-Term Memory: Staying Oriented</h3>
+<p data-start="3417" data-end="3435">Short-term memory:</p>
+<ul data-start="3436" data-end="3511">
+<li data-start="3436" data-end="3464">
+<p data-start="3438" data-end="3464">tracks what just happened,</p>
+</li>
+<li data-start="3465" data-end="3511">
+<p data-start="3467" data-end="3511">keeps context during a task or conversation.</p>
+</li>
+</ul>
+<p data-start="3513" data-end="3586">It’s like holding a thought in your head while working through a problem.</p>
+<hr data-start="3588" data-end="3591">
+<h3 data-start="3593" data-end="3633">Long-Term Memory: Learning Over Time</h3>
+<p data-start="3635" data-end="3652">Long-term memory:</p>
+<ul data-start="3653" data-end="3759">
+<li data-start="3653" data-end="3680">
+<p data-start="3655" data-end="3680">persists across sessions,</p>
+</li>
+<li data-start="3681" data-end="3705">
+<p data-start="3683" data-end="3705">stores past decisions,</p>
+</li>
+<li data-start="3706" data-end="3730">
+<p data-start="3708" data-end="3730">remembers preferences,</p>
+</li>
+<li data-start="3731" data-end="3759">
+<p data-start="3733" data-end="3759">avoids repeating mistakes.</p>
+</li>
+</ul>
+<p data-start="3761" data-end="3821">This is what allows an agent to <strong data-start="3793" data-end="3802">learn</strong>, not just respond.</p>
+<hr data-start="3823" data-end="3826">
+<h3 data-start="3828" data-end="3888">How AI Memory Actually Works (No, It’s Not Human Memory)</h3>
+<p data-start="3890" data-end="3916">The chapter is very clear:</p>
+<blockquote data-start="3918" data-end="3961">
+<p data-start="3920" data-end="3961">AI does not “remember” the way humans do.</p>
+</blockquote>
+<p data-start="3963" data-end="3982">Instead, memory is:</p>
+<ul data-start="3983" data-end="4054">
+<li data-start="3983" data-end="4009">
+<p data-start="3985" data-end="4009">structured data storage,</p>
+</li>
+<li data-start="4010" data-end="4034">
+<p data-start="4012" data-end="4034">intelligent retrieval,</p>
+</li>
+<li data-start="4035" data-end="4054">
+<p data-start="4037" data-end="4054">contextual reuse.</p>
+</li>
+</ul>
+<p data-start="4056" data-end="4074">Technologies like:</p>
+<ul data-start="4075" data-end="4180">
+<li data-start="4075" data-end="4095">
+<p data-start="4077" data-end="4095">vector embeddings,</p>
+</li>
+<li data-start="4096" data-end="4133">
+<p data-start="4098" data-end="4133">vector databases (Pinecone, FAISS),</p>
+</li>
+<li data-start="4134" data-end="4180">
+<p data-start="4136" data-end="4180">memory modules in frameworks like LangChain,</p>
+</li>
+</ul>
+<p data-start="4182" data-end="4198">allow agents to:</p>
+<ul data-start="4199" data-end="4292">
+<li data-start="4199" data-end="4231">
+<p data-start="4201" data-end="4231">retrieve relevant information,</p>
+</li>
+<li data-start="4232" data-end="4262">
+<p data-start="4234" data-end="4262">even if phrased differently,</p>
+</li>
+<li data-start="4263" data-end="4292">
+<p data-start="4265" data-end="4292">and apply it intelligently.</p>
+</li>
+</ul>
+<hr data-start="4294" data-end="4297">
+<h3 data-start="4299" data-end="4333">Why Memory Is Transformational</h3>
+<p data-start="4335" data-end="4359">With memory, agents can:</p>
+<ul data-start="4360" data-end="4455">
+<li data-start="4360" data-end="4388">
+<p data-start="4362" data-end="4388">remember user preferences,</p>
+</li>
+<li data-start="4389" data-end="4419">
+<p data-start="4391" data-end="4419">reference earlier decisions,</p>
+</li>
+<li data-start="4420" data-end="4455">
+<p data-start="4422" data-end="4455">adapt behavior based on outcomes.</p>
+</li>
+</ul>
+<p data-start="4457" data-end="4472">Without memory:</p>
+<ul data-start="4473" data-end="4535">
+<li data-start="4473" data-end="4503">
+<p data-start="4475" data-end="4503">AI is reactive.<br>
+With memory:</p>
+</li>
+<li data-start="4504" data-end="4535">
+<p data-start="4506" data-end="4535">AI becomes <strong data-start="4517" data-end="4534">context-aware</strong>.</p>
+</li>
+</ul>
+<hr data-start="4537" data-end="4540">
+<h3 data-start="4542" data-end="4592">The Risks of Memory (Yes, There Are Downsides)</h3>
+<p data-start="4594" data-end="4631">The chapter doesn’t ignore the risks.</p>
+<p data-start="4633" data-end="4657">Long-term memory raises:</p>
+<ul data-start="4658" data-end="4762">
+<li data-start="4658" data-end="4677">
+<p data-start="4660" data-end="4677">privacy concerns,</p>
+</li>
+<li data-start="4678" data-end="4701">
+<p data-start="4680" data-end="4701">data security issues,</p>
+</li>
+<li data-start="4702" data-end="4722">
+<p data-start="4704" data-end="4722">bias accumulation,</p>
+</li>
+<li data-start="4723" data-end="4762">
+<p data-start="4725" data-end="4762">confusion if outdated info is reused.</p>
+</li>
+</ul>
+<p data-start="4764" data-end="4779">Memory must be:</p>
+<ul data-start="4780" data-end="4822">
+<li data-start="4780" data-end="4799">
+<p data-start="4782" data-end="4799">carefully scoped,</p>
+</li>
+<li data-start="4800" data-end="4811">
+<p data-start="4802" data-end="4811">governed,</p>
+</li>
+<li data-start="4812" data-end="4822">
+<p data-start="4814" data-end="4822">audited.</p>
+</li>
+</ul>
+<p data-start="4824" data-end="4865">Otherwise, helpful becomes creepy — fast.</p>
+<hr data-start="4867" data-end="4870">
+<h2 data-start="4872" data-end="4911">3. Tool Use: Agents Don’t Work Alone</h2>
+<p data-start="4913" data-end="4952">Agentic AI doesn’t operate in a vacuum.</p>
+<p data-start="4954" data-end="4993">To do real work, it must interact with:</p>
+<ul data-start="4994" data-end="5051">
+<li data-start="4994" data-end="5001">
+<p data-start="4996" data-end="5001">APIs,</p>
+</li>
+<li data-start="5002" data-end="5014">
+<p data-start="5004" data-end="5014">databases,</p>
+</li>
+<li data-start="5015" data-end="5032">
+<p data-start="5017" data-end="5032">software tools,</p>
+</li>
+<li data-start="5033" data-end="5051">
+<p data-start="5035" data-end="5051">other AI agents.</p>
+</li>
+</ul>
+<hr data-start="5053" data-end="5056">
+<h3 data-start="5058" data-end="5087">Why Tool Use Is Essential</h3>
+<p data-start="5089" data-end="5110">Language alone can’t:</p>
+<ul data-start="5111" data-end="5160">
+<li data-start="5111" data-end="5129">
+<p data-start="5113" data-end="5129">fetch live data,</p>
+</li>
+<li data-start="5130" data-end="5141">
+<p data-start="5132" data-end="5141">run code,</p>
+</li>
+<li data-start="5142" data-end="5160">
+<p data-start="5144" data-end="5160">execute actions.</p>
+</li>
+</ul>
+<p data-start="5162" data-end="5197">Agentic AI bridges the gap between:</p>
+<blockquote data-start="5198" data-end="5222">
+<p data-start="5200" data-end="5222"><strong data-start="5200" data-end="5222">thinking and doing</strong></p>
+</blockquote>
+<hr data-start="5224" data-end="5227">
+<h3 data-start="5229" data-end="5264">Frameworks That Enable Tool Use</h3>
+<p data-start="5266" data-end="5309">The chapter names several key technologies:</p>
+<ul data-start="5310" data-end="5470">
+<li data-start="5310" data-end="5364">
+<p data-start="5312" data-end="5364"><strong data-start="5312" data-end="5325">LangChain</strong> → chaining reasoning steps and tools</p>
+</li>
+<li data-start="5365" data-end="5408">
+<p data-start="5367" data-end="5408"><strong data-start="5367" data-end="5378">AutoGen</strong> → multi-agent collaboration</p>
+</li>
+<li data-start="5409" data-end="5470">
+<p data-start="5411" data-end="5470"><strong data-start="5411" data-end="5438">OpenAI Function Calling</strong> → triggering external actions</p>
+</li>
+</ul>
+<p data-start="5472" data-end="5493">Newer protocols like:</p>
+<ul data-start="5494" data-end="5514">
+<li data-start="5494" data-end="5500">
+<p data-start="5496" data-end="5500">MCP,</p>
+</li>
+<li data-start="5501" data-end="5507">
+<p data-start="5503" data-end="5507">A2A,</p>
+</li>
+<li data-start="5508" data-end="5514">
+<p data-start="5510" data-end="5514">ACP,</p>
+</li>
+</ul>
+<p data-start="5516" data-end="5564">are emerging to standardize agent communication.</p>
+<hr data-start="5566" data-end="5569">
+<h3 data-start="5571" data-end="5612">World Modeling: Giving Agents Context</h3>
+<p data-start="5614" data-end="5648">World modeling allows an agent to:</p>
+<ul data-start="5649" data-end="5750">
+<li data-start="5649" data-end="5703">
+<p data-start="5651" data-end="5703">build an internal representation of its environment,</p>
+</li>
+<li data-start="5704" data-end="5724">
+<p data-start="5706" data-end="5724">simulate outcomes,</p>
+</li>
+<li data-start="5725" data-end="5750">
+<p data-start="5727" data-end="5750">understand constraints.</p>
+</li>
+</ul>
+<p data-start="5752" data-end="5767">Think of it as:</p>
+<blockquote data-start="5768" data-end="5830">
+<p data-start="5770" data-end="5830">giving the agent a mental map instead of blind instructions.</p>
+</blockquote>
+<hr data-start="5832" data-end="5835">
+<h2 data-start="5837" data-end="5873">4. Communication and Coordination</h2>
+<p data-start="5875" data-end="5907">In systems with multiple agents:</p>
+<ul data-start="5908" data-end="5981">
+<li data-start="5908" data-end="5925">
+<p data-start="5910" data-end="5925">they must talk,</p>
+</li>
+<li data-start="5926" data-end="5943">
+<p data-start="5928" data-end="5943">share progress,</p>
+</li>
+<li data-start="5944" data-end="5960">
+<p data-start="5946" data-end="5960">delegate work,</p>
+</li>
+<li data-start="5961" data-end="5981">
+<p data-start="5963" data-end="5981">resolve conflicts.</p>
+</li>
+</ul>
+<p data-start="5983" data-end="5997">This requires:</p>
+<ul data-start="5998" data-end="6056">
+<li data-start="5998" data-end="6018">
+<p data-start="6000" data-end="6018">messaging systems,</p>
+</li>
+<li data-start="6019" data-end="6034">
+<p data-start="6021" data-end="6034">shared state,</p>
+</li>
+<li data-start="6035" data-end="6056">
+<p data-start="6037" data-end="6056">coordination logic.</p>
+</li>
+</ul>
+<p data-start="6058" data-end="6103">Without this, multi-agent systems fall apart.</p>
+<hr data-start="6105" data-end="6108">
+<h2 data-start="6110" data-end="6157">Humans Are Still the Overseers (And Must Be)</h2>
+<p data-start="6159" data-end="6196">The chapter makes a powerful analogy:</p>
+<blockquote data-start="6198" data-end="6235">
+<p data-start="6200" data-end="6235">Agentic AI is like a trained horse.</p>
+</blockquote>
+<p data-start="6237" data-end="6273">A horse can act independently — but:</p>
+<ul data-start="6274" data-end="6318">
+<li data-start="6274" data-end="6291">
+<p data-start="6276" data-end="6291">it needs reins,</p>
+</li>
+<li data-start="6292" data-end="6303">
+<p data-start="6294" data-end="6303">training,</p>
+</li>
+<li data-start="6304" data-end="6318">
+<p data-start="6306" data-end="6318">and a rider.</p>
+</li>
+</ul>
+<p data-start="6320" data-end="6337">Agentic AI needs:</p>
+<ul data-start="6338" data-end="6374">
+<li data-start="6338" data-end="6347">
+<p data-start="6340" data-end="6347">design,</p>
+</li>
+<li data-start="6348" data-end="6360">
+<p data-start="6350" data-end="6360">oversight,</p>
+</li>
+<li data-start="6361" data-end="6374">
+<p data-start="6363" data-end="6374">guardrails.</p>
+</li>
+</ul>
+<p data-start="6376" data-end="6411">Autonomy does not mean abandonment.</p>
+<hr data-start="6413" data-end="6416">
+<h2 data-start="6418" data-end="6479">How Agentic AI “Thinks” (And Why It’s Not Really Thinking)</h2>
+<p data-start="6481" data-end="6538">The chapter carefully explains how agent reasoning works.</p>
+<p data-start="6540" data-end="6587">Agentic AI uses three cognitive-like processes:</p>
+<ol data-start="6588" data-end="6638">
+<li data-start="6588" data-end="6604">
+<p data-start="6591" data-end="6604"><strong data-start="6591" data-end="6604">Reasoning</strong></p>
+</li>
+<li data-start="6605" data-end="6618">
+<p data-start="6608" data-end="6618"><strong data-start="6608" data-end="6618">Memory</strong></p>
+</li>
+<li data-start="6619" data-end="6638">
+<p data-start="6622" data-end="6638"><strong data-start="6622" data-end="6638">Goal setting</strong></p>
+</li>
+</ol>
+<p data-start="6640" data-end="6668">But — and this is critical —</p>
+<blockquote data-start="6670" data-end="6725">
+<p data-start="6672" data-end="6725">It mimics thinking.<br data-start="6691" data-end="6694">
+It does not <em data-start="6706" data-end="6715">possess</em> thinking.</p>
+</blockquote>
+<hr data-start="6727" data-end="6730">
+<h3 data-start="6732" data-end="6765">What AI Reasoning Actually Is</h3>
+<p data-start="6767" data-end="6786">AI reasoning means:</p>
+<ul data-start="6787" data-end="6856">
+<li data-start="6787" data-end="6812">
+<p data-start="6789" data-end="6812">processing information,</p>
+</li>
+<li data-start="6813" data-end="6836">
+<p data-start="6815" data-end="6836">analyzing situations,</p>
+</li>
+<li data-start="6837" data-end="6856">
+<p data-start="6839" data-end="6856">choosing actions.</p>
+</li>
+</ul>
+<p data-start="6858" data-end="6882">It does <strong data-start="6866" data-end="6873">not</strong> include:</p>
+<ul data-start="6883" data-end="6973">
+<li data-start="6883" data-end="6895">
+<p data-start="6885" data-end="6895">intuition,</p>
+</li>
+<li data-start="6896" data-end="6928">
+<p data-start="6898" data-end="6928">creativity in the human sense,</p>
+</li>
+<li data-start="6929" data-end="6946">
+<p data-start="6931" data-end="6946">moral judgment,</p>
+</li>
+<li data-start="6947" data-end="6973">
+<p data-start="6949" data-end="6973">emotional understanding.</p>
+</li>
+</ul>
+<p data-start="6975" data-end="7027">This limitation matters deeply for safety and trust.</p>
+<hr data-start="7029" data-end="7032">
+<h3 data-start="7034" data-end="7094">Why Narrow AI Successes Don’t Prove General Intelligence</h3>
+<p data-start="7096" data-end="7139">The chapter explains why achievements like:</p>
+<ul data-start="7140" data-end="7169">
+<li data-start="7140" data-end="7169">
+<p data-start="7142" data-end="7169">Deep Blue winning at chess,</p>
+</li>
+</ul>
+<p data-start="7171" data-end="7206">don’t mean AI can reason generally.</p>
+<p data-start="7208" data-end="7222">Those systems:</p>
+<ul data-start="7223" data-end="7306">
+<li data-start="7223" data-end="7261">
+<p data-start="7225" data-end="7261">operate in constrained environments,</p>
+</li>
+<li data-start="7262" data-end="7281">
+<p data-start="7264" data-end="7281">with clear rules,</p>
+</li>
+<li data-start="7282" data-end="7306">
+<p data-start="7284" data-end="7306">and narrow objectives.</p>
+</li>
+</ul>
+<p data-start="7308" data-end="7391">Agentic AI must operate in <strong data-start="7335" data-end="7367">messy, real-world conditions</strong> — which is much harder.</p>
+<hr data-start="7393" data-end="7396">
+<h2 data-start="7398" data-end="7435">Specialization Over Generalization</h2>
+<p data-start="7437" data-end="7476">A key design philosophy explained here:</p>
+<blockquote data-start="7478" data-end="7556">
+<p data-start="7480" data-end="7556">Many specialized agents working together often outperform one “super agent.”</p>
+</blockquote>
+<p data-start="7558" data-end="7583">This mirrors human teams:</p>
+<ul data-start="7584" data-end="7633">
+<li data-start="7584" data-end="7596">
+<p data-start="7586" data-end="7596">engineers,</p>
+</li>
+<li data-start="7597" data-end="7608">
+<p data-start="7599" data-end="7608">analysts,</p>
+</li>
+<li data-start="7609" data-end="7620">
+<p data-start="7611" data-end="7620">planners,</p>
+</li>
+<li data-start="7621" data-end="7633">
+<p data-start="7623" data-end="7633">executors.</p>
+</li>
+</ul>
+<p data-start="7635" data-end="7683">Agentic AI systems are often built the same way.</p>
+<hr data-start="7685" data-end="7688">
+<h2 data-start="7690" data-end="7734">Goal Setting: From Instructions to Intent</h2>
+<p data-start="7736" data-end="7786">This is where Agentic AI truly departs from GenAI.</p>
+<p data-start="7788" data-end="7794">GenAI:</p>
+<ul data-start="7795" data-end="7818">
+<li data-start="7795" data-end="7818">
+<p data-start="7797" data-end="7818">follows instructions.</p>
+</li>
+</ul>
+<p data-start="7820" data-end="7831">Agentic AI:</p>
+<ul data-start="7832" data-end="7856">
+<li data-start="7832" data-end="7856">
+<p data-start="7834" data-end="7856">interprets <strong data-start="7845" data-end="7855">intent</strong>.</p>
+</li>
+</ul>
+<p data-start="7858" data-end="7868">Goals are:</p>
+<ul data-start="7869" data-end="7912">
+<li data-start="7869" data-end="7884">
+<p data-start="7871" data-end="7884">hierarchical,</p>
+</li>
+<li data-start="7885" data-end="7899">
+<p data-start="7887" data-end="7899">prioritized,</p>
+</li>
+<li data-start="7900" data-end="7912">
+<p data-start="7902" data-end="7912">adaptable.</p>
+</li>
+</ul>
+<p data-start="7914" data-end="7921">Agents:</p>
+<ul data-start="7922" data-end="8034">
+<li data-start="7922" data-end="7951">
+<p data-start="7924" data-end="7951">break goals into sub-goals,</p>
+</li>
+<li data-start="7952" data-end="7972">
+<p data-start="7954" data-end="7972">adjust priorities,</p>
+</li>
+<li data-start="7973" data-end="7998">
+<p data-start="7975" data-end="7998">trade speed for safety,</p>
+</li>
+<li data-start="7999" data-end="8034">
+<p data-start="8001" data-end="8034">and adapt to changing conditions.</p>
+</li>
+</ul>
+<hr data-start="8036" data-end="8039">
+<h2 data-start="8041" data-end="8083">Adaptive Behavior: Learning While Doing</h2>
+<p data-start="8085" data-end="8137">What really sets Agentic AI apart is <strong data-start="8122" data-end="8136">adaptation</strong>.</p>
+<p data-start="8139" data-end="8185">Rule-based systems follow scripts.<br>
+Agentic AI:</p>
+<ul data-start="8186" data-end="8247">
+<li data-start="8186" data-end="8207">
+<p data-start="8188" data-end="8207">evaluates progress,</p>
+</li>
+<li data-start="8208" data-end="8226">
+<p data-start="8210" data-end="8226">notices failure,</p>
+</li>
+<li data-start="8227" data-end="8247">
+<p data-start="8229" data-end="8247">pivots strategies.</p>
+</li>
+</ul>
+<p data-start="8249" data-end="8273">This makes it usable in:</p>
+<ul data-start="8274" data-end="8332">
+<li data-start="8274" data-end="8293">
+<p data-start="8276" data-end="8293">customer service,</p>
+</li>
+<li data-start="8294" data-end="8306">
+<p data-start="8296" data-end="8306">logistics,</p>
+</li>
+<li data-start="8307" data-end="8320">
+<p data-start="8309" data-end="8320">healthcare,</p>
+</li>
+<li data-start="8321" data-end="8332">
+<p data-start="8323" data-end="8332">research.</p>
+</li>
+</ul>
+<hr data-start="8334" data-end="8337">
+<h3 data-start="8339" data-end="8389">Self-Directed Learning (Still Early, But Real)</h3>
+<p data-start="8391" data-end="8406">Agentic AI can:</p>
+<ul data-start="8407" data-end="8471">
+<li data-start="8407" data-end="8431">
+<p data-start="8409" data-end="8431">notice knowledge gaps,</p>
+</li>
+<li data-start="8432" data-end="8451">
+<p data-start="8434" data-end="8451">seek information,</p>
+</li>
+<li data-start="8452" data-end="8471">
+<p data-start="8454" data-end="8471">refine workflows.</p>
+</li>
+</ul>
+<p data-start="8473" data-end="8487">This includes:</p>
+<ul data-start="8488" data-end="8587">
+<li data-start="8488" data-end="8528">
+<p data-start="8490" data-end="8528">meta-learning (learning how to learn),</p>
+</li>
+<li data-start="8529" data-end="8562">
+<p data-start="8531" data-end="8562">reflection on past performance,</p>
+</li>
+<li data-start="8563" data-end="8587">
+<p data-start="8565" data-end="8587">strategy optimization.</p>
+</li>
+</ul>
+<p data-start="8589" data-end="8615">But the chapter is honest:</p>
+<blockquote data-start="8616" data-end="8666">
+<p data-start="8618" data-end="8666">This capability is powerful — and still limited.</p>
+</blockquote>
+<hr data-start="8668" data-end="8671">
+<h2 data-start="8673" data-end="8723">Directing Agentic AI: Not Prompting, Delegating</h2>
+<p data-start="8725" data-end="8767">Prompting a chatbot is like ordering food.</p>
+<p data-start="8769" data-end="8823">Directing an agent is like delegating to an assistant.</p>
+<p data-start="8825" data-end="8829">You:</p>
+<ul data-start="8830" data-end="8920">
+<li data-start="8830" data-end="8849">
+<p data-start="8832" data-end="8849">explain the goal,</p>
+</li>
+<li data-start="8850" data-end="8868">
+<p data-start="8852" data-end="8868">provide context,</p>
+</li>
+<li data-start="8869" data-end="8895">
+<p data-start="8871" data-end="8895">define success criteria,</p>
+</li>
+<li data-start="8896" data-end="8920">
+<p data-start="8898" data-end="8920">approve key decisions.</p>
+</li>
+</ul>
+<p data-start="8922" data-end="8932">The agent:</p>
+<ul data-start="8933" data-end="9020">
+<li data-start="8933" data-end="8951">
+<p data-start="8935" data-end="8951">proposes a plan,</p>
+</li>
+<li data-start="8952" data-end="8970">
+<p data-start="8954" data-end="8970">asks permission,</p>
+</li>
+<li data-start="8971" data-end="8995">
+<p data-start="8973" data-end="8995">executes autonomously,</p>
+</li>
+<li data-start="8996" data-end="9020">
+<p data-start="8998" data-end="9020">checks in when needed.</p>
+</li>
+</ul>
+<p data-start="9022" data-end="9072">This turns AI into a <strong data-start="9043" data-end="9059">collaborator</strong>, not a tool.</p>
+<hr data-start="9074" data-end="9077">
+<h2 data-start="9079" data-end="9123">Human-in-the-Loop Is a Feature, Not a Bug</h2>
+<p data-start="9125" data-end="9156">The back-and-forth interaction:</p>
+<ul data-start="9157" data-end="9220">
+<li data-start="9157" data-end="9177">
+<p data-start="9159" data-end="9177">prevents mistakes,</p>
+</li>
+<li data-start="9178" data-end="9194">
+<p data-start="9180" data-end="9194">aligns intent,</p>
+</li>
+<li data-start="9195" data-end="9220">
+<p data-start="9197" data-end="9220">ensures accountability.</p>
+</li>
+</ul>
+<p data-start="9222" data-end="9289">Agentic AI is designed to pause, ask, and verify — not blindly act.</p>
+<hr data-start="9291" data-end="9294">
+<h2 data-start="9296" data-end="9338">GenAI vs Agentic AI: A Clear Comparison</h2>
+<p data-start="9340" data-end="9379">The chapter provides a simple contrast:</p>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="9381" data-end="9593" class="w-fit min-w-(--thread-content-width)"><thead data-start="9381" data-end="9412"><tr data-start="9381" data-end="9412"><th data-start="9381" data-end="9390" data-col-size="sm">Aspect</th><th data-start="9390" data-end="9398" data-col-size="sm">GenAI</th><th data-start="9398" data-end="9412" data-col-size="sm">Agentic AI</th></tr></thead><tbody data-start="9427" data-end="9593"><tr data-start="9427" data-end="9466"><td data-start="9427" data-end="9441" data-col-size="sm">Interaction</td><td data-start="9441" data-end="9452" data-col-size="sm">One-shot</td><td data-col-size="sm" data-start="9452" data-end="9466">Multi-step</td></tr><tr data-start="9467" data-end="9492"><td data-start="9467" data-end="9478" data-col-size="sm">Autonomy</td><td data-start="9478" data-end="9484" data-col-size="sm">Low</td><td data-start="9484" data-end="9492" data-col-size="sm">High</td></tr><tr data-start="9493" data-end="9525"><td data-start="9493" data-end="9504" data-col-size="sm">Feedback</td><td data-col-size="sm" data-start="9504" data-end="9513">Manual</td><td data-col-size="sm" data-start="9513" data-end="9525">Built-in</td></tr><tr data-start="9526" data-end="9559"><td data-start="9526" data-end="9535" data-col-size="sm">Memory</td><td data-start="9535" data-end="9545" data-col-size="sm">Minimal</td><td data-start="9545" data-end="9559" data-col-size="sm">Persistent</td></tr><tr data-start="9560" data-end="9593"><td data-start="9560" data-end="9572" data-col-size="sm">Execution</td><td data-start="9572" data-end="9579" data-col-size="sm">None</td><td data-start="9579" data-end="9593" data-col-size="sm">Continuous</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-ihvgg3b1.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<p data-start="9595" data-end="9648">Agentic AI doesn’t replace GenAI.<br>
+It <strong data-start="9632" data-end="9647">upgrades it</strong>.</p>
+<hr data-start="9650" data-end="9653">
+<h2 data-start="9655" data-end="9700">Creativity + Decision-Making = Real Agency</h2>
+<p data-start="9702" data-end="9739">Agentic AI works because it combines:</p>
+<ul data-start="9740" data-end="9811">
+<li data-start="9740" data-end="9776">
+<p data-start="9742" data-end="9776">GenAI’s creative language ability,</p>
+</li>
+<li data-start="9777" data-end="9811">
+<p data-start="9779" data-end="9811">with decision-making frameworks.</p>
+</li>
+</ul>
+<p data-start="9813" data-end="9866">It doesn’t just choose words.<br>
+It chooses <strong data-start="9854" data-end="9865">actions</strong>.</p>
+<p data-start="9868" data-end="9880">This allows:</p>
+<ul data-start="9881" data-end="9950">
+<li data-start="9881" data-end="9902">
+<p data-start="9883" data-end="9902">long-running tasks,</p>
+</li>
+<li data-start="9903" data-end="9930">
+<p data-start="9905" data-end="9930">cross-platform workflows,</p>
+</li>
+<li data-start="9931" data-end="9950">
+<p data-start="9933" data-end="9950">persistent goals.</p>
+</li>
+</ul>
+<hr data-start="9952" data-end="9955">
+<h2 data-start="9957" data-end="9994">Why This Matters in the Real World</h2>
+<p data-start="9996" data-end="10040">Agentic AI thrives in environments that are:</p>
+<ul data-start="10041" data-end="10082">
+<li data-start="10041" data-end="10053">
+<p data-start="10043" data-end="10053">uncertain,</p>
+</li>
+<li data-start="10054" data-end="10064">
+<p data-start="10056" data-end="10064">dynamic,</p>
+</li>
+<li data-start="10065" data-end="10082">
+<p data-start="10067" data-end="10082">interconnected.</p>
+</li>
+</ul>
+<p data-start="10084" data-end="10157">Business, science, healthcare, logistics — these are not linear problems.</p>
+<p data-start="10159" data-end="10203">Agentic AI mirrors how humans actually work:</p>
+<ul data-start="10204" data-end="10247">
+<li data-start="10204" data-end="10218">
+<p data-start="10206" data-end="10218">gather info,</p>
+</li>
+<li data-start="10219" data-end="10225">
+<p data-start="10221" data-end="10225">act,</p>
+</li>
+<li data-start="10226" data-end="10237">
+<p data-start="10228" data-end="10237">reassess,</p>
+</li>
+<li data-start="10238" data-end="10247">
+<p data-start="10240" data-end="10247">adjust.</p>
+</li>
+</ul>
+<p data-start="10249" data-end="10274">Only faster and at scale.</p>
+<hr data-start="10276" data-end="10279">
+<h2 data-start="10281" data-end="10298">Final Takeaway</h2>
+<p data-start="10300" data-end="10326">Chapter 2 teaches us this:</p>
+<blockquote data-start="10328" data-end="10417">
+<p data-start="10330" data-end="10417">Agentic AI is not about smarter answers.<br data-start="10370" data-end="10373">
+It’s about <strong data-start="10386" data-end="10416">sustained, adaptive action</strong>.</p>
+</blockquote>
+<p data-start="10419" data-end="10447">It’s the difference between:</p>
+<ul data-start="10448" data-end="10488">
+<li data-start="10448" data-end="10463">
+<p data-start="10450" data-end="10463">a calculator,</p>
+</li>
+<li data-start="10464" data-end="10488">
+<p data-start="10466" data-end="10488">and a project manager.</p>
+</li>
+</ul>
+<p data-start="10490" data-end="10524">And while it’s powerful, it still:</p>
+<ul data-start="10525" data-end="10597">
+<li data-start="10525" data-end="10545">
+<p data-start="10527" data-end="10545">depends on humans,</p>
+</li>
+<li data-start="10546" data-end="10567">
+<p data-start="10548" data-end="10567">requires oversight,</p>
+</li>
+<li data-start="10568" data-end="10597">
+<p data-start="10570" data-end="10597">and demands careful design.</p>
+</li>
+</ul>
+
+</div>
