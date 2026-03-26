@@ -1,0 +1,598 @@
+<head>
+    <meta charset="UTF-8">
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+<br />
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArtificialIntelligenceHeader" target="_blank">See All Articles on AI</a> &nbsp;&nbsp; <a href="https://survival8.blogspot.com/2026/02/rebuilding-schools-for-ai-age-what-if.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+<br>
+<br>
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1410;
+      --ink-light: #4a3f35;
+      --paper: #f7f3ec;
+      --cream: #ede7da;
+      --accent: #b5401a;
+      --accent-pale: #f0ddd7;
+      --rule: #c8bfb0;
+      --highlight: #f5e6c8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 19px;
+      line-height: 1.78;
+      font-weight: 300;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--ink);
+      color: var(--paper);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 38px,
+        rgba(255,255,255,0.03) 38px,
+        rgba(255,255,255,0.03) 39px
+      );
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-family: 'Source Serif 4', serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.4rem;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      max-width: 820px;
+      margin: 0 auto 1.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: rgba(247,243,236,0.65);
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .header-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin: 2rem auto 0;
+    }
+
+    /* ── ARTICLE WRAPPER ── */
+    article {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* ── DROPCAP INTRO ── */
+    .intro {
+      font-size: 1.13rem;
+      line-height: 1.85;
+      color: var(--ink-light);
+      margin-bottom: 3rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .intro::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.6rem;
+      font-weight: 900;
+      float: left;
+      line-height: 0.82;
+      margin: 0.06em 0.1em 0 0;
+      color: var(--accent);
+    }
+
+    /* ── SECTION HEADINGS ── */
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.72rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 3.6rem 0 1.2rem;
+      color: var(--ink);
+    }
+
+    h2::before {
+      content: '#';
+      color: var(--accent);
+      font-size: 25px;
+      margin-right: 0.55em;
+      vertical-align: 0.1em;
+      font-family: 'Source Serif 4', serif;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── PULL QUOTE ── */
+    blockquote {
+      margin: 2.8rem 0;
+      padding: 1.8rem 2rem 1.8rem 2.4rem;
+      background: var(--accent-pale);
+      border-left: 4px solid var(--accent);
+      position: relative;
+    }
+    blockquote::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.25;
+      position: absolute;
+      top: -0.3rem;
+      left: 0.6rem;
+      pointer-events: none;
+    }
+    blockquote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.18rem;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 0;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.9rem;
+      font-family: 'Source Serif 4', serif;
+      font-style: normal;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      background: var(--highlight);
+      border: 1px solid var(--rule);
+      padding: 1.6rem 2rem;
+      margin: 2.4rem 0;
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--ink-light);
+    }
+
+    /* ── STAT CALLOUT ── */
+    .stat {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin: 2rem 0;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      max-width: 320px;
+      line-height: 1.5;
+    }
+
+    /* ── CONCLUSION BULLETS ── */
+    .conclusion {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 3rem 2.4rem;
+      margin: 3.6rem 0 0;
+    }
+    .conclusion h2 {
+      color: var(--paper);
+      font-size: 1.4rem;
+      margin: 0 0 1.8rem;
+    }
+    .conclusion h2::before { color: var(--accent); }
+
+    .conclusion ul {
+      list-style: none;
+      padding: 0;
+    }
+    .conclusion ul li {
+      padding: 0.85rem 0 0.85rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      font-size: 0.97rem;
+      line-height: 1.68;
+      color: rgba(247,243,236,0.88);
+    }
+    .conclusion ul li:last-child { border-bottom: none; }
+    .conclusion ul li::before {
+      content: '$';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.4rem 2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rule);
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── DIVIDER ── */
+    .ornament {
+      text-align: center;
+      color: var(--rule);
+      font-size: 1.3rem;
+      margin: 2.4rem 0;
+      letter-spacing: 0.5em;
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 17px; }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.45rem; }
+      .stat-num { font-size: 2.6rem; }
+      blockquote p { font-size: 1.05rem; }
+    }
+  </style>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQa1U0D30kP2gg4pGO-_g-EI_UcHcl7jMxzDkx2MRK1w1K8bFoR5m0sY-0venBAH42O1BJAXqLME83wgg5SOygisDQUdVIqQk9jezFSofLqLSNgMCCqSIVXEA-fuCjnp5G-1F8VZYHj6Dz-yq5n_najRC43SRH1fJ1Op4MSWda_WQtuJx9vPb9dSCCyFwl/s600/eric-schmidt-mit-2017.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="400" data-original-width="600" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQa1U0D30kP2gg4pGO-_g-EI_UcHcl7jMxzDkx2MRK1w1K8bFoR5m0sY-0venBAH42O1BJAXqLME83wgg5SOygisDQUdVIqQk9jezFSofLqLSNgMCCqSIVXEA-fuCjnp5G-1F8VZYHj6Dz-yq5n_najRC43SRH1fJ1Op4MSWda_WQtuJx9vPb9dSCCyFwl/s600/eric-schmidt-mit-2017.jpg"/></a></div>
+
+<br>
+
+  <iframe class="custom_iframe" src="https://www.youtube.com/embed/DpwmmXmzvfo" title="Eric Schmidt: Singularity&#39;s Arrival, 92-Gigawatt Problem &amp; Recursive Self-Improvement Timeline | 241" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  <header>
+    <p class="eyebrow">Artificial Intelligence · The Decade Ahead</p>
+    <h1>We're 10% Into the AI Revolution — And It's Already Rewriting Everything</h1>
+    <p class="subtitle">On recursive self-improvement, the 92-gigawatt problem, and why the slope is about to go vertical</p>
+    <div class="header-rule"></div>
+  </header>
+
+  <article>
+
+    <p class="intro">
+      Let me be direct: we are in the middle of the most consequential technological transition in human history, and most people — including most policymakers — haven't begun to feel it yet. We're perhaps 10 or 15 percent into the real impacts of artificial intelligence. You can see it. You can feel it at the edges. But the core disruption? It hasn't arrived. What's coming is something far larger, far faster, and far more disorienting than the chatbot era has suggested.
+    </p>
+
+    <h2>The Year of Agents Is Already Here</h2>
+
+    <p>
+      There's something I call the San Francisco consensus — a shared belief among nearly everyone building frontier AI right now that 2025 is the year of agents. Not chatbots. Not autocomplete. Agents: AI systems that reason, plan, take multi-step actions, and operate autonomously over extended periods. The scaling of agent deployments and reasoning capabilities is happening at an enormous and accelerating rate.
+    </p>
+
+    <p>
+      To understand what that means practically, consider what's already changed in software development. A year ago, the ratio was roughly 80% human-written code, 20% AI-generated. Today, for the best teams I know in the Bay Area, it has completely flipped: 20% human, 80% AI. What drove that flip wasn't just better tooling. The underlying large language models became deeper thinkers — capable of longer, more coherent chains of reasoning, producing higher-quality outputs across more complex tasks.
+    </p>
+
+    <blockquote>
+      <p>"The best analysis I can come up with is it's not the Claude Code part. It's that the underlying LLM can produce more reasoning over time, better quality tokens over time. It's a deeper thinker."</p>
+      <cite>On the shift in software development</cite>
+    </blockquote>
+
+    <p>
+      I've been programming since high school. I moved to the Bay Area at 21 and built my career in software. Watching what these systems can do now, I have a clear-eyed view: there is not a programming task I could perform that a current top-tier model cannot match or exceed. When I watched one of these systems rewrite a C compiler in Rust, I thought: declare victory. The era of the individual programmer as the primary unit of software creation is effectively over.
+    </p>
+
+    <h2>Recursive Self-Improvement: The Clock Is Ticking</h2>
+
+    <p>
+      The thing people in this space talk about — but that most outside of it don't yet fully grasp — is recursive self-improvement. This is the scenario where an AI system begins improving itself: learning faster than humans can supervise, iterating on its own architecture and reasoning, compounding gains in ways that are not linear but exponential.
+    </p>
+
+    <p>
+      We don't have true recursive self-improvement yet. The tests exist in labs, they work in constrained demo conditions, but the general capability — "start now, learn everything, discover new things, and report what you found" — does not yet function reliably. The scientists working on this do not agree on the exact approach. But the evidence that it will work is accumulating.
+    </p>
+
+    <blockquote>
+      <p>"In this thinking, once you have recursive self-improvement, where the system can begin to improve itself, you have intelligence learning on its own. And in this argument, it will learn faster than we can because we're biologically limited."</p>
+      <cite>On the superintelligence inflection point</cite>
+    </blockquote>
+
+    <p>
+      The mechanism is worth spelling out clearly. Imagine a tech company with a thousand brilliant AI researchers. Now imagine switching on AI research agents to work alongside them. The constraint on human researchers is biology: sleep, housing, salaries, visas, interpersonal friction, burnout. The constraint on AI agents is electricity. So the question becomes: how many AI research agents could you run? Perhaps a million. And if your evaluation framework clearly measures progress — which in AI it does — then a million agents iterating on model improvement creates a slope that goes nearly vertical. That is the superintelligence moment. The belief in San Francisco is that this arrives within two to three years.
+    </p>
+
+    <div class="stat">
+      <span class="stat-num">2–3</span>
+      <span class="stat-label">years: the window within which most frontier AI researchers believe recursive self-improvement — and with it, a superintelligence inflection — becomes possible.</span>
+    </div>
+
+    <h2>The 92-Gigawatt Problem Nobody Is Talking About Enough</h2>
+
+    <p>
+      Every major AI lab is out of hardware. Every major AI lab is out of electricity. This is not hyperbole — it is the binding constraint on the entire industry right now. The boom I'm watching is unlike anything I've seen across three or four technology cycles in my career. The numbers involved are staggering: the United States alone will need roughly 92 additional gigawatts of energy to power the AI infrastructure being planned and built.
+    </p>
+
+    <p>
+      To put that in context: a large nuclear power plant produces about one gigawatt. We're talking about the equivalent of 92 new nuclear plants worth of electricity demand — added on top of existing consumption — driven primarily by data center construction for AI training and inference.
+    </p>
+
+    <blockquote>
+      <p>"Everybody's out of hardware. Everyone's out of electricity. It's a real boom. It's like the biggest boom I've seen. And I've been through three or four of these in my career."</p>
+      <cite>On the infrastructure surge</cite>
+    </blockquote>
+
+    <p>
+      The good news is that energy permitting reform is happening in the United States, and the rate at which data centers are being approved and built is now accelerating. The grid challenges are being worked through. But this is the chokepoint — not the algorithms, not the chips, not the talent. The race to superintelligence may ultimately be decided by who can build generation capacity fastest.
+    </p>
+
+    <h2>The Geopolitical Dimension: China, Open Source, and the Edge Computing Bet</h2>
+
+    <p>
+      China is not behind. This is something I want to say clearly and without the political fog that tends to cloud this conversation. China has enormous capital, exceptional engineering talent, and a work ethic that is at minimum equal to anything we produce in the United States. In robotics hardware, they may already be winning — and I have no desire to lose the robotics revolution the way we lost the electric vehicle race at the consumer end.
+    </p>
+
+    <p>
+      What's interesting is China's strategic divergence. Their approach — exemplified by DeepSeek, Qwen, Kimi, and others — is predominantly open source. They've made remarkable progress despite chip export restrictions, which is itself a demonstration of their engineering sophistication. But perhaps more importantly, China is betting on edge computing: embedding AI into the physical environment of Chinese users at massive scale, pervasively and locally.
+    </p>
+
+    <div class="highlight-box">
+      The United States strategy is centered on AGI and ASI — building toward artificial general and superintelligence in large, centralized compute clusters. China's strategy is different: it's less about central supremacy and more about total environmental saturation with AI at the edge. These are diverging architectures for diverging visions of what AI is fundamentally for.
+    </div>
+
+    <p>
+      My estimate is that the world can sustain roughly ten frontier AI labs at scale — the majority in the United States, a few in China, possibly one or two in Europe depending on energy costs, and perhaps one in India. Russia is effectively out of this race for now. The question of whether these labs converge on similar capabilities or diverge toward specialized strengths is one that will define the geopolitical landscape of the next decade.
+    </p>
+
+    <h2>What Happens to Work — and Who Wins</h2>
+
+    <p>
+      The labor market implications are already becoming visible, and they don't map onto the simple narratives. It is not the case that all jobs disappear or that everything remains the same. The pattern I see emerging is bimodal: a relatively small number of very large companies, and a very large number of very small companies. The middle layer — medium-sized firms dependent on large teams of knowledge workers — gets compressed.
+    </p>
+
+    <p>
+      Within software specifically, what I observe is that the very top programmers — the ones with exceptional mathematical reasoning skills — become more valuable, not less. These are the people who can direct, evaluate, and constrain AI systems. They understand parallelization. They can write specifications, build evaluation functions, and run overnight agent loops that produce in eight hours what used to take weeks. They become directors of a programming system rather than individual contributors within one.
+    </p>
+
+    <blockquote>
+      <p>"It's always been true, speaking as your local arrogant programmer, that the very top programmers were worth ten times more than the ones right below. Those people will become more valuable, not less valuable, because these systems need to be controlled by humans at the moment."</p>
+      <cite>On the future of technical talent</cite>
+    </blockquote>
+
+    <p>
+      For physical labor, the story is more complex. Highly skilled mechanical work — aerospace, precision manufacturing, anything requiring in-situ human judgment about novel physical situations — remains difficult to automate in the near term. Low-skilled physical labor, by contrast, is highly exposed. But the general principle holds: the learning loop that accelerates fastest wins, whether that's a company, a country, or an individual.
+    </p>
+
+    <h2>Safety, Chernobyl, and the Wake-Up Call We Haven't Had</h2>
+
+    <p>
+      I want to be precise about something I've said before, because it is often misread. I am not endorsing a catastrophic AI event. I am describing — as a matter of prediction, not preference — that the world may require a modest, Chernobyl-scale incident before governments take AI risk seriously enough to act collectively.
+    </p>
+
+    <p>
+      Today, the share of congressional attention devoted to AI policy is well under one percent. Governments are busy; they are driven by near-term political pressures; they move slowly on abstract systemic risks. The real dangers are not science fiction. They include biological attacks enabled by AI, destabilization of democratic processes, and the exploitation of children and minors through AI-generated content — the last of which I consider an uncrossable line that we have so far failed to adequately address.
+    </p>
+
+    <blockquote>
+      <p>"It may take such a tragedy, hopefully a small one, to awaken the world to understand that these things are real... We're in brutal competition, we hate each other... but we are all in it together, right, over this issue."</p>
+      <cite>On global AI governance</cite>
+    </blockquote>
+
+    <p>
+      My deeper frustration is structural. We have over-relied on technologists to solve what are fundamentally political, ethical, and governance problems. The people who need to be centrally involved — historians, governance scholars, human psychologists, political philosophers — are largely absent from the rooms where AI policy is being shaped. That has to change.
+    </p>
+
+    <h2>Steering Toward Abundance: What Must Be Done</h2>
+
+    <p>
+      If we reach ASI — artificial superintelligence — within this decade, as I believe is probable, the single most important question is what values it embeds. Not its capabilities. Its values. A superintelligent system oriented toward human flourishing, freedom of expression, and democratic self-determination looks entirely different from one optimized for control or extraction. This is not a technical problem. It is a civilizational one.
+    </p>
+
+    <p>
+      The United States has a genuine comparative advantage here, but it is not guaranteed. The values that make American innovation possible — pluralism, individual freedom, the right to speak and associate — are also the values that need to be encoded into the systems we build. Winning the AI race matters, but winning it while losing what makes America worth winning for would be a catastrophic form of success.
+    </p>
+
+    <p>
+      On immigration, the argument is simple: the smartest people in the world should want to build here, and we should want them here. High-skilled immigration is not a social program; it is a national security and technology strategy. Every brilliant researcher who builds the next frontier model in the United States rather than elsewhere is a direct contribution to the kind of AI future I want to see.
+    </p>
+
+    <div class="highlight-box">
+      The abundance thesis is correct. AI can and should generate extraordinary human flourishing — collapsing the cost of expertise, expanding access to education and healthcare, enabling scientific discovery at scales previously impossible. None of that is inevitable. It requires deliberate choices, made now, by people with the courage to think on the timescale the moment demands.
+    </div>
+
+    <div class="conclusion">
+      <h2>Conclusion</h2>
+      <ul>
+        <li>We are roughly 10–15% into the real impacts of AI. The disruption visible today is a preview, not the main event.</li>
+        <li>The year of agents is here. AI systems that reason, plan, and act autonomously are already flipping the 80/20 human-to-AI ratio in software development.</li>
+        <li>Recursive self-improvement — the true superintelligence trigger — does not yet exist in deployable form, but lab evidence is accumulating. The likely window: two to three years.</li>
+        <li>The binding constraint is energy, not algorithms. 92 additional gigawatts of electricity demand are coming; whoever builds generation capacity fastest shapes the race.</li>
+        <li>China is a peer competitor, not a laggard. Their open-source, edge-computing strategy is coherent and sophisticated, and they are winning in robotics hardware.</li>
+        <li>Labor bifurcates: top technical talent becomes more valuable; mid-tier knowledge work is most exposed; high-skill physical labor is more durable than low-skill physical labor.</li>
+        <li>A governance wake-up call — hopefully small — may be necessary before the world takes AI safety seriously enough to act across geopolitical divides.</li>
+        <li>The critical missing voices in AI policy are not technologists but ethicists, historians, political scientists, and governance experts.</li>
+        <li>Winning the AI race matters only if we encode the right values — freedom, pluralism, human alignment — into the systems we build. The how of winning is as important as the winning itself.</li>
+      </ul>
+    </div>
+
+  </article>
