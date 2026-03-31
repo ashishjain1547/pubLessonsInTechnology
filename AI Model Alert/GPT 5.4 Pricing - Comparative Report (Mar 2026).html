@@ -1,0 +1,436 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+</style>
+
+  <style>
+    div.customOuterWrapper {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0px;
+      line-height: 1.6;
+    }
+
+    /* div.customOuterWrapper .report-shell {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 3px;
+      background: #fafafa;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    } */
+
+    div.customOuterWrapper h1 {
+      font-size: 30px;
+      margin: 0 0 8px 0;
+      color: #111827;
+    }
+
+    div.customOuterWrapper .subtitle {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+
+    div.customOuterWrapper h2 {
+      font-size: 22px;
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #111827;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    div.customOuterWrapper p {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+
+    div.customOuterWrapper .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin: 18px 0 8px 0;
+    }
+
+    div.customOuterWrapper .metric-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    div.customOuterWrapper .metric-label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    div.customOuterWrapper .metric-value {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    div.customOuterWrapper table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    div.customOuterWrapper th,
+    div.customOuterWrapper td {
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+      text-align: left;
+      padding: 3px;
+      font-size: 9.5px;
+    }
+
+    div.customOuterWrapper th {
+      background: #f3f4f6;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    div.customOuterWrapper tr:last-child td {
+      border-bottom: none;
+    }
+
+    div.customOuterWrapper .note {
+      background: #eef2ff;
+      border-left: 4px solid #6366f1;
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    div.customOuterWrapper ul {
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    div.customOuterWrapper li {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    div.customOuterWrapper .smallprint {
+      margin-top: 22px;
+      font-size: 12px;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 12px;
+    }
+
+    div.customOuterWrapper .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    div.customOuterWrapper .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+    }
+  </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customAIModelAlerts" target="_blank">See All on AI Model Releases</a>
+<br />
+
+<a href="https://survival8.blogspot.com/2026/03/gpt-54-is-here-and-it-looks-lot-more.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+<br>
+
+
+
+<div class="customOuterWrapper">
+  <div class="report-shell">
+    <h1>Comparative Study of GPT-5.4 Model Pricing</h1>
+    <div class="subtitle">Official OpenAI API pricing and ChatGPT model-routing notes, as of the latest published
+      OpenAI sources consulted.</div>
+
+    <div class="summary-grid">
+      <div class="metric-card">
+        <div class="metric-label">Cheapest model</div>
+        <div class="metric-value">GPT-5.4 nano</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Best-balanced mid-tier</div>
+        <div class="metric-value">GPT-5.4 mini</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Core frontier model</div>
+        <div class="metric-value">GPT-5.4</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Highest-priced model</div>
+        <div class="metric-value">GPT-5.4 pro</div>
+      </div>
+    </div>
+
+    <h2>1) Executive summary</h2>
+    <p>
+      OpenAI’s published API pricing places <span class="mono">gpt-5.4-nano</span> at the low-cost end, <span
+        class="mono">gpt-5.4-mini</span> as a middle option, <span class="mono">gpt-5.4</span> as the standard
+      frontier model, and <span class="mono">gpt-5.4-pro</span> as the premium tier. The pricing spread is
+      substantial: on standard API pricing, nano is far cheaper than the base model, while pro is materially more
+      expensive than all other variants. OpenAI also notes a 10% uplift for regional processing endpoints on these
+      four API models. </p>
+    <p>
+      “GPT-5.4 Instant” is not listed by OpenAI as a standalone public API model name. In ChatGPT, the
+      <strong>Instant</strong> mode can automatically choose between <span class="mono">GPT-5.3 Instant</span> and
+      <span class="mono">GPT-5.4 Thinking</span>, so its pricing is not published as a separate token-based line item.
+    </p>
+
+    <h2>2) Pricing table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Model / mode</th>
+          <th>Official pricing status</th>
+          <th>Standard API price<br>(per 1M tokens)</th>
+          <th>Batch / alternate pricing</th>
+          <th>Important note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nano</strong></td>
+          <td>Officially priced API model</td>
+          <td>Input $0.20 · Cached input $0.02 · Output $1.25</td>
+          <td>Batch: same pricing shown for the model family on the pricing page</td>
+          <td>Cheapest of the five names in this comparison. </td>
+        </tr>
+        <tr>
+          <td><strong>Mini</strong></td>
+          <td>Officially priced API model</td>
+          <td>Input $0.75 · Cached input $0.075 · Output $4.50</td>
+          <td>Batch: same pricing shown for the model family on the pricing page</td>
+          <td>About 3× cheaper than GPT-5.4 on input/output, while still positioned for coding, computer use, and
+            subagents. </td>
+        </tr>
+        <tr>
+          <td><strong>GPT-5.4</strong></td>
+          <td>Officially priced API model</td>
+          <td>Input $2.50 · Cached input $0.25 · Output $15.00</td>
+          <td>Batch: Input $1.25 · Cached input $0.13 · Output $7.50</td>
+          <td>OpenAI’s standard frontier option for complex professional work. </td>
+        </tr>
+        <tr>
+          <td><strong>Instant</strong></td>
+          <td>No standalone public API price found</td>
+          <td>Not separately published</td>
+          <td>Not separately published</td>
+          <td>In ChatGPT, Instant can switch between GPT-5.3 Instant and GPT-5.4 Thinking, so it is a routing mode
+            rather than a clearly priced API model. </td>
+        </tr>
+        <tr>
+          <td><strong>Thinking</strong></td>
+          <td>ChatGPT model mode; API pricing not listed under this exact name in the sources consulted</td>
+          <td>Uses GPT-5.4 family pricing in API contexts where GPT-5.4 is the priced model</td>
+          <td>Batch/Flex/Priority available for GPT-5.4 family pricing</td>
+          <td>In ChatGPT, Thinking is the deeper-reasoning experience and can be selected directly. </td>
+        </tr>
+        <tr>
+          <td><strong>Pro</strong></td>
+          <td>Officially priced premium API model</td>
+          <td>Input $30.00 · Output $180.00</td>
+          <td>Batch: Input $15.00 · Output $90.00</td>
+          <td>By far the most expensive model in this set. </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3) Comparative findings</h2>
+    <div class="tag">Cost efficiency</div>
+    <div class="tag">Throughput</div>
+    <div class="tag">Reasoning depth</div>
+    <div class="tag">Premium tier</div>
+
+    <ul>
+      <li><strong>GPT-5.4 nano</strong> is the best fit when token cost is the dominant constraint. Its published
+        input price is <span class="mono">$0.20</span> per 1M tokens and output price is <span class="mono">$1.25</span>
+        per 1M tokens.</li>
+      <li><strong>GPT-5.4 mini</strong> is a strong middle ground. It costs about <strong>30%</strong> of GPT-5.4’s
+        standard input price and about <strong>30%</strong> of GPT-5.4’s standard output price.</li>
+      <li><strong>GPT-5.4</strong> is the baseline frontier model in the family and is priced much higher than
+        mini/nano, but far below pro.</li>
+      <li><strong>GPT-5.4 pro</strong> is priced as a premium model for tough tasks. Standard input is <span
+          class="mono">$30.00</span> and output is <span class="mono">$180.00</span> per 1M tokens, making it roughly
+        <strong>12×</strong> the standard GPT-5.4 price on both input and output.
+      </li>
+      <li><strong>GPT-5.4 instant</strong> does not have a standalone public per-token line in the sources reviewed,
+        so a direct apples-to-apples price comparison is not available.</li>
+      <li><strong>GPT-5.4 Thinking</strong> is best understood as a ChatGPT mode with deeper reasoning behavior; in
+        the pricing sources reviewed, the directly billed API model is GPT-5.4 rather than a separate “Thinking” SKU.
+      </li>
+    </ul>
+
+    <h2>4) Practical reading of the pricing ladder</h2>
+    <p>
+      The pricing structure is easy to interpret: <strong>nano</strong> is for maximum cost control,
+      <strong>mini</strong> balances price and capability, <strong>GPT-5.4</strong> is the general-purpose frontier
+      model, and <strong>pro</strong> targets the highest-quality outcomes for complex work regardless of cost. For
+      teams with large usage volumes, even a small per-token difference matters quickly; for example, moving from
+      GPT-5.4 to mini or nano can substantially reduce spend at scale.
+    </p>
+    <p>
+      The pricing page also shows additional purchasing modes. For GPT-5.4 and GPT-5.4 mini, <strong>Batch</strong>,
+      <strong>Flex</strong>, and <strong>Priority</strong> pricing appear as separate options. OpenAI also states that
+      regional processing (data residency) endpoints carry a <strong>10% uplift</strong> for GPT-5.4, GPT-5.4 mini,
+      GPT-5.4 nano, and GPT-5.4 pro.
+    </p>
+
+    <h2>5) Bottom line</h2>
+    <p>
+      If the goal is lowest cost, choose <strong>GPT-5.4 nano</strong>. If the goal is the best compromise between
+      quality and price, choose <strong>GPT-5.4 mini</strong>. If the goal is the main frontier model for professional
+      work, choose <strong>GPT-5.4</strong>. If the goal is maximum performance and cost is secondary, choose
+      <strong>GPT-5.4 pro</strong>. For <strong>GPT-5.4 instant</strong> and <strong>GPT-5.4 Thinking</strong>,
+      OpenAI’s published ChatGPT documentation describes them as mode-based experiences rather than separately
+      itemized token-priced API models.
+    </p>
+
+    <div class="smallprint">
+      Sources consulted: OpenAI API Pricing, OpenAI model pages for GPT-5.4, GPT-5.4 mini, GPT-5.4 nano, GPT-5.4 pro,
+      and OpenAI Help Center documentation for GPT-5.4 in ChatGPT.
+    </div>
+  </div>
+</div>
