@@ -1,0 +1,1686 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+</style>
+
+
+<style>
+  /* ─── Reset inside wrapper ─────────────────────────────────── */
+  div.customOuterWrapper *,
+  div.customOuterWrapper *::before,
+  div.customOuterWrapper *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ─── Root Variables ──────────────────────────────────────── */
+  div.customOuterWrapper {
+    --bg:        #0d0f14;
+    --bg2:       #13161e;
+    --bg3:       #1a1e29;
+    --border:    #272c3b;
+    --gold:      #c9a84c;
+    --gold-lt:   #e8c87a;
+    --gold-dk:   #8a6d28;
+    --text:      #dde3ef;
+    --text-muted:#7e899e;
+    --text-dim:  #3e4760;
+    --cyan:      #4ec9c0;
+    --red:       #d45a5a;
+    --green:     #5aad7e;
+    --blue:      #5a8ad4;
+
+    --ff-display: 'Playfair Display', Georgia, serif;
+    --ff-body:    'Source Serif 4', Georgia, serif;
+    --ff-mono:    'IBM Plex Mono', 'Courier New', monospace;
+
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--ff-body);
+    font-size: 17px;
+    line-height: 1.75;
+    min-height: 100vh;
+    padding: 0 0 80px;
+  }
+
+  /* ─── Masthead ────────────────────────────────────────────── */
+  div.customOuterWrapper .masthead {
+    border-bottom: 1px solid var(--border);
+    padding: 56px 64px 40px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 24px;
+    background: linear-gradient(180deg, #0a0c10 0%, var(--bg) 100%);
+  }
+  div.customOuterWrapper .masthead-label {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  div.customOuterWrapper .masthead h1 {
+    font-family: var(--ff-display);
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.08;
+    color: #f0ece2;
+    letter-spacing: -.02em;
+  }
+  div.customOuterWrapper .masthead h1 em {
+    font-style: italic;
+    color: var(--gold-lt);
+  }
+  div.customOuterWrapper .masthead-meta {
+    text-align: right;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.9;
+  }
+  div.customOuterWrapper .masthead-meta strong {
+    display: block;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: .06em;
+  }
+
+  /* ─── TOC strip ───────────────────────────────────────────── */
+  div.customOuterWrapper .toc-strip {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 64px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .07em;
+  }
+  div.customOuterWrapper .toc-strip span { color: var(--text-muted); }
+  div.customOuterWrapper .toc-strip a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  div.customOuterWrapper .toc-strip a:hover { color: var(--gold-lt); }
+
+  /* ─── Body layout ─────────────────────────────────────────── */
+  div.customOuterWrapper .body-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  /* ─── Section header ──────────────────────────────────────── */
+  div.customOuterWrapper .section-head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 60px 0 28px;
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+  }
+  div.customOuterWrapper .section-num {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    color: var(--gold);
+    min-width: 32px;
+  }
+  div.customOuterWrapper .section-head h2 {
+    font-family: var(--ff-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #f0ece2;
+    letter-spacing: -.01em;
+  }
+  div.customOuterWrapper .section-head .rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+  }
+
+  /* ─── Lead paragraph ──────────────────────────────────────── */
+  div.customOuterWrapper .lead {
+    font-size: 1.08rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 28px;
+    max-width: 820px;
+  }
+  div.customOuterWrapper p {
+    margin-bottom: 20px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* ─── Model card ──────────────────────────────────────────── */
+  div.customOuterWrapper .model-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  div.customOuterWrapper .model-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color .2s;
+  }
+  div.customOuterWrapper .model-card:hover { border-color: var(--gold-dk); }
+  div.customOuterWrapper .model-card-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg3);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  div.customOuterWrapper .model-brand {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  div.customOuterWrapper .model-name {
+    font-family: var(--ff-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #f0ece2;
+    letter-spacing: -.01em;
+  }
+  div.customOuterWrapper .model-badge {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 2px;
+    letter-spacing: .08em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  div.customOuterWrapper .badge-flagship { background: #2a1f05; color: var(--gold); border: 1px solid var(--gold-dk); }
+  div.customOuterWrapper .badge-budget   { background: #052a1e; color: var(--green); border: 1px solid #2a6b4e; }
+  div.customOuterWrapper .badge-speed    { background: #05182a; color: var(--cyan);  border: 1px solid #2a5a6b; }
+  div.customOuterWrapper .badge-open     { background: #1a2505; color: #8dc85a;      border: 1px solid #456b2a; }
+  div.customOuterWrapper .badge-realtime { background: #1a0505; color: var(--red);   border: 1px solid #6b2a2a; }
+  div.customOuterWrapper .badge-expert   { background: #05102a; color: var(--blue);  border: 1px solid #2a4b8c; }
+
+  div.customOuterWrapper .model-card-body { padding: 20px 24px; flex: 1; }
+
+  div.customOuterWrapper .model-section-label {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 16px 0 6px;
+  }
+  div.customOuterWrapper .model-section-label:first-child { margin-top: 0; }
+
+  div.customOuterWrapper .price-pair {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 6px;
+    align-items: baseline;
+  }
+  div.customOuterWrapper .price-tier {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    min-width: 72px;
+  }
+  div.customOuterWrapper .price-val {
+    font-family: var(--ff-mono);
+    font-size: 13px;
+    color: var(--gold-lt);
+  }
+  div.customOuterWrapper .price-val.free { color: var(--green); }
+
+  div.customOuterWrapper .cap-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  div.customOuterWrapper .cap-tag {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    letter-spacing: .04em;
+  }
+  div.customOuterWrapper .cap-tag.yes { color: var(--cyan); border-color: #2a5a6b; }
+
+  div.customOuterWrapper .benchmark-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.85rem;
+  }
+  div.customOuterWrapper .benchmark-row:last-child { border-bottom: none; }
+  div.customOuterWrapper .benchmark-name { color: var(--text-muted); font-size: 0.82rem; }
+  div.customOuterWrapper .benchmark-score { font-family: var(--ff-mono); font-size: 0.82rem; color: var(--gold-lt); }
+
+  div.customOuterWrapper .model-card-footer {
+    padding: 14px 24px;
+    border-top: 1px solid var(--border);
+    background: #0f1218;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: .03em;
+  }
+
+  /* ─── Context window bar ──────────────────────────────────── */
+  div.customOuterWrapper .ctx-bar-wrap {
+    margin-top: 8px;
+  }
+  div.customOuterWrapper .ctx-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  div.customOuterWrapper .ctx-bar-outer {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  div.customOuterWrapper .ctx-bar-inner {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold-dk), var(--gold));
+  }
+
+  /* ─── Code block ──────────────────────────────────────────── */
+  div.customOuterWrapper .code-block {
+    background: #080b10;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold-dk);
+    border-radius: 3px;
+    padding: 20px 24px;
+    font-family: var(--ff-mono);
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: #b4c3d4;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  div.customOuterWrapper .code-block .kw   { color: #c792ea; }
+  div.customOuterWrapper .code-block .fn   { color: #82aaff; }
+  div.customOuterWrapper .code-block .str  { color: #c3e88d; }
+  div.customOuterWrapper .code-block .cmt  { color: var(--text-dim); }
+  div.customOuterWrapper .code-block .var  { color: var(--cyan); }
+  div.customOuterWrapper .code-block .num  { color: #f78c6c; }
+  div.customOuterWrapper .code-title {
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  /* ─── Comparison Table ────────────────────────────────────── */
+  div.customOuterWrapper .table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  div.customOuterWrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    min-width: 900px;
+  }
+  div.customOuterWrapper thead tr {
+    background: var(--bg3);
+  }
+  div.customOuterWrapper thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold-dk);
+    white-space: nowrap;
+  }
+  div.customOuterWrapper tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background .12s;
+  }
+  div.customOuterWrapper tbody tr:hover { background: rgba(201,168,76,0.04); }
+  div.customOuterWrapper tbody tr:last-child { border-bottom: none; }
+  div.customOuterWrapper tbody td {
+    padding: 13px 16px;
+    color: var(--text);
+    vertical-align: middle;
+    line-height: 1.4;
+  }
+  div.customOuterWrapper td.model-col {
+    font-family: var(--ff-display);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #f0ece2;
+    white-space: nowrap;
+  }
+  div.customOuterWrapper td .sub {
+    font-family: var(--ff-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    display: block;
+    font-weight: 400;
+  }
+  div.customOuterWrapper td .mono {
+    font-family: var(--ff-mono);
+    font-size: 0.78rem;
+    color: var(--gold-lt);
+  }
+  div.customOuterWrapper td .mono.cheap { color: var(--green); }
+  div.customOuterWrapper .check { color: var(--green); font-size: 0.9rem; }
+  div.customOuterWrapper .cross { color: var(--red); font-size: 0.9rem; }
+  div.customOuterWrapper .partial { color: var(--gold); font-size: 0.9rem; }
+
+  /* ─── LangChain section ───────────────────────────────────── */
+  div.customOuterWrapper .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  div.customOuterWrapper .lang-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 18px 20px;
+  }
+  div.customOuterWrapper .lang-card h4 {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  div.customOuterWrapper .lang-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
+
+  /* ─── Conclusion box ──────────────────────────────────────── */
+  div.customOuterWrapper .conclusion-box {
+    background: linear-gradient(135deg, #0d1020 0%, #12150c 100%);
+    border: 1px solid var(--gold-dk);
+    border-radius: 4px;
+    padding: 36px 40px;
+    margin-top: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  div.customOuterWrapper .conclusion-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt), var(--gold-dk));
+  }
+  div.customOuterWrapper .conclusion-box h3 {
+    font-family: var(--ff-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #f0ece2;
+    margin-bottom: 16px;
+  }
+  div.customOuterWrapper .conclusion-box p { color: #b8c4d4; font-size: 0.95rem; }
+  div.customOuterWrapper .rec-tier {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  div.customOuterWrapper .rec-item {
+    background: rgba(0,0,0,.3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 14px 16px;
+  }
+  div.customOuterWrapper .rec-item .rec-label {
+    font-family: var(--ff-mono);
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  div.customOuterWrapper .rec-item .rec-model {
+    font-family: var(--ff-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--gold-lt);
+  }
+  div.customOuterWrapper .rec-item .rec-why {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ─── Citations ───────────────────────────────────────────── */
+  div.customOuterWrapper .citations {
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    margin-top: 48px;
+  }
+  div.customOuterWrapper .citations h3 {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  div.customOuterWrapper .cite-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  div.customOuterWrapper .cite-num {
+    font-family: var(--ff-mono);
+    color: var(--text-dim);
+    text-align: right;
+    padding-top: 2px;
+  }
+  div.customOuterWrapper .cite-text { color: var(--text-muted); line-height: 1.5; }
+  div.customOuterWrapper .cite-text a { color: var(--gold-dk); text-decoration: none; }
+  div.customOuterWrapper .cite-text a:hover { color: var(--gold-lt); }
+
+  /* ─── Callout ─────────────────────────────────────────────── */
+  div.customOuterWrapper .callout {
+    background: var(--bg3);
+    border-left: 3px solid var(--gold-dk);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 3px 3px 0;
+    font-size: 0.9rem;
+    color: #a8b5c5;
+    line-height: 1.6;
+  }
+  div.customOuterWrapper .callout strong { color: var(--gold-lt); }
+
+  /* ─── Divider ─────────────────────────────────────────────── */
+  div.customOuterWrapper .ornament {
+    text-align: center;
+    color: var(--text-dim);
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: .3em;
+    margin: 32px 0;
+  }
+
+  /* ─── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    div.customOuterWrapper .masthead { padding: 36px 24px 28px; grid-template-columns: 1fr; }
+    div.customOuterWrapper .masthead-meta { text-align: left; }
+    div.customOuterWrapper .toc-strip { padding: 14px 24px; }
+    div.customOuterWrapper .body-wrap { padding: 0 24px; }
+  }
+</style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customAIModelAlerts" target="_blank">See All on AI Model Releases</a>
+<br />
+
+<a href="https://survival8.blogspot.com/2026/03/gpt-54-pricing-comparative-report-mar.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+<br>
+
+
+<div class="customOuterWrapper">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div>
+      <p class="masthead-label">Deep Research Report · April 2026</p>
+      <h1>Frontier <em>AI Models</em><br>Compared</h1>
+    </div>
+    <div class="masthead-meta">
+      <strong>Edition</strong>
+      Q2 · 2026
+      <strong style="margin-top:12px">Coverage</strong>
+      GPT-5.4 · Gemini 3.1<br>Claude Opus 4.6<br>DeepSeek V3.2<br>Grok 4.20
+      <strong style="margin-top:12px">Focus</strong>
+      Pricing · Capabilities<br>LangChain Integration
+    </div>
+  </header>
+
+  <!-- TOC -->
+  <nav class="toc-strip">
+    <span>Contents —</span>
+    <a href="#s1">01 Overview</a>
+    <a href="#s2">02 GPT-5.4</a>
+    <a href="#s3">03 Gemini 3.1</a>
+    <a href="#s4">04 Claude Opus 4.6</a>
+    <a href="#s5">05 DeepSeek V3.2</a>
+    <a href="#s6">06 Grok 4.20</a>
+    <a href="#s7">07 LangChain / LangGraph</a>
+    <a href="#s8">08 Comparison Table</a>
+    <a href="#s9">09 Conclusion</a>
+    <a href="#s10">10 Citations</a>
+  </nav>
+
+  <div class="body-wrap">
+
+    <!-- ── SECTION 1: OVERVIEW ─────────────────────────────────── -->
+    <div class="section-head" id="s1">
+      <span class="section-num">01</span>
+      <h2>Overview &amp; Methodology</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead">
+      The frontier AI landscape in early 2026 is defined by intense competition across five major providers — OpenAI, Google DeepMind, Anthropic, DeepSeek, and xAI. This report examines their flagship and variant models, analysing pricing via both consumer subscriptions and developer APIs, key capabilities, benchmark performance, and integration with the Python LangChain/LangGraph ecosystem. All pricing is expressed in USD per million tokens unless stated otherwise, and reflects figures as of April 2026.
+    </p>
+
+    <p>
+      Models were selected based on the user's brief — GPT-5.4, Gemini 3.1, Claude Opus 4.6, DeepSeek V3.2, and Grok 4.20 — supplemented by their closest sibling variants to give a complete picture of each provider's lineup and value tiers. Note that "Grok 4.20" refers to xAI's latest mid-cycle release building on the Grok 4 architecture, and DeepSeek V3.2 is confirmed by DeepSeek's own API documentation as the current production model behind the <em>deepseek-chat</em> endpoint.
+    </p>
+
+    <div class="callout">
+      <strong>Important note on model naming:</strong> Some model version strings requested in the brief (such as "Grok 4.20") are specific versioned snapshots, while others like "Gemini 3.1" refer to an entire sub-family. Where variants exist, they are each addressed under the relevant provider section.
+    </div>
+
+    <!-- ── SECTION 2: GPT-5.4 ──────────────────────────────────── -->
+    <div class="section-head" id="s2">
+      <span class="section-num">02</span>
+      <h2>GPT-5.4 Family (OpenAI)</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      Released on March 5, 2026, GPT-5.4 is OpenAI's latest flagship, unifying the separate GPT and Codex lines into a single model. It introduces five-level reasoning effort control (low through xhigh), a native Computer Use API that scored 75% on the OSWorld benchmark — surpassing the 72.4% human expert baseline — and a context window of up to 1.05 million tokens. On SWE-bench Verified (real-world software engineering), it achieves approximately 80%, trading blows with Claude Opus 4.6.
+    </p>
+
+    <div class="model-grid">
+      <!-- GPT-5.4 Standard -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">OpenAI</div>
+            <div class="model-name">GPT-5.4</div>
+          </div>
+          <span class="model-badge badge-flagship">Flagship</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$2.50</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$15.00</span></div>
+          <div class="price-pair"><span class="price-tier">Cache Read</span><span class="price-val">$0.625</span></div>
+          <div class="price-pair"><span class="price-tier">Batch (50% off)</span><span class="price-val">$1.25 / $7.50</span></div>
+
+          <div class="model-section-label">Web / Subscription</div>
+          <div class="price-pair"><span class="price-tier">Plus</span><span class="price-val">$20 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">Pro</span><span class="price-val">$200 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">Team</span><span class="price-val">$25 / user / mo</span></div>
+
+          <div class="model-section-label">Context / Output</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>1.05M tokens</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:100%"></div></div>
+          </div>
+          <div style="margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)">Max output: 128K tokens</div>
+
+          <div class="model-section-label">Capabilities</div>
+          <div class="cap-list">
+            <span class="cap-tag yes">Deep Research</span>
+            <span class="cap-tag yes">Coding</span>
+            <span class="cap-tag yes">Computer Use</span>
+            <span class="cap-tag yes">Vision</span>
+            <span class="cap-tag yes">Function Calling</span>
+            <span class="cap-tag yes">Reasoning Control</span>
+            <span class="cap-tag yes">Multimodal</span>
+            <span class="cap-tag">Video Gen (Sora — discontinued)</span>
+          </div>
+
+          <div class="model-section-label">Key Benchmarks</div>
+          <div class="benchmark-row"><span class="benchmark-name">SWE-bench Verified</span><span class="benchmark-score">~80%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">OSWorld (Computer Use)</span><span class="benchmark-score">75%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">SWE-bench Pro</span><span class="benchmark-score">57.7%</span></div>
+        </div>
+        <div class="model-card-footer">
+          Released: March 5 2026 · API string: <code>gpt-5.4</code> · LangChain: ChatOpenAI
+        </div>
+      </div>
+
+      <!-- GPT-5.4 Pro -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">OpenAI</div>
+            <div class="model-name">GPT-5.4 Pro</div>
+          </div>
+          <span class="model-badge badge-expert">Premium Tier</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$30.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$180.00</span></div>
+
+          <div class="model-section-label">Notes</div>
+          <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:8px">Pro tier uses dedicated hardware for deep-horizon reasoning. Context above 272K tokens incurs a 2× input surcharge. Suited exclusively for high-stakes enterprise tasks requiring maximum reasoning depth.</p>
+
+          <div class="model-section-label">Variants (Mini / Nano)</div>
+          <div class="price-pair"><span class="price-tier">5.4 Mini</span><span class="price-val">~$0.40 / $1.60</span></div>
+          <div class="price-pair"><span class="price-tier">5.4 Nano</span><span class="price-val">pricing TBC</span></div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:6px">Mini achieves 54.38% on SWE-bench Pro — near-flagship at ~6× lower cost. Available on free tier.</div>
+        </div>
+        <div class="model-card-footer">
+          Context surcharge: &gt;272K tokens = 2× input rate · Max context: 1.05M
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Key consideration:</strong> GPT-5.4's cost is approximately 40% of Claude Opus 4.6's output token cost at comparable performance. The 272K context surcharge is a critical hidden cost for long-document workflows — prompts exceeding this threshold are billed at $5.00/M input rather than $2.50/M.
+    </div>
+
+    <!-- ── SECTION 3: GEMINI 3.1 ───────────────────────────────── -->
+    <div class="section-head" id="s3">
+      <span class="section-num">03</span>
+      <h2>Gemini 3.1 Family (Google DeepMind)</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      Released in preview on February 19, 2026, Gemini 3.1 Pro is Google DeepMind's most capable reasoning model. Built on a Transformer-based Mixture-of-Experts architecture, it delivers a 2× reasoning boost over Gemini 3 Pro and ranks first on 12 of 18 tracked benchmarks. Its 77.1% score on ARC-AGI-2 — a benchmark specifically designed to prevent memorisation — represents a dramatic leap from earlier generations. The model natively understands continuous video streams (not just individual frames), audio, images, and code through a single API endpoint.
+    </p>
+
+    <div class="model-grid">
+      <!-- Gemini 3.1 Pro -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">Google DeepMind</div>
+            <div class="model-name">Gemini 3.1 Pro</div>
+          </div>
+          <span class="model-badge badge-flagship">Flagship</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input (≤200K)</span><span class="price-val">$2.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output (≤200K)</span><span class="price-val">$12.00</span></div>
+          <div class="price-pair"><span class="price-tier">Input (&gt;200K)</span><span class="price-val">$4.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output (&gt;200K)</span><span class="price-val">$18.00</span></div>
+          <div class="price-pair"><span class="price-tier">Cache Read</span><span class="price-val">$0.20 / 1M</span></div>
+
+          <div class="model-section-label">Web / Subscription</div>
+          <div class="price-pair"><span class="price-tier">Google AI Pro</span><span class="price-val">~$19.99 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">Gemini Enterprise</span><span class="price-val">$30 / user / mo</span></div>
+          <div class="price-pair"><span class="price-tier">AI Studio</span><span class="price-val free">Free (rate-limited)</span></div>
+
+          <div class="model-section-label">Context / Output</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>1M tokens</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:95%"></div></div>
+          </div>
+          <div style="margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)">Max output: 65,536 tokens</div>
+
+          <div class="model-section-label">Capabilities</div>
+          <div class="cap-list">
+            <span class="cap-tag yes">Deep Research</span>
+            <span class="cap-tag yes">Coding</span>
+            <span class="cap-tag yes">Native Video</span>
+            <span class="cap-tag yes">Image Gen (Imagen 4)</span>
+            <span class="cap-tag yes">Audio</span>
+            <span class="cap-tag yes">Veo 3.1 Video</span>
+            <span class="cap-tag yes">Agentic</span>
+            <span class="cap-tag yes">SVG / 3D Render</span>
+          </div>
+
+          <div class="model-section-label">Key Benchmarks</div>
+          <div class="benchmark-row"><span class="benchmark-name">ARC-AGI-2</span><span class="benchmark-score">77.1%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">GPQA Diamond</span><span class="benchmark-score">94.3%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">SWE-bench Verified</span><span class="benchmark-score">80.6%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">BrowseComp</span><span class="benchmark-score">85.9%</span></div>
+        </div>
+        <div class="model-card-footer">
+          Released: Feb 19 2026 · API string: <code>gemini-3.1-pro-preview</code> · Replaces Gemini 3 Pro
+        </div>
+      </div>
+
+      <!-- Gemini 3.1 Flash-Lite -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">Google DeepMind</div>
+            <div class="model-name">Gemini 3.1 Flash-Lite</div>
+          </div>
+          <span class="model-badge badge-budget">Budget</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$0.25</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$1.50</span></div>
+
+          <div class="model-section-label">Context / Output</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>1M tokens</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:95%"></div></div>
+          </div>
+
+          <div class="model-section-label">Capabilities</div>
+          <div class="cap-list">
+            <span class="cap-tag yes">Coding</span>
+            <span class="cap-tag yes">Image Input</span>
+            <span class="cap-tag yes">Image Gen</span>
+            <span class="cap-tag yes">High Throughput</span>
+            <span class="cap-tag">Advanced Reasoning</span>
+          </div>
+
+          <div class="model-section-label">Note</div>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Optimised for high-volume production workloads — 8× cheaper than 3.1 Pro. Native image generation included via Imagen 4 Flash. Veo 3.1 for video generation is available as a separate endpoint.</p>
+        </div>
+        <div class="model-card-footer">
+          API string: <code>gemini-3.1-flash-lite-preview</code> · Image gen: $0.045–$0.151/image
+        </div>
+      </div>
+    </div>
+
+    <p>
+      Google's unique advantage is its generous free tier — multiple Gemini models remain free in AI Studio, while OpenAI and Anthropic charge for comparable capability. For teams processing large volumes of text (legal review, codebase analysis, research synthesis), Gemini 3.1 Pro's cost difference versus Claude Opus 4.6 is substantial: 60% cheaper on input and 52% cheaper on output.
+    </p>
+
+    <!-- ── SECTION 4: CLAUDE OPUS 4.6 ─────────────────────────── -->
+    <div class="section-head" id="s4">
+      <span class="section-num">04</span>
+      <h2>Claude Opus 4.6 Family (Anthropic)</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      Released on February 4–5, 2026, Claude Opus 4.6 is Anthropic's most capable model to date. It is the first Opus-class model with a 1M token context window (currently in beta), alongside a 128K maximum output window — the largest among flagship models. On the Humanity's Last Exam (HLE), a complex multidisciplinary reasoning test, Opus 4.6 leads all frontier models. It scores 91.3% on GPQA Diamond (PhD-level science) — the highest published score for any commercial LLM at the time of release.
+    </p>
+
+    <div class="model-grid">
+      <!-- Opus 4.6 -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">Anthropic</div>
+            <div class="model-name">Claude Opus 4.6</div>
+          </div>
+          <span class="model-badge badge-expert">Expert Reasoning</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$5.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$25.00</span></div>
+          <div class="price-pair"><span class="price-tier">Cache Write</span><span class="price-val">$6.25</span></div>
+          <div class="price-pair"><span class="price-tier">Cache Read</span><span class="price-val">$0.50</span></div>
+          <div class="price-pair"><span class="price-tier">Batch (50% off)</span><span class="price-val">$2.50 / $12.50</span></div>
+          <div class="price-pair"><span class="price-tier">Fast Mode (6×)</span><span class="price-val">$30.00 / $150.00</span></div>
+
+          <div class="model-section-label">Web / Subscription</div>
+          <div class="price-pair"><span class="price-tier">Claude Pro</span><span class="price-val">$20 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">Claude Max</span><span class="price-val">$100+ / mo</span></div>
+          <div class="price-pair"><span class="price-tier">Team</span><span class="price-val">$30 / user / mo</span></div>
+
+          <div class="model-section-label">Context / Output</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>1M tokens (beta)</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:95%"></div></div>
+          </div>
+          <div style="margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)">Max output: 128K tokens (300K via Batch API beta)</div>
+
+          <div class="model-section-label">Capabilities</div>
+          <div class="cap-list">
+            <span class="cap-tag yes">Deep Research</span>
+            <span class="cap-tag yes">Coding (SWE #1)</span>
+            <span class="cap-tag yes">Computer Use</span>
+            <span class="cap-tag yes">Agent Teams</span>
+            <span class="cap-tag yes">Adaptive Thinking</span>
+            <span class="cap-tag yes">Vision</span>
+            <span class="cap-tag yes">Excel / PowerPoint</span>
+            <span class="cap-tag yes">Finance / Legal</span>
+            <span class="cap-tag">Video Gen</span>
+          </div>
+
+          <div class="model-section-label">Key Benchmarks</div>
+          <div class="benchmark-row"><span class="benchmark-name">GPQA Diamond</span><span class="benchmark-score">91.3%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">SWE-bench Verified</span><span class="benchmark-score">80.8%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">OSWorld (Computer Use)</span><span class="benchmark-score">72.7%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">Terminal-Bench 2.0</span><span class="benchmark-score">65.4%</span></div>
+        </div>
+        <div class="model-card-footer">
+          Released: Feb 4 2026 · API string: <code>claude-opus-4-6</code> · Available on Bedrock &amp; Vertex AI
+        </div>
+      </div>
+
+      <!-- Sonnet 4.6 -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">Anthropic</div>
+            <div class="model-name">Claude Sonnet 4.6</div>
+          </div>
+          <span class="model-badge badge-speed">Balanced</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$3.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$15.00</span></div>
+
+          <div class="model-section-label">Context / Output</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>1M tokens</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:95%"></div></div>
+          </div>
+          <div style="margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)">Max output: 64K tokens · Released Feb 17, 2026</div>
+
+          <div class="model-section-label">Performance</div>
+          <div class="benchmark-row"><span class="benchmark-name">SWE-bench Verified</span><span class="benchmark-score">79.6%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">OSWorld</span><span class="benchmark-score">72.7%</span></div>
+          <div style="font-size:0.82rem;color:var(--text-muted);margin-top:8px">59% of Claude Code developers preferred Sonnet 4.6 over the previous flagship Opus 4.5 — it offers near-Opus performance at one-fifth the cost.</div>
+        </div>
+        <div class="model-card-footer">
+          API string: <code>claude-sonnet-4-6</code> · The default model in this Claude instance
+        </div>
+      </div>
+    </div>
+
+    <p>
+      Opus 4.6 introduces several developer-facing features: <strong>Adaptive Thinking</strong> (the model dynamically decides how much to reason, saving tokens on simpler tasks), four <strong>effort levels</strong> (low/medium/high/max), and <strong>context compaction</strong> (beta), which lets long-running agents summarise their own history to avoid hitting context limits. A US-only inference option adds a 10% surcharge for data-residency requirements.
+    </p>
+
+    <!-- ── SECTION 5: DEEPSEEK ─────────────────────────────────── -->
+    <div class="section-head" id="s5">
+      <span class="section-num">05</span>
+      <h2>DeepSeek V3.2 Family (DeepSeek AI)</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      DeepSeek V3.2 is the current production model behind DeepSeek's <em>deepseek-chat</em> API endpoint, confirmed in the official API documentation. Built on a Mixture-of-Experts (MoE) architecture — 671 billion total parameters, only 37 billion active per forward pass — it delivers performance rivalling frontier closed models at a fraction of the inference cost. DeepSeek's pricing is approximately 90% below comparable OpenAI and Anthropic rates, making it the most compelling budget option for high-volume text and code workloads.
+    </p>
+
+    <div class="model-grid">
+      <!-- DeepSeek V3.2 -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">DeepSeek AI</div>
+            <div class="model-name">DeepSeek V3.2</div>
+          </div>
+          <span class="model-badge badge-budget">Ultra-Budget</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing — DeepSeek Direct (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val" style="color:var(--green)">$0.014</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val" style="color:var(--green)">$0.028</span></div>
+
+          <div class="model-section-label">3rd-Party Providers (e.g. Hyperbolic)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$0.27</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$1.10</span></div>
+
+          <div class="model-section-label">Web Interface</div>
+          <div class="price-pair"><span class="price-tier">chat.deepseek.com</span><span class="price-val free">Free</span></div>
+
+          <div class="model-section-label">Context / Architecture</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>128K tokens</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:13%"></div></div>
+          </div>
+          <div style="margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)">MoE: 671B total / 37B active · Open weights available</div>
+
+          <div class="model-section-label">Capabilities</div>
+          <div class="cap-list">
+            <span class="cap-tag yes">Coding</span>
+            <span class="cap-tag yes">Math</span>
+            <span class="cap-tag yes">Reasoning</span>
+            <span class="cap-tag yes">Tool Use</span>
+            <span class="cap-tag yes">Open Weights</span>
+            <span class="cap-tag yes">Self-Hostable</span>
+            <span class="cap-tag">Vision</span>
+            <span class="cap-tag">Video Gen</span>
+            <span class="cap-tag">Deep Research (limited)</span>
+          </div>
+
+          <div class="model-section-label">Cost Comparison Highlight</div>
+          <div style="font-size:0.82rem;color:var(--text-muted)">At $0.014/M input, DeepSeek is ~178× cheaper than Claude Opus 4.6 and ~180× cheaper than GPT-5.4 at the direct API rate.</div>
+        </div>
+        <div class="model-card-footer">
+          API string: <code>deepseek-chat</code> · LangChain: <code>langchain-deepseek</code> package
+        </div>
+      </div>
+
+      <!-- DeepSeek V3.2 Speciale -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">DeepSeek AI</div>
+            <div class="model-name">V3.2 Speciale</div>
+          </div>
+          <span class="model-badge badge-open">High Reasoning</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$0.40</span></div>
+
+          <div class="model-section-label">About</div>
+          <p style="font-size:0.82rem;color:var(--text-muted)">A high-compute variant of V3.2 that pushes post-training reinforcement learning further. Uses DeepSeek Sparse Attention (DSA) for efficient long-context processing. Achieves gold-level results at IMO and ICPC World Finals 2025 problems. Performance is comparable to Gemini 3.0 Pro on reasoning workloads.</p>
+
+          <div class="model-section-label">DeepSeek R1 (Reasoner)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$0.55</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$2.19</span></div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-top:6px">Chain-of-thought reasoning model. Available via <code>deepseek-reasoner</code> endpoint. Also open weights — self-hostable.</div>
+        </div>
+        <div class="model-card-footer">
+          Context: 164K tokens · Open source (Apache 2.0) · Hugging Face: 10M+ downloads
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Open-weight advantage:</strong> DeepSeek models are freely available on Hugging Face and can be self-hosted via Ollama, eliminating API costs entirely for privacy-sensitive or high-volume deployments. The trade-off is operational overhead and hardware requirements for running 671B-parameter models.
+    </div>
+
+    <!-- ── SECTION 6: GROK 4.20 ────────────────────────────────── -->
+    <div class="section-head" id="s6">
+      <span class="section-num">06</span>
+      <h2>Grok 4.20 Family (xAI)</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      xAI's Grok 4.20 is their newest flagship snapshot, building on the Grok 4 architecture with the industry's largest context window at 2 million tokens — roughly twice that of competing flagship models. Grok differentiates itself through always-on real-time web access via X (formerly Twitter) integration and a DeepSearch feature for deep multi-step research queries. On GPQA Diamond, early benchmarks report 78.5%. The 2M context window at aggressive API pricing makes it particularly compelling for long-document analysis, codebase review, and extended agent workflows.
+    </p>
+
+    <div class="model-grid">
+      <!-- Grok 4.20 -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">xAI</div>
+            <div class="model-name">Grok 4.20</div>
+          </div>
+          <span class="model-badge badge-realtime">Real-Time Data</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">API Pricing (per 1M tokens)</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$2.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">varies</span></div>
+
+          <div class="model-section-label">Web / Subscription</div>
+          <div class="price-pair"><span class="price-tier">Free (grok.com)</span><span class="price-val free">$0</span></div>
+          <div class="price-pair"><span class="price-tier">X Premium</span><span class="price-val">$8 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">X Premium+</span><span class="price-val">$40 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">SuperGrok</span><span class="price-val">$30 / mo</span></div>
+          <div class="price-pair"><span class="price-tier">Grok Business</span><span class="price-val">$30 / user / mo</span></div>
+
+          <div class="model-section-label">Context Window</div>
+          <div class="ctx-bar-wrap">
+            <div class="ctx-bar-label"><span>Context Window</span><span>2M tokens</span></div>
+            <div class="ctx-bar-outer"><div class="ctx-bar-inner" style="width:100%;background:linear-gradient(90deg,#6b1a1a,var(--red))"></div></div>
+          </div>
+          <div style="margin-top:6px;font-family:var(--ff-mono);font-size:11px;color:var(--text-muted)">Largest context window in the industry</div>
+
+          <div class="model-section-label">Capabilities</div>
+          <div class="cap-list">
+            <span class="cap-tag yes">Real-Time Web (X)</span>
+            <span class="cap-tag yes">DeepSearch</span>
+            <span class="cap-tag yes">Coding</span>
+            <span class="cap-tag yes">Reasoning (toggle)</span>
+            <span class="cap-tag yes">Function Calling</span>
+            <span class="cap-tag yes">Image Gen (Imagine)</span>
+            <span class="cap-tag yes">2M Context</span>
+            <span class="cap-tag">Vision (limited)</span>
+            <span class="cap-tag">Video Gen</span>
+          </div>
+
+          <div class="model-section-label">Key Benchmarks</div>
+          <div class="benchmark-row"><span class="benchmark-name">GPQA Diamond (prelim.)</span><span class="benchmark-score">78.5%</span></div>
+          <div class="benchmark-row"><span class="benchmark-name">LMSYS Chatbot Arena</span><span class="benchmark-score">92.7%</span></div>
+        </div>
+        <div class="model-card-footer">
+          API string: <code>grok-4.20</code> · LangChain: ChatOpenAI (OpenAI-compatible endpoint)
+        </div>
+      </div>
+
+      <!-- Grok 4 / 4.1 Fast -->
+      <div class="model-card">
+        <div class="model-card-header">
+          <div>
+            <div class="model-brand">xAI</div>
+            <div class="model-name">Grok 4 &amp; 4.1 Fast</div>
+          </div>
+          <span class="model-badge badge-budget">Value Tier</span>
+        </div>
+        <div class="model-card-body">
+          <div class="model-section-label">Grok 4 API Pricing</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val">$3.00</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val">$15.00</span></div>
+          <div class="price-pair"><span class="price-tier">Context</span><span class="price-val">256K</span></div>
+
+          <div class="model-section-label">Grok 4.1 Fast API Pricing</div>
+          <div class="price-pair"><span class="price-tier">Input</span><span class="price-val" style="color:var(--green)">$0.20</span></div>
+          <div class="price-pair"><span class="price-tier">Output</span><span class="price-val" style="color:var(--green)">$0.50</span></div>
+          <div class="price-pair"><span class="price-tier">Context</span><span class="price-val">2M tokens</span></div>
+
+          <div style="font-size:0.82rem;color:var(--text-muted);margin-top:10px">Grok 4.1 Fast uses 40% fewer thinking tokens vs Grok 4 with comparable benchmark performance on MATH-500 and HumanEval. At $0.20/M input, it's cheaper per token than GPT-5.4 Mini, Gemini Flash, and every Anthropic model — while offering the 2M context window.</div>
+
+          <div class="model-section-label">New User Credits</div>
+          <div style="font-size:0.82rem;color:var(--green)">$25 signup bonus + $150/mo via data sharing program</div>
+        </div>
+        <div class="model-card-footer">
+          Tool call fees: web search ~$0.003–$0.005/call · Code execution: extra per call
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Notable limitation:</strong> Grok's vision capabilities are limited to specific model variants (grok-2-vision-1212), and multimodal features lag significantly behind GPT-5.4 and Gemini 3.1 Pro. There is no native audio processing or video analysis. xAI also has a smaller developer ecosystem than OpenAI or Anthropic.
+    </div>
+
+    <!-- ── SECTION 7: LANGCHAIN / LANGGRAPH ───────────────────── -->
+    <div class="section-head" id="s7">
+      <span class="section-num">07</span>
+      <h2>Python API via LangChain &amp; LangGraph</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      LangChain provides a unified Python API layer that abstracts over each provider's raw SDK, allowing developers to switch between GPT-5.4, Gemini 3.1, Claude Opus 4.6, DeepSeek V3.2, and Grok 4.20 by changing a single parameter. LangGraph, built on top of LangChain, adds a graph-based orchestration runtime for stateful, multi-step agentic workflows — supporting cycles, conditional branching, human-in-the-loop checkpoints, and persistent memory. In March 2026, LangChain released <strong>Deep Agents</strong>, a production-ready harness built on LangGraph that ranks first on deep research benchmarks in partnership with NVIDIA's AI-Q Blueprint.
+    </p>
+
+    <div class="lang-grid">
+      <div class="lang-card">
+        <h4>OpenAI / GPT-5.4</h4>
+        <p>Use <code>langchain-openai</code>. Class: <code>ChatOpenAI(model="gpt-5.4")</code>. Full tool support, streaming, structured output, and function calling available.</p>
+      </div>
+      <div class="lang-card">
+        <h4>Google Gemini 3.1</h4>
+        <p>Use <code>langchain-google-genai</code>. Class: <code>ChatGoogleGenerativeAI(model="gemini-3.1-pro-preview")</code>. Multimodal inputs supported natively.</p>
+      </div>
+      <div class="lang-card">
+        <h4>Anthropic Claude</h4>
+        <p>Use <code>langchain-anthropic</code>. Class: <code>ChatAnthropic(model="claude-opus-4-6")</code>. Extended thinking and tool streaming are supported.</p>
+      </div>
+      <div class="lang-card">
+        <h4>DeepSeek V3.2</h4>
+        <p>Use <code>langchain-deepseek</code>. Class: <code>ChatDeepSeek(model="deepseek-chat")</code>. Set <code>DEEPSEEK_API_KEY</code>. Tool calling supported via beta endpoint.</p>
+      </div>
+      <div class="lang-card">
+        <h4>Grok 4.20 (xAI)</h4>
+        <p>xAI exposes an OpenAI-compatible endpoint. Use <code>ChatOpenAI(model="grok-4.20", base_url="https://api.x.ai/v1")</code> with your <code>XAI_API_KEY</code>.</p>
+      </div>
+      <div class="lang-card">
+        <h4>LangGraph Deep Agents</h4>
+        <p>Model-agnostic — works with all providers above. Install <code>deepagents</code>, define tools, create with <code>create_deep_agent(llm, tools)</code>. Supports planning, subagents, filesystem memory.</p>
+      </div>
+    </div>
+
+    <div class="code-title">Installation — all providers</div>
+    <div class="code-block"><span class="cmt"># Install LangChain integrations for all five providers</span>
+pip install langchain-openai langchain-google-genai langchain-anthropic \
+            langchain-deepseek langgraph deepagents tavily-python</div>
+
+    <div class="code-title">Unified LangGraph multi-model workflow (Python)</div>
+    <div class="code-block"><span class="kw">from</span> langchain_openai   <span class="kw">import</span> <span class="fn">ChatOpenAI</span>
+<span class="kw">from</span> langchain_anthropic <span class="kw">import</span> <span class="fn">ChatAnthropic</span>
+<span class="kw">from</span> langchain_google_genai <span class="kw">import</span> <span class="fn">ChatGoogleGenerativeAI</span>
+<span class="kw">from</span> langchain_deepseek  <span class="kw">import</span> <span class="fn">ChatDeepSeek</span>
+<span class="kw">from</span> langgraph.graph     <span class="kw">import</span> <span class="fn">StateGraph</span>, <span class="fn">END</span>
+<span class="kw">from</span> typing              <span class="kw">import</span> TypedDict, List
+
+<span class="cmt"># ── 1. Instantiate models ───────────────────────────────────</span>
+<span class="var">gpt</span>    = <span class="fn">ChatOpenAI</span>(model=<span class="str">"gpt-5.4"</span>)
+<span class="var">claude</span> = <span class="fn">ChatAnthropic</span>(model=<span class="str">"claude-opus-4-6"</span>)
+<span class="var">gemini</span> = <span class="fn">ChatGoogleGenerativeAI</span>(model=<span class="str">"gemini-3.1-pro-preview"</span>)
+<span class="var">deep</span>   = <span class="fn">ChatDeepSeek</span>(model=<span class="str">"deepseek-chat"</span>)
+<span class="var">grok</span>   = <span class="fn">ChatOpenAI</span>(model=<span class="str">"grok-4.20"</span>,
+                   base_url=<span class="str">"https://api.x.ai/v1"</span>,
+                   api_key=<span class="str">"&lt;XAI_API_KEY&gt;"</span>)
+
+<span class="cmt"># ── 2. Define graph state ───────────────────────────────────</span>
+<span class="kw">class</span> <span class="fn">ResearchState</span>(TypedDict):
+    question: str
+    outline: str
+    draft:   str
+    final:   str
+
+<span class="cmt"># ── 3. Define nodes ─────────────────────────────────────────</span>
+<span class="kw">def</span> <span class="fn">outline_node</span>(state):
+    <span class="cmt"># Use Grok for real-time web context</span>
+    resp = <span class="var">grok</span>.invoke(<span class="str">f"Create a research outline for: </span>{state[<span class="str">'question'</span>]}<span class="str">"</span>)
+    <span class="kw">return</span> {<span class="str">"outline"</span>: resp.content}
+
+<span class="kw">def</span> <span class="fn">draft_node</span>(state):
+    <span class="cmt"># Use Claude for deep reasoning / long-form writing</span>
+    resp = <span class="var">claude</span>.invoke(<span class="str">f"Expand this outline:\n</span>{state[<span class="str">'outline'</span>]}<span class="str">"</span>)
+    <span class="kw">return</span> {<span class="str">"draft"</span>: resp.content}
+
+<span class="kw">def</span> <span class="fn">refine_node</span>(state):
+    <span class="cmt"># Use DeepSeek for cheap fact-checking iteration</span>
+    resp = <span class="var">deep</span>.invoke(<span class="str">f"Check facts and refine:\n</span>{state[<span class="str">'draft'</span>]}<span class="str">"</span>)
+    <span class="kw">return</span> {<span class="str">"final"</span>: resp.content}
+
+<span class="cmt"># ── 4. Build and compile graph ──────────────────────────────</span>
+<span class="var">workflow</span> = <span class="fn">StateGraph</span>(<span class="fn">ResearchState</span>)
+<span class="var">workflow</span>.<span class="fn">add_node</span>(<span class="str">"outline"</span>, <span class="fn">outline_node</span>)
+<span class="var">workflow</span>.<span class="fn">add_node</span>(<span class="str">"draft"</span>,   <span class="fn">draft_node</span>)
+<span class="var">workflow</span>.<span class="fn">add_node</span>(<span class="str">"refine"</span>,  <span class="fn">refine_node</span>)
+<span class="var">workflow</span>.<span class="fn">set_entry_point</span>(<span class="str">"outline"</span>)
+<span class="var">workflow</span>.<span class="fn">add_edge</span>(<span class="str">"outline"</span>, <span class="str">"draft"</span>)
+<span class="var">workflow</span>.<span class="fn">add_edge</span>(<span class="str">"draft"</span>,   <span class="str">"refine"</span>)
+<span class="var">workflow</span>.<span class="fn">add_edge</span>(<span class="str">"refine"</span>,  <span class="fn">END</span>)
+
+<span class="var">app</span> = <span class="var">workflow</span>.<span class="fn">compile</span>()
+<span class="var">result</span> = <span class="var">app</span>.<span class="fn">invoke</span>({<span class="str">"question"</span>: <span class="str">"Impact of AI on software engineering jobs in 2026"</span>})
+<span class="fn">print</span>(<span class="var">result</span>[<span class="str">"final"</span>])</div>
+
+    <!-- ── SECTION 8: COMPARISON TABLE ───────────────────────────── -->
+    <div class="section-head" id="s8">
+      <span class="section-num">08</span>
+      <h2>Tabular Comparison</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>The following tables condense all key dimensions into scannable form for rapid decision-making.</p>
+
+    <div class="code-title">Table 1 — API Pricing &amp; Context</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Input ($/1M)</th>
+            <th>Output ($/1M)</th>
+            <th>Context</th>
+            <th>Max Output</th>
+            <th>Web Plan</th>
+            <th>Released</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="model-col">GPT-5.4<span class="sub">OpenAI · Standard</span></td>
+            <td><span class="mono">$2.50</span></td>
+            <td><span class="mono">$15.00</span></td>
+            <td><span class="mono">1.05M</span></td>
+            <td><span class="mono">128K</span></td>
+            <td><span class="mono">$20/mo (Plus)</span></td>
+            <td><span class="mono">Mar 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">GPT-5.4 Pro<span class="sub">OpenAI · Premium</span></td>
+            <td><span class="mono">$30.00</span></td>
+            <td><span class="mono">$180.00</span></td>
+            <td><span class="mono">1.05M</span></td>
+            <td><span class="mono">128K</span></td>
+            <td><span class="mono">$200/mo (Pro)</span></td>
+            <td><span class="mono">Mar 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">GPT-5.4 Mini<span class="sub">OpenAI · Budget</span></td>
+            <td><span class="mono cheap">$0.40</span></td>
+            <td><span class="mono cheap">$1.60</span></td>
+            <td><span class="mono">128K</span></td>
+            <td><span class="mono">32K</span></td>
+            <td><span class="mono">Free tier</span></td>
+            <td><span class="mono">Mar 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Gemini 3.1 Pro<span class="sub">Google DeepMind</span></td>
+            <td><span class="mono">$2.00</span></td>
+            <td><span class="mono">$12.00</span></td>
+            <td><span class="mono">1M</span></td>
+            <td><span class="mono">65K</span></td>
+            <td><span class="mono">$19.99/mo</span></td>
+            <td><span class="mono">Feb 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Gemini 3.1 Flash-Lite<span class="sub">Google DeepMind</span></td>
+            <td><span class="mono cheap">$0.25</span></td>
+            <td><span class="mono cheap">$1.50</span></td>
+            <td><span class="mono">1M</span></td>
+            <td><span class="mono">8K</span></td>
+            <td><span class="mono">AI Studio free</span></td>
+            <td><span class="mono">Mar 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Claude Opus 4.6<span class="sub">Anthropic</span></td>
+            <td><span class="mono">$5.00</span></td>
+            <td><span class="mono">$25.00</span></td>
+            <td><span class="mono">1M (beta)</span></td>
+            <td><span class="mono">128K</span></td>
+            <td><span class="mono">$20/mo (Pro)</span></td>
+            <td><span class="mono">Feb 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Claude Sonnet 4.6<span class="sub">Anthropic</span></td>
+            <td><span class="mono">$3.00</span></td>
+            <td><span class="mono">$15.00</span></td>
+            <td><span class="mono">1M</span></td>
+            <td><span class="mono">64K</span></td>
+            <td><span class="mono">$20/mo (Pro)</span></td>
+            <td><span class="mono">Feb 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">DeepSeek V3.2<span class="sub">DeepSeek AI</span></td>
+            <td><span class="mono cheap">$0.014</span></td>
+            <td><span class="mono cheap">$0.028</span></td>
+            <td><span class="mono">128K</span></td>
+            <td><span class="mono">8K</span></td>
+            <td><span class="mono">Free</span></td>
+            <td><span class="mono">2025 / ongoing</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">DeepSeek R1<span class="sub">DeepSeek AI</span></td>
+            <td><span class="mono cheap">$0.55</span></td>
+            <td><span class="mono cheap">$2.19</span></td>
+            <td><span class="mono">128K</span></td>
+            <td><span class="mono">8K</span></td>
+            <td><span class="mono">Free</span></td>
+            <td><span class="mono">Jan 2025</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Grok 4.20<span class="sub">xAI</span></td>
+            <td><span class="mono">$2.00</span></td>
+            <td><span class="mono">TBC</span></td>
+            <td><span class="mono">2M</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">$30/mo (SuperGrok)</span></td>
+            <td><span class="mono">Mar 2026</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Grok 4.1 Fast<span class="sub">xAI</span></td>
+            <td><span class="mono cheap">$0.20</span></td>
+            <td><span class="mono cheap">$0.50</span></td>
+            <td><span class="mono">2M</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">$30/mo (SuperGrok)</span></td>
+            <td><span class="mono">Mar 2026</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="code-title" style="margin-top:32px">Table 2 — Capabilities Matrix</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Deep Research</th>
+            <th>Coding</th>
+            <th>Video Gen</th>
+            <th>Image Gen</th>
+            <th>Computer Use</th>
+            <th>Real-Time Web</th>
+            <th>Open Weights</th>
+            <th>LangChain</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="model-col">GPT-5.4</td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span> <span style="font-size:0.75rem;color:var(--text-muted)">(Sora discontinued)</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Gemini 3.1 Pro</td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span> <span style="font-size:0.75rem;color:var(--text-muted)">(Veo 3.1)</span></td>
+            <td><span class="check">✓</span> <span style="font-size:0.75rem;color:var(--text-muted)">(Imagen 4)</span></td>
+            <td><span class="partial">~</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Claude Opus 4.6</td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">DeepSeek V3.2</td>
+            <td><span class="partial">~</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Grok 4.20</td>
+            <td><span class="check">✓</span> <span style="font-size:0.75rem;color:var(--text-muted)">(DeepSearch)</span></td>
+            <td><span class="check">✓</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span> <span style="font-size:0.75rem;color:var(--text-muted)">(Imagine)</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span> <span style="font-size:0.75rem;color:var(--text-muted)">(X/Twitter live)</span></td>
+            <td><span class="cross">✗</span></td>
+            <td><span class="check">✓</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="code-title" style="margin-top:32px">Table 3 — Benchmark Summary</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>SWE-bench Verified</th>
+            <th>GPQA Diamond</th>
+            <th>ARC-AGI-2</th>
+            <th>OSWorld</th>
+            <th>Coding Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="model-col">Claude Opus 4.6</td>
+            <td><span class="mono">80.8%</span></td>
+            <td><span class="mono">91.3% ★</span></td>
+            <td><span class="mono">73.3%</span></td>
+            <td><span class="mono">72.7%</span></td>
+            <td><span class="mono">#1</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">GPT-5.4</td>
+            <td><span class="mono">~80%</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">75% ★</span></td>
+            <td><span class="mono">#2</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Gemini 3.1 Pro</td>
+            <td><span class="mono">80.6%</span></td>
+            <td><span class="mono">94.3% ★</span></td>
+            <td><span class="mono">77.1% ★</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">#3</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">Grok 4.20</td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">78.5% (prelim)</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">#4</span></td>
+          </tr>
+          <tr>
+            <td class="model-col">DeepSeek V3.2</td>
+            <td><span class="mono">competitive</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">—</span></td>
+            <td><span class="mono">#4–5</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px">★ = highest published score among major models on that benchmark as of April 2026. Rankings are approximate due to differing evaluation harnesses across providers.</p>
+
+    <!-- ── SECTION 9: CONCLUSION ───────────────────────────────── -->
+    <div class="section-head" id="s9">
+      <span class="section-num">09</span>
+      <h2>Conclusion &amp; Recommendation</h2>
+      <div class="rule"></div>
+    </div>
+
+    <p>
+      The five flagship families each occupy a distinct niche. No single model leads on every dimension simultaneously — the right choice depends on your primary task, context requirements, cost sensitivity, and whether you need real-time data or generative media capabilities.
+    </p>
+
+    <div class="conclusion-box">
+      <h3>Recommendation by Use Case &amp; Budget</h3>
+
+      <div class="rec-tier">
+        <div class="rec-item">
+          <div class="rec-label">Best Overall Reasoning</div>
+          <div class="rec-model">Claude Opus 4.6</div>
+          <div class="rec-why">Top GPQA Diamond, SWE-bench, HLE scores. Best for PhD-level research, complex agentic coding, and multi-step enterprise workflows.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">Best Value Flagship</div>
+          <div class="rec-model">Gemini 3.1 Pro</div>
+          <div class="rec-why">Near-parity on benchmarks at 60% lower cost than Opus 4.6. Best pick for long-context (1M tokens), video/image understanding, and cost-sensitive teams.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">Best for Coding Volume</div>
+          <div class="rec-model">GPT-5.4</div>
+          <div class="rec-why">Unified Codex + GPT capabilities, computer use, 5-level reasoning control. Best balance of coding power and moderate price for developer teams.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">Minimum Budget (API)</div>
+          <div class="rec-model">DeepSeek V3.2</div>
+          <div class="rec-why">$0.014/M input — 178× cheaper than Opus 4.6. Strong coding and math. Free web interface. Open weights allow self-hosting at zero ongoing cost.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">Real-Time / News Tasks</div>
+          <div class="rec-model">Grok 4.20</div>
+          <div class="rec-why">Live X/Twitter data, 2M context, DeepSearch. Best for tasks requiring current events, social media analysis, or extremely long documents.</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-label">LangChain / LangGraph</div>
+          <div class="rec-model">Claude Sonnet 4.6</div>
+          <div class="rec-why">Best balance of reasoning quality, cost, and LangChain ecosystem maturity for production agentic pipelines. 79.6% SWE-bench at $3/$15.</div>
+        </div>
+      </div>
+
+      <p style="margin-top:16px"><strong>If your primary goal is minimum budget with good quality:</strong> start with <strong>DeepSeek V3.2</strong> (free web, $0.014/M API). For tasks requiring stronger reasoning or safety guarantees, <strong>Gemini 3.1 Pro at $2/$12</strong> offers the most capability per dollar among the three frontier providers. <strong>Grok 4.1 Fast at $0.20/$0.50</strong> is the cheapest proprietary option with a 2M context window, making it ideal for long-document batch jobs.</p>
+
+      <p><strong>For LangGraph multi-agent pipelines</strong> where you want to keep costs down across many nodes, consider a hybrid strategy: use Grok 4.1 Fast or DeepSeek V3.2 for cheap intermediate steps (fact-checking, outlines, summaries), and escalate only final high-stakes reasoning to Claude Opus 4.6 or GPT-5.4. This can reduce total pipeline cost by 70–90% with minimal quality loss on most tasks.</p>
+    </div>
+
+    <!-- ── SECTION 10: CITATIONS ───────────────────────────────── -->
+    <div class="section-head" id="s10">
+      <span class="section-num">10</span>
+      <h2>Citations &amp; References</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="citations">
+      <h3>Sources</h3>
+
+      <div class="cite-item"><span class="cite-num">[1]</span><span class="cite-text">OpenAI API Pricing (March 2026). <a href="https://openai.com/api/pricing/" target="_blank">openai.com/api/pricing</a> — GPT-5.4 standard pricing ($2.50/$15 per 1M tokens), context surcharge above 272K, regional processing uplift.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[2]</span><span class="cite-text">GPT-5.4 Complete Guide 2026 — NxCode. <a href="https://www.nxcode.io/resources/news/gpt-5-4-complete-guide-features-pricing-models-2026" target="_blank">nxcode.io</a> — Benchmark scores (SWE-bench Pro 57.7%, OSWorld 75%), Pro variant pricing, Mini/Nano variants.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[3]</span><span class="cite-text">ChatGPT Pricing Guide 2026 — techi.com. <a href="https://www.techi.com/chatgpt/" target="_blank">techi.com</a> — ChatGPT Plus $20/mo, Pro $200/mo, Team $25/user/mo. GPT-5 capabilities overview.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[4]</span><span class="cite-text">Gemini API Pricing — Google AI for Developers. <a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank">ai.google.dev/gemini-api/docs/pricing</a> — Gemini 3.1 Flash Live audio model, image output pricing (Imagen 4), Veo 3.1 video generation endpoint.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[5]</span><span class="cite-text">Gemini 3.1 Pro — Google Cloud Vertex AI Documentation. <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/3-1-pro" target="_blank">docs.cloud.google.com</a> — Official model overview, SWE and agentic improvements, thinking_level parameter, MEDIUM reasoning option. Updated 2026-03-30.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[6]</span><span class="cite-text">Gemini 3.1 Pro Complete Guide — ALM Corp. <a href="https://almcorp.com/blog/gemini-3-1-pro-complete-guide/" target="_blank">almcorp.com</a> — ARC-AGI-2 77.1%, GPQA Diamond 94.3% (highest reported), release date February 19, 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[7]</span><span class="cite-text">Gemini API Pricing 2026 — MetaCTO. <a href="https://www.metacto.com/blogs/the-true-cost-of-google-gemini-a-guide-to-api-pricing-and-integration" target="_blank">metacto.com</a> — Gemini 3.1 Pro at $2–$4 input / $12–$18 output per 1M tokens, Flash-Lite at $0.25/$1.50, GA pricing expected ~$1.50/$10 Q2 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[8]</span><span class="cite-text">Introducing Claude Opus 4.6 — Anthropic Official. <a href="https://www.anthropic.com/news/claude-opus-4-6" target="_blank">anthropic.com/news/claude-opus-4-6</a> — Pricing $5/$25 per 1M tokens, Terminal-Bench 2.0 65.4%, HLE leadership, GDPval-AA Elo advantage, 1M context beta. February 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[9]</span><span class="cite-text">Claude Pricing — Anthropic API Docs. <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank">platform.claude.com/docs</a> — Cache pricing, fast mode (6× rates), US-only inference 1.1× surcharge, batch 50% discount, prompt caching up to 90% savings.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[10]</span><span class="cite-text">What's New in Claude 4.6 — Anthropic API Docs. <a href="https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6" target="_blank">platform.claude.com/docs</a> — Adaptive thinking, effort parameter GA, context compaction, 128K output, 300K batch output beta. Updated 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[11]</span><span class="cite-text">DeepSeek API Pricing Documentation. <a href="https://api-docs.deepseek.com/quick_start/pricing" target="_blank">api-docs.deepseek.com</a> — Confirms deepseek-chat = DeepSeek-V3.2, deepseek-reasoner = V3.2 reasoning variant, 128K context.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[12]</span><span class="cite-text">DeepSeek Inference Cost — IntuitionLabs. <a href="https://intuitionlabs.ai/articles/deepseek-inference-cost-explained" target="_blank">intuitionlabs.ai</a> — MoE architecture, 671B/37B active, pricing ~90% below OpenAI and Anthropic, open-weight availability, R2 development status.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[13]</span><span class="cite-text">xAI Grok API Pricing Guide — mem0.ai. <a href="https://mem0.ai/blog/xai-grok-api-pricing" target="_blank">mem0.ai</a> — Grok 4.1 Fast $0.20/$0.50, Grok 4 $3/$15, SuperGrok $30/mo, Grok Business $30/seat/mo, 2M context window, tool call fees. Verified March 3, 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[14]</span><span class="cite-text">Grok 4.20 Review — Design for Online. <a href="https://designforonline.com/ai-models/xai-grok-4-20/" target="_blank">designforonline.com</a> — Grok 4.20 at $2/1M input, 2M context, GPQA Diamond 78.5% (preliminary), lowest hallucination rate claim, agentic tool calling.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[15]</span><span class="cite-text">AI API Pricing Comparison 2026 — IntuitionLabs. <a href="https://intuitionlabs.ai/articles/ai-api-pricing-comparison-grok-gemini-openai-claude" target="_blank">intuitionlabs.ai</a> — Cross-provider per-token cost comparison, Grok $0.00007 per 100-token query vs Claude Opus $0.003. Updated April 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[16]</span><span class="cite-text">LangChain Deep Agents — MarkTechPost / emelia.io. <a href="https://www.marktechpost.com/2026/03/15/langchain-releases-deep-agents-a-structured-runtime-for-planning-memory-and-context-isolation-in-multi-step-ai-agents/" target="_blank">marktechpost.com</a> — Deep Agents on LangGraph runtime, model-agnostic (Claude, GPT, Gemini, DeepSeek), NVIDIA AI-Q Blueprint partnership, March 2026.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[17]</span><span class="cite-text">DeepSeek LangChain Reference. <a href="https://reference.langchain.com/python/integrations/langchain_deepseek/" target="_blank">reference.langchain.com</a> — <code>langchain-deepseek</code> package, ChatDeepSeek class, DEEPSEEK_API_KEY env var, tool calling via beta endpoint.</span></div>
+
+      <div class="cite-item"><span class="cite-num">[18]</span><span class="cite-text">Claude AI 2026 Complete Guide — NxCode. <a href="https://www.nxcode.io/resources/news/claude-ai-complete-guide-models-pricing-features-2026" target="_blank">nxcode.io</a> — Sonnet 4.6 vs Opus 4.6 benchmarks, Sonnet 5 release (82.1% SWE-bench), competitive landscape summary March 2026.</span></div>
+    </div>
+
+    <div class="ornament">· · · · ·</div>
+    <p style="font-size:0.78rem;color:var(--text-dim);text-align:center;padding-bottom:20px">
+      Pricing and benchmark data sourced from official provider documentation and independent analyses as of April 2026.<br>
+      All figures subject to change. Verify current rates at each provider before making purchasing decisions.
+    </p>
+
+  </div><!-- /body-wrap -->
+</div><!-- /customOuterWrapper -->
+</body>
+</html>
