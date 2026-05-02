@@ -1,0 +1,205 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a>
+&nbsp;&nbsp;
+<a class="customLink" href="https://survival8.blogspot.com/2026/02/quiz-evaluating-ai-agents-short-course.html" target="_blank">&lt;&lt;&lt; Previously</a>
+&nbsp;&nbsp;
+<a class="customLink" href="https://survival8.blogspot.com/2026/05/arize-phoenix-package-required-in-same.html" target="_blank">Next &gt;&gt;&gt;</a>
+
+
+<pre>
+(myenv) jain@jain-ThinkPad-T440s:~$ conda install arize-phoenix
+Retrieving notices: ...working... done
+Channels:
+ - defaults
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): done
+Solving environment: / warning  libmamba Added empty dependency for problem type SOLVER_RULE_UPDATE
+failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - package arize-phoenix-10.0.0-pyhd8ed1ab_0 requires arize-phoenix-evals >=0.13.1, but none of the providers can be installed
+
+Could not solve for environment specs
+The following packages are incompatible
+├─ arize-phoenix is installable with the potential options
+│  ├─ arize-phoenix [0.0.13|0.0.14|...|0.0.19] would require
+│  │  └─ python >=3.8,<3.11 , which can be installed;
+│  └─ arize-phoenix [0.0.22|0.0.23|...|9.6.1] would require
+│     ├─ arize-phoenix-evals >=0.13.1  with the potential options
+│     │  ├─ arize-phoenix-evals [0.13.1|0.13.2|...|0.17.5] would require
+│     │  │  └─ python >=3.8,<3.12 , which can be installed;
+│     │  ├─ arize-phoenix-evals [0.17.5|0.18.0|...|0.28.0] would require
+│     │  │  └─ python >=3.9,<3.12 , which can be installed;
+│     │  └─ arize-phoenix-evals [0.28.1|0.29.0|2.0.0] would require
+│     │     └─ python >=3.10,<3.12 , which can be installed;
+│     ├─ openinference-instrumentation-openai [>=0.1.11 |>=0.1.3 |>=0.1.4 ] with the potential options
+│     │  ├─ openinference-instrumentation-openai [0.1.10|0.1.11|...|0.1.9] would require
+│     │  │  └─ python >=3.8,<3.12 , which can be installed;
+│     │  ├─ openinference-instrumentation-openai [0.1.18|0.1.19|...|0.1.31] would require
+│     │  │  └─ python >=3.9,<3.12 , which can be installed;
+│     │  └─ openinference-instrumentation-openai [0.1.32|0.1.33|...|0.1.45] would require
+│     │     └─ python >=3.10,<3.12 , which can be installed;
+│     └─ python >=3.8,<3.12 , which can be installed;
+└─ pin-1 is not installable because it requires
+   └─ python 3.12.* , which conflicts with any installable versions previously reported.
+
+</pre>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a>
+&nbsp;&nbsp;
+<a class="customLink" href="https://survival8.blogspot.com/2026/02/quiz-evaluating-ai-agents-short-course.html" target="_blank">&lt;&lt;&lt; Previously</a>
+&nbsp;&nbsp;
+<a class="customLink" href="https://survival8.blogspot.com/2026/05/arize-phoenix-package-required-in-same.html" target="_blank">Next &gt;&gt;&gt;</a>
+
+

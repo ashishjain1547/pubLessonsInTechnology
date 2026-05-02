@@ -1,0 +1,728 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/installation-logs-for-arize-phoenix.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/the-env-file-yml-i-used-for-my.html" target="_blank" class="customLink">Next &gt;&gt;&gt;</a>
+<br>
+
+
+<pre>
+<b><mark>Even though Arize Phoenix may be running from a different environment, you would need arize-phoenix package in the environment where you will be running your code (Jupyter Notebook).</mark></b>
+
+At: /home/jain/Desktop/v1/1C.ipynb
+ENV: myenv
+
+USER_AGENT environment variable not set, consider setting it to identify your requests.
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[2], line 1
+----&gt; 1 from phoenix.otel import register
+      3 # This sets up the plumbing and points it to your local Phoenix server
+      4 tracer_provider = register(project_name="my_first_project", auto_instrument=True)
+
+ModuleNotFoundError: No module named 'phoenix'
+
+</pre>
+
+<br><hr><br>
+
+<pre>
+(base) jain@jain-ThinkPad-T440s:~/Desktop$ conda activate myenv
+(myenv) jain@jain-ThinkPad-T440s:~/Desktop$ pip install arize-phoenix
+Collecting arize-phoenix
+  Using cached arize_phoenix-15.1.0-py3-none-any.whl.metadata (39 kB)
+Collecting aioitertools (from arize-phoenix)
+  Using cached aioitertools-0.13.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting aiosqlite>=0.22.1 (from arize-phoenix)
+  Using cached aiosqlite-0.22.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting alembic<2,>=1.3.0 (from arize-phoenix)
+  Using cached alembic-1.18.4-py3-none-any.whl.metadata (7.2 kB)
+Collecting arize-phoenix-client>=2.1.0 (from arize-phoenix)
+  Using cached arize_phoenix_client-2.6.0-py3-none-any.whl.metadata (15 kB)
+Collecting arize-phoenix-evals>=2.11.0 (from arize-phoenix)
+  Using cached arize_phoenix_evals-3.0.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting arize-phoenix-otel>=0.15.0 (from arize-phoenix)
+  Using cached arize_phoenix_otel-0.16.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting authlib>=1.7.0 (from arize-phoenix)
+  Using cached authlib-1.7.0-py2.py3-none-any.whl.metadata (10.0 kB)
+Requirement already satisfied: cachetools in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (5.5.2)
+Collecting email-validator (from arize-phoenix)
+  Using cached email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+Collecting fastapi>=0.135.2 (from arize-phoenix)
+  Using cached fastapi-0.136.1-py3-none-any.whl.metadata (28 kB)
+Collecting grpc-interceptor (from arize-phoenix)
+  Using cached grpc_interceptor-0.15.4-py3-none-any.whl.metadata (8.4 kB)
+Requirement already satisfied: grpcio in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (1.73.0)
+Requirement already satisfied: httpx in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (0.28.1)
+Requirement already satisfied: jinja2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (3.1.6)
+Collecting jmespath (from arize-phoenix)
+  Using cached jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting joserfc (from arize-phoenix)
+  Using cached joserfc-1.6.4-py3-none-any.whl.metadata (3.2 kB)
+Collecting jsonpath-ng (from arize-phoenix)
+  Using cached jsonpath_ng-1.8.0-py3-none-any.whl.metadata (18 kB)
+Requirement already satisfied: jsonschema in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (4.25.1)
+Collecting ldap3 (from arize-phoenix)
+  Using cached ldap3-2.9.1-py2.py3-none-any.whl.metadata (5.4 kB)
+Requirement already satisfied: numpy in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (2.3.0)
+Collecting openinference-instrumentation-openai>=0.1.41 (from arize-phoenix)
+  Using cached openinference_instrumentation_openai-0.1.45-py3-none-any.whl.metadata (4.8 kB)
+Collecting openinference-instrumentation>=0.1.44 (from arize-phoenix)
+  Using cached openinference_instrumentation-0.1.48-py3-none-any.whl.metadata (5.0 kB)
+Collecting openinference-semantic-conventions>=0.1.26 (from arize-phoenix)
+  Using cached openinference_semantic_conventions-0.1.29-py3-none-any.whl.metadata (1.3 kB)
+Collecting opentelemetry-exporter-otlp (from arize-phoenix)
+  Using cached opentelemetry_exporter_otlp-1.41.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-proto>=1.12.0 (from arize-phoenix)
+  Using cached opentelemetry_proto-1.41.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-sdk (from arize-phoenix)
+  Using cached opentelemetry_sdk-1.41.1-py3-none-any.whl.metadata (1.7 kB)
+Requirement already satisfied: orjson in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (3.10.18)
+Requirement already satisfied: pandas>=1.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (2.3.3)
+Collecting prometheus-client (from arize-phoenix)
+  Using cached prometheus_client-0.25.0-py3-none-any.whl.metadata (2.1 kB)
+Requirement already satisfied: psutil in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (5.9.0)
+Requirement already satisfied: pyarrow in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (21.0.0)
+Collecting pydantic-ai>=1.62.0 (from arize-phoenix)
+  Using cached pydantic_ai-1.89.1-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: pydantic>=2.1.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (2.11.6)
+Collecting pystache (from arize-phoenix)
+  Using cached pystache-0.6.8-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: python-dateutil in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (2.9.0.post0)
+Requirement already satisfied: python-multipart in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (0.0.22)
+Requirement already satisfied: pyyaml in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (6.0.2)
+Requirement already satisfied: scikit-learn in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (1.8.0)
+Requirement already satisfied: scipy in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (1.17.1)
+Collecting sqlalchemy<3,>=2.0.46 (from sqlalchemy[asyncio]<3,>=2.0.46->arize-phoenix)
+  Using cached sqlalchemy-2.0.49-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.5 kB)
+Collecting sqlean-py>=3.45.1 (from arize-phoenix)
+  Using cached sqlean_py-3.50.4.5-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (4.5 kB)
+Requirement already satisfied: starlette>=0.37.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (0.52.1)
+Collecting strawberry-graphql==0.314.3 (from arize-phoenix)
+  Using cached strawberry_graphql-0.314.3-py3-none-any.whl.metadata (6.9 kB)
+Requirement already satisfied: tqdm in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (4.67.3)
+Requirement already satisfied: typing-extensions>=4.6 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (4.14.0)
+Requirement already satisfied: uvicorn in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from arize-phoenix) (0.41.0)
+Collecting wrapt<3,>=1.17.2 (from arize-phoenix)
+  Using cached wrapt-2.1.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.4 kB)
+Collecting graphql-core<3.4.0,>=3.2.0 (from strawberry-graphql==0.314.3->arize-phoenix)
+  Using cached graphql_core-3.2.8-py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: packaging>=23 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from strawberry-graphql==0.314.3->arize-phoenix) (24.2)
+Collecting cross-web>=0.4.0 (from strawberry-graphql==0.314.3->arize-phoenix)
+  Using cached cross_web-0.6.0-py3-none-any.whl.metadata (5.1 kB)
+Collecting Mako (from alembic<2,>=1.3.0->arize-phoenix)
+  Using cached mako-1.3.12-py3-none-any.whl.metadata (2.9 kB)
+Requirement already satisfied: greenlet>=1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from sqlalchemy<3,>=2.0.46->sqlalchemy[asyncio]<3,>=2.0.46->arize-phoenix) (3.2.3)
+Collecting opentelemetry-api (from arize-phoenix-evals>=2.11.0->arize-phoenix)
+  Using cached opentelemetry_api-1.41.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-semantic-conventions (from arize-phoenix-otel>=0.15.0->arize-phoenix)
+  Using cached opentelemetry_semantic_conventions-0.62b1-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: cryptography in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from authlib>=1.7.0->arize-phoenix) (46.0.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from fastapi>=0.135.2->arize-phoenix) (0.4.2)
+Requirement already satisfied: annotated-doc>=0.0.2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from fastapi>=0.135.2->arize-phoenix) (0.0.4)
+Requirement already satisfied: cffi>=2.0.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from cryptography->authlib>=1.7.0->arize-phoenix) (2.0.0)
+Requirement already satisfied: pycparser in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from cffi>=2.0.0->cryptography->authlib>=1.7.0->arize-phoenix) (2.23)
+Collecting wrapt<3,>=1.17.2 (from arize-phoenix)
+  Using cached wrapt-1.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.4 kB)
+Collecting opentelemetry-instrumentation (from openinference-instrumentation-openai>=0.1.41->arize-phoenix)
+  Using cached opentelemetry_instrumentation-0.62b1-py3-none-any.whl.metadata (7.2 kB)
+Requirement already satisfied: protobuf<7.0,>=5.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from opentelemetry-proto>=1.12.0->arize-phoenix) (5.29.5)
+Requirement already satisfied: pytz>=2020.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pandas>=1.0->arize-phoenix) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pandas>=1.0->arize-phoenix) (2025.2)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic>=2.1.0->arize-phoenix) (0.7.0)
+Requirement already satisfied: pydantic-core==2.33.2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic>=2.1.0->arize-phoenix) (2.33.2)
+Collecting pydantic-ai-slim==1.89.1 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached pydantic_ai_slim-1.89.1-py3-none-any.whl.metadata (7.4 kB)
+Collecting genai-prices>=0.0.48 (from pydantic-ai-slim==1.89.1->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached genai_prices-0.0.57-py3-none-any.whl.metadata (7.2 kB)
+Collecting griffelib>=2.0 (from pydantic-ai-slim==1.89.1->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached griffelib-2.0.2-py3-none-any.whl.metadata (1.3 kB)
+Collecting pydantic-graph==1.89.1 (from pydantic-ai-slim==1.89.1->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached pydantic_graph-1.89.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting pydantic>=2.1.0 (from arize-phoenix)
+  Using cached pydantic-2.13.3-py3-none-any.whl.metadata (108 kB)
+Collecting ag-ui-protocol>=0.1.10 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached ag_ui_protocol-0.1.18-py3-none-any.whl.metadata (2.9 kB)
+Collecting anthropic>=0.96.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached anthropic-0.97.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting boto3>=1.42.63 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached boto3-1.43.2-py3-none-any.whl.metadata (6.5 kB)
+Collecting argcomplete>=3.5.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached argcomplete-3.6.3-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: prompt-toolkit>=3 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (3.0.51)
+Collecting pyperclip>=1.9.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached pyperclip-1.11.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting rich>=13 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting cohere>=5.20.6 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached cohere-6.1.0-py3-none-any.whl.metadata (6.8 kB)
+Collecting pydantic-evals==1.89.1 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached pydantic_evals-1.89.1-py3-none-any.whl.metadata (7.9 kB)
+Collecting fastmcp>=3.2.4 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached fastmcp-3.2.4-py3-none-any.whl.metadata (8.1 kB)
+Collecting google-genai>=1.70.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached google_genai-1.74.0-py3-none-any.whl.metadata (52 kB)
+Collecting groq>=0.25.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached groq-1.2.0-py3-none-any.whl.metadata (16 kB)
+Collecting huggingface-hub<2.0.0,>=1.3.4 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached huggingface_hub-1.13.0-py3-none-any.whl.metadata (14 kB)
+Collecting logfire>=4.16.0 (from logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached logfire-4.32.1-py3-none-any.whl.metadata (10 kB)
+Collecting mcp<2.0,>=1.25.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached mcp-1.27.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting mistralai>=2.0.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached mistralai-2.4.4-py3-none-any.whl.metadata (60 kB)
+Collecting openai>=2.29.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached openai-2.33.0-py3-none-any.whl.metadata (31 kB)
+Collecting tiktoken>=0.12.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached tiktoken-0.12.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: tenacity>=8.2.3 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (9.1.2)
+Collecting pydantic-handlebars>=0.1.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached pydantic_handlebars-0.1.0-py3-none-any.whl.metadata (23 kB)
+Collecting temporalio>=1.24.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached temporalio-1.27.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (101 kB)
+Requirement already satisfied: google-auth>=2.36.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.40.3)
+Requirement already satisfied: requests>=2.32.2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.32.3)
+Collecting xai-sdk>=1.5.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached xai_sdk-1.12.1-py3-none-any.whl.metadata (29 kB)
+Requirement already satisfied: anyio>=0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pydantic-evals==1.89.1->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (4.12.1)
+Collecting logfire-api>=3.14.1 (from pydantic-evals==1.89.1->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached logfire_api-4.32.1-py3-none-any.whl.metadata (972 bytes)
+Requirement already satisfied: filelock>=3.10.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from huggingface-hub<2.0.0,>=1.3.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (3.20.3)
+Requirement already satisfied: fsspec>=2023.5.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from huggingface-hub<2.0.0,>=1.3.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2026.2.0)
+Collecting hf-xet<2.0.0,>=1.4.3 (from huggingface-hub<2.0.0,>=1.3.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached hf_xet-1.4.3-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting typer (from huggingface-hub<2.0.0,>=1.3.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached typer-0.25.1-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: certifi in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from httpx->arize-phoenix) (2026.1.4)
+Requirement already satisfied: httpcore==1.* in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from httpx->arize-phoenix) (1.0.9)
+Requirement already satisfied: idna in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from httpx->arize-phoenix) (3.10)
+Requirement already satisfied: h11>=0.16 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from httpcore==1.*->httpx->arize-phoenix) (0.16.0)
+Requirement already satisfied: httpx-sse>=0.4 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from mcp<2.0,>=1.25.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.4.1)
+Requirement already satisfied: pydantic-settings>=2.5.2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from mcp<2.0,>=1.25.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.10.1)
+Requirement already satisfied: pyjwt>=2.10.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from pyjwt[crypto]>=2.10.1->mcp<2.0,>=1.25.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.10.1)
+Collecting sse-starlette>=1.6.1 (from mcp<2.0,>=1.25.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached sse_starlette-3.4.1-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.3 (from pydantic>=2.1.0->arize-phoenix)
+  Using cached pydantic_core-2.46.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-extensions>=4.6 (from arize-phoenix)
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: distro<2,>=1.7.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from anthropic>=0.96.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.9.0)
+Collecting docstring-parser<1,>=0.15 (from anthropic>=0.96.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached docstring_parser-0.18.0-py3-none-any.whl.metadata (3.5 kB)
+Requirement already satisfied: jiter<1,>=0.4.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from anthropic>=0.96.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.10.0)
+Requirement already satisfied: sniffio in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from anthropic>=0.96.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.3.1)
+Collecting botocore<1.44.0,>=1.43.2 (from boto3>=1.42.63->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached botocore-1.43.2-py3-none-any.whl.metadata (5.5 kB)
+Collecting s3transfer<0.18.0,>=0.17.0 (from boto3>=1.42.63->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached s3transfer-0.17.0-py3-none-any.whl.metadata (1.7 kB)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from botocore<1.44.0,>=1.43.2->boto3>=1.42.63->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.6.3)
+Requirement already satisfied: six>=1.5 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from python-dateutil->arize-phoenix) (1.17.0)
+Collecting fastavro<2.0.0,>=1.9.4 (from cohere>=5.20.6->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached fastavro-1.12.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+INFO: pip is looking at multiple versions of cohere to determine which version is compatible with other requirements. This could take a while.
+Collecting cohere>=5.20.6 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached cohere-6.0.0-py3-none-any.whl.metadata (3.7 kB)
+  Using cached cohere-5.21.1-py3-none-any.whl.metadata (3.6 kB)
+Requirement already satisfied: tokenizers<1,>=0.15 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from cohere>=5.20.6->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.22.1)
+Collecting types-requests<3.0.0,>=2.0.0 (from cohere>=5.20.6->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached types_requests-2.33.0.20260408-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from requests>=2.32.2->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (3.4.4)
+Collecting cyclopts>=4.0.0 (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached cyclopts-4.11.1-py3-none-any.whl.metadata (12 kB)
+Requirement already satisfied: exceptiongroup>=1.2.2 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.3.0)
+Collecting jsonref>=1.1.0 (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jsonref-1.1.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting jsonschema-path>=0.3.4 (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jsonschema_path-0.4.6-py3-none-any.whl.metadata (5.9 kB)
+Collecting openapi-pydantic>=0.5.1 (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached openapi_pydantic-0.5.1-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: platformdirs>=4.0.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (4.3.8)
+Collecting py-key-value-aio<0.5.0,>=0.4.4 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached py_key_value_aio-0.4.4-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: python-dotenv>=1.1.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.1.0)
+Collecting uncalled-for>=0.2.0 (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached uncalled_for-0.3.1-py3-none-any.whl.metadata (2.9 kB)
+Collecting watchfiles>=1.0.0 (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Requirement already satisfied: websockets>=15.0.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (15.0.1)
+Collecting beartype>=0.20.0 (from py-key-value-aio<0.5.0,>=0.4.4->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached beartype-0.22.9-py3-none-any.whl.metadata (37 kB)
+Collecting aiofile>=3.5.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached aiofile-3.9.0-py3-none-any.whl.metadata (14 kB)
+Collecting keyring>=25.6.0 (from py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+Collecting caio<0.10.0,>=0.9.0 (from aiofile>=3.5.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached caio-0.9.25-cp312-cp312-manylinux_2_34_x86_64.whl.metadata (3.3 kB)
+Requirement already satisfied: attrs>=23.1.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from cyclopts>=4.0.0->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (25.3.0)
+Collecting rich-rst<2.0.0,>=1.3.1 (from cyclopts>=4.0.0->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached rich_rst-1.3.2-py3-none-any.whl.metadata (6.1 kB)
+Collecting docutils (from rich-rst<2.0.0,>=1.3.1->cyclopts>=4.0.0->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached docutils-0.22.4-py3-none-any.whl.metadata (15 kB)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from google-auth>=2.36.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.4.2)
+Requirement already satisfied: rsa<5,>=3.1.4 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from google-auth>=2.36.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (4.9.1)
+Requirement already satisfied: pyasn1>=0.1.3 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from rsa<5,>=3.1.4->google-auth>=2.36.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.6.1)
+Collecting google-auth>=2.36.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached google_auth-2.50.0-py3-none-any.whl.metadata (6.2 kB)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from jsonschema->arize-phoenix) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from jsonschema->arize-phoenix) (0.37.0)
+Requirement already satisfied: rpds-py>=0.7.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from jsonschema->arize-phoenix) (0.30.0)
+Collecting pathable<0.6.0,>=0.5.0 (from jsonschema-path>=0.3.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached pathable-0.5.0-py3-none-any.whl.metadata (5.9 kB)
+Collecting SecretStorage>=3.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached secretstorage-3.5.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting jeepney>=0.4.2 (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jeepney-0.9.0-py3-none-any.whl.metadata (1.2 kB)
+Collecting jaraco.classes (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting jaraco.functools (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jaraco_functools-4.4.0-py3-none-any.whl.metadata (3.0 kB)
+Collecting jaraco.context (from keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+Requirement already satisfied: executing>=2.0.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.2.0)
+Collecting opentelemetry-exporter-otlp-proto-http<1.41.0,>=1.39.0 (from logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_http-1.40.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-sdk (from arize-phoenix)
+  Using cached opentelemetry_sdk-1.40.0-py3-none-any.whl.metadata (1.6 kB)
+Requirement already satisfied: googleapis-common-protos~=1.52 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from opentelemetry-exporter-otlp-proto-http<1.41.0,>=1.39.0->logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.70.0)
+Collecting opentelemetry-exporter-otlp-proto-common==1.40.0 (from opentelemetry-exporter-otlp-proto-http<1.41.0,>=1.39.0->logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_common-1.40.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting opentelemetry-proto>=1.12.0 (from arize-phoenix)
+  Using cached opentelemetry_proto-1.40.0-py3-none-any.whl.metadata (2.4 kB)
+Requirement already satisfied: importlib-metadata<8.8.0,>=6.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from opentelemetry-api->arize-phoenix-evals>=2.11.0->arize-phoenix) (8.7.0)
+Requirement already satisfied: zipp>=3.20 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from importlib-metadata<8.8.0,>=6.0->opentelemetry-api->arize-phoenix-evals>=2.11.0->arize-phoenix) (3.23.0)
+Collecting opentelemetry-api (from arize-phoenix-evals>=2.11.0->arize-phoenix)
+  Using cached opentelemetry_api-1.40.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-semantic-conventions (from arize-phoenix-otel>=0.15.0->arize-phoenix)
+  Using cached opentelemetry_semantic_conventions-0.61b0-py3-none-any.whl.metadata (2.5 kB)
+Collecting opentelemetry-instrumentation-httpx>=0.42b0 (from logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_instrumentation_httpx-0.62b1-py3-none-any.whl.metadata (7.4 kB)
+Collecting eval-type-backport>=0.2.0 (from mistralai>=2.0.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached eval_type_backport-0.3.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting jsonpath-python>=1.0.6 (from mistralai>=2.0.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached jsonpath_python-1.1.5-py3-none-any.whl.metadata (17 kB)
+INFO: pip is looking at multiple versions of mistralai to determine which version is compatible with other requirements. This could take a while.
+Collecting mistralai>=2.0.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached mistralai-2.4.3-py3-none-any.whl.metadata (59 kB)
+  Using cached mistralai-2.4.2-py3-none-any.whl.metadata (59 kB)
+  Using cached mistralai-2.4.1-py3-none-any.whl.metadata (59 kB)
+  Using cached mistralai-2.4.0-py3-none-any.whl.metadata (57 kB)
+  Using cached mistralai-2.3.2-py3-none-any.whl.metadata (56 kB)
+  Using cached mistralai-2.3.1-py3-none-any.whl.metadata (56 kB)
+  Using cached mistralai-2.3.0-py3-none-any.whl.metadata (56 kB)
+INFO: pip is still looking at multiple versions of mistralai to determine which version is compatible with other requirements. This could take a while.
+  Using cached mistralai-2.2.0-py3-none-any.whl.metadata (56 kB)
+  Using cached mistralai-2.1.3-py3-none-any.whl.metadata (49 kB)
+  Using cached mistralai-2.1.2-py3-none-any.whl.metadata (49 kB)
+  Using cached mistralai-2.1.0-py3-none-any.whl.metadata (49 kB)
+  Using cached mistralai-2.0.5-py3-none-any.whl.metadata (47 kB)
+INFO: This is taking longer than usual. You might need to provide the dependency resolver with stricter constraints to reduce runtime. See https://pip.pypa.io/warnings/backtracking for guidance. If you want to abort this run, press Ctrl + C.
+  Using cached mistralai-2.0.4-py3-none-any.whl.metadata (47 kB)
+  Using cached mistralai-2.0.3-py3-none-any.whl.metadata (47 kB)
+  Using cached mistralai-2.0.2-py3-none-any.whl.metadata (47 kB)
+  Using cached mistralai-2.0.1-py3-none-any.whl.metadata (39 kB)
+  Using cached mistralai-2.0.0-py3-none-any.whl.metadata (39 kB)
+Collecting logfire[httpx]>=4.16.0 (from pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached logfire-4.32.0-py3-none-any.whl.metadata (10 kB)
+Collecting logfire-api>=3.14.1 (from pydantic-evals==1.89.1->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Downloading logfire_api-4.32.0-py3-none-any.whl.metadata (972 bytes)
+Collecting executing>=2.0.1 (from logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached executing-2.2.1-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting importlib-metadata<8.8.0,>=6.0 (from opentelemetry-api->arize-phoenix-evals>=2.11.0->arize-phoenix)
+  Using cached importlib_metadata-8.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting opentelemetry-api (from arize-phoenix-evals>=2.11.0->arize-phoenix)
+  Downloading opentelemetry_api-1.41.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting googleapis-common-protos~=1.52 (from opentelemetry-exporter-otlp-proto-http<1.41.0,>=1.39.0->logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached googleapis_common_protos-1.74.0-py3-none-any.whl.metadata (9.2 kB)
+Collecting opentelemetry-exporter-otlp-proto-http<1.41.0,>=1.39.0 (from logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_http-1.39.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-sdk (from arize-phoenix)
+  Using cached opentelemetry_sdk-1.39.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-api (from arize-phoenix-evals>=2.11.0->arize-phoenix)
+  Using cached opentelemetry_api-1.39.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-semantic-conventions (from arize-phoenix-otel>=0.15.0->arize-phoenix)
+  Using cached opentelemetry_semantic_conventions-0.60b1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-exporter-otlp-proto-common==1.39.1 (from opentelemetry-exporter-otlp-proto-http<1.41.0,>=1.39.0->logfire>=4.16.0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_common-1.39.1-py3-none-any.whl.metadata (1.8 kB)
+Collecting opentelemetry-proto>=1.12.0 (from arize-phoenix)
+  Using cached opentelemetry_proto-1.39.1-py3-none-any.whl.metadata (2.3 kB)
+INFO: pip is looking at multiple versions of opentelemetry-instrumentation to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation (from openinference-instrumentation-openai>=0.1.41->arize-phoenix)
+  Using cached opentelemetry_instrumentation-0.62b0-py3-none-any.whl.metadata (7.2 kB)
+  Using cached opentelemetry_instrumentation-0.61b0-py3-none-any.whl.metadata (7.2 kB)
+  Using cached opentelemetry_instrumentation-0.60b1-py3-none-any.whl.metadata (7.2 kB)
+INFO: pip is looking at multiple versions of opentelemetry-instrumentation-httpx to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-instrumentation-httpx>=0.42b0 (from logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_instrumentation_httpx-0.62b0-py3-none-any.whl.metadata (7.4 kB)
+  Using cached opentelemetry_instrumentation_httpx-0.61b0-py3-none-any.whl.metadata (7.4 kB)
+  Using cached opentelemetry_instrumentation_httpx-0.60b1-py3-none-any.whl.metadata (7.3 kB)
+Collecting opentelemetry-util-http==0.60b1 (from opentelemetry-instrumentation-httpx>=0.42b0->logfire[httpx]>=4.16.0; extra == "logfire"->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached opentelemetry_util_http-0.60b1-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: wcwidth in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from prompt-toolkit>=3->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.2.13)
+Collecting dnspython>=2.0.0 (from email-validator->arize-phoenix)
+  Using cached dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from rich>=13->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.19.1)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting nexus-rpc==1.4.0 (from temporalio>=1.24.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached nexus_rpc-1.4.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting types-protobuf<7.0.0,>=3.20 (from temporalio>=1.24.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached types_protobuf-6.32.1.20260221-py3-none-any.whl.metadata (2.2 kB)
+Requirement already satisfied: regex>=2022.1.18 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from tiktoken>=0.12.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2024.11.6)
+Requirement already satisfied: click>=7.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from uvicorn->arize-phoenix) (8.2.1)
+Requirement already satisfied: aiohttp<4,>=3.8.6 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (3.13.4)
+Collecting packaging>=23 (from strawberry-graphql==0.314.3->arize-phoenix)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from aiohttp<4,>=3.8.6->xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from aiohttp<4,>=3.8.6->xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from aiohttp<4,>=3.8.6->xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.7.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from aiohttp<4,>=3.8.6->xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (6.5.1)
+Requirement already satisfied: propcache>=0.2.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from aiohttp<4,>=3.8.6->xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from aiohttp<4,>=3.8.6->xai-sdk>=1.5.0->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.20.1)
+Collecting more-itertools (from jaraco.classes->keyring>=25.6.0->py-key-value-aio[filetree,keyring,memory]<0.5.0,>=0.4.4->fastmcp>=3.2.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix)
+  Using cached more_itertools-11.0.2-py3-none-any.whl.metadata (41 kB)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from jinja2->arize-phoenix) (3.0.2)
+Collecting opentelemetry-exporter-otlp-proto-grpc==1.41.1 (from opentelemetry-exporter-otlp->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_grpc-1.41.1-py3-none-any.whl.metadata (2.6 kB)
+INFO: pip is looking at multiple versions of opentelemetry-exporter-otlp to determine which version is compatible with other requirements. This could take a while.
+Collecting opentelemetry-exporter-otlp (from arize-phoenix)
+  Using cached opentelemetry_exporter_otlp-1.41.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-exporter-otlp-proto-grpc==1.41.0 (from opentelemetry-exporter-otlp->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_grpc-1.41.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-exporter-otlp (from arize-phoenix)
+  Using cached opentelemetry_exporter_otlp-1.40.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-exporter-otlp-proto-grpc==1.40.0 (from opentelemetry-exporter-otlp->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_grpc-1.40.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting opentelemetry-exporter-otlp (from arize-phoenix)
+  Using cached opentelemetry_exporter_otlp-1.39.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-exporter-otlp-proto-grpc==1.39.1 (from opentelemetry-exporter-otlp->arize-phoenix)
+  Using cached opentelemetry_exporter_otlp_proto_grpc-1.39.1-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: joblib>=1.3.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from scikit-learn->arize-phoenix) (1.5.3)
+Requirement already satisfied: threadpoolctl>=3.2.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from scikit-learn->arize-phoenix) (3.5.0)
+Requirement already satisfied: shellingham>=1.3.0 in /home/jain/anaconda3/envs/myenv/lib/python3.12/site-packages (from typer->huggingface-hub<2.0.0,>=1.3.4->pydantic-ai-slim[ag-ui,anthropic,bedrock,cli,cohere,evals,fastmcp,google,groq,huggingface,logfire,mcp,mistral,openai,retries,spec,temporal,ui,vertexai,xai]==1.89.1->pydantic-ai>=1.62.0->arize-phoenix) (1.5.4)
+Using cached arize_phoenix-15.1.0-py3-none-any.whl (5.1 MB)
+Using cached strawberry_graphql-0.314.3-py3-none-any.whl (324 kB)
+Using cached alembic-1.18.4-py3-none-any.whl (263 kB)
+Using cached graphql_core-3.2.8-py3-none-any.whl (207 kB)
+Using cached sqlalchemy-2.0.49-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
+Using cached aiosqlite-0.22.1-py3-none-any.whl (17 kB)
+Using cached arize_phoenix_client-2.6.0-py3-none-any.whl (180 kB)
+Using cached arize_phoenix_evals-3.0.0-py3-none-any.whl (115 kB)
+Using cached arize_phoenix_otel-0.16.0-py3-none-any.whl (17 kB)
+Using cached authlib-1.7.0-py2.py3-none-any.whl (258 kB)
+Using cached cross_web-0.6.0-py3-none-any.whl (24 kB)
+Using cached fastapi-0.136.1-py3-none-any.whl (117 kB)
+Using cached joserfc-1.6.4-py3-none-any.whl (70 kB)
+Using cached openinference_instrumentation-0.1.48-py3-none-any.whl (30 kB)
+Using cached wrapt-1.17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (88 kB)
+Using cached openinference_instrumentation_openai-0.1.45-py3-none-any.whl (30 kB)
+Using cached openinference_semantic_conventions-0.1.29-py3-none-any.whl (10 kB)
+Using cached pydantic_ai-1.89.1-py3-none-any.whl (7.6 kB)
+Using cached pydantic_ai_slim-1.89.1-py3-none-any.whl (780 kB)
+Using cached pydantic_evals-1.89.1-py3-none-any.whl (91 kB)
+Using cached pydantic_graph-1.89.1-py3-none-any.whl (73 kB)
+Using cached huggingface_hub-1.13.0-py3-none-any.whl (660 kB)
+Using cached hf_xet-1.4.3-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+Using cached mcp-1.27.0-py3-none-any.whl (215 kB)
+Using cached pydantic-2.13.3-py3-none-any.whl (471 kB)
+Using cached pydantic_core-2.46.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Using cached ag_ui_protocol-0.1.18-py3-none-any.whl (12 kB)
+Using cached anthropic-0.97.0-py3-none-any.whl (662 kB)
+Using cached docstring_parser-0.18.0-py3-none-any.whl (22 kB)
+Using cached argcomplete-3.6.3-py3-none-any.whl (43 kB)
+Using cached boto3-1.43.2-py3-none-any.whl (140 kB)
+Using cached botocore-1.43.2-py3-none-any.whl (15.0 MB)
+Using cached jmespath-1.1.0-py3-none-any.whl (20 kB)
+Using cached s3transfer-0.17.0-py3-none-any.whl (86 kB)
+Using cached cohere-5.21.1-py3-none-any.whl (334 kB)
+Using cached fastavro-1.12.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.4 MB)
+Using cached types_requests-2.33.0.20260408-py3-none-any.whl (20 kB)
+Using cached fastmcp-3.2.4-py3-none-any.whl (728 kB)
+Using cached py_key_value_aio-0.4.4-py3-none-any.whl (152 kB)
+Using cached aiofile-3.9.0-py3-none-any.whl (19 kB)
+Using cached caio-0.9.25-cp312-cp312-manylinux_2_34_x86_64.whl (80 kB)
+Using cached beartype-0.22.9-py3-none-any.whl (1.3 MB)
+Using cached cyclopts-4.11.1-py3-none-any.whl (213 kB)
+Using cached rich_rst-1.3.2-py3-none-any.whl (12 kB)
+Using cached genai_prices-0.0.57-py3-none-any.whl (69 kB)
+Using cached google_genai-1.74.0-py3-none-any.whl (790 kB)
+Using cached google_auth-2.50.0-py3-none-any.whl (246 kB)
+Using cached griffelib-2.0.2-py3-none-any.whl (142 kB)
+Using cached groq-1.2.0-py3-none-any.whl (142 kB)
+Using cached jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+Using cached jsonschema_path-0.4.6-py3-none-any.whl (19 kB)
+Using cached pathable-0.5.0-py3-none-any.whl (16 kB)
+Using cached keyring-25.7.0-py3-none-any.whl (39 kB)
+Using cached jeepney-0.9.0-py3-none-any.whl (49 kB)
+Using cached logfire-4.32.1-py3-none-any.whl (313 kB)
+Using cached opentelemetry_sdk-1.39.1-py3-none-any.whl (132 kB)
+Using cached opentelemetry_semantic_conventions-0.60b1-py3-none-any.whl (219 kB)
+Using cached mistralai-2.4.4-py3-none-any.whl (990 kB)
+Using cached opentelemetry_api-1.39.1-py3-none-any.whl (66 kB)
+Using cached opentelemetry_exporter_otlp_proto_http-1.39.1-py3-none-any.whl (19 kB)
+Using cached opentelemetry_exporter_otlp_proto_common-1.39.1-py3-none-any.whl (18 kB)
+Using cached opentelemetry_proto-1.39.1-py3-none-any.whl (72 kB)
+Using cached eval_type_backport-0.3.1-py3-none-any.whl (6.1 kB)
+Using cached jsonpath_python-1.1.5-py3-none-any.whl (14 kB)
+Using cached logfire_api-4.32.1-py3-none-any.whl (124 kB)
+Using cached openai-2.33.0-py3-none-any.whl (1.2 MB)
+Using cached openapi_pydantic-0.5.1-py3-none-any.whl (96 kB)
+Using cached opentelemetry_instrumentation-0.60b1-py3-none-any.whl (33 kB)
+Using cached opentelemetry_instrumentation_httpx-0.60b1-py3-none-any.whl (15 kB)
+Using cached opentelemetry_util_http-0.60b1-py3-none-any.whl (8.9 kB)
+Using cached pydantic_handlebars-0.1.0-py3-none-any.whl (40 kB)
+Using cached email_validator-2.3.0-py3-none-any.whl (35 kB)
+Using cached dnspython-2.8.0-py3-none-any.whl (331 kB)
+Using cached pyperclip-1.11.0-py3-none-any.whl (11 kB)
+Using cached rich-15.0.0-py3-none-any.whl (310 kB)
+Using cached markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Using cached secretstorage-3.5.0-py3-none-any.whl (15 kB)
+Using cached sqlean_py-3.50.4.5-cp312-cp312-manylinux_2_28_x86_64.whl (3.1 MB)
+Using cached sse_starlette-3.4.1-py3-none-any.whl (16 kB)
+Using cached temporalio-1.27.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.8 MB)
+Using cached nexus_rpc-1.4.0-py3-none-any.whl (29 kB)
+Using cached types_protobuf-6.32.1.20260221-py3-none-any.whl (77 kB)
+Using cached tiktoken-0.12.0-cp312-cp312-manylinux_2_28_x86_64.whl (1.2 MB)
+Using cached uncalled_for-0.3.1-py3-none-any.whl (11 kB)
+Using cached watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (456 kB)
+Using cached xai_sdk-1.12.1-py3-none-any.whl (256 kB)
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached aioitertools-0.13.0-py3-none-any.whl (24 kB)
+Using cached docutils-0.22.4-py3-none-any.whl (633 kB)
+Using cached grpc_interceptor-0.15.4-py3-none-any.whl (20 kB)
+Using cached jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+Using cached jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+Using cached jaraco_functools-4.4.0-py3-none-any.whl (10 kB)
+Using cached jsonpath_ng-1.8.0-py3-none-any.whl (67 kB)
+Using cached ldap3-2.9.1-py2.py3-none-any.whl (432 kB)
+Using cached mako-1.3.12-py3-none-any.whl (78 kB)
+Using cached more_itertools-11.0.2-py3-none-any.whl (71 kB)
+Using cached opentelemetry_exporter_otlp-1.39.1-py3-none-any.whl (7.0 kB)
+Using cached opentelemetry_exporter_otlp_proto_grpc-1.39.1-py3-none-any.whl (19 kB)
+Using cached prometheus_client-0.25.0-py3-none-any.whl (64 kB)
+Using cached pystache-0.6.8-py3-none-any.whl (82 kB)
+Using cached typer-0.25.1-py3-none-any.whl (58 kB)
+Installing collected packages: pyperclip, jsonpath-ng, wrapt, uncalled-for, typing-extensions, types-requests, types-protobuf, sqlean-py, pystache, prometheus-client, pathable, packaging, opentelemetry-util-http, opentelemetry-proto, openinference-semantic-conventions, more-itertools, mdurl, Mako, logfire-api, ldap3, jsonref, jsonpath-python, jmespath, jeepney, jaraco.context, hf-xet, grpc-interceptor, griffelib, graphql-core, fastavro, eval-type-backport, docutils, docstring-parser, dnspython, caio, beartype, argcomplete, aiosqlite, aioitertools, tiktoken, sqlalchemy, pydantic-core, py-key-value-aio, opentelemetry-exporter-otlp-proto-common, opentelemetry-api, nexus-rpc, markdown-it-py, jaraco.functools, jaraco.classes, email-validator, cross-web, botocore, aiofile, watchfiles, temporalio, strawberry-graphql, SecretStorage, s3transfer, rich, pydantic, opentelemetry-semantic-conventions, jsonschema-path, joserfc, google-auth, alembic, typer, sse-starlette, rich-rst, pydantic-handlebars, pydantic-graph, opentelemetry-sdk, opentelemetry-instrumentation, openapi-pydantic, openai, mistralai, keyring, groq, genai-prices, fastapi, boto3, authlib, anthropic, ag-ui-protocol, xai-sdk, pydantic-ai-slim, opentelemetry-instrumentation-httpx, opentelemetry-exporter-otlp-proto-http, opentelemetry-exporter-otlp-proto-grpc, openinference-instrumentation, mcp, huggingface-hub, google-genai, cyclopts, pydantic-evals, opentelemetry-exporter-otlp, openinference-instrumentation-openai, logfire, fastmcp, arize-phoenix-evals, cohere, arize-phoenix-otel, arize-phoenix-client, pydantic-ai, arize-phoenix
+  Attempting uninstall: typing-extensions
+    Found existing installation: typing_extensions 4.14.0
+    Uninstalling typing_extensions-4.14.0:
+      Successfully uninstalled typing_extensions-4.14.0
+  Attempting uninstall: packaging
+    Found existing installation: packaging 24.2
+    Uninstalling packaging-24.2:
+      Successfully uninstalled packaging-24.2
+  Attempting uninstall: hf-xet
+    Found existing installation: hf-xet 1.2.0
+    Uninstalling hf-xet-1.2.0:
+      Successfully uninstalled hf-xet-1.2.0
+  Attempting uninstall: docstring-parser
+    Found existing installation: docstring-parser 0.14.1
+    Uninstalling docstring-parser-0.14.1:
+      Successfully uninstalled docstring-parser-0.14.1
+  Attempting uninstall: tiktoken
+    Found existing installation: tiktoken 0.9.0
+    Uninstalling tiktoken-0.9.0:
+      Successfully uninstalled tiktoken-0.9.0
+  Attempting uninstall: sqlalchemy
+    Found existing installation: SQLAlchemy 2.0.41
+    Uninstalling SQLAlchemy-2.0.41:
+      Successfully uninstalled SQLAlchemy-2.0.41
+  Attempting uninstall: pydantic-core
+    Found existing installation: pydantic_core 2.33.2
+    Uninstalling pydantic_core-2.33.2:
+      Successfully uninstalled pydantic_core-2.33.2
+  Attempting uninstall: pydantic
+    Found existing installation: pydantic 2.11.6
+    Uninstalling pydantic-2.11.6:
+      Successfully uninstalled pydantic-2.11.6
+  Attempting uninstall: google-auth
+    Found existing installation: google-auth 2.40.3
+    Uninstalling google-auth-2.40.3:
+      Successfully uninstalled google-auth-2.40.3
+  Attempting uninstall: openai
+    Found existing installation: openai 2.24.0
+    Uninstalling openai-2.24.0:
+      Successfully uninstalled openai-2.24.0
+  Attempting uninstall: fastapi
+    Found existing installation: fastapi 0.129.0
+    Uninstalling fastapi-0.129.0:
+      Successfully uninstalled fastapi-0.129.0
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface_hub 1.3.3
+    Uninstalling huggingface_hub-1.3.3:
+      Successfully uninstalled huggingface_hub-1.3.3
+  Attempting uninstall: google-genai
+    Found existing installation: google-genai 1.25.0
+    Uninstalling google-genai-1.25.0:
+      Successfully uninstalled google-genai-1.25.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain-google-genai 2.1.5 requires google-ai-generativelanguage<0.7.0,>=0.6.18, but you have google-ai-generativelanguage 0.6.15 which is incompatible.
+langchain-core 0.3.68 requires packaging<25,>=23.2, but you have packaging 25.0 which is incompatible.
+langchain-openai 0.3.28 requires openai<2.0.0,>=1.86.0, but you have openai 2.33.0 which is incompatible.
+aisuite 0.1.12 requires docstring-parser<0.15.0,>=0.14.0, but you have docstring-parser 0.18.0 which is incompatible.
+aisuite 0.1.12 requires httpx<0.28.0,>=0.27.0, but you have httpx 0.28.1 which is incompatible.
+Successfully installed Mako-1.3.12 SecretStorage-3.5.0 ag-ui-protocol-0.1.18 aiofile-3.9.0 aioitertools-0.13.0 aiosqlite-0.22.1 alembic-1.18.4 anthropic-0.97.0 argcomplete-3.6.3 arize-phoenix-15.1.0 arize-phoenix-client-2.6.0 arize-phoenix-evals-3.0.0 arize-phoenix-otel-0.16.0 authlib-1.7.0 beartype-0.22.9 boto3-1.43.2 botocore-1.43.2 caio-0.9.25 cohere-5.21.1 cross-web-0.6.0 cyclopts-4.11.1 dnspython-2.8.0 docstring-parser-0.18.0 docutils-0.22.4 email-validator-2.3.0 eval-type-backport-0.3.1 fastapi-0.136.1 fastavro-1.12.2 fastmcp-3.2.4 genai-prices-0.0.57 google-auth-2.50.0 google-genai-1.74.0 graphql-core-3.2.8 griffelib-2.0.2 groq-1.2.0 grpc-interceptor-0.15.4 hf-xet-1.2.0 huggingface-hub-1.13.0 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.4.0 jeepney-0.9.0 jmespath-1.1.0 joserfc-1.6.4 jsonpath-ng-1.8.0 jsonpath-python-1.1.5 jsonref-1.1.0 jsonschema-path-0.4.6 keyring-25.7.0 ldap3-2.9.1 logfire-4.32.1 logfire-api-4.32.1 markdown-it-py-4.0.0 mcp-1.27.0 mdurl-0.1.2 mistralai-2.4.4 more-itertools-11.0.2 nexus-rpc-1.4.0 openai-2.33.0 openapi-pydantic-0.5.1 openinference-instrumentation-0.1.48 openinference-instrumentation-openai-0.1.45 openinference-semantic-conventions-0.1.29 opentelemetry-api-1.39.1 opentelemetry-exporter-otlp-1.39.1 opentelemetry-exporter-otlp-proto-common-1.39.1 opentelemetry-exporter-otlp-proto-grpc-1.39.1 opentelemetry-exporter-otlp-proto-http-1.39.1 opentelemetry-instrumentation-0.60b1 opentelemetry-instrumentation-httpx-0.60b1 opentelemetry-proto-1.39.1 opentelemetry-sdk-1.39.1 opentelemetry-semantic-conventions-0.60b1 opentelemetry-util-http-0.60b1 packaging-25.0 pathable-0.5.0 prometheus-client-0.25.0 py-key-value-aio-0.4.4 pydantic-2.13.3 pydantic-ai-1.89.1 pydantic-ai-slim-1.89.1 pydantic-core-2.46.3 pydantic-evals-1.89.1 pydantic-graph-1.89.1 pydantic-handlebars-0.1.0 pyperclip-1.11.0 pystache-0.6.8 rich-15.0.0 rich-rst-1.3.2 s3transfer-0.17.0 sqlalchemy-2.0.49 sqlean-py-3.50.4.5 sse-starlette-3.4.1 strawberry-graphql-0.314.3 temporalio-1.27.0 tiktoken-0.12.0 typer-0.25.1 types-protobuf-6.32.1.20260221 types-requests-2.33.0.20260408 typing-extensions-4.15.0 uncalled-for-0.3.1 watchfiles-1.1.1 wrapt-1.17.3 xai-sdk-1.12.1
+
+</pre>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/installation-logs-for-arize-phoenix.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/the-env-file-yml-i-used-for-my.html" target="_blank" class="customLink">Next &gt;&gt;&gt;</a>
+<br>

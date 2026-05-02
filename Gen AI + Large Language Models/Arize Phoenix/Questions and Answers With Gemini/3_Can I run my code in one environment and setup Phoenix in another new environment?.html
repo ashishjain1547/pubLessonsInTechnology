@@ -1,0 +1,342 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+
+        button {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a> &nbsp;&nbsp; <a class="customLink" href="https://survival8.blogspot.com/2026/05/how-to-setup-my-ai-project-for.html" target="_blank">&lt;&lt;&lt; Previously</a>
+
+
+
+<h2><mark>can I run my code in one environment ("myenv") and setup Phoenix in another new environment ("arize_phoenix_env")</mark></h2>
+
+<div _ngcontent-ng-c411533729="" inline-copy-host="" class="markdown markdown-main-panel enable-updated-hr-color" id="model-response-message-contentr_5490fb6b9084ca3c" aria-live="polite" aria-busy="false" dir="ltr" style="--animation-duration: 400ms; --fade-animation-function: ease-out;"><p data-path-to-node="0">Yes, you absolutely can! In fact, keeping them in separate environments is a very "clean" way to work because it prevents dependency conflicts (where Phoenix might require a different version of a library than your main project).</p><p data-path-to-node="1">Think of it like this: your code is the <b data-path-to-node="1" data-index-in-node="40">Broadcast Station</b>, and Phoenix is the <b data-path-to-node="1" data-index-in-node="78">Television Set</b>. They don't need to be in the same room; they just need a signal to connect them.</p><p data-path-to-node="2">Here is how you set that up using the "Signal" (your local network).</p><hr data-path-to-node="3"><h3 data-path-to-node="4">1. Start Phoenix in its own environment</h3><p data-path-to-node="5">Open a <b data-path-to-node="5" data-index-in-node="7">new terminal window</b> and set up your dedicated Phoenix environment.</p><response-element class="" ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><code-block _nghost-ng-c3933017335="" class="ng-tns-c3933017335-48 ng-star-inserted" style=""><!----><!----><div _ngcontent-ng-c3933017335="" class="code-block ng-tns-c3933017335-48 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" jslog="223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_5490fb6b9084ca3c&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_a106bbce4ab21def&quot;,null,null,&quot;&quot;,null,1,null,null,1,0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQhtANahcKEwiU5rWaopqUAxUAAAAAHQAAAAAQfw" style="display: block;"><div _ngcontent-ng-c3933017335="" class="code-block-decoration header-formatted gds-title-s ng-tns-c3933017335-48 ng-star-inserted" style=""><span _ngcontent-ng-c3933017335="" class="ng-tns-c3933017335-48">Bash</span><div _ngcontent-ng-c3933017335="" class="buttons ng-tns-c3933017335-48 ng-star-inserted"><button _ngcontent-ng-c3933017335="" aria-label="Download code" mat-icon-button="" mattooltip="Download code" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger download-button ng-tns-c3933017335-48 mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered=""><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c3933017335="" role="img" fonticon="download" class="mat-icon notranslate gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="download"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----><!----><!----><button _ngcontent-ng-c3933017335="" aria-label="Copy code" mat-icon-button="" mattooltip="Copy code" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c3933017335-48 mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" jslog="179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_5490fb6b9084ca3c&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_a106bbce4ab21def&quot;,null,null,&quot;&quot;,null,1,null,null,1,0]];mutable:true"><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c3933017335="" role="img" fonticon="content_copy" class="mat-icon notranslate gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="content_copy"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----></div><!----><!----></div><!----><div _ngcontent-ng-c3933017335="" class="formatted-code-block-internal-container ng-tns-c3933017335-48"><div _ngcontent-ng-c3933017335="" class="animated-opacity ng-tns-c3933017335-48"><!----><pre _ngcontent-ng-c3933017335="" class="ng-tns-c3933017335-48"><code _ngcontent-ng-c3933017335="" role="text" data-test-id="code-content" class="code-container formatted ng-tns-c3933017335-48"><span class="hljs-comment"># Create and activate the Phoenix environment</span>
+python -m venv arize_phoenix_env
+<span class="hljs-built_in">source</span> arize_phoenix_env/bin/activate  <span class="hljs-comment"># On Windows: arize_phoenix_env\Scripts\activate</span>
+
+<span class="hljs-comment"># Install and start Phoenix</span>
+pip install arize-phoenix
+phoenix serve
+</code></pre><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p data-path-to-node="7"><b data-path-to-node="7" data-index-in-node="0">Leave this terminal running.</b> Phoenix is now "listening" for data on <code data-path-to-node="7" data-index-in-node="68">http://localhost:6006</code>.</p><hr data-path-to-node="8"><h3 data-path-to-node="9">2. Configure your project environment (<code data-path-to-node="9" data-index-in-node="39">myenv</code>)</h3><p data-path-to-node="10">In your <b data-path-to-node="10" data-index-in-node="8">original terminal</b> where your project code lives, you don't need the full Phoenix dashboard installed—you only need the "Exporting" tools.</p><response-element class="" ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><code-block _nghost-ng-c3933017335="" class="ng-tns-c3933017335-49 ng-star-inserted" style=""><!----><!----><div _ngcontent-ng-c3933017335="" class="code-block ng-tns-c3933017335-49 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" jslog="223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_5490fb6b9084ca3c&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_a106bbce4ab21def&quot;,null,null,&quot;&quot;,null,1,null,null,1,0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQhtANahgKEwiU5rWaopqUAxUAAAAAHQAAAAAQgAE" style="display: block;"><div _ngcontent-ng-c3933017335="" class="code-block-decoration header-formatted gds-title-s ng-tns-c3933017335-49 ng-star-inserted" style=""><span _ngcontent-ng-c3933017335="" class="ng-tns-c3933017335-49">Bash</span><div _ngcontent-ng-c3933017335="" class="buttons ng-tns-c3933017335-49 ng-star-inserted"><button _ngcontent-ng-c3933017335="" aria-label="Download code" mat-icon-button="" mattooltip="Download code" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger download-button ng-tns-c3933017335-49 mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered=""><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c3933017335="" role="img" fonticon="download" class="mat-icon notranslate gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="download"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----><!----><!----><button _ngcontent-ng-c3933017335="" aria-label="Copy code" mat-icon-button="" mattooltip="Copy code" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c3933017335-49 mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" jslog="179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_5490fb6b9084ca3c&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_a106bbce4ab21def&quot;,null,null,&quot;&quot;,null,1,null,null,1,0]];mutable:true"><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c3933017335="" role="img" fonticon="content_copy" class="mat-icon notranslate gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="content_copy"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----></div><!----><!----></div><!----><div _ngcontent-ng-c3933017335="" class="formatted-code-block-internal-container ng-tns-c3933017335-49"><div _ngcontent-ng-c3933017335="" class="animated-opacity ng-tns-c3933017335-49"><!----><pre _ngcontent-ng-c3933017335="" class="ng-tns-c3933017335-49"><code _ngcontent-ng-c3933017335="" role="text" data-test-id="code-content" class="code-container formatted ng-tns-c3933017335-49"><span class="hljs-comment"># Activate your project environment</span>
+<span class="hljs-built_in">source</span> myenv/bin/activate
+
+<span class="hljs-comment"># Install only the OTel exporters and instrumentation</span>
+pip install openinference-instrumentation-openai opentelemetry-exporter-otlp
+</code></pre><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><hr data-path-to-node="12"><h3 data-path-to-node="13">3. Connect the two via "The Pipe" (Environment Variables)</h3><p data-path-to-node="14">Since Phoenix is running in a different process/environment, your project code needs to know where to send the data. You do this by setting an <b data-path-to-node="14" data-index-in-node="143">Environment Variable</b> in your project terminal.</p><p data-path-to-node="15"><b data-path-to-node="15" data-index-in-node="0">In the <code data-path-to-node="15" data-index-in-node="7">myenv</code> terminal, run:</b></p><response-element class="" ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><code-block _nghost-ng-c3933017335="" class="ng-tns-c3933017335-50 ng-star-inserted" style=""><!----><!----><div _ngcontent-ng-c3933017335="" class="code-block ng-tns-c3933017335-50 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation" jslog="223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_5490fb6b9084ca3c&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_a106bbce4ab21def&quot;,null,null,&quot;&quot;,null,1,null,null,1,0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQhtANahgKEwiU5rWaopqUAxUAAAAAHQAAAAAQgQE" style="display: block;"><div _ngcontent-ng-c3933017335="" class="code-block-decoration header-formatted gds-title-s ng-tns-c3933017335-50 ng-star-inserted" style=""><span _ngcontent-ng-c3933017335="" class="ng-tns-c3933017335-50">Bash</span><div _ngcontent-ng-c3933017335="" class="buttons ng-tns-c3933017335-50 ng-star-inserted"><button _ngcontent-ng-c3933017335="" aria-label="Download code" mat-icon-button="" mattooltip="Download code" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger download-button ng-tns-c3933017335-50 mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered=""><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c3933017335="" role="img" fonticon="download" class="mat-icon notranslate gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="download"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----><!----><!----><button _ngcontent-ng-c3933017335="" aria-label="Copy code" mat-icon-button="" mattooltip="Copy code" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button ng-tns-c3933017335-50 mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" jslog="179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_5490fb6b9084ca3c&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_a106bbce4ab21def&quot;,null,null,&quot;&quot;,null,1,null,null,1,0]];mutable:true"><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c3933017335="" role="img" fonticon="content_copy" class="mat-icon notranslate gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="content_copy"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----></div><!----><!----></div><!----><div _ngcontent-ng-c3933017335="" class="formatted-code-block-internal-container ng-tns-c3933017335-50"><div _ngcontent-ng-c3933017335="" class="animated-opacity ng-tns-c3933017335-50"><!----><pre _ngcontent-ng-c3933017335="" class="ng-tns-c3933017335-50"><code _ngcontent-ng-c3933017335="" role="text" data-test-id="code-content" class="code-container formatted ng-tns-c3933017335-50"><span class="hljs-comment"># Tell OTel to send data to the Phoenix "listening" port</span>
+<span class="hljs-built_in">export</span> OTEL_EXPORTER_OTLP_ENDPOINT=<span class="hljs-string">"http://localhost:6006/v1/traces"</span>
+</code></pre><!----></div></div></div><!----><!----><!----></code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element><p data-path-to-node="17"><i data-path-to-node="17" data-index-in-node="0">(On Windows Command Prompt: <code data-path-to-node="17" data-index-in-node="28">set OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:6006/v1/traces</code>)</i></p><hr data-path-to-node="18"><h3 data-path-to-node="19">4. Run your code</h3><p data-path-to-node="20">Now, when you run your Python script in <code data-path-to-node="20" data-index-in-node="40">myenv</code>, the OpenTelemetry library will grab the data and "shoot" it over to the port where your other environment (<code data-path-to-node="20" data-index-in-node="154">arize_phoenix_env</code>) is listening.</p><h3 data-path-to-node="21">Why this is a great approach for you:</h3><ul data-path-to-node="22"><li><p data-path-to-node="22,0,0"><b data-path-to-node="22,0,0" data-index-in-node="0">Portability:</b> Your educational SPAs and filtering scripts stay lightweight. They don't carry the "weight" of the entire Phoenix web server.</p></li><li><p data-path-to-node="22,1,0"><b data-path-to-node="22,1,0" data-index-in-node="0">Stability:</b> If you decide to update Phoenix to a newer version to get better RAG visualization, you won't risk breaking the specific versions of React or Python libraries you are using for your literacy apps.</p></li><li><p data-path-to-node="22,2,0"><b data-path-to-node="22,2,0" data-index-in-node="0">Multi-project:</b> You can have three different projects running in three different environments, and as long as they all point to <code data-path-to-node="22,2,0" data-index-in-node="127">localhost:6006</code>, you can see all your work in one central Phoenix dashboard.</p></li></ul><p data-path-to-node="23">Are you planning to run these both on your local machine, or are you thinking about hosting the Phoenix dashboard on a separate server eventually?</p></div>
+
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+
+        button {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a>
+
+
+<h2>Can you suggest which one is better for observability: OpenTelemetry or Arize Phoenix</h2>
+
+<div _ngcontent-ng-c411533729="" inline-copy-host="" class="markdown markdown-main-panel enable-updated-hr-color" id="model-response-message-contentr_901a5b32c82ce903" aria-live="off" aria-busy="false" dir="ltr" style="--animation-duration: 400ms; --fade-animation-function: ease-out;"><p data-path-to-node="0">Comparing <b data-path-to-node="0" data-index-in-node="10">OpenTelemetry (OTel)</b> and <b data-path-to-node="0" data-index-in-node="35">Arize Phoenix</b> is not exactly an apples-to-apples comparison. In the modern observability stack, they are actually <b data-path-to-node="0" data-index-in-node="149">complementary</b> rather than competitors.</p><p data-path-to-node="1">The simplest way to look at it: <b data-path-to-node="1" data-index-in-node="32">OpenTelemetry is the "How"</b> (the plumbing that collects data), while <b data-path-to-node="1" data-index-in-node="100">Arize Phoenix is the "Where"</b> (the specialized UI and analysis engine for AI).</p><hr data-path-to-node="2"><h2 data-path-to-node="3">At a Glance: The Core Difference</h2><div class="horizontal-scroll-wrapper"><div class="table-block-component"><response-element class="" ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><table-block _nghost-ng-c1311339154="" class="ng-star-inserted"><div _ngcontent-ng-c1311339154="" class="table-block has-export-button new-table-style is-at-scroll-start is-at-scroll-end"><div _ngcontent-ng-c1311339154="" not-end-of-paragraph="" class="table-content" jslog="275421;track:impression,attention" data-hveid="0" decode-data-ved="1" data-ved="0CAAQ3ecQahcKEwiU5rWaopqUAxUAAAAAHQAAAAAQPg"><table data-path-to-node="4"><thead><tr><th><span data-path-to-node="4,0,0,0">Feature</span></th><th><span data-path-to-node="4,0,1,0">OpenTelemetry (OTel)</span></th><th><span data-path-to-node="4,0,2,0">Arize Phoenix</span></th></tr></thead><tbody><tr><td><span data-path-to-node="4,1,0,0"><b data-path-to-node="4,1,0,0" data-index-in-node="0">Role</b></span></td><td><span data-path-to-node="4,1,1,0"><b data-path-to-node="4,1,1,0" data-index-in-node="0">Data Standard &amp; Collector.</b> A framework for generating and exporting traces, metrics, and logs.</span></td><td><span data-path-to-node="4,1,2,0"><b data-path-to-node="4,1,2,0" data-index-in-node="0">Analysis &amp; Evaluation Platform.</b> A specialized backend for visualizing and testing AI/LLM traces.</span></td></tr><tr><td><span data-path-to-node="4,2,0,0"><b data-path-to-node="4,2,0,0" data-index-in-node="0">Best For</b></span></td><td><span data-path-to-node="4,2,1,0">System-wide observability (Microservices, Databases, Infrastructure).</span></td><td><span data-path-to-node="4,2,2,0">LLM application development, RAG troubleshooting, and AI agent evaluation.</span></td></tr><tr><td><span data-path-to-node="4,3,0,0"><b data-path-to-node="4,3,0,0" data-index-in-node="0">Standard</b></span></td><td><span data-path-to-node="4,3,1,0">Industry standard (CNCF). Vendor-neutral.</span></td><td><span data-path-to-node="4,3,2,0">Built <b data-path-to-node="4,3,2,0" data-index-in-node="6">on top of</b> OTel using the "OpenInference" semantic standard.</span></td></tr><tr><td><span data-path-to-node="4,4,0,0"><b data-path-to-node="4,4,0,0" data-index-in-node="0">Visuals</b></span></td><td><span data-path-to-node="4,4,1,0">None (requires a backend like Jaeger, Grafana, or Honeycomb).</span></td><td><span data-path-to-node="4,4,2,0">Deeply specialized UI for LLM traces (retrieval steps, tool calls, and LLM-as-a-judge).</span></td></tr></tbody></table></div><div _ngcontent-ng-c1311339154="" hide-from-message-actions="" class="table-footer hide-from-message-actions"><!----><button _ngcontent-ng-c1311339154="" mat-button="" class="mdc-button mat-mdc-button-base export-sheets-button-container mat-mdc-button mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" jslog="184701;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,null,null,null,null,null,1,null,null,null,0]]"><span class="mat-mdc-button-persistent-ripple mdc-button__ripple"></span><span class="mdc-button__label"><span _ngcontent-ng-c1311339154="" class="export-sheets-button"><span _ngcontent-ng-c1311339154="" class="export-sheets-icon"><mat-icon _ngcontent-ng-c1311339154="" role="img" fonticon="drive_spreadsheet" class="mat-icon notranslate google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="drive_spreadsheet"></mat-icon></span><span _ngcontent-ng-c1311339154="">Export to Sheets</span></span></span><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><button _ngcontent-ng-c1311339154="" mat-icon-button="" mattooltip="Copy table" aria-label="Copy table" data-test-id="copy-table-button" class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger copy-button mat-unthemed ng-star-inserted" mat-ripple-loader-uninitialized="" mat-ripple-loader-class-name="mat-mdc-button-ripple" mat-ripple-loader-centered="" jslog="276666;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,null,null,null,null,null,1,null,null,null,0]]"><span class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><mat-icon _ngcontent-ng-c1311339154="" role="img" fonticon="content_copy" class="mat-icon notranslate gds-icon-l google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="content_copy"></mat-icon><!----><span class="mat-focus-indicator"></span><span class="mat-mdc-button-touch-target"></span></button><!----><!----><!----></div></div><!----></table-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element></div></div><hr data-path-to-node="5"><h2 data-path-to-node="6">1. OpenTelemetry: The Universal Plumbing</h2><p data-path-to-node="7" id="p-rc_bcbb44f6bf0fa6a8-24"><span class="citation-13 citation-end-13">OpenTelemetry is a CNCF project that provides a unified way to instrument your code.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="1"><!----></sup></source-footnote></span> <span class="citation-12 citation-end-12">If you want to ensure you aren't "locked in" to a specific vendor, you use OTel.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="2"><!----></sup></source-footnote></span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c502186594="">  <source-inline-chip _ngcontent-ng-c502186594="" _nghost-ng-c2152002573="" class="ng-star-inserted"><div _ngcontent-ng-c2152002573="" class="source-inline-chip-container ng-star-inserted"><button _ngcontent-ng-c2152002573="" cdkoverlayorigin="" class="button multiple-button ng-star-inserted" aria-label="View source details for citations from Arize AI and Arize AI. Opens side panel." jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_bcbb44f6bf0fa6a8&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!----><!----><!----><span _ngcontent-ng-c2152002573="" hide-from-message-actions="" class="button-label gds-label-m hide-from-message-actions ng-star-inserted"><mat-icon _ngcontent-ng-c2152002573="" role="img" fonticon="link" class="mat-icon notranslate symbol gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="link"></mat-icon>+1</span><!----><!----><!----></button><!----><!----><!----><!----></div><!----><!----><!----><!----><!----></source-inline-chip><!----><!----><!----></sources-carousel-inline></p><ul data-path-to-node="8"><li><p data-path-to-node="8,0,0" id="p-rc_bcbb44f6bf0fa6a8-25"><b data-path-to-node="8,0,0" data-index-in-node="0">Pros:</b> Works with almost every language and backend. <span class="citation-11 citation-end-11">It’s the standard for distributed tracing.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="3"><!----></sup></source-footnote></span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c502186594="">  <source-inline-chip _ngcontent-ng-c502186594="" _nghost-ng-c2152002573="" class="ng-star-inserted"><div _ngcontent-ng-c2152002573="" class="source-inline-chip-container ng-star-inserted"><!----><button _ngcontent-ng-c2152002573="" cdkoverlayorigin="" class="button ng-star-inserted" aria-label="View source details for citation from Arize AI. Opens side panel." jslog="262206;track:generic_click,impression,attention;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_bcbb44f6bf0fa6a8&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQvoAQahcKEwiU5rWaopqUAxUAAAAAHQAAAAAQRQ"><!----><mat-icon _ngcontent-ng-c2152002573="" role="img" fonticon="link" class="mat-icon notranslate symbol gds-icon-s google-symbols mat-ligature-font mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="link"></mat-icon><!----></button><!----><!----><!----></div><!----><!----><!----><!----><!----></source-inline-chip><!----><!----><!----></sources-carousel-inline></p></li><li><p data-path-to-node="8,1,0" id="p-rc_bcbb44f6bf0fa6a8-26"><span class="citation-10"></span><b data-path-to-node="8,1,0" data-index-in-node="0"><span class="citation-10">Cons:</span></b><span class="citation-10 citation-end-10"> It doesn't "show" you anything.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="4"><!----></sup></source-footnote></span> If you send your OTel data to a general-purpose tool like Jaeger, you might see a list of spans, but it won't understand what a "Vector DB retrieval" or a "System Prompt" is.<sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c502186594="">  <source-inline-chip _ngcontent-ng-c502186594="" _nghost-ng-c2152002573="" class="ng-star-inserted"><div _ngcontent-ng-c2152002573="" class="source-inline-chip-container ng-star-inserted"><!----><button _ngcontent-ng-c2152002573="" cdkoverlayorigin="" class="button ng-star-inserted" aria-label="View source details for citation from Arize AI. Opens side panel." jslog="262206;track:generic_click,impression,attention;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_bcbb44f6bf0fa6a8&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQvoAQahcKEwiU5rWaopqUAxUAAAAAHQAAAAAQRg"><!----><mat-icon _ngcontent-ng-c2152002573="" role="img" fonticon="link" class="mat-icon notranslate symbol gds-icon-s google-symbols mat-ligature-font mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="link"></mat-icon><!----></button><!----><!----><!----></div><!----><!----><!----><!----><!----></source-inline-chip><!----><!----><!----></sources-carousel-inline></p></li><li><p data-path-to-node="8,2,0"><b data-path-to-node="8,2,0" data-index-in-node="0">Verdict:</b> Use OTel as your foundation so your data is portable.</p></li></ul><h2 data-path-to-node="9">2. Arize Phoenix: The AI Microscope</h2><p data-path-to-node="10" id="p-rc_bcbb44f6bf0fa6a8-27"><span class="citation-9">Phoenix is specifically designed for the </span><b data-path-to-node="10" data-index-in-node="41"><span class="citation-9">AI Engineer</span></b><span class="citation-9 citation-end-9">.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="5"><!----></sup></source-footnote></span> <span class="citation-8 citation-end-8">It uses OTel under the hood but wraps it in a UI that makes sense for LLMs.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="6"><!----></sup></source-footnote></span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c502186594="">  <source-inline-chip _ngcontent-ng-c502186594="" _nghost-ng-c2152002573="" class="ng-star-inserted"><div _ngcontent-ng-c2152002573="" class="source-inline-chip-container ng-star-inserted"><button _ngcontent-ng-c2152002573="" cdkoverlayorigin="" class="button multiple-button ng-star-inserted" aria-label="View source details for citations from SourceForge and Arize AI. Opens side panel." jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_bcbb44f6bf0fa6a8&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!----><!----><!----><span _ngcontent-ng-c2152002573="" hide-from-message-actions="" class="button-label gds-label-m hide-from-message-actions ng-star-inserted"><mat-icon _ngcontent-ng-c2152002573="" role="img" fonticon="link" class="mat-icon notranslate symbol gds-icon-s google-symbols mat-ligature-font mat-icon-no-color" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="link"></mat-icon>+1</span><!----><!----><!----></button><!----><!----><!----><!----></div><!----><!----><!----><!----><!----></source-inline-chip><!----><!----><!----></sources-carousel-inline></p><ul data-path-to-node="11"><li><p data-path-to-node="11,0,0"><b data-path-to-node="11,0,0" data-index-in-node="0">Pros:</b> * <b data-path-to-node="11,0,0" data-index-in-node="8">Trace Visualization:</b> It groups spans into clear LLM "turns," showing you exactly what the prompt was and what the model returned.</p><ul data-path-to-node="11,0,1"><li><p data-path-to-node="11,0,1,0,0" id="p-rc_bcbb44f6bf0fa6a8-28"><span class="citation-7"></span><b data-path-to-node="11,0,1,0,0" data-index-in-node="0"><span class="citation-7">Evals:</span></b><span class="citation-7 citation-end-7"> Built-in "LLM-as-a-judge" tools to automatically score your responses for hallucinations or relevance.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c1278356932=""><sup _ngcontent-ng-c1278356932="" class="superscript" data-turn-source-index="7"><!----></sup></source-footnote></span><sources-carousel-inline ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c502186594="">  <source-inline-chip _ngcontent-ng-c502186594="" _nghost-ng-c2152002573="" class="ng-star-inserted"><div _ngcontent-ng-c2152002573="" class="source-inline-chip-container ng-star-inserted"><!----><button _ngcontent-ng-c2152002573="" cdkoverlayorigin="" class="button ng-star-inserted" aria-label="View source details for citation from Vaibhav Phutane - Medium. Opens side panel." jslog="262206;track:generic_click,impression,attention;BardVeMetadataKey:[[&quot;r_901a5b32c82ce903&quot;,&quot;c_b7111f42bca648f5&quot;,null,&quot;rc_bcbb44f6bf0fa6a8&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]" data-hveid="0" decode-data-ved="1" data-ved="0CAAQvoAQahcKEwiU5rWaopqUAxUAAAAAHQAAAAAQSA"><!----><mat-icon _ngcontent-ng-c2152002573="" role="img" fonticon="link" class="mat-icon notranslate symbol gds-icon-s google-symbols mat-ligature-font mat-icon-no-color ng-star-inserted" aria-hidden="true" data-mat-icon-type="font" data-mat-icon-name="link"></mat-icon><!----></button><!----><!----><!----></div><!----><!----><!----><!----><!----></source-inline-chip><!----><!----><!----></sources-carousel-inline></p></li><li><p data-path-to-node="11,0,1,1,0"><b data-path-to-node="11,0,1,1,0" data-index-in-node="0">RAG Insights:</b> Specific views for seeing how your retrieval performed (e.g., did the right document come back from the vector store?).</p></li></ul></li><li><p data-path-to-node="11,1,0"><b data-path-to-node="11,1,0" data-index-in-node="0">Cons:</b> While it can handle general spans, its UI is heavily biased toward AI workflows. It's not where you'd want to debug a slow SQL query in a non-AI service.</p></li><li><p data-path-to-node="11,2,0"><b data-path-to-node="11,2,0" data-index-in-node="0">Verdict:</b> Use Phoenix during development and for production AI monitoring to see the <i data-path-to-node="11,2,0" data-index-in-node="84">reasoning</i> of your agents.</p></li></ul><hr data-path-to-node="12"><h2 data-path-to-node="13">Which one should you choose?</h2><p data-path-to-node="14"><b data-path-to-node="14" data-index-in-node="0">You don't have to choose—you should use both.</b></p><p data-path-to-node="15">Since you are building educational SPAs and working with datasets like TinyStories, here is the recommended workflow:</p><ol start="1" data-path-to-node="16"><li><p data-path-to-node="16,0,0"><b data-path-to-node="16,0,0" data-index-in-node="0">Instrument with OTel/OpenInference:</b> Use the OTel-based libraries (like <code data-path-to-node="16,0,0" data-index-in-node="71">openinference-instrumentation-langchain</code> or <code data-path-to-node="16,0,0" data-index-in-node="114">llama-index</code>) to instrument your app. This makes your code "observable" in a standard way.</p></li><li><p data-path-to-node="16,1,0"><b data-path-to-node="16,1,0" data-index-in-node="0">Point the data to Phoenix:</b> During your current development phase (where you are refining CVC words and phonics logic), run <code data-path-to-node="16,1,0" data-index-in-node="123">phoenix serve</code> locally. Send your OTel traces there to see exactly where your "Tiered Filtering Strategy" might be failing or how your LLM is classifying stories.</p></li></ol><p data-path-to-node="17"><b data-path-to-node="17" data-index-in-node="0">Summary:</b> * If you need to monitor <b data-path-to-node="17" data-index-in-node="34">infrastructure</b> (CPU, memory, database latency), <b data-path-to-node="17" data-index-in-node="82">OpenTelemetry</b> + a tool like <b data-path-to-node="17" data-index-in-node="110">Grafana</b> is better.</p><ul data-path-to-node="18"><li><p data-path-to-node="18,0,0">If you need to monitor <b data-path-to-node="18,0,0" data-index-in-node="23">AI logic</b> (hallucinations, prompt performance, RAG quality), <b data-path-to-node="18,0,0" data-index-in-node="83">Arize Phoenix</b> is significantly better.</p></li></ul></div>
+
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customArizePhoenixHeader" target="_blank">See All Posts on Arize Phoenix</a> &nbsp;&nbsp; <a class="customLink" href="https://survival8.blogspot.com/2026/05/how-to-setup-my-ai-project-for.html" target="_blank">&lt;&lt;&lt; Previously</a>
+
