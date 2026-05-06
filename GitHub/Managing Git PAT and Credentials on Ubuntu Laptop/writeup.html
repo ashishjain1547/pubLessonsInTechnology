@@ -1,0 +1,391 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+
+        button { display: none; }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader" target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2021/05/git-error-wrt-long-file-names.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+<!-- &nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/the-env-file-yml-i-used-for-my.html" target="_blank" class="customLink">Next &gt;&gt;&gt;</a> -->
+<br>
+
+
+<h2><pre><mark>my git push command always prompts for username and password. 
+Can't I put it in environment variables or something to not having to enter it again and again? 
+I am using Ubuntu and repo is on GitHub</mark></pre></h2>
+
+<div class="flex max-w-full flex-col gap-4 grow"><div data-message-author-role="assistant" data-message-id="31c2586f-c223-42ec-a55d-ed965bee339f" dir="auto" data-message-model-slug="gpt-5-3" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal outline-none keyboard-focused:focus-ring [.text-message+&amp;]:mt-1"><div class="flex w-full flex-col gap-1 empty:hidden"><div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="229">Yes—you <strong data-start="8" data-end="68">shouldn’t need to type your username/password every time</strong>. In fact, GitHub no longer supports password auth for Git pushes, so what you’re seeing is usually because you're using HTTPS without proper credential storage.</p>
+<p data-start="231" data-end="279">Here are the <strong data-start="244" data-end="276">best ways to fix it (ranked)</strong> 👇</p>
+<hr data-start="281" data-end="284">
+<h1 data-section-id="da4e6f" data-start="286" data-end="339">✅ Option 1 (Recommended): Use SSH (No prompts ever)</h1>
+<p data-start="341" data-end="393">This is the cleanest, most developer-friendly setup.</p>
+<h3 data-section-id="af76x7" data-start="395" data-end="423">Step 1: Generate SSH key</h3>
+<pre class="overflow-visible! px-0!" data-start="424" data-end="485"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>ssh-keygen </span><span class="ͼn">-t</span><span> ed25519 </span><span class="ͼn">-C</span><span> </span><span class="ͼk">"your_email@example.com"</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="487" data-end="515">Press Enter through prompts.</p>
+<hr data-start="517" data-end="520">
+<h3 data-section-id="1xk2lj9" data-start="522" data-end="558">Step 2: Add SSH key to ssh-agent</h3>
+<pre class="overflow-visible! px-0!" data-start="559" data-end="619"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>eval </span><span class="ͼk">"</span><span>$(ssh-agent -s)</span><span class="ͼk">"</span><br><span>ssh-add ~/.ssh/id_ed25519</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="621" data-end="624">
+<h3 data-section-id="6tt1se" data-start="626" data-end="653">Step 3: Copy public key</h3>
+<pre class="overflow-visible! px-0!" data-start="654" data-end="691"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">cat</span><span> ~/.ssh/id_ed25519.pub</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="693" data-end="696">
+<h3 data-section-id="zgnvaw" data-start="698" data-end="726">Step 4: Add it to GitHub</h3>
+<p data-start="727" data-end="818">Go to:<br>
+👉 <span class="hover:entity-accent entity-underline inline cursor-pointer align-baseline"><span class="whitespace-normal">GitHub</span></span> → Settings → SSH and GPG Keys → New SSH Key</p>
+<p data-start="820" data-end="834">Paste the key.</p>
+<hr data-start="836" data-end="839">
+<h3 data-section-id="ifwlwj" data-start="841" data-end="876">Step 5: Switch your repo to SSH</h3>
+<p data-start="877" data-end="898">Check current remote:</p>
+<pre class="overflow-visible! px-0!" data-start="899" data-end="924"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> remote </span><span class="ͼn">-v</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="926" data-end="936">Change it:</p>
+<pre class="overflow-visible! px-0!" data-start="937" data-end="1007"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> remote set-url origin </span><span class="ͼl">git</span><span>@github.com:USERNAME/REPO.git</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="1009" data-end="1012">
+<h3 data-section-id="1jniuwj" data-start="1014" data-end="1025">Done 🎉</h3>
+<p data-start="1026" data-end="1030">Now:</p>
+<pre class="overflow-visible! px-0!" data-start="1031" data-end="1051"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> push</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="1052" data-end="1087">👉 No username/password ever again.</p>
+<hr data-start="1089" data-end="1092">
+<h1 data-section-id="t4yuf1" data-start="1094" data-end="1152">✅ Option 2: Use Git Credential Helper (HTTPS but cached)</h1>
+<p data-start="1154" data-end="1183">If you want to stay on HTTPS:</p>
+<h3 data-section-id="35qh66" data-start="1185" data-end="1218">Store credentials permanently</h3>
+<pre class="overflow-visible! px-0!" data-start="1219" data-end="1274"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> credential.helper store</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="1276" data-end="1293">Then do one push:</p>
+<pre class="overflow-visible! px-0!" data-start="1294" data-end="1314"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> push</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="1316" data-end="1379">Enter username + <strong data-start="1333" data-end="1373">Personal Access Token (NOT password)</strong> once.</p>
+<p data-start="1381" data-end="1409">After that, Git saves it in:</p>
+<pre class="overflow-visible! px-0!" data-start="1410" data-end="1436"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>~/.git-credentials</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="1438" data-end="1441">
+<h3 data-section-id="knziaq" data-start="1443" data-end="1492"><span role="text">More secure option (recommended over <code data-start="1484" data-end="1491">store</code>)</span></h3>
+<pre class="overflow-visible! px-0!" data-start="1493" data-end="1548"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> credential.helper cache</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<ul data-start="1550" data-end="1614">
+<li data-section-id="1o6d1ga" data-start="1550" data-end="1596">
+<p data-start="1552" data-end="1596">Keeps credentials in memory (default 15 min)</p>
+</li>
+<li data-section-id="115w6sb" data-start="1597" data-end="1614">
+<p data-start="1599" data-end="1614">You can extend:</p>
+</li>
+</ul>
+<pre class="overflow-visible! px-0!" data-start="1615" data-end="1687"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> credential.helper </span><span class="ͼk">'cache --timeout=3600'</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="1689" data-end="1692">
+<h1 data-section-id="1kj6act" data-start="1694" data-end="1739">⚠️ Important (GitHub authentication change)</h1>
+<p data-start="1741" data-end="1800">Since 2021, <span class="hover:entity-accent entity-underline inline cursor-pointer align-baseline"><span class="whitespace-normal">GitHub</span></span> requires:</p>
+<ul data-start="1801" data-end="1859">
+<li data-section-id="1x80eh0" data-start="1801" data-end="1827">
+<p data-start="1803" data-end="1827">❌ Password → NOT allowed</p>
+</li>
+<li data-section-id="1aqytqm" data-start="1828" data-end="1859">
+<p data-start="1830" data-end="1859">✅ Personal Access Token (PAT)</p>
+</li>
+</ul>
+<p data-start="1861" data-end="1944">Create one here:<br>
+👉 GitHub → Settings → Developer Settings → Personal Access Tokens</p>
+<hr data-start="1946" data-end="1949">
+<h1 data-section-id="br8jkt" data-start="1951" data-end="1983">🚫 About Environment Variables</h1>
+<p data-start="1985" data-end="2015">You <em data-start="1989" data-end="1994">can</em> technically do this:</p>
+<pre class="overflow-visible! px-0!" data-start="2016" data-end="2075"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼg">export</span><span> </span><span class="ͼm">GIT_USERNAME</span><span class="ͼg">=</span><span>...</span><br><span class="ͼg">export</span><span> </span><span class="ͼm">GIT_PASSWORD</span><span class="ͼg">=</span><span>...</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="2077" data-end="2081">But:</p>
+<ul data-start="2082" data-end="2191">
+<li data-section-id="l5kh7r" data-start="2082" data-end="2125">
+<p data-start="2084" data-end="2125">❌ Git doesn’t use these directly for auth</p>
+</li>
+<li data-section-id="w97e3b" data-start="2126" data-end="2165">
+<p data-start="2128" data-end="2165">❌ Not secure (visible in process/env)</p>
+</li>
+<li data-section-id="mnrc5t" data-start="2166" data-end="2191">
+<p data-start="2168" data-end="2191">❌ Not standard practice</p>
+</li>
+</ul>
+<p data-start="2193" data-end="2219">👉 So avoid this approach.</p>
+<hr data-start="2221" data-end="2224">
+<h1 data-section-id="1ninhgf" data-start="2226" data-end="2256">💡 My Recommendation for You</h1>
+<p data-start="2258" data-end="2311">Since you're a developer (and doing frequent pushes):</p>
+<p data-start="2313" data-end="2376">👉 <strong data-start="2316" data-end="2333">Switch to SSH</strong> — one-time setup, zero friction afterward.</p>
+<hr data-start="2378" data-end="2381">
+<p data-start="2383" data-end="2402">If you want, I can:</p>
+<ul data-start="2403" data-end="2515" data-is-last-node="" data-is-only-node="">
+<li data-section-id="an3st9" data-start="2403" data-end="2452">
+<p data-start="2405" data-end="2452">Check your current repo setup (<code data-start="2436" data-end="2451">git remote -v</code>)</p>
+</li>
+<li data-section-id="xlh4hf" data-start="2453" data-end="2515" data-is-last-node="">
+<p data-start="2455" data-end="2515" data-is-last-node="">Or give you a <strong data-start="2469" data-end="2512">1-command script to fully switch to SSH</strong> 🚀</p>
+</li>
+</ul></div></div></div></div>
+
+
+
+<br><hr><br>
+
+<h2><pre><mark>I prefer this Option 2: Use Git Credential Helper (HTTPS but cached) 
+What happens when my PAT changes after 90 days?</mark></pre></h2>
+
+<br>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="77">Good question—this is exactly where people get tripped up with HTTPS + PAT 👍</p>
+<hr data-start="79" data-end="82">
+<h1 data-section-id="18odtgb" data-start="84" data-end="124">🔄 What happens when your PAT expires?</h1>
+<p data-start="126" data-end="239">When your <strong data-start="136" data-end="167">Personal Access Token (PAT)</strong> expires (e.g., after 90 days on <span class="hover:entity-accent entity-underline inline cursor-pointer align-baseline"><span class="whitespace-normal">GitHub</span></span>):</p>
+<h3 data-section-id="1llp28b" data-start="241" data-end="264"><span role="text">👉 Next <code data-start="253" data-end="263">git push</code>:</span></h3>
+<ul data-start="265" data-end="440">
+<li data-section-id="u4f74w" data-start="265" data-end="307">
+<p data-start="267" data-end="307">Git tries using the <strong data-start="287" data-end="307">old cached token</strong></p>
+</li>
+<li data-section-id="ct8t7k" data-start="308" data-end="329">
+<p data-start="310" data-end="329">GitHub rejects it ❌</p>
+</li>
+<li data-section-id="1401pms" data-start="330" data-end="440">
+<p data-start="332" data-end="358">You’ll see something like:</p>
+<pre class="overflow-visible! px-0!" data-start="361" data-end="440"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>remote: Invalid username or password</span><br><span>fatal: Authentication failed</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+</li>
+</ul>
+<hr data-start="442" data-end="445">
+<h1 data-section-id="vf66uf" data-start="447" data-end="476">🧠 What Git does internally</h1>
+<p data-start="478" data-end="494">If you're using:</p>
+<h3 data-section-id="1j7keg5" data-start="496" data-end="528"><span role="text">1. <code data-start="503" data-end="528">credential.helper store</code></span></h3>
+<ul data-start="529" data-end="642">
+<li data-section-id="1m7zhjm" data-start="529" data-end="584">
+<p data-start="531" data-end="551">Old PAT is saved in:</p>
+<pre class="overflow-visible! px-0!" data-start="554" data-end="584"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>~/.git-credentials</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+</li>
+<li data-section-id="n5v90h" data-start="585" data-end="642">
+<p data-start="587" data-end="642">Git keeps using it → keeps failing until you replace it</p>
+</li>
+</ul>
+<hr data-start="644" data-end="647">
+<h3 data-section-id="7qb0gl" data-start="649" data-end="681"><span role="text">2. <code data-start="656" data-end="681">credential.helper cache</code></span></h3>
+<ul data-start="682" data-end="761">
+<li data-section-id="13hzxa9" data-start="682" data-end="705">
+<p data-start="684" data-end="705">Stored in memory only</p>
+</li>
+<li data-section-id="4rehrr" data-start="706" data-end="761">
+<p data-start="708" data-end="761">Once expired → you’ll be prompted again automatically</p>
+</li>
+</ul>
+<p data-start="763" data-end="815">👉 This is why <code data-start="778" data-end="785">cache</code> is smoother for PAT rotation.</p>
+<hr data-start="817" data-end="820">
+<h1 data-section-id="1d0dyop" data-start="822" data-end="855">🛠️ How to fix when PAT expires</h1>
+<h2 data-section-id="1ufsfnf" data-start="857" data-end="896">Option A: Just retry push (simplest)</h2>
+<pre class="overflow-visible! px-0!" data-start="897" data-end="917"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> push</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<ul data-start="919" data-end="1011">
+<li data-section-id="xuizxr" data-start="919" data-end="941">
+<p data-start="921" data-end="941">It will prompt again</p>
+</li>
+<li data-section-id="1kqlr2g" data-start="942" data-end="1011">
+<p data-start="944" data-end="950">Enter:</p>
+<ul data-start="953" data-end="1011">
+<li data-section-id="j29ucm" data-start="953" data-end="985">
+<p data-start="955" data-end="985">Username: your GitHub username</p>
+</li>
+<li data-section-id="u2q2us" data-start="988" data-end="1011">
+<p data-start="990" data-end="1011">Password: <strong data-start="1000" data-end="1011">new PAT</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="1013" data-end="1091">👉 Git updates stored credentials automatically (for both <code data-start="1071" data-end="1078">store</code> and <code data-start="1083" data-end="1090">cache</code>)</p>
+<hr data-start="1093" data-end="1096">
+<h2 data-section-id="1cp244c" data-start="1098" data-end="1153">Option B: Manually remove old credentials (if stuck)</h2>
+<p data-start="1155" data-end="1194">If Git keeps failing without prompting:</p>
+<h3 data-section-id="1nu73co" data-start="1196" data-end="1212"><span role="text">For <code data-start="1204" data-end="1211">store</code>:</span></h3>
+<pre class="overflow-visible! px-0!" data-start="1213" data-end="1248"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>nano ~/.git-credentials</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="1250" data-end="1290">Delete the line with GitHub credentials.</p>
+<p data-start="1292" data-end="1295">Or:</p>
+<pre class="overflow-visible! px-0!" data-start="1296" data-end="1329"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">rm</span><span> ~/.git-credentials</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="1331" data-end="1336">Then:</p>
+<pre class="overflow-visible! px-0!" data-start="1337" data-end="1357"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> push</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="1359" data-end="1362">
+<h2 data-section-id="1d024ja" data-start="1364" data-end="1408">Option C: Force Git to forget credentials</h2>
+<pre class="overflow-visible! px-0!" data-start="1409" data-end="1442"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> credential reject</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<p data-start="1444" data-end="1447">Or:</p>
+<pre class="overflow-visible! px-0!" data-start="1448" data-end="1549"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> </span><span class="ͼn">--unset</span><span> credential.helper</span><br><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> credential.helper store</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<hr data-start="1551" data-end="1554">
+<h1 data-section-id="nfg31k" data-start="1556" data-end="1582">🔐 Best Practice for You</h1>
+<p data-start="1584" data-end="1629">Since you're on Ubuntu and want low friction:</p>
+<h3 data-section-id="9azhei" data-start="1631" data-end="1656">👉 Recommended setup:</h3>
+<pre class="overflow-visible! px-0!" data-start="1657" data-end="1774"><div class="relative w-full mt-4 mb-1"><div class=""><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="sticky z-2 select-none top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-6d2147a0.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> credential.helper cache</span><br><span class="ͼl">git</span><span> config </span><span class="ͼn">--global</span><span> credential.helper </span><span class="ͼk">'cache --timeout=86400'</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></pre>
+<ul data-start="1776" data-end="1850">
+<li data-section-id="1r5s9fy" data-start="1776" data-end="1798">
+<p data-start="1778" data-end="1798">24-hour memory cache</p>
+</li>
+<li data-section-id="1ot633q" data-start="1799" data-end="1816">
+<p data-start="1801" data-end="1816">No file storage</p>
+</li>
+<li data-section-id="1acj924" data-start="1817" data-end="1850">
+<p data-start="1819" data-end="1850">Smooth re-auth when PAT changes</p>
+</li>
+</ul>
+<hr data-start="1852" data-end="1855">
+<h1 data-section-id="4gjxqj" data-start="1857" data-end="1892">⚡ Pro Tip (Optional but powerful)</h1>
+<p data-start="1894" data-end="1935">Instead of expiring tokens every 90 days:</p>
+<p data-start="1937" data-end="1999">👉 When creating PAT on <span class="hover:entity-accent entity-underline inline cursor-pointer align-baseline"><span class="whitespace-normal">GitHub</span></span>:</p>
+<ul data-start="2000" data-end="2097">
+<li data-section-id="1tricoe" data-start="2000" data-end="2064">
+<p data-start="2002" data-end="2064">Choose <strong data-start="2009" data-end="2026">longer expiry</strong> (or no expiry if allowed in your org)</p>
+</li>
+<li data-section-id="1rvqt1g" data-start="2065" data-end="2097">
+<p data-start="2067" data-end="2097">Scope: <code data-start="2074" data-end="2080">repo</code> (usually enough)</p>
+</li>
+</ul>
+<hr data-start="2099" data-end="2102">
+<h1 data-section-id="e254pl" data-start="2104" data-end="2116">🧭 Summary</h1>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="2118" data-end="2382" class="w-fit min-w-(--thread-content-width)"><thead data-start="2118" data-end="2159"><tr data-start="2118" data-end="2159"><th data-start="2118" data-end="2129" data-col-size="sm" class="">Scenario</th><th data-start="2129" data-end="2144" data-col-size="sm" class="">What happens</th><th data-start="2144" data-end="2159" data-col-size="sm" class="">What you do</th></tr></thead><tbody data-start="2198" data-end="2382"><tr data-start="2198" data-end="2245"><td data-start="2198" data-end="2212" data-col-size="sm">PAT expires</td><td data-start="2212" data-end="2225" data-col-size="sm">Push fails</td><td data-start="2225" data-end="2245" data-col-size="sm">Re-enter new PAT</td></tr><tr data-start="2246" data-end="2318"><td data-start="2246" data-end="2262" data-col-size="sm">Using <code data-start="2254" data-end="2261">store</code></td><td data-start="2262" data-end="2287" data-col-size="sm">Keeps failing silently</td><td data-start="2287" data-end="2318" data-col-size="sm">Delete <code data-start="2296" data-end="2316">~/.git-credentials</code></td></tr><tr data-start="2319" data-end="2382"><td data-start="2319" data-end="2335" data-col-size="sm">Using <code data-start="2327" data-end="2334">cache</code></td><td data-start="2335" data-end="2365" data-col-size="sm">Prompts again automatically</td><td data-start="2365" data-end="2382" data-col-size="sm">Just re-enter</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.2188px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-6d2147a0.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<hr data-start="2384" data-end="2387">
+<p data-start="2389" data-end="2528" data-is-last-node="" data-is-only-node="">If you want, I can show you a <strong data-start="2419" data-end="2472">one-time setup using Git Credential Manager (GCM)</strong> which is even cleaner (and handles PAT refresh better).</p></div>
+
+<br>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader" target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2021/05/git-error-wrt-long-file-names.html" target="_blank" class="customLink">&lt;&lt;&lt; Previously</a>
+<!-- &nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/the-env-file-yml-i-used-for-my.html" target="_blank" class="customLink">Next &gt;&gt;&gt;</a> -->
+<br>
+
