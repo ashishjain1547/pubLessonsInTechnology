@@ -1,180 +1,180 @@
 <head>
-    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!-- Google AdSense Using Machine Learning Code -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-3071098372371409",
-            enable_page_level_ads: true
-        });
-    </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
 
-    <script>
-        $(document).ready(function () {
-            $.ajax({
-                url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
-                success: function (result) {
-                    let grouplink = JSON.parse(result)['current book club'];
-                    $("#customWhatsAppGroupLinkWrapper").html(
-                        `
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['current book club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
                         <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
                             <span>Join us on:</span>
                             <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
                             </a>
                         </h2>
                         `
-                    );
-                }
-            });
-        });
-    </script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        pre {
-            white-space: pre-wrap;
-            white-space: -moz-pre-wrap;
-            white-space: -pre-wrap;
-            white-space: -o-pre-wrap;
-            word-wrap: break-word;
+          );
         }
+      });
+    });
+  </script>
 
-        .customLink {
-            background-color: #4CAF50;
-            border: none;
-            color: white !important;
-            padding: 8px 13px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .customLink:hover {
-            text-decoration: none;
-        }
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
 
-        div.code-block-decoration.footer {
-            display: none;
-        }
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
 
-        button.export-sheets-button-wrapper {
-            display: none;
-        }
-    </style>
+    .customLink:hover {
+      text-decoration: none;
+    }
 
-    <style>
-        .custom_link_h2 a {
-            color: black;
-            text-decoration: none;
-            text-align: center;
-        }
+    div.code-block-decoration.footer {
+      display: none;
+    }
 
-        .custom_link_h2 a:hover {
-            color: black;
-        }
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
 
-        .custom_link_h2 a:active {
-            color: black;
-        }
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
 
-        .custom_link_h2 span {
-            translate: 0px -5px;
-            display: inline-block;
-        }
+    .custom_link_h2 a:hover {
+      color: black;
+    }
 
-        .custom_link_h2 img {
-            width: 100px;
-            padding: 0px;
-            border: none;
-            box-shadow: none;
-        }
+    .custom_link_h2 a:active {
+      color: black;
+    }
 
-        .customul {
-            list-style: none;
-        }
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
 
-        [aria-hidden='true'] {
-            display: none;
-        }
-    </style>
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
 
-    <style>
-        pre {
-            white-space: pre-wrap;
-            white-space: -moz-pre-wrap;
-            white-space: -pre-wrap;
-            white-space: -o-pre-wrap;
-            word-wrap: break-word;
-        }
+    .customul {
+      list-style: none;
+    }
 
-        .dot {
-            height: 12px;
-            width: 12px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-        }
+    [aria-hidden='true'] {
+      display: none;
+    }
+  </style>
 
-        .arrow {
-            border: solid black;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 3px;
-        }
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
 
-        .right {
-            transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-        }
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
-        .left {
-            transform: rotate(135deg);
-            -webkit-transform: rotate(135deg);
-        }
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
 
-        .up {
-            transform: rotate(-135deg);
-            -webkit-transform: rotate(-135deg);
-        }
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
 
-        .down {
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-        }
-    </style>
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
 
-    <style>
-        span.relative.inline-flex.items-center button {
-            display: none;
-        }
+    .up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
 
-        div.bg-token-bg-elevated-secondary.text-token-text-secondary.flex button {
-            display: none;
-        }
-    </style>
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+  </style>
+
+  <style>
+    span.relative.inline-flex.items-center button {
+      display: none;
+    }
+
+    div.bg-token-bg-elevated-secondary.text-token-text-secondary.flex button {
+      display: none;
+    }
+  </style>
 </head>
 
 <a href="https://learn.deeplearning.ai/courses/build-with-andrew/" target="_blank" class="customLink">
-    View Course on DeepLearning.AI</a>
+  View Course on DeepLearning.AI</a>
 
 &nbsp;&nbsp;
 
 <a href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customCoursesFromDeepLearningAIHeader"
-    target="_blank" class="customLink">View Other Courses Audited By Us</a>
+  target="_blank" class="customLink">View Other Courses Audited By Us</a>
 
 <br><br>
 
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjftHKPER6iRnn0xMVcAMlrm7ap6Taz-UNaWNcxnDkoVng4vndmoS6a6KWAwxtLz4tTbxW-LJFwwZZGypqGagGvvhP9K18i0wvgTAdcYWB6OnTWS16WfEfBe91-0HPnWkmqMham1AMaf58PIBdxNElXnqEdPudcxnkjT-PjwcUHQu0sNA5MJIc8sPX0SY2Y/s1182/dlai%20logo%20-%20black%20and%20white.webp"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="750" data-original-width="1182"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjftHKPER6iRnn0xMVcAMlrm7ap6Taz-UNaWNcxnDkoVng4vndmoS6a6KWAwxtLz4tTbxW-LJFwwZZGypqGagGvvhP9K18i0wvgTAdcYWB6OnTWS16WfEfBe91-0HPnWkmqMham1AMaf58PIBdxNElXnqEdPudcxnkjT-PjwcUHQu0sNA5MJIc8sPX0SY2Y/s600/dlai%20logo%20-%20black%20and%20white.webp" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjftHKPER6iRnn0xMVcAMlrm7ap6Taz-UNaWNcxnDkoVng4vndmoS6a6KWAwxtLz4tTbxW-LJFwwZZGypqGagGvvhP9K18i0wvgTAdcYWB6OnTWS16WfEfBe91-0HPnWkmqMham1AMaf58PIBdxNElXnqEdPudcxnkjT-PjwcUHQu0sNA5MJIc8sPX0SY2Y/s1182/dlai%20logo%20-%20black%20and%20white.webp"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="750" data-original-width="1182"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjftHKPER6iRnn0xMVcAMlrm7ap6Taz-UNaWNcxnDkoVng4vndmoS6a6KWAwxtLz4tTbxW-LJFwwZZGypqGagGvvhP9K18i0wvgTAdcYWB6OnTWS16WfEfBe91-0HPnWkmqMham1AMaf58PIBdxNElXnqEdPudcxnkjT-PjwcUHQu0sNA5MJIc8sPX0SY2Y/s600/dlai%20logo%20-%20black%20and%20white.webp" /></a>
 </div>
 
 <br>
@@ -182,43 +182,44 @@
 <h2><i>Quiz</i></h2>
 
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdzuH4feXO7KyTT309KCKb-j7IZNI-owFInYMfGbBXsF4NTIiM0jHggIsmUhauhDg17nqCYqsKzqYcjwHhL63srsZavtiDYG-e72K4ggtBgaupZou6x0_zhSDDFaKDU4tPBq8pAxma_w1zVSO58tntcbVyTrcUUGUCMWUV5nzk2KHQXWbPRWMNTcAFWFk0/s632/Screenshot%20from%202026-05-10%2016-48-01.png"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="172" data-original-width="632"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdzuH4feXO7KyTT309KCKb-j7IZNI-owFInYMfGbBXsF4NTIiM0jHggIsmUhauhDg17nqCYqsKzqYcjwHhL63srsZavtiDYG-e72K4ggtBgaupZou6x0_zhSDDFaKDU4tPBq8pAxma_w1zVSO58tntcbVyTrcUUGUCMWUV5nzk2KHQXWbPRWMNTcAFWFk0/s600/Screenshot%20from%202026-05-10%2016-48-01.png" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdzuH4feXO7KyTT309KCKb-j7IZNI-owFInYMfGbBXsF4NTIiM0jHggIsmUhauhDg17nqCYqsKzqYcjwHhL63srsZavtiDYG-e72K4ggtBgaupZou6x0_zhSDDFaKDU4tPBq8pAxma_w1zVSO58tntcbVyTrcUUGUCMWUV5nzk2KHQXWbPRWMNTcAFWFk0/s632/Screenshot%20from%202026-05-10%2016-48-01.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="172" data-original-width="632"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdzuH4feXO7KyTT309KCKb-j7IZNI-owFInYMfGbBXsF4NTIiM0jHggIsmUhauhDg17nqCYqsKzqYcjwHhL63srsZavtiDYG-e72K4ggtBgaupZou6x0_zhSDDFaKDU4tPBq8pAxma_w1zVSO58tntcbVyTrcUUGUCMWUV5nzk2KHQXWbPRWMNTcAFWFk0/s600/Screenshot%20from%202026-05-10%2016-48-01.png" /></a>
 </div>
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuBT4OVFurEC2JPgcpFUKOPeSiZf7jPSJNFeW39ZcY1ToVCap5EWCAPhPjZ9li0Gz7tZDO5E4WasQtJ5W3jv3vdV1mE_32MaIn3wTGgTBYXADQIgRQ56WkzwyBEDFvkc2R4EWZlmwKunakgXNC8I6jOXTL0GQlGftLai5jODFWAURZzv6NF2HqWU0fa2VD/s630/Screenshot%20from%202026-05-10%2016-48-18.png"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="455" data-original-width="630"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuBT4OVFurEC2JPgcpFUKOPeSiZf7jPSJNFeW39ZcY1ToVCap5EWCAPhPjZ9li0Gz7tZDO5E4WasQtJ5W3jv3vdV1mE_32MaIn3wTGgTBYXADQIgRQ56WkzwyBEDFvkc2R4EWZlmwKunakgXNC8I6jOXTL0GQlGftLai5jODFWAURZzv6NF2HqWU0fa2VD/s600/Screenshot%20from%202026-05-10%2016-48-18.png" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuBT4OVFurEC2JPgcpFUKOPeSiZf7jPSJNFeW39ZcY1ToVCap5EWCAPhPjZ9li0Gz7tZDO5E4WasQtJ5W3jv3vdV1mE_32MaIn3wTGgTBYXADQIgRQ56WkzwyBEDFvkc2R4EWZlmwKunakgXNC8I6jOXTL0GQlGftLai5jODFWAURZzv6NF2HqWU0fa2VD/s630/Screenshot%20from%202026-05-10%2016-48-18.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="455" data-original-width="630"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiuBT4OVFurEC2JPgcpFUKOPeSiZf7jPSJNFeW39ZcY1ToVCap5EWCAPhPjZ9li0Gz7tZDO5E4WasQtJ5W3jv3vdV1mE_32MaIn3wTGgTBYXADQIgRQ56WkzwyBEDFvkc2R4EWZlmwKunakgXNC8I6jOXTL0GQlGftLai5jODFWAURZzv6NF2HqWU0fa2VD/s600/Screenshot%20from%202026-05-10%2016-48-18.png" /></a>
 </div>
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj3iopyNhgXsxUeQ4sjHMVH5vBtAheFgOJx2JtEiXUThV-1K8AnbsVk6HpAsq953YjcODjcWbc0jkfXLaDveVm1hlwPllWkm-3VhlMZIVm4-pzh26fO5XLXR2Nz8ZbwCfSUvFwdWusuOvAwY7tJqA6ldZtLD-TKCHmRrmqWrtVD9pK0TphXgIViKoMKLTA/s630/Screenshot%20from%202026-05-10%2016-48-26.png"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="455" data-original-width="630"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj3iopyNhgXsxUeQ4sjHMVH5vBtAheFgOJx2JtEiXUThV-1K8AnbsVk6HpAsq953YjcODjcWbc0jkfXLaDveVm1hlwPllWkm-3VhlMZIVm4-pzh26fO5XLXR2Nz8ZbwCfSUvFwdWusuOvAwY7tJqA6ldZtLD-TKCHmRrmqWrtVD9pK0TphXgIViKoMKLTA/s600/Screenshot%20from%202026-05-10%2016-48-26.png" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj3iopyNhgXsxUeQ4sjHMVH5vBtAheFgOJx2JtEiXUThV-1K8AnbsVk6HpAsq953YjcODjcWbc0jkfXLaDveVm1hlwPllWkm-3VhlMZIVm4-pzh26fO5XLXR2Nz8ZbwCfSUvFwdWusuOvAwY7tJqA6ldZtLD-TKCHmRrmqWrtVD9pK0TphXgIViKoMKLTA/s630/Screenshot%20from%202026-05-10%2016-48-26.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="455" data-original-width="630"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhj3iopyNhgXsxUeQ4sjHMVH5vBtAheFgOJx2JtEiXUThV-1K8AnbsVk6HpAsq953YjcODjcWbc0jkfXLaDveVm1hlwPllWkm-3VhlMZIVm4-pzh26fO5XLXR2Nz8ZbwCfSUvFwdWusuOvAwY7tJqA6ldZtLD-TKCHmRrmqWrtVD9pK0TphXgIViKoMKLTA/s600/Screenshot%20from%202026-05-10%2016-48-26.png" /></a>
 </div>
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_CZ6dWhWC8JLHJpofXng4ZITySx_uVqJFhAJbDvys2Dr-6qxTiuQebgGar9y7QCQe5YyKZlNizJ4-LfdsXcYS2OEPCi_Z6yizhcspRKgGq1qhCYrzfW8td7L9ZF2HzJwwpEIHuSP5_0puaHBH92ELyl0SzEGMsGYx6jBekvoJHb3O7GPSrHZvOnzbtzER/s631/Screenshot%20from%202026-05-10%2016-48-51.png"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="474" data-original-width="631"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_CZ6dWhWC8JLHJpofXng4ZITySx_uVqJFhAJbDvys2Dr-6qxTiuQebgGar9y7QCQe5YyKZlNizJ4-LfdsXcYS2OEPCi_Z6yizhcspRKgGq1qhCYrzfW8td7L9ZF2HzJwwpEIHuSP5_0puaHBH92ELyl0SzEGMsGYx6jBekvoJHb3O7GPSrHZvOnzbtzER/s600/Screenshot%20from%202026-05-10%2016-48-51.png" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_CZ6dWhWC8JLHJpofXng4ZITySx_uVqJFhAJbDvys2Dr-6qxTiuQebgGar9y7QCQe5YyKZlNizJ4-LfdsXcYS2OEPCi_Z6yizhcspRKgGq1qhCYrzfW8td7L9ZF2HzJwwpEIHuSP5_0puaHBH92ELyl0SzEGMsGYx6jBekvoJHb3O7GPSrHZvOnzbtzER/s631/Screenshot%20from%202026-05-10%2016-48-51.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="474" data-original-width="631"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_CZ6dWhWC8JLHJpofXng4ZITySx_uVqJFhAJbDvys2Dr-6qxTiuQebgGar9y7QCQe5YyKZlNizJ4-LfdsXcYS2OEPCi_Z6yizhcspRKgGq1qhCYrzfW8td7L9ZF2HzJwwpEIHuSP5_0puaHBH92ELyl0SzEGMsGYx6jBekvoJHb3O7GPSrHZvOnzbtzER/s600/Screenshot%20from%202026-05-10%2016-48-51.png" /></a>
 </div>
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN50rXxBDvSc4PbKxYRKkXGIsvC_6tpnHl0xrI4lj-XhuUuuMYeK5NRtx5GsPYP9zS6ZIYERKsxpyl3OwrNFxcMxTngl0QZ1zROKiLVXM3Sj20O4rv1Hv3aMH507dJGSt-Y77gaVqQGLG6xbtZh3lT4ESYbJMC5Evww9LqlcWwmFKW0gtwKxGyJ_jmbv_o/s625/Screenshot%20from%202026-05-10%2016-49-05.png"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="364" data-original-width="625"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN50rXxBDvSc4PbKxYRKkXGIsvC_6tpnHl0xrI4lj-XhuUuuMYeK5NRtx5GsPYP9zS6ZIYERKsxpyl3OwrNFxcMxTngl0QZ1zROKiLVXM3Sj20O4rv1Hv3aMH507dJGSt-Y77gaVqQGLG6xbtZh3lT4ESYbJMC5Evww9LqlcWwmFKW0gtwKxGyJ_jmbv_o/s600/Screenshot%20from%202026-05-10%2016-49-05.png" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN50rXxBDvSc4PbKxYRKkXGIsvC_6tpnHl0xrI4lj-XhuUuuMYeK5NRtx5GsPYP9zS6ZIYERKsxpyl3OwrNFxcMxTngl0QZ1zROKiLVXM3Sj20O4rv1Hv3aMH507dJGSt-Y77gaVqQGLG6xbtZh3lT4ESYbJMC5Evww9LqlcWwmFKW0gtwKxGyJ_jmbv_o/s625/Screenshot%20from%202026-05-10%2016-49-05.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="364" data-original-width="625"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN50rXxBDvSc4PbKxYRKkXGIsvC_6tpnHl0xrI4lj-XhuUuuMYeK5NRtx5GsPYP9zS6ZIYERKsxpyl3OwrNFxcMxTngl0QZ1zROKiLVXM3Sj20O4rv1Hv3aMH507dJGSt-Y77gaVqQGLG6xbtZh3lT4ESYbJMC5Evww9LqlcWwmFKW0gtwKxGyJ_jmbv_o/s600/Screenshot%20from%202026-05-10%2016-49-05.png" /></a>
 </div>
 <div class="separator" style="clear: both;"><a
-        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_UKmuXCdo5csxAq_K_TiGngiim9MpFKPpFDNbFvYC_75BxZYV6yCPGm8Qr76v0459IVXYVPmIQD9cD2Q3eCpUW-7D-5vRruQPHTmRKlSkaP-PvEMBfPpH5HLZLUUF-019wc4DAFoJyyuj48OF2qCatv08Cbld5blORkfd5Xne4nv0GSvuZLdDlxN5nTuV/s628/Screenshot%20from%202026-05-10%2016-49-17.png"
-        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
-            data-original-height="411" data-original-width="628"
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_UKmuXCdo5csxAq_K_TiGngiim9MpFKPpFDNbFvYC_75BxZYV6yCPGm8Qr76v0459IVXYVPmIQD9cD2Q3eCpUW-7D-5vRruQPHTmRKlSkaP-PvEMBfPpH5HLZLUUF-019wc4DAFoJyyuj48OF2qCatv08Cbld5blORkfd5Xne4nv0GSvuZLdDlxN5nTuV/s600/Screenshot%20from%202026-05-10%2016-49-17.png" /></a>
+    href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_UKmuXCdo5csxAq_K_TiGngiim9MpFKPpFDNbFvYC_75BxZYV6yCPGm8Qr76v0459IVXYVPmIQD9cD2Q3eCpUW-7D-5vRruQPHTmRKlSkaP-PvEMBfPpH5HLZLUUF-019wc4DAFoJyyuj48OF2qCatv08Cbld5blORkfd5Xne4nv0GSvuZLdDlxN5nTuV/s628/Screenshot%20from%202026-05-10%2016-49-17.png"
+    style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+      data-original-height="411" data-original-width="628"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_UKmuXCdo5csxAq_K_TiGngiim9MpFKPpFDNbFvYC_75BxZYV6yCPGm8Qr76v0459IVXYVPmIQD9cD2Q3eCpUW-7D-5vRruQPHTmRKlSkaP-PvEMBfPpH5HLZLUUF-019wc4DAFoJyyuj48OF2qCatv08Cbld5blORkfd5Xne4nv0GSvuZLdDlxN5nTuV/s600/Screenshot%20from%202026-05-10%2016-49-17.png" /></a>
 </div>
 
-<br><hr><br>
+<br>
+<hr><br>
 
 <h2><i>Coding Exercise</i></h2>
 
@@ -240,7 +241,8 @@ Keep the input fields on the left On the left: below the input fields, at the bo
 # Style
 Use a greyish color-palette</pre>
 
-<br><hr><br>
+<br>
+<hr><br>
 
 <style>
   :root {
@@ -267,13 +269,14 @@ Use a greyish color-palette</pre>
     background: linear-gradient(180deg, var(--bg), #eceef0);
     color: #1f2937;
     min-height: 100vh;
-    padding: 28px;
+    padding: 2px;
+    border-radius: 14px;
   }
 
   div.container .panel {
     background: var(--panel);
     border-radius: 12px;
-    padding: 18px;
+    padding: 7px;
     box-shadow: 0 6px 18px var(--shadow);
   }
 
@@ -367,7 +370,7 @@ Use a greyish color-palette</pre>
   div.container .card {
     background: var(--card);
     border-radius: 12px;
-    padding: 18px;
+    padding: 7px;
     box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
     overflow: auto;
   }
@@ -788,7 +791,7 @@ Use a greyish color-palette</pre>
       }
 
       // Build textual output
-      const metaText = `Target: ${rawMus.trim()} • Equipment: ${rawEquip.trim() || 'None'} -- Weekly min: ${hours} hrs -- Sessions: ${sessions}`;
+      const metaText = `Target: ${rawMus.trim()} | Equipment: ${rawEquip.trim() || 'None'} -- Weekly min: ${hours} hrs -- Sessions: ${sessions}`;
       metaEl.textContent = metaText;
 
       // Render HTML in routineArea
@@ -797,7 +800,7 @@ Use a greyish color-palette</pre>
         const div = document.createElement('div');
         div.className = 'session';
         const h = document.createElement('h3');
-        h.textContent = `Session ${idx + 1} — ${s.day}`;
+        h.textContent = `Session ${idx + 1} -- ${s.day}`;
         div.appendChild(h);
         const items = document.createElement('div');
         items.className = 'items';
@@ -829,7 +832,7 @@ Use a greyish color-palette</pre>
       footer.style.marginTop = '8px';
       footer.style.fontSize = '13px';
       footer.style.color = 'var(--muted)';
-      footer.textContent = 'Progression idea: each week add 1–2 reps per set or one extra set to an exercise. Rest 48h between similar sessions.';
+      footer.textContent = 'Progression idea: each week add 1-2 reps per set or one extra set to an exercise. Rest 48h between similar sessions.';
       routineArea.appendChild(footer);
 
       // smooth scroll to top of output
@@ -846,7 +849,7 @@ Use a greyish color-palette</pre>
         s.querySelectorAll('.ex').forEach(e => {
           const name = e.querySelector('.name').textContent;
           const meta = e.querySelector('.meta').textContent;
-          text += ` - ${name} — ${meta}\n`;
+          text += ` - ${name} -- ${meta}\n`;
         });
         text += '\n';
       });
