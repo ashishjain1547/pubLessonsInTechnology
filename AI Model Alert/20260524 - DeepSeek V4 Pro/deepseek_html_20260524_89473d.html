@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek V4 Pro: The AI Model That's Changing the Game on Cost, Performance, and Chip Independence</title>
+    <style>
+        /* All CSS rules are scoped to the custom wrapper only */
+        div.customOuterWrapper {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: #2d3436;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            background: #fefefe;
+            box-sizing: border-box;
+        }
+        div.customOuterWrapper * {
+            box-sizing: border-box;
+        }
+        div.customOuterWrapper h1 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 14px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        div.customOuterWrapper h2 {
+            font-size: 1.5rem;
+            color: #1e3a5f;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            padding-left: 12px;
+            border-left: 5px solid #2563eb;
+        }
+        div.customOuterWrapper h3 {
+            font-size: 1.2rem;
+            color: #374151;
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+        div.customOuterWrapper p {
+            margin: 0 0 16px 0;
+            font-size: 1.05rem;
+        }
+        div.customOuterWrapper .post-meta {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        div.customOuterWrapper .key-insight {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 22px 0;
+            font-weight: 500;
+            color: #1e40af;
+        }
+        div.customOuterWrapper .key-insight strong {
+            color: #1e3a8a;
+        }
+        div.customOuterWrapper table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 28px 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+        div.customOuterWrapper table thead th {
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 12px 14px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+        div.customOuterWrapper table tbody td {
+            padding: 10px 14px;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        div.customOuterWrapper table tbody tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        div.customOuterWrapper table tbody tr:hover {
+            background: #f0f4ff;
+        }
+        div.customOuterWrapper .highlight-cell {
+            background: #dbeafe !important;
+            font-weight: 700;
+            color: #1e40af;
+        }
+        div.customOuterWrapper .top-cell {
+            background: #d1fae5 !important;
+            font-weight: 700;
+            color: #065f46;
+        }
+        div.customOuterWrapper .bar-chart-container {
+            margin: 28px 0;
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 24px 20px;
+            border: 1px solid #e5e7eb;
+        }
+        div.customOuterWrapper .bar-chart-container h3 {
+            margin-top: 0;
+            text-align: center;
+            color: #1e3a5f;
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+        }
+        div.customOuterWrapper .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+            gap: 10px;
+        }
+        div.customOuterWrapper .bar-label {
+            width: 130px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #374151;
+            flex-shrink: 0;
+        }
+        div.customOuterWrapper .bar-track {
+            flex: 1;
+            height: 32px;
+            background: #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+        div.customOuterWrapper .bar-fill {
+            height: 100%;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #fff;
+            transition: width 0.5s ease;
+            min-width: 40px;
+        }
+        div.customOuterWrapper .bar-fill.deepseek {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        }
+        div.customOuterWrapper .bar-fill.openai {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        div.customOuterWrapper .bar-fill.anthropic {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+        div.customOuterWrapper .bar-fill.huawei {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        div.customOuterWrapper .bar-amount {
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        div.customOuterWrapper .chart-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        div.customOuterWrapper .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            div.customOuterWrapper .two-col {
+                grid-template-columns: 1fr;
+            }
+            div.customOuterWrapper .bar-label {
+                width: 90px;
+                font-size: 0.75rem;
+            }
+            div.customOuterWrapper h1 {
+                font-size: 1.5rem;
+            }
+            div.customOuterWrapper table {
+                font-size: 0.78rem;
+            }
+            div.customOuterWrapper table thead th,
+            div.customOuterWrapper table tbody td {
+                padding: 7px 6px;
+            }
+        }
+        div.customOuterWrapper .tag-pill {
+            display: inline-block;
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            margin: 3px 4px;
+        }
+        div.customOuterWrapper .conclusion-box {
+            background: linear-gradient(135deg, #1e3a5f, #1e4d7b);
+            color: #f1f5f9;
+            padding: 24px 28px;
+            border-radius: 12px;
+            margin: 28px 0 20px 0;
+            line-height: 1.8;
+        }
+        div.customOuterWrapper .conclusion-box h2 {
+            color: #ffffff;
+            border-left-color: #60a5fa;
+            margin-top: 0;
+        }
+        div.customOuterWrapper .conclusion-box ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+        div.customOuterWrapper .conclusion-box ul li {
+            margin-bottom: 10px;
+        }
+        div.customOuterWrapper .citations {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 24px 0;
+        }
+        div.customOuterWrapper .citations h3 {
+            margin-top: 0;
+            color: #1e3a5f;
+        }
+        div.customOuterWrapper .citations ol {
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+        div.customOuterWrapper .citations ol li {
+            margin-bottom: 8px;
+            color: #4b5563;
+            word-break: break-word;
+        }
+        div.customOuterWrapper .citations ol li a {
+            color: #2563eb;
+            word-break: break-all;
+        }
+        div.customOuterWrapper .timeline-visual {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        div.customOuterWrapper .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 4px;
+            flex-shrink: 0;
+        }
+        div.customOuterWrapper .timeline-dot.blue {
+            background: #2563eb;
+        }
+        div.customOuterWrapper .timeline-dot.gray {
+            background: #9ca3af;
+        }
+        div.customOuterWrapper .timeline-dot.green {
+            background: #10b981;
+        }
+        div.customOuterWrapper hr {
+            border: none;
+            border-top: 2px dashed #e5e7eb;
+            margin: 28px 0;
+        }
+        div.customOuterWrapper .emoji-bullet {
+            display: inline-block;
+            margin-right: 6px;
+        }
+        div.customOuterWrapper ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        div.customOuterWrapper ul.custom-list li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+        div.customOuterWrapper ul.custom-list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="customOuterWrapper">
+
+        <!-- ============ HEADER ============ -->
+        <h1>DeepSeek V4 Pro: The AI Model Redefining Cost-Efficiency, Performance, and Chip Independence</h1>
+        <p class="post-meta">Published: May 24, 2026 &nbsp;|&nbsp; Reading time: ~8 minutes &nbsp;|&nbsp; Topic: Artificial Intelligence</p>
+
+        <div class="key-insight">
+            <strong>Key Takeaway:</strong> DeepSeek's V4 Pro model has surged to the top of global cost-efficiency rankings after a permanent 75% price cut. Independent evaluations by the U.S. National Institute of Standards and Technology (NIST) confirm it's the most capable Chinese AI model ever tested — though it still trails top U.S. models by about 8 months. Meanwhile, V4's architectural breakthroughs and its optimization for Chinese-made chips signal a strategic pivot that could reshape the global AI landscape.
+        </div>
+
+        <!-- ============ INTRODUCTION ============ -->
+        <h2>Introduction: Why DeepSeek V4 Is Making Headlines</h2>
+        <p>
+            In April 2026, Chinese AI startup <strong>DeepSeek</strong> released V4, its long-awaited flagship model — and the tech world took notice. Building on the momentum of its earlier R1 model (which stunned the industry in January 2025), DeepSeek V4 arrives with <strong>two variants</strong>: the full-power <strong>V4 Pro</strong> and the lighter, faster <strong>V4 Flash</strong>. Both are open-weight, meaning anyone can download, use, and modify them.
+        </p>
+        <p>
+            But what's really turning heads isn't just the performance — it's the <strong>price tag</strong>. On May 24, 2026, DeepSeek made a 75% promotional price cut <strong>permanent</strong>, catapulting V4 Pro to the top of third-party rankings for "intelligence per dollar." In an era where cutting-edge AI models often come with eye-watering API costs, DeepSeek is offering frontier-level capability at a fraction of the price.
+        </p>
+
+        <!-- ============ SECTION 1: THE PRICE CUT ============ -->
+        <h2>1. The 75% Price Drop That Changed the Conversation</h2>
+        <p>
+            According to the <strong>South China Morning Post</strong>, DeepSeek's official API pricing for V4 Pro is now as low as:
+        </p>
+        <ul class="custom-list">
+            <li><strong>$0.0036</strong> per 1 million cached input tokens</li>
+            <li><strong>$0.87</strong> per 1 million output tokens</li>
+        </ul>
+        <p>
+            To put that in perspective, running the respected <strong>Artificial Analysis Intelligence Index</strong> benchmark on V4 Pro costs just <strong>$268</strong>. The same benchmark on OpenAI's GPT-5.5 costs roughly <strong>12 times more</strong> (~$3,216), and on Anthropic's Claude Opus 4.7 it costs about <strong>19 times more</strong> (~$5,092).
+        </p>
+
+        <!-- Bar Chart: Cost to Run Benchmark -->
+        <div class="bar-chart-container">
+            <h3>Cost to Run the Artificial Analysis Intelligence Index Benchmark (USD)</h3>
+            <div class="bar-row">
+                <span class="bar-label">DeepSeek V4 Pro</span>
+                <div class="bar-track">
+                    <div class="bar-fill deepseek" style="width:5.3%;">$268</div>
+                </div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">OpenAI GPT-5.5</span>
+                <div class="bar-track">
+                    <div class="bar-fill openai" style="width:63.2%;">~$3,216</div>
+                </div>
+            </div>
+            <div class="bar-row">
+                <span class="bar-label">Claude Opus 4.7</span>
+                <div class="bar-track">
+                    <div class="bar-fill anthropic" style="width:100%;">~$5,092</div>
+                </div>
+            </div>
+            <p class="chart-note">Bar widths are proportional to cost. Claude Opus 4.7 = 100% (baseline). Data source: SCMP / Artificial Analysis, May 2026.</p>
+        </div>
+
+        <p>
+            This "bang-for-buck" approach to comparing AI models has gained traction amid a global compute supply crunch. And DeepSeek isn't alone — other Chinese firms like <strong>MiniMax</strong> (M2.7) and <strong>Xiaomi</strong> (MiMo V2.5 Pro) also rank near the top of cost-efficiency charts. Even Alibaba slashed prices for its Qwen3.7 Max model by 50% in a promotional campaign running through June 22, 2026.
+        </p>
+        <p>
+            <strong>What this means for you:</strong> If you're a developer building AI applications, the cost barrier to using top-tier models just dropped dramatically. You can now access near-frontier intelligence without the premium price tag that U.S. providers charge.
+        </p>
+
+        <!-- ============ SECTION 2: NIST/CAISI EVALUATION ============ -->
+        <h2>2. What the U.S. Government's Evaluation Found (NIST/CAISI)</h2>
+        <p>
+            In May 2026, the <strong>Center for AI Standards and Innovation (CAISI)</strong> — part of the U.S. National Institute of Standards and Technology (NIST) — published its independent evaluation of DeepSeek V4 Pro. The findings are nuanced: V4 is genuinely impressive, but it's not quite at the frontier.
+        </p>
+
+        <h3>Key Findings from CAISI:</h3>
+        <ul class="custom-list">
+            <li><strong>DeepSeek V4 is the most capable Chinese AI model CAISI has ever evaluated</strong>, spanning five domains: cyber, software engineering, natural sciences, abstract reasoning, and mathematics.</li>
+            <li><strong>It lags behind leading U.S. models by approximately 8 months.</strong> CAISI's aggregate analysis shows V4 Pro performs similarly to GPT-5 (released ~8 months earlier), not the latest GPT-5.5.</li>
+            <li><strong>DeepSeek's self-reported benchmarks paint a rosier picture</strong> than CAISI's independent tests. On benchmarks not featured in DeepSeek's own report — like the held-out PortBench and the ARC-AGI-2 semi-private dataset — V4 Pro showed weaker performance.</li>
+            <li><strong>It's more cost-efficient than comparable U.S. models.</strong> Compared to GPT-5.4 mini (the closest U.S. model in capability), V4 Pro was cheaper on 5 out of 7 benchmarks, ranging from 53% less expensive to 41% more expensive.</li>
+        </ul>
+
+        <!-- CAISI Benchmark Table -->
+        <h3>CAISI Benchmark Performance Comparison</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Domain</th>
+                    <th>Benchmark</th>
+                    <th>GPT-5.5<br>(xhigh)</th>
+                    <th>Opus 4.6<br>(max)</th>
+                    <th>DeepSeek V4 Pro<br>(max)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Cyber</strong></td>
+                    <td>CTF-Archive-Diamond</td>
+                    <td class="top-cell">71%</td>
+                    <td>46%</td>
+                    <td>32%</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Software Engineering</strong></td>
+                    <td>SWE-Bench Verified</td>
+                    <td class="top-cell">81%</td>
+                    <td>79%</td>
+                    <td>74%</td>
+                </tr>
+                <tr>
+                    <td>PortBench</td>
+                    <td class="top-cell">78%</td>
+                    <td>60%</td>
+                    <td>44%</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Natural Sciences</strong></td>
+                    <td>FrontierScience</td>
+                    <td class="top-cell">79%</td>
+                    <td>72%</td>
+                    <td>74%</td>
+                </tr>
+                <tr>
+                    <td>GPQA-Diamond</td>
+                    <td class="top-cell">96%</td>
+                    <td>91%</td>
+                    <td>90%</td>
+                </tr>
+                <tr>
+                    <td><strong>Abstract Reasoning</strong></td>
+                    <td>ARC-AGI-2 semi-private</td>
+                    <td class="top-cell">79%</td>
+                    <td>63%</td>
+                    <td>46%</td>
+                </tr>
+                <tr>
+                    <td rowspan="3"><strong>Mathematics</strong></td>
+                    <td>OTIS-AIME-2025</td>
+                    <td class="top-cell">100%</td>
+                    <td>92%</td>
+                    <td>97%</td>
+                </tr>
+                <tr>
+                    <td>PUMaC 2024</td>
+                    <td class="top-cell">96%</td>
+                    <td>95%</td>
+                    <td class="top-cell">96%</td>
+                </tr>
+                <tr>
+                    <td>SMT 2025</td>
+                    <td class="top-cell">99%</td>
+                    <td>94%</td>
+                    <td>96%</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>IRT-Estimated Elo Score</strong></td>
+                    <td class="top-cell"><strong>1260</strong></td>
+                    <td><strong>999</strong></td>
+                    <td><strong>800</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="chart-note">Green cells = top performer. Elo scores reflect aggregate capability across all benchmarks. Higher is better. Source: NIST/CAISI, May 2026.</p>
+
+        <div class="key-insight">
+            <strong>Important context:</strong> The NIST/CAISI evaluation used DeepSeek's <em>original</em> pricing (before the 75% cut). With the new permanent price reduction, V4 Pro's cost-efficiency advantage is now even more dramatic than what the NIST report describes.
+        </div>
+
+        <!-- ============ SECTION 3: TECHNICAL INNOVATIONS ============ -->
+        <h2>3. Technical Breakthroughs: Smarter Memory, Longer Context</h2>
+        <p>
+            As <strong>MIT Technology Review</strong> explains, one of V4's standout innovations is its approach to <strong>long-context processing</strong>. Both V4 Pro and V4 Flash can handle <strong>1 million tokens</strong> at once — enough to fit all three volumes of <em>The Lord of the Rings</em> plus <em>The Hobbit</em> combined.
+        </p>
+        <p>
+            But the real magic is <em>how</em> DeepSeek achieved this. Traditional AI models struggle with long contexts because their "attention mechanism" — the part that relates each word to every other word — becomes exponentially more expensive as the text grows longer. DeepSeek's innovation was to make V4 <strong>more selective about what it pays attention to</strong>:
+        </p>
+        <ul class="custom-list">
+            <li>Instead of treating all earlier text as equally important, V4 <strong>compresses older information</strong> and focuses only on the parts most likely to matter right now.</li>
+            <li>Nearby text is still kept in full detail so the model doesn't miss important nuances.</li>
+        </ul>
+        <p>
+            The results are striking. In a 1-million-token context, <strong>V4 Pro uses only 27% of the computing power</strong> required by its predecessor (V3.2) and cuts memory use to just <strong>10%</strong>. For V4 Flash, the savings are even larger: <strong>10% of the computing power and 7% of the memory</strong>.
+        </p>
+        <p>
+            <strong>In plain English:</strong> This means developers can build tools that work across enormous amounts of material — like an AI coding assistant that reads an entire codebase or a research agent that analyzes a decades-long archive of documents — without the model getting confused or the costs spiraling out of control.
+        </p>
+
+        <!-- ============ SECTION 4: CHIP INDEPENDENCE ============ -->
+        <h2>4. The Strategic Pivot: Moving Beyond Nvidia</h2>
+        <p>
+            Perhaps the most consequential aspect of V4 is what it signals about <strong>China's AI hardware strategy</strong>. V4 is DeepSeek's first model optimized for <strong>domestic Chinese chips</strong>, specifically <strong>Huawei's Ascend 950 series</strong>.
+        </p>
+        <p>
+            This isn't just a technical footnote — it's a strategic milestone. Since 2022, U.S. export controls have cut Chinese firms off from Nvidia's most powerful chips. Beijing's response has been to accelerate the push for a homegrown AI stack, from chips to software to data centers. According to <strong>MIT Technology Review</strong>, Chinese authorities have reportedly:
+        </p>
+        <ul class="custom-list">
+            <li>Banned foreign-made chips in state-funded data centers</li>
+            <li>Introduced sourcing quotas favoring domestic alternatives</li>
+            <li>Recommended that DeepSeek integrate Huawei chips into its training process</li>
+        </ul>
+        <p>
+            DeepSeek's technical report reveals that V4 uses Chinese chips for <strong>inference</strong> (responding to user queries), though the model may still have been <strong>trained primarily on Nvidia hardware</strong>. The company has also tied future price reductions to Huawei's hardware roadmap, saying V4 Pro costs "could fall significantly" once Huawei's Ascend 950PR supernodes "ship at scale" in the second half of 2026.
+        </p>
+        <p>
+            <strong>Why this matters globally:</strong> If DeepSeek can demonstrate that Chinese chips are viable for cutting-edge AI, it could fracture the current Nvidia-dominated ecosystem and create a parallel AI infrastructure — with profound implications for the global tech supply chain.
+        </p>
+
+        <!-- ============ VISUAL DATA SECTION ============ -->
+        <h2>5. Visualizing the Data: Cost vs. Capability</h2>
+
+        <div class="two-col">
+            <!-- Chart: Token Pricing Comparison -->
+            <div class="bar-chart-container" style="margin-top:0;">
+                <h3>Output Token Pricing (per 1M tokens)</h3>
+                <div class="bar-row">
+                    <span class="bar-label">V4 Pro (post-cut)</span>
+                    <div class="bar-track">
+                        <div class="bar-fill deepseek" style="width:19%;">$0.87</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">V4 Pro (pre-cut)</span>
+                    <div class="bar-track">
+                        <div class="bar-fill deepseek" style="width:77%;">$3.48</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">GPT-5.4 mini</span>
+                    <div class="bar-track">
+                        <div class="bar-fill openai" style="width:100%;">$4.50</div>
+                    </div>
+                </div>
+                <p class="chart-note">GPT-5.4 mini = 100% width baseline. Source: NIST/CAISI &amp; SCMP.</p>
+            </div>
+
+            <!-- Chart: IRT Elo Scores -->
+            <div class="bar-chart-container" style="margin-top:0;">
+                <h3>Aggregate Capability (IRT Elo Scores)</h3>
+                <div class="bar-row">
+                    <span class="bar-label">GPT-5.5</span>
+                    <div class="bar-track">
+                        <div class="bar-fill openai" style="width:100%;">1260</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Opus 4.6</span>
+                    <div class="bar-track">
+                        <div class="bar-fill anthropic" style="width:79%;">999</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">V4 Pro</span>
+                    <div class="bar-track">
+                        <div class="bar-fill deepseek" style="width:63%;">800</div>
+                    </div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">GPT-5.4 mini</span>
+                    <div class="bar-track">
+                        <div class="bar-fill openai" style="width:59%;">749</div>
+                    </div>
+                </div>
+                <p class="chart-note">GPT-5.5 = 100% width baseline. Source: NIST/CAISI, May 2026.</p>
+            </div>
+        </div>
+
+        <!-- Timeline: Capability Lag -->
+        <div class="bar-chart-container">
+            <h3>Estimated Capability Lag: Chinese vs. U.S. Frontier Models</h3>
+            <div class="timeline-visual">
+                <span style="font-weight:700;color:#1e3a5f;">U.S. Frontier</span>
+                <span class="timeline-dot green"></span>
+                <span style="margin:0 6px;">— leads by ~</span>
+                <span style="font-weight:700;font-size:1.3rem;color:#2563eb;">8 months</span>
+                <span style="margin:0 6px;">—</span>
+                <span class="timeline-dot blue"></span>
+                <span style="font-weight:700;color:#1e3a5f;">PRC Frontier (DeepSeek V4)</span>
+            </div>
+            <p class="chart-note">Based on CAISI's aggregate capability analysis across 16 benchmarks and 35 models. Every 200-point Elo increase = ~3x higher odds of solving a given task. Source: NIST/CAISI.</p>
+        </div>
+
+        <!-- ============ CITATIONS ============ -->
+        <div class="citations">
+            <h3>Citations &amp; References</h3>
+            <ol>
+                <li>
+                    <strong>South China Morning Post</strong> — "DeepSeek V4 Pro tops global bang-for-buck ranking after 75% price cut" (May 24, 2026).
+                    <br><a href="https://www.scmp.com/tech/tech-trends/article/3354668/deepseek-v4-pro-tops-global-bang-buck-ranking-after-75-price-cut" target="_blank" rel="noopener">https://www.scmp.com/tech/tech-trends/article/3354668/deepseek-v4-pro-tops-global-bang-buck-ranking-after-75-price-cut</a>
+                </li>
+                <li>
+                    <strong>NIST / CAISI</strong> — "CAISI Evaluation of DeepSeek V4 Pro" (May 1, 2026, Updated May 2, 2026).
+                    <br><a href="https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro" target="_blank" rel="noopener">https://www.nist.gov/news-events/news/2026/05/caisi-evaluation-deepseek-v4-pro</a>
+                </li>
+                <li>
+                    <strong>MIT Technology Review</strong> — "Three reasons why DeepSeek's new model matters" (April 24, 2026), by Caiwei Chen.
+                    <br><a href="https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/" target="_blank" rel="noopener">https://www.technologyreview.com/2026/04/24/1136422/why-deepseeks-v4-matters/</a>
+                </li>
+            </ol>
+        </div>
+
+        <!-- ============ CONCLUSIONS ============ -->
+        <div class="conclusion-box">
+            <h2>Conclusions: What DeepSeek V4 Tells Us About the Future of AI</h2>
+            <p>
+                DeepSeek V4 isn't just another model release — it's a <strong>signal of where the AI industry is heading</strong>. Here are the key takeaways:
+            </p>
+            <ul>
+                <li><strong>Cost-efficiency is the new battleground.</strong> Raw intelligence still matters, but in a world of compute scarcity, "intelligence per dollar" is becoming the metric that developers and businesses actually care about. DeepSeek's permanent 75% price cut puts immense pressure on U.S. competitors to justify their premium pricing.</li>
+                <li><strong>The capability gap is real but narrowing.</strong> NIST's 8-month lag estimate shows that Chinese models are not yet leading the frontier — but they're close enough to be viable alternatives for most real-world applications. In mathematics, V4 Pro even ties or nearly ties the best U.S. models.</li>
+                <li><strong>Architectural innovation, not just brute force.</strong> V4's selective attention mechanism proves that clever engineering can dramatically reduce computing costs without sacrificing performance. This "do more with less" philosophy is a direct response to chip sanctions — and it's producing genuinely useful breakthroughs.</li>
+                <li><strong>The Nvidia moat is being tested.</strong> V4's optimization for Huawei's Ascend chips is an early indicator that China is serious about building a parallel AI hardware ecosystem. If Ascend supernodes deliver on their promise in late 2026, the competitive landscape could shift significantly.</li>
+                <li><strong>Open-weight models are winning mindshare.</strong> By making V4 freely available for download and modification, DeepSeek is betting that an open ecosystem will attract developers faster than closed, proprietary alternatives — and the strategy appears to be working.</li>
+            </ul>
+            <p style="margin-bottom:0;">
+                In short, DeepSeek V4 matters because it proves that <strong>you don't need the biggest budget or the most advanced chips to build a world-class AI model</strong>. That's a lesson the entire industry is now absorbing — and it could reshape who wins the AI race in the years ahead.
+            </p>
+        </div>
+
+        <hr>
+        <p style="text-align:center;font-size:0.85rem;color:#9ca3af;">
+            <span class="tag-pill">Artificial Intelligence</span>
+            <span class="tag-pill">DeepSeek</span>
+            <span class="tag-pill">Open-Source AI</span>
+            <span class="tag-pill">NIST</span>
+            <span class="tag-pill">Cost-Efficiency</span>
+            <span class="tag-pill">Huawei Ascend</span>
+            <span class="tag-pill">AI Benchmarks</span>
+        </p>
+
+    </div>
+</body>
+</html>
