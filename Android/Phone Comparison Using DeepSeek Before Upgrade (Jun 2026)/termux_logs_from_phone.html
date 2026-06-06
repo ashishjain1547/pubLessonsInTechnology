@@ -1,0 +1,394 @@
+<pre>
+
+Welcome to Termux
+
+Docs:       https://doc.termux.com
+Community:  https://community.termux.com
+
+Working with packages:
+ - Search:  pkg search <query>
+ - Install: pkg install <package>
+ - Upgrade: pkg upgrade
+
+Report issues at https://bugs.termux.com
+~ $ uname -m
+armv8l
+~ $ getprop ro.board.platform
+mt6765
+~ $ cat /proc/meminfo | grep MemTotal
+MemTotal:        3814084 kB
+~ $ df -h /data
+Filesystem       Size Used Avail Use% Mounted on
+/dev/block/dm-45 109G  37G   71G  35% /data/data/com.google.android.gms
+~ $ termux-battery-status
+The program termux-battery-status is not installed. Install it by executing:
+ pkg install termux-api
+~ $ pkg install termux-api
+date: /data/data/com.termux/cache/apt/pkgcache.bin: No such file or directory
+Get:1 https://termux.net stable InRelease [1089 B]
+Get:2 https://termux.net stable/main arm Packages [245 kB]
+Fetched 246 kB in 2s (155 kB/s)
+22 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Installing:
+  termux-api
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 22
+  Download size: 26.8 kB
+  Space needed: 356 kB
+
+Get:1 https://termux.net stable/main arm termux-api arm 0.59.1 [26.8 kB]
+Fetched 26.8 kB in 1s (50.6 kB/s)
+Selecting previously unselected package termux-api.
+(Reading database ... 3790 files and directories currently installed.)
+Preparing to unpack .../termux-api_0.59.1_arm.deb ...
+Unpacking termux-api (0.59.1) ...
+Setting up termux-api (0.59.1) ...
+~ $ termux-battery-status
+{
+  "present": true,
+  "technology": "Li-ion",
+  "health": "GOOD",
+  "plugged": "PLUGGED_USB",
+  "status": "CHARGING",
+  "temperature": 35.0,
+  "voltage": 3847,
+  "current": 203600,
+  "current_average": 187900,
+  "percentage": 39,
+  "level": 39,
+  "scale": 100,
+  "charge_counter": 2340000,
+  "energy": null
+}
+~ $ termux-camera-info
+[
+  {
+    "id": "0",
+    "facing": "back",
+    "jpeg_output_sizes": [
+      {
+        "width": 4064,
+        "height": 3048
+      },
+      {
+        "width": 3968,
+        "height": 2976
+      },
+      {
+        "width": 3840,
+        "height": 1728
+      },
+      {
+        "width": 3264,
+        "height": 2448
+      },
+      {
+        "width": 3200,
+        "height": 1440
+      },
+      {
+        "width": 3072,
+        "height": 1728
+      },
+      {
+        "width": 2944,
+        "height": 2944
+      },
+      {
+        "width": 2560,
+        "height": 1920
+      },
+      {
+        "width": 2560,
+        "height": 1440
+      },
+      {
+        "width": 2560,
+        "height": 1152
+      },
+      {
+        "width": 2400,
+        "height": 1080
+      },
+      {
+        "width": 1920,
+        "height": 1088
+      },
+      {
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "width": 1920,
+        "height": 816
+      },
+      {
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "width": 1600,
+        "height": 720
+      },
+      {
+        "width": 1600,
+        "height": 712
+      },
+      {
+        "width": 1532,
+        "height": 864
+      },
+      {
+        "width": 1440,
+        "height": 1080
+      },
+      {
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "width": 1280,
+        "height": 576
+      },
+      {
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "width": 960,
+        "height": 720
+      },
+      {
+        "width": 960,
+        "height": 540
+      },
+      {
+        "width": 800,
+        "height": 600
+      },
+      {
+        "width": 800,
+        "height": 480
+      },
+      {
+        "width": 720,
+        "height": 720
+      },
+      {
+        "width": 720,
+        "height": 480
+      },
+      {
+        "width": 704,
+        "height": 704
+      },
+      {
+        "width": 640,
+        "height": 480
+      },
+      {
+        "width": 352,
+        "height": 288
+      },
+      {
+        "width": 320,
+        "height": 240
+      },
+      {
+        "width": 176,
+        "height": 144
+      }
+    ],
+    "focal_lengths": [
+      4.110000133514404
+    ],
+    "auto_exposure_modes": [
+      "CONTROL_AE_MODE_OFF",
+      "CONTROL_AE_MODE_ON",
+      "CONTROL_AE_MODE_ON_AUTO_FLASH",
+      "CONTROL_AE_MODE_ON_ALWAYS_FLASH"
+    ],
+    "physical_size": {
+      "width": 5.21999979019165,
+      "height": 3.9200000762939453
+    },
+    "capabilities": [
+      "backward_compatible",
+      "manual_sensor",
+      "manual_post_processing",
+      "read_sensor_settings",
+      "burst_capture",
+      "constrained_high_speed_video"
+    ]
+  },
+  {
+    "id": "1",
+    "facing": "front",
+    "jpeg_output_sizes": [
+      {
+        "width": 3264,
+        "height": 2448
+      },
+      {
+        "width": 3200,
+        "height": 1440
+      },
+      {
+        "width": 3072,
+        "height": 1728
+      },
+      {
+        "width": 2560,
+        "height": 1920
+      },
+      {
+        "width": 2560,
+        "height": 1440
+      },
+      {
+        "width": 2560,
+        "height": 1152
+      },
+      {
+        "width": 2432,
+        "height": 2432
+      },
+      {
+        "width": 2400,
+        "height": 1080
+      },
+      {
+        "width": 1920,
+        "height": 1088
+      },
+      {
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "width": 1920,
+        "height": 816
+      },
+      {
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "width": 1600,
+        "height": 720
+      },
+      {
+        "width": 1600,
+        "height": 712
+      },
+      {
+        "width": 1532,
+        "height": 864
+      },
+      {
+        "width": 1440,
+        "height": 1080
+      },
+      {
+        "width": 1280,
+        "height": 960
+      },
+      {
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "width": 1280,
+        "height": 576
+      },
+      {
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "width": 960,
+        "height": 720
+      },
+      {
+        "width": 960,
+        "height": 540
+      },
+      {
+        "width": 800,
+        "height": 600
+      },
+      {
+        "width": 800,
+        "height": 480
+      },
+      {
+        "width": 720,
+        "height": 720
+      },
+      {
+        "width": 720,
+        "height": 480
+      },
+      {
+        "width": 704,
+        "height": 704
+      },
+      {
+        "width": 640,
+        "height": 480
+      },
+      {
+        "width": 352,
+        "height": 288
+      },
+      {
+        "width": 320,
+        "height": 240
+      },
+      {
+        "width": 176,
+        "height": 144
+      }
+    ],
+    "focal_lengths": [
+      2.7799999713897705
+    ],
+    "auto_exposure_modes": [
+      "CONTROL_AE_MODE_OFF",
+      "CONTROL_AE_MODE_ON",
+      "CONTROL_AE_MODE_ON_AUTO_FLASH",
+      "CONTROL_AE_MODE_ON_ALWAYS_FLASH",
+      "CONTROL_AE_MODE_ON_EXTERNAL_FLASH"
+    ],
+    "physical_size": {
+      "width": 3.640000104904175,
+      "height": 2.7300000190734863
+    },
+    "capabilities": [
+      "backward_compatible",
+      "manual_sensor",
+      "manual_post_processing",
+      "read_sensor_settings",
+      "burst_capture"
+    ]
+  }
+]
+~ $ getprop ro.build.version.release
+13
+~ $ getprop ro.product.model
+Infinix X6526
+
+</pre>
