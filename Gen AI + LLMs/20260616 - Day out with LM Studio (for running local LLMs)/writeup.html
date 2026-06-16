@@ -1,0 +1,696 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        button { display: none; } 
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/using-deepseek-with-github-copilot.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+<br>
+
+
+
+<div _ngcontent-ng-c1486987202="" class="container"><message-content _ngcontent-ng-c1486987202=""
+        _nghost-ng-c1783849172="" id="message-content-id-r_4ac1f7093fb44b4e" class="ng-star-inserted">
+        <div _ngcontent-ng-c1783849172="" inline-copy-host=""
+            class="markdown markdown-main-panel enable-updated-hr-color"
+            id="model-response-message-contentr_4ac1f7093fb44b4e" aria-live="polite" aria-busy="false" dir="ltr"
+            style="--animation-duration: 400ms; --fade-animation-function: ease-out;">
+            <p data-path-to-node="0"><b data-path-to-node="0" data-index-in-node="0">LM Studio</b> is widely considered
+                the absolute gold standard for running local LLMs if you prefer a clean, visual interface over a
+                terminal window. It abstracts away all the complex command-line arguments of tools like <code
+                    data-path-to-node="0" data-index-in-node="216">llama.cpp</code> while still giving you deep
+                developer controls under the hood.</p>
+            <p data-path-to-node="1" id="p-rc_f1ea4a3b8b964995-34"><span class="citation-40 citation-end-40">Setting it
+                    up and getting your first model running takes less than 10 minutes.<source-footnote
+                        ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c766177718=""><sup _ngcontent-ng-c766177718=""
+                            class="superscript"
+                            data-turn-source-index="1"><!----></sup></source-footnote></span><sources-carousel-inline
+                    ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c2739768678=""> <source-inline-chip
+                        _ngcontent-ng-c2739768678="" _nghost-ng-c1199930663="" class="ng-star-inserted">
+                        <div _ngcontent-ng-c1199930663=""
+                            class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                            <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                class="button multiple-button ng-star-inserted"
+                                aria-label="View source details for citation from Houtini. Opens side panel."
+                                jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                <div _ngcontent-ng-c1199930663=""
+                                    class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                        _ngcontent-ng-c1199930663="" class="source-title"
+                                        style="max-width: 20ch;">Houtini</bdi><!----></div><!----><!----><!----><!---->
+                            </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                    </source-inline-chip><!----><!----><!----></sources-carousel-inline></p>
+            <h2 data-path-to-node="3">1. System Check (What Fits?)</h2>
+            <p data-path-to-node="4" id="p-rc_f1ea4a3b8b964995-35"><span class="citation-39 citation-end-39">Before
+                    downloading a massive model that locks up your computer, check your hardware specs.<source-footnote
+                        ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c766177718=""><sup _ngcontent-ng-c766177718=""
+                            class="superscript" data-turn-source-index="2"><!----></sup></source-footnote></span> LM
+                Studio relies heavily on <b data-path-to-node="4" data-index-in-node="119">VRAM (GPU Memory)</b>, with
+                system RAM as a fallback.<sources-carousel-inline ng-version="0.0.0-PLACEHOLDER"
+                    _nghost-ng-c2739768678=""> <source-inline-chip _ngcontent-ng-c2739768678=""
+                        _nghost-ng-c1199930663="" class="ng-star-inserted">
+                        <div _ngcontent-ng-c1199930663=""
+                            class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                            <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                class="button multiple-button ng-star-inserted"
+                                aria-label="View source details for citation from Houtini. Opens side panel."
+                                jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                <div _ngcontent-ng-c1199930663=""
+                                    class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                        _ngcontent-ng-c1199930663="" class="source-title"
+                                        style="max-width: 20ch;">Houtini</bdi><!----></div><!----><!----><!----><!---->
+                            </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                    </source-inline-chip><!----><!----><!----></sources-carousel-inline></p>
+            <div class="horizontal-scroll-wrapper">
+                <div class="table-block-component"><response-element class=""
+                        ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><table-block
+                            _nghost-ng-c1386840612="" class="enable-luminous-table-block ng-star-inserted">
+                            <div _ngcontent-ng-c1386840612=""
+                                class="table-block has-export-button new-table-style is-at-scroll-start is-at-scroll-end">
+                                <div _ngcontent-ng-c1386840612="" not-end-of-paragraph="" class="table-content"
+                                    jslog="275421;track:impression,attention" data-hveid="0" decode-data-ved="1"
+                                    data-ved="0CAAQ3ecQahcKEwj_0pKM0YuVAxUAAAAAHQAAAAAQKQ">
+                                    <table data-path-to-node="5">
+                                        <thead>
+                                            <tr>
+                                                <th><span data-path-to-node="5,0,0,0">Total Available VRAM</span></th>
+                                                <th><span data-path-to-node="5,0,1,0">Recommended Model Size</span></th>
+                                                <th><span data-path-to-node="5,0,2,0">Best Quantization Format</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span data-path-to-node="5,1,0,0"><b data-path-to-node="5,1,0,0"
+                                                            data-index-in-node="0">8 GB</b></span></td>
+                                                <td><span data-path-to-node="5,1,1,0">7B - 8B models (e.g., Llama 3
+                                                        8B)</span></td>
+                                                <td><span data-path-to-node="5,1,2,0"><code data-path-to-node="5,1,2,0"
+                                                            data-index-in-node="0">Q4_K_M</code> (Practical
+                                                        baseline)</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span data-path-to-node="5,2,0,0"><b data-path-to-node="5,2,0,0"
+                                                            data-index-in-node="0">12 GB - 16 GB</b></span></td>
+                                                <td><span data-path-to-node="5,2,1,0">12B - 14B models (e.g., <b
+                                                            data-path-to-node="5,2,1,0" data-index-in-node="24">Gemma 4
+                                                            12B</b>, Qwen 3.6 14B)</span></td>
+                                                <td><span data-path-to-node="5,2,2,0"><code data-path-to-node="5,2,2,0"
+                                                            data-index-in-node="0">Q4_K_M</code> or <code
+                                                            data-path-to-node="5,2,2,0"
+                                                            data-index-in-node="10">Q6_K</code></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><span data-path-to-node="5,3,0,0"><b data-path-to-node="5,3,0,0"
+                                                            data-index-in-node="0">24 GB</b></span></td>
+                                                <td><span data-path-to-node="5,3,1,0">32B - 35B models (e.g., Qwen 3.6
+                                                        35B MoE)</span></td>
+                                                <td><span data-path-to-node="5,3,2,0"><code data-path-to-node="5,3,2,0"
+                                                            data-index-in-node="0">Q4_K_M</code> or <code
+                                                            data-path-to-node="5,3,2,0"
+                                                            data-index-in-node="10">Q6_K</code> (The sweet spot)</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span data-path-to-node="5,4,0,0"><b data-path-to-node="5,4,0,0"
+                                                            data-index-in-node="0">48 GB+</b></span></td>
+                                                <td><span data-path-to-node="5,4,1,0">70B+ models</span></td>
+                                                <td><span data-path-to-node="5,4,2,0">Full 8-bit (<code
+                                                            data-path-to-node="5,4,2,0"
+                                                            data-index-in-node="12">Q8_0</code>) or unquantized (<code
+                                                            data-path-to-node="5,4,2,0"
+                                                            data-index-in-node="34">BF16</code>)</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div _ngcontent-ng-c1386840612="" hide-from-message-actions=""
+                                    class="table-footer hide-from-message-actions"><gem-icon-button
+                                        _ngcontent-ng-c1386840612="" tabindex="0" gemmenutrigger="" cdkoverlayorigin=""
+                                        theme="lm" type="tonal" arialabel="More options" gemtooltip="More options"
+                                        class="mat-mdc-tooltip-trigger overflow-menu-button gem-button gem-button-badge-size-small gem-button-size-small gem-button-type-tonal lm-enabled ng-star-inserted"
+                                        _nghost-ng-c1220514461="" aria-disabled="false" aria-haspopup="true"
+                                        aria-expanded="false" aria-controls="ng-menu-a73238-7"
+                                        aria-describedby="cdk-describedby-message-ng-1-16"
+                                        cdk-describedby-host="ng-1"><!----><button _ngcontent-ng-c1220514461=""
+                                            maticonbutton="" matbadgeposition="after"
+                                            class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-badge mat-unthemed mat-badge-overlap mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted"
+                                            mat-ripple-loader-uninitialized=""
+                                            mat-ripple-loader-class-name="mat-mdc-button-ripple"
+                                            mat-ripple-loader-centered="" aria-label="More options"
+                                            jslog="305704;track:generic_click,impression"><span
+                                                class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><gem-icon
+                                                _ngcontent-ng-c1220514461="" _nghost-ng-c3998111092=""><mat-icon
+                                                    _ngcontent-ng-c3998111092="" role="img"
+                                                    class="mat-icon notranslate lm-icon-l lumi-symbols mat-ligature-font mat-icon-no-color ng-star-inserted"
+                                                    aria-hidden="true" data-mat-icon-type="font"
+                                                    data-mat-icon-name="more_horiz"
+                                                    data-mat-icon-namespace="lumi-symbols"
+                                                    fonticon="more_horiz"></mat-icon><!----><!----><!----></gem-icon><!----><span
+                                                class="mat-focus-indicator"></span><span
+                                                class="mat-mdc-button-touch-target"></span></button><!----></gem-icon-button><!----><gem-popover
+                                        _ngcontent-ng-c1386840612="" _nghost-ng-c2725002519=""
+                                        class="ng-star-inserted"><!----></gem-popover><!----><!----></div>
+                            </div><!---->
+                        </table-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element>
+                </div>
+            </div>
+            <blockquote data-path-to-node="6">
+                <p data-path-to-node="6,0" id="p-rc_f1ea4a3b8b964995-36">💡 <b data-path-to-node="6,0"
+                        data-index-in-node="3">Apple Silicon Note:</b><span class="citation-38"> If you are running an
+                        M-series Mac, LM Studio automatically defaults to Apple's </span><b data-path-to-node="6,0"
+                        data-index-in-node="103"><span class="citation-38">MLX</span></b><span
+                        class="citation-38 citation-end-38"> runtime.<source-footnote ng-version="0.0.0-PLACEHOLDER"
+                            _nghost-ng-c766177718=""><sup _ngcontent-ng-c766177718="" class="superscript"
+                                data-turn-source-index="3"><!----></sup></source-footnote></span> Because Mac uses
+                    unified memory, your system RAM handles the heavy lifting directly.<sources-carousel-inline
+                        ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c2739768678=""> <source-inline-chip
+                            _ngcontent-ng-c2739768678="" _nghost-ng-c1199930663="" class="ng-star-inserted">
+                            <div _ngcontent-ng-c1199930663=""
+                                class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                                <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                    class="button multiple-button ng-star-inserted"
+                                    aria-label="View source details for citation from Houtini. Opens side panel."
+                                    jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                    <div _ngcontent-ng-c1199930663=""
+                                        class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                            _ngcontent-ng-c1199930663="" class="source-title"
+                                            style="max-width: 20ch;">Houtini</bdi><!----></div>
+                                    <!----><!----><!----><!---->
+                                </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                        </source-inline-chip><!----><!----><!----></sources-carousel-inline></p>
+            </blockquote>
+            <h2 data-path-to-node="8">2. Step-by-Step Setup Guide</h2>
+            <p data-path-to-node="9">
+            <div class="attachment-container unknown"><response-element class=""
+                    ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                    <sequence class="lm-enabled ng-star-inserted">
+                        <div class="sequence-container" jslog="308913;track:impression,attention" data-hveid="0"
+                            decode-data-ved="1" data-ved="0CAAQse0SahcKEwj_0pKM0YuVAxUAAAAAHQAAAAAQKw">
+                            <div class="sequence-event ng-star-inserted">
+                                <div hide-from-message-actions=""
+                                    class="sequence-event-marker-container hide-from-message-actions"><!----><!---->
+                                    <div class="sequence-event-marker gds-body-s ng-star-inserted">1</div><!---->
+                                    <div class="sequence-event-line ng-star-inserted"></div><!---->
+                                </div>
+                                <div class="sequence-event-content">
+                                    <div hide-from-message-actions="" class="hide-from-message-actions">
+                                        <div class="sequence-event-title gds-emphasized-body-l">Download and Install
+                                        </div>
+                                        <div class="sequence-event-subtitle gds-extended-caption ng-star-inserted">~2
+                                            minutes</div><!---->
+                                    </div>
+                                    <div class="sequence-event-description gds-body-l"><span
+                                            only-show-to-message-actions="" data-test-id="sequence-export-header"
+                                            class="only-show-to-message-actions"
+                                            style="display: none;"><strong><!----><!---->1.<!----><!---->Download and
+                                                Install:<!----></strong>~2
+                                            minutes.<!----><!----></span><structured-node-sequence
+                                            class="ng-star-inserted"><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">Go to <b>lmstudio.ai</b> and download the
+                                                    installer matching your OS (Windows x64/ARM, macOS M-series, or
+                                                    Linux AppImage). Run the installer to open the GUI.</p>
+                                                <!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sequence-event ng-star-inserted">
+                                <div hide-from-message-actions=""
+                                    class="sequence-event-marker-container hide-from-message-actions"><!----><!---->
+                                    <div class="sequence-event-marker gds-body-s ng-star-inserted">2</div><!---->
+                                    <div class="sequence-event-line ng-star-inserted"></div><!---->
+                                </div>
+                                <div class="sequence-event-content">
+                                    <div hide-from-message-actions="" class="hide-from-message-actions">
+                                        <div class="sequence-event-title gds-emphasized-body-l">Discover and Download a
+                                            Model</div>
+                                        <div class="sequence-event-subtitle gds-extended-caption ng-star-inserted">~3-5
+                                            minutes</div><!---->
+                                    </div>
+                                    <div class="sequence-event-description gds-body-l"><span
+                                            only-show-to-message-actions="" data-test-id="sequence-export-header"
+                                            class="only-show-to-message-actions"
+                                            style="display: none;"><strong><!----><!---->2.<!----><!---->Discover and
+                                                Download a Model:<!----></strong>~3-5
+                                            minutes.<!----><!----></span><structured-node-sequence
+                                            class="ng-star-inserted"><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">Click the <b>Search/Discover icon
+                                                        (Magnifying Glass)</b> on the left sidebar. Type in a popular
+                                                    open model like <code>Gemma 4 12B</code> or
+                                                    <code>Qwen 3.6 Coder</code>.</p><!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">LM Studio will display a list of available
+                                                    Hugging Face files. Look for the <b>green rocket icon</b> next to
+                                                    the files—this indicates the model quantization will comfortably fit
+                                                    your hardware profile. Click <b>Download</b>.</p><!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sequence-event ng-star-inserted">
+                                <div hide-from-message-actions=""
+                                    class="sequence-event-marker-container hide-from-message-actions"><!----><!---->
+                                    <div class="sequence-event-marker gds-body-s ng-star-inserted">3</div><!---->
+                                    <div class="sequence-event-line ng-star-inserted"></div><!---->
+                                </div>
+                                <div class="sequence-event-content">
+                                    <div hide-from-message-actions="" class="hide-from-message-actions">
+                                        <div class="sequence-event-title gds-emphasized-body-l">Configure Your Hardware
+                                            Engine</div>
+                                        <div class="sequence-event-subtitle gds-extended-caption ng-star-inserted">~1
+                                            minute</div><!---->
+                                    </div>
+                                    <div class="sequence-event-description gds-body-l"><span
+                                            only-show-to-message-actions="" data-test-id="sequence-export-header"
+                                            class="only-show-to-message-actions"
+                                            style="display: none;"><strong><!----><!---->3.<!----><!---->Configure Your
+                                                Hardware Engine:<!----></strong>~1
+                                            minute.<!----><!----></span><structured-node-sequence
+                                            class="ng-star-inserted"><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">Head to the <b>AI Chat view (Bubble
+                                                        icon)</b> and look at the right-hand settings panel. Under
+                                                    <b>Hardware Settings</b>, select your runtime engine:</p>
+                                                <!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><structured-list
+                                                class="ng-star-inserted"><!---->
+                                                <ul class="ng-star-inserted">
+                                                    <li class="ng-star-inserted"><structured-node-sequence
+                                                            class="ng-star-inserted"><structured-text
+                                                                class="ng-star-inserted"><!----><!---->
+                                                                <p class="ng-star-inserted"><b>NVIDIA:</b> Choose
+                                                                    <i>CUDA 12 llama.cpp</i>.</p><!----><!---->
+                                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                                    </li>
+                                                    <li class="ng-star-inserted"><structured-node-sequence
+                                                            class="ng-star-inserted"><structured-text
+                                                                class="ng-star-inserted"><!----><!---->
+                                                                <p class="ng-star-inserted"><b>Apple Silicon:</b> Leave
+                                                                    it on <i>MLX</i>.</p><!----><!---->
+                                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                                    </li>
+                                                    <li class="ng-star-inserted"><structured-node-sequence
+                                                            class="ng-star-inserted"><structured-text
+                                                                class="ng-star-inserted"><!----><!---->
+                                                                <p class="ng-star-inserted"><b>AMD/Intel GPU:</b> Choose
+                                                                    <i>Vulkan llama.cpp</i>.</p><!----><!---->
+                                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                                    </li>
+                                                    <li class="ng-star-inserted"><structured-node-sequence
+                                                            class="ng-star-inserted"><structured-text
+                                                                class="ng-star-inserted"><!----><!---->
+                                                                <p class="ng-star-inserted"><b>CPU Only:</b> Choose
+                                                                    <i>CPU llama.cpp</i> (if you don't have a dedicated
+                                                                    GPU).</p><!----><!---->
+                                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                                    </li><!---->
+                                                </ul><!---->
+                                            </structured-list><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sequence-event ng-star-inserted">
+                                <div hide-from-message-actions=""
+                                    class="sequence-event-marker-container hide-from-message-actions"><!----><!---->
+                                    <div class="sequence-event-marker gds-body-s ng-star-inserted">4</div><!---->
+                                    <div class="sequence-event-line ng-star-inserted"></div><!---->
+                                </div>
+                                <div class="sequence-event-content">
+                                    <div hide-from-message-actions="" class="hide-from-message-actions">
+                                        <div class="sequence-event-title gds-emphasized-body-l">Adjust GPU Offload and
+                                            Context</div>
+                                        <div class="sequence-event-subtitle gds-extended-caption ng-star-inserted">~1
+                                            minute</div><!---->
+                                    </div>
+                                    <div class="sequence-event-description gds-body-l"><span
+                                            only-show-to-message-actions="" data-test-id="sequence-export-header"
+                                            class="only-show-to-message-actions"
+                                            style="display: none;"><strong><!----><!---->4.<!----><!---->Adjust GPU
+                                                Offload and Context:<!----></strong>~1
+                                            minute.<!----><!----></span><structured-node-sequence
+                                            class="ng-star-inserted"><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">If you're using a discrete GPU (like
+                                                    NVIDIA), locate the <b>GPU Offload</b> slider. Toggle it to
+                                                    <b>Max</b> to push as many layers of the model into your VRAM as
+                                                    possible.</p><!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">Set your <b>Context Length</b> next (start
+                                                    with <code>4096</code> or <code>8192</code> tokens). Higher context
+                                                    lengths use exponentially more VRAM.</p><!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sequence-event ng-star-inserted">
+                                <div hide-from-message-actions=""
+                                    class="sequence-event-marker-container hide-from-message-actions"><!----><!---->
+                                    <div class="sequence-event-marker gds-body-s ng-star-inserted">5</div><!----><!---->
+                                </div>
+                                <div class="sequence-event-content">
+                                    <div hide-from-message-actions="" class="hide-from-message-actions">
+                                        <div class="sequence-event-title gds-emphasized-body-l">Load and Chat</div>
+                                        <div class="sequence-event-subtitle gds-extended-caption ng-star-inserted">
+                                            Instant</div><!---->
+                                    </div>
+                                    <div class="sequence-event-description gds-body-l"><span
+                                            only-show-to-message-actions="" data-test-id="sequence-export-header"
+                                            class="only-show-to-message-actions"
+                                            style="display: none;"><strong><!----><!---->5.<!----><!---->Load and
+                                                Chat:<!----></strong>Instant.<!----><!----></span><structured-node-sequence
+                                            class="ng-star-inserted"><structured-text
+                                                class="ng-star-inserted"><!----><!---->
+                                                <p class="ng-star-inserted">At the very top of the window, click the
+                                                    <b>"Select a model to load"</b> dropdown and select your downloaded
+                                                    model. Once the progress bar fills, type your prompt in the bottom
+                                                    text box and enjoy 100% private, offline AI.</p><!----><!---->
+                                            </structured-text><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></structured-node-sequence><!---->
+                                    </div>
+                                </div>
+                            </div><!---->
+                        </div>
+                    </sequence><!----><!----><!----><!----><!----><!---->
+                </response-element></div>
+            </p>
+            <h2 data-path-to-node="11">3. Power-User Features to Explore Later</h2>
+            <p data-path-to-node="12" id="p-rc_f1ea4a3b8b964995-37"><span class="citation-37 citation-end-37">Once you
+                    have basic chat working, LM Studio has major features designed for software development and local
+                    workflows:<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c766177718=""><sup
+                            _ngcontent-ng-c766177718="" class="superscript"
+                            data-turn-source-index="4"><!----></sup></source-footnote></span><sources-carousel-inline
+                    ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c2739768678=""> <source-inline-chip
+                        _ngcontent-ng-c2739768678="" _nghost-ng-c1199930663="" class="ng-star-inserted">
+                        <div _ngcontent-ng-c1199930663=""
+                            class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                            <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                class="button multiple-button ng-star-inserted"
+                                aria-label="View source details for citation from LM Studio. Opens side panel."
+                                jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                <div _ngcontent-ng-c1199930663=""
+                                    class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                        _ngcontent-ng-c1199930663="" class="source-title" style="max-width: 20ch;">LM
+                                        Studio</bdi><!----></div><!----><!----><!----><!---->
+                            </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                    </source-inline-chip><!----><!----><!----></sources-carousel-inline></p>
+            <h3 data-path-to-node="13">Local OpenAI-Compatible Server</h3>
+            <p data-path-to-node="14" id="p-rc_f1ea4a3b8b964995-38">Click the <b data-path-to-node="14"
+                    data-index-in-node="10">Developer tab (Code brackets icon)</b> on the left menu. Here, you can click
+                <b data-path-to-node="14" data-index-in-node="83">Start Server</b> to spin up a local API endpoint on
+                <code data-path-to-node="14" data-index-in-node="131">localhost:1234</code>.
+                <span class="citation-36">Because it is fully </span><b data-path-to-node="14"
+                    data-index-in-node="167"><span class="citation-36">OpenAI-compatible</span></b><span
+                    class="citation-36 citation-end-36">, you can drop this endpoint straight into developer setups, IDE
+                    extensions (like Continue or VS Code Copilot alternatives), or local scripts using the standard
+                    OpenAI SDK format:<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c766177718=""><sup
+                            _ngcontent-ng-c766177718="" class="superscript"
+                            data-turn-source-index="5"><!----></sup></source-footnote></span><sources-carousel-inline
+                    ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c2739768678=""> <source-inline-chip
+                        _ngcontent-ng-c2739768678="" _nghost-ng-c1199930663="" class="ng-star-inserted">
+                        <div _ngcontent-ng-c1199930663=""
+                            class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                            <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                class="button multiple-button ng-star-inserted"
+                                aria-label="View source details for citation from Houtini. Opens side panel."
+                                jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                <div _ngcontent-ng-c1199930663=""
+                                    class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                        _ngcontent-ng-c1199930663="" class="source-title"
+                                        style="max-width: 20ch;">Houtini</bdi><!----></div><!----><!----><!----><!---->
+                            </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                    </source-inline-chip><!----><!----><!----></sources-carousel-inline>
+            </p><response-element class=""
+                ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><code-block
+                    _nghost-ng-c1443682942="" class="ng-tns-c1443682942-18 enable-luminous-code-block ng-star-inserted"
+                    style=""><!----><!---->
+                    <div _ngcontent-ng-c1443682942=""
+                        class="code-block ng-tns-c1443682942-18 ng-animate-disabled ng-trigger ng-trigger-codeBlockRevealAnimation"
+                        jslog="223238;track:impression,attention;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0]]"
+                        data-hveid="0" decode-data-ved="1" data-ved="0CAAQhtANahcKEwj_0pKM0YuVAxUAAAAAHQAAAAAQLA"
+                        style="display: block;"><!---->
+                        <div _ngcontent-ng-c1443682942=""
+                            class="formatted-code-block-internal-container ng-tns-c1443682942-18">
+                            <div _ngcontent-ng-c1443682942="" class="animated-opacity ng-tns-c1443682942-18">
+                                <div _ngcontent-ng-c1443682942=""
+                                    class="code-block-decoration header-formatted gds-emphasized-body-m ng-tns-c1443682942-18 ng-star-inserted"
+                                    style=""><span _ngcontent-ng-c1443682942=""
+                                        class="ng-tns-c1443682942-18">Python</span>
+                                    <div _ngcontent-ng-c1443682942=""
+                                        class="buttons ng-tns-c1443682942-18 ng-star-inserted"><gem-icon-button
+                                            _ngcontent-ng-c1443682942="" tabindex="-1" type="onSurface" size="small"
+                                            fonticonname="arrow_circle_down" theme="lm" arialabel="Download code"
+                                            gemtooltip="Download code"
+                                            class="mat-mdc-tooltip-trigger download-button ng-tns-c1443682942-18 gem-button gem-button-badge-size-small gem-button-size-small gem-button-type-on-surface lm-enabled ng-star-inserted"
+                                            _nghost-ng-c1220514461="" aria-describedby="cdk-describedby-message-ng-1-17"
+                                            cdk-describedby-host="ng-1"><!----><button _ngcontent-ng-c1220514461=""
+                                                maticonbutton="" matbadgeposition="after"
+                                                class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-badge mat-unthemed mat-badge-overlap mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted"
+                                                mat-ripple-loader-uninitialized=""
+                                                mat-ripple-loader-class-name="mat-mdc-button-ripple"
+                                                mat-ripple-loader-centered="" aria-label="Download code"
+                                                jslog="305704;track:generic_click,impression"><span
+                                                    class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><gem-icon
+                                                    _ngcontent-ng-c1220514461="" _nghost-ng-c3998111092=""><mat-icon
+                                                        _ngcontent-ng-c3998111092="" role="img"
+                                                        class="mat-icon notranslate lm-icon-l lumi-symbols mat-ligature-font mat-icon-no-color ng-star-inserted"
+                                                        aria-hidden="true" data-mat-icon-type="font"
+                                                        data-mat-icon-name="arrow_circle_down"
+                                                        data-mat-icon-namespace="lumi-symbols"
+                                                        fonticon="arrow_circle_down"></mat-icon><!----><!----><!----></gem-icon><!----><span
+                                                    class="mat-focus-indicator"></span><span
+                                                    class="mat-mdc-button-touch-target"></span></button><!----></gem-icon-button><!----><!----><!----><!----><!----><gem-icon-button
+                                            _ngcontent-ng-c1443682942="" tabindex="-1" type="onSurface" size="small"
+                                            fonticonname="copy" theme="lm" arialabel="Copy code" gemtooltip="Copy code"
+                                            data-test-id="gem-copy-button"
+                                            class="mat-mdc-tooltip-trigger copy-button ng-tns-c1443682942-18 gem-button gem-button-badge-size-small gem-button-size-small gem-button-type-on-surface lm-enabled ng-star-inserted"
+                                            _nghost-ng-c1220514461="" aria-describedby="cdk-describedby-message-ng-1-18"
+                                            cdk-describedby-host="ng-1"><!----><button _ngcontent-ng-c1220514461=""
+                                                maticonbutton="" matbadgeposition="after"
+                                                class="mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-badge mat-unthemed mat-badge-overlap mat-badge-above mat-badge-after mat-badge-small mat-badge-hidden ng-star-inserted"
+                                                mat-ripple-loader-uninitialized=""
+                                                mat-ripple-loader-class-name="mat-mdc-button-ripple"
+                                                mat-ripple-loader-centered="" aria-label="Copy code"
+                                                jslog="179062;track:generic_click,impression;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0]];mutable:true"><span
+                                                    class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"></span><gem-icon
+                                                    _ngcontent-ng-c1220514461="" _nghost-ng-c3998111092=""><mat-icon
+                                                        _ngcontent-ng-c3998111092="" role="img"
+                                                        class="mat-icon notranslate lm-icon-l lumi-symbols mat-ligature-font mat-icon-no-color ng-star-inserted"
+                                                        aria-hidden="true" data-mat-icon-type="font"
+                                                        data-mat-icon-name="copy" data-mat-icon-namespace="lumi-symbols"
+                                                        fonticon="copy"></mat-icon><!----><!----><!----></gem-icon><!----><span
+                                                    class="mat-focus-indicator"></span><span
+                                                    class="mat-mdc-button-touch-target"></span></button><!----></gem-icon-button><!----><!----><!----><!---->
+                                    </div><!----><!---->
+                                </div><!---->
+                                <pre _ngcontent-ng-c1443682942="" class="ng-tns-c1443682942-18"><code _ngcontent-ng-c1443682942="" role="text" data-test-id="code-content" class="code-container formatted ng-tns-c1443682942-18"><span class="hljs-keyword">from</span> openai <span class="hljs-keyword">import</span> OpenAI
+
+client = OpenAI(base_url=<span class="hljs-string">"http://localhost:1234/v1"</span>, api_key=<span class="hljs-string">"lm-studio"</span>)
+
+response = client.chat.completions.create(
+    model=<span class="hljs-string">"local-model"</span>, <span class="hljs-comment"># It automatically targets whatever model is currently loaded</span>
+    messages=[{<span class="hljs-string">"role"</span>: <span class="hljs-string">"user"</span>, <span class="hljs-string">"content"</span>: <span class="hljs-string">"Write a quick Python sort algorithm."</span>}]
+)
+print(response.choices[<span class="hljs-number">0</span>].message.content)
+</code></pre><!---->
+                            </div>
+                        </div>
+                    </div><!----><!----><!---->
+                </code-block><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----></response-element>
+            <h3 data-path-to-node="16">Chat with Documents (Local RAG)</h3>
+            <p data-path-to-node="17" id="p-rc_f1ea4a3b8b964995-39"><span class="citation-35 citation-end-35">You can
+                    attach local text files, PDFs, or code repositories directly into your chat.<source-footnote
+                        ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c766177718=""><sup _ngcontent-ng-c766177718=""
+                            class="superscript" data-turn-source-index="6"><!----></sup></source-footnote></span> LM
+                Studio handles the text extraction and local embedding vectorization completely offline, allowing you to
+                ask questions about your private files without data leaking to external servers.<sources-carousel-inline
+                    ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c2739768678=""> <source-inline-chip
+                        _ngcontent-ng-c2739768678="" _nghost-ng-c1199930663="" class="ng-star-inserted">
+                        <div _ngcontent-ng-c1199930663=""
+                            class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                            <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                class="button multiple-button ng-star-inserted"
+                                aria-label="View source details for citation from LM Studio. Opens side panel."
+                                jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                <div _ngcontent-ng-c1199930663=""
+                                    class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                        _ngcontent-ng-c1199930663="" class="source-title" style="max-width: 20ch;">LM
+                                        Studio</bdi><!----></div><!----><!----><!----><!---->
+                            </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                    </source-inline-chip><!----><!----><!----></sources-carousel-inline></p>
+            <h3 data-path-to-node="18">LM Link (Remote Workloads)</h3>
+            <p data-path-to-node="19" id="p-rc_f1ea4a3b8b964995-40"><span class="citation-34">If you have a powerful
+                    machine (like a desktop rig with a great GPU) but want to work from a lightweight laptop on your
+                    couch, you can turn on </span><b data-path-to-node="19" data-index-in-node="143"><span
+                        class="citation-34">LM Link</span></b><span class="citation-34 citation-end-34"> in your
+                    settings.<source-footnote ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c766177718=""><sup
+                            _ngcontent-ng-c766177718="" class="superscript"
+                            data-turn-source-index="7"><!----></sup></source-footnote></span> It leverages a secure,
+                end-to-end encrypted mesh network (powered by Tailscale) to let you stream your desktop's heavy model
+                processing directly to your laptop as if it were running locally.<sources-carousel-inline
+                    ng-version="0.0.0-PLACEHOLDER" _nghost-ng-c2739768678=""> <source-inline-chip
+                        _ngcontent-ng-c2739768678="" _nghost-ng-c1199930663="" class="ng-star-inserted">
+                        <div _ngcontent-ng-c1199930663=""
+                            class="source-inline-chip-container luminous-sources hide-from-message-actions ng-star-inserted">
+                            <button _ngcontent-ng-c1199930663="" cdkoverlayorigin=""
+                                class="button multiple-button ng-star-inserted"
+                                aria-label="View source details for citation from LM Studio. Opens side panel."
+                                jslog="262206;track:generic_click;BardVeMetadataKey:[[&quot;r_4ac1f7093fb44b4e&quot;,&quot;c_f229d7d393bb5000&quot;,null,&quot;rc_f1ea4a3b8b964995&quot;,null,null,&quot;en&quot;,null,1,null,null,1,0],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[0]]"><!---->
+                                <div _ngcontent-ng-c1199930663=""
+                                    class="source-label-container gds-body-s ng-star-inserted" dir="ltr"><bdi
+                                        _ngcontent-ng-c1199930663="" class="source-title" style="max-width: 20ch;">LM
+                                        Studio</bdi><!----></div><!----><!----><!----><!---->
+                            </button><!----><!----><!----><!----></div><!----><!----><!----><!----><!---->
+                    </source-inline-chip><!----><!----><!----></sources-carousel-inline></p>
+            <p data-path-to-node="20">
+            <div class="attachment-container unknown"><response-element class=""
+                    ng-version="0.0.0-PLACEHOLDER"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                    <elicitations class="lm-enabled ng-star-inserted">
+                        
+                    </elicitations>
+                    <!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><!---->
+                </response-element></div>
+            </p>
+        </div>
+    </message-content><!----></div>
+
+<a class="customLink"
+href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+target="_blank">See All on GenAI</a> &nbsp;&nbsp; <a href="https://survival8.blogspot.com/2026/06/using-deepseek-with-github-copilot.html" target="_blank" class="customLink">&laquo; Previously</a>
+<br>
+
+<span style="opacity: 0;">Tags: Large Language Models,Generative AI,Agentic AI,</span>
