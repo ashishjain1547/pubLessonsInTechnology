@@ -1,0 +1,793 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        button { display: none; } 
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/day-out-with-lm-studio-for-running.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+<br>
+
+
+
+
+<h2><mark>Explain these logs... (logs attached at the end of the post)</mark></h2>
+
+<br><hr><br>
+<div class="markdown prose dark:prose-invert wrap-break-word w-full light markdown-new-styling"><p data-start="0" data-end="27">The key error is this line:</p>
+<pre class="overflow-visible! px-0!" data-start="29" data-end="163"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>ggml_vulkan: device Vulkan0 does not support 16-bit storage.</span><br><span>...</span><br><span>llama_model_load: error loading model: Unsupported device</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="165" data-end="274">Everything else is LM Studio repeatedly trying to load different GGUF models and failing for the same reason.</p>
+<h2 data-section-id="1izzb89" data-start="276" data-end="295">What's happening</h2>
+<p data-start="297" data-end="373">LM Studio is using the Vulkan backend (GPU acceleration via llama.cpp/ggml).</p>
+<p data-start="375" data-end="442">When it starts loading a model, it detects your Vulkan-capable GPU:</p>
+<pre class="overflow-visible! px-0!" data-start="444" data-end="513"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>MESA-INTEL: warning: Haswell Vulkan support is incomplete</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="515" data-end="675">This is already a warning sign. It means you're using an Intel Haswell-generation GPU (around 2013–2015), and Mesa's Vulkan implementation for it is incomplete.</p>
+<p data-start="677" data-end="682">Then:</p>
+<pre class="overflow-visible! px-0!" data-start="684" data-end="756"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>ggml_vulkan: device Vulkan0 does not support 16-bit storage.</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="758" data-end="817">Modern llama.cpp Vulkan kernels require the Vulkan feature:</p>
+<pre class="overflow-visible! px-0!" data-start="819" data-end="851"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>VK_KHR_16bit_storage</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="853" data-end="890">or equivalent 16-bit storage support.</p>
+<p data-start="892" data-end="928">Your GPU/driver does not provide it.</p>
+<p data-start="930" data-end="1003">As soon as ggml checks the GPU capabilities, model initialization aborts:</p>
+<pre class="overflow-visible! px-0!" data-start="1005" data-end="1056"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>error loading model: Unsupported device</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<hr data-start="1058" data-end="1061">
+<h2 data-section-id="10i782o" data-start="1063" data-end="1087">Why every model fails</h2>
+<p data-start="1089" data-end="1115">You tried multiple models:</p>
+<ul data-start="1117" data-end="1188">
+<li data-section-id="yf9p8n" data-start="1117" data-end="1144">
+<p data-start="1119" data-end="1144">LFM2.5-1.2B-Instruct-Q6_K</p>
+</li>
+<li data-section-id="vav3i6" data-start="1145" data-end="1171">
+<p data-start="1147" data-end="1171">gemma-3-270m-it-qat-Q4_0</p>
+</li>
+<li data-section-id="1c6rbjg" data-start="1172" data-end="1188">
+<p data-start="1174" data-end="1188">LFM2-350M-Q4_0</p>
+</li>
+</ul>
+<p data-start="1190" data-end="1211">All fail identically.</p>
+<p data-start="1213" data-end="1227">That tells us:</p>
+<p data-start="1229" data-end="1255">✅ Models are not corrupted</p>
+<p data-start="1257" data-end="1288">✅ Quantization is not the issue</p>
+<p data-start="1290" data-end="1321">✅ Context size is not the issue</p>
+<p data-start="1323" data-end="1354">✅ RAM is probably not the issue</p>
+<p data-start="1356" data-end="1426">❌ GPU backend initialization is failing before model loading completes</p>
+<hr data-start="1428" data-end="1431">
+<h2 data-section-id="gp3tdi" data-start="1433" data-end="1455">The important clues</h2>
+<h3 data-section-id="errcq0" data-start="1457" data-end="1467">Clue 1</h3>
+<pre class="overflow-visible! px-0!" data-start="1469" data-end="1538"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>MESA-INTEL: warning: Haswell Vulkan support is incomplete</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="1540" data-end="1563">Haswell Intel GPUs are:</p>
+<ul data-start="1565" data-end="1622">
+<li data-section-id="146wd8i" data-start="1565" data-end="1574">
+<p data-start="1567" data-end="1574">HD 4200</p>
+</li>
+<li data-section-id="146wex0" data-start="1575" data-end="1584">
+<p data-start="1577" data-end="1584">HD 4400</p>
+</li>
+<li data-section-id="146wgli" data-start="1585" data-end="1594">
+<p data-start="1587" data-end="1594">HD 4600</p>
+</li>
+<li data-section-id="1scs5v1" data-start="1595" data-end="1606">
+<p data-start="1597" data-end="1606">Iris 5100</p>
+</li>
+<li data-section-id="1g573kz" data-start="1607" data-end="1622">
+<p data-start="1609" data-end="1622">Iris Pro 5200</p>
+</li>
+</ul>
+<p data-start="1624" data-end="1699">These GPUs have only experimental Vulkan support through Mesa's ANV driver.</p>
+<hr data-start="1701" data-end="1704">
+<h3 data-section-id="errcq3" data-start="1706" data-end="1716">Clue 2</h3>
+<pre class="overflow-visible! px-0!" data-start="1718" data-end="1776"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>device Vulkan0 does not support 16-bit storage</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="1778" data-end="1854">llama.cpp Vulkan backend requires GPU features that Haswell generally lacks.</p>
+<p data-start="1856" data-end="1911">Therefore LM Studio cannot use Vulkan on this hardware.</p>
+<hr data-start="1913" data-end="1916">
+<h2 data-section-id="rb8nw5" data-start="1918" data-end="1946">The strange token warning</h2>
+<p data-start="1948" data-end="1974">This warning is unrelated:</p>
+<pre class="overflow-visible! px-0!" data-start="1976" data-end="2042"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>control-looking token: 212 '&lt;/s&gt;' was not control-type</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="2044" data-end="2084">This comes from the Gemma GGUF metadata.</p>
+<p data-start="2086" data-end="2139">It's usually harmless and not the reason for failure.</p>
+<hr data-start="2141" data-end="2144">
+<h2 data-section-id="15g9ll" data-start="2146" data-end="2166">Most likely setup</h2>
+<p data-start="2168" data-end="2192">You're probably running:</p>
+<ul data-start="2194" data-end="2298">
+<li data-section-id="16rabu6" data-start="2194" data-end="2201">
+<p data-start="2196" data-end="2201">Linux</p>
+</li>
+<li data-section-id="1jzyqew" data-start="2202" data-end="2237">
+<p data-start="2204" data-end="2237">Intel Haswell integrated graphics</p>
+</li>
+<li data-section-id="39aecn" data-start="2238" data-end="2258">
+<p data-start="2240" data-end="2258">Mesa Vulkan driver</p>
+</li>
+<li data-section-id="1jiowt0" data-start="2259" data-end="2298">
+<p data-start="2261" data-end="2298">LM Studio attempting GPU acceleration</p>
+</li>
+</ul>
+<p data-start="2300" data-end="2331">The GPU backend is unsupported.</p>
+<hr data-start="2333" data-end="2336">
+<h2 data-section-id="18u7swp" data-start="2338" data-end="2354">How to verify</h2>
+<p data-start="2356" data-end="2360">Run:</p>
+<pre class="overflow-visible! px-0!" data-start="2362" data-end="2390"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>lspci | </span><span class="ͼl">grep</span><span> VGA</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="2392" data-end="2395">and</p>
+<pre class="overflow-visible! px-0!" data-start="2397" data-end="2439"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>vulkaninfo | </span><span class="ͼl">grep</span><span> </span><span class="ͼk">"deviceName"</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="2441" data-end="2444">or:</p>
+<pre class="overflow-visible! px-0!" data-start="2446" data-end="2490"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>glxinfo | </span><span class="ͼl">grep</span><span> </span><span class="ͼk">"OpenGL renderer"</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="2492" data-end="2525">You'll likely see something like:</p>
+<pre class="overflow-visible! px-0!" data-start="2527" data-end="2561"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>Intel HD Graphics 4600</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="2563" data-end="2586">or another Haswell GPU.</p>
+<hr data-start="2588" data-end="2591">
+<h2 data-section-id="x8tsec" data-start="2593" data-end="2601">Fixes</h2>
+<h3 data-section-id="1nutt2m" data-start="2603" data-end="2655">Option 1: Disable GPU acceleration (recommended)</h3>
+<p data-start="2657" data-end="2670">In LM Studio:</p>
+<ol data-start="2672" data-end="2763">
+<li data-section-id="xa1g4f" data-start="2672" data-end="2683">
+<p data-start="2675" data-end="2683">Settings</p>
+</li>
+<li data-section-id="6ml8k4" data-start="2684" data-end="2705">
+<p data-start="2687" data-end="2705">Runtime / Hardware</p>
+</li>
+<li data-section-id="1kospd3" data-start="2706" data-end="2740">
+<p data-start="2709" data-end="2740">Disable Vulkan GPU acceleration</p>
+</li>
+<li data-section-id="hbmgqn" data-start="2741" data-end="2763">
+<p data-start="2744" data-end="2763">Force CPU inference</p>
+</li>
+</ol>
+<p data-start="2765" data-end="2786">or set GPU layers to:</p>
+<pre class="overflow-visible! px-0!" data-start="2788" data-end="2801"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>0</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="2803" data-end="2825">Then reload the model.</p>
+<p data-start="2827" data-end="2849">For small models like:</p>
+<ul data-start="2851" data-end="2871">
+<li data-section-id="1j2c5cg" data-start="2851" data-end="2857">
+<p data-start="2853" data-end="2857">270M</p>
+</li>
+<li data-section-id="1j2bfar" data-start="2858" data-end="2864">
+<p data-start="2860" data-end="2864">350M</p>
+</li>
+<li data-section-id="1j2a2lj" data-start="2865" data-end="2871">
+<p data-start="2867" data-end="2871">1.2B</p>
+</li>
+</ul>
+<p data-start="2873" data-end="2904">CPU inference should work fine.</p>
+<hr data-start="2906" data-end="2909">
+<h3 data-section-id="21xdba" data-start="2911" data-end="2936">Option 2: Update Mesa</h3>
+<p data-start="2938" data-end="2944">Check:</p>
+<pre class="overflow-visible! px-0!" data-start="2946" data-end="2972"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>mesa </span><span class="ͼn">--version</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="2974" data-end="2977">or:</p>
+<pre class="overflow-visible! px-0!" data-start="2979" data-end="3001"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>vulkaninfo</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="3003" data-end="3148">A newer Mesa may expose more features, but <strong data-start="3046" data-end="3113">Haswell hardware itself generally lacks the required capability</strong>, so don't expect this to solve it.</p>
+<hr data-start="3150" data-end="3153">
+<h3 data-section-id="c0awpl" data-start="3155" data-end="3191">Option 3: Use OpenCL/CPU backend</h3>
+<p data-start="3193" data-end="3213">If LM Studio offers:</p>
+<ul data-start="3215" data-end="3248">
+<li data-section-id="1o4e26" data-start="3215" data-end="3220">
+<p data-start="3217" data-end="3220">CPU</p>
+</li>
+<li data-section-id="yblxr4" data-start="3221" data-end="3231">
+<p data-start="3223" data-end="3231">OpenBLAS</p>
+</li>
+<li data-section-id="1ftejtn" data-start="3232" data-end="3248">
+<p data-start="3234" data-end="3248">CLBlast/OpenCL</p>
+</li>
+</ul>
+<p data-start="3250" data-end="3278">use those instead of Vulkan.</p>
+<hr data-start="3280" data-end="3283">
+<h3 data-section-id="edffpc" data-start="3285" data-end="3314">Option 4: Use a newer GPU</h3>
+<p data-start="3316" data-end="3378">Any reasonably modern GPU supports the needed Vulkan features:</p>
+<ul data-start="3380" data-end="3441">
+<li data-section-id="1njnzm7" data-start="3380" data-end="3390">
+<p data-start="3382" data-end="3390">Intel Xe</p>
+</li>
+<li data-section-id="1b6yhya" data-start="3391" data-end="3402">
+<p data-start="3393" data-end="3402">Intel Arc</p>
+</li>
+<li data-section-id="ul7ubd" data-start="3403" data-end="3413">
+<p data-start="3405" data-end="3413">AMD RDNA</p>
+</li>
+<li data-section-id="1dwbijj" data-start="3414" data-end="3441">
+<p data-start="3416" data-end="3441">NVIDIA GTX 10xx and newer</p>
+</li>
+</ul>
+<hr data-start="3443" data-end="3446">
+<h2 data-section-id="1msgxz8" data-start="3448" data-end="3462">Bottom line</h2>
+<p data-start="3464" data-end="3681">Your models are failing because LM Studio is trying to use the Vulkan backend on an older Intel Haswell GPU, and that GPU does <strong data-start="3591" data-end="3628">not support Vulkan 16-bit storage</strong>, which the llama.cpp Vulkan implementation requires:</p>
+<pre class="overflow-visible! px-0!" data-start="3683" data-end="3754"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>ggml_vulkan: device Vulkan0 does not support 16-bit storage</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="3756" data-end="3874" data-is-last-node="" data-is-only-node="">The practical fix is to <strong data-start="3780" data-end="3841">disable GPU/Vulkan acceleration and run the models on CPU</strong>, or use newer graphics hardware.</p></div>
+
+
+<br><hr><br>
+
+<h2><mark>(base) jain@jain-ThinkPad-T440s:~$ lspci | grep VGA <br>00:02.0 VGA compatible controller: Intel Corporation Haswell-ULT Integrated Graphics Controller (rev 0b)</mark></h2>
+
+<br><hr><br>
+
+<div class="markdown prose dark:prose-invert wrap-break-word w-full light markdown-new-styling"><p data-start="0" data-end="17">That confirms it.</p>
+<p data-start="19" data-end="36">Your machine has:</p>
+<pre class="overflow-visible! px-0!" data-start="38" data-end="110"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>Intel Corporation Haswell-ULT Integrated Graphics Controller</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="112" data-end="157">On a ThinkPad T440s this is typically one of:</p>
+<ul data-start="159" data-end="208">
+<li data-section-id="hg266j" data-start="159" data-end="183">
+<p data-start="161" data-end="183">Intel HD Graphics 4400</p>
+</li>
+<li data-section-id="hg2zn2" data-start="184" data-end="208">
+<p data-start="186" data-end="208">Intel HD Graphics 5000</p>
+</li>
+</ul>
+<p data-start="210" data-end="265">These are 4th-generation Intel GPUs (2013-era Haswell).</p>
+<h3 data-section-id="1pnxuv4" data-start="267" data-end="290">Why LM Studio fails</h3>
+<p data-start="292" data-end="307">The log showed:</p>
+<pre class="overflow-visible! px-0!" data-start="309" data-end="380"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>ggml_vulkan: device Vulkan0 does not support 16-bit storage</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="382" data-end="385">and</p>
+<pre class="overflow-visible! px-0!" data-start="387" data-end="438"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>error loading model: Unsupported device</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="440" data-end="612">The Vulkan backend used by LM Studio (via llama.cpp/ggml) expects GPU features that Haswell iGPUs do not provide. Even though Mesa exposes Vulkan support, it is incomplete:</p>
+<pre class="overflow-visible! px-0!" data-start="614" data-end="683"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>MESA-INTEL: warning: Haswell Vulkan support is incomplete</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="685" data-end="787">So LM Studio sees a Vulkan device, tries to use it, then aborts when the required feature checks fail.</p>
+<hr data-start="789" data-end="792">
+<h2 data-section-id="il9mxa" data-start="794" data-end="815">What you should do</h2>
+<h3 data-section-id="nzjhse" data-start="817" data-end="856">Disable GPU acceleration completely</h3>
+<p data-start="858" data-end="871">In LM Studio:</p>
+<ol data-start="873" data-end="1038">
+<li data-section-id="1gm7qkr" data-start="873" data-end="893">
+<p data-start="876" data-end="893">Open <strong data-start="881" data-end="893">Settings</strong></p>
+</li>
+<li data-section-id="s7a1vb" data-start="894" data-end="943">
+<p data-start="897" data-end="943">Go to <strong data-start="903" data-end="914">Runtime</strong> or <strong data-start="918" data-end="943">Hardware Acceleration</strong></p>
+</li>
+<li data-section-id="zjwg50" data-start="944" data-end="979">
+<p data-start="947" data-end="979">Select <strong data-start="954" data-end="961">CPU</strong> instead of Vulkan</p>
+</li>
+<li data-section-id="vm659p" data-start="980" data-end="1018">
+<p data-start="983" data-end="1018">Set <strong data-start="987" data-end="1009">GPU Offload Layers</strong> to <strong data-start="1013" data-end="1018">0</strong></p>
+</li>
+<li data-section-id="1a1l6jd" data-start="1019" data-end="1038">
+<p data-start="1022" data-end="1038">Reload the model</p>
+</li>
+</ol>
+<p data-start="1040" data-end="1092">For your hardware this is the correct configuration.</p>
+<hr data-start="1094" data-end="1097">
+<h2 data-section-id="1qh31se" data-start="1099" data-end="1139">Can the T440s still run local models?</h2>
+<p data-start="1141" data-end="1157">Yes, but on CPU.</p>
+<p data-start="1159" data-end="1181">The T440s usually has:</p>
+<ul data-start="1183" data-end="1265">
+<li data-section-id="1wxt7lv" data-start="1183" data-end="1233">
+<p data-start="1185" data-end="1233">2-core/4-thread or 2-core/4-thread Haswell-U CPU</p>
+</li>
+<li data-section-id="gz966i" data-start="1234" data-end="1265">
+<p data-start="1236" data-end="1265">8–12 GB RAM (sometimes 16 GB)</p>
+</li>
+</ul>
+<p data-start="1267" data-end="1285">Reasonable models:</p>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="1287" data-end="1527" class="w-fit min-w-(--thread-content-width)"><thead data-start="1287" data-end="1305"><tr data-start="1287" data-end="1305"><th data-start="1287" data-end="1295" data-col-size="sm" class="last:pe-10">Model</th><th data-start="1295" data-end="1305" data-col-size="sm" class="last:pe-10">Status</th></tr></thead><tbody data-start="1330" data-end="1527"><tr data-start="1330" data-end="1358"><td data-start="1330" data-end="1345" data-col-size="sm">Gemma 3 270M</td><td data-start="1345" data-end="1358" data-col-size="sm">Excellent</td></tr><tr data-start="1359" data-end="1384"><td data-start="1359" data-end="1371" data-col-size="sm">LFM2 350M</td><td data-start="1371" data-end="1384" data-col-size="sm">Excellent</td></tr><tr data-start="1385" data-end="1410"><td data-start="1385" data-end="1402" data-col-size="sm">TinyLlama 1.1B</td><td data-start="1402" data-end="1410" data-col-size="sm">Good</td></tr><tr data-start="1411" data-end="1435"><td data-start="1411" data-end="1427" data-col-size="sm">Qwen 2.5 0.5B</td><td data-start="1427" data-end="1435" data-col-size="sm">Good</td></tr><tr data-start="1436" data-end="1465"><td data-start="1436" data-end="1455" data-col-size="sm">Qwen 2.5 1.5B Q4</td><td data-start="1455" data-end="1465" data-col-size="sm">Usable</td></tr><tr data-start="1466" data-end="1501"><td data-start="1466" data-end="1482" data-col-size="sm">Phi-3 Mini Q4</td><td data-start="1482" data-end="1501" data-col-size="sm">Slow but usable</td></tr><tr data-start="1502" data-end="1527"><td data-start="1502" data-end="1514" data-col-size="sm">7B models</td><td data-start="1514" data-end="1527" data-col-size="sm">Very slow</td></tr></tbody></table><div class="relative h-0 self-end select-none"><div class="absolute end-0 flex items-end" style="height: 33.25px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary relative z-10 my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<hr data-start="1529" data-end="1532">
+<h2 data-section-id="1qi03x5" data-start="1534" data-end="1566">Verify LM Studio is using CPU</h2>
+<p data-start="1568" data-end="1625">After changing settings, load a model and check the logs.</p>
+<p data-start="1627" data-end="1650">You should <strong data-start="1638" data-end="1645">not</strong> see:</p>
+<pre class="overflow-visible! px-0!" data-start="1652" data-end="1675"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>ggml_vulkan</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="1677" data-end="1679">or</p>
+<pre class="overflow-visible! px-0!" data-start="1681" data-end="1700"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="pointer-events-none absolute end-1.5 top-1 z-2 md:end-2 md:top-1"><button type="button" class="flex gap-1 items-center select-none pointer-events-auto py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div><div class="relative"><div class="pe-11 pt-3" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>Vulkan0</span></code></pre></div></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></pre>
+<p data-start="1702" data-end="1802">Instead you'll see messages mentioning CPU buffers, threads, and model tensors loading successfully.</p>
+<hr data-start="1804" data-end="1807">
+<h2 data-section-id="e4ygmu" data-start="1809" data-end="1848">If LM Studio still insists on Vulkan</h2>
+<p data-start="1850" data-end="1854">Run:</p>
+<pre class="overflow-visible! px-0!" data-start="1856" data-end="1893"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼm">LIBGGML_VULKAN</span><span class="ͼg">=</span><span class="ͼj">0</span><span> lmstudio</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="1895" data-end="1897">or</p>
+<pre class="overflow-visible! px-0!" data-start="1899" data-end="1941"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span class="ͼm">GGML_VULKAN_DISABLE</span><span class="ͼg">=</span><span class="ͼj">1</span><span> lmstudio</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="1943" data-end="1983">depending on how LM Studio is installed.</p>
+<p data-start="1985" data-end="2023">If you're using the AppImage, tell me:</p>
+<pre class="overflow-visible! px-0!" data-start="2025" data-end="2051"><div class="relative w-full mt-4 mb-1"><div class=""><div class="contents"><div class="border border-token-border-light border-radius-3xl corner-superellipse/1.1 rounded-3xl"><div class="relative h-full w-full border-radius-3xl bg-token-bg-elevated-secondary corner-superellipse/1.1 overflow-clip rounded-3xl lxnfua_clipPathFallback"><div class="select-none sticky z-2 top-(--sticky-padding-top)"><div class="flex w-full items-center justify-between py-1.5 ps-4 pe-1.5 font-sans md:ps-5 bg-token-bg-elevated-secondary"><div class="flex max-w-[75%] min-w-0 cursor-default items-center text-sm font-medium justify-self-start text-token-text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm me-2.5 shrink-0"><use href="/cdn/assets/sprites-core-c843cdbd.svg#e45ab3" fill="currentColor"></use></svg>Bash</div><div class="flex flex-row items-center gap-0.5 justify-self-end"><button type="button" class="flex gap-1 items-center select-none py-2 text-sm font-medium hover:bg-black/5 dark:hover:bg-white/10 size-9 rounded-full px-2" aria-label="Copy" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-md"><use href="/cdn/assets/sprites-core-c843cdbd.svg#ce3544" fill="currentColor"></use></svg></button></div></div></div><div class="pointer-events-none absolute inset-x-4 top-12 bottom-4"><div class="pointer-events-none sticky z-40 shrink-0 z-1!" style="top: calc(calc(var(--sticky-padding-top) + 48px) - 1px * 3); margin-bottom: calc(-4px); height: calc(4px); mask-image: linear-gradient(transparent 25%, white 75%);"><div class="sticky bg-token-border-light" style="top: calc(var(--sticky-padding-top) + 48px); height: 1px;"></div></div></div><div class="relative"><div class="h-full min-h-0 min-w-0"><div class="h-full min-h-0 min-w-0" style="width: 100%; transform: none;"><div class=""><div class="relative"><div class="" style="transform: none;"><div class="relative z-0 flex max-w-full"><div id="code-block-viewer" dir="ltr" class="q9tKkq_viewer cm-editor z-10 light:cm-light dark:cm-light flex h-full w-full flex-col items-stretch ͼd ͼr"><div class="cm-scroller"><pre class="cm-content q9tKkq_readonly m-0"><code><span>which lmstudio</span></code></pre></div></div></div></div></div></div></div></div><div class=""><div class="" style="width: 100%; transform: none;"></div></div></div></div></div></div></div></div></pre>
+<p data-start="2053" data-end="2161" data-is-last-node="" data-is-only-node="">or how you installed it (AppImage, .deb, Flatpak, etc.), and I can give the exact command to force CPU mode.</p></div>
+
+<br><hr><br>
+
+<h2><mark>Complete Logs</mark></h2>
+
+<pre>
+
+Developer Logs
+2026-06-16 18:43:30 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:43:30 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:43:30 [DEBUG]
+ 0.00.109.877 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf'
+2026-06-16 18:43:31 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:43:31 [DEBUG]
+ 0.00.349.937 E llama_model_load: error loading model: Unsupported device
+0.00.349.964 E llama_model_load_from_file_impl: failed to load model
+0.00.349.965 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf'
+0.00.349.968 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf': error loading model: Unsupported device
+2026-06-16 18:43:31 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:43:49 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:43:49 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:43:49 [DEBUG]
+ 0.00.160.092
+2026-06-16 18:43:49 [DEBUG]
+ I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf'
+2026-06-16 18:43:49 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:43:50 [DEBUG]
+ 0.00.405.523 E llama_model_load: error loading model: Unsupported device
+0.00.405.543 E llama_model_load_from_file_impl: failed to load model
+0.00.405.545 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf'
+0.00.405.547 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf': error loading model: Unsupported device
+2026-06-16 18:43:50 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:44:03 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:44:03 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:44:03 [DEBUG]
+ 0.00.071.932 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf'
+2026-06-16 18:44:03 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:44:03 [DEBUG]
+ 0.00.269.473 E llama_model_load: error loading model: Unsupported device
+0.00.269.499 E llama_model_load_from_file_impl: failed to load model
+0.00.269.500 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf'
+0.00.269.502 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/LFM2.5-1.2B-Instruct-GGUF/LFM2.5-1.2B-Instruct-Q6_K.gguf': error loading model: Unsupported device
+2026-06-16 18:44:03 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:47:29 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:47:29 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:47:29 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+0.00.110.637 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:47:30 [DEBUG]
+ 0.00.668.125 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:47:30 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:47:30 [DEBUG]
+ 0.00.836.575 E llama_model_load: error loading model: Unsupported device
+0.00.836.602 E llama_model_load_from_file_impl: failed to load model
+0.00.836.603 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.00.836.606 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:47:30 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:47:58 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:47:58 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:47:58 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+0.00.107.554 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:47:59 [DEBUG]
+ 0.00.632.439 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:47:59 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:47:59 [DEBUG]
+ 0.00.802.706 E llama_model_load: error loading model: Unsupported device
+0.00.802.735 E llama_model_load_from_file_impl: failed to load model
+0.00.802.737 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.00.802.739 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:47:59 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:53:59 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:53:59 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:53:59 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+0.00.161.414 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:54:00 [DEBUG]
+ 0.00.813.256
+2026-06-16 18:54:00 [DEBUG]
+ W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:54:00 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:54:00 [DEBUG]
+ 0.01.092.471 E llama_model_load: error loading model: Unsupported device
+0.01.092.498 E llama_model_load_from_file_impl: failed to load model
+0.01.092.500 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.01.092.502 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:54:00 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:56:57 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 18:56:58 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:56:58 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+0.00.113.876 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:56:58 [DEBUG]
+ 0.00.664.116 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:56:58 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:56:58 [DEBUG]
+ 0.00.832.215 E llama_model_load: error loading model: Unsupported device
+0.00.832.233 E llama_model_load_from_file_impl: failed to load model
+0.00.832.234 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.00.832.237 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:56:58 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:58:53 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8196 kv_unified=true
+2026-06-16 18:58:53 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:58:53 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+0.00.141.947 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:58:54 [DEBUG]
+ 0.00.766.698 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:58:54 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:58:54 [DEBUG]
+ 0.00.952.940 E llama_model_load: error loading model: Unsupported device
+0.00.952.974 E llama_model_load_from_file_impl: failed to load model
+0.00.952.976 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.00.952.979 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:58:54 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:59:22 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8196 kv_unified=true
+2026-06-16 18:59:22 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:59:22 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+0.00.125.143 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:59:23 [DEBUG]
+ 0.00.736.472 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:59:23 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:59:23 [DEBUG]
+ 0.00.917.603 E llama_model_load: error loading model: Unsupported device
+0.00.917.620 E llama_model_load_from_file_impl: failed to load model
+0.00.917.622 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.00.917.624 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:59:23 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 18:59:29 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8196 kv_unified=true
+2026-06-16 18:59:29 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 18:59:29 [DEBUG]
+ Applying legacy swa_full=true default for arch gemma3
+2026-06-16 18:59:29 [DEBUG]
+ 0.00.117.496 I srv    load_model: loading model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+2026-06-16 18:59:30 [DEBUG]
+ 0.00.682.134 W load: control-looking token:    212 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+2026-06-16 18:59:30 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 18:59:30 [DEBUG]
+ 0.00.855.008 E llama_model_load: error loading model: Unsupported device
+0.00.855.042 E llama_model_load_from_file_impl: failed to load model
+0.00.855.044 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf'
+0.00.855.046 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/lmstudio-community/gemma-3-270m-it-qat-GGUF/gemma-3-270m-it-qat-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 18:59:30 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 19:02:02 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 19:02:02 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 19:02:02 [DEBUG]
+ 0.00.092.224 I srv    load_model: loading model '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf'
+2026-06-16 19:02:02 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 19:02:02 [DEBUG]
+ 0.00.300.094 E llama_model_load: error loading model: Unsupported device
+0.00.300.121 E llama_model_load_from_file_impl: failed to load model
+0.00.300.123 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf'
+0.00.300.125 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 19:02:02 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 19:02:06 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 19:02:06 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 19:02:06 [DEBUG]
+ 0.00.077.805 I srv    load_model: loading model '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf'
+2026-06-16 19:02:06 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 19:02:07 [DEBUG]
+ 0.00.301.853 E llama_model_load: error loading model: Unsupported device
+0.00.301.872 E llama_model_load_from_file_impl: failed to load model
+0.00.301.874 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf'
+0.00.301.876 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 19:02:07 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+2026-06-16 19:02:38 [DEBUG]
+ LlamaV4::load called with model path: /home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf
+LlamaV4::load config: n_parallel=4 n_ctx=8192 kv_unified=true
+2026-06-16 19:02:38 [DEBUG]
+ MESA-INTEL: warning: Haswell Vulkan support is incomplete
+2026-06-16 19:02:38 [DEBUG]
+ 0.00.079.694 I srv    load_model: loading model '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf'
+2026-06-16 19:02:38 [DEBUG]
+ ggml_vulkan: device Vulkan0 does not support 16-bit storage.
+2026-06-16 19:02:38 [DEBUG]
+ 0.00.316.444 E llama_model_load: error loading model: Unsupported device
+0.00.316.476 E llama_model_load_from_file_impl: failed to load model
+0.00.316.478 E common_init_from_params: failed to load model '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf'
+0.00.316.480 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/LiquidAI/LFM2-350M-GGUF/LFM2-350M-Q4_0.gguf': error loading model: Unsupported device
+2026-06-16 19:02:38 [DEBUG]
+ [LLMProcess] Failed to load model _0x3f9935 [Error]: Failed to load model.
+    at _0x3f7ad2.loadModel (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:562652)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async _0x3f7ad2.handleMessage (/opt/LM-Studio/resources/app/.webpack/lib/llmworker.js:1:554788) {
+  cause: 'Failed to load model',
+  suggestion: undefined,
+  errorData: undefined,
+  data: undefined,
+  displayData: undefined,
+  title: 'Failed to load model.'
+}
+</pre>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/day-out-with-lm-studio-for-running.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+<br>
+
+<span style="opacity: 0;">Tags: Generative AI,Agentic AI,</span>
