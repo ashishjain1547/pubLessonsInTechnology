@@ -1,0 +1,1034 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        button { display: none; } 
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/attempting-to-run-local-llm-via-lm.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+&nbsp;&nbsp;
+
+<a href="https://github.com/ashishjain1547/deeplearningai_labs/blob/main/Natural%20Language%20Processing%20Specialization/Course%204%20-%20NLP%20With%20Attention%20Models/Week%201/Ungraded%20Lab%201%20-%20Basic%20Attention%20Operation/NEURAL%20MACHINE%20TRANSLATION%20BY%20JOINTLY%20LEARNING%20TO%20ALIGN%20AND%20TRANSLATE%20-%201409.0473v7.pdf" target="_blank" class="customLink">Download the 2014 paper on Additive Attention</a>
+&nbsp;&nbsp;
+<a href="https://github.com/ashishjain1547/deeplearningai_labs/blob/main/Natural%20Language%20Processing%20Specialization/Course%204%20-%20NLP%20With%20Attention%20Models/Week%201/Ungraded%20Lab%201%20-%20Basic%20Attention%20Operation/C4_W1_Ungraded_Lab_1_Basic_Attention.ipynb" target="_blank" class="customLink">View the Lab Work From DeepLearning.ai</a>
+
+<br><br>
+
+<style>
+div.customOuterWrapper1852 {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    color: #2c2c2c;
+    line-height: 1.85;
+}
+
+div.customOuterWrapper1852 h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    color: #3b2f2f;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+}
+
+div.customOuterWrapper1852 h1.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #6b5b5b;
+    margin-top: 0;
+    margin-bottom: 36px;
+}
+
+div.customOuterWrapper1852 h2 {
+    font-size: 1.7rem;
+    color: #4a3728;
+    border-left: 6px solid #c49a6c;
+    padding-left: 16px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+div.customOuterWrapper1852 h3 {
+    font-size: 1.3rem;
+    color: #5c4033;
+    margin-top: 32px;
+    margin-bottom: 10px;
+}
+
+div.customOuterWrapper1852 p {
+    font-size: 1.07rem;
+    margin-bottom: 18px;
+}
+
+div.customOuterWrapper1852 ul, div.customOuterWrapper1852 ol {
+    margin-bottom: 20px;
+    padding-left: 28px;
+}
+
+div.customOuterWrapper1852 li {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+}
+
+div.customOuterWrapper1852 code {
+    background: #f7efe5;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.93em;
+    color: #8b4513;
+}
+
+div.customOuterWrapper1852 pre {
+    background: #2b2420;
+    color: #fae5c8;
+    padding: 20px 24px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,0.3);
+}
+
+div.customOuterWrapper1852 pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+}
+
+div.customOuterWrapper1852 .highlight-box {
+    background: #fffaf2;
+    border: 1px solid #dec7a2;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 22px;
+}
+
+div.customOuterWrapper1852 .analogy-box {
+    background: #f0f8e8;
+    border-left: 5px solid #7a9f5a;
+    border-radius: 0 10px 10px 0;
+    padding: 16px 22px;
+    margin-bottom: 22px;
+}
+
+div.customOuterWrapper1852 .analogy-box strong {
+    color: #4a6b2a;
+}
+
+div.customOuterWrapper1852 .math-box {
+    background: #f9f4ec;
+    border-radius: 10px;
+    padding: 14px 22px;
+    margin-bottom: 20px;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+div.customOuterWrapper1852 .step-number {
+    display: inline-block;
+    background: #c49a6c;
+    color: #fff;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+div.customOuterWrapper1852 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+
+div.customOuterWrapper1852 th, div.customOuterWrapper1852 td {
+    padding: 10px 14px;
+    border: 1px solid #d4b896;
+    text-align: left;
+    font-size: 0.98rem;
+}
+
+div.customOuterWrapper1852 th {
+    background: #c49a6c;
+    color: #fff;
+    font-weight: 600;
+}
+
+div.customOuterWrapper1852 tr:nth-child(even) td {
+    background: #faf2e8;
+}
+
+div.customOuterWrapper1852 .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+div.customOuterWrapper1852 .summary-card {
+    background: #fffaf3;
+    border-radius: 10px;
+    padding: 18px 20px;
+    border: 1px solid #dec7a2;
+}
+
+div.customOuterWrapper1852 .summary-card h4 {
+    margin: 0 0 8px 0;
+    color: #5c4033;
+    font-size: 1.05rem;
+}
+
+div.customOuterWrapper1852 .output-sample {
+    background: #e6dccf;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+div.customOuterWrapper1852 hr {
+    border: none;
+    border-top: 2px dashed #d4b896;
+    margin: 32px 0;
+}
+
+div.customOuterWrapper1852 .footer-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8b7a6b;
+    margin-top: 40px;
+}
+</style>
+
+
+<div class="customOuterWrapper1852">
+
+<h1>🧠 Basic Attention Operation</h1>
+<h1 class="subtitle">A Layman's Guide to Understanding &amp; Implementing Attention from Scratch</h1>
+
+<!-- ===== SECTION 0: THE BIG PICTURE ===== -->
+<h2>0. The Big Picture: What Problem Does Attention Solve?</h2>
+
+<p>
+Imagine you are translating a long French sentence into English. The old-school way (before attention was invented) worked like this: you would read the <em>entire</em> French sentence, compress its meaning into a single, fixed-size summary in your head, and then spit out the English translation from that summary alone. This is hard—especially for long sentences—because that little summary can't possibly hold <em>all</em> the details. Important nuances get lost.
+</p>
+
+<p>
+<strong>Attention</strong> changes the game. Instead of forcing the model to cram everything into one final thought, attention lets the decoder (the part that writes the output) <em>look back</em> at <strong>every single input word</strong> whenever it needs to produce the next output word. Think of it as the model having a highlighter: at each step of generating the translation, it highlights which input words are most relevant <em>right now</em>.
+</p>
+
+<div class="analogy-box">
+<strong>🔎 Everyday Analogy:</strong> You're at a crowded party. Someone across the room is talking to you, but there's a lot of background noise. Your brain does "attention" naturally—it <em>focuses</em> on the speaker's voice while <em>tuning out</em> the clinking glasses and other conversations. In a machine translation model, the "speaker's voice" is the relevant input word, and the "background noise" is the less-important input words. Attention is just a mathematical way of doing that focusing.
+</div>
+
+<p>
+In this ungraded lab, you implement a basic version of attention from the influential paper by <strong>Bahdanau et al. (2014)</strong>. You'll use only <strong>NumPy</strong>—no deep learning frameworks like PyTorch or TensorFlow—so you can see every moving part up close. The entire attention mechanism can be broken into <strong>three simple steps</strong>:
+</p>
+
+<ol>
+    <li><strong>Step 1 – Alignment Scores:</strong> Compare the decoder's current "mood" (hidden state) with each encoder word's "meaning" (hidden state) to get raw similarity numbers.</li>
+    <li><strong>Step 2 – Weights (Softmax):</strong> Turn those raw scores into percentages that add up to 100%, telling us exactly how much attention each input word deserves.</li>
+    <li><strong>Step 3 – Context Vector:</strong> Use those percentages to blend the encoder's hidden states into one summary vector that captures what's important <em>right now</em>.</li>
+</ol>
+
+<p>
+Let's walk through every line of code in this notebook, with plenty of examples and analogies.
+</p>
+
+<hr>
+
+<!-- ===== SECTION 1: SETUP ===== -->
+<h2>1. The Setup Code: Imports and the Softmax Function</h2>
+
+<p>The very first code cell in the notebook sets up the tools we'll need:</p>
+
+<pre><code>import numpy as np
+
+def softmax(x, axis=0):
+    return np.exp(x) / np.expand_dims(np.sum(np.exp(x), axis=axis), axis)</code></pre>
+
+<h3>1.1 What is NumPy?</h3>
+<p>
+<code>numpy</code> (imported as <code>np</code>) is Python's numerical powerhouse. It gives us <strong>arrays</strong>—think of them as supercharged lists that can hold numbers in rows and columns, like a spreadsheet. But unlike regular Python lists, NumPy lets us do math on <em>entire arrays at once</em>. If you have a list of 1,000 numbers and want to multiply each by 2, with NumPy you write <code>arr * 2</code> and it's done in one go—no loops needed. This is called <strong>vectorized</strong> computation, and it's the secret sauce behind all modern machine learning.
+</p>
+
+<h3>1.2 The Softmax Function — Turning Numbers into "Attention Percentages"</h3>
+
+<p>
+The <code>softmax</code> function is one of the most important functions in all of deep learning. Let's build an intuition for it step by step.
+</p>
+
+<div class="analogy-box">
+<strong>🍕 Pizza Analogy:</strong> Imagine three friends ordering pizza. Friend A is <em>starving</em> and rates their hunger as 10. Friend B is moderately hungry and rates it as 5. Friend C just ate and rates their hunger as 1. How do we split one pizza fairly? We could just say A gets 10 slices, B gets 5, C gets 1—but that's 16 slices, not one pizza! Softmax solves this: it converts those raw "hunger scores" (10, 5, 1) into <em>percentages</em> that sum to 100%. A might get ~62%, B gets ~31%, and C gets ~7%. Everyone gets a fair share of the one pizza.
+</div>
+
+<p>Mathematically, softmax does this:</p>
+
+<ol>
+    <li><strong>Exponentiate each number</strong> (<code>np.exp(x)</code>): This makes all numbers positive and amplifies differences. A small gap becomes a bigger gap.</li>
+    <li><strong>Sum up all the exponentiated numbers</strong> (<code>np.sum(np.exp(x), axis=axis)</code>).</li>
+    <li><strong>Divide each exponentiated number by that sum</strong>. Now every number is between 0 and 1, and they all add up to exactly 1.</li>
+</ol>
+
+<div class="highlight-box">
+<strong>🔢 Concrete Example:</strong> Let's say our raw scores are <code>[2.0, 1.0, 0.1]</code>.
+    <ul>
+        <li>Step 1 – Exponentiate: <code>e² ≈ 7.39</code>, <code>e¹ ≈ 2.72</code>, <code>e⁰·¹ ≈ 1.11</code> → <code>[7.39, 2.72, 1.11]</code></li>
+        <li>Step 2 – Sum: <code>7.39 + 2.72 + 1.11 = 11.22</code></li>
+        <li>Step 3 – Divide: <code>[7.39/11.22, 2.72/11.22, 1.11/11.22]</code> → <code>[0.66, 0.24, 0.10]</code> (roughly)</li>
+    </ul>
+    Result: 66% attention to item 1, 24% to item 2, 10% to item 3. Notice they sum to 100%.
+</div>
+
+<p>
+The <code>axis</code> parameter controls <em>which direction</em> the softmax is applied. <code>axis=0</code> means "each column sums to 1" (operate down the rows), and <code>axis=1</code> means "each row sums to 1" (operate across the columns). In our attention code, we'll use the default <code>axis=0</code> because our scores come as a column vector (shape <code>[5, 1]</code>).
+</p>
+
+<p>
+The function uses <code>np.expand_dims</code> to make sure the division broadcasts correctly—this is a NumPy technicality that ensures the shapes align. Don't worry too much about it; just know that it makes the math work.
+</p>
+
+<hr>
+
+<!-- ===== SECTION 2: THE DATA ===== -->
+<h2>2. The Synthetic Data: Our "Toy" Example</h2>
+
+<p>Before we dive into the attention code, the notebook sets up some <strong>synthetic (fake) data</strong> so we can test our functions:</p>
+
+<pre><code>hidden_size = 16
+attention_size = 10
+input_length = 5
+
+np.random.seed(42)
+
+encoder_states = np.random.randn(input_length, hidden_size)
+decoder_state = np.random.randn(1, hidden_size)
+
+layer_1 = np.random.randn(2*hidden_size, attention_size)
+layer_2 = np.random.randn(attention_size, 1)</code></pre>
+
+<h3>2.1 What Do These Numbers Mean?</h3>
+
+<table>
+    <tr><th>Variable</th><th>Value</th><th>What It Represents</th></tr>
+    <tr>
+        <td><code>hidden_size = 16</code></td>
+        <td>16</td>
+        <td>The size of each "thought vector." Every word gets encoded as 16 numbers that capture its meaning. In a real translation model, this might be 256, 512, or even 1024.</td>
+    </tr>
+    <tr>
+        <td><code>attention_size = 10</code></td>
+        <td>10</td>
+        <td>The size of the "attention network's" middle layer. Think of it as 10 little "judges" that help decide how relevant each word is.</td>
+    </tr>
+    <tr>
+        <td><code>input_length = 5</code></td>
+        <td>5</td>
+        <td>Our pretend input sentence has 5 words. For example: "The cat sat on mat" → 5 word-vectors.</td>
+    </tr>
+</table>
+
+<h3>2.2 The Arrays, Explained</h3>
+
+<div class="highlight-box">
+<strong>📦 <code>encoder_states</code></strong> – shape <code>(5, 16)</code><br>
+This is a 5×16 matrix. Each of the 5 rows is one input word's "meaning vector"—16 numbers that encode what that word means in context. Row 0 = word 1 ("The"), row 1 = word 2 ("cat"), etc. This is what the encoder produced after reading the entire input sentence.
+
+<br><br>
+<strong>🧭 <code>decoder_state</code></strong> – shape <code>(1, 16)</code><br>
+This is the decoder's current "state of mind"—a single 16-number vector representing what it has produced so far and what it's thinking about next. In a real model, this updates after every output word. For this lab, we just have one decoder state to work with.
+
+<br><br>
+<strong>⚖️ <code>layer_1</code></strong> – shape <code>(32, 10)</code><br>
+The first layer of our tiny neural network. It takes the concatenated encoder+decoder information (32 numbers = 16+16) and transforms it into 10 "relevance features." These are <em>weights</em>—numbers that get multiplied with the input. In a real model, they'd be learned through training.
+
+<br><br>
+<strong>⚖️ <code>layer_2</code></strong> – shape <code>(10, 1)</code><br>
+The second layer. It takes those 10 relevance features and condenses them into a single score per word. Again, these are weights that would be learned during training.
+</div>
+
+<p>
+<code>np.random.seed(42)</code> ensures that every time you run this notebook, you get the <em>same</em> random numbers. This is important for reproducibility—so the expected outputs in the notebook always match.
+</p>
+
+<hr>
+
+<!-- ===== SECTION 3: ALIGNMENT SCORES ===== -->
+<h2>3. Step 1 — Calculating Alignment Scores</h2>
+
+<p>This is the heart of the attention mechanism. We need to answer: <strong>"For each input word, how relevant is it to what the decoder is trying to produce right now?"</strong></p>
+
+<div class="analogy-box">
+<strong>🎯 Target Analogy:</strong> Imagine you're playing darts. You (the decoder) stand at the throwing line with a dart in hand. On the wall, there are 5 dartboards (the 5 encoder words). Before you throw, you need to <em>aim</em> at each board and decide which one you want to hit. The alignment score is essentially your "aim quality" for each board—a high score means you're well-aligned with that board; a low score means you're not really aiming at it.
+</div>
+
+<h3>3.1 The Mathematical Formula</h3>
+
+<div class="math-box">
+    e<sub>ij</sub> = v<sub>a</sub><sup>⊤</sup> · tanh( W<sub>a</sub> · s<sub>i−1</sub> + U<sub>a</sub> · h<sub>j</sub> )
+</div>
+
+<p>This looks intimidating, so let's unpack it piece by piece:</p>
+
+<ul>
+    <li><strong>h<sub>j</sub></strong> – The hidden state of the j-th encoder word (the "meaning" of input word j). In our code, this is <code>encoder_states[j]</code>, a vector of 16 numbers.</li>
+    <li><strong>s<sub>i−1</sub></strong> – The decoder's hidden state from the previous step. In our code, <code>decoder_state</code>, also 16 numbers.</li>
+    <li><strong>W<sub>a</sub> and U<sub>a</sub></strong> – Weight matrices that transform the decoder state and encoder state respectively. In practice, we <em>concatenate</em> the two states and use one big weight matrix (our <code>layer_1</code>).</li>
+    <li><strong>tanh</strong> – The hyperbolic tangent function. It squashes numbers into the range [-1, 1]. It adds <em>non-linearity</em>, which allows the network to learn complex relationships.</li>
+    <li><strong>v<sub>a</sub></strong> – A final weight vector (our <code>layer_2</code>) that collapses everything into a single score.</li>
+</ul>
+
+<h3>3.2 The Implementation, Line by Line</h3>
+
+<p>Here's the <code>alignment</code> function we need to fill in:</p>
+
+<pre><code>def alignment(encoder_states, decoder_state):
+    # Step A: Concatenate
+    inputs = np.concatenate(
+        (encoder_states, decoder_state.repeat(input_length, axis=0)),
+        axis=1
+    )
+    
+    # Step B: First layer + tanh
+    activations = np.tanh(np.matmul(inputs, layer_1))
+    
+    # Step C: Second layer (no tanh)
+    scores = np.matmul(activations, layer_2)
+    
+    return scores</code></pre>
+
+<h4>Step A — Concatenation: Gluing Two Things Together</h4>
+
+<p>
+We have <code>encoder_states</code> which is shape <code>(5, 16)</code> and <code>decoder_state</code> which is shape <code>(1, 16)</code>. We need to combine them so that <em>each encoder word gets paired with the same decoder state</em>. This is like putting two spreadsheets side by side.
+</p>
+
+<div class="highlight-box">
+<strong>📊 Visual Example:</strong> Imagine the encoder has 3 words (not 5) and hidden size is 4 (not 16):
+
+<br><br>
+<strong>Encoder states (3×4):</strong>
+<pre>Word 0: [a₁, a₂, a₃, a₄]
+Word 1: [b₁, b₂, b₃, b₄]
+Word 2: [c₁, c₂, c₃, c₄]</pre>
+
+<strong>Decoder state (1×4):</strong>
+<pre>        [d₁, d₂, d₃, d₄]</pre>
+
+<strong>After repeating the decoder state (3×4):</strong>
+<pre>        [d₁, d₂, d₃, d₄]
+        [d₁, d₂, d₃, d₄]
+        [d₁, d₂, d₃, d₄]</pre>
+
+<strong>After concatenation (3×8):</strong>
+<pre>Word 0: [a₁, a₂, a₃, a₄, d₁, d₂, d₃, d₄]
+Word 1: [b₁, b₂, b₃, b₄, d₁, d₂, d₃, d₄]
+Word 2: [c₁, c₂, c₃, c₄, d₁, d₂, d₃, d₄]</pre>
+</div>
+
+<p>
+<code>decoder_state.repeat(input_length, axis=0)</code> copies the decoder state 5 times (once for each input word) so it becomes shape <code>(5, 16)</code>. Then <code>np.concatenate(..., axis=1)</code> glues the encoder states (5×16) and the repeated decoder states (5×16) side by side along axis 1 (the column axis), producing a <code>(5, 32)</code> matrix. Each of the 5 rows now has 32 numbers: 16 from an encoder word + 16 from the decoder state.
+</p>
+
+<div class="analogy-box">
+<strong>🧩 Puzzle Analogy:</strong> Think of each encoder word as a puzzle piece with a unique shape (16 numbers). The decoder state is like a "target shape" you're trying to match. Concatenation puts each puzzle piece next to the target shape so you can compare them. It's like laying a key next to each lock to see which one fits best.
+</div>
+
+<h4>Step B — Matrix Multiplication + tanh: The "Comparison Engine"</h4>
+
+<p>
+<code>np.matmul(inputs, layer_1)</code> performs matrix multiplication between our concatenated data <code>(5, 32)</code> and the first layer weights <code>(32, 10)</code>. The result is a <code>(5, 10)</code> matrix.
+</p>
+
+<p>
+<strong>What does matrix multiplication actually do here?</strong> Each of the 32 input numbers gets multiplied by a corresponding weight in <code>layer_1</code>, and then products are summed in specific combinations to produce 10 output numbers per word. You can think of the 10 outputs as 10 different "aspects of relevance" that the network checks:
+</p>
+
+<ul>
+    <li>Aspect 1: "Do the subject nouns match?"</li>
+    <li>Aspect 2: "Is the tense consistent?"</li>
+    <li>Aspect 3: "Are the word positions close?"</li>
+    <li>...and 7 more learned aspects.</li>
+</ul>
+
+<p>
+After the multiplication, we apply <code>np.tanh()</code>. The tanh function looks like an S-curve:
+</p>
+
+<ul>
+    <li>Very negative numbers → close to -1</li>
+    <li>Zero → 0</li>
+    <li>Very positive numbers → close to +1</li>
+</ul>
+
+<p>
+Tanh serves two purposes: (1) it <strong>bounds</strong> the values so nothing explodes to infinity, and (2) it adds <strong>non-linearity</strong>. Without non-linearity, stacking layers would be pointless—two linear transformations in a row are equivalent to just one. Tanh breaks that linearity, letting the network learn richer patterns.
+</p>
+
+<h4>Step C — Second Layer: Producing a Single Score</h4>
+
+<p>
+<code>np.matmul(activations, layer_2)</code> multiplies our <code>(5, 10)</code> activations with the <code>(10, 1)</code> weights of <code>layer_2</code>. The result is a <code>(5, 1)</code> column vector—one number per input word.
+</p>
+
+<p>
+<strong>No tanh here!</strong> The notebook explicitly reminds us: "Remember that you don't need tanh here." Why? Because we want raw scores that can be any real number (positive or negative). The softmax in the next step will handle normalizing them. If we applied tanh, all scores would be squashed between -1 and 1, which would make the softmax produce very uniform (uninteresting) weights.
+</p>
+
+<div class="highlight-box">
+<strong>🎯 Expected Output:</strong> If you implemented the function correctly, running the test cell should print:
+<pre>[[4.35790943]
+ [5.92373433]
+ [4.18673175]
+ [2.11437202]
+ [0.95767155]]</pre>
+
+<strong>Interpretation:</strong> Word 2 (index 1, score 5.92) is the <em>most relevant</em> to the decoder's current state. Word 5 (index 4, score 0.96) is the <em>least relevant</em>. But these are raw scores—they're not percentages yet. That's the next step!
+</div>
+
+<hr>
+
+<!-- ===== SECTION 4: SOFTMAX INTO WEIGHTS ===== -->
+<h2>4. Step 2 — Turning Alignment Scores into Attention Weights</h2>
+
+<p>
+Now we have 5 raw scores, one per input word. But they're on an arbitrary scale. Word 2's score of 5.92—is that a lot? A little? We need to convert these into <strong>percentages</strong> that sum to 100%, so we know <em>exactly</em> how to split our attention.
+</p>
+
+<div class="math-box">
+    α<sub>ij</sub> = exp(e<sub>ij</sub>) / Σ<sub>k=1</sub><sup>K</sup> exp(e<sub>ik</sub>)
+</div>
+
+<p>
+This is exactly what our <code>softmax</code> function does. Let's trace through the math with our actual expected scores:
+</p>
+
+<div class="highlight-box">
+<strong>🔢 Step-by-step with expected scores:</strong>
+<pre>Scores:        [4.36,  5.92,  4.19,  2.11,  0.96]
+
+exp(scores):   [78.1,  373.0,  65.8,   8.3,   2.6]
+               (approximate values)
+
+Sum of exps:   78.1 + 373.0 + 65.8 + 8.3 + 2.6 = 527.8
+
+Weights:       [78.1/527.8, 373.0/527.8, 65.8/527.8, 8.3/527.8, 2.6/527.8]
+             = [0.148,      0.707,       0.125,      0.016,     0.005]
+
+Interpretation: ~14.8% attention on word 1
+                ~70.7% attention on word 2  ←  THE MOST IMPORTANT WORD!
+                ~12.5% attention on word 3
+                 ~1.6% attention on word 4
+                 ~0.5% attention on word 5
+</pre>
+</div>
+
+<div class="analogy-box">
+<strong>📢 Megaphone Analogy:</strong> Imagine you're at a concert. Five singers are on stage, each singing at a different volume. The sound engineer has a mixing board with 5 sliders. The alignment scores are like the raw volume readings from each microphone. The softmax is like the engineer adjusting the sliders so the <em>total</em> output volume is constant, but each singer contributes a different <em>proportion</em>. Singer 2 (70.7%) is the lead vocalist—you hear them the most. Singer 5 (0.5%) is barely audible.
+</div>
+
+<p>
+<strong>Key property:</strong> The exponential function (<code>eˣ</code>) makes softmax <em>peaky</em>. Notice how a score of 5.92 becomes weight 0.707 while 0.96 becomes 0.005. The exponential amplifies differences, so the model can be very decisive about where to focus.
+</p>
+
+<hr>
+
+<!-- ===== SECTION 5: CONTEXT VECTOR ===== -->
+<h2>5. Step 3 — Weighting &amp; Summing: The Context Vector</h2>
+
+<p>
+This is the final step. We have our attention weights (percentages), and we have our encoder hidden states (meaning vectors for each word). Now we combine them:
+</p>
+
+<div class="math-box">
+    c<sub>i</sub> = Σ<sub>j=1</sub><sup>K</sup> α<sub>ij</sub> · h<sub>j</sub>
+</div>
+
+<p>In plain English: <strong>"Multiply each word's meaning vector by its attention weight, then add them all up."</strong></p>
+
+<h3>5.1 The Implementation</h3>
+
+<pre><code>def attention(encoder_states, decoder_state):
+    # Step 1: Get alignment scores
+    scores = alignment(encoder_states, decoder_state)
+    
+    # Step 2: Convert scores to weights via softmax
+    weights = softmax(scores)
+    
+    # Step 3: Multiply each encoder vector by its weight
+    weighted_scores = encoder_states * weights
+    
+    # Step 4: Sum up to get one context vector
+    context = np.sum(weighted_scores, axis=0)
+    
+    return context</code></pre>
+
+<h4>Step 3 — Element-wise Multiplication</h4>
+
+<p>
+<code>encoder_states * weights</code> uses NumPy <strong>broadcasting</strong>. <code>encoder_states</code> is <code>(5, 16)</code> and <code>weights</code> is <code>(5, 1)</code>. NumPy automatically stretches the weights across all 16 columns, so each row of the encoder states gets multiplied by its corresponding weight.
+</p>
+
+<div class="highlight-box">
+<strong>📊 Visual Example (simplified to 3 words, hidden size 4):</strong>
+
+<pre>
+Encoder states (3×4):         Weights (3×1):
+[a₁, a₂, a₃, a₄]              [0.15]
+[b₁, b₂, b₃, b₄]              [0.70]
+[c₁, c₂, c₃, c₄]              [0.15]
+
+Weighted states (3×4):
+[0.15×a₁, 0.15×a₂, 0.15×a₃, 0.15×a₄]    ← word 1, scaled down to 15%
+[0.70×b₁, 0.70×b₂, 0.70×b₃, 0.70×b₄]    ← word 2, LOUD AND CLEAR at 70%
+[0.15×c₁, 0.15×c₂, 0.15×c₃, 0.15×c₄]    ← word 3, scaled down to 15%
+</pre>
+</div>
+
+<p>
+Notice how the middle row (word 2, weight 0.70) keeps most of its original magnitude, while words 1 and 3 are significantly dampened. This is the model saying: "Word 2 matters most right now, so I'll preserve its information almost fully. Words 1 and 3? Meh, I'll take just a little from each."
+</p>
+
+<h4>Step 4 — Summation</h4>
+
+<p>
+<code>np.sum(weighted_scores, axis=0)</code> adds up all 5 rows <em>column-wise</em>. The result is a single vector of 16 numbers—the <strong>context vector</strong>.
+</p>
+
+<div class="analogy-box">
+<strong>🍲 Soup Analogy:</strong> Imagine making a soup. You have 5 ingredients (words), each with its own flavor profile (hidden state). The attention weights tell you how much of each ingredient to add. Word 2 (weight 0.70) is like adding a full cup of carrots. Word 5 (weight 0.005) is like a tiny pinch of salt. When you stir everything together (<code>np.sum</code>), you get one pot of soup (the context vector) that tastes mostly of carrots but has subtle hints of the other ingredients. This soup is what the decoder "tastes" to decide on the next output word.
+</div>
+
+<h3>5.2 Expected Output</h3>
+
+<div class="highlight-box">
+<strong>✅ If your <code>attention</code> function is correct, the context vector should be:</strong>
+<pre>[-0.63514569  0.04917298 -0.43930867 -0.9268003   1.01903919 -0.43181409
+  0.13365099 -0.84746874 -0.37572203  0.18279832 -0.90452701  0.17872958
+ -0.58015282 -0.58294027 -0.75457577  1.32985756]</pre>
+
+This 16-number vector is the <strong>attention-weighted summary</strong> of all 5 input words, biased toward whichever word the model deemed most relevant.
+</div>
+
+<hr>
+
+<!-- ===== SECTION 6: PUTTING IT ALL TOGETHER ===== -->
+<h2>6. The Complete Picture: Tying Everything Together</h2>
+
+<p>
+Let's zoom out and see how all three steps connect:
+</p>
+
+<div class="summary-grid">
+    <div class="summary-card">
+        <h4><span class="step-number">1</span> Alignment Scores</h4>
+        <p><strong>Input:</strong> Encoder states (5×16) + Decoder state (1×16)</p>
+        <p><strong>Operation:</strong> Concatenate → Multiply by layer_1 → tanh → Multiply by layer_2</p>
+        <p><strong>Output:</strong> 5 raw scores (5×1)</p>
+        <p><strong>Purpose:</strong> "How relevant is each input word to the decoder's current state?"</p>
+    </div>
+    <div class="summary-card">
+        <h4><span class="step-number">2</span> Attention Weights</h4>
+        <p><strong>Input:</strong> 5 raw alignment scores</p>
+        <p><strong>Operation:</strong> Softmax (exponentiate → sum → divide)</p>
+        <p><strong>Output:</strong> 5 percentages that sum to 1.0</p>
+        <p><strong>Purpose:</strong> "What fraction of my attention should each word get?"</p>
+    </div>
+    <div class="summary-card">
+        <h4><span class="step-number">3</span> Context Vector</h4>
+        <p><strong>Input:</strong> Encoder states (5×16) + Attention weights (5×1)</p>
+        <p><strong>Operation:</strong> Multiply each row by its weight → Sum all rows</p>
+        <p><strong>Output:</strong> One context vector (16 numbers)</p>
+        <p><strong>Purpose:</strong> "A weighted blend of all input meanings, focused on what matters now."</p>
+    </div>
+    <div class="summary-card">
+        <h4>🎯 End Result</h4>
+        <p>The context vector is fed into the decoder alongside its own hidden state to predict the next output word. In the next time step, the decoder updates its state, we recalculate attention (now with a new decoder state), and the cycle repeats.</p>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 7: WHY THIS MATTERS ===== -->
+<h2>7. Why Is Attention Such a Big Deal?</h2>
+
+<p>
+Before attention, sequence-to-sequence models (like early Google Translate) had a critical bottleneck: the <strong>entire input sentence</strong> had to be compressed into a single fixed-size vector. For a 50-word sentence, that's like trying to summarize "War and Peace" on a Post-it note. Attention removes this bottleneck by giving the decoder direct access to every input word.
+</p>
+
+<h3>7.1 Three Revolutionary Benefits of Attention</h3>
+
+<ol>
+    <li>
+        <strong>Handles Long Sequences:</strong> No matter how long the input is (5 words or 500), attention can "look back" at any position. The context vector is always a fresh blend tailored to the current decoding step.
+    </li>
+    <li>
+        <strong>Interpretability:</strong> We can <em>visualize</em> the attention weights as a heatmap and actually <em>see</em> which input words the model focused on when producing each output word. This is incredibly valuable for debugging and understanding model behavior.
+    </li>
+    <li>
+        <strong>Better Translation Quality:</strong> Especially for languages with different word orders (like English → Japanese), attention lets the model reorder concepts naturally because it can attend to input words in any order.
+    </li>
+</ol>
+
+<h3>7.2 From Bahdanau to Transformers</h3>
+
+<p>
+The attention mechanism you just implemented is <strong>additive attention</strong> (also called "Bahdanau attention"), published in 2014. It uses a small neural network (our <code>layer_1</code> and <code>layer_2</code>) to compute alignment scores. A year later, a simpler variant called <strong>multiplicative attention</strong> (or "Luong attention") was proposed, which just uses a dot product: <code>score = decoder_state · encoder_state</code>.
+</p>
+
+<p>
+Then in 2017, the famous paper <strong>"Attention Is All You Need"</strong> introduced the <strong>Transformer</strong> architecture, which uses a more sophisticated version called <strong>scaled dot-product attention</strong>. The Transformer <em>discards recurrence entirely</em> and relies solely on attention mechanisms. This is the architecture behind GPT, BERT, and virtually all modern large language models.
+</p>
+
+<div class="highlight-box">
+<strong>🌟 The lineage:</strong>
+<ol>
+    <li><strong>Bahdanau Attention (2014)</strong> — Additive attention, the one you just coded. The original breakthrough.</li>
+    <li><strong>Luong Attention (2015)</strong> — Dot-product attention, simpler and faster.</li>
+    <li><strong>Scaled Dot-Product Attention / Transformers (2017)</strong> — Multi-head self-attention. Powers ChatGPT, Claude, Gemini, and all modern LLMs.</li>
+</ol>
+Every single one of these builds on the same core idea you just implemented: <em>compare a query (decoder state) with keys (encoder states) to get scores, softmax into weights, and blend values (encoder states) into a context vector.</em>
+</div>
+
+<hr>
+
+<!-- ===== SECTION 8: LINE-BY-LINE RECAP ===== -->
+<h2>8. Complete Code Walkthrough Recap</h2>
+
+<p>Here's every meaningful line of code in this notebook, explained one more time at a glance:</p>
+
+<table>
+    <tr><th>Line</th><th>What It Does</th><th>Layman's Translation</th></tr>
+    <tr>
+        <td><code>import numpy as np</code></td>
+        <td>Imports the NumPy library for fast array math.</td>
+        <td>"Bring in my Swiss Army knife for number crunching."</td>
+    </tr>
+    <tr>
+        <td><code>def softmax(x, axis=0):</code></td>
+        <td>Defines the softmax function.</td>
+        <td>"Here's my recipe for turning any list of numbers into percentages."</td>
+    </tr>
+    <tr>
+        <td><code>np.exp(x)</code></td>
+        <td>Applies eˣ to every element.</td>
+        <td>"Make all numbers positive and amplify the differences."</td>
+    </tr>
+    <tr>
+        <td><code>np.sum(np.exp(x), axis=axis)</code></td>
+        <td>Sums the exponentiated values along an axis.</td>
+        <td>"Add up all the amplified numbers to get a total."</td>
+    </tr>
+    <tr>
+        <td><code>np.expand_dims(..., axis)</code></td>
+        <td>Adds a dimension for correct broadcasting.</td>
+        <td>"Reshape the total so the division lines up properly."</td>
+    </tr>
+    <tr>
+        <td><code>hidden_size = 16</code></td>
+        <td>Sets the size of hidden state vectors.</td>
+        <td>"Each word's meaning is captured in 16 numbers."</td>
+    </tr>
+    <tr>
+        <td><code>attention_size = 10</code></td>
+        <td>Sets the middle layer size.</td>
+        <td>"We'll use 10 'relevance detectors' in the attention network."</td>
+    </tr>
+    <tr>
+        <td><code>input_length = 5</code></td>
+        <td>Sets how many encoder words we have.</td>
+        <td>"Our pretend sentence has 5 words."</td>
+    </tr>
+    <tr>
+        <td><code>np.random.seed(42)</code></td>
+        <td>Fixes the random number generator.</td>
+        <td>"Make sure we all get the same random numbers."</td>
+    </tr>
+    <tr>
+        <td><code>encoder_states = np.random.randn(...)</code></td>
+        <td>Creates fake encoder hidden states.</td>
+        <td>"Pretend the encoder already processed 5 words into 5 meaning-vectors."</td>
+    </tr>
+    <tr>
+        <td><code>decoder_state = np.random.randn(...)</code></td>
+        <td>Creates a fake decoder hidden state.</td>
+        <td>"Pretend the decoder has a current 'state of mind.'"</td>
+    </tr>
+    <tr>
+        <td><code>layer_1 = np.random.randn(...)</code></td>
+        <td>Creates fake first-layer weights (32→10).</td>
+        <td>"Pretend we've already learned these comparison weights."</td>
+    </tr>
+    <tr>
+        <td><code>layer_2 = np.random.randn(...)</code></td>
+        <td>Creates fake second-layer weights (10→1).</td>
+        <td>"Pretend we've learned how to combine the 10 features into one score."</td>
+    </tr>
+    <tr>
+        <td><code>decoder_state.repeat(input_length, axis=0)</code></td>
+        <td>Copies the decoder state 5 times.</td>
+        <td>"Clone the decoder state so each word can be compared to it."</td>
+    </tr>
+    <tr>
+        <td><code>np.concatenate((enc, dec), axis=1)</code></td>
+        <td>Glues encoder and decoder states side by side.</td>
+        <td>"Put each word's meaning next to the decoder state for comparison."</td>
+    </tr>
+    <tr>
+        <td><code>np.matmul(inputs, layer_1)</code></td>
+        <td>Matrix multiplication: inputs × weights.</td>
+        <td>"Run the combined info through the first layer of the attention network."</td>
+    </tr>
+    <tr>
+        <td><code>np.tanh(...)</code></td>
+        <td>Applies the tanh activation function.</td>
+        <td>"Squash the results between -1 and 1 to keep things stable."</td>
+    </tr>
+    <tr>
+        <td><code>np.matmul(activations, layer_2)</code></td>
+        <td>Matrix multiplication: activations × weights.</td>
+        <td>"Run through the second layer to get one score per word."</td>
+    </tr>
+    <tr>
+        <td><code>softmax(scores)</code></td>
+        <td>Converts raw scores to percentages.</td>
+        <td>"Turn the scores into a proper attention distribution (sums to 1)."</td>
+    </tr>
+    <tr>
+        <td><code>encoder_states * weights</code></td>
+        <td>Element-wise multiplication with broadcasting.</td>
+        <td>"Scale each word's meaning by how much attention it gets."</td>
+    </tr>
+    <tr>
+        <td><code>np.sum(weighted_scores, axis=0)</code></td>
+        <td>Sums all weighted rows into one vector.</td>
+        <td>"Blend everything into one context vector—the final attention summary."</td>
+    </tr>
+</table>
+
+<hr>
+
+<!-- ===== SECTION 9: FREQUENTLY ASKED QUESTIONS ===== -->
+<h2>9. Common Questions (and Their Answers)</h2>
+
+<h3>Q: Why do we use tanh in the first layer but not the second?</h3>
+<p>
+The first layer's tanh adds non-linearity, which is essential for the network to learn complex patterns. The second layer produces raw scores that get fed into softmax. If we applied tanh to the second layer, all scores would be between -1 and 1, making the softmax weights nearly uniform—every word would get roughly equal attention, defeating the purpose!
+</p>
+
+<h3>Q: Why is the hidden_size 16 and attention_size 10? Are these magic numbers?</h3>
+<p>
+Not at all! They're arbitrary choices for this educational example. In a real model, hidden_size might be 256, 512, or 1024, and attention_size is typically the same as hidden_size. The authors chose small numbers so the code runs instantly and the shapes are easy to reason about.
+</p>
+
+<h3>Q: What's the difference between encoder_states and decoder_state?</h3>
+<p>
+<strong>Encoder states</strong> are the "meanings" of the <em>input</em> words after the encoder has read the entire input sentence. There's one vector per input word. <strong>Decoder state</strong> is the "state of mind" of the <em>output</em>-producing side, representing what it has generated so far and what it's thinking about producing next. The attention mechanism bridges these two: "Given what I want to say next (decoder state), which input words should I pay attention to (encoder states)?"
+</p>
+
+<h3>Q: Are layer_1 and layer_2 learned during training?</h3>
+<p>
+<strong>Yes!</strong> In this lab, we use random numbers for simplicity. In a real model, these weights are initialized randomly and then gradually improved through backpropagation during training. The model learns which patterns in the encoder+decoder combination indicate relevance. After training on millions of sentence pairs, the weights encode sophisticated linguistic knowledge.
+</p>
+
+<h3>Q: How does this relate to the attention in ChatGPT?</h3>
+<p>
+ChatGPT uses <strong>self-attention</strong> within the Transformer architecture. The core math is very similar—query, key, value projections; dot-product scores; softmax; weighted sum—but instead of comparing a decoder state to encoder states, self-attention compares <em>every word to every other word in the same sentence</em>. This lets the model understand relationships like "the pronoun 'it' refers to the noun 'cat' mentioned 5 words ago." The basic building block you implemented here is the conceptual ancestor of all modern attention mechanisms.
+</p>
+
+<hr>
+
+<!-- ===== SECTION 10: FINAL THOUGHTS ===== -->
+<h2>10. Final Thoughts: You Just Built the Foundation of Modern AI</h2>
+
+<p>
+Take a moment to appreciate what you've done. With fewer than 30 lines of NumPy code, you've implemented the core mechanism that:
+</p>
+
+<ul>
+    <li>Revolutionized machine translation in 2014</li>
+    <li>Earned a citation count of over 30,000 for the Bahdanau paper</li>
+    <li>Paved the way for the Transformer architecture in 2017</li>
+    <li>Underlies every modern large language model, including GPT-4, Claude, and Gemini</li>
+</ul>
+
+<p>
+The three-step recipe you coded—<strong>score, weight, blend</strong>—is the same pattern used by models with hundreds of billions of parameters. They just do it many times in parallel (multi-head attention) and stack many layers. But the fundamental operation is exactly what you wrote:
+</p>
+
+<ol>
+    <li>Compare a query with keys to get scores</li>
+    <li>Softmax the scores into weights</li>
+    <li>Use the weights to blend values into an output</li>
+</ol>
+
+<p>
+This notebook has given you the conceptual and practical foundation to understand all of it. Well done! 🎉
+</p>
+
+<div class="footer-note">
+    <em>Explanation generated for the Basic Attention Operation ungraded lab — Course 4, Week 1 of the NLP with Attention Models Specialization.</em>
+</div>
+
+</div>
+<br>
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/attempting-to-run-local-llm-via-lm.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+&nbsp;&nbsp;
+
+<a href="https://github.com/ashishjain1547/deeplearningai_labs/blob/main/Natural%20Language%20Processing%20Specialization/Course%204%20-%20NLP%20With%20Attention%20Models/Week%201/Ungraded%20Lab%201%20-%20Basic%20Attention%20Operation/NEURAL%20MACHINE%20TRANSLATION%20BY%20JOINTLY%20LEARNING%20TO%20ALIGN%20AND%20TRANSLATE%20-%201409.0473v7.pdf" target="_blank" class="customLink">Download the 2014 paper on Additive Attention</a>
+&nbsp;&nbsp;
+<a href="https://github.com/ashishjain1547/deeplearningai_labs/blob/main/Natural%20Language%20Processing%20Specialization/Course%204%20-%20NLP%20With%20Attention%20Models/Week%201/Ungraded%20Lab%201%20-%20Basic%20Attention%20Operation/C4_W1_Ungraded_Lab_1_Basic_Attention.ipynb" target="_blank" class="customLink">View the Lab Work From DeepLearning.ai</a>
+
+<span style="opacity: 0;">Tags: Generative AI,Large Language Models,</span>
