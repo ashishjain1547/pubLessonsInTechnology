@@ -1,0 +1,208 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        button { display: none; } 
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/bleu-score-evaluating-machine.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+<br>
+
+
+<b>You may recall that BLEU score was precision oriented. Next, we will see a Recall oriented metric to evaluate Machine
+    Translation and other GenAI use cases.</b>
+
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyp_cOdwp02382MeVyz0ip3CDWFV0iK58jGKbypmRfqWMz1W895Aqt6-8JHRlhK6Mx_hp_Ap8yfvhhryiveZNW6bT7bC4kJGCw_zXoyBvZz88neLBVg8OOGBZytoxv3rZ3A54jHDh2RZPnJPMS-QQnMkuuJvIBVFL3Kc0KUh5IqE5VR8EzsQVeuRAuUULn/s967/Screenshot%20from%202026-06-18%2008-41-31.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyp_cOdwp02382MeVyz0ip3CDWFV0iK58jGKbypmRfqWMz1W895Aqt6-8JHRlhK6Mx_hp_Ap8yfvhhryiveZNW6bT7bC4kJGCw_zXoyBvZz88neLBVg8OOGBZytoxv3rZ3A54jHDh2RZPnJPMS-QQnMkuuJvIBVFL3Kc0KUh5IqE5VR8EzsQVeuRAuUULn/s600/Screenshot%20from%202026-06-18%2008-41-31.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheh7C6xuhIetMruC-C_V5U2OEptTuyv4MvFXVte5yuDHiSP7tiqyn0Esb6rAHZEYxALIPT3Lhbp_SU7c1UlkuiiHSX0cAYyFLdxHexWR0x6WfUoayF0WTygjupiqtmUozk8EPQE3iw8IOeraNmg5gdMdatOHG6LMeQlROBajP1uzM8MKYJWqOfQM98C6OD/s967/Screenshot%20from%202026-06-18%2008-41-48.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheh7C6xuhIetMruC-C_V5U2OEptTuyv4MvFXVte5yuDHiSP7tiqyn0Esb6rAHZEYxALIPT3Lhbp_SU7c1UlkuiiHSX0cAYyFLdxHexWR0x6WfUoayF0WTygjupiqtmUozk8EPQE3iw8IOeraNmg5gdMdatOHG6LMeQlROBajP1uzM8MKYJWqOfQM98C6OD/s600/Screenshot%20from%202026-06-18%2008-41-48.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh__UhUiSsXtAF68O6p1kEe6UayWQPqT-xnuINBkUcsU5ZCdOcafps7MjXozKC_1G4JG4xKJHNsMfBRoDoYgPHVmobSqeaaxNZMkCTja8prRNgVqLPUdZJWdl_Lzzb36sC1NSZLKS2Cf_0O-XevHuDxDciY86KF8syhwLXryXDayi1yFfQXu5StqW4kpriN/s967/Screenshot%20from%202026-06-18%2008-43-11.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh__UhUiSsXtAF68O6p1kEe6UayWQPqT-xnuINBkUcsU5ZCdOcafps7MjXozKC_1G4JG4xKJHNsMfBRoDoYgPHVmobSqeaaxNZMkCTja8prRNgVqLPUdZJWdl_Lzzb36sC1NSZLKS2Cf_0O-XevHuDxDciY86KF8syhwLXryXDayi1yFfQXu5StqW4kpriN/s600/Screenshot%20from%202026-06-18%2008-43-11.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMu732TjmnUqB3IN_gls-2MFAt0vc0jB56DABNmqmsPMoJ9rAnM9vikylsEp2ioaMW7keeXu1SkUfrlDQuca8y6Q8W09Jtr66JIzrhI-4vJt2yU8c5HhOSVAB7wLO0xnjiYQvwujY8LtGz1w5gLNEbCceA2cVCoP5P7H_U2pZx9-3DMvaQKgJiVjN0NxD4/s967/Screenshot%20from%202026-06-18%2008-43-25.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMu732TjmnUqB3IN_gls-2MFAt0vc0jB56DABNmqmsPMoJ9rAnM9vikylsEp2ioaMW7keeXu1SkUfrlDQuca8y6Q8W09Jtr66JIzrhI-4vJt2yU8c5HhOSVAB7wLO0xnjiYQvwujY8LtGz1w5gLNEbCceA2cVCoP5P7H_U2pZx9-3DMvaQKgJiVjN0NxD4/s600/Screenshot%20from%202026-06-18%2008-43-25.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjI0RLWPM46rsInL3pmX5jcGSMyH_TyFjtqDIBLc084mdYJBA1z7JbE3EkELVds38ZHd3abzY78Qg4Uc4sAzvjJMVferHrHKJw7-CuOL0A74MtYmtyYMohZ0Wf0GlItKQJqgqyyhoBXys_NRs_egph1Sk0cS4mHe0ln8E8F5vZcnsu-oXpbuq8Ei_WhpfBh/s967/Screenshot%20from%202026-06-18%2008-43-43.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjI0RLWPM46rsInL3pmX5jcGSMyH_TyFjtqDIBLc084mdYJBA1z7JbE3EkELVds38ZHd3abzY78Qg4Uc4sAzvjJMVferHrHKJw7-CuOL0A74MtYmtyYMohZ0Wf0GlItKQJqgqyyhoBXys_NRs_egph1Sk0cS4mHe0ln8E8F5vZcnsu-oXpbuq8Ei_WhpfBh/s600/Screenshot%20from%202026-06-18%2008-43-43.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLEf5g1TKG93lGNO-2_zJIZX1HGFKK6KrN0ssT8_7tsV1Ullz2M5oL6YX4ieCH92Fm5QvRteSHU3kh4DZn1jICXHBsQYHDjCtOFXlIvkXXAIQwyvIagZiRBfnSzUAdJgoOtf6LbxRj3L-BZ0cXQV5l7h-f07gqNkIVQ8gClTBuuUM1dr-oSnznDPhwTWk-/s967/Screenshot%20from%202026-06-18%2008-44-08.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLEf5g1TKG93lGNO-2_zJIZX1HGFKK6KrN0ssT8_7tsV1Ullz2M5oL6YX4ieCH92Fm5QvRteSHU3kh4DZn1jICXHBsQYHDjCtOFXlIvkXXAIQwyvIagZiRBfnSzUAdJgoOtf6LbxRj3L-BZ0cXQV5l7h-f07gqNkIVQ8gClTBuuUM1dr-oSnznDPhwTWk-/s600/Screenshot%20from%202026-06-18%2008-44-08.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj34CIOu6xtVy1b6b0vv8eYAeq_r1AOQtmU2NfS7-FC9ZK5KiYximVLj9IWiSEUdSX-xGANXEbN7P45WmPVsRr-LlYECdOh5oYbUN1XVE82eVGa7gs1F1B9N0cc-wrmjfR5fRS_FaFlWNZM35-jtMk6sax7uEU_KGJUnO4X6NptEAsjEpT99DF-WwCyjusE/s967/Screenshot%20from%202026-06-18%2008-44-51.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj34CIOu6xtVy1b6b0vv8eYAeq_r1AOQtmU2NfS7-FC9ZK5KiYximVLj9IWiSEUdSX-xGANXEbN7P45WmPVsRr-LlYECdOh5oYbUN1XVE82eVGa7gs1F1B9N0cc-wrmjfR5fRS_FaFlWNZM35-jtMk6sax7uEU_KGJUnO4X6NptEAsjEpT99DF-WwCyjusE/s600/Screenshot%20from%202026-06-18%2008-44-51.png" /></a>
+</div>
+<div class="separator" style="clear: both;"><a
+        href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioQZJUbfqAMaQlVA9mcr9Gf8kc61F0CXgXCDFVJHg2Ba8QlOCnDUtHXtauhBuKhyOLgWVwlVHFkFAwof7Zgyfpoy2_NEMn2bFh6othYNXGsQf-YnPFs_1Q7sibDY0ZtlScfnDrMo822HfF_Lz6h8e40vuF5rXwZ6IZ8IIkTXMh19Zm6zCZ2o0dE2QdD8Q0/s967/Screenshot%20from%202026-06-18%2008-45-09.png"
+        style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+            data-original-height="467" data-original-width="967"
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioQZJUbfqAMaQlVA9mcr9Gf8kc61F0CXgXCDFVJHg2Ba8QlOCnDUtHXtauhBuKhyOLgWVwlVHFkFAwof7Zgyfpoy2_NEMn2bFh6othYNXGsQf-YnPFs_1Q7sibDY0ZtlScfnDrMo822HfF_Lz6h8e40vuF5rXwZ6IZ8IIkTXMh19Zm6zCZ2o0dE2QdD8Q0/s600/Screenshot%20from%202026-06-18%2008-45-09.png" /></a>
+</div>
+
+<br>
+
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/bleu-score-evaluating-machine.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+<br>
