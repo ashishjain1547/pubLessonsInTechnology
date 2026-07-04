@@ -1,0 +1,932 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['Beta Tech Club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+          );
+        }
+      });
+    });
+  </script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </link>
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .customLink:hover {
+      text-decoration: none;
+    }
+
+    div.code-block-decoration.footer {
+      display: none;
+    }
+
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .custom_link_h2 a:hover {
+      color: black;
+    }
+
+    .custom_link_h2 a:active {
+      color: black;
+    }
+
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
+
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+  <style>
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+
+    .custom_iframe {
+      width: 100%;
+      height: 305px;
+    }
+
+    i.ib {
+      color: blue;
+    }
+
+    i.ig {
+      color: green;
+    }
+
+    .customTable td {
+      padding: 2px;
+    }
+
+    button {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+  href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+  target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/rouge-score-evaluating-machine.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+<br>
+
+
+<style>
+  /* Reset and base – only inside .customOuterWrapper1953 */
+  div.customOuterWrapper1953 {
+    background: #0b1a2f;
+    /* navy blue */
+    color: #e6edf5;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    padding: 2rem 1.5rem;
+    line-height: 1.6;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  div.customOuterWrapper1953 * {
+    box-sizing: border-box;
+  }
+
+  /* Headings */
+  div.customOuterWrapper1953 h1 {
+    font-size: 2.2rem;
+    color: #8fcbff;
+    border-bottom: 2px solid #2a4c6a;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  div.customOuterWrapper1953 h2 {
+    font-size: 1.8rem;
+    color: #b0d4ff;
+    margin-top: 2.5rem;
+    border-left: 4px solid #4a8ecf;
+    padding-left: 1rem;
+  }
+
+  div.customOuterWrapper1953 h3 {
+    font-size: 1.4rem;
+    color: #cce0ff;
+    margin-top: 2rem;
+  }
+
+  div.customOuterWrapper1953 h4 {
+    font-size: 1.2rem;
+    color: #d9e8ff;
+    margin-top: 1.5rem;
+  }
+
+  /* Paragraphs and lists */
+  div.customOuterWrapper1953 p {
+    margin: 1rem 0;
+  }
+
+  div.customOuterWrapper1953 ul,
+  div.customOuterWrapper1953 ol {
+    margin: 1rem 0 1rem 2rem;
+    padding-left: 1rem;
+  }
+
+  div.customOuterWrapper1953 li {
+    margin: 0.4rem 0;
+  }
+
+  /* use normal bullet - dash or asterisk, but we'll use default disc */
+  div.customOuterWrapper1953 ul {
+    list-style-type: disc;
+  }
+
+  div.customOuterWrapper1953 ol {
+    list-style-type: decimal;
+  }
+
+  /* Tables */
+  div.customOuterWrapper1953 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+    background: #122b44;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  div.customOuterWrapper1953 th {
+    background: #1d3f5e;
+    color: #b6d6ff;
+    font-weight: 600;
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 2px solid #2f5a7a;
+  }
+
+  div.customOuterWrapper1953 td {
+    padding: 10px 10px;
+    border-bottom: 1px solid #1f3e57;
+    vertical-align: top;
+  }
+
+  div.customOuterWrapper1953 tr:last-child td {
+    border-bottom: none;
+  }
+
+  div.customOuterWrapper1953 tr:hover td {
+    background: #1a3550;
+  }
+
+  /* Code-like elements */
+  div.customOuterWrapper1953 strong {
+    color: #f5c542;
+  }
+
+  div.customOuterWrapper1953 .highlight {
+    background: #1d3f5e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #ffd966;
+  }
+
+  div.customOuterWrapper1953 .note {
+    background: #1a2c40;
+    border-left: 4px solid #f0b429;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  div.customOuterWrapper1953 .note strong {
+    color: #f0b429;
+  }
+
+  /* special callouts */
+  div.customOuterWrapper1953 .warning {
+    background: #2a1c1c;
+    border-left: 4px solid #e06b6b;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+
+  div.customOuterWrapper1953 .warning strong {
+    color: #e06b6b;
+  }
+
+  /* horizontal rule */
+  div.customOuterWrapper1953 hr {
+    border: 0;
+    border-top: 2px solid #2a4c6a;
+    margin: 2rem 0;
+  }
+
+  /* responsive table scroll */
+  div.customOuterWrapper1953 .table-wrap {
+    overflow-x: auto;
+  }
+
+  /* small screens */
+  @media (max-width: 600px) {
+    div.customOuterWrapper1953 {
+      padding: 1rem 0.8rem;
+    }
+
+    div.customOuterWrapper1953 table {
+      font-size: 0.8rem;
+    }
+
+    div.customOuterWrapper1953 th,
+    div.customOuterWrapper1953 td {
+      padding: 6px 6px;
+    }
+  }
+</style>
+
+<div class="customOuterWrapper1953">
+
+  <h1>Laptop For Running an LLM Locally (Comparison Specific to India)</h1>
+  <p><strong>Generated:</strong> 2026-07-04 <br> <strong>Context:</strong> User asked about running LLMs on a Dell
+    Precision with NVIDIA GB10, then explored pricing, shifted to laptops in ₹1‑2 lakh range, upgraded to 12–16 GB VRAM,
+    asked for refurbished MSI Stealth 18, and finally compared a large list of laptops.</p>
+
+  <hr>
+
+  <h2>1. Initial Query: Dell Precision with NVIDIA GB10</h2>
+  <p><strong>User:</strong> <em>what kind of llm can run on this laptop: Dell Pro Precision portfolio with the NVIDIA
+      GB10 Grace Blackwell Superchip</em></p>
+  <p><strong>Assistant Clarification:</strong></p>
+  <ul>
+    <li>The GB10 is an ARM‑based SoC (NVIDIA Grace CPU + Blackwell GPU)</li>
+    <li>If your Dell Precision has the <strong>GB10</strong> chip, it features <strong>128 GB unified memory</strong>
+      and <strong>1 PetaFLOP</strong> of FP4 AI performance.</li>
+    <li>It can run:
+      <ul>
+        <li><strong>Up to ~200B parameter</strong> models on a single node (e.g., Llama 3.1 70B, Qwen 2.5 72B, up to
+          200B with quantization).</li>
+        <li><strong>Two units linked</strong> can run <strong>405B</strong> models (e.g., Llama 3.1 405B) using 4‑bit
+          quantization.</li>
+      </ul>
+    </li>
+    <li>Real‑world speed: ~47 tokens/sec on a 70B coding model.</li>
+    <li>Software: runs <strong>NVIDIA DGX OS</strong> (Ubuntu for ARM) with PyTorch, Python, Jupyter, and NVIDIA AI
+      Enterprise.</li>
+  </ul>
+  <div class="warning">
+    <p><strong>Important:</strong> The Intel‑based Dell Precisions with discrete GPUs have <strong>far lower</strong>
+      VRAM (typically 16–48 GB) and can only run up to ~70B models at best.</p>
+  </div>
+
+  <hr>
+
+  <h2>2. Pricing of the GB10 System</h2>
+  <p><strong>User:</strong> <em>what's it's cost</em></p>
+  <p>Starting prices (base model) across regions:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Region</th>
+          <th>Starting Price</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>USA</td>
+          <td>~$3,000 – $4,000+</td>
+          <td>USD</td>
+        </tr>
+        <tr>
+          <td>Australia</td>
+          <td>~10,207.49</td>
+          <td>AUD</td>
+        </tr>
+        <tr>
+          <td>Austria</td>
+          <td>~6,443.62</td>
+          <td>EUR</td>
+        </tr>
+        <tr>
+          <td>Canada</td>
+          <td>~8,703.69</td>
+          <td>CAD</td>
+        </tr>
+        <tr>
+          <td>China</td>
+          <td>~67,270.03</td>
+          <td>CNY</td>
+        </tr>
+        <tr>
+          <td>Hong Kong</td>
+          <td>~64,365.00</td>
+          <td>HKD</td>
+        </tr>
+        <tr>
+          <td>India</td>
+          <td><strong>~3,99,000</strong></td>
+          <td>INR</td>
+        </tr>
+        <tr>
+          <td>Ireland</td>
+          <td>~6,889.75</td>
+          <td>EUR</td>
+        </tr>
+        <tr>
+          <td>New Zealand</td>
+          <td>~15,328.59</td>
+          <td>NZD</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Note:</strong> These are base models. Customisation (storage, memory) increases the price. The GB10 system
+    is specifically the <strong>Dell Pro Max</strong> line, not all Dell Precisions.</p>
+
+  <hr>
+
+  <h2>3. More Affordable and Higher‑End Dell Pro Max Options</h2>
+  <p><strong>User asked for cheaper and higher‑end options from the Dell Pro Max line.</strong></p>
+
+  <h3>Affordable (no GB10, Intel/AMD based)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Approx. Price (CNY)</th>
+          <th>Core Specs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dell Pro Max 14 (AMD)</td>
+          <td>¥8,999 – ¥13,633</td>
+          <td>AMD Ryzen AI 5 PRO 340, 32GB</td>
+        </tr>
+        <tr>
+          <td>Dell Pro Max Micro (desktop)</td>
+          <td>¥8,599 – ¥9,252</td>
+          <td>Intel Core Ultra</td>
+        </tr>
+        <tr>
+          <td>Dell Pro Max 16 (laptop)</td>
+          <td>¥11,999 – ¥24,999</td>
+          <td>Core Ultra 7/9, up to 64GB, RTX PRO 2000</td>
+        </tr>
+        <tr>
+          <td>Dell Pro Max Tower T2 (mid)</td>
+          <td>¥26,899 – ¥27,899</td>
+          <td>Core Ultra 9, 64GB, RTX 4080S</td>
+        </tr>
+        <tr>
+          <td>Dell Pro Max 14 Premium</td>
+          <td>~¥21,000+</td>
+          <td>Core Ultra</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>High‑End (no GB10, but powerful discrete GPUs)</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Approx. Price</th>
+          <th>Specs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dell Pro Max 16 Premium</td>
+          <td>~$4,583 USD / ¥29,889</td>
+          <td>Core Ultra 9, RTX PRO 2000</td>
+        </tr>
+        <tr>
+          <td>Dell Pro Max 16 Plus</td>
+          <td>~$6,611 AUD</td>
+          <td>Intel/AMD + RTX PRO</td>
+        </tr>
+        <tr>
+          <td>Dell Pro Max Tower T2 (fully loaded)</td>
+          <td>~$14,349 USD</td>
+          <td>Core Ultra 9 285K, 128GB ECC, <strong>RTX PRO 6000 (96GB VRAM)</strong></td>
+        </tr>
+        <tr>
+          <td>Dell Precision 7865 Tower</td>
+          <td>~€3,004 (Ireland)</td>
+          <td>AMD Threadripper PRO, up to 64 cores</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Summary:</strong> Only the <strong>GB10‑based Dell Pro Max</strong> (starting ~₹3.99 lakh in India) can run
+    200B models locally. The tower with RTX PRO 6000 can also handle large models thanks to 96GB VRAM.</p>
+
+  <hr>
+
+  <h2>4. Laptops in ₹1–2 Lakh for AI Workloads</h2>
+  <p><strong>User:</strong> <em>give me some recommendations in 1lakh to 2lakh INR in India for running local AI
+      workloads</em></p>
+  <p>Recommended models (all with RTX 4060, 8GB VRAM, ~13B max):</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Key Specs</th>
+          <th>Approx. Price (INR)</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HP Omen 17‑cm2002TX</td>
+          <td>i7‑13700HX / RTX 4060 / 8GB / 16GB</td>
+          <td>~1,21,999</td>
+          <td>Best value, large screen</td>
+        </tr>
+        <tr>
+          <td>Dell G15 5530</td>
+          <td>i7‑13650HX / RTX 4060 / 8GB / 16GB</td>
+          <td>~1,21,990</td>
+          <td>Reliable Dell build</td>
+        </tr>
+        <tr>
+          <td>Acer Nitro V16</td>
+          <td>Ryzen 7 8845HS / RTX 4060 / 8GB / 16GB</td>
+          <td>~98,790</td>
+          <td>Most affordable entry</td>
+        </tr>
+        <tr>
+          <td>ASUS ROG Zephyrus G16</td>
+          <td>Ryzen AI 9 HX 370 / RTX 4060 / 8GB / 32GB</td>
+          <td>~1,84,990</td>
+          <td>Premium, portable, OLED</td>
+        </tr>
+        <tr>
+          <td>MSI Pulse 16 AI</td>
+          <td>Ultra 7 155H / RTX 4060 / 8GB / 32GB</td>
+          <td>~1,84,990</td>
+          <td>High RAM, 140W GPU</td>
+        </tr>
+        <tr>
+          <td>Dell Pro 16 Plus (AMD)</td>
+          <td>Ryzen PRO / Integrated NPU (no dGPU)</td>
+          <td>~96,562</td>
+          <td>Enterprise, <strong>not for LLMs</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note">
+    <p><strong>Key advice:</strong> 8GB VRAM is minimum; NPU cannot replace a dGPU. Avoid models without discrete NVIDIA
+      GPUs.</p>
+  </div>
+
+  <hr>
+
+  <h2>5. Upgrading to 12–16 GB VRAM Laptops</h2>
+  <p><strong>User asked for options with 12‑16 GB VRAM.</strong></p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Specs (CPU/GPU/VRAM/RAM)</th>
+          <th>Approx. Price (INR)</th>
+          <th>Max LLM Size</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Dell Alienware m16</strong></td>
+          <td>Ryzen 9 7845HX / RTX 4080 / 12GB / 32GB</td>
+          <td><strong>1,49,990</strong></td>
+          <td>~30‑40B</td>
+          <td>Best value 12GB</td>
+        </tr>
+        <tr>
+          <td>HP Omen 17</td>
+          <td>i7‑13700HX / RTX 4080 / 12GB / 16GB</td>
+          <td>~2,39,990 – 2,69,990</td>
+          <td>~30‑40B</td>
+          <td>Large screen, powerful</td>
+        </tr>
+        <tr>
+          <td>ASUS ROG Zephyrus G16 (2024)</td>
+          <td>Ultra 9 185H / RTX 4080 / 12GB / 32GB</td>
+          <td>2,76,411</td>
+          <td>~30‑40B</td>
+          <td>Premium & portable</td>
+        </tr>
+        <tr>
+          <td>ASUS ROG Strix SCAR 16 (2024)</td>
+          <td>i9‑14900HX / RTX 4080 / 12GB / 32GB</td>
+          <td>~2,77,994</td>
+          <td>~30‑40B</td>
+          <td>High‑refresh MiniLED</td>
+        </tr>
+        <tr>
+          <td>MSI Raider GE78 HX (14th)</td>
+          <td>i9‑14900HX / RTX 4080 / 12GB / 32GB</td>
+          <td>2,89,990</td>
+          <td>~30‑40B</td>
+          <td>17‑inch, excellent cooling</td>
+        </tr>
+        <tr>
+          <td>MSI Raider A18 HX</td>
+          <td>Ryzen 9 7945HX / RTX 4080 / 12GB / 32GB</td>
+          <td>2,89,990</td>
+          <td>~30‑40B</td>
+          <td>18‑inch, Wi‑Fi 7</td>
+        </tr>
+        <tr>
+          <td><strong>MSI Stealth 18 AI Studio</strong></td>
+          <td>Ultra 9 185H / RTX 4090 / <strong>16GB</strong> / 32GB</td>
+          <td><strong>2,59,990</strong></td>
+          <td><strong>~70B</strong></td>
+          <td><strong>Best AI value (16GB)</strong></td>
+        </tr>
+        <tr>
+          <td>Razer Blade 18</td>
+          <td>i9‑14900HX / RTX 4090 / 16GB / 32GB</td>
+          <td>3,49,990</td>
+          <td>~70B</td>
+          <td>Premium build</td>
+        </tr>
+        <tr>
+          <td>MSI Raider GE78 HX (4090)</td>
+          <td>i9‑14900HX / RTX 4090 / 16GB / 32GB</td>
+          <td>4,19,990</td>
+          <td>~70B</td>
+          <td>Max 16GB performance</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Key:</strong> The <strong>MSI Stealth 18 AI Studio</strong> with RTX 4090 (16GB) is the most affordable way
+    to run 70B‑class models (~₹2.6 lakh). The Alienware m16 (12GB) is the cheapest 12GB option at ₹1.5 lakh.</p>
+
+  <hr>
+
+  <h2>6. Refurbished MSI Stealth 18 AI Studio in India</h2>
+  <p><strong>User asked:</strong> <em>can I get a refurbished model of this at a lower price in India: MSI Stealth 18 AI
+      Studio. Give me some references from Amazon (maybe)</em></p>
+  <ul>
+    <li><strong>New price:</strong> RTX 4090 variant: <strong>~₹2,94,990</strong> to <strong>₹3,99,990</strong>
+      depending on retailer. RTX 4080 variant: <strong>~₹3,49,990</strong>.</li>
+    <li><strong>Refurbished availability:</strong> <strong>Not found</strong> on Amazon India. International
+      refurbishers (e.g., Reebelo US) list it around <strong>$1,658</strong> (~₹1.38 lakh), but shipping + customs + no
+      warranty make it risky.</li>
+    <li><strong>Alternative channels:</strong> OLX, Quikr, local computer markets (Nehru Place, Ameerpet).</li>
+    <li><strong>Precautions:</strong> Verify in person, check specs, battery health, warranty, and accessories.</li>
+  </ul>
+  <div class="warning">
+    <p><strong>Conclusion:</strong> Refurbished units are not yet common in India. You may have to wait or buy new.</p>
+  </div>
+
+  <hr>
+
+  <h2>7. Amazon Options for 12–16 GB VRAM Laptops</h2>
+  <p><strong>User asked to research Amazon and share options.</strong></p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Specs</th>
+          <th>Approx. Price (INR)</th>
+          <th>Max LLM</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MSI Stealth 18 AI Studio (RTX 4090)</strong></td>
+          <td>Ultra 9 185H / 16GB / 32GB</td>
+          <td><strong>~3,99,990</strong></td>
+          <td>70B</td>
+        </tr>
+        <tr>
+          <td>Dell Alienware x16 (RTX 4080)</td>
+          <td>Ultra 9 185H / 12GB / 32GB</td>
+          <td>Price not listed</td>
+          <td>40B</td>
+        </tr>
+        <tr>
+          <td>Dell Alienware m16 R1 (RTX 4080)</td>
+          <td>i9‑13900HX / 12GB / 32GB</td>
+          <td>~3,94,760</td>
+          <td>40B</td>
+        </tr>
+        <tr>
+          <td>Dell Alienware M18 R2 (RTX 4080)</td>
+          <td>i9‑14900HX / 12GB / 32GB</td>
+          <td>Price not listed</td>
+          <td>40B</td>
+        </tr>
+        <tr>
+          <td>HP OMEN (ck2004TX) RTX 4080</td>
+          <td>i9‑13900HX / 12GB / 32GB</td>
+          <td>Price not listed</td>
+          <td>40B</td>
+        </tr>
+        <tr>
+          <td>HP Omen 17 (17‑ck2008AX)</td>
+          <td>i7‑13700HX / 12GB / 16GB</td>
+          <td>Price not listed</td>
+          <td>40B</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Observation:</strong> Most 4080/4090 laptops are above ₹3 lakh. For a ₹2‑lakh budget, you are limited to
+    8GB VRAM options.</p>
+
+  <hr>
+
+  <h2>8. Final Comparison of All Laptops Provided</h2>
+  <p><strong>User dumped a long list of laptops</strong> and asked to compare with specific columns.</p>
+  <p>Here is the <strong>comprehensive comparison table</strong> with all models ranked by VRAM and capability:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Laptop Model</th>
+          <th>Key Specs (CPU / GPU / VRAM / RAM)</th>
+          <th>Approx. Price (INR)</th>
+          <th>MAX LLMs Size Supported</th>
+          <th>OS Support</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Alienware 16 Area‑51</strong></td>
+          <td>Ultra 9‑275HX / RTX 5090 / <strong>24GB</strong> / 64GB</td>
+          <td>₹4,84,990</td>
+          <td><strong>~70B+</strong></td>
+          <td>Win 11 + MSO</td>
+          <td>Maximum AI performance</td>
+        </tr>
+        <tr>
+          <td><strong>Lenovo Legion Pro 7 2025</strong></td>
+          <td>Ultra 9‑275HX / RTX 5090 / <strong>24GB</strong> / 64GB</td>
+          <td>₹4,72,490</td>
+          <td><strong>~70B+</strong></td>
+          <td>Win 11 + Office</td>
+          <td>Best value for 24GB VRAM</td>
+        </tr>
+        <tr>
+          <td><strong>ASUS ProArt P16 OLED (2025)</strong></td>
+          <td>Ryzen AI 9 HX 370 / RTX 5090 / <strong>24GB</strong> / 64GB</td>
+          <td>₹4,19,990</td>
+          <td><strong>~70B+</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Creator-focused, 4K OLED</td>
+        </tr>
+        <tr>
+          <td>NXTGN XP4 (Desktop)</td>
+          <td>i9‑14900K / RTX 5060 Ti / <strong>16GB</strong> / 64GB</td>
+          <td>Not listed</td>
+          <td><strong>~70B</strong></td>
+          <td>Win 11 Pro</td>
+          <td>Desktop upgradeability</td>
+        </tr>
+        <tr>
+          <td>Lenovo Legion 9</td>
+          <td>i9‑13980HX / RTX 4090 / <strong>16GB</strong> / 32GB</td>
+          <td>₹4,49,510</td>
+          <td><strong>~70B</strong></td>
+          <td>Win 11 + Office</td>
+          <td>Previous‑gen flagship</td>
+        </tr>
+        <tr>
+          <td>ASUS ROG Strix SCAR 16</td>
+          <td>Ultra 9‑275HX / RTX 5080 / <strong>16GB</strong> / 32GB</td>
+          <td>₹3,79,990</td>
+          <td><strong>~70B</strong></td>
+          <td>Win 11 + M365</td>
+          <td>High‑end gaming & AI</td>
+        </tr>
+        <tr>
+          <td>ASUS Zenbook 14 (2026)</td>
+          <td>Ultra 9‑285H / <strong>Integrated iGPU</strong> / shared / 32GB</td>
+          <td>₹1,19,990</td>
+          <td><strong>Light AI only</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Ultra‑portable productivity</td>
+        </tr>
+        <tr>
+          <td>ASUS Zenbook S16 (2026)</td>
+          <td>Ryzen AI 9‑465 / <strong>Integrated iGPU</strong> / shared / 32GB</td>
+          <td>₹1,69,990</td>
+          <td><strong>Light AI only</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Premium ultraportable</td>
+        </tr>
+        <tr>
+          <td>Lenovo Yoga Slim 7</td>
+          <td>Ultra 7‑155H / <strong>Integrated iGPU</strong> / shared / 16GB</td>
+          <td>~₹90,990</td>
+          <td><strong>Light AI only</strong></td>
+          <td>Win 11 + Office</td>
+          <td>Affordable ultraportable</td>
+        </tr>
+        <tr>
+          <td>Lenovo IdeaPad Slim 5</td>
+          <td>Ultra 7‑355 / <strong>Integrated iGPU</strong> / shared / 16GB</td>
+          <td>₹1,36,990</td>
+          <td><strong>Light AI only</strong></td>
+          <td>Win 11 + MSO</td>
+          <td>Next‑gen AI PC (Copilot+)</td>
+        </tr>
+        <tr>
+          <td>MSI Stealth 16 AI Studio</td>
+          <td>Ultra 9‑185H / RTX 4070 / <strong>8GB</strong> / 32GB</td>
+          <td>₹2,43,990</td>
+          <td><strong>~13B</strong></td>
+          <td>Win 11 Pro</td>
+          <td>Slim & portable AI</td>
+        </tr>
+        <tr>
+          <td>ASUS ROG Strix G16</td>
+          <td>Ultra 9‑275HX / RTX 5070 / <strong>8GB</strong> / 32GB</td>
+          <td>₹2,59,990</td>
+          <td><strong>~13B</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Gaming & AI entry</td>
+        </tr>
+        <tr>
+          <td><strong>HP Omen 16 Max</strong></td>
+          <td>Ryzen AI 9 HX 375 / RTX 5070 Ti / <strong>12GB</strong> / 32GB</td>
+          <td>₹2,67,990</td>
+          <td><strong>~40B</strong></td>
+          <td>Win 11 + Office</td>
+          <td><strong>Best mid‑range AI value</strong></td>
+        </tr>
+        <tr>
+          <td>HP Omen (an0015TX)</td>
+          <td>Ultra 7‑255H / RTX 5060 / <strong>8GB</strong> / 24GB</td>
+          <td>₹1,51,490</td>
+          <td><strong>~13B</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Budget gaming & AI</td>
+        </tr>
+        <tr>
+          <td>HP Victus (fa2382tx)</td>
+          <td>i5‑14450HX / RTX 4050 / <strong>6GB</strong> / 24GB</td>
+          <td>₹1,02,990</td>
+          <td><strong>~7B</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Most affordable option</td>
+        </tr>
+        <tr>
+          <td>HP Victus (fa2531TX)</td>
+          <td>i7‑13650HX / RTX 4050 / <strong>6GB</strong> / 24GB</td>
+          <td>₹1,19,990</td>
+          <td><strong>~7B</strong></td>
+          <td>Win 11 + M365</td>
+          <td>Budget AI with better CPU</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr>
+
+  <h2>9. Final Recommendation (Based on Budget)</h2>
+
+  <h3>If Budget ~₹4‑5 Lakh (for 70B models)</h3>
+  <ul>
+    <li><strong>Best Value:</strong> Lenovo Legion Pro 7 2025 (₹4.72L) – similar to Alienware but cheaper.</li>
+    <li><strong>Best for Creators:</strong> ASUS ProArt P16 OLED (₹4.19L) – lighter, superior display.</li>
+    <li><strong>Best Performance:</strong> Alienware 16 Area‑51 (₹4.84L) – top‑tier cooling and build.</li>
+  </ul>
+
+  <h3>If Budget ~₹2.5‑3 Lakh (best balance)</h3>
+  <ul>
+    <li><strong>HP Omen 16 Max (₹2.67L)</strong> – <strong>12GB RTX 5070 Ti</strong> allows <strong>up to 40B
+        models</strong> – the sweet spot.</li>
+  </ul>
+
+  <h3>If Budget ₹1‑2 Lakh (entry‑level)</h3>
+  <ul>
+    <li><strong>HP Omen (an0015TX) (₹1.51L)</strong> – 8GB RTX 5060, runs up to <strong>13B</strong>.</li>
+    <li><strong>HP Victus (fa2382tx) (₹1.02L)</strong> – 6GB RTX 4050, runs up to <strong>7B</strong>.</li>
+  </ul>
+
+  <h3>Avoid these for LLMs</h3>
+  <ul>
+    <li>All laptops with <strong>only integrated graphics</strong> (Intel Arc, AMD Radeon, or NPU) – they cannot run
+      models larger than a few billion parameters efficiently.</li>
+  </ul>
+
+  <hr>
+
+  <h2>10. Critical Takeaways to Avoid Wrong Decisions</h2>
+  <ol>
+    <li><strong>VRAM is the absolute king</strong> – more VRAM = larger models you can run locally.</li>
+    <li><strong>System RAM does NOT substitute VRAM</strong> – the model must fit into GPU memory.</li>
+    <li><strong>NPUs (AI accelerators) are for light, energy‑efficient tasks</strong> – they cannot run large LLMs
+      (7B+).</li>
+    <li><strong>Price vs. capability</strong>:
+      <ul>
+        <li>Up to 13B → 8GB VRAM (₹1‑1.8L)</li>
+        <li>Up to 40B → 12GB VRAM (₹2.6‑3L)</li>
+        <li>Up to 70B → 16‑24GB VRAM (₹3.8‑4.8L)</li>
+      </ul>
+    </li>
+    <li><strong>Refurbished high‑end laptops are rare in India</strong> – be prepared to buy new or wait.</li>
+    <li><strong>Always verify GPU model and VRAM</strong> before purchase – don't rely on “AI PC” marketing.</li>
+    <li><strong>Linux compatibility</strong> is generally good for NVIDIA GPUs – but integrated NPUs may have limited
+      driver support.</li>
+  </ol>
+
+  <hr>
+
+</div>
+
+<a class="customLink"
+  href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+  target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/rouge-score-evaluating-machine.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+<br>
