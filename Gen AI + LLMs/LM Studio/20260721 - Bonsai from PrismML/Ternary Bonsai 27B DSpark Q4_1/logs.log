@@ -1,0 +1,63 @@
+
+Developer Logs
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.052.232 I srv          init: The UI is disabled
+0.00.052.234 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.053.673 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.110.835 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.110.837 E gguf_init_from_reader: failed to read tensor info
+0.00.110.902 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.110.911 E llama_model_load_from_file_impl: failed to load model
+0.00.110.935 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.110.959 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.110.959 E gguf_init_from_reader: failed to read tensor info
+0.00.110.967 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.110.968 E llama_model_load_from_file_impl: failed to load model
+0.00.110.971 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.110.974 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.110.976 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.111.424 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.048.968 I srv          init: The UI is disabled
+0.00.048.971 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.050.418 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.106.066 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.106.068 E gguf_init_from_reader: failed to read tensor info
+0.00.106.146 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.106.155 E llama_model_load_from_file_impl: failed to load model
+0.00.106.178 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.106.201 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.106.202 E gguf_init_from_reader: failed to read tensor info
+0.00.106.210 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.106.211 E llama_model_load_from_file_impl: failed to load model
+0.00.106.213 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.106.217 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.106.219 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.106.542 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.047.808 I srv          init: The UI is disabled
+0.00.047.810 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.049.141 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.104.102 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.104.107 E gguf_init_from_reader: failed to read tensor info
+0.00.104.176 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.104.186 E llama_model_load_from_file_impl: failed to load model
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.104.220 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.104.252 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.104.253 E gguf_init_from_reader: failed to read tensor info
+0.00.104.267 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.104.269 E llama_model_load_from_file_impl: failed to load model
+0.00.104.272 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.104.277 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.104.280 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.104.683 E srv  llama_server: exiting due to model loading error

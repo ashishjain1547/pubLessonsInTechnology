@@ -1,0 +1,719 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        button { display: none; } 
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/07/local-llm-via-lm-studio-diagnostics.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+<!-- &nbsp;&nbsp;
+<a href="" target="_blank" class="customLink">Next &raquo;</a> -->
+
+<br>
+<style>
+    div.customOuterWrapper0745 {
+        font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        min-height: 100vh;
+        padding: 2rem;
+        color: #e2e8f0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        line-height: 1.6;
+    }
+
+    div.customOuterWrapper0745 .report-container {
+        max-width: 1050px;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 2rem;
+        padding: 2.5rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 80px rgba(99, 102, 241, 0.1);
+    }
+
+    /* Header */
+    div.customOuterWrapper0745 .report-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        position: relative;
+    }
+
+    div.customOuterWrapper0745 .report-header::after {
+        content: '';
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+        border-radius: 2px;
+    }
+
+    div.customOuterWrapper0745 .report-header h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        background: linear-gradient(to right, #c084fc, #60a5fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.5px;
+    }
+
+    div.customOuterWrapper0745 .report-header .subtitle {
+        color: #94a3b8;
+        font-size: 1.1rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* Verdict Banner */
+    div.customOuterWrapper0745 .verdict {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(168, 85, 247, 0.1));
+        border-left: 6px solid #ef4444;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    div.customOuterWrapper0745 .verdict-icon {
+        background: #ef4444;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        box-shadow: 0 0 25px rgba(239, 68, 68, 0.5);
+        flex-shrink: 0;
+    }
+
+    div.customOuterWrapper0745 .verdict-text h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fca5a5;
+        margin-bottom: 0.5rem;
+    }
+
+    div.customOuterWrapper0745 .verdict-text p {
+        font-size: 1.1rem;
+        color: #cbd5e1;
+    }
+
+    div.customOuterWrapper0745 .verdict-text .highlight {
+        background: rgba(239, 68, 68, 0.2);
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.4rem;
+        font-weight: 700;
+        color: #fecaca;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    /* Card Styles */
+    div.customOuterWrapper0745 .card {
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(99, 102, 241, 0.15);
+        border-radius: 1.5rem;
+        padding: 1.8rem;
+        margin-bottom: 1.8rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    div.customOuterWrapper0745 .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.5), 0 0 40px rgba(129, 140, 248, 0.15);
+    }
+
+    div.customOuterWrapper0745 .card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #a5b4fc;
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        border-bottom: 1px dashed rgba(165, 180, 252, 0.3);
+        padding-bottom: 0.8rem;
+    }
+
+    div.customOuterWrapper0745 .card h3 .emoji {
+        font-size: 1.8rem;
+    }
+
+    /* Log Analysis */
+    div.customOuterWrapper0745 .log-block {
+        background: #0f172a;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        font-size: 0.9rem;
+        overflow-x: auto;
+        margin: 1rem 0;
+        border: 1px solid #334155;
+        color: #cbd5e1;
+    }
+
+    div.customOuterWrapper0745 .log-error {
+        color: #fca5a5;
+        font-weight: 600;
+        background: rgba(239, 68, 68, 0.1);
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.3rem;
+        display: inline-block;
+        margin: 0.2rem 0;
+    }
+
+    div.customOuterWrapper0745 .log-warn {
+        color: #fde047;
+    }
+
+    div.customOuterWrapper0745 .log-success {
+        color: #86efac;
+    }
+
+    div.customOuterWrapper0745 .log-info {
+        color: #93c5fd;
+    }
+
+    /* Specs Grid */
+    div.customOuterWrapper0745 .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    div.customOuterWrapper0745 .spec-item {
+        background: rgba(15, 23, 42, 0.7);
+        border-radius: 1rem;
+        padding: 1.2rem;
+        text-align: center;
+        border: 1px solid #334155;
+    }
+
+    div.customOuterWrapper0745 .spec-item .label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #64748b;
+        margin-bottom: 0.4rem;
+    }
+
+    div.customOuterWrapper0745 .spec-item .value {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #e2e8f0;
+    }
+
+    div.customOuterWrapper0745 .spec-item .sub {
+        font-size: 0.85rem;
+        color: #94a3b8;
+    }
+
+    /* Comparison Table */
+    div.customOuterWrapper0745 .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        font-size: 0.95rem;
+    }
+
+    div.customOuterWrapper0745 .compare-table th {
+        background: #1e293b;
+        color: #a5b4fc;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+        border-bottom: 2px solid #4f46e5;
+    }
+
+    div.customOuterWrapper0745 .compare-table td {
+        padding: 1rem;
+        border-bottom: 1px solid #334155;
+        vertical-align: middle;
+    }
+
+    div.customOuterWrapper0745 .compare-table tr.fail-row {
+        background: rgba(239, 68, 68, 0.08);
+    }
+
+    div.customOuterWrapper0745 .compare-table tr.success-row {
+        background: rgba(34, 197, 94, 0.08);
+    }
+
+    div.customOuterWrapper0745 .badge {
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.3px;
+    }
+
+    div.customOuterWrapper0745 .badge-fail {
+        background: rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+    }
+
+    div.customOuterWrapper0745 .badge-success {
+        background: rgba(34, 197, 94, 0.2);
+        color: #86efac;
+    }
+
+    div.customOuterWrapper0745 .badge-info {
+        background: rgba(59, 130, 246, 0.2);
+        color: #93c5fd;
+    }
+
+    /* Recommendations */
+    div.customOuterWrapper0745 .recommendation-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    div.customOuterWrapper0745 .recommendation-list li {
+        background: rgba(99, 102, 241, 0.08);
+        margin-bottom: 1rem;
+        padding: 1.2rem 1.5rem;
+        border-radius: 1rem;
+        border-left: 5px solid #6366f1;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    div.customOuterWrapper0745 .rec-num {
+        background: #6366f1;
+        color: white;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        flex-shrink: 0;
+        font-size: 0.9rem;
+    }
+
+    div.customOuterWrapper0745 .rec-content strong {
+        color: #c7d2fe;
+        display: block;
+        margin-bottom: 0.2rem;
+    }
+
+    /* Footer */
+    div.customOuterWrapper0745 .footer-note {
+        text-align: center;
+        color: #64748b;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+        font-style: italic;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        div.customOuterWrapper0745 {
+            padding: 1rem;
+        }
+
+        div.customOuterWrapper0745 .report-container {
+            padding: 1.5rem;
+        }
+
+        div.customOuterWrapper0745 .report-header h1 {
+            font-size: 1.8rem;
+        }
+
+        div.customOuterWrapper0745 .verdict {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+</style>
+
+<div class="customOuterWrapper0745">
+    <div class="report-container">
+
+        <!-- Header -->
+        <div class="report-header">
+            <h1>🔍 LLM Runtime Diagnostic Report</h1>
+            <div class="subtitle">
+                <span>📋 LM Studio + Local Models</span>
+                <span>•</span>
+                <span>🐧 Ubuntu 25.04</span>
+                <span>•</span>
+                <span>💻 Dell Latitude 5310</span>
+            </div>
+        </div>
+
+        <!-- VERDICT: Model Issue -->
+        <div class="verdict">
+            <div class="verdict-icon">🎯</div>
+            <div class="verdict-text">
+                <h2>Diagnosis: The Models Are the Problem (Not Your Laptop)</h2>
+                <p>
+                    Your laptop hardware is <strong style="color:#86efac;">perfectly capable</strong> of running
+                    LLMs.
+                    The two failing models (<span class="highlight">Ternary-Bonsai-27B-Q4_1</span> & <span
+                        class="highlight">Ternary-Bonsai-8B-Q2_0</span>)
+                    use a <span class="highlight">custom GGML tensor type "42"</span> that your current LM Studio
+                    runtime does not support.
+                    The successful model (<span class="highlight">Bonsai-27B-Q1_0</span>) uses standard quantization
+                    and loads without issues,
+                    confirming your hardware is fine.
+                </p>
+            </div>
+        </div>
+
+        <!-- LAPTOP SPECS SNAPSHOT -->
+        <div class="card">
+            <h3><span class="emoji">💻</span> Your Hardware at a Glance</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="label">CPU</div>
+                    <div class="value">i7-10810U</div>
+                    <div class="sub">6C/12T @ 1.10GHz (Boost 4.9GHz)</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">RAM</div>
+                    <div class="value">16 GB DDR4</div>
+                    <div class="sub">14 GiB usable ~12 GiB available</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">Storage</div>
+                    <div class="value">512 GB NVMe</div>
+                    <div class="sub">SK hynix BC511 • 432 GB free</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">GPU</div>
+                    <div class="value">Intel UHD</div>
+                    <div class="sub">Comet Lake (Integrated)</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">OS / Kernel</div>
+                    <div class="value">Ubuntu 25.04</div>
+                    <div class="sub">Kernel 6.14.0-37</div>
+                </div>
+                <div class="spec-item">
+                    <div class="label">Swap</div>
+                    <div class="value">4.0 GiB</div>
+                    <div class="sub">Currently unused (0B)</div>
+                </div>
+            </div>
+            <p style="margin-top:1rem; color:#94a3b8; font-style:italic;">
+                ✅ Plenty of RAM, modern CPU with AVX2, enough disk — this machine can handle 7B–14B models
+                comfortably and even 27B at low quantizations.
+            </p>
+        </div>
+
+        <!-- MODEL COMPARISON -->
+        <div class="card">
+            <h3><span class="emoji">⚖️</span> Model-by-Model Analysis</h3>
+            <div style="overflow-x: auto;">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Model File</th>
+                            <th>Quantization</th>
+                            <th>Status</th>
+                            <th>Key Error</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fail-row">
+                            <td><strong>Ternary-Bonsai-27B-dspark-Q4_1.gguf</strong></td>
+                            <td><span class="badge badge-fail">Q4_1 (custom)</span></td>
+                            <td><span class="badge badge-fail">❌ FAILED</span></td>
+                            <td><span class="log-error">invalid ggml type 42</span></td>
+                        </tr>
+                        <tr class="fail-row">
+                            <td><strong>Ternary-Bonsai-8B-Q2_0.gguf</strong></td>
+                            <td><span class="badge badge-fail">Q2_0 (custom)</span></td>
+                            <td><span class="badge badge-fail">❌ FAILED</span></td>
+                            <td><span class="log-error">invalid ggml type 42</span></td>
+                        </tr>
+                        <tr class="success-row">
+                            <td><strong>Bonsai-27B-Q1_0.gguf</strong></td>
+                            <td><span class="badge badge-success">Q1_0 (standard)</span></td>
+                            <td><span class="badge badge-success">✅ SUCCESS</span></td>
+                            <td>No error. Loaded + inferred at ~0.83 t/s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- DEEP DIVE LOGS -->
+        <div class="card">
+            <h3><span class="emoji">🔬</span> Root Cause: Unsupported Tensor Type "42"</h3>
+            <p style="margin-bottom:1rem;">
+                The critical error appears identically across both failed models. GGML defines a fixed set of tensor
+                types (0–41).
+                Type <strong>42</strong> is outside this range, meaning these model files were quantized with a
+                <em>custom fork</em> of <code>llama.cpp</code>
+                that introduced a new quantization method (likely <strong>ternary quantization</strong> —
+                "Ternary-Bonsai").
+            </p>
+            <div class="log-block">
+                <span class="log-error">E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type
+                    42. should be in [0, 42)</span><br>
+                <span class="log-error">E gguf_init_from_reader: failed to read tensor info</span><br>
+                <span class="log-error">E llama_model_load: error loading model: llama_model_loader: failed to load
+                    model from ...Ternary-Bonsai-27B-dspark-Q4_1.gguf</span>
+            </div>
+            <p style="margin-top:1rem;">
+                <strong>Why Bonsai-27B-Q1_0 works:</strong> It uses standard <code>Q1_0</code> quantization that
+                falls within the supported range (0–41).
+                The successful loading and inference (0.83 tokens/sec) prove your CPU and memory subsystem are
+                operational for LLM inference.
+            </p>
+            <div class="log-block">
+                <span class="log-info">I srv load_model: loading model '...Bonsai-27B-Q1_0.gguf'</span><br>
+                <span class="log-warn">W common_fit_params: failed to fit params to free device memory: n_gpu_layers
+                    already set ... abort</span><br>
+                <span class="log-success">I srv llama_server: model loaded</span><br>
+                <span class="log-info">I slot print_timing: ... prompt eval time = 28329.59 ms ... eval time =
+                    255862.06 ms / 212 tokens (0.83 t/s)</span>
+            </div>
+            <p style="margin-top:0.5rem; color:#94a3b8;">
+                <em>Note: The "failed to fit params" warning is harmless — it just means no GPU offloading was
+                    attempted because you're on CPU-only Intel graphics.</em>
+            </p>
+        </div>
+
+        <!-- RECOMMENDATIONS -->
+        <div class="card">
+            <h3><span class="emoji">🛠️</span> Recommended Actions</h3>
+            <ul class="recommendation-list">
+                <li>
+                    <div class="rec-num">1</div>
+                    <div class="rec-content">
+                        <strong>Stick to Standard Quantizations</strong>
+                        Look for models with conventional GGUF types: <code>Q4_K_M</code>, <code>Q5_K_M</code>,
+                        <code>Q2_K</code>, <code>Q3_K_L</code>, etc.
+                        Avoid experimental/custom types unless you compile a matching <code>llama.cpp</code> fork
+                        yourself.
+                    </div>
+                </li>
+                <li>
+                    <div class="rec-num">2</div>
+                    <div class="rec-content">
+                        <strong>Use Models Within Your RAM Budget</strong>
+                        You have ~12 GB available. A 27B at Q1_0 barely fits (~6–7 GB). For better speed and
+                        quality,
+                        try 7B–14B models at Q4_K_M or Q5_K_M (typically 4–8 GB). Examples: Mistral-7B,
+                        Llama-3.1-8B, Phi-4.
+                    </div>
+                </li>
+                <li>
+                    <div class="rec-num">3</div>
+                    <div class="rec-content">
+                        <strong>If You Need Ternary Models</strong>
+                        Compile the specific <code>llama.cpp</code> fork from the model author (likely
+                        <code>prism-ml</code> repo)
+                        that supports tensor type 42, then use it with LM Studio's "Local Inference Provider" or as
+                        a custom backend.
+                    </div>
+                </li>
+                <li>
+                    <div class="rec-num">4</div>
+                    <div class="rec-content">
+                        <strong>Validate Downloads</strong>
+                        Check file integrity (SHA256/MD5) for the .gguf files. Although unlikely given the
+                        consistent error,
+                        corruption can sometimes mimic parsing failures.
+                    </div>
+                </li>
+                <li>
+                    <div class="rec-num">5</div>
+                    <div class="rec-content">
+                        <strong>Monitor Thermals (Optional)</strong>
+                        Install <code>lm-sensors</code> and watch CPU temps during long inference runs. Your laptop
+                        can throttle
+                        under sustained load, impacting token generation speed.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- FINAL VERDICT -->
+        <div class="card" style="border: 2px solid #10b981; background: rgba(16, 185, 129, 0.05);">
+            <h3><span class="emoji">✅</span> Final Answer</h3>
+            <p style="font-size: 1.15rem;">
+                <strong style="color:#34d399;">It's the model, not the laptop.</strong>
+                The "Ternary-Bonsai" GGUF files use a non-standard quantization that your LM Studio build doesn't
+                understand.
+                Your Dell Latitude 5310 is more than capable — as proven by the successful 27B run.
+                Choose standard-quantized models and you'll be fine.
+            </p>
+        </div>
+
+        <div class="footer-note">
+            🧠 AI Engineer Diagnostic • Generated from LM Studio logs & system analysis • All tests point to model
+            compatibility
+        </div>
+    </div>
+</div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/07/local-llm-via-lm-studio-diagnostics.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+<!-- &nbsp;&nbsp;
+<a href="" target="_blank" class="customLink">Next &raquo;</a> -->
+
+<br>

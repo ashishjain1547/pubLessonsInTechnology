@@ -1,0 +1,1117 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </link>
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        button { display: none; } 
+    </style>
+
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/attempting-to-run-local-llm-via-lm.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/07/local-llm-via-lm-studio-diagnostics_0123232059.html" target="_blank" class="customLink">Next &raquo;</a>
+
+<br>
+
+<pre>
+# ROLE
+
+Expert AI Engineer
+
+# TASK
+
+Help me debug and diagnose what might be the issue here: the laptop or the model?
+
+# TASK CONTEXT
+
+I am trying to run an LLM locally using LM Studio but failed with first two models (not sure why -- that's the reason I am here).
+Succeeded with the third: Bonsai 27B Q1
+
+# OUTPUT FOMARTTING INSTRUCTIONS
+
+- Return an HTML (Single HTML file)
+
+# FIND ADDITIONAL CONTEXT BELOW
+
+## LAPTOP HARDWARE DETAILS
+
+=========================================
+DELL LAPTOP SYSTEM INFORMATION
+Started: Sun Jul 19 08:37:40 PM IST 2026
+=========================================
+
+--- SYSTEM OVERVIEW ---
+>>> uname -a
+Linux jain-Latitude-5310 6.14.0-37-generic #37-Ubuntu SMP PREEMPT_DYNAMIC Fri Nov 14 22:10:32 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+>>> lsb_release -a
+Distributor ID:	Ubuntu
+Description:	Ubuntu 25.04
+Release:	25.04
+Codename:	plucky
+
+>>> hostnamectl
+ Static hostname: jain-Latitude-5310
+       Icon name: computer-laptop
+         Chassis: laptop 💻
+      Machine ID: bd8632766e28477ba2ab79d4d21e943e
+         Boot ID: 0bc8cc24c7cc454c9e0ac9eb3d7189f6
+Operating System: Ubuntu 25.04
+          Kernel: Linux 6.14.0-37-generic
+    Architecture: x86-64
+ Hardware Vendor: Dell Inc.
+  Hardware Model: Latitude 5310
+Firmware Version: 1.19.0
+   Firmware Date: Mon 2023-03-13
+    Firmware Age: 3y 4month 1w
+
+--- HARDWARE INFORMATION ---
+>>> sudo dmidecode -s system-manufacturer
+Dell Inc.
+
+>>> sudo dmidecode -s system-product-name
+Latitude 5310
+
+>>> sudo dmidecode -s system-version
+Not Specified
+
+>>> sudo dmidecode -s system-serial-number
+1P5J763
+
+>>> sudo dmidecode -s baseboard-product-name
+0PDV43
+
+--- CPU INFORMATION ---
+>>> lscpu
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  12
+On-line CPU(s) list:                     0-11
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+CPU family:                              6
+Model:                                   166
+Thread(s) per core:                      2
+Core(s) per socket:                      6
+Socket(s):                               1
+Stepping:                                0
+CPU(s) scaling MHz:                      69%
+CPU max MHz:                             4900.0000
+CPU min MHz:                             400.0000
+BogoMIPS:                                3199.92
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               192 KiB (6 instances)
+L1i cache:                               192 KiB (6 instances)
+L2 cache:                                1.5 MiB (6 instances)
+L3 cache:                                12 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-11
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             KVM: Mitigation: Split huge pages
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Mitigation; IBPB before exit to userspace
+
+>>> cat /proc/cpuinfo | grep -E 'model name|cpu cores|siblings|processor' | head -20
+processor	: 0
+model name	: Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+siblings	: 12
+cpu cores	: 6
+processor	: 1
+model name	: Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+siblings	: 12
+cpu cores	: 6
+processor	: 2
+model name	: Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+siblings	: 12
+cpu cores	: 6
+processor	: 3
+model name	: Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+siblings	: 12
+cpu cores	: 6
+processor	: 4
+model name	: Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+siblings	: 12
+cpu cores	: 6
+
+>>> cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies 2>/dev/null || echo 'Frequency scaling info not available'
+Frequency scaling info not available
+
+--- MEMORY (RAM) INFORMATION ---
+>>> free -h
+               total        used        free      shared  buff/cache   available
+Mem:            14Gi       2.7Gi       9.7Gi       508Mi       3.2Gi        12Gi
+Swap:          4.0Gi          0B       4.0Gi
+
+>>> cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|SwapTotal|SwapFree'
+MemTotal:       15527500 kB
+MemFree:        10160896 kB
+MemAvailable:   12697880 kB
+SwapTotal:       4194300 kB
+SwapFree:        4194300 kB
+
+>>> sudo dmidecode -t memory | grep -E 'Size|Type|Speed|Manufacturer|Part Number' | head -20
+	Error Correction Type: None
+	Size: 16 GB
+	Type: DDR4
+	Type Detail: Synchronous
+	Speed: 3200 MT/s
+	Manufacturer: 80AD000080AD
+	Part Number: HMA82GS6DJR8N-XN    
+	Configured Memory Speed: 2667 MT/s
+	Module Manufacturer ID: Bank 1, Hex 0xAD
+	Memory Subsystem Controller Manufacturer ID: Unknown
+	Non-Volatile Size: None
+	Volatile Size: 16 GB
+	Cache Size: None
+	Logical Size: None
+	Size: No Module Installed
+	Type: Unknown
+	Type Detail: None
+
+--- STORAGE INFORMATION ---
+>>> lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,MODEL
+NAME          SIZE TYPE MOUNTPOINT                          MODEL
+loop0           4K loop /snap/bare/5                        
+loop1        73.9M loop /snap/core22/1908                   
+loop2        11.8M loop /snap/desktop-security-center/59    
+loop3         242M loop /snap/firefox/6042                  
+loop4        14.4M loop /snap/prompting-client/104          
+loop5         516M loop /snap/gnome-42-2204/202             
+loop6        11.1M loop /snap/firmware-updater/167          
+loop7        91.7M loop /snap/gtk-common-themes/1535        
+loop8        10.8M loop /snap/snap-store/1270               
+loop9        44.4M loop /snap/snapd/23771                   
+loop10        568K loop /snap/snapd-desktop-integration/253 
+loop11      210.2M loop /snap/thunderbird/706               
+nvme0n1     476.9G disk                                     BC511 NVMe SK hynix 512GB
+├─nvme0n1p1     1G part /boot/efi                           
+└─nvme0n1p2 475.9G part /                                   
+
+>>> df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.5G  2.4M  1.5G   1% /run
+/dev/nvme0n1p2  468G   12G  432G   3% /
+tmpfs           7.5G   90M  7.4G   2% /dev/shm
+efivarfs        384K  113K  267K  30% /sys/firmware/efi/efivars
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+tmpfs           7.5G  4.4M  7.4G   1% /tmp
+/dev/nvme0n1p1  1.1G  6.2M  1.1G   1% /boot/efi
+tmpfs           1.5G  136K  1.5G   1% /run/user/1000
+
+>>> sudo fdisk -l 2>/dev/null | grep -E 'Disk /dev/'
+Disk /dev/loop0: 4 KiB, 4096 bytes, 8 sectors
+Disk /dev/loop1: 73.89 MiB, 77475840 bytes, 151320 sectors
+Disk /dev/loop2: 11.75 MiB, 12320768 bytes, 24064 sectors
+Disk /dev/loop3: 242 MiB, 253751296 bytes, 495608 sectors
+Disk /dev/loop4: 14.42 MiB, 15118336 bytes, 29528 sectors
+Disk /dev/loop5: 516.01 MiB, 541073408 bytes, 1056784 sectors
+Disk /dev/loop6: 11.13 MiB, 11673600 bytes, 22800 sectors
+Disk /dev/loop7: 91.69 MiB, 96141312 bytes, 187776 sectors
+Disk /dev/nvme0n1: 476.94 GiB, 512110190592 bytes, 1000215216 sectors
+Disk /dev/loop11: 210.16 MiB, 220364800 bytes, 430400 sectors
+Disk /dev/loop10: 568 KiB, 581632 bytes, 1136 sectors
+Disk /dev/loop8: 10.83 MiB, 11354112 bytes, 22176 sectors
+Disk /dev/loop9: 44.45 MiB, 46604288 bytes, 91024 sectors
+
+--- DISPLAY / GRAPHICS ---
+>>> lspci | grep -E 'VGA|Display|3D'
+00:02.0 VGA compatible controller: Intel Corporation Comet Lake UHD Graphics (rev 04)
+
+>>> glxinfo -B 2>/dev/null | grep -E 'OpenGL vendor|OpenGL renderer|OpenGL version'
+
+>>> xrandr --current 2>/dev/null | grep -E 'connected|Screen'
+Screen 0: minimum 16 x 16, current 1920 x 1080, maximum 32767 x 32767
+eDP-1 connected primary 1920x1080+0+0 (normal left inverted right x axis y axis) 290mm x 170mm
+
+--- NETWORK INFORMATION ---
+>>> lspci | grep -E 'Network|Ethernet|Wireless'
+00:14.3 Network controller: Intel Corporation Comet Lake PCH-LP CNVi WiFi
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (10) I219-LM
+
+>>> ip addr show | grep -E '^[0-9]|inet '
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    inet 127.0.0.1/8 scope host lo
+2: eno2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+3: wlo1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    inet 192.168.1.4/24 brd 192.168.1.255 scope global dynamic noprefixroute wlo1
+
+>>> iwconfig 2>/dev/null | grep -E 'IEEE|ESSID|Mode|Frequency'
+
+>>> sudo lshw -C network 2>/dev/null | grep -E 'product|vendor|driver|version'
+       product: Comet Lake PCH-LP CNVi WiFi
+       vendor: Intel Corporation
+       version: 00
+       configuration: broadcast=yes driver=iwlwifi driverversion=6.14.0-37-generic firmware=77.2753b721.0 QuZ-a0-hr-b0-77.u ip=192.168.1.4 latency=0 link=yes multicast=yes wireless=IEEE 802.11
+       product: Ethernet Connection (10) I219-LM
+       vendor: Intel Corporation
+       version: 00
+       configuration: autonegotiation=on broadcast=yes driver=e1000e driverversion=6.14.0-37-generic firmware=0.6-4 latency=0 link=no multicast=yes port=twisted pair
+
+--- BATTERY INFORMATION ---
+>>> cat /sys/class/power_supply/BAT0/uevent
+DEVTYPE=power_supply
+POWER_SUPPLY_NAME=BAT0
+POWER_SUPPLY_TYPE=Battery
+POWER_SUPPLY_STATUS=Full
+POWER_SUPPLY_PRESENT=1
+POWER_SUPPLY_TECHNOLOGY=Li-poly
+POWER_SUPPLY_CYCLE_COUNT=0
+POWER_SUPPLY_VOLTAGE_MIN_DESIGN=11400000
+POWER_SUPPLY_VOLTAGE_NOW=12912000
+POWER_SUPPLY_CURRENT_NOW=1000
+POWER_SUPPLY_CHARGE_FULL_DESIGN=3685000
+POWER_SUPPLY_CHARGE_FULL=3094000
+POWER_SUPPLY_CHARGE_NOW=3094000
+POWER_SUPPLY_CAPACITY=100
+POWER_SUPPLY_CAPACITY_LEVEL=Full
+POWER_SUPPLY_TYPE=Battery
+POWER_SUPPLY_MODEL_NAME=DELL 2PFPW09
+POWER_SUPPLY_MANUFACTURER=SMP
+POWER_SUPPLY_SERIAL_NUMBER=1301
+
+>>> acpi -V 2>/dev/null
+
+--- USB & PERIPHERALS ---
+>>> lsusb
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 3554:fc03 CX 2.4G Receiver
+Bus 001 Device 003: ID 0bda:565c Realtek Semiconductor Corp. Integrated_Webcam_HD
+Bus 001 Device 004: ID 8087:0026 Intel Corp. AX201 Bluetooth
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+>>> lspci
+00:00.0 Host bridge: Intel Corporation 10th Gen Core Processor Host Bridge/DRAM Registers
+00:02.0 VGA compatible controller: Intel Corporation Comet Lake UHD Graphics (rev 04)
+00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem
+00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model
+00:12.0 Signal processing controller: Intel Corporation Comet Lake Thermal Subsytem
+00:14.0 USB controller: Intel Corporation Comet Lake PCH-LP USB 3.1 xHCI Host Controller
+00:14.2 RAM memory: Intel Corporation Comet Lake PCH-LP Shared SRAM
+00:14.3 Network controller: Intel Corporation Comet Lake PCH-LP CNVi WiFi
+00:15.0 Serial bus controller: Intel Corporation Serial IO I2C Host Controller
+00:15.1 Serial bus controller: Intel Corporation Comet Lake Serial IO I2C Host Controller
+00:16.0 Communication controller: Intel Corporation Comet Lake Management Engine Interface
+00:1c.0 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port #5 (rev f0)
+00:1d.0 PCI bridge: Intel Corporation Device 02b2 (rev f0)
+00:1d.4 PCI bridge: Intel Corporation Comet Lake PCI Express Root Port #13 (rev f0)
+00:1f.0 ISA bridge: Intel Corporation Comet Lake PCH-LP LPC Premium Controller/eSPI Controller
+00:1f.3 Audio device: Intel Corporation Comet Lake PCH-LP cAVS
+00:1f.4 SMBus: Intel Corporation Comet Lake PCH-LP SMBus Host Controller
+00:1f.5 Serial bus controller: Intel Corporation Comet Lake SPI (flash) Controller
+00:1f.6 Ethernet controller: Intel Corporation Ethernet Connection (10) I219-LM
+01:00.0 PCI bridge: Intel Corporation JHL7540 Thunderbolt 3 Bridge [Titan Ridge 2C 2018] (rev 06)
+02:00.0 PCI bridge: Intel Corporation JHL7540 Thunderbolt 3 Bridge [Titan Ridge 2C 2018] (rev 06)
+02:01.0 PCI bridge: Intel Corporation JHL7540 Thunderbolt 3 Bridge [Titan Ridge 2C 2018] (rev 06)
+02:02.0 PCI bridge: Intel Corporation JHL7540 Thunderbolt 3 Bridge [Titan Ridge 2C 2018] (rev 06)
+03:00.0 System peripheral: Intel Corporation JHL7540 Thunderbolt 3 NHI [Titan Ridge 2C 2018] (rev 06)
+39:00.0 USB controller: Intel Corporation JHL7540 Thunderbolt 3 USB Controller [Titan Ridge 2C 2018] (rev 06)
+3a:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS525A PCI Express Card Reader (rev 01)
+3b:00.0 Non-Volatile memory controller: SK hynix BC511 NVMe SSD
+
+--- BIOS / FIRMWARE ---
+>>> sudo dmidecode -t bios | grep -E 'Vendor|Version|Release Date|ROM Size'
+	Vendor: Dell Inc.
+	Version: 1.19.0
+	Release Date: 03/13/2023
+	ROM Size: 32 MB
+
+>>> sudo dmidecode -t system | grep -E 'Wake-up Type|Family'
+	Wake-up Type: Power Switch
+	Family: Latitude
+
+--- SENSORS ---
+Warning: sensors not found. Install with: sudo apt install lm-sensors
+sensors not installed. Install with: sudo apt install lm-sensors
+--- PCI DEVICES ---
+>>> lspci -vvv | grep -E 'Device|Class|Subsystem|Capabilities' | head -50
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Video
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Ethernet
+	Subsystem: Intel Corporation Dual Band Wi-Fi 6(802.11ax) AX201 160MHz 2x2 [Harrison Peak]
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+00:1d.0 PCI bridge: Intel Corporation Device 02b2 (rev f0) (prog-if 00 [Normal decode])
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	DeviceName: Onboard - Sound
+	Subsystem: Dell Device 099f
+	Capabilities: <access denied>
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+	DeviceName: Onboard - Other
+	Subsystem: Dell Device 099f
+
+--- DELL SPECIFIC ---
+>>> cat /sys/class/dmi/id/product_name
+Latitude 5310
+
+>>> cat /sys/class/dmi/id/product_version
+
+
+>>> cat /sys/class/dmi/id/bios_version
+1.19.0
+
+--- SOFTWARE & DRIVERS ---
+>>> dpkg -l | grep -E 'nvidia|amd|intel|mesa|firmware' | head -20
+ii  accountsservice                               23.13.9-7ubuntu1                           amd64        query and manipulate user account information
+ii  acl                                           2.3.2-2                                    amd64        access control list - utilities
+ii  alsa-utils                                    1.2.13-1ubuntu1                            amd64        Utilities for configuring and using ALSA
+ii  amd64-microcode                               3.20250708.0ubuntu0.25.04.2                amd64        Platform firmware and microcode for AMD CPUs and SoCs
+ii  anacron                                       2.3-42ubuntu1                              amd64        cron-like program that doesn't go by time
+ii  apg                                           2.2.3.dfsg.1-7                             amd64        Automated Password Generator - Standalone version
+ii  apparmor                                      4.1.0~beta5-0ubuntu14.2                    amd64        user-space parser utility for AppArmor
+ii  appstream                                     1.0.4-1                                    amd64        Software component metadata management
+ii  apt                                           3.0.0                                      amd64        commandline package manager
+ii  apt-utils                                     3.0.0                                      amd64        package management related utility programs
+ii  aspell                                        0.60.8.1-4                                 amd64        GNU Aspell spell-checker
+ii  at-spi2-core                                  2.56.1-1                                   amd64        Assistive Technology Service Provider Interface (D-Bus core)
+ii  avahi-daemon                                  0.8-16ubuntu2                              amd64        Avahi mDNS/DNS-SD daemon
+ii  baobab                                        48.0-1                                     amd64        GNOME disk usage analyzer
+ii  base-files                                    13.6ubuntu2                                amd64        Debian base system miscellaneous files
+ii  base-passwd                                   3.6.6                                      amd64        Debian base system master password and group files
+ii  bash                                          5.2.37-1.1ubuntu1                          amd64        GNU Bourne Again SHell
+ii  bc                                            1.07.1-4                                   amd64        GNU bc arbitrary precision calculator language
+ii  bind9-dnsutils                                1:9.20.11-0ubuntu0.2                       amd64        Clients provided with BIND 9
+ii  bind9-host                                    1:9.20.11-0ubuntu0.2                       amd64        DNS Lookup Utility
+
+>>> lsmod | head -20
+Module                  Size  Used by
+ccm                    20480  3
+snd_seq_dummy          12288  0
+snd_hrtimer            12288  1
+snd_hda_codec_realtek   217088  1
+snd_hda_codec_generic   122880  1 snd_hda_codec_realtek
+snd_hda_scodec_component    20480  1 snd_hda_codec_realtek
+qrtr                   53248  2
+rfcomm                102400  6
+cmac                   12288  3
+algif_hash             16384  1
+algif_skcipher         12288  1
+af_alg                 32768  6 algif_hash,algif_skcipher
+bnep                   32768  2
+snd_sof_pci_intel_cnl    20480  0
+snd_sof_intel_hda_generic    36864  1 snd_sof_pci_intel_cnl
+soundwire_intel        77824  1 snd_sof_intel_hda_generic
+soundwire_cadence      45056  1 soundwire_intel
+snd_sof_intel_hda_common   192512  2 snd_sof_intel_hda_generic,snd_sof_pci_intel_cnl
+snd_soc_hdac_hda       24576  1 snd_sof_intel_hda_common
+
+
+=========================================
+Collection completed: Sun Jul 19 08:37:47 PM IST 2026
+Log saved to: dell_system_info_20260719_203740.log
+=========================================
+
+--- QUICK SUMMARY ---
+Model: Latitude 5310
+CPU: Intel(R) Core(TM) i7-10810U CPU @ 1.10GHz
+RAM: 14Gi
+Storage: 468G
+OS: Ubuntu 25.04
+Kernel: 6.14.0-37-generic
+
+
+## LOGS
+
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.052.232 I srv          init: The UI is disabled
+0.00.052.234 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.053.673 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.110.835 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.110.837 E gguf_init_from_reader: failed to read tensor info
+0.00.110.902 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.110.911 E llama_model_load_from_file_impl: failed to load model
+0.00.110.935 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.110.959 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.110.959 E gguf_init_from_reader: failed to read tensor info
+0.00.110.967 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.110.968 E llama_model_load_from_file_impl: failed to load model
+0.00.110.971 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.110.974 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.110.976 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.111.424 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.048.968 I srv          init: The UI is disabled
+0.00.048.971 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.050.418 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.106.066 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.106.068 E gguf_init_from_reader: failed to read tensor info
+0.00.106.146 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.106.155 E llama_model_load_from_file_impl: failed to load model
+0.00.106.178 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.106.201 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.106.202 E gguf_init_from_reader: failed to read tensor info
+0.00.106.210 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.106.211 E llama_model_load_from_file_impl: failed to load model
+0.00.106.213 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.106.217 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.106.219 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.106.542 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.047.808 I srv          init: The UI is disabled
+0.00.047.810 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.049.141 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.104.102 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.104.107 E gguf_init_from_reader: failed to read tensor info
+0.00.104.176 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.104.186 E llama_model_load_from_file_impl: failed to load model
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.104.220 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.104.252 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.104.253 E gguf_init_from_reader: failed to read tensor info
+0.00.104.267 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.104.269 E llama_model_load_from_file_impl: failed to load model
+0.00.104.272 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.104.277 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.104.280 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:14:58 [DEBUG]
+ 0.00.104.683 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.062.148 I srv          init: The UI is disabled
+0.00.062.151 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.063.489 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.107.690 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.107.693 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.111.176 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.111.188 E llama_model_load_from_file_impl: failed to load model
+0.00.111.215 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.153.585 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.153.588 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.157.010 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.157.016 E llama_model_load_from_file_impl: failed to load model
+0.00.157.022 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+0.00.157.029 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.157.032 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.157.492 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.062.321 I srv          init: The UI is disabled
+0.00.062.324 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.063.749 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.110.605 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.110.608 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.115.678 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.115.702 E llama_model_load_from_file_impl: failed to load model
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.115.745 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.178.756 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.178.762 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.182.340 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.182.346 E llama_model_load_from_file_impl: failed to load model
+0.00.182.353 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+0.00.182.362 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.182.365 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.182.751 E srv  llama_server: exiting due to model loading error
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.056.579 I srv          init: The UI is disabled
+0.00.056.582 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 14:27:16 [DEBUG]
+ 0.00.057.983 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+2026-07-20 14:27:17 [DEBUG]
+ 0.00.100.277 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.100.280 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 14:27:17 [DEBUG]
+ 0.00.103.534 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.103.546 E llama_model_load_from_file_impl: failed to load model
+0.00.103.578 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 14:27:17 [DEBUG]
+ 0.00.145.789 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.145.791 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 14:27:17 [DEBUG]
+ 0.00.148.861 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.148.865 E llama_model_load_from_file_impl: failed to load model
+0.00.148.870 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+0.00.148.875 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.148.878 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 14:27:17 [DEBUG]
+ 0.00.149.389 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:44:52 [DEBUG]
+ 0.00.106.713 I srv          init: The UI is disabled
+0.00.106.715 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:44:52 [DEBUG]
+ 0.00.108.036 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-Q1_0.gguf'
+2026-07-20 16:44:53 [DEBUG]
+ 0.00.988.653 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999999, abort
+2026-07-20 16:44:57 [DEBUG]
+ 0.00.077.595 I srv          init: The UI is disabled
+0.00.077.600 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:44:57 [DEBUG]
+ 0.00.079.217 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-Q1_0.gguf'
+2026-07-20 16:44:58 [DEBUG]
+ 0.00.979.058 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999999, abort
+2026-07-20 16:45:04 [DEBUG]
+ 0.07.212.643 W load_hparams: Qwen-VL models require at minimum 1024 image tokens to function correctly on grounding tasks
+0.07.212.646 W load_hparams: if you encounter problems with accuracy, try adding --image-min-tokens 1024
+0.07.212.646 W load_hparams: more info: https://github.com/ggml-org/llama.cpp/issues/16842
+2026-07-20 16:45:06 [DEBUG]
+ 0.09.014.244 I srv    load_model: loaded multimodal model, '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-mmproj-BF16.gguf'
+2026-07-20 16:45:07 [DEBUG]
+ 0.10.821.144 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'true'
+2026-07-20 16:45:07 [DEBUG]
+ 0.10.840.352 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.10.840.392 I srv  llama_server: model loaded
+0.10.840.396 I srv  llama_server: listening on http://127.0.0.1:38445
+2026-07-20 16:45:12 [DEBUG]
+ 0.15.713.817 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.15.713.879 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+2026-07-20 16:45:26 [DEBUG]
+ 0.29.286.960 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     12, progress = 0.75, t =  13.57 s / 0.88 tokens per second
+2026-07-20 16:47:21 [DEBUG]
+ 2.24.408.348 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   1.00 t/s, tg_3s =   1.00 t/s
+2026-07-20 16:47:25 [DEBUG]
+ 2.28.712.018 I slot print_timing: id  3 | task 0 | n_decoded =    103, tg =   0.98 t/s, tg_3s =   0.70 t/s
+2026-07-20 16:47:28 [DEBUG]
+ 2.31.795.779 I slot print_timing: id  3 | task 0 | n_decoded =    105, tg =   0.97 t/s, tg_3s =   0.65 t/s
+2026-07-20 16:47:33 [DEBUG]
+ 2.36.035.950 I slot print_timing: id  3 | task 0 | n_decoded =    108, tg =   0.96 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:47:37 [DEBUG]
+ 2.40.247.919 I slot print_timing: id  3 | task 0 | n_decoded =    111, tg =   0.96 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:47:41 [DEBUG]
+ 2.44.448.291 I slot print_timing: id  3 | task 0 | n_decoded =    114, tg =   0.95 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:47:45 [DEBUG]
+ 2.48.631.189 I slot print_timing: id  3 | task 0 | n_decoded =    117, tg =   0.94 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:47:49 [DEBUG]
+ 2.52.818.306 I slot print_timing: id  3 | task 0 | n_decoded =    120, tg =   0.93 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:47:54 [DEBUG]
+ 2.57.002.992 I slot print_timing: id  3 | task 0 | n_decoded =    123, tg =   0.93 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:47:58 [DEBUG]
+ 3.01.241.207 I slot print_timing: id  3 | task 0 | n_decoded =    126, tg =   0.92 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:48:02 [DEBUG]
+ 3.05.597.727 I slot print_timing: id  3 | task 0 | n_decoded =    129, tg =   0.91 t/s, tg_3s =   0.69 t/s
+2026-07-20 16:48:06 [DEBUG]
+ 3.09.735.944 I slot print_timing: id  3 | task 0 | n_decoded =    132, tg =   0.91 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:11 [DEBUG]
+ 3.13.970.868 I slot print_timing: id  3 | task 0 | n_decoded =    135, tg =   0.90 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:48:15 [DEBUG]
+ 3.18.122.412 I slot print_timing: id  3 | task 0 | n_decoded =    138, tg =   0.90 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:19 [DEBUG]
+ 3.22.264.870 I slot print_timing: id  3 | task 0 | n_decoded =    141, tg =   0.89 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:23 [DEBUG]
+ 3.26.462.426 I slot print_timing: id  3 | task 0 | n_decoded =    144, tg =   0.89 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:48:27 [DEBUG]
+ 3.30.617.647 I slot print_timing: id  3 | task 0 | n_decoded =    147, tg =   0.88 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:31 [DEBUG]
+ 3.34.774.290 I slot print_timing: id  3 | task 0 | n_decoded =    150, tg =   0.88 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:36 [DEBUG]
+ 3.39.126.152 I slot print_timing: id  3 | task 0 | n_decoded =    153, tg =   0.87 t/s, tg_3s =   0.69 t/s
+2026-07-20 16:48:40 [DEBUG]
+ 3.43.324.298 I slot print_timing: id  3 | task 0 | n_decoded =    156, tg =   0.87 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:48:44 [DEBUG]
+ 3.47.509.869 I slot print_timing: id  3 | task 0 | n_decoded =    159, tg =   0.87 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:48 [DEBUG]
+ 3.51.658.374 I slot print_timing: id  3 | task 0 | n_decoded =    162, tg =   0.86 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:48:52 [DEBUG]
+ 3.55.766.938 I slot print_timing: id  3 | task 0 | n_decoded =    165, tg =   0.86 t/s, tg_3s =   0.73 t/s
+2026-07-20 16:48:57 [DEBUG]
+ 3.59.893.707 I slot print_timing: id  3 | task 0 | n_decoded =    168, tg =   0.86 t/s, tg_3s =   0.73 t/s
+2026-07-20 16:49:01 [DEBUG]
+ 4.04.028.807 I slot print_timing: id  3 | task 0 | n_decoded =    171, tg =   0.86 t/s, tg_3s =   0.73 t/s
+2026-07-20 16:49:05 [DEBUG]
+ 4.08.166.228 I slot print_timing: id  3 | task 0 | n_decoded =    174, tg =   0.85 t/s, tg_3s =   0.73 t/s
+2026-07-20 16:49:09 [DEBUG]
+ 4.12.443.794 I slot print_timing: id  3 | task 0 | n_decoded =    177, tg =   0.85 t/s, tg_3s =   0.70 t/s
+2026-07-20 16:49:13 [DEBUG]
+ 4.16.660.547 I slot print_timing: id  3 | task 0 | n_decoded =    180, tg =   0.85 t/s, tg_3s =   0.71 t/s
+2026-07-20 16:49:17 [DEBUG]
+ 4.20.791.384 I slot print_timing: id  3 | task 0 | n_decoded =    183, tg =   0.84 t/s, tg_3s =   0.73 t/s
+2026-07-20 16:49:22 [DEBUG]
+ 4.24.972.558 I slot print_timing: id  3 | task 0 | n_decoded =    186, tg =   0.84 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:49:26 [DEBUG]
+ 4.29.127.501 I slot print_timing: id  3 | task 0 | n_decoded =    189, tg =   0.84 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:49:30 [DEBUG]
+ 4.33.279.986 I slot print_timing: id  3 | task 0 | n_decoded =    192, tg =   0.84 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:49:34 [DEBUG]
+ 4.37.723.280 I slot print_timing: id  3 | task 0 | n_decoded =    195, tg =   0.83 t/s, tg_3s =   0.68 t/s
+2026-07-20 16:49:39 [DEBUG]
+ 4.41.902.266 I slot print_timing: id  3 | task 0 | n_decoded =    198, tg =   0.83 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:49:43 [DEBUG]
+ 4.46.076.865 I slot print_timing: id  3 | task 0 | n_decoded =    201, tg =   0.83 t/s, tg_3s =   0.72 t/s
+2026-07-20 16:49:46 [DEBUG]
+ 4.49.858.038 I slot print_timing: id  3 | task 0 | n_decoded =    204, tg =   0.83 t/s, tg_3s =   0.79 t/s
+2026-07-20 16:49:50 [DEBUG]
+ 4.53.647.617 I slot print_timing: id  3 | task 0 | n_decoded =    207, tg =   0.83 t/s, tg_3s =   0.79 t/s
+2026-07-20 16:49:54 [DEBUG]
+ 4.57.400.925 I slot print_timing: id  3 | task 0 | n_decoded =    210, tg =   0.83 t/s, tg_3s =   0.80 t/s
+2026-07-20 16:49:57 [DEBUG]
+ 4.59.905.616 I slot print_timing: id  3 | task 0 | prompt eval time =   28329.59 ms /    16 tokens ( 1770.60 ms per token,     0.56 tokens per second)
+4.59.905.624 I slot print_timing: id  3 | task 0 |        eval time =  255862.06 ms /   212 tokens ( 1206.90 ms per token,     0.83 tokens per second)
+4.59.905.626 I slot print_timing: id  3 | task 0 |       total time =  284191.65 ms /   228 tokens
+4.59.905.635 I slot print_timing: id  3 | task 0 |    graphs reused =        211
+4.59.905.692 I slot      release: id  3 | task 0 | stop processing: n_tokens = 227, truncated = 0
+2026-07-20 16:50:33 [DEBUG]
+ 5.36.055.363 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.158.457 I srv          init: The UI is disabled
+0.00.158.475 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.159.811 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.195.495 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.195.497 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.198.773 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.198.782 E llama_model_load_from_file_impl: failed to load model
+0.00.198.805 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.232.613 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.232.617 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.235.720 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.235.724 E llama_model_load_from_file_impl: failed to load model
+0.00.235.730 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+0.00.235.735 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.235.737 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.236.127 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.053.994 I srv          init: The UI is disabled
+0.00.053.996 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.055.306 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.092.381 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.092.383 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.095.453 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.095.471 E llama_model_load_from_file_impl: failed to load model
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.095.502 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.132.576 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.132.579 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.135.438 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.135.441 E llama_model_load_from_file_impl: failed to load model
+0.00.135.446 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+0.00.135.451 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.135.454 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.135.977 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.055.970 I srv          init: The UI is disabled
+0.00.055.972 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.057.340 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.095.978 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.095.981 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.098.772 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.098.784 E llama_model_load_from_file_impl: failed to load model
+0.00.098.809 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.135.835 E gguf_init_from_reader: tensor 'output.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.135.839 E gguf_init_from_reader: failed to read tensor info
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.138.614 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.138.618 E llama_model_load_from_file_impl: failed to load model
+0.00.138.623 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf'
+0.00.138.628 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-8B-gguf/Ternary-Bonsai-8B-Q2_0.gguf
+0.00.138.630 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:50:33 [DEBUG]
+ 0.00.139.034 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:50:47 [DEBUG]
+ 0.00.073.049 I srv          init: The UI is disabled
+0.00.073.052 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:50:47 [DEBUG]
+ 0.00.074.578 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-Q1_0.gguf'
+2026-07-20 16:50:48 [DEBUG]
+ 0.00.995.222 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999999, abort
+2026-07-20 16:50:52 [DEBUG]
+ 0.05.339.233 W load_hparams: Qwen-VL models require at minimum 1024 image tokens to function correctly on grounding tasks
+0.05.339.236 W load_hparams: if you encounter problems with accuracy, try adding --image-min-tokens 1024
+0.05.339.236 W load_hparams: more info: https://github.com/ggml-org/llama.cpp/issues/16842
+2026-07-20 16:50:54 [DEBUG]
+ 0.06.848.810 I srv    load_model: loaded multimodal model, '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-mmproj-BF16.gguf'
+2026-07-20 16:50:56 [DEBUG]
+ 0.08.549.452 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'true'
+2026-07-20 16:50:56 [DEBUG]
+ 0.08.572.305 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.08.572.346 I srv  llama_server: model loaded
+0.08.572.350 I srv  llama_server: listening on http://127.0.0.1:37421
+2026-07-20 16:51:00 [DEBUG]
+ 0.12.874.637 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.050.493 I srv          init: The UI is disabled
+0.00.050.496 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.051.796 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.107.091 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.107.094 E gguf_init_from_reader: failed to read tensor info
+0.00.107.165 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.107.174 E llama_model_load_from_file_impl: failed to load model
+0.00.107.199 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.107.223 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.107.224 E gguf_init_from_reader: failed to read tensor info
+0.00.107.232 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.107.233 E llama_model_load_from_file_impl: failed to load model
+0.00.107.236 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.107.240 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.107.243 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.107.572 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.047.077 I srv          init: The UI is disabled
+0.00.047.080 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.048.389 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.103.343 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.103.346 E gguf_init_from_reader: failed to read tensor info
+0.00.103.413 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.103.422 E llama_model_load_from_file_impl: failed to load model
+0.00.103.445 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.103.468 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.103.469 E
+2026-07-20 16:51:00 [DEBUG]
+ gguf_init_from_reader: failed to read tensor info
+0.00.103.477 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.103.478 E llama_model_load_from_file_impl: failed to load model
+0.00.103.480 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.103.484 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.103.486 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.103.970 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.045.663 I srv          init: The UI is disabled
+0.00.045.666 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:51:00 [DEBUG]
+ 0.00.047.009 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 16:51:01 [DEBUG]
+ 0.00.100.320 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.100.322 E gguf_init_from_reader: failed to read tensor info
+0.00.100.391 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.100.402 E llama_model_load_from_file_impl: failed to load model
+0.00.100.428 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.100.452 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.100.452 E gguf_init_from_reader: failed to read tensor info
+0.00.100.461 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.100.461 E llama_model_load_from_file_impl: failed to load model
+0.00.100.464 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.100.468 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.100.471 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:51:01 [DEBUG]
+ 0.00.100.879 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:52:36 [DEBUG]
+ 0.00.052.045 I srv          init: The UI is disabled
+0.00.052.047 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:52:36 [DEBUG]
+ 0.00.053.519 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 16:52:36 [DEBUG]
+ 0.00.114.175 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.114.178 E gguf_init_from_reader: failed to read tensor info
+0.00.114.248 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.114.257 E llama_model_load_from_file_impl: failed to load model
+0.00.114.282 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.114.307 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.114.308 E gguf_init_from_reader: failed to read tensor info
+0.00.114.323 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.114.324 E llama_model_load_from_file_impl: failed to load model
+0.00.114.327 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.114.331
+2026-07-20 16:52:36 [DEBUG]
+ E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.114.333 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:52:36 [DEBUG]
+ 0.00.114.752 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:52:36 [DEBUG]
+ 0.00.049.395 I srv          init: The UI is disabled
+0.00.049.398 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:52:36 [DEBUG]
+ 0.00.050.707 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.116.206 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.116.211 E gguf_init_from_reader: failed to read tensor info
+0.00.116.308 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.116.320 E llama_model_load_from_file_impl: failed to load model
+0.00.116.355 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.116.397 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.116.398 E gguf_init_from_reader: failed to read tensor info
+0.00.116.412 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.116.414 E llama_model_load_from_file_impl: failed to load model
+0.00.116.417 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.116.421 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.116.426 I srv    operator(): operator(): cleaning up before exit...
+0.00.116.850 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.053.524 I srv          init: The UI is disabled
+0.00.053.526 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.054.892 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.111.224 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+0.00.111.227 E gguf_init_from_reader: failed to read tensor info
+0.00.111.295 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.111.304 E llama_model_load_from_file_impl: failed to load model
+0.00.111.345 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.111.370 E gguf_init_from_reader: tensor 'token_embd.weight' has invalid ggml type 42. should be in [0, 42)
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.111.370 E gguf_init_from_reader: failed to read tensor info
+0.00.111.378 E llama_model_load: error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.111.379 E llama_model_load_from_file_impl: failed to load model
+0.00.111.381 E cmn  common_init_: failed to load model '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf'
+0.00.111.385 E srv    load_model: failed to load model, '/home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf': error loading model: llama_model_loader: failed to load model from /home/jain/.lmstudio/models/prism-ml/Ternary-Bonsai-27B-gguf/Ternary-Bonsai-27B-dspark-Q4_1.gguf
+0.00.111.387 I srv    operator(): operator(): cleaning up before exit...
+2026-07-20 16:52:37 [DEBUG]
+ 0.00.111.944 E srv  llama_server: exiting due to model loading error
+2026-07-20 16:52:44 [DEBUG]
+ 0.00.071.462 I srv          init: The UI is disabled
+0.00.071.465 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+2026-07-20 16:52:44 [DEBUG]
+ 0.00.072.918 I srv    load_model: loading model '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-Q1_0.gguf'
+2026-07-20 16:52:45 [DEBUG]
+ 0.01.010.690 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999999, abort
+2026-07-20 16:52:50 [DEBUG]
+ 0.05.314.958 W load_hparams: Qwen-VL models require at minimum 1024 image tokens to function correctly on grounding tasks
+0.05.314.960 W load_hparams: if you encounter problems with accuracy, try adding --image-min-tokens 1024
+0.05.314.961 W load_hparams: more info: https://github.com/ggml-org/llama.cpp/issues/16842
+2026-07-20 16:52:51 [DEBUG]
+ 0.06.779.807 I srv    load_model: loaded multimodal model, '/home/jain/.lmstudio/models/prism-ml/Bonsai-27B-gguf/Bonsai-27B-mmproj-BF16.gguf'
+2026-07-20 16:52:53 [DEBUG]
+ 0.08.547.051 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'true'
+2026-07-20 16:52:53 [DEBUG]
+ 0.08.570.438 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.08.570.479 I srv  llama_server: model loaded
+0.08.570.483 I srv  llama_server: listening on http://127.0.0.1:46435
+2026-07-20 16:53:02 [DEBUG]
+ 0.17.148.100 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.17.148.158 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+2026-07-20 16:53:08 [DEBUG]
+ 0.23.532.079 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     28, progress = 0.65, t =   6.38 s / 4.39 tokens per second
+2026-07-20 16:53:24 [DEBUG]
+ 0.40.057.195 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =     39, progress = 0.91, t =  22.91 s / 1.70 tokens per second
+2026-07-20 16:55:49 [DEBUG]
+ 3.04.394.912 I slot print_timing: id  3 | task 0 | n_decoded =    100, tg =   0.80 t/s, tg_3s =   0.80 t/s
+2026-07-20 16:55:52 [DEBUG]
+ 3.07.728.328 I slot print_timing: id  3 | task 0 | n_decoded =    102, tg =   0.79 t/s, tg_3s =   0.60 t/s
+2026-07-20 16:55:55 [DEBUG]
+ 3.11.090.352 I slot print_timing: id  3 | task 0 | n_decoded =    104, tg =   0.79 t/s, tg_3s =   0.59 t/s
+2026-07-20 16:55:59 [DEBUG]
+ 3.14.692.502 I slot print_timing: id  3 | task 0 | n_decoded =    106, tg =   0.78 t/s, tg_3s =   0.56 t/s
+
+</pre>
+
+<br>
+
+<a class="customLink"
+    href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+    target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/06/attempting-to-run-local-llm-via-lm.html" target="_blank"
+    class="customLink">&laquo; Previously</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/07/local-llm-via-lm-studio-diagnostics_0123232059.html" target="_blank" class="customLink">Next &raquo;</a>
+
+<br>
