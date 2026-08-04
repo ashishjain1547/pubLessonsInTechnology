@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrating GitHub with Blogger Using GitHub Actions – A Comprehensive Guide</title>
+    <style>
+        /* ── Scoped CSS: All rules start with div.customOuterWrapper1340 ── */
+        div.customOuterWrapper1340 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.75;
+            color: #2c3e50;
+            background-color: #f9fafb;
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 2.5rem 2rem;
+            border-radius: 14px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        div.customOuterWrapper1340 *,
+        div.customOuterWrapper1340 *::before,
+        div.customOuterWrapper1340 *::after {
+            box-sizing: border-box;
+        }
+
+        div.customOuterWrapper1340 h1 {
+            font-size: 2.2rem;
+            color: #1a1a2e;
+            border-bottom: 3px solid #ff6f00;
+            padding-bottom: 0.6rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        div.customOuterWrapper1340 h2 {
+            font-size: 1.55rem;
+            color: #1a1a2e;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+            border-left: 5px solid #ff6f00;
+            padding-top: 0.15rem;
+            padding-bottom: 0.15rem;
+        }
+
+        div.customOuterWrapper1340 h3 {
+            font-size: 1.2rem;
+            color: #34495e;
+            margin-top: 1.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        div.customOuterWrapper1340 h4 {
+            font-size: 1.05rem;
+            color: #4a5568;
+            margin-top: 1.3rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-weight: 600;
+        }
+
+        div.customOuterWrapper1340 p {
+            margin-bottom: 1.1rem;
+            font-size: 1.02rem;
+        }
+
+        div.customOuterWrapper1340 ul,
+        div.customOuterWrapper1340 ol {
+            margin-bottom: 1.2rem;
+            padding-left: 1.6rem;
+        }
+
+        div.customOuterWrapper1340 li {
+            margin-bottom: 0.55rem;
+        }
+
+        div.customOuterWrapper1340 strong {
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+
+        div.customOuterWrapper1340 code {
+            background-color: #f1f3f4;
+            color: #c7254e;
+            padding: 0.18em 0.45em;
+            border-radius: 4px;
+            font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+            font-size: 0.92em;
+            font-weight: 500;
+        }
+
+        div.customOuterWrapper1340 pre {
+            background-color: #1e1e2e;
+            color: #cdd6f4;
+            padding: 1.2rem 1.4rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 1.4rem;
+            border: 1px solid #313244;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        div.customOuterWrapper1340 pre code {
+            background-color: transparent;
+            color: #cdd6f4;
+            padding: 0;
+            font-weight: 400;
+            font-size: inherit;
+        }
+
+        div.customOuterWrapper1340 blockquote {
+            background-color: #fff8f0;
+            border-left: 5px solid #ff6f00;
+            margin: 1.4rem 0;
+            padding: 1rem 1.3rem;
+            border-radius: 0 8px 8px 0;
+            color: #5c3d2e;
+            font-style: italic;
+        }
+
+        div.customOuterWrapper1340 blockquote strong {
+            color: #c25700;
+        }
+
+        div.customOuterWrapper1340 table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.96rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        div.customOuterWrapper1340 table thead {
+            background-color: #ff6f00;
+            color: #ffffff;
+        }
+
+        div.customOuterWrapper1340 table th {
+            padding: 0.7rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        div.customOuterWrapper1340 table td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            background-color: #ffffff;
+        }
+
+        div.customOuterWrapper1340 table tr:last-child td {
+            border-bottom: none;
+        }
+
+        div.customOuterWrapper1340 .note-box {
+            background-color: #eef6ff;
+            border: 1px solid #b3d4ff;
+            border-left: 5px solid #0066cc;
+            padding: 1rem 1.3rem;
+            border-radius: 8px;
+            margin: 1.3rem 0;
+            color: #1a3a5c;
+        }
+
+        div.customOuterWrapper1340 .warning-box {
+            background-color: #fff5f5;
+            border: 1px solid #fecaca;
+            border-left: 5px solid #dc2626;
+            padding: 1rem 1.3rem;
+            border-radius: 8px;
+            margin: 1.3rem 0;
+            color: #5c1a1a;
+        }
+
+        div.customOuterWrapper1340 .step-badge {
+            display: inline-block;
+            background-color: #ff6f00;
+            color: #fff;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+
+        div.customOuterWrapper1340 hr {
+            border: none;
+            border-top: 2px dashed #e5e7eb;
+            margin: 2rem 0;
+        }
+
+        div.customOuterWrapper1340 .file-structure {
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem 1.3rem;
+            font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            white-space: pre;
+            overflow-x: auto;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            div.customOuterWrapper1340 {
+                padding: 1.5rem 1rem;
+                margin: 0.5rem;
+                border-radius: 8px;
+            }
+            div.customOuterWrapper1340 h1 {
+                font-size: 1.7rem;
+            }
+            div.customOuterWrapper1340 h2 {
+                font-size: 1.3rem;
+            }
+            div.customOuterWrapper1340 pre {
+                padding: 0.8rem;
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="customOuterWrapper1340">
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- TITLE & INTRO                                  -->
+        <!-- ────────────────────────────────────────────── -->
+        <h1>📝 Integrating GitHub with Blogger Using GitHub Actions</h1>
+
+        <p>
+            Imagine you write your blog posts as simple files stored in a GitHub repository. Every time you add a new file or tweak an existing one, a robot (a <strong>GitHub Action</strong>) automatically publishes or updates the corresponding post on your <strong>Blogger</strong> blog — without you ever needing to log into the Blogger dashboard. This guide explains exactly how to set up that automation, step by step, in plain language.
+        </p>
+
+        <div class="note-box">
+            <strong>🎯 What we will cover:</strong>
+            <ul>
+                <li>How GitHub Actions work (the "robot" that runs when you push changes)</li>
+                <li>How to obtain Blogger API credentials</li>
+                <li>How to structure your repository so each Markdown file maps to one blog post</li>
+                <li>Writing the automation script that handles three situations:<br>
+                    ✅ <strong>New file added</strong> → create a new Blogger post<br>
+                    ✅ <strong>Existing file updated</strong> → update the matching Blogger post<br>
+                    🚫 <strong>File deleted</strong> → do absolutely nothing on Blogger
+                </li>
+                <li>Full, tested code snippets you can copy and adapt</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 1: PREREQUISITES                       -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>1. Understanding the Big Picture</h2>
+        <p>
+            Before writing a single line of code, let's clarify the three entities that will work together:
+        </p>
+        <ul>
+            <li><strong>GitHub Repository:</strong> A folder in the cloud where you store your blog posts as files (e.g., Markdown <code>.md</code> files).</li>
+            <li><strong>GitHub Actions:</strong> A free automation service from GitHub. You define a <em>workflow</em> (a YAML file) that says: "When someone pushes a change to the repository, run a script."</li>
+            <li><strong>Blogger API:</strong> A set of web addresses (endpoints) that allow a program to create, read, update, or delete blog posts on your Blogger blog. Google provides this API for free.</li>
+        </ul>
+        <p>
+            The flow is: <strong>You push a file → GitHub Action fires → Script talks to Blogger API → Post appears on your blog.</strong>
+        </p>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 2: BLOGGER API SETUP                   -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>2. Setting Up Blogger API Credentials</h2>
+        <p>
+            To let your script talk to Blogger, you need a set of digital keys: a <strong>Client ID</strong>, a <strong>Client Secret</strong>, and a <strong>Refresh Token</strong>. These tell Google: "Yes, this program is allowed to post on behalf of my blog."
+        </p>
+
+        <h3><span class="step-badge">1</span> Enable the Blogger API</h3>
+        <ol>
+            <li>Visit the <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a>.</li>
+            <li>Create a new project (or select an existing one).</li>
+            <li>Navigate to <strong>APIs &amp; Services → Library</strong>.</li>
+            <li>Search for <strong>Blogger API v3</strong> and click <strong>Enable</strong>.</li>
+        </ol>
+
+        <h3><span class="step-badge">2</span> Create OAuth 2.0 Credentials</h3>
+        <ol>
+            <li>Go to <strong>APIs &amp; Services → Credentials</strong>.</li>
+            <li>Click <strong>Create Credentials → OAuth client ID</strong>.</li>
+            <li>Configure the consent screen if prompted (choose "External", fill in app name and email — this is just for you, not the public).</li>
+            <li>For <strong>Application type</strong>, select <strong>Web application</strong>.</li>
+            <li>Add <code>https://developers.google.com/oauthplayground</code> as an authorized redirect URI.</li>
+            <li>Click <strong>Create</strong>. Note the <strong>Client ID</strong> and <strong>Client Secret</strong>.</li>
+        </ol>
+
+        <h3><span class="step-badge">3</span> Obtain a Refresh Token</h3>
+        <p>
+            A refresh token is a long-lived key that lets your script get new access tokens without you being present. We use the OAuth 2.0 Playground to get one:
+        </p>
+        <ol>
+            <li>Go to <a href="https://developers.google.com/oauthplayground" target="_blank" rel="noopener">OAuth 2.0 Playground</a>.</li>
+            <li>Click the ⚙️ gear icon (settings), check <strong>Use your own OAuth credentials</strong>, and paste your Client ID and Secret.</li>
+            <li>In the left panel, find and select <strong>Blogger API v3</strong> → <code>https://www.googleapis.com/auth/blogger</code>.</li>
+            <li>Click <strong>Authorize APIs</strong>, sign in with the Google account that owns your Blogger blog, and grant permission.</li>
+            <li>Click <strong>Exchange authorization code for tokens</strong>.</li>
+            <li>You will see a <strong>Refresh token</strong>. Copy it — this is the crucial piece.</li>
+        </ol>
+
+        <div class="warning-box">
+            <strong>⚠️ Keep these secrets safe!</strong> You will store the Client ID, Client Secret, and Refresh Token as <strong>GitHub Secrets</strong> in your repository. Never commit them directly into your code files.
+        </div>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 3: FIND YOUR BLOG ID                   -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>3. Finding Your Blogger Blog ID</h2>
+        <p>
+            Every Blogger blog has a unique numeric <strong>Blog ID</strong>. To find it:
+        </p>
+        <ol>
+            <li>Go to your <a href="https://www.blogger.com/" target="_blank" rel="noopener">Blogger Dashboard</a>.</li>
+            <li>Click on the blog you want to automate.</li>
+            <li>Look at the URL in your browser's address bar. It will be something like:<br>
+                <code>https://www.blogger.com/blog/posts/12345678901234567890</code></li>
+            <li>The long number at the end (<code>12345678901234567890</code>) is your <strong>Blog ID</strong>.</li>
+        </ol>
+        <p>Store this number as another GitHub Secret named <code>BLOGGER_BLOG_ID</code>.</p>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 4: REPOSITORY STRUCTURE                -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>4. Structuring Your GitHub Repository</h2>
+        <p>
+            We will keep things simple. Each blog post lives as a Markdown file inside a <code>posts/</code> folder. The filename (without the <code>.md</code> extension) becomes a unique <strong>slug</strong> that our script uses to track which Blogger post corresponds to which file.
+        </p>
+
+        <div class="file-structure">📁 your-blog-repo/
+            ├── 📁 .github/
+            │   └── 📁 workflows/
+            │       └── 📄 blogger-sync.yml      ← The GitHub Action workflow
+            ├── 📁 posts/
+            │   ├── 📄 hello-world.md
+            │   ├── 📄 my-second-post.md
+            │   └── 📄 summer-recipe.md
+            ├── 📄 sync_blogger.py               ← The Python script that does the real work
+            └── 📄 requirements.txt              ← Python dependencies</div>
+
+        <p>Each Markdown file needs a small header section (called <strong>front matter</strong>) where we specify the post's title and optionally labels. We use YAML format between triple-dashes:</p>
+
+        <pre><code>---
+title: "Hello, World! My First Automated Post"
+labels: ["automation", "github-actions"]
+---
+This is the **body** of my blog post. I can use _Markdown_ formatting here.
+
+## A Subheading
+Content goes here. The script will convert this Markdown to HTML
+before sending it to Blogger.</code></pre>
+
+        <div class="note-box">
+            <strong>📌 The tracking trick:</strong> When the script creates a new post via the Blogger API, Blogger returns a unique <strong>post ID</strong>. The script then saves that post ID into a small JSON file called <code>post_map.json</code> in the repository root. This file acts as a lookup table: <em>slug → Blogger post ID</em>. On subsequent runs, the script checks this map to know whether it should <strong>create</strong> a new post or <strong>update</strong> an existing one.
+        </div>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 5: THE PYTHON SYNC SCRIPT              -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>5. The Heart of the System: <code>sync_blogger.py</code></h2>
+        <p>
+            This Python script is the brain. It is called by the GitHub Action and receives a list of files that were added, modified, or deleted during the push. It then decides what to do for each file.
+        </p>
+        <p>Let's build it piece by piece.</p>
+
+        <h3>5.1 Imports and Configuration</h3>
+        <pre><code>#!/usr/bin/env python3
+            """
+            sync_blogger.py – Sync Markdown files from a GitHub repo to Blogger.
+            Handles: new files (CREATE), modified files (UPDATE), deleted files (IGNORE).
+            """
+
+            import os
+            import sys
+            import json
+            import re
+            import requests
+            import markdown
+            import yaml
+            from pathlib import Path
+
+            # ── Configuration from environment variables (set by GitHub Secrets) ──
+            CLIENT_ID = os.environ["BLOGGER_CLIENT_ID"]
+            CLIENT_SECRET = os.environ["BLOGGER_CLIENT_SECRET"]
+            REFRESH_TOKEN = os.environ["BLOGGER_REFRESH_TOKEN"]
+            BLOG_ID = os.environ["BLOGGER_BLOG_ID"]
+
+            POSTS_DIR = "posts"
+            MAP_FILE = "post_map.json"
+
+            BLOGGER_API_BASE = "https://www.googleapis.com/blogger/v3"
+            TOKEN_URL = "https://oauth2.googleapis.com/token"</code></pre>
+
+        <h3>5.2 Getting a Fresh Access Token</h3>
+        <p>
+            The refresh token never expires (unless revoked), but access tokens are short-lived. We exchange our refresh token for a fresh access token on every run:
+        </p>
+        <pre><code>def get_access_token():
+            """Exchange the refresh token for a new access token."""
+            payload = {
+            "client_id": CLIENT_ID,
+            "client_secret": CLIENT_SECRET,
+            "refresh_token": REFRESH_TOKEN,
+            "grant_type": "refresh_token",
+            }
+            response = requests.post(TOKEN_URL, data=payload)
+            response.raise_for_status()
+            return response.json()["access_token"]</code></pre>
+
+        <h3>5.3 Loading and Saving the Post Map</h3>
+        <p>
+            The post map is a simple JSON dictionary: <code>{"hello-world": "9876543210", "summer-recipe": "1234567890"}</code>.
+        </p>
+        <pre><code>def load_post_map():
+            """Load the slug→post_id mapping from the map file."""
+            if os.path.exists(MAP_FILE):
+            with open(MAP_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+            return {}
+
+        def save_post_map(post_map):
+        """Save the slug→post_id mapping back to disk."""
+        with open(MAP_FILE, "w", encoding="utf-8") as f:
+        json.dump(post_map, f, indent=2)</code></pre>
+
+        <h3>5.4 Parsing a Markdown File (Front Matter + Body)</h3>
+        <pre><code>def parse_markdown_file(filepath):
+            """Extract front matter (YAML) and Markdown body from a file."""
+            with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+
+            # Match front matter between --- delimiters
+            match = re.match(r"^---\s*\n(.*?)\n---\s*\n(.*)", content, re.DOTALL)
+            if match:
+            front_matter_raw = match.group(1)
+            body_markdown = match.group(2)
+            metadata = yaml.safe_load(front_matter_raw) or {}
+            else:
+            # If no front matter, use the filename as the title
+            metadata = {"title": Path(filepath).stem.replace("-", " ").title()}
+            body_markdown = content
+
+            # Convert Markdown body to HTML
+            html_body = markdown.markdown(body_markdown, extensions=["extra", "codehilite"])
+            return metadata, html_body</code></pre>
+
+        <h3>5.5 Creating a New Blogger Post (CASE 1: New File)</h3>
+        <pre><code>def create_post(access_token, title, html_body, labels=None):
+            """Create a brand new post on Blogger. Returns the new post ID."""
+            url = f"{BLOGGER_API_BASE}/blogs/{BLOG_ID}/posts/"
+            headers = {
+            "Authorization": f"Bearer {access_token}",
+            "Content-Type": "application/json",
+            }
+            post_data = {
+            "title": title,
+            "content": html_body,
+            }
+            if labels:
+            post_data["labels"] = labels
+
+            response = requests.post(url, headers=headers, json=post_data)
+            response.raise_for_status()
+            new_post = response.json()
+            print(f"✅ Created new post: '{title}' (ID: {new_post['id']})")
+            return new_post["id"]</code></pre>
+
+        <h3>5.6 Updating an Existing Blogger Post (CASE 2: Updated File)</h3>
+        <pre><code>def update_post(access_token, post_id, title, html_body, labels=None):
+            """Update an existing post on Blogger."""
+            url = f"{BLOGGER_API_BASE}/blogs/{BLOG_ID}/posts/{post_id}"
+            headers = {
+            "Authorization": f"Bearer {access_token}",
+            "Content-Type": "application/json",
+            }
+            post_data = {
+            "title": title,
+            "content": html_body,
+            }
+            if labels:
+            post_data["labels"] = labels
+
+            response = requests.put(url, headers=headers, json=post_data)
+            response.raise_for_status()
+            updated_post = response.json()
+            print(f"🔄 Updated post: '{title}' (ID: {updated_post['id']})")</code></pre>
+
+        <h3>5.7 The Main Orchestrator</h3>
+        <p>
+            This is where the three cases are explicitly handled. The GitHub Action will pass a JSON string containing the lists of added, modified, and deleted files.
+        </p>
+        <pre><code>def main():
+            # GitHub Actions passes changed files as a JSON string in env vars
+            added_files_raw = os.environ.get("ADDED_FILES", "[]")
+            modified_files_raw = os.environ.get("MODIFIED_FILES", "[]")
+            deleted_files_raw = os.environ.get("DELETED_FILES", "[]")
+
+            added_files = json.loads(added_files_raw)
+            modified_files = json.loads(modified_files_raw)
+            deleted_files = json.loads(deleted_files_raw)
+
+            # Filter: only consider .md files inside the posts/ directory
+            added_posts = [f for f in added_files if f.startswith(POSTS_DIR) and f.endswith(".md")]
+            modified_posts = [f for f in modified_files if f.startswith(POSTS_DIR) and f.endswith(".md")]
+            deleted_posts = [f for f in deleted_files if f.startswith(POSTS_DIR) and f.endswith(".md")]
+
+            # ── CASE 3: DELETED FILES ──
+            # We explicitly DO NOTHING. Just log it for transparency.
+            for deleted_file in deleted_posts:
+            slug = Path(deleted_file).stem
+            print(f"🚫 File deleted: '{deleted_file}' (slug: '{slug}'). No action taken on Blogger.")
+
+            if not added_posts and not modified_posts:
+            print("ℹ️ No new or modified post files detected. Exiting.")
+            return
+
+            # Get a fresh access token
+            access_token = get_access_token()
+            post_map = load_post_map()
+            map_changed = False
+
+            # ── CASE 1: NEW FILES ──
+            for filepath in added_posts:
+            slug = Path(filepath).stem
+            if slug in post_map:
+            # If somehow the slug already exists in the map, treat as an update
+            print(f"⚠️ Slug '{slug}' already mapped — updating instead of creating.")
+            metadata, html_body = parse_markdown_file(filepath)
+            update_post(access_token, post_map[slug], metadata.get("title", slug), html_body, metadata.get("labels"))
+            else:
+            metadata, html_body = parse_markdown_file(filepath)
+            new_id = create_post(access_token, metadata.get("title", slug), html_body, metadata.get("labels"))
+            post_map[slug] = new_id
+            map_changed = True
+
+            # ── CASE 2: MODIFIED FILES ──
+            for filepath in modified_posts:
+            slug = Path(filepath).stem
+            metadata, html_body = parse_markdown_file(filepath)
+            if slug in post_map:
+            # Found existing mapping → UPDATE
+            update_post(access_token, post_map[slug], metadata.get("title", slug), html_body, metadata.get("labels"))
+            else:
+            # Modified but no mapping found → treat as new (could happen if map was lost)
+            print(f"⚠️ No mapping for slug '{slug}' — creating as new post.")
+            new_id = create_post(access_token, metadata.get("title", slug), html_body, metadata.get("labels"))
+            post_map[slug] = new_id
+            map_changed = True
+
+            # Save the updated post map back to the repository
+            if map_changed:
+            save_post_map(post_map)
+            print("💾 Post map updated and saved.")
+
+            if __name__ == "__main__":
+            main()</code></pre>
+
+        <div class="note-box">
+            <strong>🧠 Key insight about CASE 3 (deleted files):</strong> Notice that <code>deleted_posts</code> is simply logged and then ignored. The script does <strong>not</strong> delete the corresponding Blogger post. This is a deliberate design choice: deleting a file from your repository should <em>never</em> silently remove content from your live blog. If you ever want to remove a post, you should do it manually via the Blogger dashboard, or add an explicit "draft: true" flag to the front matter and handle that separately.
+        </div>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 6: REQUIREMENTS.TXT                    -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>6. The <code>requirements.txt</code> File</h2>
+        <p>Our Python script depends on three external libraries. Create a <code>requirements.txt</code> file:</p>
+        <pre><code>requests>=2.28.0
+            markdown>=3.4.0
+            pyyaml>=6.0</code></pre>
+        <p>
+            <code>requests</code> handles HTTP calls to the Blogger API.<br>
+            <code>markdown</code> converts your Markdown body into HTML.<br>
+            <code>pyyaml</code> parses the YAML front matter at the top of each file.
+        </p>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 7: THE GITHUB ACTIONS WORKFLOW         -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>7. The GitHub Actions Workflow: <code>blogger-sync.yml</code></h2>
+        <p>
+            This YAML file lives in <code>.github/workflows/</code> and tells GitHub: "Whenever someone pushes to the <code>main</code> branch, run the sync script."
+        </p>
+
+        <pre><code>name: Sync to Blogger
+
+            on:
+            push:
+            branches:
+            - main
+            paths:
+            - 'posts/**'           # Only trigger when files in posts/ change
+            - 'post_map.json'       # Also trigger if the map itself is updated
+            workflow_dispatch:       # Allow manual triggering from the GitHub UI
+
+            jobs:
+            sync-blogger:
+            runs-on: ubuntu-latest
+
+            steps:
+            # Step 1: Check out the repository code
+            - name: 📥 Checkout repository
+            uses: actions/checkout@v4
+            with:
+            fetch-depth: 2       # Fetch the last two commits to detect changed files
+
+            # Step 2: Set up Python
+            - name: 🐍 Set up Python
+            uses: actions/setup-python@v5
+            with:
+            python-version: '3.11'
+
+            # Step 3: Install dependencies
+            - name: 📦 Install Python dependencies
+            run: pip install -r requirements.txt
+
+            # Step 4: Detect changed files (added, modified, deleted)
+            - name: 🔍 Detect changed files
+            id: changed-files
+            run: |
+            # Compare HEAD~1 (previous commit) with HEAD (current commit)
+            ADDED=$(git diff --diff-filter=A --name-only HEAD~1 HEAD | jq -R -s -c 'split("\n")[:-1]')
+            MODIFIED=$(git diff --diff-filter=M --name-only HEAD~1 HEAD | jq -R -s -c 'split("\n")[:-1]')
+            DELETED=$(git diff --diff-filter=D --name-only HEAD~1 HEAD | jq -R -s -c 'split("\n")[:-1]')
+            echo "added=$ADDED" >> $GITHUB_ENV
+            echo "modified=$MODIFIED" >> $GITHUB_ENV
+            echo "deleted=$DELETED" >> $GITHUB_ENV
+            echo "Added files: $ADDED"
+            echo "Modified files: $MODIFIED"
+            echo "Deleted files: $DELETED"
+
+            # Step 5: Run the sync script
+            - name: 🚀 Sync posts to Blogger
+            env:
+            BLOGGER_CLIENT_ID: ${{ secrets.BLOGGER_CLIENT_ID }}
+            BLOGGER_CLIENT_SECRET: ${{ secrets.BLOGGER_CLIENT_SECRET }}
+            BLOGGER_REFRESH_TOKEN: ${{ secrets.BLOGGER_REFRESH_TOKEN }}
+            BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+            ADDED_FILES: ${{ env.added }}
+            MODIFIED_FILES: ${{ env.modified }}
+            DELETED_FILES: ${{ env.deleted }}
+            run: python sync_blogger.py
+
+            # Step 6: If post_map.json was updated, commit it back to the repo
+            - name: 💾 Commit updated post_map.json
+            if: success()
+            run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add post_map.json
+            if git diff --cached --quiet; then
+            echo "No changes to post_map.json"
+            else
+            git commit -m "📌 Update post_map.json [skip ci]"
+            git push
+            fi</code></pre>
+
+        <div class="note-box">
+            <strong>🔍 How changed files are detected:</strong> The <code>git diff --diff-filter=A</code> command lists only <strong>added</strong> files, <code>--diff-filter=M</code> lists <strong>modified</strong> files, and <code>--diff-filter=D</code> lists <strong>deleted</strong> files. We pipe these through <code>jq</code> to convert them into compact JSON arrays that our Python script can easily parse.
+        </div>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 8: GITHUB SECRETS                      -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>8. Storing Secrets in GitHub</h2>
+        <p>
+            Never put your Blogger credentials directly in the code. Instead, store them as <strong>encrypted secrets</strong> in your repository:
+        </p>
+        <ol>
+            <li>Go to your repository on GitHub.</li>
+            <li>Click <strong>Settings → Secrets and variables → Actions</strong>.</li>
+            <li>Click <strong>New repository secret</strong> and add each of these:</li>
+        </ol>
+
+        <table>
+            <thead>
+                <tr><th>Secret Name</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>BLOGGER_CLIENT_ID</code></td><td>Your OAuth Client ID from Google Cloud Console</td></tr>
+                <tr><td><code>BLOGGER_CLIENT_SECRET</code></td><td>Your OAuth Client Secret</td></tr>
+                <tr><td><code>BLOGGER_REFRESH_TOKEN</code></td><td>The refresh token from OAuth Playground</td></tr>
+                <tr><td><code>BLOGGER_BLOG_ID</code></td><td>Your numeric Blogger Blog ID</td></tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 9: TESTING & FIRST RUN                 -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>9. Testing the Whole Pipeline</h2>
+        <p>
+            Now that everything is wired up, it's time for a test drive.
+        </p>
+
+        <h3>Test 1: Creating a New Post (CASE 1)</h3>
+        <ol>
+            <li>Create a new file in the <code>posts/</code> folder, e.g., <code>my-test-post.md</code>, with valid front matter and body.</li>
+            <li>Commit and push to the <code>main</code> branch.</li>
+            <li>Go to the <strong>Actions</strong> tab of your repository and watch the workflow run.</li>
+            <li>Check your Blogger dashboard — a new post should appear!</li>
+            <li>Verify that <code>post_map.json</code> now contains the slug and the new Blogger post ID.</li>
+        </ol>
+
+        <h3>Test 2: Updating an Existing Post (CASE 2)</h3>
+        <ol>
+            <li>Edit <code>my-test-post.md</code> — change some text or the title.</li>
+            <li>Commit and push.</li>
+            <li>The workflow should detect the modification and call the <strong>update</strong> endpoint.</li>
+            <li>Refresh your blog post — the changes should be reflected.</li>
+        </ol>
+
+        <h3>Test 3: Deleting a File (CASE 3 – No Action)</h3>
+        <ol>
+            <li>Delete <code>my-test-post.md</code> from the repository.</li>
+            <li>Commit and push.</li>
+            <li>The workflow runs, logs: <code>🚫 File deleted: 'posts/my-test-post.md' ... No action taken on Blogger.</code></li>
+            <li>The original post on Blogger remains untouched — exactly as intended.</li>
+        </ol>
+
+        <div class="warning-box">
+            <strong>⚠️ Important:</strong> After Test 3, your <code>post_map.json</code> will still contain the mapping for the deleted file's slug. If you later create a <em>new</em> file with the same slug, the script will <strong>update</strong> the old Blogger post (because the mapping still exists) rather than creating a new one. This might be exactly what you want (reviving a "hidden" post), or you may want to manually clean up <code>post_map.json</code> if you truly want a fresh start.
+        </div>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 10: ADVANCED CONSIDERATIONS            -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>10. Going Further: Ideas &amp; Improvements</h2>
+        <p>
+            Once the basic pipeline is working, you can extend it in many ways:
+        </p>
+        <ul>
+            <li><strong>Draft Mode:</strong> Add a <code>status: draft</code> field to your front matter. If present, the script sends the post as a draft instead of publishing immediately.</li>
+            <li><strong>Image Handling:</strong> Upload images to Blogger's media endpoint and embed them into your posts.</li>
+            <li><strong>Scheduled Posts:</strong> Include a <code>publish_date</code> in the front matter and use Blogger's <code>published</code> field to schedule posts for the future.</li>
+            <li><strong>Multi-blog Support:</strong> Store a <code>blog_id</code> in the front matter to route posts to different Blogger blogs from a single repository.</li>
+            <li><strong>Slug Mapping Without Front Matter:</strong> Use the filename as the URL slug on Blogger by setting the <code>title</code> and omitting a custom URL (Blogger auto-generates one from the title).</li>
+        </ul>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- SECTION 11: TROUBLESHOOTING                    -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>11. Troubleshooting Common Issues</h2>
+
+        <table>
+            <thead>
+                <tr><th>Symptom</th><th>Likely Cause</th><th>Fix</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Workflow fails with <code>401 Unauthorized</code></td>
+                    <td>Access token is invalid or refresh token has expired/been revoked</td>
+                    <td>Re-generate the refresh token via OAuth Playground; update the <code>BLOGGER_REFRESH_TOKEN</code> secret</td>
+                </tr>
+                <tr>
+                    <td><code>404 Not Found</code> when updating</td>
+                    <td>Blog ID is wrong or post ID in <code>post_map.json</code> is stale</td>
+                    <td>Double-check <code>BLOGGER_BLOG_ID</code>; delete the offending entry from <code>post_map.json</code> to force a fresh create</td>
+                </tr>
+                <tr>
+                    <td>Workflow doesn't trigger on push</td>
+                    <td>The <code>paths</code> filter in the workflow doesn't match your file locations</td>
+                    <td>Ensure your post files are inside the <code>posts/</code> folder (or adjust the <code>paths</code> pattern)</td>
+                </tr>
+                <tr>
+                    <td>Markdown conversion looks wrong</td>
+                    <td>The <code>markdown</code> library doesn't support your syntax</td>
+                    <td>Try adding more extensions like <code>pymdownx.superfences</code> or switch to a different converter</td>
+                </tr>
+                <tr>
+                    <td>Deleted file still triggers an update</td>
+                    <td>The workflow is not correctly isolating deleted files</td>
+                    <td>Verify the <code>--diff-filter=D</code> logic in the workflow's changed-files detection step</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!-- ────────────────────────────────────────────── -->
+        <!-- CONCLUSION                                     -->
+        <!-- ────────────────────────────────────────────── -->
+        <h2>12. Wrapping Up</h2>
+        <p>
+            You now have a fully functional, automated pipeline that turns your GitHub repository into a headless CMS for your Blogger blog. The three core behaviors are crystal clear:
+        </p>
+        <ul>
+            <li>📄 <strong>New Markdown file pushed</strong> → A fresh Blogger post is created, and its ID is recorded in <code>post_map.json</code>.</li>
+            <li>✏️ <strong>Existing Markdown file modified</strong> → The corresponding Blogger post is updated with the new title, content, and labels.</li>
+            <li>🗑️ <strong>Markdown file deleted</strong> → <em>Nothing happens on Blogger.</em> The post remains safe, and the deletion is merely logged for your awareness.</li>
+        </ul>
+        <p>
+            This setup gives you the best of both worlds: the power and flexibility of writing in your favorite text editor with version control, combined with the seamless publishing of the Blogger platform. Happy writing — and happy automating! 🚀
+        </p>
+
+    </div><!-- /.customOuterWrapper1340 -->
+</body>
+</html>
