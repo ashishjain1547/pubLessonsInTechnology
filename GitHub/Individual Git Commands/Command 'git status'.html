@@ -1,0 +1,125 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre class=""><b class="">1. "git status" to check if files need to be 'added'</b>
+    
+$ git status
+
+<i class="" style="color: green;">On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+    (use "git add [file]..." to include in what will be committed)
+    xyz_book.pdf
+
+nothing added to commit but untracked files present (use "git add" to track)</i>
+
+$ git add -A
+
+<b class="">2. "git status" to tell if files need to be 'committed'.</b>
+
+$ git status
+
+<i class="" style="color: green;">On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged [file]..." to unstage)
+	new file:   xyz_book.pdf </i>
+
+$ git commit -m "cmt"
+[main d...0] cmt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 xyz_book.pdf
+
+<b class="">3. "git status" to tell if files need to be 'pushed'.</b>
+
+$ git status
+<i class="" style="color: green;">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+    (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean</i>
+
+<b class="">4. Finally, the "git push" </b>
+
+$ git push
+
+<i class="" style="color: green;">Username for...
+Password for...
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 5.05 MiB | 54.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To ...
+    f...0  main -> main</i>
+
+$ git push
+<i class="" style="color: red;">Username for 'https://github.com': ^C</i>
+
+$ uname -a
+<i class="" style="color: green;">Linux master 5.4.0-58-generic #64-Ubuntu SMP Wed Dec 9 08:16:25 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</i>
+
+$ uname
+Linux
+
+Note: On our system, it is not automatically saving the credentials.
+<span class="" style="display: none;">Tags: Technology,GitHub,</span></pre>

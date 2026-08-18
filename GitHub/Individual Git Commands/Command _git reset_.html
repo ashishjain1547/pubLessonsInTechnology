@@ -1,0 +1,165 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        });
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre class="">To review, git reset is a powerful command that is used to undo local changes to the state of a Git repo. Git reset operates on "The Three Trees of Git". These trees are the Commit History (HEAD), the Staging Index, and the Working Directory. There are three command line options that correspond to the three trees.
+
+If your commit is only a 'local commit':
+
+1. It would show up in output of command 'git log'.
+2. But it won't show up on the 'github.com' at URL:
+https://github.com/${userName}/${repoName}/commits
+
+<b class="">And command "git status" would tell you how many local commits you are having:</b>
+
+$ git status
+
+<i class="" style="color:red">On branch main
+<b class="">Your branch is ahead of 'origin/main' by 1 commit.</b>
+  (use "git push" to publish your local commits)
+... </i>
+
+<b class="">Few additional information 'git status' would tell you in case you are not sure about what is wrong or what to do:</b>
+
+$ git status
+
+<i class="" style="color: red;">On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file>..." to unstage)
+	new file:   abc.pdf
+	new file:   xyz.pdf
+...</i>
+
+$ git status
+
+<i class="" style="color: red;">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+    (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+    (use "git add/rm &lt;file>..." to update what will be committed)
+    (use "git restore &lt;file>..." to discard changes in working directory)</i>
+
+<b class="">Use 'git reset --hard' to throw away any 'local commits'</b>
+
+<b class=""><i class="">If you want to go to a specific reference other than a remote branch:</i></b>
+
+<i class="" style="color: blue;">$ git reset --hard &lt;commit hash, branch, or tag> </i>
+
+For example:
+
+"git log" will tell you how many local commits are you ahead of the last pushed commit:
+
+$ git log
+
+<i class="" style="color: green;">commit c...d (HEAD -> main)
+Author: ashish &lt;abc@xyz.com>
+Date:   Mon Mar 15 09:32:07 2021 +0530
+
+    tech books feb 2021
+
+commit 6...9
+Author: ashish &lt;abc@xyz.com>
+Date:   Mon Mar 15 09:26:59 2021 +0530
+
+    tech books feb 2021
+
+commit 2...3
+Author: ashish &lt;abc@xyz.com>
+Date:   Mon Mar 15 09:21:32 2021 +0530
+
+    tech books feb 2021
+
+commit 5...9
+Author: ashish &lt;abc@xyz.com>
+Date:   Mon Mar 15 09:12:58 2021 +0530
+
+    tech books feb 2021
+
+commit 9...7 (origin/main, origin/HEAD)
+Author: ashish &lt;abc@xyz.com>
+Date:   Mon Mar 15 08:50:50 2021 +0530
+
+    tech books</i>
+
+-- -- --
+
+<i class="" style="color: blue;">$ git reset --hard 9...7</i>
+
+<i class="" style="color: green;">HEAD is now at 9...7 tech books</i>
+ 
+$ git status
+
+<i class="" style="color: green;">On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean</i>
+
+-- -- --
+
+<b class="">References</b>
+
+Ref 1: <a href="https://stackoverflow.com/questions/26785118/head-vs-head-vs-head-also-known-as-tilde-vs-caret-vs-at-sign/26785200" class="" target="_blank">Head vs Head vs Head</a>
+
+Ref 2: <a href="https://stackoverflow.com/questions/1955985/what-does-the-caret-character-mean#:~:text=HEAD%5E%20means%20the%20first%20parent,any%20commit%2C%20not%20just%20HEAD%20." class="" target="_blank">What does caret character means in 'git reset head'</a>
+
+Ref 3: <a href="https://stackoverflow.com/questions/5097456/throw-away-local-commits-in-git" class="" target="_blank">Throw away local commits in Git</a>
+
+Ref 4: <a href="https://www.atlassian.com/git/tutorials/undoing-changes/git-reset" target="_blank" class="">Atlassian - git reset</a>
+<span class="" style="display: none;">Tags: Technology,GitHub</span></pre>

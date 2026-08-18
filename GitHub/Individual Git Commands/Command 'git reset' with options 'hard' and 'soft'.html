@@ -1,0 +1,172 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre class="">First, we will show the 'git reset --hard' that deletes the newly added files as well. Later we will show 'soft reset'.
+    
+~/Desktop/git_testing$ ls
+
+~/Desktop/git_testing$ git clone https://github.com/${userName}/repo_for_testing.git
+
+<i class="" style="color: green;">Cloning into 'repo_for_testing'...
+Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 4.75 KiB | 1.58 MiB/s, done.</i>
+
+~/Desktop/git_testing$ cd repo_for_testing/
+
+~/Desktop/git_testing/repo_for_testing$ ls
+<i class="" style="color: green;">LICENSE  README.md</i>
+
+~/Desktop/git_testing/repo_for_testing$ echo " WE WILL NOT PUSH IT " > newFile.txt 
+
+~/Desktop/git_testing/repo_for_testing$ ls
+
+<i class="" style="color: green;">LICENSE  newFile.txt  README.md</i>
+
+~/Desktop/git_testing/repo_for_testing$ git add -A
+~/Desktop/git_testing/repo_for_testing$ git commit -m "a test"
+
+<i class="" style="color: green;">[main d2c5280] a test
+    1 file changed, 1 insertion(+)
+    create mode 100644 newFile.txt</i>
+
+~/Desktop/git_testing/repo_for_testing$ git status
+
+<i class="" style="color: green;">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+    (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean</i>
+
+~/Desktop/git_testing/repo_for_testing$ git log
+
+<i class="" style="color: green;">commit d2c5280b33961d30f9e945594ea54c134ef3c08e (HEAD -> main)
+Author: ashish &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:35:01 2021 +0530
+
+    a test
+
+commit 974a71b3df68140ebbc3b4775201b39c500aa589 (origin/main, origin/HEAD)
+Author: ${userName} &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit </i>
+
+~/Desktop/git_testing/repo_for_testing$ git reset --hard 974a71b
+HEAD is now at 974a71b Initial commit
+
+~/Desktop/git_testing/repo_for_testing$ ls
+LICENSE  README.md
+
+~/Desktop/git_testing/repo_for_testing$ 
+
+<b class=""><i class="">See in the last "ls" output that our new text file is not there.</i></b>
+
+<b class="">Now, we would do a 'soft reset' and files will not be deleted this time.</b>
+
+~/Desktop/git_testing/repo_for_testing$ echo " NEW FILE " > newFile.txt
+~/Desktop/git_testing/repo_for_testing$ ls
+LICENSE  newFile.txt  README.md
+~/Desktop/git_testing/repo_for_testing$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add [file]..." to include in what will be committed)
+	newFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+~/Desktop/git_testing/repo_for_testing$ git add -A
+~/Desktop/git_testing/repo_for_testing$ git commit -m "cmt"
+[main e054f92] cmt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newFile.txt
+~/Desktop/git_testing/repo_for_testing$ git log
+commit e054f92f804c93b82d89bffd109d06a292986963 (HEAD -> main)
+Author: ashish &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:51:16 2021 +0530
+
+    cmt
+
+commit 974a71b3df68140ebbc3b4775201b39c500aa589 (origin/main, origin/HEAD)
+Author: ashish &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit
+~/Desktop/git_testing/repo_for_testing$ git reset 974a71b
+~/Desktop/git_testing/repo_for_testing$ ls
+LICENSE  newFile.txt  README.md
+~/Desktop/git_testing/repo_for_testing$ git log
+commit 974a71b3df68140ebbc3b4775201b39c500aa589 (HEAD -> main, origin/main, origin/HEAD)
+Author: ashish &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit
+
+~/Desktop/git_testing/repo_for_testing$ ls
+
+<i class="" style="color: green;">LICENSE  newFile.txt  README.md</i>
+
+~/Desktop/git_testing/repo_for_testing$ 
+
+<span class="" style="display: none;">Title: Command 'git reset hard' Deletes Your Files
+Tags: Technology,GitHub,</span></pre>

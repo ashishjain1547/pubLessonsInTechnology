@@ -1,0 +1,243 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        });
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+
+<pre>(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash
+<i class="ig">
+No local changes to save</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git status
+<i class="ig">
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing> <i class="ib">echo "20210826" > 20210826.txt</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git status
+<i class="ig">
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+    (use "git add &lt;file>..." to include in what will be committed)
+        20210826.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash
+<i class="ig">
+No local changes to save</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git add -A
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git status
+<i class="ig">
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file>..." to unstage)
+        new file:   20210826.txt</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash
+<i class="ig">
+Saved working directory and index state WIP on main: 9f1b42f Merge branch 'test_branch' into main</i>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git branch
+* main
+
+<h3>No changes appear in "Git Log"</h3>
+<b>1: Here we have stashed changes.</b>
+  (base) C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git log
+  <i class="ig">
+  commit 9f1b42fe6b2cf1fbc3781cdb463b284f871ad291 (HEAD -> main, origin/test_branch, origin/main, origin/HEAD)
+  Merge: d210505 087a5ca
+  Author: unknown &lt;ashishjain1547@gmail.com>
+  Date:   Wed Jul 21 12:41:37 2021 +0530
+    Merge branch 'test_branch' into main
+
+  commit 087a5ca85b88f7303d025e8770183a6eabbeca7a
+  Author: unknown &lt;ashishjain1547@gmail.com>
+  Date:   Wed Jul 21 12:29:09 2021 +0530
+
+    20210721 1229</i>
+
+2:
+  C:\Users\Ashish Jain\OneDrive\Desktop\(2)\repo_for_testing>git log
+
+  commit 9f1b42fe6b2cf1fbc3781cdb463b284f871ad291 (HEAD -> main, origin/test_branch, origin/main, origin/HEAD)
+  Merge: d210505 087a5ca
+  Author: unknown &lt;ashishjain1547@gmail.com>
+  Date:   Wed Jul 21 12:41:37 2021 +0530
+    Merge branch 'test_branch' into main
+
+  commit 087a5ca85b88f7303d025e8770183a6eabbeca7a
+  Author: unknown &lt;ashishjain1547@gmail.com>
+  Date:   Wed Jul 21 12:29:09 2021 +0530
+    20210721 1229
+
+
+<h3>Now We Apply Our Stashaed Changes Again</h3>
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing
+
+08/26/2021  06:05 PM    &lt;DIR>          .
+08/26/2021  06:05 PM    &lt;DIR>          ..
+08/26/2021  04:15 PM               368 .gitignore
+08/26/2021  04:15 PM                30 20210528_test_branch.txt
+08/26/2021  04:15 PM                17 202107141543.txt
+08/26/2021  04:15 PM                17 202107141608.txt
+08/26/2021  04:15 PM                17 202107211228.txt
+08/26/2021  04:15 PM            11,558 LICENSE
+08/26/2021  04:15 PM                11 newFile.txt
+08/26/2021  04:15 PM                38 README.md
+08/26/2021  04:15 PM                23 test_file_20210528.txt
+               9 File(s)         12,079 bytes
+               2 Dir(s)  66,473,070,592 bytes free
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash list
+stash@{0}: WIP on main: 9f1b42f Merge branch 'test_branch' into main
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git show
+commit 9f1b42fe6b2cf1fbc3781cdb463b284f871ad291 (HEAD -> main, origin/test_branch, origin/main, origin/HEAD)
+Merge: d210505 087a5ca
+Author: unknown &lt;ashishjain1547@gmail.com>
+Date:   Wed Jul 21 12:41:37 2021 +0530
+
+    Merge branch 'test_branch' into main
+
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash apply
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file>..." to unstage)
+        new file:   20210826.txt
+
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged &lt;file>..." to unstage)
+        new file:   20210826.txt
+
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing
+
+08/26/2021  06:16 PM    &lt;DIR>          .
+08/26/2021  06:16 PM    &lt;DIR>          ..
+08/26/2021  04:15 PM               368 .gitignore
+08/26/2021  04:15 PM                30 20210528_test_branch.txt
+08/26/2021  04:15 PM                17 202107141543.txt
+08/26/2021  04:15 PM                17 202107141608.txt
+08/26/2021  04:15 PM                17 202107211228.txt
+08/26/2021  06:16 PM                13 20210826.txt
+08/26/2021  04:15 PM            11,558 LICENSE
+08/26/2021  04:15 PM                11 newFile.txt
+08/26/2021  04:15 PM                38 README.md
+08/26/2021  04:15 PM                23 test_file_20210528.txt
+              10 File(s)         12,092 bytes
+               2 Dir(s)  66,475,622,400 bytes free
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash show
+ 20210826.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash list
+stash@{0}: WIP on main: 9f1b42f Merge branch 'test_branch' into main
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash clear
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash list
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>git stash show
+No stash entries found.
+
+C:\Users\Ashish Jain\OneDrive\Desktop\(1)\repo_for_testing>
+
+<b>Ref: <a href="https://git-scm.com/docs/git-stash" target="_blank">git-scm</a></b>
+<span class="" style="display: none;">Tags: Technology,GitHub,</span>
+</pre>

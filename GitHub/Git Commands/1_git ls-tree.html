@@ -1,0 +1,73 @@
+LL+ashjain11@WKWEJ591713262 MINGW64 ~/Downloads/gh/private/pvt_link_to_blog_post (main)
+$ git ls-tree
+usage: git ls-tree [<options>] <tree-ish> [<path>...]
+
+    -d                    only show trees
+    -r                    recurse into subtrees
+    -t                    show trees when recursing
+    -z                    terminate entries with NUL byte
+    -l, --long            include object size
+    --name-only           list only filenames
+    --name-status         list only filenames
+    --object-only         list only objects
+    --[no-]full-name      use full path names
+    --[no-]full-tree      list entire tree; not just current directory (implies --full-name)
+    --format <format>     format to use for the output
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+
+
+LL+ashjain11@WKWEJ591713262 MINGW64 ~/Downloads/gh/private/pvt_link_to_blog_post (main)
+$ git ls-tree HEAD
+100644 blob d0f41b05f672c503eec2111b14f618182389c1ac    .gitignore
+040000 tree 2fce9ada01eba23ca60c25703f97e9a0d911333b    HTML
+100644 blob 5e3c3c362ce8e9c520d5036dcc2036c182585831    README.md
+040000 tree c551779d5363b05aa5a34f211eb68caa2262a986    analytics
+040000 tree 52829da05b92a9bf66d890acb90189eba4955445    arize_phoenix_setup
+040000 tree bbf89afd34a9ff7f77653881d2ad2d9838931302    blogger_creds
+040000 tree f7e789b78a2d2afe9173e22fc8e46b8f1ec14c84    bugs
+100644 blob 43defc0854921f22579a4d051cf2ad869bb579c7    chatgpt-kimi-2025Aug.png
+040000 tree 891c6c6262971905a698e8885d39f43bd22c09b0    experiment 1
+040000 tree a9b3cf308427518614d348cf62b880eb7a22c3f2    experiment 2
+100644 blob 63611291cb75fdd49301c8321e9229c93b5a3e73    gemini.png
+100644 blob b5e83a0b20588c5bfe22c204cf28b06995d9d427    news_cover_chatgpt_kimi.txt
+100644 blob b8c5768d11347230615f35cd83c08fd1cf33c429    news_cover_gemini.txt
+040000 tree 3a6d5d80c0ffd5ea943d249aea6e8a5d8f10fa8a    prompts
+040000 tree c742432f1a48c523879d508e551db30ce42bef00    sqlite_db
+
+LL+ashjain11@WKWEJ591713262 MINGW64 ~/Downloads/gh/private/pvt_link_to_blog_post (main)
+$ git ls-tree HEAD^
+100644 blob d0f41b05f672c503eec2111b14f618182389c1ac    .gitignore
+040000 tree 411d3cd1d8082ebbd9b1b7960ce931172650fd2b    HTML
+100644 blob 5e3c3c362ce8e9c520d5036dcc2036c182585831    README.md
+040000 tree c551779d5363b05aa5a34f211eb68caa2262a986    analytics
+040000 tree 52829da05b92a9bf66d890acb90189eba4955445    arize_phoenix_setup
+040000 tree c30b567ab1de2929bf4d6e906693a95d01ac269f    blogger_creds
+040000 tree f7e789b78a2d2afe9173e22fc8e46b8f1ec14c84    bugs
+100644 blob 43defc0854921f22579a4d051cf2ad869bb579c7    chatgpt-kimi-2025Aug.png
+040000 tree f766fd0de8015e29dacce7e221547bc400b0d192    experiment 1
+040000 tree a9b3cf308427518614d348cf62b880eb7a22c3f2    experiment 2
+100644 blob 63611291cb75fdd49301c8321e9229c93b5a3e73    gemini.png
+100644 blob b5e83a0b20588c5bfe22c204cf28b06995d9d427    news_cover_chatgpt_kimi.txt
+100644 blob b8c5768d11347230615f35cd83c08fd1cf33c429    news_cover_gemini.txt
+040000 tree 3a6d5d80c0ffd5ea943d249aea6e8a5d8f10fa8a    prompts
+040000 tree 9e74c0b357a557e5602cbd115158d51493f672df    sqlite_db
+
+LL+ashjain11@WKWEJ591713262 MINGW64 ~/Downloads/gh/private/pvt_link_to_blog_post (main)
+$ git ls-tree HEAD HTML
+040000 tree 2fce9ada01eba23ca60c25703f97e9a0d911333b    HTML
+
+LL+ashjain11@WKWEJ591713262 MINGW64 ~/Downloads/gh/private/pvt_link_to_blog_post (main)
+$ git ls-tree HEAD HTML/
+100644 blob bd269ece5cd15698ed8fdd43289e07aafa6f7d04    HTML/19_Dropped_Out_of_IIT_for_Microsoft_Stop_Waiting_for_a_Degree.html
+100644 blob 56aea3dd8f725458eef653e1c698caeb0df0821f    HTML/1_BHK_Full_Rights_Housing_Societies_Cant_Bar_You_from_Common_Amenities.html
+100644 blob 7c7fdb51f49eea4a78d6c8789f95d718270c59b9    HTML/AI-Generated_Phantom_Cases_Canadian_Lawyer_Suspended_in_Landmark_Legal_Ethics_Case.html
+100644 blob 9ec66c6494c853361c2f31f8687e07538fb962ba    HTML/A_15_JEE_Score_and_Offers_from_Stanford_Rethinking_How_We_Measure_Talent.html
+100644 blob f3baf36da01eb4b8f78fe90bc346c9ec63f09cfd    HTML/A_200-km_Journey_to_Justice_How_a_New_Mother_Became_Tamil_Nadus_Youngest_Judge.html
+100644 blob cbb6e17bbcd3a4fcf0571d8cd84014610d1ddde7    HTML/A_German_Proverbs_Quiet_Wisdom_on_Time_Change_and_Legacy.html
+100644 blob 3a37b403f50271985e417795bc4ac366761008ec    HTML/A_Mothers_Silent_Protest_Against_Being_Fired_for_Sick_Leave.html
+100644 blob 2b5c6e02731ca8742a7578c827b9dc8a6fb8438b    HTML/A_Party_at_War_with_Itself_The_CJP_Hunger_Strike_Relay.html
+100644 blob 8cdd74f268740644284fbdd85875db2be2f2120a    HTML/A_Roti_Some_Sugar_and_a_Teachers_Masterclass_in_Dignity.html
+100644 blob dc9cce78ff07aa1c328426730aab8a60f227cfd5    HTML/A_Rs_7000_Crore_Tunnel_to_End_Delhi-Gurugram_Traffic_Nightmare.html
+100644 blob d65ab34ec51b86ce77487d4e44ecad7b07d0a152    HTML/A_Years_Salary_for_a_Ticket_The_Hidden_Sacrifice_Behind_Studying_Abroad.html
+100644 blob fd179359425a099e4065fbde577cf3371596554c    HTML/Access_Denied_Uncovering_the_Delhi-Jind_Hydrogen_Train_Trial_Details.html
+100644 blob 07eebeaf6561d16ce0925b7bb7c16450f717a4b9    HTML/Afghanistans_Desperate_Hunger_Crisis_Selling_Daughters_for_Survival.html

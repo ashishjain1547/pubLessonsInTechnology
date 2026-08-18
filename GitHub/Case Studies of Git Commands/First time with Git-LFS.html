@@ -1,0 +1,170 @@
+<head>
+<script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+            success: function (result) {
+                $("div.customTemporaryCodeHolder").html(result);
+                $("nav.customDynamicNav").html(
+                    $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                );
+            }
+        });
+
+        $.ajax({
+            url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+            success: function (result) {
+                $("span.customTempCodeHolderForSocialMedia").html(result);
+                $("div.customSocialMediaBtnsWrapper").html(
+                    $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                );
+            }
+        });
+    }); 
+</script>
+<!-- Google AdSense Using Machine Learning Code -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3071098372371409",
+        enable_page_level_ads: true
+    });
+</script>
+
+<style>
+    .customTempCodeHolderForSocialMedia {
+        display: none;
+    }
+
+    pre {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+</style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+  
+<pre class="">Notice how our "git push" fails due to the presence of a file larger than 100MB:
+
+(base) \gh\vid3><i class="" style="color: blue;">git push</i>
+
+<i class="" style="color: red;">Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': a@b.c
+Password for 'https://a@b.c@github.com':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: Unknown error code (err 8)
+Wfatal: the remote end hung up unexpectedly
+Writing objects: 100% (4/4), 533.93 MiB | 8.86 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+fatal: the remote end hung up unexpectedly
+Everything up-to-date</i>
+
+<b class="">To overcome this, we install: git-lfs-windows-v2.13.2.exe
+And run the following commands:</b>
+
+(base) \gh\vid3><i class="" style="color: blue;">git lfs install</i>
+
+<i class="" style="color: green;">Updated git hooks.
+Git LFS initialized.</i>
+
+(base) \gh\vid3><i class="" style="color: blue;">git lfs track "*.*"</i>
+
+<i class="" style="color: red;">Tracking "*.*"
+Pattern *.* matches forbidden file .gitignore. If you would like to track .gitignore, modify .gitattributes manually.</i>
+
+(base) \gh\vid3> <i class="" style="color: blue;">git lfs track "*.mp4"</i>
+
+<i class="" style="color: green;">Tracking "*.mp4"</i>
+
+(base) \gh\vid3><i class="" style="color: blue;">git add .gitattributes</i>
+
+<b class="">Note: if we do not do "add & commit" again before "push" again, it results in error:</b>
+
+(base) \gh\vid3>git push
+
+<i class="" style="color: red;">Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: Unknown error code (err 8)
+Wfatal: the remote end hung up unexpectedly
+Writing objects: 100% (4/4), 533.93 MiB | 8.37 MiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+fatal: the remote end hung up unexpectedly
+Everything up-to-date</i>
+
+<b class="">After we rename files, add and commit them:</b>
+
+(base) \gh\vid3>git status
+
+<i class="" style="color: green;">On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+    (use "git push" to publish your local commits)
+
+Changes to be committed:
+    (use "git restore --staged &lt;file>..." to unstage)
+        new file:   .gitattributes
+
+Changes not staged for commit:
+    (use "git add/rm &lt;file>..." to update what will be committed)
+    (use "git restore &lt;file>..." to discard changes in working directory)
+        deleted:    20210420 174746.mp4
+        deleted:    20210420_174746.mp4
+
+Untracked files:
+    (use "git add &lt;file>..." to include in what will be committed)
+        20210420 174746 (27 MB).mp4
+        20210420 174746 (521 MB).mp4</i>
+
+<b class="">If you have low network speed, your "git push" might fail like this:</b>
+
+(base) \gh\vid3><i class="" style="color: blue;">git push</i>
+
+<i class="" style="color: red;">LFS: Client error: https://github-cloud.s3.amazonaws.com/alambic/media/3...2/0f/65/0...f?actor_id=8...7&key_id=0&repo_id=3...1
+error: failed to push some refs to 'https://github.com/ashishjainblogger/vid3.git'</i>
+
+
+(base) \gh\vid3><i class="" style="color: blue;">git push</i>
+
+<i class="" style="color: red;">Uploading LFS objects:  67% (2/3), 98 MB | 105 KB/s
+Exiting because of "interrupt" signal.</i>
+
+<b class="">Additional Note:</b>
+My Airtel 4G VoLTE Mobile Hotspot (May 2021) was giving an upload speed of roughly 100 to 200 KB/s.
+
+If everything about the Git-LFS goes right
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\gh\vid3>git push
+Uploading LFS objects:  67% (2/3), 91 MB | 107 KB/s
+    
+<b class="">A successful attempt logs go like this:</b>
+<i class="" style="color: green;">
+(base) \gh\vid3>git push
+Uploading LFS objects: 100% (1/1), 27 MB | 0 B/s, done.
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 713 bytes | 237.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/ashishjainblogger/vid3.git
+    2*a..e*7  main -> main</i>
+
+<a href="https://git-lfs.github.com/" target="_blank" class="">[ Ref ]</a>
+<span class="" style="display: none;">Title: First time with 'Git LFS' (Git for Large Files)
+Tags: Technology,GitHub,Cloud,</span></pre>

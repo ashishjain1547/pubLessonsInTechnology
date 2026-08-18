@@ -1,0 +1,313 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      });
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<style>
+    .ib {
+        background-color: black;
+        color: white;
+        display: block;
+    }
+
+    .ig {
+        background-color: rgb(50, 50, 50);
+        color: white;
+        display: block;
+    }
+</style>
+
+<pre class="">Code Legend:
+Black: main branch
+Dark gray: test_branch 
+   
+<h3>Part 1: "git clone -b test_branch"</h3>
+<i class="ig">
+~\git_exp\test_branch>git clone -b test_branch https://github.com/ashishjain1547/repo_for_testing.git
+Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 23 (delta 7), reused 14 (delta 3), pack-reused 0
+Unpacking objects: 100% (23/23), 6.72 KiB | 5.00 KiB/s, done.
+
+~\git_exp\test_branch>cd repo_for_testing
+
+~\git_exp\test_branch\repo_for_testing>git branch
+* test_branch
+
+~\git_exp\test_branch\repo_for_testing>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of ~\git_exp\test_branch\repo_for_testing
+
+07/21/2021  12:26 PM    &lt;DIR>          .
+07/21/2021  12:26 PM    &lt;DIR>          ..
+07/21/2021  12:26 PM               368 .gitignore
+07/21/2021  12:26 PM                30 20210528_test_branch.txt
+07/21/2021  12:26 PM                17 202107141543.txt
+07/21/2021  12:26 PM                17 202107141608.txt
+07/21/2021  12:26 PM            11,558 LICENSE
+07/21/2021  12:26 PM                11 newFile.txt
+07/21/2021  12:26 PM                38 README.md
+07/21/2021  12:26 PM                23 test_file_20210528.txt
+               8 File(s)         12,062 bytes
+               2 Dir(s)  56,473,489,408 bytes free</i>
+
+<h3>Part 2: "git clone" Default</h3>
+<i class="ib">
+~\git_exp\main>git clone https://github.com/ashishjain1547/repo_for_testing.git
+Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 23, done.
+remote: Counting objects: 100% (23/23), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 23 (delta 7), reused 14 (delta 3), pack-reused 0
+Unpacking objects: 100% (23/23), 6.72 KiB | 5.00 KiB/s, done.
+
+~\git_exp\main>cd repo_for_testing
+
+~\git_exp\main\repo_for_testing>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+~\git_exp\main\repo_for_testing>git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch</i>
+
+<h3>Part 3: Create new file in "test_branch"</h3>
+<i class="ig">
+~\git_exp\test_branch\repo_for_testing>echo "202107211228" > 202107211228.txt
+
+~\git_exp\test_branch\repo_for_testing>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of ~\git_exp\test_branch\repo_for_testing
+
+07/21/2021  12:28 PM    &lt;DIR>          .
+07/21/2021  12:28 PM    &lt;DIR>          ..
+07/21/2021  12:26 PM               368 .gitignore
+07/21/2021  12:26 PM                30 20210528_test_branch.txt
+07/21/2021  12:26 PM                17 202107141543.txt
+07/21/2021  12:26 PM                17 202107141608.txt
+07/21/2021  12:28 PM                17 202107211228.txt
+07/21/2021  12:26 PM            11,558 LICENSE
+07/21/2021  12:26 PM                11 newFile.txt
+07/21/2021  12:26 PM                38 README.md
+07/21/2021  12:26 PM                23 test_file_20210528.txt
+               9 File(s)         12,079 bytes
+               2 Dir(s)  56,473,849,856 bytes free
+
+~\git_exp\test_branch\repo_for_testing>git status
+On branch test_branch
+Your branch is up to date with 'origin/test_branch'.
+
+Untracked files:
+  (use "git add &lt;file>..." to include in what will be committed)
+        202107211228.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+~\git_exp\test_branch\repo_for_testing>git add -A
+
+~\git_exp\test_branch\repo_for_testing>git commit -m "20210721 1229"
+[test_branch 087a5ca] 20210721 1229
+ 1 file changed, 1 insertion(+)
+ create mode 100644 202107211228.txt
+
+~\git_exp\test_branch\repo_for_testing>git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 289 bytes | 289.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ashishjain1547/repo_for_testing.git
+   9017804..087a5ca  test_branch -> test_branch
+
+~\git_exp\test_branch\repo_for_testing>git status
+On branch test_branch
+Your branch is up to date with 'origin/test_branch'.
+
+nothing to commit, working tree clean</i>
+
+<h3>Part 4: Git Metadata About the Files and the Use of 'git pull origin' to Update this Metadata</h3>
+<i class="ib">
+~\git_exp\main\repo_for_testing>git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch
+
+~\git_exp\main\repo_for_testing>git checkout test_branch
+Switched to a new branch 'test_branch'
+Branch 'test_branch' set up to track remote branch 'test_branch' from 'origin'.
+
+~\git_exp\main\repo_for_testing>git branch -a
+  main
+* test_branch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch
+
+~\git_exp\main\repo_for_testing>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+~\git_exp\main\repo_for_testing>git merge test_branch
+Already up to date.</i>
+
+<h3>Part 5: 'git pull origin' and then 'git merge'</h3>
+<i class="ib">
+~\git_exp\main\repo_for_testing>git pull origin
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), 269 bytes | 0 bytes/s, done.
+From https://github.com/ashishjain1547/repo_for_testing
+   9017804..087a5ca  test_branch -> origin/test_branch
+Already up to date.
+
+~\git_exp\main\repo_for_testing>git branch -D test_branch
+Deleted branch test_branch (was 9017804).
+
+~\git_exp\main\repo_for_testing>git checkout test_branch
+Switched to a new branch 'test_branch'
+Branch 'test_branch' set up to track remote branch 'test_branch' from 'origin'.
+
+~\git_exp\main\repo_for_testing>git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+~\git_exp\main\repo_for_testing>git merge test_branch
+Merge made by the 'recursive' strategy.
+ 202107211228.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 202107211228.txt
+
+~\git_exp\main\repo_for_testing>git push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 231 bytes | 231.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ashishjain1547/repo_for_testing.git
+   d210505..9f1b42f  main -> main
+
+The above step puts "main" branches ahead by two commits.</i>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-VaD1UfUTe8Q/YPfvA9kJpsI/AAAAAAAAHGI/s7e34kYfONIHlh899X8ty8jj-lUDRu8oACLcBGAsYHQ/s1317/git%2Bmerge.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="913" data-original-width="1317" src="https://1.bp.blogspot.com/-VaD1UfUTe8Q/YPfvA9kJpsI/AAAAAAAAHGI/s7e34kYfONIHlh899X8ty8jj-lUDRu8oACLcBGAsYHQ/s600/git%2Bmerge.png"/></a></div>
+
+<h3>Part 6: Bringing 'test_branch' on level with 'main' branch using 'git merge'</h3>
+<i class="ig">
+~\git_exp\test_branch\repo_for_testing>git branch
+* test_branch
+
+~\git_exp\test_branch\repo_for_testing>git branch -a
+* test_branch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch
+
+~\git_exp\test_branch\repo_for_testing>git pull origin
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 1 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 211 bytes | 1024 bytes/s, done.
+From https://github.com/ashishjain1547/repo_for_testing
+   d210505..9f1b42f  main       -> origin/main
+Already up to date.
+
+~\git_exp\test_branch\repo_for_testing>
+~\git_exp\test_branch\repo_for_testing>git checkout main
+Switched to a new branch 'main'
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+~\git_exp\test_branch\repo_for_testing>git checkout test_branch
+Switched to branch 'test_branch'
+Your branch is up to date with 'origin/test_branch'.
+
+~\git_exp\test_branch\repo_for_testing>git merge main
+Updating 087a5ca..9f1b42f
+Fast-forward
+
+~\git_exp\test_branch\repo_for_testing>git status
+On branch test_branch
+Your branch is ahead of 'origin/test_branch' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+~\git_exp\test_branch\repo_for_testing>git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ashishjain1547/repo_for_testing.git
+   087a5ca..9f1b42f  test_branch -> test_branch
+
+~\git_exp\test_branch\repo_for_testing>
+~\git_exp\test_branch\repo_for_testing>git branch -a
+  main
+* test_branch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch
+
+~\git_exp\test_branch\repo_for_testing></i>
+<span class="" style="display: none;">Labels: Technology,GitHub,</span>
+</pre>

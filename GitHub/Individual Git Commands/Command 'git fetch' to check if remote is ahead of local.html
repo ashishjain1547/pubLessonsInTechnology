@@ -1,0 +1,199 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        });
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+    
+<pre class="">~/Desktop/git_exp$ ls
+f1  f2
+
+~/Desktop/git_exp$ cd f1
+
+~/Desktop/git_exp/f1$ git clone https://github.com/${username}/repo_for_testing.git
+
+<i class="" style="color: green;">Cloning into 'repo_for_testing'...
+Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 4.75 KiB | 1.58 MiB/s, done.</i>
+
+~/Desktop/git_exp/f1$ cd ../f2
+
+~/Desktop/git_exp/f2$ git clone https://github.com/${username}/repo_for_testing.git
+Cloning into 'repo_for_testing'...
+Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': 
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 4.75 KiB | 2.38 MiB/s, done.
+
+
+~/Desktop/git_exp/f1/repo_for_testing$ ls
+LICENSE  README.md
+
+~/Desktop/git_exp/f1/repo_for_testing$ echo " NEWFILE " > newFile.txt 
+
+~/Desktop/git_exp/f1/repo_for_testing$ ls
+LICENSE  newFile.txt  README.md
+
+~/Desktop/git_exp/f1/repo_for_testing$ git add -A
+
+~/Desktop/git_exp/f1/repo_for_testing$ git commit -m "cmt 1909"
+[main 5b934da] cmt 1909
+    1 file changed, 1 insertion(+)
+    create mode 100644 newFile.txt
+
+~/Desktop/git_exp/f1/repo_for_testing$ git push
+
+<i class="" style="color: green;">Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 282 bytes | 282.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/${username}/repo_for_testing.git
+    974a71b..5b934da  main -> main</i>
+
+~/Desktop/git_exp/f1/repo_for_testing$ git status -uno
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit (use -u to show untracked files)
+
+~/Desktop/git_exp/f1/repo_for_testing$ cd ../../f2/repo_for_testing/
+
+~/Desktop/git_exp/f2/repo_for_testing$ ls
+LICENSE  README.md
+
+~/Desktop/git_exp/f2/repo_for_testing$ git status -uno
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit (use -u to show untracked files)
+
+~/Desktop/git_exp/f2/repo_for_testing$ <i class="" style="color: blue;"><b class="">git fetch --dry-run</b></i>
+
+<i class="" style="color: green;">Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': 
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), 262 bytes | 262.00 KiB/s, done.
+From https://github.com/${username}/repo_for_testing
+    974a71b..5b934da  main       -> origin/main</i>
+
+~/Desktop/git_exp/f2/repo_for_testing$ ls
+LICENSE  README.md
+
+~/Desktop/git_exp/f2/repo_for_testing$ git log
+commit 974a71b3df68140ebbc3b4775201b39c500aa589 (HEAD -> main, origin/main, origin/HEAD)
+Author: ${username} &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit
+
+~/Desktop/git_exp/f2/repo_for_testing$ git status -u
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+~/Desktop/git_exp/f2/repo_for_testing$ git pull
+Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': 
+From https://github.com/${username}/repo_for_testing
+    974a71b..5b934da  main       -> origin/main
+Updating 974a71b..5b934da
+Fast-forward
+    newFile.txt | 1 +
+    1 file changed, 1 insertion(+)
+    create mode 100644 newFile.txt
+
+~/Desktop/git_exp/f2/repo_for_testing$ 
+~/Desktop/git_exp/f2/repo_for_testing$ ls
+LICENSE  newFile.txt  README.md
+
+~/Desktop/git_exp/f2/repo_for_testing$ git log
+commit 5b934dac6c399f06275feab5b4a91fa8063e092b (HEAD -> main, origin/main, origin/HEAD)
+Author: Admin on Ubuntu &lt;administrator@master.com>
+Date:   Wed Mar 17 19:09:57 2021 +0530
+
+    cmt 1909
+
+commit 974a71b3df68140ebbc3b4775201b39c500aa589
+Author: ${username} &lt;abc@xyz.com>
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit
+
+~/Desktop/git_exp/f2/repo_for_testing$ git fetch --dry-run
+
+<i class="" style="color: green;">Username for 'https://github.com': abc@xyz.com
+Password for 'https://abc@xyz.com@github.com': </i>
+
+~/Desktop/git_exp/f2/repo_for_testing$ 
+
+Silently exits if remote and local are same.
+
+<span class="" style="display: none;">Tags: Technology,GitHub,</span></pre>

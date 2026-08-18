@@ -1,0 +1,292 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                    $("span.customTempCodeHolderForSocialMedia").html(result);
+                    $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                    );
+                }
+
+            });
+        });
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <style>
+        .customTempCodeHolderForSocialMedia {
+            display: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+    </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<pre class=""><div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-q0VIfeVJETk/YSeIF1fodZI/AAAAAAAAHVw/SXnrB9yI-_o5ZdlG_-AZG2wZ2k4LLC4HQCLcBGAsYHQ/s356/git%2Bconfig.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="356" data-original-width="199" src="https://1.bp.blogspot.com/-q0VIfeVJETk/YSeIF1fodZI/AAAAAAAAHVw/SXnrB9yI-_o5ZdlG_-AZG2wZ2k4LLC4HQCLcBGAsYHQ/s600/git%2Bconfig.png"/></a></div>
+
+Git config variables can be stored in 3 different levels. Each level overrides values in the previous level.
+
+--global              use global config file
+--system              use system config file
+--local               use repository config file
+
+- - - - - - - - - -
+
+(base) CMD> <i class="ib">git config</i>
+
+usage: git config [&lt;options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file &lt;file>     use given config file
+    --blob &lt;blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type &lt;>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default &lt;value>     with --get, use default value when missing entry
+
+- - - - - - - - - -
+
+(base) CMD> <i class="ib">git config --list</i> 
+<i class="ig">
+http.sslcainfo=E:/programfiles/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+credential.helper=manager
+add.interactive.usebuiltin=true
+core.editor="E:\\programfiles\\Microsoft VS Code\\Code.exe" --wait
+core.autocrlf=true
+core.fscache=true
+core.symlinks=true
+pull.rebase=false
+user.email=ashishjain1547@gmail.com
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process* </i>
+
+- - - - - - - - - -
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop>git config --get user.email
+ashishjain1547@gmail.com
+
+<b>If a variable is not set, it returns empty line and fails silently.</b>
+(base) C:\Users\Ashish Jain\OneDrive\Desktop>git config --get user.name
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop>
+
+- - - - - - - - - - 
+
+<h3>Check Global Configurations:</h3>
+
+(base) C:\Users\Ashish Jain>cd
+<i class="ig">
+C:\Users\Ashish Jain</i>
+
+(base) C:\Users\Ashish Jain>dir .gitconfig
+<i class="ig">
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of C:\Users\Ashish Jain
+
+05/03/2021  09:52 PM               167 .gitconfig
+               1 File(s)            167 bytes
+               0 Dir(s)  66,402,430,976 bytes free</i>
+
+~~~
+
+(base) C:\Users\Ashish Jain>type .gitconfig
+<i class="ig">
+[user]
+    email = ashishjain1547@gmail.com
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process </i>
+
+- - - - - - - - - - 
+
+<h3>How to view all settings?</h3>
+
+Run git config --list, showing system, global, and (if inside a repository) local configs
+Run git config --list --show-origin, also shows the origin file of each config item
+
+
+(base) C:\Users\Ashish Jain>git config --list --show-origin
+<i class="ig">
+file:E:/programfiles/Git/etc/gitconfig  http.sslcainfo=E:/programfiles/Git/mingw64/ssl/certs/ca-bundle.crt
+file:E:/programfiles/Git/etc/gitconfig  http.sslbackend=openssl
+file:E:/programfiles/Git/etc/gitconfig  diff.astextplain.textconv=astextplain
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.clean=git-lfs clean -- %f
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.smudge=git-lfs smudge -- %f
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.process=git-lfs filter-process
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.required=true
+file:E:/programfiles/Git/etc/gitconfig  credential.helper=manager
+file:E:/programfiles/Git/etc/gitconfig  add.interactive.usebuiltin=true
+file:E:/programfiles/Git/etc/gitconfig  core.editor="E:\\programfiles\\Microsoft VS Code\\Code.exe" --wait
+file:E:/programfiles/Git/etc/gitconfig  core.autocrlf=true
+file:E:/programfiles/Git/etc/gitconfig  core.fscache=true
+file:E:/programfiles/Git/etc/gitconfig  core.symlinks=true
+file:E:/programfiles/Git/etc/gitconfig  pull.rebase=false
+file:C:/Users/Ashish Jain/.gitconfig    user.email=ashishjain1547@gmail.com
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.required=true
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.process=git-lfs filter-process</i>
+
+- - - - - - - - - - 
+
+<h3>When We Are in a Repository:</h3>
+
+(base) C:\Users\Ashish Jain>cd C:\Users\Ashish Jain\OneDrive\Desktop\repo_for_testing
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\repo_for_testing>
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\repo_for_testing>cd
+C:\Users\Ashish Jain\OneDrive\Desktop\repo_for_testing
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\repo_for_testing>git config --list --show-origin
+<i class="ig">
+file:E:/programfiles/Git/etc/gitconfig  http.sslcainfo=E:/programfiles/Git/mingw64/ssl/certs/ca-bundle.crt
+file:E:/programfiles/Git/etc/gitconfig  http.sslbackend=openssl
+file:E:/programfiles/Git/etc/gitconfig  diff.astextplain.textconv=astextplain
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.clean=git-lfs clean -- %f
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.smudge=git-lfs smudge -- %f
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.process=git-lfs filter-process
+file:E:/programfiles/Git/etc/gitconfig  filter.lfs.required=true
+file:E:/programfiles/Git/etc/gitconfig  credential.helper=manager
+file:E:/programfiles/Git/etc/gitconfig  add.interactive.usebuiltin=true
+file:E:/programfiles/Git/etc/gitconfig  core.editor="E:\\programfiles\\Microsoft VS Code\\Code.exe" --wait
+file:E:/programfiles/Git/etc/gitconfig  core.autocrlf=true
+file:E:/programfiles/Git/etc/gitconfig  core.fscache=true
+file:E:/programfiles/Git/etc/gitconfig  core.symlinks=true
+file:E:/programfiles/Git/etc/gitconfig  pull.rebase=false
+file:C:/Users/Ashish Jain/.gitconfig    user.email=ashishjain1547@gmail.com
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.required=true
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.clean=git-lfs clean -- %f
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.process=git-lfs filter-process
+<b>
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=false
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        core.ignorecase=true
+file:.git/config        remote.origin.url=https://github.com/ashishjain1547/repo_for_testing.git
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config        branch.main.remote=origin
+file:.git/config        branch.main.merge=refs/heads/main</b></i>
+
+- - - - - - - - - - 
+
+<h3>Check Which Entries Are At Which Level</h3>
+
+(base) C:\Users\Ashish Jain\OneDrive\Desktop\repo_for_testing>git config --list --show-scope --show-origin
+<i class="ig">
+system  file:E:/programfiles/Git/etc/gitconfig  http.sslcainfo=E:/programfiles/Git/mingw64/ssl/certs/ca-bundle.crt
+system  file:E:/programfiles/Git/etc/gitconfig  http.sslbackend=openssl
+system  file:E:/programfiles/Git/etc/gitconfig  diff.astextplain.textconv=astextplain
+system  file:E:/programfiles/Git/etc/gitconfig  filter.lfs.clean=git-lfs clean -- %f
+system  file:E:/programfiles/Git/etc/gitconfig  filter.lfs.smudge=git-lfs smudge -- %f
+system  file:E:/programfiles/Git/etc/gitconfig  filter.lfs.process=git-lfs filter-process
+system  file:E:/programfiles/Git/etc/gitconfig  filter.lfs.required=true
+system  file:E:/programfiles/Git/etc/gitconfig  credential.helper=manager
+system  file:E:/programfiles/Git/etc/gitconfig  add.interactive.usebuiltin=true
+system  file:E:/programfiles/Git/etc/gitconfig  core.editor="E:\\programfiles\\Microsoft VS Code\\Code.exe" --wait
+system  file:E:/programfiles/Git/etc/gitconfig  core.autocrlf=true
+system  file:E:/programfiles/Git/etc/gitconfig  core.fscache=true
+system  file:E:/programfiles/Git/etc/gitconfig  core.symlinks=true
+system  file:E:/programfiles/Git/etc/gitconfig  pull.rebase=false
+global  file:C:/Users/Ashish Jain/.gitconfig    user.email=ashishjain1547@gmail.com
+global  file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.required=true
+global  file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.clean=git-lfs clean -- %f
+global  file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.smudge=git-lfs smudge -- %f
+global  file:C:/Users/Ashish Jain/.gitconfig    filter.lfs.process=git-lfs filter-process
+local   file:.git/config        core.repositoryformatversion=0
+local   file:.git/config        core.filemode=false
+local   file:.git/config        core.bare=false
+local   file:.git/config        core.logallrefupdates=true
+local   file:.git/config        core.ignorecase=true
+local   file:.git/config        remote.origin.url=https://github.com/ashishjain1547/repo_for_testing.git
+local   file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+local   file:.git/config        branch.main.remote=origin
+local   file:.git/config        branch.main.merge=refs/heads/main </i>
+<span class="" style="display: none;">Tags: Technology,GitHub,</span>
+</pre>

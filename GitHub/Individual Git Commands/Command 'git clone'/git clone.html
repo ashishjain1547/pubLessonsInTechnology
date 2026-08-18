@@ -1,0 +1,196 @@
+<head>
+<script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+        $(document).ready(function () {
+        $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                $("div.customTemporaryCodeHolder").html(result);
+                $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                );
+                }
+        });
+
+        $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+                success: function (result) {
+                $("span.customTempCodeHolderForSocialMedia").html(result);
+                $("div.customSocialMediaBtnsWrapper").html(
+                        $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                );
+                }
+
+        });
+        });
+</script>
+<!-- Google AdSense Using Machine Learning Code -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-3071098372371409",
+        enable_page_level_ads: true
+        });
+</script>
+
+<style>
+        .customTempCodeHolderForSocialMedia {
+        display: none;
+        }
+
+        pre {
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+        }
+
+        .customOl {
+        font-size: 15px;
+        }
+
+        .customPre {
+        white-space: pre-wrap;
+        }
+
+        .customLink {
+        background-color: #4CAF50;
+        border: none;
+        color: white !important;
+        padding: 8px 13px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+
+        .customLink:hover {
+        text-decoration: none;
+        }
+
+        .custom_5px_0px_padding_noMargin {
+        padding: 5px 0px;
+        margin: 0px;
+        }
+</style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre class=""><div class="separator" style="clear: both;"><a
+href="https://1.bp.blogspot.com/-v9GPl3NZiG8/YLe9CUWfdmI/AAAAAAAAG0g/kNJN1BQi_HEmnVTTWB7zDx6G7o_flTtFQCLcBGAsYHQ/s840/i1%2B-%2BOur%2Brepository%2Bfor%2Btesting.png"
+style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600"
+        data-original-height="830" data-original-width="840"
+        src="https://1.bp.blogspot.com/-v9GPl3NZiG8/YLe9CUWfdmI/AAAAAAAAG0g/kNJN1BQi_HEmnVTTWB7zDx6G7o_flTtFQCLcBGAsYHQ/s600/i1%2B-%2BOur%2Brepository%2Bfor%2Btesting.png" /></a>
+</div>
+
+<h3 class="">Cloning a repository with only the URL</h3>
+
+<i style="color: blue;">(base) ~\ws>git clone https://github.com/ashishjain1547/repo_for_testing.git</i>
+
+<i style="color: green;">Cloning into 'repo_for_testing'...
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': ashishjain1547@gmail.com
+Password for 'https://ashishjain1547@gmail.com@github.com':
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 16 (delta 5), reused 10 (delta 3), pack-reused 0
+Unpacking objects: 100% (16/16), 5.70 KiB | 12.00 KiB/s, done.</i>
+
+(base) ~\ws>tree /f
+
+<i style="color: green;">Folder PATH listing for volume Windows
+Volume serial number is 8139-90C0
+C:.
+└───repo_for_testing
+  .gitignore
+  LICENSE
+  newFile.txt
+  README.md
+  test_file_20210528.txt</i>
+
+(base) ~\ws>cd repo_for_testing
+
+(base) ~\ws\repo_for_testing>git branch
+
+<i style="color: green;">* main</i>
+
+(base) ~\ws\repo_for_testing>git branch -a
+
+<i style="color: green;">* main
+ remotes/origin/HEAD -> origin/main
+ remotes/origin/main
+ remotes/origin/test_branch</i>
+
+(base) ~\ws\repo_for_testing>git branch -r
+
+<i style="color: green;">origin/HEAD -> origin/main
+origin/main
+origin/test_branch</i>
+
+(base) ~\ws\repo_for_testing>git branch -D
+
+<i style="color: red;">fatal: branch name required</i>
+
+<h3 class="">Cloning a repository with URL and branch name.</h3>
+
+(base) ~\ws_diff_branch>git clone --branch test_branch https://github.com/ashishjain1547/repo_for_testing.git
+
+<i style="color: green;">Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 16 (delta 5), reused 10 (delta 3), pack-reused 0
+Unpacking objects: 100% (16/16), 5.70 KiB | 8.00 KiB/s, done.</i>
+
+(base) ~\ws_diff_branch>cd repo_for_testing
+
+<i style="color: blue;">(base) ~\ws_diff_branch\repo_for_testing>git branch</i>
+
+<i style="color: green;">* test_branch</i>
+
+(base) ~\ws_diff_branch\repo_for_testing>git branch -a
+
+<i style="color: green;">* test_branch
+ remotes/origin/HEAD -> origin/main
+ remotes/origin/main  
+ remotes/origin/test_branch</i>
+
+(base) ~\ws_diff_branch\repo_for_testing>git branch -r
+
+<i style="color: green;">  origin/HEAD -> origin/main
+origin/main
+origin/test_branch</i>
+
+<h3 class="">Notes From Bitbucket</h3>
+
+<b class="">#1 Cloning to a specific folder</b>
+
+<i>git clone &lt;repo> &lt;directory></i>
+
+Clone the repository located at &lt;repo＞ into the folder called ~&lt;directory＞! on the local machine.
+
+<b>#2 Cloning a specific tag</b>
+
+<i>git clone --branch &lt;tag> &lt;repo></i>
+
+Clone the repository located at ＜repo＞ and only clone the ref for &lt;tag＞.
+
+<b>#3 Shallow clone</b>
+
+<i>git clone -depth=1 &lt;repo></i>
+
+Clone the repository located at &lt;repo＞ and only clone the history of commits specified by the option depth=1. In this example a clone of &lt;repo＞ is made and only the most recent commit is included in the new cloned Repo. Shallow cloning is most useful when working with repos that have an extensive commit history. An extensive commit history may cause scaling problems such as disk space usage limits and long wait times when cloning. A Shallow clone can help alleviate these scaling issues.
+
+Ref: <a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone" class="" target="_blank">Bitbucket [20210602]</a>
+<span style="display: none;">Tags: Technology,GitHub,Cloud,Windows CMD,</span></pre>

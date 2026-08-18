@@ -1,0 +1,787 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+
+          });
+      });
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+
+      .customOl {
+          font-size: 15px;
+      }
+
+      .customPre {
+          white-space: pre-wrap;
+      }
+
+      .customLink {
+          background-color: #4CAF50;
+          border: none;
+          color: white !important;
+          padding: 8px 13px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+
+      .customLink:hover {
+          text-decoration: none;
+      }
+
+      .custom_5px_0px_padding_noMargin {
+          padding: 5px 0px;
+          margin: 0px;
+      }
+
+      .ir { 
+          color: red;
+       }
+
+       .ib { 
+          color: blue;
+       }
+
+       .ig {
+           color: green;
+       }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre><b>Introduction to GitHub branching in 10 commands:</b> 
+
+1. git clone [repo_url]
+2. git branch [-r] [-a]
+3. git branch --set-upstream-to
+4. git pull
+5. git checkout [-b] [branch_name]
+6. git push origin HEAD:[branch_name]
+7. git switch -c [branch_name]
+8. git log
+9. git clone --branch [branch_name] [repo_url]
+10. git push --set-upstream origin [branch_name]
+
+<b>Why concept of branching using an image:</b>
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-HDueejhhoXk/YNCvnuep_jI/AAAAAAAAG6M/5ZlsFDbmexcFQwRnRoBBj-kcnK1NoPJYwCLcBGAsYHQ/s1664/why%2Bconcept%2Bof%2Bbranching%2Busing%2Ban%2Bimage.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="1664" data-original-width="1512" src="https://1.bp.blogspot.com/-HDueejhhoXk/YNCvnuep_jI/AAAAAAAAG6M/5ZlsFDbmexcFQwRnRoBBj-kcnK1NoPJYwCLcBGAsYHQ/s600/why%2Bconcept%2Bof%2Bbranching%2Busing%2Ban%2Bimage.jpg"/></a></div>
+
+<b>Now the commands:</b>
+
+<h4>1. INITIAL SETUP USING "git clone"</h4>
+
+CMD><i class="" style="color: blue;">git clone https://github.com/ashishjain1547/repo_for_testing.git</i>  
+
+<i style="color: green;">Cloning into 'repo_for_testing'...
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': aj@gmail.com
+Password for 'https://aj@gmail.com@github.com':
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 8 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (8/8), 4.98 KiB | 10.00 KiB/s, done. </i>
+
+<i style="color: blue;">CMD>dir /b</i>
+<i style="color: green;">repo_for_testing</i>
+
+<i style="color: blue;">CMD>cd repo_for_testing
+CMD\repo_for_testing>dir /b</i>
+<i style="color: green;">.gitignore
+LICENSE
+newFile.txt
+README.md</i>
+
+CMD\repo_for_testing> <i style="color: blue;">type newFile.txt</i> 
+
+<i style="color: green;">NEWFILE</i>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-nDdXWdwo9s0/YSM81vWHQvI/AAAAAAAAHUA/4nBOKe01yHMG1jkDOA00o8X88gLACFfEACLcBGAsYHQ/s825/Initial%2Bsetup%2Busing%2B%2527git%2Bclone%2527.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="728" data-original-width="825" src="https://1.bp.blogspot.com/-nDdXWdwo9s0/YSM81vWHQvI/AAAAAAAAHUA/4nBOKe01yHMG1jkDOA00o8X88gLACFfEACLcBGAsYHQ/s600/Initial%2Bsetup%2Busing%2B%2527git%2Bclone%2527.png"/></a></div>
+
+<h4>2. LIST ALL THE BRANCHES</h4>
+
+<b><i>git branch: shows the local branches
+git branch -r: shows the remote branches
+git branch -a: shows all the branches (both local and remote)</i></b>
+
+<i class="ib">~\aj> git clone https://github.com/ashishjain1547/repo_for_testing.git</i>
+<i class="ig">
+Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (14/14), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 14 (delta 4), reused 8 (delta 2), pack-reused 0
+Unpacking objects: 100% (14/14), 5.41 KiB | 5.00 KiB/s, done.</i>
+
+<i class="ib">~\aj> cd repo_for_testing
+~\aj\repo_for_testing> git branch</i>
+<i class="ig">
+* main</i>
+
+<i class="ib">~\aj\repo_for_testing> git branch -r</i>
+<i class="ig">
+  origin/HEAD -> origin/main
+  origin/main
+  origin/test_branch</i>
+
+<i class="ib">~\aj\repo_for_testing> git branch -a</i>
+<i class="ig">
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch</i>
+
+~\aj\repo_for_testing> <i class="ib">git checkout -b test_branch</i> 
+<i class="ig">
+Switched to a new branch 'test_branch'</i>
+
+Note: If you already have a branch named "test_branch" in your local, then you would not pass the argument "-b".
+
+~\aj\repo_for_testing> <i class="ib">git branch</i> 
+<i class="ig">
+  main
+* test_branch</i>
+
+~\aj\repo_for_testing> <i class="ib">git branch -r</i> 
+<i class="ig">
+  origin/HEAD -> origin/main
+  origin/main 
+  origin/test_branch</i>
+
+<b class="">Note: we would not see any changes in the remote branches from "git checkout" command.</b>
+
+~\aj\repo_for_testing> <i class="ib">git branch -a</i> 
+<i class="ig">
+  main
+* test_branch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch</i>
+
+<h4>3. SUPPOSE YOUR NEW REMOTE BRANCH IS NOT VISIBLE IN CMD USING "git branch -r", THEN TO LOAD NEW REMOTE BRANCH TO SHOW UP IN AN EXISTING LOCAL REPO, DO A 'GIT PULL'</h4>
+
+CMD\repo_for_testing> <i class="ib">git branch -r</i> 
+<i style="color: green;">  origin/HEAD -> origin/main
+  origin/main</i>
+
+CMD\repo_for_testing> <i class="ib">git pull</i> 
+<i class="ig">From https://github.com/ashishjain1547/repo_for_testing
+* [new branch]      test_branch -> origin/test_branch
+Already up to date.</i>
+
+CMD\repo_for_testing> <i class="ib">git branch -r</i> 
+<i class="ig">origin/HEAD -> origin/main
+origin/main
+origin/test_branch</i>
+
+<h4 class="">4. CREATING A NEW LOCAL BRANCH 'test_branch', SETTING UPSTREAM BRANCH FOR IT AND ADDING A NEW FILE IN IT</h4>
+
+~\aj> <i class="ib">git clone https://github.com/ashishjain1547/repo_for_testing.git</i> 
+<i class="ig">
+Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 19 (delta 6), reused 12 (delta 3), pack-reused 0
+Unpacking objects: 100% (19/19), 5.92 KiB | 6.00 KiB/s, done.</i>
+
+~\aj> <i class="ib">cd repo_for_testing</i> 
+
+~\aj\repo_for_testing>git branch
+* main
+
+~\aj\repo_for_testing> <i class="ib">git branch -r</i> 
+<i class="ig">  origin/HEAD -> origin/main
+  origin/main
+  origin/test_branch</i>
+
+~\aj\repo_for_testing> <i class="ib">git branch -a</i> 
+<i class="ig">
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch</i>
+
+<b>'git checkout -b test_branch' CREATES A NEW LOCAL BRANCH NAMED 'test_branch' BECAUSE OF THE ARGUMENT '-b'</b>
+~\aj\repo_for_testing> <i class="ib">git checkout -b test_branch</i> 
+<i class="ig">
+Switched to a new branch 'test_branch'</i>
+
+~\aj\repo_for_testing>git branch
+  main
+* test_branch
+
+~\aj\repo_for_testing>git branch -r
+  origin/HEAD -> origin/main
+  origin/main
+  origin/test_branch
+
+~\aj\repo_for_testing> <i class="ib">git branch -a</i> 
+<i class="ig">
+  main
+* test_branch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+  remotes/origin/test_branch</i>
+
+~\aj\repo_for_testing> <i class="ib">dir</i> 
+<i class="ig">
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of ~\aj\repo_for_testing
+
+07/14/2021  04:06 PM    DIR>          .
+07/14/2021  04:06 PM    DIR>          ..
+07/14/2021  04:06 PM               368 .gitignore
+07/14/2021  04:06 PM            11,558 LICENSE
+07/14/2021  04:06 PM                11 newFile.txt
+07/14/2021  04:06 PM                38 README.md
+07/14/2021  04:06 PM                23 test_file_20210528.txt
+               5 File(s)         11,998 bytes
+               2 Dir(s)  62,644,645,888 bytes free</i>
+
+~\aj\repo_for_testing> <i class="ib">git branch --set-upstream-to=origin/test_branch test_branch</i> 
+<i class="ig">Branch 'test_branch' set up to track remote branch 'test_branch' from 'origin'.</i>
+
+~\aj\repo_for_testing> <i class="ib">git pull</i> 
+<i class="ig">
+Updating daa4600..82c204f
+Fast-forward
+ 20210528_test_branch.txt | 1 +
+ 202107141543.txt         | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 20210528_test_branch.txt
+ create mode 100644 202107141543.txt</i>
+
+~\aj\repo_for_testing> <i class="ib">echo "202107141608" > 202107141608.txt</i> 
+
+~\aj\repo_for_testing> <i class="ib">dir</i> 
+<i class="ig">
+ Volume in drive C is Windows
+ Volume Serial Number is 8139-90C0
+
+ Directory of ~\aj\repo_for_testing
+
+07/14/2021  04:08 PM    DIR>          .
+07/14/2021  04:08 PM    DIR>          ..
+07/14/2021  04:06 PM               368 .gitignore
+07/14/2021  04:08 PM                30 20210528_test_branch.txt
+07/14/2021  04:08 PM                17 202107141543.txt
+07/14/2021  04:08 PM                17 202107141608.txt
+07/14/2021  04:06 PM            11,558 LICENSE
+07/14/2021  04:06 PM                11 newFile.txt
+07/14/2021  04:06 PM                38 README.md
+07/14/2021  04:06 PM                23 test_file_20210528.txt
+               8 File(s)         12,062 bytes
+               2 Dir(s)  62,644,277,248 bytes free</i>
+
+~\aj\repo_for_testing>git status
+<i class="ig">
+On branch test_branch
+Your branch is up to date with 'origin/test_branch'.
+
+Untracked files:
+  (use "git add &lt;file>..." to include in what will be committed)
+        202107141608.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</i>
+
+~\aj\repo_for_testing> <i class="ib">git add -A</i> 
+
+~\aj\repo_for_testing> <i class="ib">git commit -m "#"</i> 
+<i class="ig">
+[test_branch 9017804] #
+ 1 file changed, 1 insertion(+)
+ create mode 100644 202107141608.txt</i>
+
+~\aj\repo_for_testing> <i class="ib">git push</i> 
+<i class="ig">
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 142.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ashishjain1547/repo_for_testing.git
+   82c204f..9017804  test_branch -> test_branch
+
+~\aj\repo_for_testing></i>
+
+<b><i class="">Note: Now, you can go to GitHub.com and create a pull request, then merge "test_branch" with "main" branch.</i></b>
+
+<h4>5. SWITCHING TO THE NEW BRANCH</h4>
+
+<div class="separator" style="clear: both;"><a href="https://1.bp.blogspot.com/-4kGgacJfxUo/YSNCVFKvG_I/AAAAAAAAHUI/9nbwjJKiYicBlyCsu27C03d84cWZGdrZACLcBGAsYHQ/s908/SWTICHING%2BTO%2BTHE%2BNEW%2BBRANCH.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="505" data-original-width="908" src="https://1.bp.blogspot.com/-4kGgacJfxUo/YSNCVFKvG_I/AAAAAAAAHUI/9nbwjJKiYicBlyCsu27C03d84cWZGdrZACLcBGAsYHQ/s600/SWTICHING%2BTO%2BTHE%2BNEW%2BBRANCH.png"/></a></div>
+
+CMD\repo_for_testing> <i style="color: blue;">git checkout origin/test_branch</i> 
+
+<i style="color: green;">Note: switching to 'origin/test_branch'.
+
+<b>You are in 'detached HEAD' state. You can look around, make experimental changes and commit them, and you can discard any commits you make in this state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c [new-branch-name]
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false </b>
+
+HEAD is now at 5b934da cmt 1909</i>
+
+CMD\repo_for_testing>git branch
+
+<i style="color: green;">* (HEAD detached at origin/test_branch)
+  main</i>
+
+~ ~ ~
+
+<b>Use the '-b' argument to also attach the HEAD to new branch.</b>
+
+CMD\repo_for_testing> <i class="ib">git checkout -b origin/test_branch</i> 
+<i class="ig">Switched to a new branch 'origin/test_branch'</i>
+
+CMD\repo_for_testing> <i style="color: blue;">git branch</i>
+
+<i style="color: green;">  main
+* origin/test_branch</i>
+
+<b>6. ADDING A FILE TO THE NEW BRANCH</b>
+
+CMD\repo_for_testing> <i class="ib">echo "20210528 into test_branch" > "20210528_test_branch.txt"</i> 
+
+CMD\repo_for_testing> <i class="ib">dir /b</i> 
+<i class="ig">.gitignore
+20210528_test_branch.txt
+LICENSE
+newFile.txt
+README.md</i>
+
+CMD\repo_for_testing> <i class="ib">git status</i> 
+<i style="color: green;">HEAD detached at origin/test_branch
+Untracked files:
+    (use "git add [file]..." to include in what will be committed)
+        20210528_test_branch.txt
+
+nothing added to commit but untracked files present (use "git add" to track)</i>
+
+CMD\repo_for_testing> <i class="ib">git add -A</i> 
+
+CMD\repo_for_testing> <i class="ib">git commit -m "0303"</i> 
+<i class="ig">[detached HEAD 03e190f] 0303
+1 file changed, 1 insertion(+)
+create mode 100644 20210528_test_branch.txt</i>
+
+CMD\repo_for_testing><i style="color: blue;">git push</i>
+
+<i style="color: red;">fatal: You are not currently on a branch.
+To push the history leading to the current (detached HEAD) state now, use
+
+    git push origin HEAD:[name-of-remote-branch]</i>
+
+CMD\repo_for_testing> <i style="color: blue;">git push origin HEAD:test_branch</i> 
+ 
+<i style="color: green;">Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/aj/repo_for_testing.git
+    5b934da..03e190f  HEAD -> test_branch</i>
+
+<h4>7. CHECKING REPOSITORY STATUS USING 'GIT LOG'</h4>
+
+CMD\repo_for_testing> <i style="color: blue;">git log</i>
+In the logs below, "HEAD" is detached.
+
+<i style="color: green;">commit 03e190f8810c9335613cc2c534914e666c04eeeb (HEAD, origin/test_branch)
+Author: unknown [abc@xyz.com]
+Date:   Fri May 28 03:03:23 2021 +0530
+
+    0303
+
+commit 5b934dac6c399f06275feab5b4a91fa8063e092b (origin/main, origin/HEAD, main)
+Author: Admin on Ubuntu [admin@master.com]
+Date:   Wed Mar 17 19:09:57 2021 +0530
+
+    cmt 1909
+
+commit 974a71b3df68140ebbc3b4775201b39c500aa589
+Author: aj [abc@xyz.com]
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit</i>
+
+Fixing the detached HEAD:
+
+CMD\repo_for_testing><i style="color: blue;">git switch -c origin/test_branch</i>
+
+<i style="color: green;">Switched to a new branch 'origin/test_branch'
+
+CMD\repo_for_testing>git branch
+    main
+* origin/test_branch</i>
+
+Now the HEAD is pointing to the current branch:
+
+CMD\repo_for_testing> <i style="color: blue;">git log</i> 
+
+<i style="color: green;">commit 03e190f8810c9335613cc2c534914e666c04eeeb (HEAD -> origin/test_branch, origin/test_branch)
+Author: unknown [abc@xyz.com]
+Date:   Fri May 28 03:03:23 2021 +0530
+
+    0303
+
+commit 5b934dac6c399f06275feab5b4a91fa8063e092b (origin/main, origin/HEAD, main)
+Author: Admin on Ubuntu [admin@master.com]
+Date:   Wed Mar 17 19:09:57 2021 +0530
+
+    cmt 1909
+
+commit 974a71b3df68140ebbc3b4775201b39c500aa589
+Author: aj [abc@xyz.com]
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit</i>
+
+<h4 class="">8. USING 'GIT CLONE' TO CLONE A BRANCH</h4>
+
+CMD\ws_branches\(2)> <i style="color: blue;">git clone --branch test_branch https://github.com/aj/repo_for_testing.git</i>
+<i style="color: green;">Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 11 (delta 2), reused 7 (delta 2), pack-reused 0
+Unpacking objects: 100% (11/11), 5.23 KiB | 3.00 KiB/s, done.</i>
+
+CMD\ws_branches\(2)>cd repo_for_testing
+
+CMD\ws_branches\(2)\repo_for_testing>git branch
+
+<i style="color: green;">* test_branch</i>
+
+CMD\ws_branches\(2)\repo_for_testing>dir /b
+
+<i style="color: green;">.gitignore
+20210528_test_branch.txt
+LICENSE
+newFile.txt
+README.md</i>
+
+<h4>9. NOW WE ADD A NEW FILE TO THE 'main' BRANCH</h4>
+
+~\ws_branches\(3) main branch> <i class="ib">git clone https://github.com/aj/repo_for_testing.git</i> 
+<i class="ig">Cloning into 'repo_for_testing'...
+remote: Enumerating objects: 11, done.
+remote: Counting objects: 100% (11/11), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 11 (delta 2), reused 7 (delta 2), pack-reused 0
+Unpacking objects: 100% (11/11), 5.23 KiB | 3.00 KiB/s, done.</i>
+
+~\ws_branches\(3) main branch>cd repo_for_testing
+
+~\ws_branches\(3) main branch\repo_for_testing>dir /b
+.gitignore
+LICENSE
+newFile.txt
+README.md
+
+~\ws_branches\(3) main branch\repo_for_testing>echo "test_file_20210528" > "test_file_20210528.txt"
+
+~\ws_branches\(3) main branch\repo_for_testing>dir /b
+.gitignore
+LICENSE
+newFile.txt
+README.md
+test_file_20210528.txt
+
+~\ws_branches\(3) main branch\repo_for_testing>git add -A
+
+~\ws_branches\(3) main branch\repo_for_testing>git commit -m "0357"
+<i class="ig">
+[main daa4600] 0357
+1 file changed, 1 insertion(+)
+create mode 100644 test_file_20210528.txt</i>
+
+~\ws_branches\(3) main branch\repo_for_testing>git push
+<i class="ig">
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 298 bytes | 298.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/aj/repo_for_testing.git
+    5b934da..daa4600  main -> main  </i>
+
+~\ws_branches\(3) main branch\repo_for_testing>
+
+<h4>10. NEXT, WE GET THAT NEW FILE INTO OUR 'test_branch'</h4>
+
+~\ws_branches\(2) test_branch\repo_for_testing>git branch
+* test_branch
+
+~\ws_branches\(2) test_branch\repo_for_testing>git fetch
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), 278 bytes | 2.00 KiB/s, done.
+From https://github.com/aj/repo_for_testing
+   5b934da..daa4600  main       -> origin/main
+
+~\ws_branches\(2) test_branch\repo_for_testing>dir /b
+.gitignore
+20210528_test_branch.txt
+LICENSE
+newFile.txt
+README.md
+
+~\ws_branches\(2) test_branch\repo_for_testing>git branch -r
+  origin/HEAD -> origin/main
+  origin/main
+  origin/test_branch
+
+~\ws_branches\(2) test_branch\repo_for_testing> <i class="ib">git checkout origin/main</i> 
+<i class="ig">Note: switching to 'origin/main'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+    git switch -c &lt;new-branch-name>
+
+Or undo this operation with:
+
+    git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at daa4600 0357</i>
+
+~\ws_branches\(2) test_branch\repo_for_testing>git switch -c origin/main
+Switched to a new branch 'origin/main'
+
+~\ws_branches\(2) test_branch\repo_for_testing>git branch
+* origin/main
+  test_branch
+
+~\ws_branches\(2) test_branch\repo_for_testing>dir /b
+.gitignore
+LICENSE
+newFile.txt
+README.md
+test_file_20210528.txt
+
+~\ws_branches\(2) test_branch\repo_for_testing> <i class="ib">git pull</i> 
+<i class="ig">
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull &lt;remote> &lt;branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/&lt;branch> origin/main</i>
+
+~\ws_branches\(2) test_branch\repo_for_testing>git pull https://github.com/aj/repo_for_testing.git origin/main
+fatal: couldn't find remote ref origin/main
+
+~\ws_branches\(2) test_branch\repo_for_testing>git branch --set-upstream-to=origin/test_branch origin/main
+Branch 'origin/main' set up to track remote branch 'test_branch' from 'origin'.
+
+~\ws_branches\(2) test_branch\repo_for_testing>git pull
+Merge made by the 'recursive' strategy.
+ 20210528_test_branch.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 20210528_test_branch.txt
+
+~\ws_branches\(2) test_branch\repo_for_testing>dir /b
+.gitignore
+20210528_test_branch.txt
+LICENSE
+newFile.txt
+README.md
+test_file_20210528.txt
+
+~\ws_branches\(2) test_branch\repo_for_testing>git checkout origin/test_branch
+Note: switching to 'origin/test_branch'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c &lt;new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 03e190f 0303
+
+~\ws_branches\(2) test_branch\repo_for_testing>git switch -c origin/test_branch
+Switched to a new branch 'origin/test_branch'
+
+~\ws_branches\(2) test_branch\repo_for_testing>dir /b
+.gitignore
+20210528_test_branch.txt
+LICENSE
+newFile.txt
+README.md
+
+~\ws_branches\(2) test_branch\repo_for_testing>git switch -c origin/main
+fatal: A branch named 'origin/main' already exists.
+
+~\ws_branches\(2) test_branch\repo_for_testing>git merge origin/main
+warning: refname 'origin/main' is ambiguous.
+warning: refname 'origin/main' is ambiguous.
+Updating 03e190f..fca45d6
+Fast-forward
+ test_file_20210528.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test_file_20210528.txt
+
+~\ws_branches\(2) test_branch\repo_for_testing>git push
+fatal: The current branch origin/test_branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin origin/test_branch
+
+
+CMD\ws_branches\(2) test_branch\repo_for_testing>git push --set-upstream origin origin/test_branch
+
+<b class="">This step might have been wrong w.r.t. the input argument above. The command should have been: <i>git push --set-upstream origin test_branch</i></b>
+
+<i class="" style="color: green;">Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 354 bytes | 354.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'origin/test_branch' on GitHub by visiting:
+remote:      https://github.com/aj/repo_for_testing/pull/new/origin/test_branch
+remote:
+To https://github.com/aj/repo_for_testing.git
+  * [new branch]      origin/test_branch -> origin/test_branch
+Branch 'origin/test_branch' set up to track remote branch 'origin/test_branch' from 'origin'.</i>
+
+~\ws_branches\(2) test_branch\repo_for_testing>dir /b
+.gitignore
+20210528_test_branch.txt
+LICENSE
+newFile.txt
+README.md
+test_file_20210528.txt
+
+~\ws_branches\(2) test_branch\repo_for_testing>git branch
+  origin/main
+* origin/test_branch
+  test_branch
+
+~\ws_branches\(2) test_branch\repo_for_testing>git branch -r
+  origin/HEAD -> remotes/origin/main
+  origin/main
+  origin/origin/test_branch
+  origin/test_branch
+
+~\ws_branches\(2) test_branch\repo_for_testing>git log
+commit fca45d643326fb5d88d70c0cf699f7032118df4b (HEAD -> origin/test_branch, origin/origin/test_branch, origin/main)
+Merge: daa4600 03e190f
+Author: unknown &lt;aj@gmail.com>
+Date:   Fri May 28 04:02:07 2021 +0530
+
+    Merge branch 'test_branch' of https://github.com/aj/repo_for_testing into origin/main
+
+commit daa46003a895e4b33577e3c248977334620e3558 (origin/main, origin/HEAD)
+Author: unknown &lt;aj@gmail.com>
+Date:   Fri May 28 03:57:24 2021 +0530
+
+    0357
+
+commit 03e190f8810c9335613cc2c534914e666c04eeeb (origin/test_branch, test_branch)
+Author: unknown &lt;aj@gmail.com>
+Date:   Fri May 28 03:03:23 2021 +0530
+
+    0303
+
+commit 5b934dac6c399f06275feab5b4a91fa8063e092b
+Author: Admin on Ubuntu &lt;administrator@master.com>
+Date:   Wed Mar 17 19:09:57 2021 +0530
+
+    cmt 1909
+
+commit 974a71b3df68140ebbc3b4775201b39c500aa589
+Author: aj &lt;aj@gmail.com>
+Date:   Wed Mar 17 01:32:16 2021 +0530
+
+    Initial commit
+
+~\ws_branches\(2) test_branch\repo_for_testing>
+
+<span class="" style="display: none;">Tags: Technology,GitHub,Cloud,</span></pre>

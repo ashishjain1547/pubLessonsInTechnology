@@ -1,0 +1,156 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+              success: function (result) {
+                  $("div.customTemporaryCodeHolder").html(result);
+                  $("nav.customDynamicNav").html(
+                      $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                  );
+              }
+          });
+
+          $.ajax({
+              url: window.location.protocol + "//" + window.location.hostname + "/p/follow-us-on-social-media.html",
+
+              success: function (result) {
+                  $("span.customTempCodeHolderForSocialMedia").html(result);
+                  $("div.customSocialMediaBtnsWrapper").html(
+                      $("span.customTempCodeHolderForSocialMedia div.customSocialMediaWrapper").html()
+                  );
+              }
+          });
+      }); 
+  </script>
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3071098372371409",
+          enable_page_level_ads: true
+      });
+  </script>
+
+  <style>
+      .customTempCodeHolderForSocialMedia {
+          display: none;
+      }
+
+      pre {
+          white-space: pre-wrap;
+          white-space: -moz-pre-wrap;
+          white-space: -pre-wrap;
+          white-space: -o-pre-wrap;
+          word-wrap: break-word;
+      }
+  </style>
+</head>
+<div class="customTemporaryCodeHolder"> </div>
+<span class="customTempCodeHolderForSocialMedia"> </span>
+
+<nav class="customDynamicNav"> </nav> <br />
+<div class="customSocialMediaBtnsWrapper"> </div> <br />
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+
+<pre class="">$ mkdir github_test
+
+<i class="" style="color: blue;">$ cd github_test
+$ echo "Hello" > test.txt</i>
+
+$ ls
+test.txt
+
+$ git init
+
+<i class="" style="color: green;">Initialized empty Git repository in /home/administrator/Desktop/github_test/.git/</i>
+
+$ git add -A
+
+$ git status
+
+<i class="" style="color: green;">On branch master
+No commits yet
+Changes to be committed:
+  (use "git rm --cached &lt;file>..." to unstage)
+	new file:   test.txt</i>
+
+$ git commit -m "1654"
+
+<i class="" style="color: green;">[master (root-commit) f571b69] 1654
+1 file changed, 1 insertion(+)
+create mode 100644 test.txt</i>
+ 
+$ git status
+
+<i class="" style="color: green;">On branch master
+nothing to commit, working tree clean </i>
+
+$ ls
+test.txt
+
+$ ls -la
+
+<i class="" style="color: green;">total 16
+drwxrwxr-x 3 administrator administrator 4096 Apr 13 16:54 .
+drwxr-xr-x 4 administrator administrator 4096 Apr 13 16:53 ..
+drwxrwxr-x 8 administrator administrator 4096 Apr 13 16:54 .git
+-rw-rw-r-- 1 administrator administrator    6 Apr 13 16:54 test.txt</i>
+
+$ ls -laR
+
+<i class="" style="color: green;">.:
+total 16
+drwxrwxr-x 3 administrator administrator 4096 Apr 13 16:54 .
+drwxr-xr-x 4 administrator administrator 4096 Apr 13 16:53 ..
+drwxrwxr-x 8 administrator administrator 4096 Apr 13 16:54 .git
+-rw-rw-r-- 1 administrator administrator    6 Apr 13 16:54 test.txt
+
+./.git:
+total 52
+...
+...
+drwxrwxr-x 4 administrator administrator 4096 Apr 13 16:54 ..</i>
+
+
+$ git remote add origin https://github.com/${username}/test2.git
+
+$ git branch
+
+<i class="" style="color: green;">* master</i>
+
+$ git push origin master
+
+<i class="" style="color: red;">Username for ...
+Password for ...
+remote: Invalid username or password.
+fatal: Authentication failed for ....</i>
+
+= = = = = = = = = 
+
+<b class="">Intructions from GitHub portal</b>
+
+Quick setup — if you’ve done this kind of thing before
+or	
+https://github.com/${username}/test2.git
+Get started by creating a new file or uploading an existing file. We recommend every repository include a README, LICENSE, and .gitignore.
+
+…or create a new repository on the command line
+echo "# test2" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/${username}/test2.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/${username}/test2.git
+git branch -M main
+git push -u origin main
+
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+<span class="" style="display: none;">Tags: Technology,GitHub,</span></pre>

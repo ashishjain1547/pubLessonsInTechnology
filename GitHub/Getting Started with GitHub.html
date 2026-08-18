@@ -1,0 +1,370 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: window.location.protocol + "//" + window.location.hostname + "/p/personal-posts-menu.html",
+                success: function (result) {
+                    $("div.customTemporaryCodeHolder").html(result);
+                    $("nav.customDynamicNav").html(
+                        $("div.customTemporaryCodeHolder nav.customBitsWilpMenu").html()
+                    );
+                }
+            });
+        }); 
+    </script>
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<nav class="customDynamicNav"> </nav>
+<div class="customTemporaryCodeHolder"> </div>
+</br>
+<!-- End of 'Personal Posts Menu Template For Copy-Paste'. It started from the top of the page from <HEAD> tag. -->
+<p>We have a repository on GitHub that has only two files:</p>
+<p></p>
+<p>1: Hello World.txt</p>
+<p>2: README.md</p>
+<p></p>
+<p>If you are on a secure or restricted network, you might get a message like this "Could not resolve host: github.com":
+</p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub>git clone https://github.com/ashishjain1547/my-first-repo.git</p>
+<p>Cloning into 'my-first-repo'...</p>
+<p>fatal: unable to access 'https://github.com/ashishjain1547/my-first-repo.git/': Could not resolve host: github.com
+</p>
+<p></p>
+<p>To fix this, get on an unrestricted network:</p>
+<p></p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub>git clone https://github.com/ashishjain1547/my-first-repo.git</p>
+<p> Cloning into 'my-first-repo'...</p>
+<p> remote: Enumerating objects: 9, done.</p>
+<p> remote: Total 9 (delta 0), reused 0 (delta 0), pack-reused 9</p>
+<p> Unpacking objects: 100% (9/9), done.</p>
+<p></p>
+<p>=================================================</p>
+<p></p>
+<p>Github Tutorial For Beginners: https://www.youtube.com/watch?v=0fKg7e37bQE</p>
+<p></p>
+<p></p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub\buddy>git status</p>
+<i> On branch master</i><br>
+<i> Your branch is up to date with 'origin/master'.</i><br>
+<i> nothing added to commit but untracked files present (use "git add" to track)</i>
+<p></p>
+Next, we are going to copy some files in our local machine and add them to be tracked by Git.
+<p></p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub\my-first-repo>git add -A</p>
+<p></p>
+<p>A word about options for git command "commit":</p>
+<p>Commit message options</p>
+<p> -m, --message <message>
+</p>
+<p></p>
+<p>Commit contents options</p>
+<p> -a, --all commit all changed files</p>
+<p></p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub\my-first-repo>git commit -a -m "Commit message."</p>
+<i> [master d223f16] Commit it.</i><br>
+<i> 5 files changed, 12 insertions(+)</i><br>
+<i> create mode 100644 Hello World.html</i><br>
+<i> create mode 100644 Hello World.js</i><br>
+<i> create mode 100644 Hello World.py</i><br>
+<i> create mode 100644 Hello World.xlsx</i><br>
+<i> create mode 100644 HelloWorld.java</i>
+<p></p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub\my-first-repo>git push</p>
+<p> Counting objects: 7, done.</p>
+<p> Delta compression using up to 8 threads.</p>
+<p> Compressing objects: 100% (5/5), done.</p>
+<p> Writing objects: 100% (7/7), 7.05 KiB | 3.52 MiB/s, done.</p>
+<p> Total 7 (delta 0), reused 0 (delta 0)</p>
+<p> To https://github.com/ashishjain1547/my-first-repo.git</p>
+<p> 385538c..d223f16 master -> master</p>
+<p></p>
+<p>(base) C:\Users\ashish\Desktop\Workspace\GitHub\my-first-repo></p>
+<p></p>
+<p>=================================================</p>
+<pre>IF YOU WANT TO SEE WHO ALL HAD EVER COMMITTED TO THE REPOSITORY, USE THE FOLLOWING COMMAND:
+
+<b>(base) D:\Workspace\GitHub\my_repo>git log</b>
+commit e25d96f164f99e76b00339ef41fe959396787793 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: ashishjain1547 [ashishjain1547@gmail.com]
+Date:   Mon Jul 15 14:21:51 2019 +0530
+
+    msg
+
+commit bcd5b11eab4068d7574985ae0ab9748fd2d84006 (origin/master)
+Author: James Dean(james.dean) [james.dean@xyz.com]
+Date:   Sun Jun 14 15:33:25 2019 +0530
+
+    Initial commit
+
+=================================================
+
+IF YOU WANT TO SEE THE DIFF BETWEEN LAST COMMIT AND SECOND LAST COMMIT, USE THE FOLLOWING COMMAND:
+
+<b>(base) D:\Workspace\GitHub\my_repo>git show</b>
+commit e25d96f164f99e76b00339ef41fe959396787793 (HEAD -> dev, origin/dev, origin/HEAD)
+Author: ashishjain1547 [ashishjain1547@gmail.com]
+Date:   Mon Jul 15 14:21:51 2019 +0530
+
+    msg
+
+diff --git a/demo/report.py b/demo/report.py
+index bb75b70..840fa0b 100644
+--- a/demo/report.py
++++ b/demo/report.py
+
+@@ -127,20 +131,24 @@ def genReport():
+
++            idx_b.append(101)
+-
++    temp_df = pd.DataFrame({"cols": df_report, "idx_b": 101})
+
+: (Press q to quit.)
+
+=================================================
+
+# TO GET CODE FROM A BRANCH:
+
+FIRST CLONE THE MASTER BRANCH AND THEN IF SUPPOSE THE BRANCH YOU WANT TO CHECKOUT IS "dev", THEN TYPE:
+$ git checkout -b dev
+
+TO DIRECTLY CLONE A GIT BRANCH:
+
+git clone -b <i>branch</i> <i>remote_repo</i>
+Example:
+
+git clone -b my-branch git@github.com:user/myproject.git
+With Git 1.7.10 and later, add --single-branch to prevent fetching of all branches. Example, with OpenCV 2.4 branch:
+
+git clone -b opencv-2.4 --single-branch https://github.com/Itseez/opencv.git
+
+================================================
+
+IF YOU ARE FACING ISSUE WITH ACCESS ON WINDOWS AFTER CHANGING YOUR CREDENTIALS ON GITHUB, DO THE FOLLOWING:
+
+Go to: Control Panel -> User Accounts -> Credential Manager -> 
+Choose account for GitHub, proceeding to "Edit Generic Credential"
+And set the password that you had set on GitHub.
+
+================================================
+
+TO VIEW WHAT IS YOUR USERNAME CONFIGURED FOR GIT LOGS:
+
+C:\Users\ashish\Desktop\workspace>git config --list
+user.name=ashishjain1547
+user.email=ashishjain1547@gmail.com
+
+You can also see your Git username in the Git configuration file in your HOME directory on Unix systems, i.e., this file:
+
+~/.gitconfig
+
+OR on Windows PC, at this location: "C:\Users\ashish", you will find the file ".gitconfig" that you can open in editors like Notepad++. You can change the name and email here.
+
+It has contents like:
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+    name=ashishjain1547
+    email=ashishjain1547@gmail.com
+
+Ref: https://alvinalexander.com/git/git-show-change-username-email-address
+
+================================================
+
+YOU CAN ADD AND COMMIT FILES OFFLINE BUT YOU CANNOT PUSH THEM WITHOUT INTERNET.
+
+(base) D:\VSCode>git add -A
+
+(base) D:\VSCode>git commit -m "commit msg"
+[master b128f98] commit msg
+ 2 files changed, 1199 insertions(+)
+ create mode 100644 Word Meanings/Word Meanings 20191223.html
+
+(base) D:\VSCode>git push
+fatal: unable to access 'https://github.com/ash***/VSCode.git/': Could not resolve host: github.com
+
+================================================
+
+# "git pull" does not erase your changes in the local system (i.e. your laptop)
+<i style="color: darkgreen">(base) D:\workspace>git pull</i>
+<i style="color: darkblue">Already up to date.</i>
+
+# "git reset" erases your changes in the local system to match the local files with the files on the GitHub.
+<i style="color: darkgreen">(base) D:\workspace>git reset --hard</i>
+<i style="color: darkblue">HEAD is now at 10f5fae technology, guest interviews</i>
+
+Suppose I add following lines in the file "Index of Lessons in Technology.html":
+HREF = "https://survival8.blogspot.com/p/install-and-set-up-kubectl-on-rhel.html"
+TEXT = Install and Set Up kubectl on RHEL 
+
+Then on doing "git reset", both of these lines will be removed from the file.
+
+Note: "git reset" does not delete any newly created files that have not been "added and committed" yet.
+
+================================================
+
+A scenario when we have a changed file and a newly added file in the local filesystem:
+
+<i style="color: darkgreen">(base) D:\workspace\VisualStudioCode>git pull</i>
+<i style="color: darkblue">Already up to date.</i>
+
+According to "git pull", the local filesystem is "Already up to date" but "git status" will tell you about the changes.
+
+<i style="color: darkgreen">(base) D:\workspace\VisualStudioCode>git status</i>
+<i style="color: darkblue">On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add [file]..." to update what will be committed)
+  (use "git checkout -- [file]..." to discard changes in working directory)
+
+        modified:   Personal Postings Index.html
+
+Untracked files:
+  (use "git add [file]..." to include in what will be committed)
+
+        Personal Posts/20 things you should never say at work.html
+
+no changes added to commit (use "git add" and/or "git commit -a")</i>
+
+================================================
+
+GETTING THE LAST COMMIT ID.
+
+<i style="color: darkgreen">(base) D:\workspace\vsCode>git push</i>
+<i style="color: darkblue">Counting objects: 6, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 930 bytes | 930.00 KiB/s, done.
+Total 6 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/ashishjain1547/vsCode.git
+   143965b..f9341ff  master -> master</i>
+
+<i style="color: darkgreen">(base) D:\workspace\vsCode>git log</i>
+<i style="color: darkblue">commit f9341ff4b24b896fca53a2bd7a59cec563d4b77d (HEAD -> master, origin/master, origin/HEAD)
+Author: ashishjain1547 
+Date:   Wed Jan 12 13:12:58 2020 +0530
+
+    god of small things
+...</i>
+
+<i style="color: darkgreen">(base) D:\workspace\vsCode>git show</i>
+<i style="color: darkblue">commit f9341ff4b24b896fca53a2bd7a59cec563d4b77d (HEAD -> master, origin/master, origin/HEAD)
+Author: ashishjain1547 
+Date:   Wed Jan 12 13:12:58 2020 +0530
+
+    god of small things
+
+diff --git a/Book Summaries and Reviews/The god of small things (Arundhati Roy) - Highlights.html b/Book Summaries and Reviews/The god of small things (Arundhati Roy) - Highlights.html
+index ece1dce..b5b3a34 100644
+--- a/Book Summaries and Reviews/The god of small things (Arundhati Roy) - Highlights.html
++++ b/Book Summaries and Reviews/The god of small things (Arundhati Roy) - Highlights.html
+... ...</i>
+
+================================================
+
+THERE ARE RESTRICTIONS IF YOU TRY TO PUSH LARGE FILES IN GITHUB REPO.
+
+<i style="color: darkgreen;">E:\Workspace\GitHub\omocron>git push</i>
+<i style="color: darkblue;">Enumerating objects: 480, done.
+Counting objects: 100% (480/480), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (464/464), done.
+Writing objects: 100% (479/479), 113.32 MiB | 126.00 KiB/s, done.
+Total 479 (delta 22), reused 0 (delta 0)
+remote: Resolving deltas: 100% (22/22), done.
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: warning: See http://git.io/iEPt8g for more information.
+remote: warning: File Omocron_180818/dist/Omocron_180818.war is 64.14 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+To https://github.com/ashishjain1547/omocron.git
+   1e619d8..085a11e  master -> master</i>
+
+<i style="color: darkgreen;">E:\Workspace\GitHub\omocron>git push</i>
+<i style="color: darkblue;">Everything up-to-date</i>
+
+<i style="color: darkgreen;">E:\Workspace\GitHub\omocron>git log</i>
+<i style="color: darkblue;">commit 085a11ed39782f21a11cec5f631a94fe0d7780aa (HEAD -> master, origin/master, origin/HEAD)
+Author: ashishjain1547@gmail.com
+Date:   Thu Jan 16 21:54:31 2020 +0530
+
+    Tech: ReactJS, Spring Boot.
+...</i>
+
+<i style="color: darkgreen;">E:\Workspace\GitHub\omocron>git pull</i>
+<i style="color: darkblue;">Already up to date.</i>
+
+================================================
+
+For "Creating and deleting branches within your repository", refer this <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository" target="_blank">link</a>.
+
+================================================
+
+ADDING COLLABORATORS TO A PRIVATE REPOSITORY ON GITHUB
+
+You can add upto 3 collabotors to a repository with the free GitHub account (as of Jan 2020).
+
+The image given below shows how you can add a collaborator from the 'Settings' of a repo.
+
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-utcA6j8G1c8/XiCtO0DIdTI/AAAAAAAAERo/7XjX5qfICS4GjODPsp09N4uhfecjysFvQCLcBGAsYHQ/s1600/img.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" data-original-height="436" data-original-width="822" height="339" src="https://1.bp.blogspot.com/-utcA6j8G1c8/XiCtO0DIdTI/AAAAAAAAERo/7XjX5qfICS4GjODPsp09N4uhfecjysFvQCLcBGAsYHQ/s640/img.jpg" width="640" /></a></div>
+
+Once you have added a collaborator, the collaborator will be notified of this addition through mail in account linked with GitHub. 
+
+================================================
+
+IF YOUR REPOSITORY CONTAINS WORK THAT YOU DO NOT HAVE LOCALLY, YOU WILL NOT BE ABLE TO PUSH YOUR CHANGES.
+But you will still be able to commit as 'commit' is done offline.
+
+<i style="color: darkgreen;">E:\Workspace\GitHub\omocron>git commit -m "fixes in code"</i>
+<i style="color: darkblue;">[master c5ddab7] fixes in code 20180401
+    38 files changed, 2610 insertions(+), 50 deletions(-)</i>
+    
+<i style="color: darkgreen;">E:\Workspace\GitHub\omocron>git push</i>
+<i style="color: red;">To https://github.com/ashishjain1547/omocron.git
+    ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/ashishjain1547/omocron.git'
+hint: Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref. You may want to first integrate the remote changes (e.g., 'git pull ...') before pushing again.
+See the 'Note about fast-forwards' in 'git push --help' for details.</i>
+
+================================================
+
+IF GIT IS NOT ABLE TO RECOGNIZE THE USER ON THE SYSTEM, IT WILL PROMPT YOU FOR YOUR LOGIN DETAILS:
+
+<i style="color: darkgreen;">(base) ashish@ashish-vBox:~/Desktop/VSCode$ git commit -m "bits"</i>
+
+<i style="color: red;">*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ashish@ashish-vBox.(none)')</i>
+
+================================================
+
+</pre>
