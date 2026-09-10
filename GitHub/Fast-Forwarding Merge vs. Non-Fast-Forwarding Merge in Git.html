@@ -1,0 +1,917 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['Beta Tech Club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+          );
+        }
+      });
+    });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .customLink:hover {
+      text-decoration: none;
+    }
+
+    div.code-block-decoration.footer {
+      display: none;
+    }
+
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .custom_link_h2 a:hover {
+      color: black;
+    }
+
+    .custom_link_h2 a:active {
+      color: black;
+    }
+
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
+
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+  <style>
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+
+    .custom_iframe {
+      width: 100%;
+      height: 305px;
+    }
+
+    i.ib {
+      color: blue;
+    }
+
+    i.ig {
+      color: green;
+    }
+
+    .customTable td {
+      padding: 2px;
+    }
+
+    i.green {
+      color: green;
+    }
+
+    i.red {
+      color: red;
+    }
+
+    i.blue {
+      color: blue;
+    }
+
+    button.flex.gap-1.items-center.select-none.px-4.py-1 {
+      display: none;
+    }
+
+    button.flex.select-none.items-center.gap-1 {
+      display: none;
+    }
+
+    .flex.items-center {
+      display: none;
+    }
+
+    button {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader"
+  target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/why-you-cannot-directly-check-out.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/git-checkout-vs-git-switch-comparing.html" target="_blank" class="customLink">Next &raquo;</a>
+<br>
+
+<div class="customOuterWrapper0745">
+  <style>
+    div.customOuterWrapper0745 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.7;
+      color: #252525;
+      background: #ffffff;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    div.customOuterWrapper0745 h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin: 0 0 16px;
+      color: #172033;
+    }
+
+    div.customOuterWrapper0745 h2 {
+      font-size: 1.7rem;
+      line-height: 1.3;
+      margin: 42px 0 16px;
+      color: #172033;
+      border-bottom: 1px solid #e3e7ed;
+      padding-bottom: 8px;
+    }
+
+    div.customOuterWrapper0745 h3 {
+      font-size: 1.25rem;
+      margin: 28px 0 10px;
+      color: #26364d;
+    }
+
+    div.customOuterWrapper0745 p {
+      margin: 0 0 18px;
+    }
+
+    div.customOuterWrapper0745 .customIntro0745 {
+      font-size: 1.12rem;
+      color: #4b5563;
+      margin-bottom: 28px;
+    }
+
+    div.customOuterWrapper0745 .customKeyIdea0745 {
+      background: #f3f7fc;
+      border-left: 5px solid #3973b8;
+      padding: 18px 22px;
+      margin: 28px 0;
+      border-radius: 4px;
+    }
+
+    div.customOuterWrapper0745 .customKeyIdea0745 strong {
+      color: #1d4f85;
+    }
+
+    div.customOuterWrapper0745 code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f1f3f5;
+      color: #b42318;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    div.customOuterWrapper0745 pre {
+      background: #1e2430;
+      color: #e8edf5;
+      padding: 20px;
+      border-radius: 7px;
+      overflow-x: auto;
+      margin: 20px 0 24px;
+      line-height: 1.55;
+    }
+
+    div.customOuterWrapper0745 pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      font-size: 0.92rem;
+    }
+
+    div.customOuterWrapper0745 .customDiagram0745 {
+      background: #fafafa;
+      border: 1px solid #dfe4ea;
+      border-radius: 7px;
+      padding: 20px;
+      margin: 22px 0;
+      overflow-x: auto;
+    }
+
+    div.customOuterWrapper0745 .customDiagram0745 pre {
+      background: transparent;
+      color: #303846;
+      margin: 0;
+      padding: 0;
+    }
+
+    div.customOuterWrapper0745 .customComparison0745 {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 30px;
+      font-size: 0.96rem;
+    }
+
+    div.customOuterWrapper0745 .customComparison0745 th,
+    div.customOuterWrapper0745 .customComparison0745 td {
+      border: 1px solid #dfe4ea;
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    div.customOuterWrapper0745 .customComparison0745 th {
+      background: #eef2f7;
+      color: #1d2939;
+    }
+
+    div.customOuterWrapper0745 .customExample0745 {
+      background: #fbfbfc;
+      border: 1px solid #e2e5e9;
+      border-radius: 7px;
+      padding: 22px;
+      margin: 22px 0;
+    }
+
+    div.customOuterWrapper0745 .customExample0745 .customLabel0745 {
+      display: inline-block;
+      font-weight: 700;
+      color: #315f92;
+      margin-bottom: 10px;
+    }
+
+    div.customOuterWrapper0745 .customWarning0745 {
+      background: #fff8e8;
+      border-left: 5px solid #d99a18;
+      padding: 18px 22px;
+      margin: 26px 0;
+      border-radius: 4px;
+    }
+
+    div.customOuterWrapper0745 .customSummary0745 {
+      background: #f5f8f5;
+      border: 1px solid #d8e3d8;
+      border-radius: 7px;
+      padding: 22px;
+      margin-top: 30px;
+    }
+
+    div.customOuterWrapper0745 ul {
+      margin: 10px 0 20px 24px;
+      padding: 0;
+    }
+
+    div.customOuterWrapper0745 li {
+      margin-bottom: 8px;
+    }
+
+    div.customOuterWrapper0745 .customTakeaway0745 {
+      font-weight: 600;
+      color: #26364d;
+    }
+
+    @media (max-width: 700px) {
+      div.customOuterWrapper0745 {
+        padding: 24px 18px;
+      }
+
+      div.customOuterWrapper0745 h1 {
+        font-size: 2rem;
+      }
+
+      div.customOuterWrapper0745 h2 {
+        font-size: 1.45rem;
+      }
+    }
+  </style>
+
+  <article>
+    <h1>Fast-Forwarding Merge vs. Non-Fast-Forwarding Merge in Git</h1>
+
+    <p class="customIntro0745">
+      When you merge branches in Git, Git has to decide how to combine the histories
+      of those branches. Sometimes it can simply move a branch pointer forward.
+      Other times, it must create a new commit to record the merge.
+    </p>
+
+    <div class="customKeyIdea0745">
+      <strong>The key difference:</strong> A <strong>fast-forward merge</strong> does
+      not create a new merge commit. A <strong>non-fast-forward merge</strong>
+      creates a new merge commit that explicitly joins two lines of development.
+    </div>
+
+    <h2>First, Understand What a Git Branch Really Is</h2>
+
+    <p>
+      Before understanding the two types of merges, it helps to remember that a
+      Git branch is essentially a movable pointer to a commit.
+    </p>
+
+    <p>
+      Suppose you start with a <code>main</code> branch:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C
+              ^
+             main</code></pre>
+    </div>
+
+    <p>
+      You then create a branch called <code>feature</code> from commit
+      <code>C</code> and make two commits:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C --- D --- E
+              ^           ^
+             main       feature</code></pre>
+    </div>
+
+    <p>
+      Notice something important: <code>main</code> is still pointing to
+      <code>C</code>, while <code>feature</code> is ahead of it.
+    </p>
+
+    <p>
+      This particular situation is what makes a fast-forward merge possible.
+    </p>
+
+    <h2>What Is a Fast-Forward Merge?</h2>
+
+    <p>
+      A <strong>fast-forward merge</strong> happens when the branch you are
+      merging into has not moved forward since the feature branch was created.
+      In other words, the target branch is an ancestor of the branch being merged.
+    </p>
+
+    <p>
+      Git does not need to create a new commit because there are no competing
+      changes to combine. It can simply move the target branch pointer forward.
+    </p>
+
+    <h3>Before the Merge</h3>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C --- D --- E
+              ^           ^
+             main       feature</code></pre>
+    </div>
+
+    <p>
+      If you run:
+    </p>
+
+    <pre><code>git switch main
+git merge feature</code></pre>
+
+    <p>
+      Git can simply move <code>main</code> from <code>C</code> to
+      <code>E</code>.
+    </p>
+
+    <h3>After the Merge</h3>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C --- D --- E
+                          ^
+                    main, feature</code></pre>
+    </div>
+
+    <p>
+      No new commit was created. The history is still a straight line.
+    </p>
+
+    <div class="customKeyIdea0745">
+      <strong>Think of it this way:</strong> Git is saying,
+      "There is nothing to merge. The target branch is simply behind.
+      I can move its pointer forward to the latest commit."
+    </div>
+
+    <h2>Why Is It Called "Fast-Forward"?</h2>
+
+    <p>
+      The term comes from what Git does to the branch pointer. It does not
+      perform a complicated three-way merge or create a new commit. It simply
+      <strong>fast-forwards the branch reference</strong> to a later commit.
+    </p>
+
+    <p>
+      Imagine that <code>main</code> is pointing at page 3 of a book and
+      <code>feature</code> has continued the same story through page 5.
+      There is no second story to reconcile. Git can simply move the bookmark
+      from page 3 to page 5.
+    </p>
+
+    <h2>What Is a Non-Fast-Forwarding Merge?</h2>
+
+    <p>
+      A <strong>non-fast-forward merge</strong> is required when both branches
+      have developed independently.
+    </p>
+
+    <p>
+      For example, suppose <code>main</code> contains commit <code>D</code>,
+      while the feature branch was created earlier from commit <code>C</code>
+      and contains commits <code>F</code> and <code>G</code>:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>              D --- E
+             /
+A --- B --- C
+             \
+              F --- G
+                    ^
+                  feature</code></pre>
+    </div>
+
+    <p>
+      Here, <code>main</code> and <code>feature</code> have diverged.
+      The feature branch cannot simply replace <code>main</code>'s pointer,
+      because <code>main</code> contains commits that are not part of the
+      feature branch.
+    </p>
+
+    <p>
+      Git therefore needs to combine the two histories.
+    </p>
+
+    <h3>The Merge Commit</h3>
+
+    <p>
+      When you run:
+    </p>
+
+    <pre><code>git switch main
+git merge feature</code></pre>
+
+    <p>
+      Git can create a new merge commit:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>              D --- E
+             /         \
+A --- B --- C           M
+             \         /
+              F --- G
+                    ^
+                  feature</code></pre>
+    </div>
+
+    <p>
+      The new commit <code>M</code> has two parents: one from the existing
+      <code>main</code> history and one from the <code>feature</code> history.
+      It records the point at which the two lines of development were brought
+      together.
+    </p>
+
+    <div class="customKeyIdea0745">
+      <strong>Think of it this way:</strong> Git is saying,
+      "These branches have both moved forward independently, so I need a new
+      commit that joins their histories."
+    </div>
+
+    <h2>A Simple Real-World Example</h2>
+
+    <p>
+      Imagine you are working on a website.
+    </p>
+
+    <p>
+      You create a <code>login-page</code> branch from <code>main</code> and
+      work on the login page:
+    </p>
+
+    <pre><code>git switch main
+git switch -c login-page</code></pre>
+
+    <p>
+      You make several commits:
+    </p>
+
+    <pre><code>git commit -m "Add login form"
+git commit -m "Add login validation"</code></pre>
+
+    <p>
+      Meanwhile, nobody makes any new commits to <code>main</code>.
+    </p>
+
+    <p>
+      The history looks like this:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>main
+  |
+  v
+A --- B --- C --- D
+              ^
+          login-page</code></pre>
+    </div>
+
+    <p>
+      Merging <code>login-page</code> into <code>main</code> can be a
+      fast-forward:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C --- D
+                  ^
+             main, login-page</code></pre>
+    </div>
+
+    <p>
+      Now consider a different situation. While you were working on the login
+      page, another developer added commits to <code>main</code>:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>              X --- Y
+             /
+A --- B --- C
+             \
+              D --- E
+                    ^
+                login-page</code></pre>
+    </div>
+
+    <p>
+      Now the branches have diverged. Git cannot simply move
+      <code>main</code> forward to <code>E</code>, because that would leave
+      commits <code>X</code> and <code>Y</code> out of the resulting history.
+    </p>
+
+    <p>
+      A merge commit can join both histories:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>              X --- Y
+             /         \
+A --- B --- C           M
+             \         /
+              D --- E
+                    ^
+                login-page</code></pre>
+    </div>
+
+    <h2>Fast-Forward vs. Non-Fast-Forward</h2>
+
+    <table class="customComparison0745">
+      <thead>
+        <tr>
+          <th>Characteristic</th>
+          <th>Fast-Forward Merge</th>
+          <th>Non-Fast-Forward Merge</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Branches diverged?</td>
+          <td>No</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Creates a merge commit?</td>
+          <td>No</td>
+          <td>Usually yes</td>
+        </tr>
+        <tr>
+          <td>History shape</td>
+          <td>Straight line</td>
+          <td>Branches join together</td>
+        </tr>
+        <tr>
+          <td>What Git does</td>
+          <td>Moves the branch pointer forward</td>
+          <td>Creates a commit combining the histories</td>
+        </tr>
+        <tr>
+          <td>Useful for</td>
+          <td>Simple linear development</td>
+          <td>Preserving explicit branch/merge history</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Forcing a Non-Fast-Forward Merge</h2>
+
+    <p>
+      There is an important Git option that lets you create a merge commit
+      even when a fast-forward merge would be possible.
+    </p>
+
+    <pre><code>git merge --no-ff feature</code></pre>
+
+    <p>
+      The <code>--no-ff</code> option means "do not fast-forward."
+    </p>
+
+    <p>
+      Suppose the history is:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C --- D
+              ^       ^
+             main   feature</code></pre>
+    </div>
+
+    <p>
+      A normal merge could simply move <code>main</code> to <code>D</code>.
+      But with:
+    </p>
+
+    <pre><code>git merge --no-ff feature</code></pre>
+
+    <p>
+      Git creates a merge commit:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>A --- B --- C --- D
+              \       /
+                --- M
+                    ^
+                   main</code></pre>
+    </div>
+
+    <p>
+      The exact visual layout of the graph depends on the history, but the
+      important point is that <code>M</code> is an explicit merge commit.
+    </p>
+
+    <h2>Why Would You Use <code>--no-ff</code>?</h2>
+
+    <p>
+      At first, creating an extra commit may seem unnecessary. However, it can
+      make the history easier to understand.
+    </p>
+
+    <p>
+      Suppose every feature branch is merged with <code>--no-ff</code>.
+      The history can show clearly that a group of commits represented one
+      feature:
+    </p>
+
+    <div class="customDiagram0745">
+      <pre><code>--- A --- B ----------- M1 --- N -------- M2 --->
+          \             /              /
+           C --- D --- /              /
+                                      /
+                       E --- F -------</code></pre>
+    </div>
+
+    <p>
+      The merge commits provide visible boundaries between pieces of work.
+      This can be particularly useful in team environments where understanding
+      the development history matters.
+    </p>
+
+    <div class="customWarning0745">
+      <strong>Important:</strong> <code>--no-ff</code> does not mean that Git
+      will ignore the actual changes from the branch. It simply tells Git to
+      preserve the merge as an explicit commit instead of reducing it to a
+      pointer movement.
+    </div>
+
+    <h2>Fast-Forward Is Not the Same as "No Merge"</h2>
+
+    <p>
+      This is a common source of confusion.
+    </p>
+
+    <p>
+      When Git performs a fast-forward, people sometimes say that "nothing was
+      merged." Technically, the changes from the feature branch become part of
+      the target branch, but Git does not need to create a merge commit.
+    </p>
+
+    <p>
+      The important distinction is between <strong>integrating the changes</strong>
+      and <strong>creating a merge commit</strong>.
+    </p>
+
+    <p>
+      A fast-forward integrates the branch by moving the target branch pointer.
+      A non-fast-forward merge integrates the histories by creating a new
+      commit with both histories as parents.
+    </p>
+
+    <h2>How Git Decides Which One to Use</h2>
+
+    <p>
+      When you run:
+    </p>
+
+    <pre><code>git merge feature</code></pre>
+
+    <p>
+      Git examines the relationship between the current branch and
+      <code>feature</code>.
+    </p>
+
+    <ul>
+      <li>
+        If the current branch is an ancestor of <code>feature</code>, Git can
+        fast-forward.
+      </li>
+      <li>
+        If the branches have diverged, Git needs to perform a real merge and
+        create a merge commit, assuming the merge is successful.
+      </li>
+      <li>
+        If you use <code>--no-ff</code>, Git creates a merge commit even when
+        fast-forwarding would otherwise be possible.
+      </li>
+    </ul>
+
+    <h2>What About Conflicts?</h2>
+
+    <p>
+      A non-fast-forward merge may result in merge conflicts when Git cannot
+      automatically determine how to combine changes made on the two branches.
+    </p>
+
+    <p>
+      For example, if both branches modify the same lines of the same file,
+      Git may stop and ask you to resolve the conflict.
+    </p>
+
+    <p>
+      Fast-forward merges generally do not encounter this type of merge
+      conflict because there is no divergent history to reconcile. Git is
+      simply advancing the branch pointer along an existing line of commits.
+    </p>
+
+    <h2>A Useful Mental Model</h2>
+
+    <div class="customExample0745">
+      <span class="customLabel0745">Fast-forward</span>
+
+      <p>
+        Think of two people reading the same book. One person stopped at
+        chapter 3, while the other continued to chapter 5. To catch up, the
+        first person's bookmark simply moves from chapter 3 to chapter 5.
+      </p>
+    </div>
+
+    <div class="customExample0745">
+      <span class="customLabel0745">Non-fast-forward</span>
+
+      <p>
+        Now imagine two people started from chapter 3 and wrote different
+        endings. Their work has diverged. Someone has to combine the two
+        versions and record that combination. The merge commit represents that
+        joining point.
+      </p>
+    </div>
+
+    <h2>Common Commands</h2>
+
+    <h3>Allow Fast-Forward When Possible</h3>
+
+    <pre><code>git merge feature</code></pre>
+
+    <p>
+      This is the normal merge command. Git will fast-forward if possible;
+      otherwise it performs a non-fast-forward merge.
+    </p>
+
+    <h3>Require a Merge Commit</h3>
+
+    <pre><code>git merge --no-ff feature</code></pre>
+
+    <p>
+      This prevents Git from fast-forwarding and creates a merge commit.
+    </p>
+
+    <h3>Allow Only Fast-Forwarding</h3>
+
+    <pre><code>git merge --ff-only feature</code></pre>
+
+    <p>
+      This tells Git that the merge must be a fast-forward. If the branches
+      have diverged, Git refuses to perform the merge rather than creating a
+      merge commit.
+    </p>
+
+    <h2>Why This Matters in Team Development</h2>
+
+    <p>
+      The choice between fast-forward and non-fast-forward merging is not just
+      about Git mechanics. It affects how your project's history looks.
+    </p>
+
+    <p>
+      A project that favors fast-forward merges tends to maintain a cleaner,
+      linear history. A project that favors explicit merge commits preserves
+      more information about when separate branches were integrated.
+    </p>
+
+    <p>
+      Neither approach is universally better. Teams often choose a strategy
+      based on how they want their Git history to communicate the development
+      process.
+    </p>
+
+    <div class="customSummary0745">
+      <h2>In Summary</h2>
+
+      <p>
+        The easiest way to remember the difference is:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Fast-forward merge:</strong> the target branch is behind the
+          feature branch, so Git can simply move the target pointer forward.
+        </li>
+        <li>
+          <strong>Non-fast-forward merge:</strong> the branches have diverged,
+          so Git needs a new merge commit to join their histories.
+        </li>
+        <li>
+          <strong><code>--no-ff</code>:</strong> forces Git to create a merge
+          commit even when a fast-forward would be possible.
+        </li>
+        <li>
+          <strong><code>--ff-only</code>:</strong> allows the merge only when
+          Git can fast-forward.
+        </li>
+      </ul>
+
+      <p class="customTakeaway0745">
+        In short: <strong>fast-forwarding moves a pointer; non-fast-forwarding
+        creates a new commit to join two histories.</strong>
+      </p>
+    </div>
+  </article>
+</div>
+
+<br>
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader"
+  target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/why-you-cannot-directly-check-out.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/git-checkout-vs-git-switch-comparing.html" target="_blank" class="customLink">Next &raquo;</a>
+<br>

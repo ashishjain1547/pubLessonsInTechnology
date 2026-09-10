@@ -1,0 +1,706 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['Beta Tech Club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+          );
+        }
+      });
+    });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .customLink:hover {
+      text-decoration: none;
+    }
+
+    div.code-block-decoration.footer {
+      display: none;
+    }
+
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .custom_link_h2 a:hover {
+      color: black;
+    }
+
+    .custom_link_h2 a:active {
+      color: black;
+    }
+
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
+
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+  <style>
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+
+    .custom_iframe {
+      width: 100%;
+      height: 305px;
+    }
+
+    i.ib {
+      color: blue;
+    }
+
+    i.ig {
+      color: green;
+    }
+
+    .customTable td {
+      padding: 2px;
+    }
+
+    i.green {
+      color: green;
+    }
+
+    i.red {
+      color: red;
+    }
+
+    i.blue {
+      color: blue;
+    }
+
+    button.flex.gap-1.items-center.select-none.px-4.py-1 {
+      display: none;
+    }
+
+    button.flex.select-none.items-center.gap-1 {
+      display: none;
+    }
+
+    .flex.items-center {
+      display: none;
+    }
+
+    button {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader"
+  target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/fast-forwarding-merge-vs-non-fast.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+<!-- &nbsp;&nbsp;
+<a href="" target="_blank" class="customLink">Next &raquo;</a> -->
+<br>
+
+<div class="customOuterWrapper0845">
+  <style>
+    div.customOuterWrapper0845 {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #24292f;
+      background: #ffffff;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    div.customOuterWrapper0845 h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      color: #111827;
+    }
+
+    div.customOuterWrapper0845 h2 {
+      font-size: 26px;
+      line-height: 1.3;
+      margin: 38px 0 14px 0;
+      color: #1f2937;
+    }
+
+    div.customOuterWrapper0845 h3 {
+      font-size: 20px;
+      margin: 26px 0 10px 0;
+      color: #374151;
+    }
+
+    div.customOuterWrapper0845 p {
+      margin: 0 0 18px 0;
+      font-size: 16px;
+    }
+
+    div.customOuterWrapper0845 .intro {
+      font-size: 18px;
+      color: #4b5563;
+      margin-bottom: 28px;
+    }
+
+    div.customOuterWrapper0845 code {
+      font-family: Consolas, Monaco, "Courier New", monospace;
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    div.customOuterWrapper0845 pre {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 18px 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 18px 0 24px 0;
+    }
+
+    div.customOuterWrapper0845 pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+      font-size: 14px;
+    }
+
+    div.customOuterWrapper0845 table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+
+    div.customOuterWrapper0845 th {
+      background: #f3f4f6;
+      color: #111827;
+      text-align: left;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+    }
+
+    div.customOuterWrapper0845 td {
+      padding: 12px;
+      vertical-align: top;
+      border: 1px solid #d1d5db;
+    }
+
+    div.customOuterWrapper0845 .callout {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 16px 18px;
+      margin: 24px 0;
+      border-radius: 4px;
+    }
+
+    div.customOuterWrapper0845 .warning {
+      background: #fff7ed;
+      border-left: 4px solid #ea580c;
+      padding: 16px 18px;
+      margin: 24px 0;
+      border-radius: 4px;
+    }
+
+    div.customOuterWrapper0845 .command-label {
+      font-weight: bold;
+      color: #111827;
+    }
+
+    div.customOuterWrapper0845 ul,
+    div.customOuterWrapper0845 ol {
+      margin: 0 0 20px 0;
+      padding-left: 28px;
+    }
+
+    div.customOuterWrapper0845 li {
+      margin-bottom: 8px;
+    }
+
+    div.customOuterWrapper0845 .summary {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+  </style>
+
+  <h1>Git Checkout vs. Git Switch: Comparing and Contrasting Two Branch Commands</h1>
+
+  <p class="intro">
+    Git provides several commands for working with branches, but two commands that often
+    cause confusion are <code>git checkout</code> and <code>git switch</code>. Both can be
+    used to move from one branch to another, but they are not equivalent in purpose or design.
+    Understanding the difference helps you write clearer Git commands and avoid accidentally
+    performing the wrong operation.
+  </p>
+
+  <h2>1. Why Are There Two Commands?</h2>
+
+  <p>
+    Historically, <code>git checkout</code> was the main command used to change branches.
+    However, it eventually became a multi-purpose command that could do several unrelated
+    things, including switching branches and restoring files.
+  </p>
+
+  <p>
+    This created a common source of confusion. For example, the same command could mean
+    "move to another branch" in one situation and "restore this file" in another.
+  </p>
+
+  <p>
+    To make these operations easier to understand, Git introduced <code>git switch</code>
+    and <code>git restore</code>. The idea was to separate the responsibilities that had
+    previously been handled by <code>git checkout</code>.
+  </p>
+
+  <div class="callout">
+    <strong>The key idea:</strong> <code>git switch</code> is specifically designed for
+    changing branches, while <code>git checkout</code> is a broader, older command that
+    can change branches as well as check out files and specific commits.
+  </div>
+
+  <h2>2. Using Git Checkout to Switch Branches</h2>
+
+  <p>
+    Before <code>git switch</code> existed, developers commonly used
+    <code>git checkout</code> to move from one branch to another.
+  </p>
+
+  <pre><code>git checkout feature-login</code></pre>
+
+  <p>
+    This tells Git to move the current working directory from the current branch to
+    <code>feature-login</code>.
+  </p>
+
+  <p>
+    For example, suppose you are currently on <code>main</code>:
+  </p>
+
+  <pre><code>git branch
+
+* main
+  feature-login
+  bugfix</code></pre>
+
+  <p>
+    Running:
+  </p>
+
+  <pre><code>git checkout feature-login</code></pre>
+
+  <p>
+    changes the current branch to <code>feature-login</code>.
+  </p>
+
+  <h2>3. Using Git Switch to Change Branches</h2>
+
+  <p>
+    The same operation can be expressed more explicitly with <code>git switch</code>:
+  </p>
+
+  <pre><code>git switch feature-login</code></pre>
+
+  <p>
+    The meaning is immediately clear: switch the current branch to
+    <code>feature-login</code>.
+  </p>
+
+  <p>
+    This is one of the main reasons <code>git switch</code> was introduced. Its purpose is
+    narrower and therefore easier to understand.
+  </p>
+
+  <h2>4. Comparing the Basic Syntax</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Operation</th>
+        <th>Git Checkout</th>
+        <th>Git Switch</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Switch to an existing branch</td>
+        <td><code>git checkout feature</code></td>
+        <td><code>git switch feature</code></td>
+      </tr>
+      <tr>
+        <td>Create and switch to a new branch</td>
+        <td><code>git checkout -b feature</code></td>
+        <td><code>git switch -c feature</code></td>
+      </tr>
+      <tr>
+        <td>Switch to another commit</td>
+        <td><code>git checkout abc123</code></td>
+        <td>Not its primary purpose</td>
+      </tr>
+      <tr>
+        <td>Restore a file</td>
+        <td><code>git checkout -- file.txt</code></td>
+        <td>Not supported for this purpose</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>5. Creating a New Branch</h2>
+
+  <p>
+    Both commands can create a new branch and immediately switch to it.
+  </p>
+
+  <h3>Using git checkout</h3>
+
+  <pre><code>git checkout -b feature-payment</code></pre>
+
+  <p>
+    The <code>-b</code> option tells <code>checkout</code> to create the branch and then
+    move to it.
+  </p>
+
+  <h3>Using git switch</h3>
+
+  <pre><code>git switch -c feature-payment</code></pre>
+
+  <p>
+    Here, <code>-c</code> means create a new branch and switch to it.
+  </p>
+
+  <p>
+    The result is essentially the same: a new branch named <code>feature-payment</code>
+    is created and becomes the current branch.
+  </p>
+
+  <h2>6. The Important Difference: Checkout Does More</h2>
+
+  <p>
+    The biggest difference between the two commands is not what they can do when switching
+    branches, but what <code>checkout</code> can do beyond branch switching.
+  </p>
+
+  <p>
+    Historically, <code>git checkout</code> has been used for several different tasks:
+  </p>
+
+  <ul>
+    <li>Switching between branches.</li>
+    <li>Creating and switching to a new branch.</li>
+    <li>Checking out a particular commit.</li>
+    <li>Restoring files from another commit or branch.</li>
+  </ul>
+
+  <p>
+    By contrast, <code>git switch</code> focuses on branches. It does not replace every
+    capability of <code>git checkout</code>.
+  </p>
+
+  <h2>7. Checkout Can Move to a Specific Commit</h2>
+
+  <p>
+    One common use of <code>git checkout</code> is moving to a particular commit rather
+    than a branch.
+  </p>
+
+  <pre><code>git checkout abc123</code></pre>
+
+  <p>
+    This places Git at the specified commit. Because that commit is not necessarily the
+    tip of a branch, you may end up in what Git calls a
+    <strong>detached HEAD</strong> state.
+  </p>
+
+  <p>
+    <code>git switch</code> is intentionally focused on branch switching, so checking out
+    an arbitrary commit is not its primary role.
+  </p>
+
+  <div class="warning">
+    <strong>Important:</strong> Being in a detached HEAD state is not inherently an error.
+    It is useful when you want to inspect or experiment with a particular commit without
+    moving an existing branch pointer. However, commits created there can become difficult
+    to find if you do not create a branch to keep them.
+  </div>
+
+  <h2>8. Checkout Was Also Used to Restore Files</h2>
+
+  <p>
+    Another source of confusion was that <code>git checkout</code> could operate on files.
+    For example:
+  </p>
+
+  <pre><code>git checkout -- README.md</code></pre>
+
+  <p>
+    Historically, this was a way to replace the working copy of
+    <code>README.md</code> with the version from the current commit.
+  </p>
+
+  <p>
+    Modern Git provides <code>git restore</code> specifically for file restoration:
+  </p>
+
+  <pre><code>git restore README.md</code></pre>
+
+  <p>
+    This separation makes Git's commands easier to understand:
+  </p>
+
+  <pre><code>git switch   → work with branches
+git restore  → restore files
+git checkout → older, multi-purpose command</code></pre>
+
+  <h2>9. Switching to a Remote Branch</h2>
+
+  <p>
+    <code>git switch</code> also provides a convenient way to create a local branch that
+    tracks a remote branch.
+  </p>
+
+  <p>
+    For example:
+  </p>
+
+  <pre><code>git switch --track origin/feature-login</code></pre>
+
+  <p>
+    This creates a local branch associated with the remote-tracking branch and switches
+    to it.
+  </p>
+
+  <p>
+    With modern Git versions, Git can often infer the remote branch when the local branch
+    does not yet exist:
+  </p>
+
+  <pre><code>git switch feature-login</code></pre>
+
+  <p>
+    If Git finds an appropriate remote-tracking branch, it can create the local branch
+    and establish the tracking relationship.
+  </p>
+
+  <h2>10. Why Git Switch Is Easier to Understand</h2>
+
+  <p>
+    Consider the following two commands:
+  </p>
+
+  <pre><code>git checkout feature-login
+git switch feature-login</code></pre>
+
+  <p>
+    Both can switch branches, but the second command communicates its intention more
+    explicitly. When you see <code>git switch</code>, you immediately know that the
+    operation concerns branches.
+  </p>
+
+  <p>
+    This is particularly useful for beginners because it reduces the number of unrelated
+    meanings they need to remember for one command.
+  </p>
+
+  <h2>11. Are They Completely Interchangeable?</h2>
+
+  <p>
+    No. They overlap when the task is switching branches, but they are not interchangeable
+    in every situation.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Capability</th>
+        <th><code>git checkout</code></th>
+        <th><code>git switch</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Switch branches</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Create and switch to a branch</td>
+        <td>Yes, with <code>-b</code></td>
+        <td>Yes, with <code>-c</code></td>
+      </tr>
+      <tr>
+        <td>Track a remote branch</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Move directly to a commit</td>
+        <td>Yes</td>
+        <td>Not its intended role</td>
+      </tr>
+      <tr>
+        <td>Restore files</td>
+        <td>Historically yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Dedicated to branch operations</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>12. Which Command Should You Use?</h2>
+
+  <p>
+    For everyday branch operations, <code>git switch</code> is generally the clearer
+    choice in modern Git.
+  </p>
+
+  <p>
+    For example, prefer:
+  </p>
+
+  <pre><code>git switch main
+git switch feature-login
+git switch -c feature-payment</code></pre>
+
+  <p>
+    rather than relying on <code>git checkout</code> for every branch-related operation.
+  </p>
+
+  <p>
+    However, you should still understand <code>git checkout</code>. You will encounter it
+    frequently in older documentation, scripts, tutorials, Stack Overflow answers, and
+    existing projects.
+  </p>
+
+  <h2>13. A Simple Mental Model</h2>
+
+  <p>
+    A useful way to remember the difference is to think about the verbs represented by
+    the commands:
+  </p>
+
+  <div class="summary">
+    <p>
+      <span class="command-label">git switch</span> → "I want to switch branches."
+    </p>
+    <p>
+      <span class="command-label">git restore</span> → "I want to restore files."
+    </p>
+    <p>
+      <span class="command-label">git checkout</span> → "I am using the older,
+      multi-purpose command that historically handled both kinds of operations."
+    </p>
+  </div>
+
+  <h2>14. Final Comparison</h2>
+
+  <p>
+    <code>git checkout</code> and <code>git switch</code> overlap significantly when it
+    comes to changing branches. If you run:
+  </p>
+
+  <pre><code>git checkout develop</code></pre>
+
+  <p>
+    or:
+  </p>
+
+  <pre><code>git switch develop</code></pre>
+
+  <p>
+    the intended result is the same: your working tree moves to the
+    <code>develop</code> branch.
+  </p>
+
+  <p>
+    The difference is that <code>git checkout</code> is a broader, historically overloaded
+    command, while <code>git switch</code> was introduced to make branch switching a
+    distinct and easier-to-understand operation.
+  </p>
+
+  <p>
+    Therefore, a good modern rule of thumb is:
+    <strong>use <code>git switch</code> when your intention is to work with branches,
+    and learn <code>git checkout</code> so you can understand existing Git commands and
+    older workflows.</strong>
+  </p>
+</div>
+
+<br>
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader"
+  target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/fast-forwarding-merge-vs-non-fast.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+<!-- &nbsp;&nbsp;
+<a href="" target="_blank" class="customLink">Next &raquo;</a> -->
+<br>

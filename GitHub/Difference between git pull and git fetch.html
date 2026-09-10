@@ -1,0 +1,336 @@
+<head>
+        <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+
+        i.ib {
+            color: blue;
+        }
+
+        i.ig {
+            color: green;
+        }
+
+        .customTable td {
+            padding: 2px;
+        }
+
+        i.green {
+            color: green;
+        }
+
+        i.red {
+            color: red;
+        }
+
+        i.blue {
+            color: blue;
+        }
+
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        .flex.items-center {
+            display: none;
+        }
+
+        button { display: none; }
+    </style>
+
+</head>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader" target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/managing-git-pat-and-credentials-on.html" target="_blank" class="customLink">&laquo; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/why-you-cannot-directly-check-out.html" target="_blank" class="customLink">Next &raquo;</a>
+<br>
+
+
+
+<div class="customOuterWrapper0710">
+  <style>
+    div.customOuterWrapper0710 {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px;
+      color: #222;
+    }
+
+    div.customOuterWrapper0710 h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    div.customOuterWrapper0710 h2 {
+      font-size: 23px;
+      margin-top: 30px;
+    }
+
+    div.customOuterWrapper0710 p {
+      margin: 14px 0;
+    }
+
+    div.customOuterWrapper0710 code {
+      background: #f2f2f2;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+
+    div.customOuterWrapper0710 pre {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+
+    div.customOuterWrapper0710 table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    div.customOuterWrapper0710 th,
+    div.customOuterWrapper0710 td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    div.customOuterWrapper0710 th {
+      background: #f5f5f5;
+    }
+
+    div.customOuterWrapper0710 .highlight {
+      padding: 15px;
+      background: #f8f8f8;
+      border-left: 4px solid #666;
+      margin: 20px 0;
+    }
+  </style>
+
+  <h1>Difference Between <code>git fetch</code> and <code>git pull</code></h1>
+
+  <p>
+    When working with Git, you often need to get the latest changes from a
+    remote repository. Two commands commonly used for this are
+    <code>git fetch</code> and <code>git pull</code>.
+    Although they are related, they behave quite differently.
+  </p>
+
+  <h2>What Does <code>git fetch</code> Do?</h2>
+
+  <p>
+    <code>git fetch</code> downloads the latest commits and other changes from
+    the remote repository, but it <strong>does not change your current working
+    branch</strong>.
+  </p>
+
+  <pre><code>git fetch origin</code></pre>
+
+  <p>
+    Think of <code>git fetch</code> as saying:
+    <strong>“Show me what has changed on the remote, but don't apply those changes yet.”</strong>
+  </p>
+
+  <p>
+    This makes <code>git fetch</code> a safer option when you want to inspect
+    incoming changes before integrating them into your work.
+  </p>
+
+  <h2>What Does <code>git pull</code> Do?</h2>
+
+  <p>
+    <code>git pull</code> downloads changes from the remote repository and then
+    immediately integrates them into your current branch.
+  </p>
+
+  <pre><code>git pull origin main</code></pre>
+
+  <p>
+    In simple terms, <code>git pull</code> is roughly equivalent to:
+  </p>
+
+  <pre><code>git fetch
+git merge</code></pre>
+
+  <p>
+    Depending on your Git configuration and the situation, the integration
+    step may use a merge or rebase.
+  </p>
+
+  <h2>Key Difference</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th><code>git fetch</code></th>
+        <th><code>git pull</code></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Downloads remote changes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Changes your current branch</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>Lets you inspect changes first</td>
+        <td>Yes</td>
+        <td>Not by default</td>
+      </tr>
+      <tr>
+        <td>Can cause merge conflicts</td>
+        <td>No</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight">
+    <strong>Easy way to remember:</strong><br>
+    <code>git fetch</code> = “Download the changes.”<br>
+    <code>git pull</code> = “Download and integrate the changes.”
+  </div>
+
+  <h2>Which One Should You Use?</h2>
+
+  <p>
+    Use <code>git fetch</code> when you want more control and want to review
+    remote changes before incorporating them. Use <code>git pull</code> when you
+    are comfortable bringing the latest remote changes directly into your
+    current branch.
+  </p>
+
+  <p>
+    For beginners, a good habit is to use <code>git fetch</code> when you are
+    unsure about incoming changes, and then decide whether to merge or rebase
+    them after reviewing what has changed.
+  </p>
+</div>
+<br>
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader" target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/05/managing-git-pat-and-credentials-on.html" target="_blank" class="customLink">&laquo; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/why-you-cannot-directly-check-out.html" target="_blank" class="customLink">Next &raquo;</a>

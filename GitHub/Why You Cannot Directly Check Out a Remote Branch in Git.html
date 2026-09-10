@@ -1,0 +1,858 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['Beta Tech Club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+          );
+        }
+      });
+    });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .customLink:hover {
+      text-decoration: none;
+    }
+
+    div.code-block-decoration.footer {
+      display: none;
+    }
+
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .custom_link_h2 a:hover {
+      color: black;
+    }
+
+    .custom_link_h2 a:active {
+      color: black;
+    }
+
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
+
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+  <style>
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+
+    .custom_iframe {
+      width: 100%;
+      height: 305px;
+    }
+
+    i.ib {
+      color: blue;
+    }
+
+    i.ig {
+      color: green;
+    }
+
+    .customTable td {
+      padding: 2px;
+    }
+
+    i.green {
+      color: green;
+    }
+
+    i.red {
+      color: red;
+    }
+
+    i.blue {
+      color: blue;
+    }
+
+    button.flex.gap-1.items-center.select-none.px-4.py-1 {
+      display: none;
+    }
+
+    button.flex.select-none.items-center.gap-1 {
+      display: none;
+    }
+
+    .flex.items-center {
+      display: none;
+    }
+
+    button {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader"
+  target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/difference-between-git-pull-and-git.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/fast-forwarding-merge-vs-non-fast.html" target="_blank" class="customLink">Next &raquo;</a>
+<br>
+
+
+<div class="customOuterWrapper0745">
+  <style>
+    div.customOuterWrapper0745 {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #24292f;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px;
+      background: #ffffff;
+    }
+
+    div.customOuterWrapper0745 h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin: 0 0 18px;
+      color: #111827;
+    }
+
+    div.customOuterWrapper0745 h2 {
+      font-size: 25px;
+      margin: 34px 0 12px;
+      color: #1f2937;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
+
+    div.customOuterWrapper0745 h3 {
+      font-size: 20px;
+      margin: 26px 0 10px;
+      color: #374151;
+    }
+
+    div.customOuterWrapper0745 p {
+      margin: 12px 0;
+      font-size: 16px;
+    }
+
+    div.customOuterWrapper0745 code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.92em;
+    }
+
+    div.customOuterWrapper0745 pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 18px 0;
+    }
+
+    div.customOuterWrapper0745 pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    div.customOuterWrapper0745 .intro {
+      background: #f3f6fa;
+      border-left: 5px solid #2563eb;
+      padding: 18px 20px;
+      margin: 22px 0;
+      border-radius: 5px;
+    }
+
+    div.customOuterWrapper0745 .note {
+      background: #fff8e1;
+      border-left: 5px solid #f59e0b;
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    div.customOuterWrapper0745 .important {
+      background: #ecfdf5;
+      border-left: 5px solid #10b981;
+      padding: 16px 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    div.customOuterWrapper0745 ul,
+    div.customOuterWrapper0745 ol {
+      padding-left: 28px;
+    }
+
+    div.customOuterWrapper0745 li {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    div.customOuterWrapper0745 table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0;
+    }
+
+    div.customOuterWrapper0745 th,
+    div.customOuterWrapper0745 td {
+      border: 1px solid #d1d5db;
+      padding: 11px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    div.customOuterWrapper0745 th {
+      background: #f3f4f6;
+      font-weight: 700;
+    }
+
+    div.customOuterWrapper0745 .diagram {
+      margin: 24px 0;
+      padding: 18px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      font-family: Consolas, Monaco, monospace;
+      white-space: pre-wrap;
+    }
+
+    div.customOuterWrapper0745 .tag {
+      display: inline-block;
+      background: #e5e7eb;
+      color: #374151;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 13px;
+      margin-right: 5px;
+    }
+
+    div.customOuterWrapper0745 .summary {
+      background: #eff6ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 28px;
+    }
+  </style>
+
+  <article>
+    <h1>Why You Cannot Directly Check Out a Remote Branch in Git</h1>
+
+    <div class="intro">
+      <p>
+        A common point of confusion in Git is the difference between a
+        <strong>remote branch</strong> and a <strong>local branch</strong>.
+        You may see a branch such as <code>origin/feature-login</code> and
+        naturally think, "I should be able to check it out."
+      </p>
+
+      <p>
+        The important idea is this:
+        <strong><code>origin/feature-login</code> is not a normal local branch.</strong>
+        It is a remote-tracking reference that tells your local Git repository
+        what the corresponding branch on the remote repository looked like when
+        Git last updated its information.
+      </p>
+    </div>
+
+    <h2>1. What Is a Remote Branch?</h2>
+
+    <p>
+      Suppose your team has a remote repository called <code>origin</code>.
+      Someone has pushed a branch called <code>feature-login</code> to that
+      repository.
+    </p>
+
+    <p>
+      After fetching the latest information, your repository might show:
+    </p>
+
+    <pre><code>origin/main
+origin/feature-login
+origin/develop</code></pre>
+
+    <p>
+      At first glance, <code>origin/feature-login</code> looks like a branch
+      that you can simply switch to. But it is better to think of it as a
+      <strong>remote-tracking reference</strong>.
+    </p>
+
+    <p>
+      It represents your local record of the branch
+      <code>feature-login</code> on the remote named <code>origin</code>.
+      It is not the same thing as having a local working branch named
+      <code>feature-login</code>.
+    </p>
+
+    <div class="diagram">Remote repository
+      |
+      | branch: feature-login
+      v
+      origin/feature-login
+      |
+      | remote-tracking reference
+      v
+      Local repository
+
+      feature-login
+      |
+      | local branch
+      v
+      Your working directory</div>
+
+    <h2>2. What Does <code>git fetch</code> Actually Do?</h2>
+
+    <p>
+      When you run:
+    </p>
+
+    <pre><code>git fetch origin</code></pre>
+
+    <p>
+      Git contacts the remote repository and downloads information about
+      commits and branches that you do not yet have locally.
+    </p>
+
+    <p>
+      It then updates remote-tracking references such as:
+    </p>
+
+    <pre><code>origin/main
+origin/feature-login</code></pre>
+
+    <p>
+      Importantly, <code>git fetch</code> does <strong>not</strong> normally
+      create or switch your local working branch.
+    </p>
+
+    <p>
+      Think of fetching as saying:
+    </p>
+
+    <div class="note">
+      <strong>"Tell me what exists on the remote and bring the new commits
+        into my local repository, but don't change the branch I'm currently
+        working on."</strong>
+    </div>
+
+    <h2>3. Why Can't You Treat <code>origin/feature-login</code> Like Your Local Branch?</h2>
+
+    <p>
+      A local branch is something you normally work on. It has a branch name,
+      moves forward as you create commits, and is associated with your working
+      directory when you check it out.
+    </p>
+
+    <p>
+      A remote-tracking reference such as <code>origin/feature-login</code>
+      serves a different purpose. It is Git's local representation of where
+      the remote branch was last observed.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Local branch</th>
+          <th>Remote-tracking reference</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>feature-login</code></td>
+          <td><code>origin/feature-login</code></td>
+        </tr>
+        <tr>
+          <td>Used for local development</td>
+          <td>Represents the remote branch locally</td>
+        </tr>
+        <tr>
+          <td>Can be checked out normally</td>
+          <td>Not intended to be your normal working branch</td>
+        </tr>
+        <tr>
+          <td>Moves as you make commits</td>
+          <td>Moves when Git updates it from the remote</td>
+        </tr>
+        <tr>
+          <td>Can have an upstream branch</td>
+          <td>Usually identifies the upstream branch itself</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. The Solution: Create a Local Branch That Tracks It</h2>
+
+    <p>
+      If you want to work on the remote branch, the usual approach is to
+      create a <strong>local branch</strong> that tracks the remote branch.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <pre><code>git switch -c feature-login --track origin/feature-login</code></pre>
+
+    <p>
+      This command does two things:
+    </p>
+
+    <ol>
+      <li>
+        Creates a local branch called <code>feature-login</code>.
+      </li>
+      <li>
+        Configures it to track <code>origin/feature-login</code>.
+      </li>
+    </ol>
+
+    <p>
+      You now have a normal local branch that you can work on.
+    </p>
+
+    <div class="diagram">Remote branch
+      origin/feature-login
+      |
+      | -- tracks -->
+      |
+      Local branch
+      feature-login
+      |
+      v
+      Working directory</div>
+
+    <h2>5. What Does "Tracking" Mean?</h2>
+
+    <p>
+      Tracking is one of the most useful concepts to understand when working
+      with Git branches.
+    </p>
+
+    <p>
+      When your local <code>feature-login</code> branch tracks
+      <code>origin/feature-login</code>, Git knows that these two branches are
+      related.
+    </p>
+
+    <p>
+      This allows Git to understand what you mean when you run commands such
+      as:
+    </p>
+
+    <pre><code>git pull</code></pre>
+
+    <p>
+      Instead of having to specify the remote and branch every time, Git can
+      use the configured upstream branch.
+    </p>
+
+    <p>
+      Similarly, when you run:
+    </p>
+
+    <pre><code>git push</code></pre>
+
+    <p>
+      Git can know where the local branch is intended to push its commits.
+    </p>
+
+    <div class="important">
+      <strong>Tracking does not mean that the two branches are permanently
+        identical.</strong> It simply tells Git which remote branch is the
+      upstream counterpart of your local branch.
+    </div>
+
+    <h2>6. An Easier Way to Create the Tracking Branch</h2>
+
+    <p>
+      Git provides a convenient shortcut. If the remote branch exists and
+      there is no conflicting local branch with the same name, you can often
+      simply run:
+    </p>
+
+    <pre><code>git switch feature-login</code></pre>
+
+    <p>
+      Git can recognize that <code>origin/feature-login</code> exists and
+      automatically create a local <code>feature-login</code> branch that
+      tracks it.
+    </p>
+
+    <p>
+      The older, widely used equivalent is:
+    </p>
+
+    <pre><code>git checkout -b feature-login origin/feature-login</code></pre>
+
+    <p>
+      This explicitly says:
+    </p>
+
+    <ul>
+      <li>Create a local branch named <code>feature-login</code>.</li>
+      <li>Start it from <code>origin/feature-login</code>.</li>
+      <li>Check out the newly created local branch.</li>
+    </ul>
+
+    <h2>7. What Happens When You Pull?</h2>
+
+    <p>
+      Suppose you have created:
+    </p>
+
+    <pre><code>feature-login → tracks → origin/feature-login</code></pre>
+
+    <p>
+      Someone else then adds commits to the remote branch.
+    </p>
+
+    <p>
+      You can update your knowledge of the remote with:
+    </p>
+
+    <pre><code>git fetch origin</code></pre>
+
+    <p>
+      Your local remote-tracking reference now moves:
+    </p>
+
+    <pre><code>origin/feature-login</code></pre>
+
+    <p>
+      Your local branch may still be where it was:
+    </p>
+
+    <pre><code>feature-login</code></pre>
+
+    <p>
+      When you subsequently run:
+    </p>
+
+    <pre><code>git pull</code></pre>
+
+    <p>
+      Git uses the tracking relationship to determine which remote branch to
+      fetch from and integrate into your current branch.
+    </p>
+
+    <div class="diagram">Before fetch:
+
+      feature-login -------- A -------- B
+
+      origin/feature-login -- A -------- B
+
+
+      Someone pushes C to remote:
+
+      feature-login -------- A -------- B
+
+      origin/feature-login -- A -------- B -------- C
+
+
+      After git pull:
+
+      feature-login -------- A -------- B -------- C
+
+      origin/feature-login -- A -------- B -------- C</div>
+
+    <h2>8. What Does "Merge With It" Mean?</h2>
+
+    <p>
+      The phrase "merge with the remote branch" can be slightly misleading.
+      You do not normally merge directly with a server-side branch.
+    </p>
+
+    <p>
+      Instead, Git first represents the remote branch locally as a
+      remote-tracking reference such as:
+    </p>
+
+    <pre><code>origin/feature-login</code></pre>
+
+    <p>
+      You can then merge that reference into your local branch:
+    </p>
+
+    <pre><code>git merge origin/feature-login</code></pre>
+
+    <p>
+      For example, imagine your local branch contains:
+    </p>
+
+    <pre><code>A --- B --- C
+          \
+           D --- E    (feature-login)</code></pre>
+
+    <p>
+      Meanwhile, the remote-tracking branch has advanced:
+    </p>
+
+    <pre><code>A --- B --- C --- F --- G
+          \
+           D --- E    (feature-login)</code></pre>
+
+    <p>
+      Running:
+    </p>
+
+    <pre><code>git merge origin/feature-login</code></pre>
+
+    <p>
+      tells Git to integrate the commits represented by
+      <code>origin/feature-login</code> into your current local branch.
+    </p>
+
+    <h2>9. A Typical Workflow</h2>
+
+    <p>
+      A practical workflow might look like this:
+    </p>
+
+    <h3>Step 1: Fetch the remote information</h3>
+
+    <pre><code>git fetch origin</code></pre>
+
+    <h3>Step 2: See the remote branches</h3>
+
+    <pre><code>git branch -r</code></pre>
+
+    <p>
+      You might see:
+    </p>
+
+    <pre><code>origin/main
+origin/develop
+origin/feature-login</code></pre>
+
+    <h3>Step 3: Create a local tracking branch</h3>
+
+    <pre><code>git switch -c feature-login --track origin/feature-login</code></pre>
+
+    <h3>Step 4: Work normally</h3>
+
+    <pre><code>git add .
+git commit -m "Add login validation"</code></pre>
+
+    <h3>Step 5: Push your local commits</h3>
+
+    <pre><code>git push</code></pre>
+
+    <p>
+      Because the local branch is tracking
+      <code>origin/feature-login</code>, Git knows where the commits should
+      be pushed.
+    </p>
+
+    <h2>10. One Important Correction to the Original Statement</h2>
+
+    <p>
+      The statement:
+    </p>
+
+    <div class="intro">
+      <p>
+        <strong>"You cannot check out a remote branch."</strong>
+      </p>
+    </div>
+
+    <p>
+      is useful as a beginner-friendly rule, but it is technically a little
+      too absolute.
+    </p>
+
+    <p>
+      Git can check out a remote-tracking reference directly. For example,
+      commands such as:
+    </p>
+
+    <pre><code>git checkout origin/feature-login</code></pre>
+
+    <p>
+      can put you into a state where <code>HEAD</code> is detached.
+    </p>
+
+    <p>
+      You can inspect the code, but you are <strong>not working on a normal
+        local branch</strong>. If you make commits there, Git does not have a
+      local branch name that automatically moves forward with those commits.
+    </p>
+
+    <p>
+      This is why the better practical advice is:
+    </p>
+
+    <div class="important">
+      <strong>
+        Don't use a remote-tracking reference as your normal working branch.
+        Create a local branch that tracks it instead.
+      </strong>
+    </div>
+
+    <h2>11. The Mental Model to Remember</h2>
+
+    <p>
+      The easiest way to remember the distinction is to think of the three
+      names as different things:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>feature-login</code></td>
+          <td>Your local working branch.</td>
+        </tr>
+        <tr>
+          <td><code>origin/feature-login</code></td>
+          <td>Your local record of the remote branch.</td>
+        </tr>
+        <tr>
+          <td><code>origin</code></td>
+          <td>The name of the remote repository.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      So when someone says:
+    </p>
+
+    <pre><code>feature-login tracks origin/feature-login</code></pre>
+
+    <p>
+      it means:
+    </p>
+
+    <div class="diagram">Your computer
+
+      Local branch
+      feature-login
+      |
+      | tracks
+      v
+      Remote-tracking reference
+      origin/feature-login
+      |
+      | represents
+      v
+      Branch on remote repository
+      feature-login</div>
+
+    <h2>12. The Key Takeaway</h2>
+
+    <p>
+      A remote branch and a local branch are not the same thing. After
+      <code>git fetch</code>, Git gives you a remote-tracking reference such
+      as <code>origin/feature-login</code>. This lets you see and work with
+      information about the remote branch without making that reference your
+      local working branch.
+    </p>
+
+    <p>
+      If you want to develop on that branch, create a local branch from it and
+      configure the local branch to track the remote branch:
+    </p>
+
+    <pre><code>git switch -c feature-login --track origin/feature-login</code></pre>
+
+    <p>
+      Once the tracking relationship exists, commands such as
+      <code>git pull</code> and <code>git push</code> become much more
+      convenient because Git knows the relationship between your local branch
+      and its remote counterpart.
+    </p>
+
+    <div class="summary">
+      <p><strong>In one sentence:</strong></p>
+      <p>
+        <code>origin/feature-login</code> is Git's local reference to a remote
+        branch; to work on it normally, create a local
+        <code>feature-login</code> branch that tracks
+        <code>origin/feature-login</code>.
+      </p>
+    </div>
+  </article>
+</div>
+<br>
+<a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customGitHubHeader"
+  target="_blank">See All Posts on GitHub</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/difference-between-git-pull-and-git.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+&nbsp;&nbsp;
+<a href="https://survival8.blogspot.com/2026/09/fast-forwarding-merge-vs-non-fast.html" target="_blank" class="customLink">Next &raquo;</a>
+<br>
