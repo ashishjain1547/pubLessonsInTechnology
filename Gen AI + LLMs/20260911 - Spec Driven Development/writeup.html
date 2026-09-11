@@ -1,0 +1,1072 @@
+<head>
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/bookSummariesAndReviews/main/links_to_book_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['current book club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+          );
+        }
+      });
+    });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .customLink:hover {
+      text-decoration: none;
+    }
+
+    div.code-block-decoration.footer {
+      display: none;
+    }
+
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .custom_link_h2 a:hover {
+      color: black;
+    }
+
+    .custom_link_h2 a:active {
+      color: black;
+    }
+
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
+
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+  </style>
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .arrow {
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+
+    .right {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+
+    .up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+  </style>
+
+  <style>
+    span.relative.inline-flex.items-center button {
+      display: none;
+    }
+
+    div.bg-token-bg-elevated-secondary.text-token-text-secondary.flex button {
+      display: none;
+    }
+  </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink"
+  href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+  target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/07/sqlite-vector-vector-search-in-your.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+<br>
+
+<div class="customOuterWrapper0535">
+  <style>
+    div.customOuterWrapper0535 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.7;
+      color: #24292f;
+      background: #ffffff;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 40px;
+      box-sizing: border-box;
+    }
+
+    div.customOuterWrapper0535 .title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      color: #111827;
+    }
+
+    div.customOuterWrapper0535 .subtitle {
+      font-size: 1.15rem;
+      color: #57606a;
+      margin: 0 0 32px;
+    }
+
+    div.customOuterWrapper0535 h2 {
+      font-size: 1.75rem;
+      line-height: 1.3;
+      color: #111827;
+      margin: 42px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #d8dee4;
+    }
+
+    div.customOuterWrapper0535 h3 {
+      font-size: 1.3rem;
+      color: #1f2937;
+      margin: 28px 0 10px;
+    }
+
+    div.customOuterWrapper0535 p {
+      margin: 0 0 18px;
+    }
+
+    div.customOuterWrapper0535 strong {
+      color: #111827;
+    }
+
+    div.customOuterWrapper0535 .lead {
+      font-size: 1.2rem;
+      color: #374151;
+    }
+
+    div.customOuterWrapper0535 .callout {
+      margin: 24px 0;
+      padding: 20px 22px;
+      background: #f6f8fa;
+      border-left: 4px solid #0969da;
+      border-radius: 6px;
+    }
+
+    div.customOuterWrapper0535 .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    div.customOuterWrapper0535 pre {
+      background: #0d1117;
+      color: #e6edf3;
+      padding: 18px 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin: 18px 0 24px;
+    }
+
+    div.customOuterWrapper0535 code {
+      font-family: Consolas, "SFMono-Regular", Menlo, monospace;
+    }
+
+    div.customOuterWrapper0535 p code,
+    div.customOuterWrapper0535 li code {
+      background: #f0f3f6;
+      color: #24292f;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 0.92em;
+    }
+
+    div.customOuterWrapper0535 .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    div.customOuterWrapper0535 .workflowStep {
+      padding: 18px 14px;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    div.customOuterWrapper0535 .workflowNumber {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #0969da;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    div.customOuterWrapper0535 .workflowStep strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    div.customOuterWrapper0535 ul,
+    div.customOuterWrapper0535 ol {
+      margin: 12px 0 22px;
+      padding-left: 26px;
+    }
+
+    div.customOuterWrapper0535 li {
+      margin-bottom: 8px;
+    }
+
+    div.customOuterWrapper0535 .comparison {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 22px 0 28px;
+      font-size: 0.96rem;
+    }
+
+    div.customOuterWrapper0535 .comparison th,
+    div.customOuterWrapper0535 .comparison td {
+      border: 1px solid #d0d7de;
+      padding: 13px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    div.customOuterWrapper0535 .comparison th {
+      background: #f6f8fa;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    div.customOuterWrapper0535 .goodBad {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 24px 0;
+    }
+
+    div.customOuterWrapper0535 .good,
+    div.customOuterWrapper0535 .bad {
+      padding: 20px 22px;
+      border-radius: 8px;
+    }
+
+    div.customOuterWrapper0535 .good {
+      background: #eefbf3;
+      border: 1px solid #b7dfc6;
+    }
+
+    div.customOuterWrapper0535 .bad {
+      background: #fff1f0;
+      border: 1px solid #f0b8b3;
+    }
+
+    div.customOuterWrapper0535 .good h3,
+    div.customOuterWrapper0535 .bad h3 {
+      margin-top: 0;
+    }
+
+    div.customOuterWrapper0535 .summary {
+      margin-top: 42px;
+      padding: 24px;
+      background: #f6f8fa;
+      border-radius: 8px;
+    }
+
+    div.customOuterWrapper0535 .summary h2 {
+      margin-top: 0;
+      border-bottom: 0;
+    }
+
+    @media (max-width: 800px) {
+      div.customOuterWrapper0535 {
+        padding: 24px 20px;
+      }
+
+      div.customOuterWrapper0535 .workflow {
+        grid-template-columns: 1fr;
+      }
+
+      div.customOuterWrapper0535 .goodBad {
+        grid-template-columns: 1fr;
+      }
+
+      div.customOuterWrapper0535 .title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <h1 class="title">Spec-Driven Development: Building Software from a Clear Specification</h1>
+
+  <p class="subtitle">
+    A practical guide to SDD, using VS Code and GitHub Copilot, and how it differs from vibe coding.
+  </p>
+
+  <p class="lead">
+    AI coding assistants have changed the way software is built. Instead of writing every line of code manually,
+    developers can describe what they want and let an AI assistant generate much of the implementation.
+    But there is an important question: <strong>what exactly should the AI build?</strong>
+  </p>
+
+  <p>
+    This is where <strong>Spec-Driven Development (SDD)</strong> comes in. Rather than starting with code or
+    an informal conversation with an AI assistant, SDD starts with a clear description of the desired behavior,
+    requirements, constraints, interfaces, and acceptance criteria. The specification becomes the source of truth
+    that guides both the developer and the AI coding agent.
+  </p>
+
+  <div class="callout">
+    <strong>The central idea</strong>
+    In Spec-Driven Development, you don't primarily tell the AI, "Write some code that does this."
+    You first establish <b>what the software must do</b>, then use the specification to drive the
+    design, implementation, testing, and review.
+  </div>
+
+  <h2>1. What Is Spec-Driven Development?</h2>
+
+  <p>
+    <strong>Spec-Driven Development</strong> is a software development approach in which a written specification
+    acts as the primary guide for creating a feature or system.
+  </p>
+
+  <p>
+    The specification describes the intended outcome before implementation begins. Depending on the project,
+    it can contain functional requirements, user stories, API contracts, data models, business rules,
+    constraints, edge cases, non-functional requirements, and acceptance criteria.
+  </p>
+
+  <p>
+    The important distinction is that the specification is not merely documentation written after the code.
+    It is an <strong>input to the development process</strong>.
+  </p>
+
+  <h3>A simple example</h3>
+
+  <p>
+    Imagine that you want to add a password-reset feature to an application.
+    A vague instruction might be:
+  </p>
+
+  <pre><code>Build a password reset feature.</code></pre>
+
+  <p>
+    An AI coding assistant can certainly generate code from this instruction. However, many important questions
+    remain unanswered:
+  </p>
+
+  <ul>
+    <li>How long should a reset link remain valid?</li>
+    <li>Can a reset token be used more than once?</li>
+    <li>What happens when the email address does not exist?</li>
+    <li>How should expired tokens behave?</li>
+    <li>What password rules apply?</li>
+    <li>Should the system reveal whether an email address is registered?</li>
+    <li>What tests must pass before the feature is considered complete?</li>
+  </ul>
+
+  <p>
+    A specification makes these decisions explicit before implementation.
+  </p>
+
+  <pre><code>Feature: Password Reset
+
+Requirements:
+1. A user can request a password reset using their email address.
+2. The reset token expires after 30 minutes.
+3. A token can be used only once.
+4. Invalid or expired tokens must be rejected.
+5. The system must not reveal whether an email address is registered.
+6. The new password must satisfy the application's password policy.
+
+Acceptance criteria:
+- Valid reset requests produce a reset email.
+- Expired tokens are rejected.
+- Reused tokens are rejected.
+- Invalid tokens are rejected.
+- Successful reset invalidates the token.</code></pre>
+
+  <p>
+    Now the implementation has something much more useful than a general instruction: it has a
+    <strong>contract to satisfy</strong>.
+  </p>
+
+  <h2>2. Why SDD Matters in AI-Assisted Development</h2>
+
+  <p>
+    Traditional development already benefits from requirements and design documents. AI-assisted development
+    makes this discipline even more important.
+  </p>
+
+  <p>
+    An AI coding assistant can generate code extremely quickly. That is both its strength and its weakness.
+    If the instructions are vague, the assistant can produce a large amount of code that is technically plausible
+    but does not actually solve the intended problem.
+  </p>
+
+  <p>
+    SDD addresses this by moving more attention toward the <strong>problem definition</strong> before asking AI
+    to perform the implementation.
+  </p>
+
+  <div class="workflow">
+    <div class="workflowStep">
+      <span class="workflowNumber">1</span>
+      <strong>Specify</strong>
+      Define what must be built.
+    </div>
+
+    <div class="workflowStep">
+      <span class="workflowNumber">2</span>
+      <strong>Clarify</strong>
+      Resolve ambiguity and edge cases.
+    </div>
+
+    <div class="workflowStep">
+      <span class="workflowNumber">3</span>
+      <strong>Plan</strong>
+      Decide how the specification will be implemented.
+    </div>
+
+    <div class="workflowStep">
+      <span class="workflowNumber">4</span>
+      <strong>Implement</strong>
+      Use AI to generate and modify code.
+    </div>
+
+    <div class="workflowStep">
+      <span class="workflowNumber">5</span>
+      <strong>Verify</strong>
+      Test the implementation against the specification.
+    </div>
+  </div>
+
+  <p>
+    Notice that <strong>code comes after specification</strong>. AI is not removed from the process;
+    instead, its role changes from guessing what you want to implementing a clearly defined requirement.
+  </p>
+
+  <h2>3. How SDD Can Be Done Using VS Code and GitHub Copilot</h2>
+
+  <p>
+    VS Code and GitHub Copilot can support an SDD workflow by keeping the specification close to the code
+    and using it as context for AI-assisted planning, implementation, and verification.
+  </p>
+
+  <p>
+    The exact Copilot capabilities and interface can evolve over time, but the underlying workflow remains
+    straightforward: <strong>write the specification, give the specification to the coding agent, review the plan,
+    implement incrementally, and verify against the requirements.</strong>
+  </p>
+
+  <h3>Step 1: Create a specification</h3>
+
+  <p>
+    Start by creating a specification file in the repository. The format is less important than the clarity
+    of the content. Markdown is often convenient because it is readable by both humans and AI tools.
+  </p>
+
+  <pre><code>docs/specs/password-reset.md</code></pre>
+
+  <p>
+    A useful specification should answer questions such as:
+  </p>
+
+  <ul>
+    <li>What problem are we solving?</li>
+    <li>Who is the feature for?</li>
+    <li>What behavior is required?</li>
+    <li>What behavior is explicitly not required?</li>
+    <li>What constraints must be respected?</li>
+    <li>What are the important edge cases?</li>
+    <li>How will we know the implementation is correct?</li>
+  </ul>
+
+  <h3>Step 2: Ask Copilot to analyze the specification</h3>
+
+  <p>
+    Instead of immediately asking Copilot to write code, ask it to understand and analyze the specification first.
+  </p>
+
+  <pre><code>Read docs/specs/password-reset.md.
+
+Analyze the requirements and identify:
+- ambiguities
+- missing edge cases
+- affected parts of the existing codebase
+- likely implementation constraints
+- tests that will be required
+
+Do not modify any files yet.</code></pre>
+
+  <p>
+    This is an important SDD habit: <strong>separate understanding from implementation</strong>.
+  </p>
+
+  <h3>Step 3: Ask Copilot for an implementation plan</h3>
+
+  <p>
+    Once the specification is clear, ask Copilot to create a plan.
+  </p>
+
+  <pre><code>Using docs/specs/password-reset.md as the source of truth,
+create an implementation plan.
+
+For each step:
+- identify the files that need to change
+- explain what will change
+- identify dependencies
+- identify tests that should be added
+
+Do not implement the changes yet.</code></pre>
+
+  <p>
+    The plan gives the developer an opportunity to catch incorrect assumptions before code is generated.
+  </p>
+
+  <h3>Step 4: Review the plan</h3>
+
+  <p>
+    This is where human judgment becomes particularly important.
+  </p>
+
+  <p>
+    Ask questions such as:
+  </p>
+
+  <ul>
+    <li>Does the plan actually satisfy every requirement?</li>
+    <li>Did Copilot misunderstand any business rule?</li>
+    <li>Is the proposed design consistent with the existing architecture?</li>
+    <li>Are security and performance constraints being considered?</li>
+    <li>Are the tests sufficient?</li>
+  </ul>
+
+  <p>
+    If the plan is wrong, fix the specification or clarify it before implementation begins.
+  </p>
+
+  <h3>Step 5: Implement in small increments</h3>
+
+  <p>
+    Instead of giving Copilot one enormous request such as "build the entire feature," work through the plan
+    incrementally.
+  </p>
+
+  <pre><code>Implement step 1 from the approved plan.
+
+Use the password-reset specification as the source of truth.
+Do not modify unrelated functionality.
+
+After making the changes, explain:
+- what changed
+- which requirements are now satisfied
+- what remains to be implemented</code></pre>
+
+  <p>
+    Smaller changes make AI-generated code easier to review, test, and revert.
+  </p>
+
+  <h3>Step 6: Generate and run tests</h3>
+
+  <p>
+    Tests should not be an afterthought. The acceptance criteria in the specification should translate into
+    concrete verification.
+  </p>
+
+  <pre><code>Review the acceptance criteria in
+docs/specs/password-reset.md.
+
+Identify any missing automated tests and add them.
+Then run the relevant test suite.
+
+Report:
+- tests added
+- tests executed
+- failures
+- requirements that remain unverified</code></pre>
+
+  <p>
+    This creates a useful feedback loop:
+  </p>
+
+  <pre><code>Specification
+      ↓
+Implementation plan
+      ↓
+Code
+      ↓
+Tests
+      ↓
+Verification against specification
+      ↓
+Refinement</code></pre>
+
+  <h3>Step 7: Keep the specification synchronized</h3>
+
+  <p>
+    Software changes. Requirements can change too. If the implementation evolves but the specification does not,
+    the repository eventually contains two conflicting sources of truth.
+  </p>
+
+  <p>
+    Therefore, when a requirement changes, update the specification deliberately and then update the implementation
+    to match it.
+  </p>
+
+  <div class="callout">
+    <strong>A useful rule:</strong>
+    If a behavior matters enough to test or review, it probably matters enough to express clearly in the
+    specification.
+  </div>
+
+  <h2>4. SDD vs. Vibe Coding</h2>
+
+  <p>
+    <strong>Vibe coding</strong> generally describes an AI-assisted development style where the developer gives
+    natural-language instructions, accepts generated code, observes the result, and continues prompting based
+    on what happens.
+  </p>
+
+  <p>
+    Vibe coding can be surprisingly productive for prototypes, experiments, throwaway projects, and situations
+    where the cost of being wrong is low.
+  </p>
+
+  <p>
+    The problem appears when the same approach is used for software that has important requirements,
+    dependencies, security implications, or long-term maintenance needs.
+  </p>
+
+  <table class="comparison">
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Spec-Driven Development</th>
+        <th>Vibe Coding</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Starting point</strong></td>
+        <td>A defined specification and acceptance criteria.</td>
+        <td>A natural-language idea or desired outcome.</td>
+      </tr>
+      <tr>
+        <td><strong>AI's role</strong></td>
+        <td>Implement and verify against explicit requirements.</td>
+        <td>Generate and refine code through conversational prompts.</td>
+      </tr>
+      <tr>
+        <td><strong>Planning</strong></td>
+        <td>Planning is explicit and reviewed before implementation.</td>
+        <td>Planning may emerge during the interaction.</td>
+      </tr>
+      <tr>
+        <td><strong>Requirements</strong></td>
+        <td>Made explicit and traceable.</td>
+        <td>Often implicit in the conversation.</td>
+      </tr>
+      <tr>
+        <td><strong>Verification</strong></td>
+        <td>Measured against defined acceptance criteria.</td>
+        <td>Often based on whether the result appears to work.</td>
+      </tr>
+      <tr>
+        <td><strong>Change management</strong></td>
+        <td>Changes can be reflected in the specification first.</td>
+        <td>Changes may happen through successive prompts.</td>
+      </tr>
+      <tr>
+        <td><strong>Best suited for</strong></td>
+        <td>Production systems and requirements-heavy work.</td>
+        <td>Prototypes, exploration, learning, and low-risk experiments.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The key difference</h3>
+
+  <p>
+    The difference is not simply "writing specifications versus talking to AI."
+    The deeper difference is <strong>where the source of truth lives</strong>.
+  </p>
+
+  <p>
+    In a vibe-coding workflow, the developer's evolving conversation with the AI can become the effective
+    source of truth.
+  </p>
+
+  <p>
+    In SDD, the specification is deliberately made explicit so that the developer, AI, reviewer, and tests
+    can all refer to the same intended behavior.
+  </p>
+
+  <div class="callout">
+    <strong>SDD does not mean "never vibe."</strong>
+    You can use conversational AI during an SDD workflow. The difference is that the conversation operates
+    within clearly defined requirements rather than replacing them.
+  </div>
+
+  <h2>5. What to Do in Spec-Driven Development</h2>
+
+  <div class="goodBad">
+    <div class="good">
+      <h3>✓ Do</h3>
+      <ul>
+        <li>Write requirements before implementation.</li>
+        <li>Define acceptance criteria that can actually be verified.</li>
+        <li>Document important business rules and constraints.</li>
+        <li>Identify edge cases explicitly.</li>
+        <li>Ask Copilot to analyze before asking it to implement.</li>
+        <li>Review AI-generated implementation plans.</li>
+        <li>Implement incrementally.</li>
+        <li>Keep tests aligned with the specification.</li>
+        <li>Review generated code instead of blindly accepting it.</li>
+        <li>Update the specification when requirements change.</li>
+      </ul>
+    </div>
+
+    <div class="bad">
+      <h3>✗ Don't</h3>
+      <ul>
+        <li>Assume AI understands unstated business requirements.</li>
+        <li>Write huge specifications full of unnecessary implementation details.</li>
+        <li>Ask AI to change the entire codebase without boundaries.</li>
+        <li>Treat generated code as automatically correct.</li>
+        <li>Skip tests because the AI says the feature is complete.</li>
+        <li>Allow the specification and implementation to drift apart.</li>
+        <li>Ignore security, performance, or compatibility constraints.</li>
+        <li>Use the specification as an excuse to stop thinking critically.</li>
+        <li>Accept a technically elegant solution that violates the requirements.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>6. What Makes a Good Specification?</h2>
+
+  <p>
+    A good specification should be <strong>clear enough to remove important ambiguity without becoming an
+    unnecessarily detailed implementation manual</strong>.
+  </p>
+
+  <p>
+    For example, instead of specifying every class and method that an AI must create, describe the behavior
+    those components must provide.
+  </p>
+
+  <p><strong>Less useful:</strong></p>
+
+  <pre><code>Create a PasswordResetService class with a ResetPassword()
+method that uses a Dictionary to store tokens.</code></pre>
+
+  <p><strong>More useful:</strong></p>
+
+  <pre><code>Requirements:
+- Generate a cryptographically secure reset token.
+- Associate the token with the requesting account.
+- Expire the token after 30 minutes.
+- Permit a token to be consumed only once.
+- Reject invalid and expired tokens.</code></pre>
+
+  <p>
+    The second version describes <strong>what must be true</strong> while leaving room for the implementation
+    to choose an appropriate design.
+  </p>
+
+  <h3>A practical specification structure</h3>
+
+  <pre><code># Feature: Password Reset
+
+## Problem
+Users need a secure way to regain access to their account.
+
+## Goal
+Allow users to reset their password without administrator intervention.
+
+## Functional Requirements
+- ...
+- ...
+- ...
+
+## Constraints
+- ...
+- ...
+- ...
+
+## Edge Cases
+- ...
+- ...
+- ...
+
+## Acceptance Criteria
+- ...
+- ...
+- ...
+
+## Out of Scope
+- ...
+- ...
+
+## Verification
+- Unit tests
+- Integration tests
+- Security checks</code></pre>
+
+  <p>
+    This structure is simple enough for humans to maintain and structured enough to provide useful context
+    to an AI coding agent.
+  </p>
+
+  <h2>7. Keep the Specification Focused on Outcomes</h2>
+
+  <p>
+    One of the easiest mistakes in SDD is turning the specification into a detailed description of the code
+    you have already imagined.
+  </p>
+
+  <p>
+    Specifications are generally more valuable when they focus on <strong>behavior, requirements, constraints,
+    and outcomes</strong>.
+  </p>
+
+  <p>
+    For example:
+  </p>
+
+  <pre><code>Good:
+"The API must return HTTP 404 when the requested product does not exist."
+
+Less useful:
+"Create ProductController.GetProduct(), then call ProductRepository.Find()
+and return NotFound()."</code></pre>
+
+  <p>
+    The first statement defines an externally observable requirement. The second prescribes one particular
+    implementation.
+  </p>
+
+  <p>
+    This distinction gives both the developer and AI more flexibility while preserving correctness.
+  </p>
+
+  <h2>8. SDD Is Not About Writing More Documentation</h2>
+
+  <p>
+    It is tempting to think that SDD simply means producing more documents. That misses the main point.
+  </p>
+
+  <p>
+    The purpose of a specification is to create a <strong>shared, explicit contract</strong> between the problem,
+    the developer, the AI agent, and the verification process.
+  </p>
+
+  <p>
+    A short specification containing ten precise requirements can be more useful than a fifty-page document
+    containing vague prose.
+  </p>
+
+  <p>
+    The goal is not documentation for documentation's sake. The goal is to reduce ambiguity.
+  </p>
+
+  <h2>9. A Practical SDD Workflow for Everyday Development</h2>
+
+  <p>
+    For a typical feature, you can use the following lightweight workflow in VS Code:
+  </p>
+
+  <ol>
+    <li><strong>Create a feature specification.</strong> Describe the problem, requirements, constraints, edge cases, and acceptance criteria.</li>
+    <li><strong>Ask Copilot to review it.</strong> Have it identify ambiguity, missing cases, and affected parts of the codebase.</li>
+    <li><strong>Resolve questions.</strong> Update the specification until the intended behavior is clear.</li>
+    <li><strong>Generate an implementation plan.</strong> Ask Copilot to propose changes without modifying files.</li>
+    <li><strong>Review the plan.</strong> Confirm that it addresses the specification and fits the existing architecture.</li>
+    <li><strong>Implement incrementally.</strong> Give Copilot one logical part of the approved plan at a time.</li>
+    <li><strong>Test continuously.</strong> Add and run tests derived from the acceptance criteria.</li>
+    <li><strong>Perform a final specification review.</strong> Check that every requirement has been implemented and verified.</li>
+  </ol>
+
+  <p>
+    This approach preserves one of the biggest advantages of AI coding assistants—<strong>speed</strong>—while
+    reducing the risk that speed turns into uncontrolled complexity.
+  </p>
+
+  <h2>10. The Human Developer Still Matters</h2>
+
+  <p>
+    SDD should not be interpreted as handing the specification to an AI and stepping away.
+  </p>
+
+  <p>
+    The developer remains responsible for deciding what the software should do, evaluating trade-offs,
+    understanding the architecture, reviewing the generated implementation, and determining whether the
+    result is safe and correct.
+  </p>
+
+  <p>
+    In fact, AI-assisted SDD can make the developer's role more strategic. Instead of spending all of their
+    time typing implementation details, developers can spend more time defining problems, making design
+    decisions, reviewing results, and validating behavior.
+  </p>
+
+  <div class="callout">
+    <strong>Think of the division of labor this way:</strong>
+    The human defines the desired outcome and constraints. The AI helps explore and implement solutions.
+    Tests and reviews provide evidence that the implementation actually satisfies the specification.
+  </div>
+
+  <h2>11. Final Takeaway</h2>
+
+  <p>
+    Spec-Driven Development is a natural evolution of software development in an age where AI can generate
+    code much faster than humans can manually write it.
+  </p>
+
+  <p>
+    The bottleneck increasingly shifts from <strong>"How quickly can we write the code?"</strong> to
+    <strong>"How clearly have we defined what the code should accomplish?"</strong>
+  </p>
+
+  <p>
+    SDD answers that question by putting the specification at the center of the workflow:
+  </p>
+
+  <pre><code>Define the problem
+       ↓
+Write the specification
+       ↓
+Clarify requirements
+       ↓
+Create an implementation plan
+       ↓
+Review the plan
+       ↓
+Implement with AI assistance
+       ↓
+Test
+       ↓
+Verify against the specification
+       ↓
+Iterate</code></pre>
+
+  <p>
+    Vibe coding can be excellent for discovering possibilities and quickly creating prototypes.
+    But when correctness, maintainability, security, and predictable behavior matter, relying on an evolving
+    conversation alone can become risky.
+  </p>
+
+  <p>
+    <strong>Spec-Driven Development does not eliminate the speed of AI-assisted coding; it gives that speed
+    direction.</strong>
+  </p>
+
+  <div class="summary">
+    <h2>The One-Sentence Definition</h2>
+
+    <p>
+      <strong>Spec-Driven Development is an AI-assisted development approach in which a clear, explicit
+      specification defines the intended behavior first, and the implementation, tests, and review are
+      driven by that specification.</strong>
+    </p>
+  </div>
+</div>
+
+<br>
+<a class="customLink"
+  href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html#customLargeLanguageModelsHeader"
+  target="_blank">See All on GenAI</a>
+
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/07/sqlite-vector-vector-search-in-your.html" target="_blank"
+  class="customLink">&laquo; Previously</a>
+<br>
